@@ -152,9 +152,10 @@ if(in_array($do, array('buy', 'exit'))) {
 
 				C::t('common_member_field_forum')->update($_G['uid'], array('groupterms' => serialize($groupterms)));
                 
-                if ($days == 360) {
+                //gift 
+                /*if ($days == 360) {
                     updatemembercount($_G['uid'], array('extcredits8' => "+5"));
-                }
+                }*/
 	
 			} else {
 				C::t('common_member')->update($_G['uid'], array('extgroupids' => $extgroupidsnew));
