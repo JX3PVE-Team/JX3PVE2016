@@ -1,0 +1,66 @@
+<!--{template common/header}-->
+<div class="user-container">
+
+	<div id="pt" class="bm cl">
+		<div class="z">
+			<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
+			<a href="home.php">{lang useros}</a> <em>&rsaquo;</em>
+			<a href="./gift">积分兑换</a>
+		</div>
+	</div>
+
+	<div id="ct" class="ct2_a wp cl">
+
+		<!--{template home/sidebar_l}-->
+
+		<div class="mn vip-pc-container gift-container">
+
+			<!--{template home/vip_pc_nav}-->
+
+
+			<!--顶部广告-->
+			<div class="block">
+				<!--{block/1785}-->
+			</div>
+
+			<!--积分状态-->
+			<div class="block">
+				<!--{template home/gift_pc_header}-->
+			</div>
+			
+			<!--兑换协议-->
+			<div class="gift-primary" id="gift-primary-1">
+				<div class="gift-rule block">
+					<!--{block/1782}-->
+				</div>
+				<div class="gift-rule-agree">
+					<input type="checkbox" name="" id="" checked="checked" disabled="disabled" /> 我已同意并已了解以上协议
+				</div>
+				<a href="javascript:void(0);" class="gift-rule-go" id="gift-rule-go">下一步</a>
+			</div>
+
+			<!--兑换流程-->
+			<div class="gift-primary" id="gift-primary-2" style="display:none;">
+				<div class="gift-progress block">
+					<!--{block/1783}-->
+				</div>
+				<a href="javascript:void(0);" class="gift-rule-go gift-rule-back" id="gift-rule-back">返回上一步</a>
+			</div>
+
+			<!--兑换细则-->
+			<div class="gift-details block">
+				<!--{block/1784}-->
+			</div>
+
+			<!--赞助商 & 我要赞助-->
+			<div class="gift-support block">
+				<h2 class="vip-pc-title">赞助商<span>Support Business »</span></h2>
+				<!--{block/1786}-->
+			</div>
+			
+		</div>
+
+	</div>
+
+</div>
+<!--{template common/footer}-->

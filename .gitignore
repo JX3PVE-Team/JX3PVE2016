@@ -1,0 +1,39 @@
+# custom
+# =========================
+# test git hooks 3
+#temp/*
+cssjsimg
+cdn
+wiki
+
+# Windows image file caches
+# =========================
+Thumbs.db
+ehthumbs.db
+.idea
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+
+
+# OSX
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+# Thumbnails
+._*
+.Spotlight-V100
+.Trashes
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+#Webstrom
+.idea
+node_modules

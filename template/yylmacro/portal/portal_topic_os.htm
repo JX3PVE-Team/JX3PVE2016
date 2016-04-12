@@ -1,0 +1,124 @@
+{subtemplate common/header_m}-->
+
+	<div class="vip-m-container vip-m-default">
+
+		<header class="vip-m-header">
+			<h1 class="card card2">
+				<img src="http://img.jx3pve.com/img/vip/vip-m-home.png" alt="充值中心">
+				<span class="uid">
+					<em></em>
+					<b id="uid"></b>
+				</span>
+				<span class="credit">
+					<em>UID:</em>
+					<b id="credit"><!--{echo $_G['uid']}--></b>
+				</span>
+			</h1>
+		</header>
+
+		<ul class="vip-m-list vip-m-list-icon" style="border-top:none;">
+			<li>
+				<a href="./buy_m">
+				<span class="m_icon u_mibi"></span>
+				<!-- 点击进入充值页面 -->
+				<span class="status">
+					<label>米币</label>
+					<span class="amount"><small></small><!--{echo getuserprofile('extcredits4');}--></span>
+				</span>
+				</a>
+			</li>
+			<li>
+				<a href="./vip_m">
+				<span class="m_icon u_group"></span>
+				<!-- 点击进入开通续费页面 -->
+				<span class="status">
+					<label>会员组</label>
+					<!-- 输出当前会员组名称 -->
+					<span class="amount">$_G[group][grouptitle]</span>
+				</span>
+				</a>
+			</li>
+			<li>
+				<a href="./vip_m">
+				<span class="m_icon u_expires"></span>
+				<span class="status {if $_G['member']['groupid'] == 22}noextend{/if}">
+					<label>VIP到期时间</label>
+					<!-- 当小于10天即将过期时添加.tobeexpired样式名 -->
+					<!--{if $_G['member']['groupid'] == 22 }-->
+						<span class="amount">
+							<!--{eval echo date("Y-m-d", $_G['member']['groupexpiry']);}-->
+						</span>
+					<!--{else}-->
+						<span class="amount govip">
+							开通会员
+						</span>
+					<!--{/if}-->
+				</span>
+				</a>
+			</li>
+		</ul>
+		<!-- <ul class="vip-m-list vip-m-list-icon">
+			<li>
+				<span class="m_icon u_mogu"></span>
+				<a class="noextend" href="javascript:void(0)">
+					<label>签到</label>
+					<span class="amount"><small></small>8888</span>
+				</a>
+			</li>
+			<li>
+				<span class="m_icon u_rongyu"></span>
+				<a class="noextend" href="javascript:void(0)">
+					<label>绑定微信</label>
+					<span class="amount zero"><small></small>0</span>
+				</a>
+			</li>
+		</ul> -->
+		<ul class="vip-m-list vip-m-list-txt">
+			<li class="none">
+				<!-- 已签到后添加.closeunit样式名 -->
+				<a class="closeunit" href="javascript:void(0)" data-login="./login_m">
+					<label>签到</label>
+					<!-- 未登录时显示为登录，登录后未签到时不显示字符，登录签到后显示已签到 -->
+					<span class="amount zero">已签到</span>
+				</a>
+			</li>
+			<li class="none">
+				<!-- 已绑定后添加.closeunit样式名 -->
+				<a class="closeunit" href="javascript:void(0)" data-login="./login_m">
+					<label>绑定微信</label>
+					<!-- 未登录时显示为登录，登录后未绑定时不显示字符，登录绑定后显示已绑定 -->
+					<span class="amount zero">已绑定</span>
+				</a>
+			</li>
+			<li>
+				<!--{if $_G['uid']}-->
+				<a class="" href="member.php?mod=logging&action=logout&formhash={FORMHASH}">
+					<label>退出</label>
+					<span class="amount zero"></span>
+				</a>
+				<!--{else}-->
+				<a class="" href="./login_m">
+					<label>登录</label>
+					<span class="amount zero"></span>
+				</a>
+				<!--{/if}-->
+			</li>
+			<li>
+				<a class="closeunit" href="javascript:void(0)">
+					<label>积分兑换</label>
+					<span class="amount zero">暂未开放</span>
+				</a>
+			</li>
+		</ul>
+
+		<footer class="vip-m-footer">
+			&copy; www.jx3pve.com
+		</footer>
+
+	</div>
+
+	<script src="http://js.jx3pve.com/js/page/page-vip-m.js"></script>
+
+	<div class="none"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256810945'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1256810945' type='text/javascript'%3E%3C/script%3E"));</script></div>
+
+<!--{subtemplate common/footer_m}

@@ -1,0 +1,45 @@
+<h2 class="vip-pc-title">积分信息<span>Credit information &raquo;</span></h2>
+<div class="vip-pc-status">
+	<div class="avt">
+		<a href="home.php" target="_blank"><!--{avatar($_G[uid],small)}--></a>
+	</div>
+	<div class="profile">
+		<p class="baseinfo">
+			<a class="tab-btn {if $_GET['op'] == 'buy'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=buy">积分充值</a>
+			<a class="tab-btn {if $_GET['op'] == 'exchange'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=exchange">积分转换</a>
+			<a class="tab-btn {if $_GET['op'] == 'transfer'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=transfer">积分转账</a>
+			<a class="tab-btn {if $_GET['op'] == 'rule'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=rule">积分规则</a>
+			<a class="tab-btn {if $_GET['op'] == 'log'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=log">积分记录</a>
+			<a class="tab-btn {if $_GET['topicid'] == '107'}on{/if}" href="./gift">积分兑换</a>
+		</p>
+		<ul class="rights">
+			<li><em>积分：</em>$_G['member']['credits']</li>
+		<!--{eval $creditid=0;}-->
+			<!--{if $_GET['op'] == 'base' && $_G['setting']['creditstrans']}-->
+				<!--{eval $creditid=$_G['setting']['creditstrans'];}-->
+				<!--{if $_G['setting']['extcredits'][$creditid]}-->
+					<!--{eval $credit=$_G['setting']['extcredits'][$creditid]; }-->
+					<li>
+						<em><!--{if $credit[img]}--> {$credit[img]}<!--{/if}--> {$credit[title]}: </em>
+						<!--{echo getuserprofile('extcredits'.$creditid);}--> {$credit[unit]} &nbsp; 
+					</li>
+				<!--{/if}-->
+			<!--{/if}-->
+
+			<!--{loop $_G['setting']['extcredits'] $id $credit}-->
+				<!--{if $id!=$creditid}-->
+				<li><em><!--{if $credit[img]}--> {$credit[img]}<!--{/if}--> {$credit[title]}: </em><!--{echo getuserprofile('extcredits'.$id);}--> {$credit[unit]}</li>
+				<!--{/if}-->
+			<!--{/loop}-->
+			
+		<!--{hook/spacecp_credit_extra}-->
+		</ul>
+		<p class="credit">
+			<label>水晶：</label>
+			<span><b class="number"><!--{echo getuserprofile('extcredits8');}--></b></span>
+			<br/>
+			<label>人气：</label>
+			<span><b class="number"><!--{echo getuserprofile('extcredits5');}--></b></span>
+		</p>
+	</div>
+</div>

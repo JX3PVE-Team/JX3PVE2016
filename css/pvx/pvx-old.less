@@ -1,0 +1,154 @@
+
+
+/* 
+* PVX专栏公共布局
+* By 子璇
+* 2015.1.28
+-------------------------------------------------------------- */
+
+.pvx{
+  background:url('@{url}oldpvx/common/bgx2.png') repeat 0 0;
+  .main {
+	//标题
+  	.columns-title{
+  		height:320px;
+		a{.db;.full;}
+  	}
+	//分类导航
+    .tab {.x;
+		ul {
+			.clearfix;.iblock;.dbi;
+			li {
+				.fl;margin-right:30px;
+				&:last-child{margin-right:0;}
+
+				a{.db;.full;}
+
+				i{width:224px;height:117px;.clop;}
+				span {
+					.db;margin-top:10px;width:100%;height:26px;line-height: 26px;.x(left);.indent;
+					background-position:center bottom;background-repeat:no-repeat;
+				}
+				&:hover {
+				  	//transform:translate(0, -10px) scale(1.1);transition:0.3s ease-in-out;
+					span{/*animation: flip 0.3s ease-in-out;*/}
+				}
+			}
+		}
+    }
+    //菜单栏
+    .nav {
+		width: 1387px;height: 51px;line-height: 51px;margin: 20px auto;
+		background: url("@{url}oldpvx/common/navbg.png") top center no-repeat;
+		
+		ul {
+			width: @wp - 200px;height:100%;margin:0 auto;.iblock;.clearfix;
+			li {
+			  width: 110px;margin-right:20px;
+			 	a {
+					.db;color: #fff;font-size: 14px;padding-left:30px;
+					&:hover {
+						text-shadow:0 0 8px #f4d1e7;transition:0.3s ease-in;
+					  	background: url("@{url}oldpvx/common/nav-on.png") no-repeat 0 center;
+					}
+				}
+				&.on {
+					a {
+					  background: url("@{url}oldpvx/common/nav-on.png") no-repeat 0 center;
+					}
+				}
+				&.back {
+					float: right;width:128px;
+					a {
+						color: #ccc;font-size: 12px;text-align: right;
+						&:hover {
+							background:none;
+							color: #fff;
+						}
+					}
+				}
+			}
+		}
+	}
+    //内容区
+    .content{
+    	padding-bottom:20px;
+    }
+    //discuz默认列表页布局处理
+    	//隐藏顶部分页
+    	#pgt,#post_replytmp{.none;}
+    	//隐藏默认分类导航
+    	#thread_types{.none;}
+    	//去除背景底色
+    	.bm{
+    		background:none;
+    	}
+    	//底部分页美化
+    	.pgs{
+    		.clearfix;
+    		background: url("@{url}oldpvx/common/face_hr.png") no-repeat center 10px;
+			padding: 40px 380px 20px 10px !important;
+			a,strong,label{text-shadow:1px 1px 0px #fff;box-shadow:1px 1px 0px #fff;}
+			a,strong,label{border:1px solid #aaa;background-color:transparent;}
+			a:hover{border-color: #666;color: #333;background-color:#ccc;}
+			strong {background-color: #ccc;}
+    	}
+    	//底部分页发帖隐藏
+    	#newspecial,#newspecialtmp{.none;}
+	//discuz默认单页布局处理
+    	//顶部管理操作
+		#modmenu{.none;}
+		//底部管理操作
+		.pbm{padding:10px;a{color:#777;}}
+		//隐藏侧边栏
+		#postlist{
+			//标题样式
+			.vwthd{
+				h1{}
+			}
+			//侧边隐藏
+			.pls{
+				.none;
+			}
+			//底部边框
+			&>div{
+				border:none;
+			}
+			.plc{
+				.pob{
+					.showmenu{
+						.panel-list;
+					}
+				}
+			}
+		}
+		//信息条
+		.pi{
+			background-color:transparent;border-radius:24px;padding:0 5px;height:28px;line-height:28px;margin-top:10px;
+			border:1px solid #ccc;
+			strong a{border:none;padding:0px 6px;margin-top:0;&:hover{border:none;}}
+			#fj{
+				label{height: 100%;line-height: inherit;}
+				input{height:auto;line-height:1;.pr;top:5px;}
+			}
+		}
+		.bbsview-author-avt{.y;.dbi;img{width:20px;height:20px;border-radius:4px;.y;.pr;top:-2px;}}
+		.bbsview-author-name{}
+		.bbsview-author-verf{margin-top:-4px;}
+
+		//相关帖子隐藏
+		.mtw.mbw{.none;}
+
+		//引用文字
+		.quote{
+			background:#e5e5e5;border-radius:6px;border:1px solid #ccc;//.arrows(b,10,#eee,1,#ccc);
+			blockquote{background:none;}
+		}
+	//discuz默认发布页
+		.exfm{
+			background:none;border:none;
+		}
+
+
+  }
+}

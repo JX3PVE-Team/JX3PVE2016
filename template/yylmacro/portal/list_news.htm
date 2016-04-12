@@ -1,0 +1,33 @@
+<!--{template common/header}-->
+<!--[name]{焦点头条·列表}[/name]-->
+<!--{eval $list = array();}-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page);}-->
+
+<div class="portal-container portal-listpage">
+	<div class="portal-main">
+		<div class="portal-content" id="news_list">
+			<h1 class="portal-title">剑网3最新资讯</h1>
+			<ul class="portal-list">
+			<!--{loop $list['list'] $value}-->
+				<!--{eval $highlight = article_title_style($value);}-->
+				<!--{eval $article_url = fetch_article_url($value);}-->
+				<li class="portal-list-item">
+					<a href="$article_url" target="_blank" $highlight>
+						$value[title]
+						<span>$value[dateline]</span>
+					</a>
+					<!--{if $value[status] == 1}-->({lang moderate_need})<!--{/if}-->
+				</li>
+			<!--{/loop}-->
+			</ul>
+			<!--{if $list['multi']}--><div class="pgs cl w-pages-bottom">{$list['multi']}</div><!--{/if}-->
+		</div>
+
+		<div class="portal-sidebar">
+			<div class="m-code"><!--{block/885}--></div>
+		</div>
+		
+	</div>
+</div>
+<!--{template common/footer}-->

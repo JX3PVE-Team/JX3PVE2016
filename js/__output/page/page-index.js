@@ -1,0 +1,1 @@
+H.ready(["jquery","swiper"],function(){jQuery(function(){new Swiper(".swiper-container",{direction:"horizontal",loop:!0,effect:"fade",pagination:".swiper-pagination",paginationClickable:!0,autoplay:5e3,autoplayDisableOnInteraction:!1})})});
