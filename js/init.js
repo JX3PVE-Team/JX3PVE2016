@@ -8,7 +8,6 @@ H.load([
 	{'getRequest':head_conf.CDNROOT+'plugin/getRequest.js'},
 	{'fixSidebar':head_conf.CDNROOT+'plugin/fixSidebar.js'},
     {'treeview':head_conf.CDNROOT+'plugin/jquery.treeview.js'},
-	{'header':head_conf.ROOT+'mod/header.js'},
 	{'footer':head_conf.CDNROOT+'mod/footer.js'},
 	{'dialog':head_conf.CDNROOT+'mod/dialog.js'},
 	{'postdate':head_conf.CDNROOT+'mod/postdate.js'},
