@@ -1,3 +1,6 @@
 [submodule "img"]
 	path = img
 	url = git@github.com:JX3PVE-Team/img.git
+[submodule "static/image"]
+	path = static/image
+	url = git@github.com:JX3PVE-Team/image.git
