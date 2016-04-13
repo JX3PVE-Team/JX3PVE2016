@@ -45,6 +45,7 @@
 			var focusautoshow = window.setInterval('showfocus(\'next\', 1);', 5000);
 		</script>
 	<!--{/if}-->
+
 	<!--{if $_G['uid'] && $_G['member']['allowadmincp'] == 1 && $_G['setting']['showpatchnotice'] == 1}-->
 		<div class="focus patch" id="patch_notice"></div>
 	<!--{/if}-->
@@ -59,65 +60,65 @@
 	<!-- jx3pve:footer -->
 	<div class="c-footer">
 		<div class="wp">
-			<!-- 左侧 -->
-			<div class="lang">
+			<div class="c-footer-lang">
+				<span class="lang-til">Choose Language</span>
 				<p class="lang-img">
-					<a href="http://www.jx3pve.com"></a>
-					<a href="http://translate.google.com/translate?hl=zh-CN&sl=zh-CN&tl=zh-TW&u=http%3A%2F%2Fwww.jx3pve.com%2F" target="_blank"></a>
-					<a href="http://translate.google.com/translate?hl=zh-CN&sl=zh-CN&tl=en&u=http%3A%2F%2Fwww.jx3pve.com%2F" target="_blank"></a>
-					<a href="http://translate.google.com/translate?hl=zh-CN&sl=zh-CN&tl=ko&u=http%3A%2F%2Fwww.jx3pve.com%2F" target="_blank"></a>
-					<a href="http://translate.google.com/translate?hl=zh-CN&sl=zh-CN&tl=vi&u=http%3A%2F%2Fwww.jx3pve.com%2F" target="_blank"></a>
+					<a title="简体中文" href="http://www.jx3pve.com"></a>
+					<a title="國語" href="http://translate.google.com/translate?hl=zh-CN&sl=zh-CN&tl=zh-TW&u=http%3A%2F%2Fwww.jx3pve.com%2F" target="_blank"></a>
+					<a title="English" href="http://translate.google.com/translate?hl=zh-CN&sl=zh-CN&tl=en&u=http%3A%2F%2Fwww.jx3pve.com%2F" target="_blank"></a>
+					<a title="한국의" href="http://translate.google.com/translate?hl=zh-CN&sl=zh-CN&tl=ko&u=http%3A%2F%2Fwww.jx3pve.com%2F" target="_blank"></a>
+					<a title="Việt" href="http://translate.google.com/translate?hl=zh-CN&sl=zh-CN&tl=vi&u=http%3A%2F%2Fwww.jx3pve.com%2F" target="_blank"></a>
 				</p>
-				<p class="lang-font">
-					<a href="http://www.jx3pve.com">简体中文</a> | 
-					<a href="http://translate.google.com/translate?hl=zh-CN&sl=zh-CN&tl=zh-TW&u=http%3A%2F%2Fwww.jx3pve.com%2F" target="_blank">繁体中文</a> | 
-					<a href="http://translate.google.com/translate?hl=zh-CN&sl=zh-CN&tl=en&u=http%3A%2F%2Fwww.jx3pve.com%2F" target="_blank">English</a> | 
-					<a href="http://translate.google.com/translate?hl=zh-CN&sl=zh-CN&tl=ko&u=http%3A%2F%2Fwww.jx3pve.com%2F" target="_blank">한국의</a> | 
-					<a href="http://translate.google.com/translate?hl=zh-CN&sl=zh-CN&tl=vi&u=http%3A%2F%2Fwww.jx3pve.com%2F" target="_blank">Việt</a>
-				</p>		
 			</div>
-			<!-- 右侧 -->
-			<div class="copyright">
-				<div class="app">关注微信号<span class="bbtips">剑网3PVE</span>获得第一手剑三资讯</div>
-				<div class="nav">
-					<!--{if $_G['setting']['site_qq']}--><a href="http://wpa.qq.com/msgrd?V=3&Uin=$_G['setting']['site_qq']&Site=$_G['setting']['bbname']&Menu=yes&from=discuz" target="_blank" title="QQ"><img src="{IMGDIR}/site_qq.jpg" alt="QQ" /></a><span class="pipe">|</span><!--{/if}-->
 
-					<!--{loop $_G['setting']['footernavs'] $nav}-->
-					<!--{if $nav['available'] && ($nav['type'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1)) ||
-							!$nav['type'] && ($nav['id'] == 'stat' && $_G['group']['allowstatdata'] || $nav['id'] == 'report' && $_G['uid'] || $nav['id'] == 'archiver' || $nav['id'] == 'mobile' || $nav['id'] == 'darkroom'))}-->
-							$nav[code]<span class="pipe"> ╱</span>
-					<!--{/if}-->
-					<!--{/loop}-->
-					
-					<strong><a href="$_G['setting']['siteurl']" target="_blank">$_G['setting']['sitename']</a></strong>
-
-					<!--{if $_G['setting']['icp']}-->
-					( <a href="http://www.miitbeian.gov.cn/" target="_blank">$_G['setting']['icp']</a> )
-					<!--{/if}-->
-
-					<!--{hook/global_footerlink}-->
-
-					<!--{if $_G['setting']['statcode']}-->$_G['setting']['statcode']<!--{/if}-->
-
-					<p class="xs0 none">
-						{lang time_now}
-						<span id="debuginfo">
-						<!--{if debuginfo()}-->, Processed in $_G[debuginfo][time] second(s), $_G[debuginfo][queries] queries
-							<!--{if $_G['gzipcompress']}-->, Gzip On<!--{/if}--><!--{if C::memory()->type}-->, <!--{echo ucwords(C::memory()->type)}--> On<!--{/if}-->.
-						<!--{/if}-->
-						</span>
-					</p>
-
-				</div>
+			<div class="c-footer-subnav">
+				<!--{loop $_G['setting']['footernavs'] $nav}-->
+				<!--{if $nav['available'] && ($nav['type'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1)) ||
+						!$nav['type'] && ($nav['id'] == 'stat' && $_G['group']['allowstatdata'] || $nav['id'] == 'report' && $_G['uid'] || $nav['id'] == 'archiver' || $nav['id'] == 'mobile' || $nav['id'] == 'darkroom'))}-->
+						$nav[code]
+				<!--{/if}-->
+				<!--{/loop}-->
 			</div>
-			<!--{eval updatesession();}-->
-			<!--{if $_G['uid'] && $_G['group']['allowinvisible']}-->
-				<script type="text/javascript">
-				var invisiblestatus = '<!--{if $_G['session']['invisible']}-->{lang login_invisible_mode}<!--{else}-->{lang login_normal_mode}<!--{/if}-->';
-				var loginstatusobj = $('loginstatusid');
-				if(loginstatusobj != undefined && loginstatusobj != null) loginstatusobj.innerHTML = invisiblestatus;
-				</script>
-			<!--{/if}-->
+
+			<div class="c-footer-nav">
+				<a href="./sitemap">网站地图</a>
+				<a href="#111">更新日志</a>
+				<a href="#">版权声明</a>
+				<a href="#">免责声明</a>
+				<a href="#">友情链接</a>
+				<a href="#">加入我们</a>
+				<a href="#">合作联系</a>
+			</div>
+
+			<div class="c-footer-official">
+				官方微信公众号：<span class="wx">剑网3PVE<i class="wxcode_small"></i><i class="wxcode"></i></span> |
+				官方微博：<a href="http://weibo.com/jx3pve" target="_blank">@剑网3精品资料站</a>
+			</div>
+
+			<div class="c-footer-gov">
+				<a href="http://jx3.xoyo.com/" target="_blank">剑侠情缘网络版叁</a>  | 
+				<!--{if $_G['setting']['icp']}-->
+					<a href="http://www.miitbeian.gov.cn/" target="_blank">$_G['setting']['icp']</a>
+				<!--{/if}-->
+			</div>
+
+			<div class="c-footer-copyright">
+				&copy; 2012-2016 <a href="$_G['setting']['siteurl']" target="_blank">$_G['setting']['sitename']</a> All rights reserved.
+			</div>
+
+			<!--{hook/global_footerlink}-->
+
+			<p class="c-footer-stat none"><!--{if $_G['setting']['statcode']}-->$_G['setting']['statcode']<!--{/if}--></p>
+
+			<!-- [dz] debuginfo -->
+			<p class="c-footer-debuginfo">
+				{lang time_now}
+				<span id="debuginfo">
+				<!--{if debuginfo()}-->, Processed in $_G[debuginfo][time] second(s), $_G[debuginfo][queries] queries
+					<!--{if $_G['gzipcompress']}-->, Gzip On<!--{/if}--><!--{if C::memory()->type}-->, <!--{echo ucwords(C::memory()->type)}--> On<!--{/if}-->.
+				<!--{/if}-->
+				</span>
+			</p>
 		</div>
 	</div>
 
@@ -132,94 +133,105 @@
 		<div class="c-showbox-content" id="c-showbox-content"></div>
 	</div>
 
-<!--{/if}-->
-
-	<!--{if !$_G['setting']['bbclosed'] && !$_G['member']['freeze'] && !$_G['member']['groupexpiry']}-->
-		<!--{if $_G[uid] && !isset($_G['cookie']['checkpm'])}-->
-		<script type="text/javascript" src="home.php?mod=spacecp&ac=pm&op=checknewpm&rand=$_G[timestamp]"></script>
-		<!--{/if}-->
-
-		<!--{if $_G[uid] && helper_access::check_module('follow') && !isset($_G['cookie']['checkfollow'])}-->
-		<script type="text/javascript" src="home.php?mod=spacecp&ac=follow&op=checkfeed&rand=$_G[timestamp]"></script>
-		<!--{/if}-->
-
-		<!--{if !isset($_G['cookie']['sendmail'])}-->
-		<script type="text/javascript" src="home.php?mod=misc&ac=sendmail&rand=$_G[timestamp]"></script>
-		<!--{/if}-->
-
-		<!--{if $_G[uid] && $_G['member']['allowadmincp'] == 1 && !isset($_G['cookie']['checkpatch'])}-->
-		<script type="text/javascript" src="misc.php?mod=patch&action=checkpatch&rand=$_G[timestamp]"></script>
-		<!--{/if}-->
-	<!--{/if}-->
-
-	<!--{if $_GET['diy'] == 'yes'}-->
-		<!--{if check_diy_perm($topic) && (empty($do) || $do != 'index')}-->
-			<script type="text/javascript" src="{$_G[setting][jspath]}common_diy.js?{VERHASH}"></script>
-			<script type="text/javascript" src="{$_G[setting][jspath]}portal_diy{if !check_diy_perm($topic, 'layout')}_data{/if}.js?{VERHASH}"></script>
-		<!--{/if}-->
-		<!--{if $space['self'] && CURMODULE == 'space' && $do == 'index'}-->
-			<script type="text/javascript" src="{$_G[setting][jspath]}common_diy.js?{VERHASH}"></script>
-			<script type="text/javascript" src="{$_G[setting][jspath]}space_diy.js?{VERHASH}"></script>
-		<!--{/if}-->
-	<!--{/if}-->
-
-	<!--{if $_G['uid'] && $_G['member']['allowadmincp'] == 1 && $_G['setting']['showpatchnotice'] == 1}-->
-		<script type="text/javascript">patchNotice();</script>
-	<!--{/if}-->
-	
-	<!--{if $_G['member']['newprompt'] && (empty($_G['cookie']['promptstate_'.$_G[uid]]) || $_G['cookie']['promptstate_'.$_G[uid]] != $_G['member']['newprompt']) && $_GET['do'] != 'notice'}-->
-		<script type="text/javascript">noticeTitle();</script>
-	<!--{/if}-->
-
-	<!--{if ($_G[member][newpm] || $_G[member][newprompt]) && empty($_G['cookie']['ignore_notice'])}-->
-		<script type="text/javascript" src="{$_G[setting][jspath]}html5notification.js?{VERHASH}"></script>
+	<!-- [dz] user onlinestatus -->
+	<!--{eval updatesession();}-->
+	<!--{if $_G['uid'] && $_G['group']['allowinvisible']}-->
 		<script type="text/javascript">
-		var h5n = new Html5notification();
-		if(h5n.issupport()) {
-			<!--{if $_G[member][newpm] && $_GET[do] != 'pm'}-->
-			h5n.shownotification('pm', '$_G[siteurl]home.php?mod=space&do=pm', '<!--{avatar($_G[uid],small,true)}-->', '{lang newpm_subject}', '{lang newpm_notice_info}');
-			<!--{/if}-->
-			<!--{if $_G[member][newprompt] && $_GET[do] != 'notice'}-->
-					<!--{loop $_G['member']['category_num'] $key $val}-->
-						<!--{eval $noticetitle = lang('template', 'notice_'.$key);}-->
-						h5n.shownotification('notice_$key', '$_G[siteurl]home.php?mod=space&do=notice&view=$key', '<!--{avatar($_G[uid],small,true)}-->', '$noticetitle ($val)', '{lang newnotice_notice_info}');
-					<!--{/loop}-->
-			<!--{/if}-->
-		}
+		var invisiblestatus = '<!--{if $_G['session']['invisible']}-->{lang login_invisible_mode}<!--{else}-->{lang login_normal_mode}<!--{/if}-->';
+		var loginstatusobj = $('loginstatusid');
+		if(loginstatusobj != undefined && loginstatusobj != null) loginstatusobj.innerHTML = invisiblestatus;
 		</script>
 	<!--{/if}-->
 
-	<!--{eval userappprompt();}-->
-		<!--{if $_G['basescript'] != 'userapp'}-->
-			<div id="scrolltop" class="none">
-				<!--{if $_G[fid] && $_G['mod'] == 'viewthread'}-->
-				<span><a href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&extra=$_GET[extra]&page=$page{if $_GET[from]}&from=$_GET[from]{/if}" onclick="showWindow('reply', this.href)" class="replyfast" title="{lang fastreply}"><b>{lang fastreply}</b></a></span>
-				<!--{/if}-->
-				<span hidefocus="true"><a title="{lang scrolltop}" onclick="window.scrollTo('0','0')" class="scrolltopa" ><b>{lang scrolltop}</b></a></span>
-				<!--{if $_G[fid]}-->
-				<span>
-					<!--{if $_G['mod'] == 'viewthread'}-->
-					<a href="forum.php?mod=forumdisplay&fid=$_G[fid]" hidefocus="true" class="returnlist" title="{lang return_list}"><b>{lang return_list}</b></a>
-					<!--{else}-->
-					<a href="forum.php" hidefocus="true" class="returnboard" title="{lang return_forum}"><b>{lang return_forum}</b></a>
-					<!--{/if}-->
-				</span>
-				<!--{/if}-->
-			</div>
+<!--{/if}-->
 
-			<script type="text/javascript">_attachEvent(window, 'scroll', function () { showTopLink(); });checkBlind();</script>
-		<!--{/if}-->
+<!--{if !$_G['setting']['bbclosed'] && !$_G['member']['freeze'] && !$_G['member']['groupexpiry']}-->
+	<!--{if $_G[uid] && !isset($_G['cookie']['checkpm'])}-->
+	<script type="text/javascript" src="home.php?mod=spacecp&ac=pm&op=checknewpm&rand=$_G[timestamp]"></script>
+	<!--{/if}-->
 
-		<!--{if isset($_G['makehtml'])}-->
-			<script type="text/javascript" src="{$_G[setting][jspath]}html2dynamic.js?{VERHASH}"></script>
-			<script type="text/javascript">
-				var html_lostmodify = {TIMESTAMP};
-				htmlGetUserStatus();
-				<!--{if isset($_G['htmlcheckupdate'])}-->
-				htmlCheckUpdate();
-				<!--{/if}-->
-			</script>
+	<!--{if $_G[uid] && helper_access::check_module('follow') && !isset($_G['cookie']['checkfollow'])}-->
+	<script type="text/javascript" src="home.php?mod=spacecp&ac=follow&op=checkfeed&rand=$_G[timestamp]"></script>
+	<!--{/if}-->
+
+	<!--{if !isset($_G['cookie']['sendmail'])}-->
+	<script type="text/javascript" src="home.php?mod=misc&ac=sendmail&rand=$_G[timestamp]"></script>
+	<!--{/if}-->
+
+	<!--{if $_G[uid] && $_G['member']['allowadmincp'] == 1 && !isset($_G['cookie']['checkpatch'])}-->
+	<script type="text/javascript" src="misc.php?mod=patch&action=checkpatch&rand=$_G[timestamp]"></script>
+	<!--{/if}-->
+<!--{/if}-->
+
+<!--{if $_GET['diy'] == 'yes'}-->
+	<!--{if check_diy_perm($topic) && (empty($do) || $do != 'index')}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}common_diy.js?{VERHASH}"></script>
+		<script type="text/javascript" src="{$_G[setting][jspath]}portal_diy{if !check_diy_perm($topic, 'layout')}_data{/if}.js?{VERHASH}"></script>
+	<!--{/if}-->
+	<!--{if $space['self'] && CURMODULE == 'space' && $do == 'index'}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}common_diy.js?{VERHASH}"></script>
+		<script type="text/javascript" src="{$_G[setting][jspath]}space_diy.js?{VERHASH}"></script>
+	<!--{/if}-->
+<!--{/if}-->
+
+<!--{if $_G['uid'] && $_G['member']['allowadmincp'] == 1 && $_G['setting']['showpatchnotice'] == 1}-->
+	<script type="text/javascript">patchNotice();</script>
+<!--{/if}-->
+	
+<!--{if $_G['member']['newprompt'] && (empty($_G['cookie']['promptstate_'.$_G[uid]]) || $_G['cookie']['promptstate_'.$_G[uid]] != $_G['member']['newprompt']) && $_GET['do'] != 'notice'}-->
+	<script type="text/javascript">noticeTitle();</script>
+<!--{/if}-->
+
+<!--{if ($_G[member][newpm] || $_G[member][newprompt]) && empty($_G['cookie']['ignore_notice'])}-->
+	<script type="text/javascript" src="{$_G[setting][jspath]}html5notification.js?{VERHASH}"></script>
+	<script type="text/javascript">
+	var h5n = new Html5notification();
+	if(h5n.issupport()) {
+		<!--{if $_G[member][newpm] && $_GET[do] != 'pm'}-->
+		h5n.shownotification('pm', '$_G[siteurl]home.php?mod=space&do=pm', '<!--{avatar($_G[uid],small,true)}-->', '{lang newpm_subject}', '{lang newpm_notice_info}');
 		<!--{/if}-->
-	<!--{eval output();}-->
+		<!--{if $_G[member][newprompt] && $_GET[do] != 'notice'}-->
+				<!--{loop $_G['member']['category_num'] $key $val}-->
+					<!--{eval $noticetitle = lang('template', 'notice_'.$key);}-->
+					h5n.shownotification('notice_$key', '$_G[siteurl]home.php?mod=space&do=notice&view=$key', '<!--{avatar($_G[uid],small,true)}-->', '$noticetitle ($val)', '{lang newnotice_notice_info}');
+				<!--{/loop}-->
+		<!--{/if}-->
+	}
+	</script>
+<!--{/if}-->
+
+<!--{eval userappprompt();}-->
+	<!--{if $_G['basescript'] != 'userapp'}-->
+		<div id="scrolltop" class="none">
+			<!--{if $_G[fid] && $_G['mod'] == 'viewthread'}-->
+			<span><a href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&extra=$_GET[extra]&page=$page{if $_GET[from]}&from=$_GET[from]{/if}" onclick="showWindow('reply', this.href)" class="replyfast" title="{lang fastreply}"><b>{lang fastreply}</b></a></span>
+			<!--{/if}-->
+			<span hidefocus="true"><a title="{lang scrolltop}" onclick="window.scrollTo('0','0')" class="scrolltopa" ><b>{lang scrolltop}</b></a></span>
+			<!--{if $_G[fid]}-->
+			<span>
+				<!--{if $_G['mod'] == 'viewthread'}-->
+				<a href="forum.php?mod=forumdisplay&fid=$_G[fid]" hidefocus="true" class="returnlist" title="{lang return_list}"><b>{lang return_list}</b></a>
+				<!--{else}-->
+				<a href="forum.php" hidefocus="true" class="returnboard" title="{lang return_forum}"><b>{lang return_forum}</b></a>
+				<!--{/if}-->
+			</span>
+			<!--{/if}-->
+		</div>
+
+		<script type="text/javascript">_attachEvent(window, 'scroll', function () { showTopLink(); });checkBlind();</script>
+	<!--{/if}-->
+
+	<!--{if isset($_G['makehtml'])}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}html2dynamic.js?{VERHASH}"></script>
+		<script type="text/javascript">
+			var html_lostmodify = {TIMESTAMP};
+			htmlGetUserStatus();
+			<!--{if isset($_G['htmlcheckupdate'])}-->
+			htmlCheckUpdate();
+			<!--{/if}-->
+		</script>
+	<!--{/if}-->
+<!--{eval output();}-->
+
 </body>
 </html>

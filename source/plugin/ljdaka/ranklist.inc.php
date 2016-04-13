@@ -9,6 +9,7 @@
 if(!defined('IN_DISCUZ')) {
 	exit('Access Denied');
 }
+include_once DISCUZ_ROOT.'./source/plugin/ljdaka/shiqu.inc.php';
 $uid=$_G['uid'];
 $config = $_G['cache']['plugin']['ljdaka'];
 $gg=$config['gg'];

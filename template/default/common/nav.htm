@@ -1,21 +1,19 @@
-<div class="c-nav">
+<div class="c-header-nav">
 	<div class="wp">
-		<h1 class="logo" title="JX3PVE.COM - 首页" href="{if $_G['setting']['domain']['app']['default']}http://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']"><a href="./">JX3PVE.COM</a></h1>
-
-		<ul class="nav-list" id="c-header-nav">
-			<li class="u-index"><a href="./">首页<span>Index</span></a></li>
-			<li class="u-macro"><a href="./macro">宏库<span>Macro</span></a></li>
-			<li class="u-tool"><a href="./tool">工具<span>Tool</span></a></li>
-			<li class="u-role"><a href="./role">职业<span>Role</span></a></li>
-			<li class="u-fam"><a href="./fam">副本<span>Fam</span></a></li>
-			<li class="u-raid"><a href="./raid">团队<span>Raid</span></a></li>
-			<li class="u-face"><a href="./face">捏脸<span>Face</span></a></li>
-			<li class="u-biz"><a href="./biz">交易<span>Biz</span></a></li>
-			<!-- <li class="u-qiyu"><a href="./qiyu">奇遇<span>Qiyu</span></a></li>
-			<li class="u-book"><a href="./book">茶馆<span>Book</span></a></li>
-			<li class="u-pet"><a href="./pet">宠物<span>Pet</span></a></li> -->
-			<li class="u-bbs"><a class="new" href="./bbs">综合<span>Forum</span></a></li>
-			<!-- <li class="u-wiki"><a class="disabled" href="./wiki" title="即将上线">百科<span>Wiki</span></a></li> -->
+		<ul class="c-header-nav-list" id="c-header-nav">
+			<li class="{if $_G[fid]=='294'}on{/if}"><a href="http://www.jx3pve.com/macro">宏库<span>Macro</span></a></li>
+			<li class="{if $_G[fid]=='321'}on{/if}"><a href="http://www.jx3pve.com/tool">工具<span>Tool</span></a></li>
+			<li class="{if $_G[fid]=='384'}on{/if}"><a href="http://www.jx3pve.com/role">职业<span>Role</span></a></li>
+			<li class="{if $_G[fid]=='369'}on{/if}"><a href="http://www.jx3pve.com/fam">副本<span>Fam</span></a></li>
+			<li class="{if $_G[fid]=='67'}on{/if}"><a href="http://www.jx3pve.com/raid">团队<span>Raid</span></a></li>
+			<li class="{if $_G[fid]=='92'}on{/if}"><a href="http://www.jx3pve.com/face">捏脸<span>Face</span></a></li>
+			<li class="{if $_G[fid]=='394'}on{/if}"><a href="http://www.jx3pve.com/biz">交易<span>Biz</span></a></li>
+			<li class="{if $_G[fid]=='283'}on{/if}"><a href="http://www.jx3pve.com/pet">宠物<span>Pet</span></a></li>
+			<li class=""><a href="http://www.jx3pve.com/video">视频<span>Video</span></a></li>
+			<li class="{if $_G[fid]=='390'}on{/if}"><a href="http://www.jx3pve.com/book">回忆录<span>Story</span></a></li>
+			<li class="{if $_G[fid]=='2'}on{/if}"><a href="http://www.jx3pve.com/bbs">综合<span>Forum</span></a></li>
+			<!-- 新版信息（江湖）包含 买卖、情缘、师徒、团队 -->
+			<!-- 百科包含宠物、奇遇、视频，陆续加入职业与副本 -->
 		</ul>
 	</div>
 </div>

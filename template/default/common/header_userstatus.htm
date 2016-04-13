@@ -14,6 +14,7 @@
 		</div>
 		<div class="m-extend" id="c-header-user-login-extend">
 			<ul>
+				<li><!--{hook/global_usernav_extra2}--></li>
 				<li><a href="./home.php"><i class="os"></i>个人中心</a></li>
 				<li><a href="./home.php?mod=space&do=pm"><i class="msg"></i>消息 (<em id="c-header-msgcount">$_G[member][newpm]</em>)</a></li>
 				<li><a href="./home.php?mod=spacecp&ac=profile&op=password"><i class="setting"></i>设置</a></li>
@@ -26,10 +27,9 @@
 				<li><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}"><i class="exit"></i>{lang logout}</a></li>
 			</ul>
 			<div class="none">
-				<!--{hook/global_usernav_extra1}-->
-				<!--{hook/global_usernav_extra4}-->
-				<!--{hook/global_usernav_extra2}-->
-				<!--{hook/global_usernav_extra3}-->
+				<li><!--{hook/global_usernav_extra1}--></li>
+				<li><!--{hook/global_usernav_extra4}--></li>
+				<li><!--{hook/global_usernav_extra3}--></li>
 			</div>
 		</div>
 	</div>
@@ -64,15 +64,9 @@
 	</div>
 <!--{/if}-->
 
-<script src="http://js.jx3pve.com/js/mod/header.js"></script>
-
 <!--{if $_G['uid']}-->
 <p id="c-header-msgdetails" class="none">
 	<span>$_G[member][newpm]</span>
-	<!--{if $_G[member][newprompt]}-->
-		<!--{loop $_G['member']['category_num'] $key $val}-->
-			<span>$val</span>
-		<!--{/loop}-->
-	<!--{/if}-->
+	<span>$_G[member][newprompt]</span>
 </p>
 <!--{/if}-->

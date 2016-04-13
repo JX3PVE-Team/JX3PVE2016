@@ -9,7 +9,7 @@
 if(!defined('IN_DISCUZ')) {
 	exit('Access Denied');
 }
-
+include_once DISCUZ_ROOT.'./source/plugin/ljdaka/shiqu.inc.php';
 class table_plugin_daka extends discuz_table
 {
 	public function __construct() {
@@ -22,10 +22,13 @@ class table_plugin_daka extends discuz_table
 		return DB :: result_first("show tables like '" . DB :: table('plugin_daka') . "'");
 	}
 	public function fetch_by_uid($uid){
-		return DB :: result_first("select count(*) from " . DB :: table($this->_table) . " where uid=$uid and timestamp>='".strtotime(date('Y-m-d 00:00:00'))."'");
+		$todaytimestamp = strtotime(gmdate('Y-m-d 00:00:00',TIMESTAMP+3600*8));
+		return DB :: result_first('select count(*) from %t where uid=%d and timestamp>=%d',array($this->_table,$uid,$todaytimestamp));
 	}
-	public function fetch_by_uid_yesterday($uid,$mytime){
-		return DB :: result_first("select alldays from " . DB :: table($this->_table) . " where uid=$uid and timestamp >='".(strtotime(date('Y-m-d 00:00:00'))-86400)."' and timestamp <='".strtotime(date('Y-m-d 00:00:00'))."'");
+	public function fetch_by_uid_yesterday($uid){
+		$todaytimestamp = strtotime(gmdate('Y-m-d 00:00:00',TIMESTAMP+3600*8));
+		$yesterdaytimestamp  = $todaytimestamp-86400;
+		return DB :: result_first('select alldays from %t where uid=%d and timestamp >=%d and timestamp <=%d',array($this->_table,$uid,$yesterdaytimestamp,$todaytimestamp));
 	}
 }
 
