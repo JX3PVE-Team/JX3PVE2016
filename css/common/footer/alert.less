@@ -1,0 +1,37 @@
+.c-alert-tipsskin{
+	background-color:#FBFB70;
+	color:#E00A0A;
+
+	a{
+		color:@blue-link;
+		&:hover{
+			text-decoration:underline;
+		}
+	}
+}
+
+//IE 6 & 7警告
+.c-alert-ie{
+	.none;
+	.pf;.lb(0,0);.z(21);
+	.x;.full(x);
+	.fz(12px,20px);
+	border-top:1px solid #F97130;
+	&:extend(.c-alert-tipsskin);
+}
+
+.ie6,.ie7{
+	.c-alert-ie{.db;}
+}
+
+//服务器维护紧急通告
+.c-alert-warning{
+	.none;
+	.pf;.lt(0,0);.z(21);
+	.x;.full(x);
+	border-bottom:1px solid #F97130;
+	&:extend(.c-alert-tipsskin);
+}
+.alertHTML{
+	body,.c-header{margin-top:20px;}
+}

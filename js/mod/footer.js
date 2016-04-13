@@ -15,5 +15,12 @@ H.ready(['jquery'], function(){
             $fwin.hide()
         })
 
+        //紧急公告
+        var warning = $.trim($('#c-alert-warning').text().length)
+        if (warning > 0) {
+            $('#c-alert-warning').show()
+            $('html').addClass('alertHTML');
+        }
+
     })
 })

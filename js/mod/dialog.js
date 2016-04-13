@@ -37,21 +37,5 @@ H.ready(['jquery'], function(){
 			hideDialog()
 		})
 		
-
-		//警告
-		//---------------------------------
-
-		//1.公告警告
-		var dialog_ac_important = $('#w-dialog-important').length > 0 ? $('#w-dialog-important').html().length : 0
-		if (dialog_ac_important > 2) {
-			loadDialog('string',dialog_ac_important)
-		}
-
-		//2.IE67警告
-		var dialog_ac_ie67 = '您当前的浏览器版本过低，可能导致网站部分功能或界面异常，建议使用较高版本浏览器。建议使用Chrome标准浏览器，喜欢使用360的朋友推荐使用360极速浏览器。'
-		if ($('html').hasClass('ie6') || $('html').hasClass('ie7')){
-			loadDialog('string',dialog_ac_ie67)
-		}
-
     })
 })
