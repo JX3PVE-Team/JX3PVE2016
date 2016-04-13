@@ -1,0 +1,39 @@
+@import url('../public/base.less');		//函数
+@import url('../public/path.less');		//路径
+@import url('../public/color.less');	//配色
+
+.sitemap-container{
+	padding:20px;
+}
+
+.sitemap-title{
+	.fz(20px,2);
+	border-bottom:1px dotted #ddd;
+	margin-bottom:20px;
+}
+
+.sitemap-block{
+	margin-bottom:20px;
+	.clearfix;
+
+	.color(#222,@blue-link,@blue-link);
+
+	h2{
+		.fl;
+		.bold;margin-right:20px;
+	}
+
+	ul{
+		.fl;
+	}
+
+	li{
+		.fl;
+		margin-right:20px;
+		margin-bottom:10px;
+	}
+
+	a:hover{
+		text-decoration:underline;
+	}
+}
