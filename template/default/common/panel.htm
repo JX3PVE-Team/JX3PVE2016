@@ -1,0 +1,73 @@
+<body id="nv_{$_G[basescript]}" class="f-$_G[fid] body-$_G[fid] pg_{CURMODULE}{if $_G['basescript'] === 'portal' && CURMODULE === 'list' && !empty($cat)} {$cat['bodycss']}{/if}" onkeydown="if(event.keyCode==27) return false;">
+	
+	<div id="append_parent"></div><div id="ajaxwaitid"></div>
+	<!--{if $_GET['diy'] == 'yes' && check_diy_perm($topic)}-->
+		<!--{template common/header_diy}-->
+	<!--{/if}-->
+	<!--{if check_diy_perm($topic)}-->
+		<!--{template common/header_diynav}-->
+	<!--{/if}-->
+	<!--{if CURMODULE == 'topic' && $topic && empty($topic['useheader']) && check_diy_perm($topic)}-->
+		$diynav
+	<!--{/if}-->
+
+	<!--{if empty($topic) || $topic['useheader']}-->
+		<!--{if $_G['setting']['mobile']['allowmobile'] && (!$_G['setting']['cacheindexlife'] && !$_G['setting']['cachethreadon'] || $_G['uid']) && ($_GET['diy'] != 'yes' || !$_GET['inajax']) && ($_G['mobile'] != '' && $_G['cookie']['mobile'] == '' && $_GET['mobile'] != 'no')}-->
+			<div class="xi1 bm bm_c none">
+			    {lang your_mobile_browser}<a href="{$_G['siteurl']}forum.php?mobile=yes">{lang go_to_mobile}</a> <span class="xg1">|</span> <a href="$_G['setting']['mobile']['nomobileurl']">{lang to_be_continue}</a>
+			</div>
+		<!--{/if}-->
+		<!--{if $_G['setting']['shortcut'] && $_G['member'][credits] >= $_G['setting']['shortcut']}-->
+			<div id="shortcut">
+				<span><a href="javascript:;" id="shortcutcloseid" title="{lang close}">{lang close}</a></span>
+				{lang shortcut_notice}
+				<a href="javascript:;" id="shortcuttip">{lang shortcut_add}</a>
+			</div>
+			<script type="text/javascript">setTimeout(setShortcut, 2000);</script>
+		<!--{/if}-->
+		
+		<!--{hook/global_cpnav_top}-->
+		<!--{ad/headerbanner/wp a_h}-->
+
+		<!-- jx3pve:c-header -->
+		<div class="c-header">
+			<div class="wp">
+				<a class="c-header-logo" href="http://www.jx3pve.com">
+					JX3PVE
+				</a>
+				<div class="c-header-search">
+					<div id="bdcs">
+						<div class="bdcs-container">
+							<div class="bdcs-main bdcs-clearfix" id="bdcs-search-nofocus"> 
+								<form action="http://search.jx3pve.com/cse/search" method="get" target="_blank" class="bdcs-search-form" id="bdcs-search-form"> 
+									<input type="hidden" name="s" value="16227720870024914123" id="bdcs-search-form-s"> 
+									<input type="hidden" name="entry" value="1" id="bdcs-search-form-entry">               
+									<input type="text" autocomplete="off" name="q"  class="bdcs-search-form-input c-header-search-input" id="bdcs-search-form-input-notspan" placeholder="{block/1791}"> 
+									<span class="c-header-search-buttonbg"><i></i></span>             
+									<input type="submit" style="-webkit-appearance: none;" class="bdcs-search-form-submit c-header-search-button" id="bdcs-search-form-submit-notspan" value="">             
+								</form>              
+							</div>
+						</div> 
+					</div>
+				</div>
+				<ul class="c-header-menu">
+					<!--{loop $_G['setting']['topnavs'][0] $nav}-->
+						<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}--><li>$nav[code]</li><!--{/if}-->
+					<!--{/loop}-->
+				</ul>
+				<div class="c-header-user">
+					<!--{template common/header_userstatus}-->
+				</div>
+				<a class="c-header-ask" href="http://www.jx3pve.com/forum.php?mod=post&action=newthread&fid=2">提问</a>
+			</div>
+		</div>
+
+		<script src="http://test.jx3pve.com/js/mod/header.js"></script>
+
+	<!--{hook/global_header}-->
+	<!--{/if}-->
+
+<!-- jx3pve:content -->
+<div class="jx3pve-container box">
+
+	<!--{template common/nav}-->

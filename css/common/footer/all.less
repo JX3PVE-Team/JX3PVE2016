@@ -1,0 +1,66 @@
+@c-footer-imgurl:"@{url}footer/";
+
+//.pve-container{background-color:#fff !important;}
+.index-footer{.none;}
+
+.c-footer{
+	font-family:"Trebuchet MS",'Helvetica Neue',Helvetica,Arial,sans-serif;
+	.fz(12px,2.2);
+	padding:20px 0;
+	border-top:1px solid #eee;
+	background-color:#fefefe;
+	.color(#222,@blue-link,@blue-link);
+	a:hover{text-decoration:underline;}
+}
+
+.c-footer-lang{
+	.clearfix;
+	.lang-til{
+		.fl;margin-right:10px;
+		text-transform:uppercase;
+	}
+	.lang-img{
+		.fl;margin-top:3px;
+		background:url('@{c-footer-imgurl}lang.png') no-repeat;height:16px;
+		a{display:block;.fl;width:16px;height:16px;margin-right:12px;}
+	}
+}
+
+.c-footer-subnav{
+	a{margin-right:10px;}
+}
+
+.c-footer-nav{
+	a{margin-right:10px;}
+}
+
+.c-footer-official{
+	.wx{
+		.pr;.pointer;
+		&:hover{
+			.wxcode{.db;}
+		}
+	}
+	.wxcode_small{
+		.dbi;.y;.size(16px);margin-left:2px;
+		background:url('@{url}footer/scan.png') no-repeat 0 0;
+	}
+	.wxcode{
+		.db;.size(172px);
+		background:url('@{url}header/wx_172.jpg') no-repeat 0 0;
+		.none;
+		.pa;.lb(0,24px);
+	}
+}
+
+.c-footer-gov{
+
+}
+
+.c-footer-copyright{
+
+}
+
+.c-footer-debuginfo{
+
+}

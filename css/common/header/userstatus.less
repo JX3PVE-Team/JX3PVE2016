@@ -1,0 +1,133 @@
+.c-header-user{
+	.fr;
+	margin-left:10px;
+}
+
+.c-header-user-login{
+	.fr;.w(120px);
+    /*border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 1px 0 rgba(255,255,255,.1);*/
+    background-color: transparent;
+    .pr;
+
+    .color(#fff,#fff,#fff);
+    text-decoration: none;
+    border-top: 0;
+    background: transparent;
+    box-shadow: none;
+    text-shadow: 0 1px 1px rgba(0,0,0,.12);
+
+    .m-default{
+    	a{.db;padding:0 15px;}
+    	&.on{
+    		height:@c-header-height + 2px !important;
+		    background: #075fb6;
+		    background: -webkit-linear-gradient(top,#055fb8,#095fb3);
+		    background: linear-gradient(to bottom,#055fb8,#095fb3);
+		    box-shadow: inset 0 0 2px rgba(0,0,0,.12);
+    	}
+        a:hover{text-decoration:none;}
+    }
+    .avatar{
+    	.pr;
+    	.db;.fl;.size(25px);
+    	margin-top:(@c-header-height - 25px) / 2;
+    	img{
+			.db;.full;.r(3px);
+		}
+		i{
+			.pa;.rt(-6px,-8px);
+			.db;.size(14px);.indent;
+			background:url('@{url}header/avt-vip.png') no-repeat 0 -14px;
+			&.vip{
+				background-position:0 0;
+			}
+		}
+		margin-right:10px;
+    }
+    .username{
+    	.db;.nobreak;
+        a:hover{text-decoration:none;}
+    }
+
+    .m-extend{
+    	.pa;
+    	.lt(0,@c-header-height + 1px);
+    	.full(x);
+
+    	ul{}
+    	li{.nobreak;}
+    	a{
+    		.db;
+		    height: 40px;
+		    line-height: 40px;
+		    color: #fff;
+		    text-decoration: none;
+		    border-top: 1px solid #0d5aa5;
+		    box-shadow: 0 1px 1px rgba(0,0,0,.4);
+		    white-space: nowrap;
+		    text-overflow: ellipsis;
+		    overflow: hidden;
+		    cursor: pointer;
+		    background-color: #095fb3;
+		    text-shadow: 0 1px 1px rgba(0,0,0,.12);
+		    font-size: 14px;
+		    &:hover{
+	    	    background-color: #0267cc;
+		    }
+    	}
+    	em{
+    		font-size: 12px;
+    		color: #ff0;
+    	}
+    	i{
+    		.dbi;.y;
+    		background-image:url('@{url}header/icons2.png');
+    		background-repeat:no-repeat;
+    		width: 20px;
+		    height: 20px;
+		    margin: 0 11px 0 15px;
+		    vertical-align: -7px;
+    		&.os{
+			    background-position: -6px -7px;
+    		}
+    		&.msg{
+		        background-position: -6px -34px;
+    		}
+    		&.mag{
+				background-position: -6px -7px;
+    		}
+    		&.setting{
+			    background-position: -6px -60px;
+    		}
+    		&.exit{
+			    background-position: -6px -87px;
+    		}
+            &.sign{
+                background-image:url('@{url}header/qiandao.png');
+                background-position: 0 0;
+            }
+    	}
+    }
+
+    .m-extend{.none;}
+}
+
+.c-header-user-logout{
+	.default_avatar{
+		.dbi;.fl;
+		background:url('@{url}header/default_avatar.png') #eee no-repeat 0 0;
+		.size(25px);.r(3px);
+		margin-right:5px;
+		margin-top:(@c-header-height - 25px) / 2;
+		.none;
+	}
+	.m-default{
+		.color(#628BC5,#fff,#fff);
+        a:hover{text-decoration:underline;}
+	}
+}
+
+//隐藏门户管理&管理中心
+.e-admin-bar{.none;}
+.adminHTML .e-admin-bar{.db;}
