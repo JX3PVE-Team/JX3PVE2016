@@ -1,0 +1,146 @@
+@import url('../public/base.less');		//函数
+@import url('../global/color.less');	//配色
+@import url('../public/path.less');		//路径
+
+.faq-container .wp{
+	.pr;
+}
+
+.m-faq-search{
+	.pa;.rt(0,0);
+	.px{
+		.fz(12px,23px);
+		.h(23px);
+		//padding:2px 4px;
+		.w(180px);
+		margin-top:1px;
+	}
+	.pn{
+		.size(80px,28px);
+		.fz(12px,28px);
+	}
+}
+
+.m-faq-main{
+	border:none;background:none;
+}
+
+.m-faq-content{
+	/*.pr;overflow:visible;
+
+	.bm .pns{.pa;top:-43px;right:0;.z(2);}*/
+
+	h1{
+		background-color:#f2f2f2;border-radius:24px;
+		line-height:24px;font-size:12px;
+		padding:0 10px;
+	}
+
+	.m-faq-cattitle{
+		.bold;
+		border-bottom:1px dotted #ddd;
+		font-size:12px;line-height:24px;
+		a{color:@blue-link;}
+	}
+
+	.m-faq-list{
+		border-bottom:none;margin-bottom:10px;
+		li{line-height:20px;list-style:square;}
+	}
+
+	//折叠的详情
+	.umh{
+		h3{font-size:12px;color:@blue-link;.bold;}
+		&.umn{
+			h3{color:#555;font-weight:normal;}
+		}
+	}
+	//展开的详情
+	.um{
+		//transition:0.3s ease-in;
+		border:1px dotted #ddd;padding:10px;
+		background:#f7f7f7;
+		line-height:24px;
+
+		a{
+			.color(@blue-link,@blue-link);
+			&:hover{
+				text-decoration:underline;
+			}
+		}
+
+		b{
+			.bold;
+		}
+
+		strong{
+			color:#cc0000;
+			.bold;
+		}
+
+		img{
+			max-width:100%;
+			.db;
+			padding:5px;
+			border:1px solid #ddd;
+			background-color:#fff;
+		}
+
+		table{
+			//width:100%;
+		}
+
+		table td{
+			padding:2px 5px;
+			border:1px solid #ddd;
+		}
+
+		code{
+			font-family:Consolas,'微软雅黑';
+			.fz(12px,2);
+			.db;
+			background-color:#fff;
+			border:1px solid #ddd;
+			border-radius:3px;
+			margin:5px 0;
+			padding:5px;
+		}
+
+	}
+
+	.m-faq-help{
+		border-top:1px dashed #999;
+		line-height:24px;.x(right);
+		margin-top:5px;padding-top:5px;
+	}
+}
+
+.m-faq-sidebar{
+	h2{.none;}
+
+	li{
+		color: #777;
+		margin-bottom:5px;
+	}
+	a{
+		.pr;
+		.fz(12px,40px);
+		padding-left:20px;
+		.db;
+	}
+	a:before {
+		content: '';
+		.db;.pa;.lt(0,13px);
+		.size(15px);
+		background:url('@{url}header/icons2.png') no-repeat -215px -4px;
+	}
+	li a:hover,li.a a{
+		&:before{
+			background-position:-215px -24px;
+		}
+		color:@blue-link;
+	}
+	li.a a{
+		.bold;
+	}
+}
