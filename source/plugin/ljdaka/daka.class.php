@@ -2,7 +2,7 @@
 	if(!defined('IN_DISCUZ')) {
 	exit('Access Deined');
 }
-
+include_once DISCUZ_ROOT.'./source/plugin/ljdaka/shiqu.inc.php';
 class plugin_ljdaka {
 	var $uid;
 	var	$config;
@@ -18,7 +18,7 @@ class plugin_ljdaka {
 			$this->weizhi=$this->config['weizhi'];
 			$this->xianshi=$this->config['xianshi'];
 			$this->isqz=$this->config['isqz'];
-			$this->sql="select count(*) from ".DB::table('plugin_daka')." where uid=".$this->uid." and timestamp>='".strtotime(date('Y-m-d 00:00:00'))."'";
+			$this->sql="select count(*) from ".DB::table('plugin_daka')." where uid=".$this->uid." and timestamp>='".strtotime(gmdate('Y-m-d 00:00:00',TIMESTAMP+8*3600))."'";
 			$this->check=DB::result_first($this->sql);
 		}
 	}

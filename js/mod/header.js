@@ -1,6 +1,7 @@
 H.ready(['jquery'], function(){
     jQuery(function($){
 
+        //扩展菜单展开
     	var $login_default = $("#c-header-user-login-default"),
     		$login_extend = $("#c-header-user-login-extend")
 
@@ -12,6 +13,7 @@ H.ready(['jquery'], function(){
             $login_default.removeClass('on')
         })
 
+        //消息通知总数
         var $count = $("#c-header-msgcount")
         var count = 0;
         $("#c-header-msgdetails span").each(function(){

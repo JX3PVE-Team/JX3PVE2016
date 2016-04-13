@@ -12,7 +12,7 @@
 <meta name="author" content="Shadow" />
 <meta name="Description" content="《剑网3》超级宏官网: 剑侠情缘3/剑网三宏下载与分享，最全最新的宏网站，剑网三最新插件原创地，剑网三原创资料库，剑网三风云榜。" />
 <!-- STYLE -->
-<link rel="stylesheet" href="http://css.jx3pve.com/css/yylmacro.css" type="text/css" media="all">
+<link rel="stylesheet" href="http://css.jx3pve.com/css/yylmacro/yylmacro.css" type="text/css" media="all">
 
 <!-- SCRIPT -->
 <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>

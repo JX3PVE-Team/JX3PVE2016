@@ -9,7 +9,7 @@
 if(!defined('IN_DISCUZ')) {
 	exit('Access Denied');
 }
-
+include_once DISCUZ_ROOT.'./source/plugin/ljdaka/shiqu.inc.php';
 class table_plugin_daka_user extends discuz_table
 {
 	public function __construct() {

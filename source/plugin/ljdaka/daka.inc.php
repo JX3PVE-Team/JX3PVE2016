@@ -2,6 +2,7 @@
 if (!defined('IN_DISCUZ')) {
 	exit('Access Denied');
 } 
+include_once DISCUZ_ROOT.'./source/plugin/ljdaka/shiqu.inc.php';
 $action = $_GET['action'];
 if($action == 'qz'&&$_G['uid']){
 	include template('ljdaka:qz');
@@ -25,9 +26,7 @@ if ($action == 'msg') {
 				$jljifen = $config['jljifen'];
 				$zhouqi = $config['zhouqi'];
 				$beishu = $config['beishu'];
-				$mytime = $timestamp-86400;
-				$mytime = date('Y-m-d', $mytime);
-				$alldays = C::t('#ljdaka#plugin_daka')->fetch_by_uid_yesterday($uid,$mytime);
+				$alldays = C::t('#ljdaka#plugin_daka')->fetch_by_uid_yesterday($uid);
 				$countday=intval($alldays+1);
 				if (!$alldays || ($alldays >= $zhouqi&&$zhouqi)) {
 					$alldays = 0;
@@ -46,20 +45,20 @@ if ($action == 'msg') {
 				}
 				
 				$mall .= $creditname;
-				$record = array('uid' => $uid, 'timestamp' => $timestamp, 'jinbi' => $jljifen1, 'alldays' => $myall);
+				$record = array('uid' => $uid, 'timestamp' => TIMESTAMP, 'jinbi' => $jljifen1, 'alldays' => $myall);
 				DB :: insert('plugin_daka', $record);
 				if(!DB::result_first('select * from '.DB::table('plugin_daka_user')." where uid=".$_G['uid'])){
 					DB::insert('plugin_daka_user',array(
 						'uid'=>$_G['uid'],
 						'username'=>$_G['username'],
-						'timestamp'=>$_G['timestamp'],
+						'timestamp'=>TIMESTAMP,
 						'money'=>$money,
 						'allday'=>$countday,
 						'day'=>$myall,
 						'fen'=>$mall,
 					));
 				}else{
-					C::t('#ljdaka#plugin_daka_user')->update_by_uid($uid,$money,$myall,$mall,$_G['timestamp']);
+					C::t('#ljdaka#plugin_daka_user')->update_by_uid($uid,$money,$myall,$mall,TIMESTAMP);
 				}
 			} 
 		}

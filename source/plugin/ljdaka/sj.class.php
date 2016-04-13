@@ -2,6 +2,7 @@
 	if(!defined('IN_DISCUZ')) {
 	exit('Access Deined');
 }
+include_once DISCUZ_ROOT.'./source/plugin/ljdaka/shiqu.inc.php';
 class mobileplugin_ljdaka {
 	var $uid;
 	var	$config;
