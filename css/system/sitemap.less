@@ -3,7 +3,7 @@
 @import url('../global/color.less');	//配色
 
 .sitemap-container{
-	padding:20px;
+	padding:20px 0;
 }
 
 .sitemap-title{
@@ -37,9 +37,22 @@
 	a:hover{
 		text-decoration:underline;
 	}
+
+	li a span{
+		.dbi;
+		color:#999;
+		padding:0 2px;
+		transform:scale(0.8);
+	}
 }
 
-.ua-mobile .screen-m{}
+//平板竖屏
+.ua-mobile .screen-m{
+}
 
-
-.ua-mobile .screen-s{}
+//手机版
+.ua-mobile .screen-s{
+	.sitemap-title{
+		.none;
+	}
+}

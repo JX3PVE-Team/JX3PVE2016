@@ -12,13 +12,17 @@
 
 //中央控制包裹层
 
-//默认
-.wp {
-    width:1180px;
-   .auto(x);
-}
-
-//手机版
+	//默认
+	.wp {
+	    width:1180px;
+	   .auto(x);
+	}
+	//平板竖屏&手机版
+	.ua-mobile .screen-m,.ua-mobile .screen-s{
+		.wp{
+			.w(auto);padding:0 10px;
+		}
+	}
 
 
 
