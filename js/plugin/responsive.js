@@ -15,13 +15,11 @@ H.ready(['jquery'], function(){
             var resetLayout = function() {
                 var width = ~~w.width(),
                     $body = $('body');
-                $body.removeClass('screen-xs screen-s screen-m screen-l screen-xl')
+                $body.removeClass('screen-s screen-m screen-l')
                 var screenSize = {
-                    "screen-xs": [0, 940],
-                    'screen-s': [940, 1180],
-                    "screen-m": [1180, 1400],
-                    "screen-l": [1400, 1580],
-                    "screen-xl": [1580]
+                    'screen-s': [0, 768],
+                    "screen-m": [768, 1024],
+                    "screen-l": [1024]
                 };
                 var bodyClazz = ""
                 for(var clazz in screenSize){
