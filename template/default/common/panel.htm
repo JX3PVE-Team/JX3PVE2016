@@ -50,14 +50,22 @@
 						</div> 
 					</div>
 				</div>
+
 				<ul class="c-header-menu">
 					<!--{loop $_G['setting']['topnavs'][0] $nav}-->
 						<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}--><li>$nav[code]</li><!--{/if}-->
 					<!--{/loop}-->
 				</ul>
+				
 				<div class="c-header-user">
 					<!--{template common/header_userstatus}-->
 				</div>
+
+				<a class="c-header-sign none" href="http://www.jx3pve.com/forum.php?mod=post&action=newthread&fid=2"><i></i>签到</a>
+				<!--{if $_G['uid']}-->
+				<!--{hook/global_usernav_extra2}-->
+				<!--{/if}-->
+
 				<a class="c-header-ask" href="http://www.jx3pve.com/forum.php?mod=post&action=newthread&fid=2">提问</a>
 			</div>
 		</div>
