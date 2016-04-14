@@ -5,16 +5,22 @@
 html,body,.jx3pve-container,.search-container,.iframe-search{
 	.full;
 }
-.jx3pve-container{
-	padding-top:0;
-}
+
 .iframe-search{
 	//height:~"calc(100% - 48px)";
 }
-.c-header-nav,.c-header{
-	.none;
+.ua-responsive{
+ 	.screen-s,.screen-m{
+		.jx3pve-container{
+			padding-top:0;
+		}
+	}
+}
+.ua-responsive .screen-m{
+	.c-footer{.none;}
+	.c-header,.c-header-nav{.none;}
 }
 
-/*.searchbox-container{
-	background-color:#0cf;
+/*.ua-responsive .screen-s{
+	.i-footer{top:0;}
 }*/

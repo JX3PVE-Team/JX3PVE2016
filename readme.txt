@@ -17,7 +17,7 @@ alertHTML		->html 			有紧急公告
 vipHTML			->html 			VIP会员
 adminHTML		->html 			管理员
 mobile/nomobile	->html 			headjs ua判断，真实的UA判断，JS用
-ua-mobile		->html 			responsive ua判断，启用了移动适配头
+ua-responsive	->html 			responsive ua判断，启用了移动适配头
 ie-*/BRS-*		->html 			headjs hack
 #path-page		->html 			headjs path+page 特殊处理（此条为id）
 screen-l/m/s 	->body			responsive screen判断（l:pc m:平板竖屏 s:手机）
