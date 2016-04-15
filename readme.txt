@@ -55,4 +55,8 @@ FAQ				css/system/faq.css 			template/default/common/faq.htm
 推送头条通知	css/system/system.css 		template/yylmacro/portal/portalcp_article.htm
 历史头条列表	css/portal/news.css 		template/yylmacro/portal/list_news.htm
 历史头条单页	css/portal/news.css 		template/yylmacro/portal/views_news.htm
+门户全部评论	css/portal/news.css 		template/yylmacro/portal/comment.htm
 评论模块		css/portal/comment.css 		template/yylmacro/portal/portal_comment.htm
+
+
+副本专题		css/fb/*					template/fam/portal/*

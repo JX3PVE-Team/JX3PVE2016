@@ -1,0 +1,505 @@
+@import url('../public/base.less');		//函数
+@import url('../public/path.less');		//路径
+@import url('../global/color.less');	//配色
+@import url('../public/animation.less');	//动画
+
+@fb-boss-size:80px;
+@fb-logo-w:220px;
+
+@wp:1180px;
+
+.fb-container{
+	background-color:#f7f7f7;
+	padding:20px 0;
+	.clearfix;
+	a:hover{color:#c00;}
+}
+
+.fb-header{
+	margin-bottom:20px;
+	@h:120px;
+	.size(100%,@h);
+	.pr;
+
+	.m-fb-logo{
+		.pa;.lt(0,0);
+		.h(100%);
+		//padding:0 20px;
+		.x;
+		.til{
+			.db;.fl;
+			.fz(52px,@h);
+			.size(240px,100%);
+			white-space:nowrap;
+		}
+		.name{
+			.db;.fl;
+			.fz(24px);
+			em{.db;}
+		}
+	}
+
+	.m-fb-nav{
+		.fr;
+		background-color:#fff;
+		border:1px solid #eee;
+		.r(2px);
+		.h(100px);padding:10px 10px;
+
+		ul{.clearfix;}
+		li{.fl;margin:0 10px;}
+		a{
+			.db;
+			.boss{
+				background-repeat:no-repeat;
+				background-position:0 0;
+				.db;.size(@fb-boss-size);
+				border:2px solid #eee;
+				box-shadow:0 0 2px #ddd;
+				.shark();
+			}
+			&.goback{
+				i{
+					.db;.h(80px);
+				}
+			}
+			&.goback-1{
+				i{
+					border:2px solid #FDC205;
+					.size(160px,80px);
+				}
+				span{color:#222;}
+			}
+			&.goback-2{
+				i{
+					border:2px solid #eee;
+					background:url('@{url}fb/fb.png') no-repeat 0 0;
+					.size(@fb-boss-size);
+				}
+			}
+			span{
+				.db;.x;
+				.fz(13px,2);.bold;
+				transition:0.1s ease-in-out;
+			}
+			&:hover,&.on{
+				.boss,.sc{
+					border-color:#FDC205;
+				}
+				span{
+					color:#c00;
+				}
+				-webkit-filter:saturate(200%);
+			}
+		}
+
+		.bossnav(@n,@i:1) when (@i =< @n) {
+			.boss-@{i} i{
+				background-position:-@fb-boss-size*(@i - 1) 0;
+			}
+			.bossnav(@n,(@i + 1));
+		}
+		.bossnav(20);
+	}
+
+}
+
+.fb-sidebar{
+	.fl;.w(@fb-logo-w);
+	margin-right:20px;
+	background-color:#fff;
+	min-height:200px;
+	.r(4px);
+	padding:0 10px 10px 10px;
+
+	h2{
+		.color(#997d1d);//.x;
+		border-bottom:1px solid #ddd;
+		.fz(13px,3);.bold;
+		letter-spacing:0.5px;
+		margin-bottom:10px;
+		.indent(5px);
+		.pr;
+		//background:url('@{url}fb/h2.png') no-repeat center bottom;
+	}
+}
+
+.m-fb-toplist{
+	margin-bottom:10px;
+	.m-tip{
+		.fz(12px,2);
+		.color(#999,#369,#c00);
+		.x;
+		margin-top:20px;
+	}
+}
+
+.c-toplist{
+	li{}
+	a{
+		.db;
+		.nobreak;
+		.fz(12px,2);
+		span{
+			//color:#ff9;//.bold;
+			color:#666;//.bold;
+			em{
+				.normal;
+				margin-left:5px;
+				font-size:8px !important;
+				color:#999;
+				font-family:'minifont','Microsoft Yahei','微软雅黑',Verdana,Arial,Consolas,'Trebuchet MS';
+			}
+		}
+		.icon{
+			.dbi;.fl;.pr;
+			//background-color:#eee;color:#888;
+			.indent;
+			.size(25px);.r(30px);.y;
+			//margin:0 0 0 0;
+			.x;.fz(12px,20px);
+			transition:0.1s ease-in-out;
+		}
+		&:hover{
+			span{
+				color:#c00;
+				em{
+					color:#666;
+				}
+			}
+		}
+	}
+	.top-1,.top-2,.top-3{
+		.icon{
+			transition:0.1s ease-in-out;
+			color:#997d1d;
+			background:url('@{url}fb/toplist-s.png') no-repeat 0 0;
+			.pr;.clip;
+			.shark{
+				.db;.pa;.lt(-150%,0);.full;
+		        transform: skewx(-25deg);
+		        background-image: -webkit-linear-gradient(0deg,rgba(255,255,255,0),rgba(255,255,255,.5),rgba(255,255,255,0));
+		    }
+		}
+		a:hover{
+			.icon{
+				-webkit-filter:brightness(120%);
+			}
+			.icon .shark{
+		        left: 150%;
+		        transition: .5s;
+		    }
+		}
+	}
+	.top-1{
+		.icon{background-position: 0 0;}
+	}
+	.top-2{
+		.icon{background-position:-26px 0;}
+	}
+	.top-3{
+		.icon{background-position:-52px 0;}
+	}
+
+}
+
+.fb-sidebar{
+	.pub-jiebao{
+		.h(20px);.pa;.rt(0,10px);
+		.db;padding-left:35px;
+		transition:0.1s ease-in-out;
+
+		background:url('@{url}fb/juanzhou-s.png') #fff no-repeat 10px 0;
+		span{
+			.db;letter-spacing:0;
+			.fz(12px,22px);color:#c00;
+		}
+
+		&:hover{
+			background:url('@{url}fb/juanzhou2-s.png') #fff no-repeat 10px 0;
+			span{color:#f00;}
+		}
+		
+	}
+}
+
+.m-fb-share{
+	.bdsharebuttonbox{
+		margin:10px auto;
+		.w(186px);
+	}
+}
+
+.m-fb-author{
+	.pr;
+	.fz(12px,2);
+	background-color:#fff;
+	/*h2{
+		.pa;.lt(10px,-15px);
+		.fz(13px,30px);
+		//background-color:#555;color:#fff;
+		background-color:#fff;color:#997d1d;
+		.r(4px);
+		padding:0 8px;
+		.bold;
+	}*/
+	p{
+		padding:0 8px;
+		span{color:#666;}
+	}
+}
+
+.fb-content{
+	.fl;.w(@wp - @fb-logo-w - 20px - 20px);
+	//background-color:#fff;
+	min-height:200px;
+}
+
+.fb-content{
+	.m-block{
+		.clear;
+		background-color:#fff;
+		.r(4px);
+		margin-bottom:20px;
+
+		&.folder{
+			h2{
+				.r(4px);
+			}
+			h2 i{
+				background-position:0 0;
+			}
+			.m-ct{
+				.none;
+			}
+		}
+	}
+
+	h2{
+		.pr;
+		.fz(13px,3);.bold;
+		padding:0 10px;
+		border-bottom:1px solid #ddd;
+		background-color:#f7f7f7;
+		.r(4px 4px 0 0);
+		span{
+			color:#888;
+			.fz(12px);
+			margin-left:10px;
+			.normal;
+		}
+		i{
+			.pa;.rt(10px,5px);
+			.size(24px);
+			.db;
+			background:url('@{url}fb/arrow.png') no-repeat 0 -24px;
+			.pointer;
+			user-select:none;
+		}
+	}
+
+	.m-ct{
+		padding:10px;
+		.color(#666,@blue-link,#c00);
+		.fz(12px,2);
+		min-height:100px;
+		.clearfix;
+	}
+
+	h3{
+		color:#444;
+	}
+
+	h3 i{
+		.size(16px);.dbi;.y(-3px);margin-right:3px;
+	}
+
+	.m-tabbox{
+		.navbox{
+			.clearfix;
+			border:1px solid #ddd;
+			li{
+				.fl;border-right:1px solid #ddd;
+				padding:3px 8px;.pointer;
+				&.on,&:hover{
+					background-color:#f2f2f2;
+					.bold;
+				}
+				&.on{
+					color:#444;
+					&:hover{
+						color:#444;
+					}
+				}
+				&:hover{
+					color:#c00;
+				}
+				user-select:none;
+			}
+		}
+		.ctbox{
+			.ctbox-item{
+				padding:10px;
+				strong{.bold;line-height:2.5;.db;color:#369;}
+				b{.bold;}
+			}
+		}
+	}
+
+	table{
+		color:#555;
+		width:100%;
+		margin-bottom:10px;
+		td,th{
+			.fz(12px,2.2);
+			padding:2px 5px;
+			border:1px solid #ccc;
+			min-width:80px;
+		}
+	}
+
+	/*最新改动*/
+	.m-fb-news{
+		.m-news{
+			.fl;
+			.w(460px);
+			h3{
+				.bold;.fz(12px,2.5);
+				border-bottom:1px dotted #ddd;margin-bottom:5px;
+			}
+			.m-gaidong{
+				margin-bottom:20px;
+				h3 i{
+					background:url('@{url}fb/news.png') no-repeat 0 0;
+				}
+				.edit{
+					.fr;.pointer;color:#000;
+					i{
+						background:url('@{url}fb/edit.png') no-repeat 0 0;
+					}
+				}
+			}
+			.m-peizhi{
+				h3 i{
+					background:url('@{url}fb/group.png') no-repeat 0 0;
+				}
+				/*background:url('@{url}fb/peizhi.png') no-repeat 10px 10px;
+				min-height:84px;
+				padding-left:150px;*/
+			}
+		}
+		.m-jieshuo{
+			.fr;
+			.w(400px);
+			min-height:300px;
+			padding:0px 10px 10px 10px;
+			border:1px solid #ddd;.r(2px);
+			background:url('@{url}header/jx3pve-logo-white.png') #f2f2f2 no-repeat center center;
+			h3{
+				.x;.bold;
+				.fz(13px,2.5);
+				i{
+					background:url('@{url}fb/tv.png') no-repeat 0 center;
+					.y(-1px);
+				}
+				.more{
+					margin-left:5px;
+				}
+			}
+		}
+	}
+
+	/*精华攻略*/
+	.m-fb-gl{
+	}
+
+	/*全部攻略*/
+	.m-fb-allgl{
+		ul{}
+		li{
+			border-bottom:1px dashed #ddd;
+			padding:3px 0;
+			&:hover{
+				background-color:#f9f9f9;
+			}
+		}
+		a{
+			.db;
+			.color(#369,#c00);
+			.avt{
+				.size(28px);.r(28px);.y;
+				margin-right:3px;
+			}
+			.stars{
+				.fr;
+				margin-right:5px;
+				margin-top:5px;
+			}
+
+			.time{
+				.fr;color:#999;
+			}
+		}
+		.m-more{
+			.db;.fz(13px,2);.x;
+			padding-bottom:10px;
+			color:#222;
+			&:hover{
+				color:#369;
+			}
+			i{
+				.dbi;.size(24px);.y(-7px);margin-right:5px;
+				background:url('@{url}fb/more.png') no-repeat 0 0;
+			}
+		}
+	}
+
+	/*评论*/
+	#comment{
+		
+	}
+
+	/*壁纸*/
+	.m-fb-wall{
+		ul{
+			.clearfix;
+		}
+		li{
+			.fl;margin-right:12px;
+			margin-bottom:12px;
+			.r(4px);
+			background-color:#fff;
+			border:1px solid #ddd;
+			padding:5px;
+		}
+		a{
+			.db;.pr;
+			max-width:268px;
+			img{
+				.db;
+				.full(x);
+			}
+			.mask{
+				.pa;.lt(0,0);.full;
+				.tb(0,0,0,.5);.none;
+			}
+			em{
+				.x;.color(#fff);
+				.fzlh(13px,20px);
+				.ct(y,20px);.size(100%,20px);
+				left:0;.none;
+			}
+			&:hover{
+				.mask,em{
+					.db;
+					animation:fadeIn 0.3s ease-in-out forwards;
+				}
+			}
+		}
+	}
+
+}
+
+.fb-comment{
+	.c-cmt-header{.none;}
+}
