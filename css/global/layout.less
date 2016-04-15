@@ -1,13 +1,19 @@
-//内容区域包裹层
-.jx3pve-container{
-    padding-top:@c-header-height;
-}
 //平铺背景层
 .wrap {
 }
 //背景层
 .main {
 }
+
+//内容区域包裹层
+	//默认
+	.jx3pve-container{
+	    padding-top:@c-header-height;
+	}
+	//手机
+	.ua-responsive .screen-s .jx3pve-container{
+		padding-bottom:@c-header-footer;
+	}
 
 
 //中央控制包裹层
@@ -26,11 +32,37 @@
 
 
 
-//dz默认
-.ct2_a .mn{
-	//目前1000
-}
-.appl{
-	//目前137
-}
+//dz内容包裹区
+
+	//默认
+	.ct2_a{}
+	.ct2_a .mn{
+		//目前1000
+	}
+	.appl{
+		//目前137
+	}
+
+	//平板竖屏
+	.ua-responsive .screen-m .ct2_a.wp{
+		padding:0;
+	}
+	.ua-responsive .screen-m .ct2_a .mn{
+		.w(600px);
+	}
+
+	//手机
+	.ua-responsive .screen-s .ct2_a.wp{
+		padding:0;
+	}
+	.ua-responsive .screen-s .ct2_a .mn{
+		float:none;
+		//.w(600px);
+	}
+	.ua-responsive .screen-s .appl{
+		float:none;
+	}
+
+
+
 
