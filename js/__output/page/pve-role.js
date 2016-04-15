@@ -1,1 +1,0 @@
-H.ready(["jquery"],function(){jQuery(function(e){var r=e("#pve-primary-tg"),n=e("#pve-primary-ct");r.on("click",function(){r.hasClass("on")?(n.slideDown(),r.removeClass("on").children("i").text("-"),r.children("em").text("折叠")):(n.slideUp(),r.addClass("on").children("i").text("+"),r.children("em").text("展开"))}),H.curpage(".u-role"),H.route(85)})});

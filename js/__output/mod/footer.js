@@ -1,1 +1,0 @@
-H.ready(["jquery"],function(){jQuery(function(n){var o=n("#c-float-gotop"),t=n("#c-float-close"),c=n("#c-float-help");o.on("click",function(){n(window).scrollTop(0)}),t.on("click",function(){c.hide()});var l=n.trim(n("#c-alert-warning").text().length);l>0&&(n("#c-alert-warning").show(),n("html").addClass("alertHTML"))})});

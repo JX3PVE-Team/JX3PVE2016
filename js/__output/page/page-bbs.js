@@ -1,1 +1,0 @@
-H.ready(["jquery"],function(){jQuery(function(){H.curpage(".u-bbs"),H.fixSidebar(".pve-sidebar",110,105,100)})});

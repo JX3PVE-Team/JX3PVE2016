@@ -1,1 +1,0 @@
-H.ready(["jquery"],function(){jQuery(function(e){var r=e("body").height(),h=r-46;e("#iframe-search").height(h)})});

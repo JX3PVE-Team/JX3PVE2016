@@ -1,1 +1,0 @@
-H.ready(["jquery"],function(){jQuery(function(){H.curpage(".u-fam"),H.route(55)})});

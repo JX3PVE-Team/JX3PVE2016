@@ -1,1 +1,0 @@
-H.ready(["jquery"],function(){jQuery(function(r){var e=r(window),o=r("#m-raid-rate-trigger"),n=r("#raid-usergroup");o.on("click",function(r){r.preventDefault();var o=n.offset().top;e.scrollTop(o-50)})})});
