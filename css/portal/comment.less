@@ -1,0 +1,100 @@
+@import url('../public/base.less');		//函数
+@import url('../public/path.less');		//路径
+@import url('../global/color.less');	//配色
+
+.c-cmt{
+	padding:10px;
+}
+.c-cmt-header{
+	.clearfix;
+	padding:10px 0;
+	h3{.fl;.fz(16px,20px);}
+	a{.fr;.fz(12px,20px);}
+}
+.c-cmt-top{
+	.pr;padding:0;
+	.clearfix;
+	.c-cmt-avt{
+		.pa;.lt(0,0);.size(auto);
+		a{
+			.db;
+			img{
+				.size(60px);
+				padding:2px;
+				border:1px solid #ddd;
+				.r(4px);
+				margin:0;
+			}
+		}
+	}
+	.c-cmt-textarea{
+		margin-left:60px + 20px;
+		.w(auto);
+		border:1px solid #ddd;
+		.h(80px);
+		.r(4px);
+		.area{
+			padding:5px;
+			box-shadow:0 0 1px #ddd inset;
+			textarea{
+				border:none;
+				.w(100%);
+				.h(80px - 10px);
+			}
+		}
+	}
+	.ptn{
+		padding:10px 0 !important;
+		.clearfix;
+	}
+	.c-cmt-pub{
+		.size(100px,32px);
+		.r(4px);.x;
+		.normal;
+		.fz(14px,32px);
+		.fr;
+		color:#fff;
+		//background:url('@{url}fb/cmtbtn.png') no-repeat 0 0;
+		background:#0084ff;
+		border:none;
+		&:hover{
+			-webkit-filter:brightness(120%);
+		}
+	}
+}
+.c-cmt-content{
+	.color(#555,@blue-link,#c00);
+}
+
+
+.c-cmt-libox{
+	.pr;
+}
+.c-cmt-liavt{
+	.pa;.lt(0,10px);
+	img{
+		.r(48px);
+		padding:2px;
+		border:1px solid #eee;
+	}
+}
+.c-cmt-li{
+	margin-left:68px;
+	.mbm{
+		margin-bottom:0px !important;
+	}
+}
+.c-cmt-licontent{
+	padding:5px 0;
+	.quote{
+		padding: 5px;
+		margin:5px 0;
+		border: 1px dashed #ddd;
+		background: #f9f9f9;
+	}
+}
+.c-cmt-lireplybtn{
+	.color(#999,#999,#c00);
+}
+
+

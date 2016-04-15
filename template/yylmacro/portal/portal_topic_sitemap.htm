@@ -1,15 +1,20 @@
 <!--{subtemplate common/header_m}-->
-<link rel="stylesheet" href="http://css.jx3pve.com/css/system/sitemap.css" type="text/css" />
+<link rel="stylesheet" href="http://css.jx3pve.com/css/system/system.css" type="text/css" />
 <header class="i-header">
 	<a class="i-header-back" href="javascript:;" onclick="history.go(-1)"><i></i>返回</a>
 	<div class="i-header-title">站点地图</div>
 </header>
-<div class="sitemap-container">
+<div class="system-container sitemap-container">
 	<div class="wp">
 
-		<h1 class="sitemap-title">站点地图</h1>
+		<div id="pt" class="system-route bm cl">
+			<div class="z">
+				<a href="./" class="nvhm" title="{lang homepage}">$_G['setting']['bbname']</a> <em>&rsaquo;</em>
+				站点地图
+			</div>
+		</div>
 
-		<div class="sitemap-block">
+		<div class="m-sitemap-block">
 			<h2>网站栏目</h2>
 			<ul>
 				<li><a href="./">首页</a></li>
@@ -23,22 +28,22 @@
 				<li><a href="./biz">交易</a></li>
 				<li><a href="./story">回忆录</a></li>
 				<li><a href="./bbs">综合</a></li>
+				<li><a href="./wiki">维基百科<span>(Building)</span></a></li>
 				<li><a href="./pet">宠物<span>(PC版)</span></a></li>
 				<li><a href="./video">视频<span>(PC版)</span></a></li>
-				<li><a href="./wiki">维基百科<span>(Building)</span></a></li>
 			</ul>
 		</div>
 
-		<div class="sitemap-block">
+		<div class="m-sitemap-block">
 			<h2>用户系统</h2>
 			<ul>
 				<li><a href="./faq">FAQ</a></li>
 				<li><a href="./feedback">反馈中心</a></li>
-				<li><a href="./publish">推送头条</a></li>
+				<li><a href="./push">推送头条</a></li>
 			</ul>
 		</div>
 
-		<div class="sitemap-block">
+		<div class="m-sitemap-block">
 			<h2>网站系统</h2>
 			<ul>
 				<li><a href="./sitemap">站点地图</a></li>
@@ -47,13 +52,26 @@
 			</ul>
 			<ul>
 				<li><a href="./">更新日志</a></li>
+				<li><a href="./news/">历史头条<span>(PC版)</span></a></li>
+				<li><a href="./misc.php?mod=stat">站点统计<span>(PC版)</span></a></li>
+				<li><a href="./archiver">Archiver</a></li>
+			</ul>
+			<ul>
+				<li><a href="./">网站简介</a></li>
 				<li><a href="./portal.php?mod=topic&topicid=113">版权声明</a></li>
 				<li><a href="./portal.php?mod=topic&topicid=114">免责声明</a></li>
+				<li><a href="./">管理团队</a></li>
 				<li><a href="./">加入我们</a></li>
 				<li><a href="./">合作联系</a></li>
-				<li><a href="./">友情链接</a></li>
-				<li><a href="./misc.php?mod=stat">站点统计</a></li>
-				<li><a href="./archiver">Archiver</a></li>
+				<li><a href="./portal.php?mod=topic&topicid=115">友情链接</a></li>
+			</ul>
+		</div>
+
+		<div class="m-sitemap-block">
+			<h2>已下架</h2>
+			<ul>
+				<li><a href="./cloud">超级宏官网<span>(已下架)</span></a></li>
+				<li><a href="./forum.php?mod=forumdisplay&fid=85">超级宏论坛<span>(已下架)</span></a></li>
 			</ul>
 		</div>
 

@@ -1,0 +1,129 @@
+@import url('../public/base.less');		//函数
+@import url('../public/path.less');		//路径
+@import url('../global/color.less');	//配色
+
+@wp:1180px;
+
+.portal-sidebar{
+	padding:580px 20px 20px 20px;
+	.pr;
+
+	.m-code{
+		background-color:#fff;
+		.r(6px);
+		padding:10px;
+		.w(200px);
+
+		.pubbtn{
+			background:url("@{url}portal/news_pub.png") no-repeat center center;
+			display:block;width:172px;height:43px;margin:0 auto;
+		}
+
+		.wx{
+			background:url("@{url}/header/wx_172.jpg") no-repeat center center;
+			width:172px;height:172px;margin:0 auto;
+		}
+
+		.addwx{
+			.x;
+			.fz(12px,2);
+			b{.bold;.color(#f00);}
+		}
+	}
+
+	.m-backindex{
+		.pa;.lt(50px,310px);
+		background:url("@{url}portal/news_back.png") no-repeat 0 0;
+		width:127px;height:49px;
+		&:hover{background-position: 0 -49px;}
+	}
+
+}
+.portal-listpage{
+	
+	.portal-list{
+		padding:10px 0;
+		li{
+			a{
+				.db;
+				.fz(12px,14px);
+				.color(#555,#c00);
+				padding:10px 0 10px 0;
+				border-bottom:1px dotted #ddd;
+
+				span{
+					.fr;color:#888;
+				}
+			}
+			padding:0 10px 0 30px;
+			
+		}
+	}
+	
+}
+.portal-primary{
+	.m-top{
+		padding:10px;
+		.m-info{
+			.color(#888,#888,#555);.x;
+		}
+	}
+
+	.m-content{
+		.fz(13px,2);
+		.color(#444,#222,#c00);
+		padding:10px;
+		a{
+			text-decoration:underline;
+		}
+		img{
+			max-width:95%;
+			padding:5px;
+			border:1px solid #ddd;
+			.r(6px);
+			margin:10px;
+		}
+	}
+
+	.m-panel{
+		border-top:1px dashed #ddd;
+		.clearfix;
+		.m-share{
+			.fl;
+		}
+		.m-extend{
+			.fr;
+		}
+	}
+
+	.pren{
+		.fz(12px,2);
+		.color(#666,#666,@blue-link);
+		em{.db;}
+		border-bottom:1px dashed #ddd;
+		margin-bottom:10px;
+	}
+}
+.portal-container{
+	background:#f2f2f2 url("http://ww1.sinaimg.cn/large/bcc700eegw1eicfycbdj6j21hc0u07qf.jpg") repeat-x top center;
+
+	.portal-main{
+		width:@wp;margin:0 auto;padding:20px 0;min-height:940px;position:relative;
+		background:url("@{url}portal/news_sdbg.png") no-repeat 820px 20px;
+		.clearfix;
+	}
+
+	.portal-content{
+		width:780px;border-radius:8px;background:#fff;padding:20px;.fl;
+	}
+
+	.portal-title{
+		background:url("@{url}portal/news_h1.png") no-repeat center bottom;
+		height:32px;text-align:center;line-height:30px;
+	}
+
+	.portal-sidebar{
+		.fl;
+	}
+
+}
