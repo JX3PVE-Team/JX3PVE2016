@@ -3,7 +3,7 @@
 @import url('../global/color.less');	//配色
 
 .sitemap-container{
-	padding:20px;
+	padding:20px 0;
 }
 
 .sitemap-title{
@@ -14,17 +14,18 @@
 
 .sitemap-block{
 	margin-bottom:20px;
-	.clearfix;
+	padding-left:80px;
+	.pr;
 
 	.color(#222,@blue-link,@blue-link);
 
 	h2{
-		.fl;
-		.bold;margin-right:20px;
+		.bold;
+		.pa;.lt(0,0);
 	}
 
 	ul{
-		.fl;
+		.clearfix;
 	}
 
 	li{
@@ -35,5 +36,23 @@
 
 	a:hover{
 		text-decoration:underline;
+	}
+
+	li a span{
+		.dbi;
+		color:#999;
+		padding:0 2px;
+		transform:scale(0.8);
+	}
+}
+
+//平板竖屏
+.ua-responsive .screen-m{
+}
+
+//手机版
+.ua-responsive .screen-s{
+	.sitemap-title{
+		.none;
 	}
 }

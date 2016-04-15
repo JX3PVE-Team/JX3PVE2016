@@ -57,81 +57,7 @@
 
 	<!--{hook/global_footer}-->
 
-	<!-- jx3pve:footer -->
-	<div class="c-footer">
-		<div class="wp">
-			<div class="c-footer-lang">
-				<span class="lang-til">Choose Language</span>
-				<p class="lang-img">
-					<a title="简体中文" href="http://www.jx3pve.com"></a>
-					<a title="國語" href="http://translate.google.com/translate?hl=zh-CN&sl=zh-CN&tl=zh-TW&u=http%3A%2F%2Fwww.jx3pve.com%2F" target="_blank"></a>
-					<a title="English" href="http://translate.google.com/translate?hl=zh-CN&sl=zh-CN&tl=en&u=http%3A%2F%2Fwww.jx3pve.com%2F" target="_blank"></a>
-					<a title="한국의" href="http://translate.google.com/translate?hl=zh-CN&sl=zh-CN&tl=ko&u=http%3A%2F%2Fwww.jx3pve.com%2F" target="_blank"></a>
-					<a title="Việt" href="http://translate.google.com/translate?hl=zh-CN&sl=zh-CN&tl=vi&u=http%3A%2F%2Fwww.jx3pve.com%2F" target="_blank"></a>
-				</p>
-			</div>
-
-			<div class="c-footer-subnav">
-				<!--{loop $_G['setting']['footernavs'] $nav}-->
-				<!--{if $nav['available'] && ($nav['type'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1)) ||
-						!$nav['type'] && ($nav['id'] == 'stat' && $_G['group']['allowstatdata'] || $nav['id'] == 'report' && $_G['uid'] || $nav['id'] == 'archiver' || $nav['id'] == 'mobile' || $nav['id'] == 'darkroom'))}-->
-						$nav[code]
-				<!--{/if}-->
-				<!--{/loop}-->
-			</div>
-
-			<div class="c-footer-nav">
-				<a href="./sitemap">网站地图</a>
-				<a href="#111">更新日志</a>
-				<a href="#">版权声明</a>
-				<a href="#">免责声明</a>
-				<a href="#">友情链接</a>
-				<a href="#">加入我们</a>
-				<a href="#">合作联系</a>
-			</div>
-
-			<div class="c-footer-official">
-				官方微信公众号：<span class="wx">剑网3PVE<i class="wxcode_small"></i><i class="wxcode"></i></span> |
-				官方微博：<a href="http://weibo.com/jx3pve" target="_blank">@剑网3精品资料站</a>
-			</div>
-
-			<div class="c-footer-gov">
-				<a href="http://jx3.xoyo.com/" target="_blank">剑侠情缘网络版叁</a>  | 
-				<!--{if $_G['setting']['icp']}-->
-					<a href="http://www.miitbeian.gov.cn/" target="_blank">$_G['setting']['icp']</a>
-				<!--{/if}-->
-			</div>
-
-			<div class="c-footer-copyright">
-				&copy; 2012-2016 <a href="$_G['setting']['siteurl']" target="_blank">$_G['setting']['sitename']</a> All rights reserved.
-			</div>
-
-			<!--{hook/global_footerlink}-->
-
-			<p class="c-footer-stat none"><!--{if $_G['setting']['statcode']}-->$_G['setting']['statcode']<!--{/if}--></p>
-
-			<!-- [dz] debuginfo -->
-			<p class="c-footer-debuginfo">
-				{lang time_now}
-				<span id="debuginfo">
-				<!--{if debuginfo()}-->, Processed in $_G[debuginfo][time] second(s), $_G[debuginfo][queries] queries
-					<!--{if $_G['gzipcompress']}-->, Gzip On<!--{/if}--><!--{if C::memory()->type}-->, <!--{echo ucwords(C::memory()->type)}--> On<!--{/if}-->.
-				<!--{/if}-->
-				</span>
-			</p>
-		</div>
-	</div>
-
-	<!-- jx3pve:c-dialog-->
-	<!--{template common/dialog}-->
-
-	<!-- jx3pve:c-float -->
-	<!--{template common/float}-->
-
-	<div class="c-showbox" id="c-showbox">
-		<span class="c-showbox-close" id="c-showbox-close" title="关闭"></span>
-		<div class="c-showbox-content" id="c-showbox-content"></div>
-	</div>
+	<!--{subtemplate common/footer_common}-->
 
 	<!-- [dz] user onlinestatus -->
 	<!--{eval updatesession();}-->
@@ -232,6 +158,8 @@
 		</script>
 	<!--{/if}-->
 <!--{eval output();}-->
+	
+	<script src="http://js.jx3pve.com/js/mod/footer.js"></script>
 
 </body>
 </html>

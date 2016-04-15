@@ -2,7 +2,7 @@
 	position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index:20;
     width: 100%;
     height:@c-header-height;
     background: #0767c8;
@@ -13,6 +13,7 @@
 
     line-height:@c-header-height;
     font-size:14px;
+    .wp{.clearfix;}
 }
 
 .c-header-logo{
@@ -23,7 +24,7 @@
 	transition:0.2s ease-in-out;
 }
 
-.c-header-ask{
+.c-header-btn{
 	.fr;
 	width: 66px;
     height: 31px;
@@ -44,6 +45,21 @@
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
     &:hover{color:@blue-light;}
+}
+
+.c-header-ask{
+    &:extend(.c-header-btn);
+}
+
+.c-header-sign{
+    &:extend(.c-header-btn);
+    margin-left:10px;
+    i{
+        .dbi;.y;
+        background-image:url('@{url}header/qiandao.png');
+        background-position: 0 0;
+        .size(20px);
+    }
 }
 
 

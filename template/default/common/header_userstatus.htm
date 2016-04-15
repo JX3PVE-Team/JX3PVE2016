@@ -2,7 +2,7 @@
 <!--status: is login and uid is not empty-->
 	<div class="c-header-user-login">
 		<div class="m-default" id="c-header-user-login-default">
-			<a href="home.php">
+			<a href="home.php" id="c-header-user-tg">
 				<span class="avatar">
 					<!--{avatar($_G[uid],small)}-->
 					<i id="c-header-usergroup" class="{if ($_G[groupid]==22)}vip{/if} $_G[groupid]">$_G[group][grouptitle]</i>
@@ -14,7 +14,6 @@
 		</div>
 		<div class="m-extend" id="c-header-user-login-extend">
 			<ul>
-				<li><!--{hook/global_usernav_extra2}--></li>
 				<li><a href="./home.php"><i class="os"></i>个人中心</a></li>
 				<li><a href="./home.php?mod=space&do=pm"><i class="msg"></i>消息 (<em id="c-header-msgcount">$_G[member][newpm]</em>)</a></li>
 				<li><a href="./home.php?mod=spacecp&ac=profile&op=password"><i class="setting"></i>设置</a></li>
