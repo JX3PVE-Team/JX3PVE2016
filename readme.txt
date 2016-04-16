@@ -4,9 +4,16 @@
 PRE				position		description
 ---------------------------------------------------
 c-$component	->*				集成模块
-f-$fid   		->body   		当前页面所属版块
+w-$widget		->*				组件
+u-$ui 			->*				元件
+m-$module		->*				局部模块
+e-$public		->*				特殊全局样式
 i-$block		->*				mobile blocks
 
+f-$fid   		->body   		帖子所属版块		//列表页、帖子页、发布页存在
+t-$tid  		->body			帖子唯一ID			//仅当帖子页存在
+sort-$sort		->body			帖子所属分类信息ID	//列表页、帖子页、发布页存在
+type-$type		->body			帖子所属主题分类ID 	//列表页、帖子页、发布页存在
 
 
 //Special Class Name
@@ -46,13 +53,18 @@ channel			stylesheet					template
 
 站点地图		css/system/sitemap.css		template/yylmacro/portal/portal_topic_sitemap.htm 		
 站点统计		css/system/stat.css 		template/yylmacro/home/misc_stat.htm 					
+关于我们		css/system/system.css 		template/yylmacro/portal/portal_topic_about.htm 	
 版权声明		css/system/system.css 		template/yylmacro/portal/portal_topic_copyright.htm 	
 免责声明		css/system/system.css 		template/yylmacro/portal/portal_topic_disclaimer.htm 	
+更新日志		css/system/system.css 		
+管理团队		css/system/system.css 		
+成员招募		css/system/system.css 		
+合作联系		css/system/system.css 		
 友情链接		css/system/system.css 		template/yylmacro/portal/portal_topic_links.htm 		
 FAQ				css/system/faq.css 			template/default/common/faq.htm 			
 
-推送头条		css/system/system.css 		template/yylmacro/portal/portalcp_pushnews.htm
-推送头条通知	css/system/system.css 		template/yylmacro/portal/portalcp_article.htm
+推送头条		css/system/push.css 		template/yylmacro/portal/portalcp_pushnews.htm
+推送头条通知	css/system/push.css 		template/yylmacro/portal/portalcp_article.htm
 历史头条列表	css/portal/news.css 		template/yylmacro/portal/list_news.htm
 历史头条单页	css/portal/news.css 		template/yylmacro/portal/views_news.htm
 门户全部评论	css/portal/news.css 		template/yylmacro/portal/comment.htm

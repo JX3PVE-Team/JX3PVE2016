@@ -5,6 +5,14 @@
 .main {
 }
 
+
+//尺寸规划
+	//wp:960 ->适应平板横屏+PC
+	//740 内容区 20间距 200px侧边栏
+	//平板竖屏时根据情况隐藏侧边栏
+	//手机版时自动宽度
+
+
 //内容区域包裹层
 	//默认
 	.jx3pve-container{
@@ -19,18 +27,16 @@
 //中央控制包裹层
 
 	//默认
-	.wp,#pt{
+	.wp{
 	    width:1180px;
 	   .auto(x);
 	}
 	//平板竖屏&手机版
-	.ua-responsive.w-1024,	//临时解决有做适配的页面的平板横屏问题
 	.ua-responsive .screen-m,.ua-responsive .screen-s{
-		.wp,#pt{
+		.wp{
 			.w(auto);padding:0 10px;
 		}
 	}
-
 
 
 //dz内容包裹区

@@ -1,5 +1,15 @@
-<body id="nv_{$_G[basescript]}" class="f-$_G[fid] body-$_G[fid] pg_{CURMODULE}{if $_G['basescript'] === 'portal' && CURMODULE === 'list' && !empty($cat)} {$cat['bodycss']}{/if}" onkeydown="if(event.keyCode==27) return false;">
-	
+<body 
+	id="nv_{$_G[basescript]}" 
+	class="
+			f-$_G[fid] body-$_G[fid] 
+			t-$_G[tid] 
+			sort-$_GET['sortid'] sort-$_G['forum_thread']['sortid']
+			type-$_GET['typeid'] type-$_G['forum_thread']['typeid']
+			pg_{CURMODULE} 
+			{if $_G['basescript'] === 'portal' && CURMODULE === 'list' && !empty($cat)} {$cat['bodycss']}{/if}
+		" 
+	onkeydown="if(event.keyCode==27) return false;"
+>
 	<div id="append_parent"></div><div id="ajaxwaitid"></div>
 	<!--{if $_GET['diy'] == 'yes' && check_diy_perm($topic)}-->
 		<!--{template common/header_diy}-->

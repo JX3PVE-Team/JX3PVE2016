@@ -1,5 +1,6 @@
 <!--{subtemplate common/header_m}-->
 <link rel="stylesheet" href="http://css.jx3pve.com/css/system/system.css" type="text/css" />
+<link rel="stylesheet" href="http://css.jx3pve.com/css/about/about.css" type="text/css" />
 <header class="i-header">
 	<a class="i-header-back" href="javascript:;" onclick="history.go(-1)"><i></i>返回</a>
 	<div class="i-header-title">友情链接</div>
@@ -9,18 +10,29 @@
 
 		<div id="pt" class="system-route bm cl">
 			<div class="z">
-				<a href="./" class="nvhm" title="{lang homepage}">$_G['setting']['bbname']</a> <em>&rsaquo;</em>
-				友情链接
+				<a href="./" class="nvhm" title="{lang homepage}">$_G['setting']['bbname']</a>
+				<em>&rsaquo;</em><a href="./about">关于我们</a>
+				<em>&rsaquo;</em>友情链接
 			</div>
 		</div>
 
-		<div class="system-content">
-			<div class="m-links-list">
-				<ul>
-				<!--{block/1511}-->
-				</ul>
+		<div class="system-main">
+
+			<div class="system-sidebar">
+				<!--{subtemplate public/about_sidebar}-->
 			</div>
-			<a class="m-links-add pnc" href="./feedback">交换友链</a>
+
+			<div class="system-content">
+
+				<div class="m-about-links">
+					<ul>
+					<!--{block/1511}-->
+					</ul>
+				</div>
+				<a class="m-about-links-add pnc" href="./feedback">交换友链</a>
+				
+			</div>
+
 		</div>
 
 	</div>

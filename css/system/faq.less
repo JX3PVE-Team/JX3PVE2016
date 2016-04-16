@@ -1,6 +1,14 @@
 @import url('../public/base.less');		//函数
 @import url('../global/color.less');	//配色
 @import url('../public/path.less');		//路径
+@import url('../global/var.less');		//尺寸
+
+.wp{
+	.w(@wp);
+}
+.ct2_a .mn{
+	.w(800px);
+}
 
 .faq-container .wp{
 	.pr;
@@ -10,8 +18,11 @@
 	.pa;.rt(0,3px);
 	.mtn{margin-top:0 !important;} //reset dz default 
 	.px{
-		.fz(12px,23px);
-		.h(23px);
+		.fzlh(12px,28px);
+		box-sizing:border-box;
+		*height:23px;
+		*line-height:23px;
+		*margin-right:5px;
 		//padding:2px 4px;
 		.w(180px);
 		margin-top:1px;
