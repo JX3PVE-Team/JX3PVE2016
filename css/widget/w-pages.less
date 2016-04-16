@@ -1,0 +1,46 @@
+//翻页公共
+.w-pages{
+	.clearfix;
+	&#pgt .pg{
+		margin:0;
+	}
+	.pgb{
+		.none;
+	}
+	.pg{
+		.clearfix;
+	}
+}
+
+//顶部翻页
+.w-pages-top{
+	padding-bottom:0  !important;
+	border-bottom:none !important;
+}
+
+//底部翻页
+.w-pages-bottom{
+
+}
+
+//底部下一页按钮
+.u-btn-nextpage,.u-pages-next{
+	&:extend(.u-btn-gray);
+	.fz(13px,20px);
+	.db;.x;
+	margin-bottom:10px;
+}
+
+//翻页旁发布按钮
+.u-btn-publish{
+	.fzlh(12px,28px);
+	.db;.w(120px);.x;
+	border-radius: 2px;
+	.fl;
+	&:extend(.u-btn-blue);
+	img{.none;}
+}
+
+.ua-responsive .screen-s .u-btn-publish{
+	.w(100%);
+}
