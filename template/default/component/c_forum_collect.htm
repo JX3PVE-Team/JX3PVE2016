@@ -1,0 +1,35 @@
+<!-- dz:淘专辑，来自群组 -->
+<!--{if helper_access::check_module('collection') && !$_G['forum']['disablecollect']}-->
+	<!--{if $post['relatecollection']}-->
+		<div class="cm">
+			<h3 class="psth xs1"><span class="icon_ring vm"></span>{lang collection_related}</h3>
+			<ul class="mbw xl xl2 cl">
+			<!--{loop $post['relatecollection'] $var}-->
+				<li>&middot; <a href="forum.php?mod=collection&action=view&ctid=$var[ctid]" title="$var[name]" target="_blank" class="xi2 xw1">$var[name]</a><span class="pipe">|</span><span class="xg1">{lang collection_threadnum}: $var[threadnum], {lang collection_follow}: $var[follownum]</span></li>
+			<!--{/loop}-->
+			<!--{if $post['releatcollectionmore']}-->
+				<li>&middot; <a href="forum.php?mod=collection&tid=$_G[tid]" target="_blank" class="xi2 xw1">{lang more}</a></li>
+			<!--{/if}-->
+			</ul>
+		</div>
+		<!--{if $post['sourcecollection']['ctid']}-->
+		<div>
+			{lang collection_fromctid}
+			<form action="forum.php?mod=collection&action=comment&ctid={$ctid}&tid={$_G[tid]}" method="POST" class="ptm pbm cl">
+				<input type="hidden" name="ratescore" id="ratescore" />
+				<span class="clct_ratestar">
+					<span class="btn">
+						<a href="javascript:;" onmouseover="rateStarHover('clct_ratestar_star',1)" onmouseout="rateStarHover('clct_ratestar_star',0)" onclick="rateStarSet('clct_ratestar_star',1,'ratescore')">1</a>
+						<a href="javascript:;" onmouseover="rateStarHover('clct_ratestar_star',2)" onmouseout="rateStarHover('clct_ratestar_star',0)" onclick="rateStarSet('clct_ratestar_star',2,'ratescore')">2</a>
+						<a href="javascript:;" onmouseover="rateStarHover('clct_ratestar_star',3)" onmouseout="rateStarHover('clct_ratestar_star',0)" onclick="rateStarSet('clct_ratestar_star',3,'ratescore')">3</a>
+						<a href="javascript:;" onmouseover="rateStarHover('clct_ratestar_star',4)" onmouseout="rateStarHover('clct_ratestar_star',0)" onclick="rateStarSet('clct_ratestar_star',4,'ratescore')">4</a>
+						<a href="javascript:;" onmouseover="rateStarHover('clct_ratestar_star',5)" onmouseout="rateStarHover('clct_ratestar_star',0)" onclick="rateStarSet('clct_ratestar_star',5,'ratescore')">5</a>
+					</span>
+					<span id="clct_ratestar_star" class="star star$memberrate"></span>
+				</span>
+				&nbsp;<button type="submit" value="submit" class="pn"><span>{lang collection_rate}</span></button>
+			</form>
+		</div>
+		<!--{/if}-->
+	<!--{/if}-->
+<!--{/if}-->

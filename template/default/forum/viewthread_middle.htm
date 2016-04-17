@@ -16,12 +16,12 @@
 		<!--{/if}-->
 
 		<!--{if $post[first]==1}-->
-		<div class="c-fli-first" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
+		<div class="c-fli-first c-fli-common" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
 			<!--{subtemplate forum/viewthread_node}-->
 			<!--{subtemplate forum/viewthread_cmttitle}-->
 		</div>
 		<!--{else}-->
-		<div class="c-fli" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
+		<div class="c-fli c-fli-common" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
 			<!--{subtemplate forum/viewthread_node}-->
 		</div>
 		<!--{/if}-->
