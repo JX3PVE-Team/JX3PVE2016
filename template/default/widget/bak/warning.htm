@@ -1,0 +1,4 @@
+<!-- 帖子被警告 -->
+<!--{if $post['warned']}-->
+	<a href="forum.php?mod=misc&action=viewwarning&tid=$_G[tid]&uid=$post[authorid]" title="{lang warn_get}" class="y" onclick="showWindow('viewwarning', this.href)"><img src="{IMGDIR}/warning.gif" alt="{lang warn_get}" /></a>
+<!--{/if}-->

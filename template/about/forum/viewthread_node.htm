@@ -11,16 +11,14 @@ $postshowavatars = !($_G['setting']['bannedmessages'] & 2 && ($post['memberstatu
 <!--{/loop}-->
 <!--{/block}-->
 
-
 <!--{if $post['first'] &&  $_G['forum_threadstamp']}-->
-	<div id="threadstamp" class="w-stamp w-stamp $_G[forum_thread][stamp]">
+	<div id="threadstamp" class="w-stamp w-stamp-$_G[forum_thread][stamp]">
 		<img src="{STATICURL}image/stamp/$_G[forum_threadstamp][url]" title="$_G[forum_threadstamp][text]" />
 	</div>
 <!--{/if}-->
 
-
+<!-- dz:如果未被删除 -->
 <!--{if empty($post['deleted'])}-->
-	<!-- dz:如果未被删除 -->
 
 	<!-- jx3pve:如果是回复 -->
 	<div class="c-fli-pvx c-fli-pvx-normal" id="pid$post[pid]" summary="pid$post[pid]" data-pubtime="$post[dateline]">
@@ -58,9 +56,8 @@ $postshowavatars = !($_G['setting']['bannedmessages'] & 2 && ($post['memberstatu
 	</script>
 	<!--{/if}-->
 
-
+<!-- dz:如果已被删除 -->
 <!--{else}-->
-	<!-- dz:如果已被删除 -->
 	<table id="pid$post[pid]" summary="pid$post[pid]" cellspacing="0" cellpadding="0">
 		<tbody>
 			<tr>
@@ -82,7 +79,6 @@ $postshowavatars = !($_G['setting']['bannedmessages'] & 2 && ($post['memberstatu
 			</tr>
 		</tbody>
 	</table>
-
 <!--{/if}-->
 
 <!--{hook/viewthread_endline $postcount}-->

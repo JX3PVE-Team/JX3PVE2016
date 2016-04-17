@@ -8,9 +8,12 @@
 
 <style id="diy_style" type="text/css"></style>
 <!--[diy=diynavtop]--><div id="diynavtop" class="area"></div><!--[/diy]-->
-<div id="pt" class="bm cl">
+
+<div id="pt" class="bm cl none">
 	<div class="z">
-		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&raquo;</em><a href="forum.php">{$_G[setting][navs][2][navname]}</a>$navigation <em>&rsaquo;</em> <a href="forum.php?mod=viewthread&tid=$_G[tid]">$_G[forum_thread][short_subject]</a>
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
+		<em>&raquo;</em>$navigation 
+		<em>&rsaquo;</em> <a href="forum.php?mod=viewthread&tid=$_G[tid]">$_G[forum_thread][short_subject]</a>
 	</div>
 </div>
 
@@ -18,6 +21,15 @@
 <!--{ad/text/wp a_t}-->
 
 <style id="diy_style" type="text/css"></style>
-<div class="wp">
-	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+
+<!-- dz:w-pages-top -->
+<!--{subtemplate widget/w_pages_top_view}-->
+
+<!-- dz:admin pop -->
+<!--{subtemplate widget/w_adminpop}-->
+
+<!-- dz:admin bar -->
+<div class="w-adminbar-top">
+	<!--{subtemplate widget/w_adminbar}-->
 </div>

@@ -1,6 +1,6 @@
 <!-- dz:admin bar -->
 <div class="w-adminbar-bottom">
-	<!--{template widget/w_adminbar}-->
+	<!--{subtemplate widget/w_adminbar}-->
 </div>
 
 <form method="post" autocomplete="off" name="modactions" id="modactions">
@@ -13,12 +13,22 @@
 $_G['forum_tagscript']
 
 <!-- dz:w-pages-bottom -->
-<!--{template widget/w_pages_bottom_view}-->
+<!--{subtemplate widget/w_pages_bottom_view}-->
 
 <!--{hook/viewthread_middle}-->
 
-<!-- jx3pve:fast-post -->
-<!--{template widget/w_fastpost_view}-->
+<!-- jx3pve:fastpost -->
+<div class="w-fastpost w-fastpost-view">
+	<!-- jx3pve:tips & folder list -->
+	<div class="w-fastpost-tip">
+		<!--{block/1284}-->
+	</div>
+	
+	<!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->
+	<!--{if $fastpost}-->
+		<!--{subtemplate forum/viewthread_fastpost}-->
+	<!--{/if}-->
+</div>
 
 <!--{hook/viewthread_bottom}-->
 
