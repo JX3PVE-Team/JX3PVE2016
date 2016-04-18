@@ -52,25 +52,23 @@
 				<!--{if $threadsortshow['typetemplate']}-->
 					$threadsortshow[typetemplate]
 				<!--{elseif $threadsortshow['optionlist']}-->
-					<div class="typeoption">
-						<!--{if $threadsortshow['optionlist'] == 'expire'}-->
-							{lang has_expired}
-						<!--{else}-->
-							<h3 class="none">$_G[forum][threadsorts][types][$_G[forum_thread][sortid]]</h3>
-							<ul>
-								<!--{loop $threadsortshow['optionlist'] $option}-->
-									<!--{if $option['type'] != 'info'}-->
-										<li>
-											<em>$option[title]:</em>
-											<span><!--{if $option['value'] !== ''}-->$option[value] $option[unit]<!--{else}-->-<!--{/if}--></span>
-										</li>
-									<!--{/if}-->
-								<!--{/loop}-->
-							</ul>
-						<!--{/if}-->
-					</div>
-				</div>
-			<!--{/if}-->
+					<!--{if $threadsortshow['optionlist'] == 'expire'}-->
+						{lang has_expired}
+					<!--{else}-->
+						<h3 class="none">$_G[forum][threadsorts][types][$_G[forum_thread][sortid]]</h3>
+						<ul>
+							<!--{loop $threadsortshow['optionlist'] $option}-->
+								<!--{if $option['type'] != 'info'}-->
+									<li>
+										<em>$option[title]</em>
+										<span><!--{if $option['value'] !== ''}-->$option[value] $option[unit]<!--{else}-->-<!--{/if}--></span>
+									</li>
+								<!--{/if}-->
+							<!--{/loop}-->
+						</ul>
+					<!--{/if}-->
+				<!--{/if}-->
+			</div>
 		<!--{/if}-->
 
 	<!--{/if}-->
@@ -116,10 +114,10 @@
 					<!--{template forum/viewthread_debate}-->
 				<!--{elseif $_G[forum_thread][special] == 127}-->
 					$threadplughtml
-					<div class="t_f" id="postmessage_$post[pid]">$post[message]</div>
+					<div class="c-fli-article t_f" id="postmessage_$post[pid]">$post[message]</div>
 				<!--{/if}-->
 			<!--{else}-->
-				<div class="t_f" id="postmessage_$post[pid]">
+				<div class="c-fli-article t_f" id="postmessage_$post[pid]">
 				<!--{if !$_G['inajax']}-->
 					<!--{if $ad_a_pr}-->
 						$ad_a_pr
@@ -332,4 +330,3 @@
 
 <!--{/if}-->
 <!--{hook/viewthread_postbottom $postcount}-->
-</div>

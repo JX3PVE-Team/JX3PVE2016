@@ -127,24 +127,10 @@
 			</script>
 		</div>
 
-		<!-- 置顶 -->
-		<!--{if !empty($_G['setting']['magics']['stick'])}-->
-			<a class="u-top" title="置顶" href="home.php?mod=magic&mid=stick&idtype=tid&id=$_G[tid]" id="a_stick" onclick="showWindow(this.id, this.href)"><i></i>置顶</a>
-		<!--{/if}-->
-
-		<!-- 高亮 -->
-		<!--{if !empty($_G['setting']['magics']['highlight'])}-->
-			<a class="u-color" title="高亮" href="home.php?mod=magic&mid=highlight&idtype=tid&id=$_G[tid]" id="a_stick" onclick="showWindow(this.id, this.href)"><i></i>高亮</a>
-		<!--{/if}-->
-
 		<!-- 打印 -->
-		<span class="u-print none">
-			<!--{if $post['invisible'] == 0}-->
-			<a href="forum.php?mod=viewthread&action=printable&tid=$_G[tid]" title="{lang thread_printable}" target="_blank"><img src="{IMGDIR}/print.png" alt="{lang thread_printable}" class="vm" /></a>
-			<!--{/if}-->
-			<a href="forum.php?mod=redirect&goto=nextoldset&tid=$_G[tid]" title="{lang last_thread}"><img src="{IMGDIR}/thread-prev.png" alt="{lang last_thread}" class="vm" /></a>
-			<a href="forum.php?mod=redirect&goto=nextnewset&tid=$_G[tid]" title="{lang next_thread}"><img src="{IMGDIR}/thread-next.png" alt="{lang next_thread}" class="vm" /></a>
-		</span>
+		<!--{if $post['invisible'] == 0}-->
+		<a class="u-print" href="forum.php?mod=viewthread&action=printable&tid=$_G[tid]" title="{lang thread_printable}" target="_blank"><i></i>打印</a>
+		<!--{/if}-->
 
 	</div>
 

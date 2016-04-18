@@ -13,23 +13,14 @@ $postshowavatars = !($_G['setting']['bannedmessages'] & 2 && ($post['memberstatu
 
 <!--{if empty($post['deleted'])}-->
 	<!-- dz:如果未被删除 -->
+<div id="pid$post[pid]" class="plhin" summary="pid$post[pid]" cellspacing="0" cellpadding="0">
+	
 	<!-- dz:且如为正常模式 -->
-
-	<div id="pid$post[pid]" class="plhin" summary="pid$post[pid]" cellspacing="0" cellpadding="0">
-
 		<div class="c-fli-header">
 			<!--{subtemplate component/c_fli_header}-->
 		</div>
 		
 		<div class="c-fli-content">
-			<!-- dz:回帖奖励获得的奖励 -->
-			<!--{if !$post['first'] && $post['replycredit'] > 0}-->
-				<div class="cm c-fli-replycredit">
-					<h3 class="psth xs1"><span class="icon_ring vm"></span>
-						{lang replycredit} <span class="xw1 xs2 xi1">+{$post['replycredit']}</span> {$_G['setting']['extcredits'][$_G['forum_thread']['replycredit_rule']['extcreditstype']][unit]}{$_G['setting']['extcredits'][$_G['forum_thread']['replycredit_rule']['extcreditstype']][title]}
-					</h3>
-				</div>
-			<!--{/if}-->
 			<!--{subtemplate forum/viewthread_node_body}-->
 		</div>
 
@@ -42,30 +33,30 @@ $postshowavatars = !($_G['setting']['bannedmessages'] & 2 && ($post['memberstatu
 		<!-- dz:签名(暂停) -->
 		<!--{ad/thread/a_pb/1/$postcount}-->
 		<div id="_postposition$post['pid']"></div>
-		
-	</div>
 
 	<!-- dz:且如为图片模式 -->
-	<!--{if !empty($aimgs[$post[pid]])}-->
-	<script type="text/javascript" reload="1">
-		aimgcount[{$post[pid]}] = [<!--{echo dimplode($aimgs[$post[pid]]);}-->];
-		attachimggroup($post['pid']);
-		<!--{if empty($_G['setting']['lazyload'])}-->
-			<!--{if !$post['imagelistthumb']}-->
-				attachimgshow($post[pid]);
-			<!--{else}-->
-				attachimgshow($post[pid], 1);
+		<!--{if !empty($aimgs[$post[pid]])}-->
+		<script type="text/javascript" reload="1">
+			aimgcount[{$post[pid]}] = [<!--{echo dimplode($aimgs[$post[pid]]);}-->];
+			attachimggroup($post['pid']);
+			<!--{if empty($_G['setting']['lazyload'])}-->
+				<!--{if !$post['imagelistthumb']}-->
+					attachimgshow($post[pid]);
+				<!--{else}-->
+					attachimgshow($post[pid], 1);
+				<!--{/if}-->
 			<!--{/if}-->
+			var aimgfid = 0;
+			<!--{if $_G['forum']['picstyle'] && ($_G['forum']['ismoderator'] || $_G['uid'] == $_G['thread']['authorid'])}-->
+				aimgfid = $_G[fid];
+			<!--{/if}-->
+			<!--{if $post['imagelistthumb']}-->
+				attachimglstshow($post['pid'], <!--{echo intval($_G['setting']['lazyload'])}-->, aimgfid, '{$_G[setting][showexif]}');
+			<!--{/if}-->
+		</script>
 		<!--{/if}-->
-		var aimgfid = 0;
-		<!--{if $_G['forum']['picstyle'] && ($_G['forum']['ismoderator'] || $_G['uid'] == $_G['thread']['authorid'])}-->
-			aimgfid = $_G[fid];
-		<!--{/if}-->
-		<!--{if $post['imagelistthumb']}-->
-			attachimglstshow($post['pid'], <!--{echo intval($_G['setting']['lazyload'])}-->, aimgfid, '{$_G[setting][showexif]}');
-		<!--{/if}-->
-	</script>
-	<!--{/if}-->
+
+</div>
 
 <!--{else}-->
 	<!-- dz:如果已被删除 -->

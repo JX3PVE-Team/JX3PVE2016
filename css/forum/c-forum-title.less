@@ -72,7 +72,8 @@
 
 	.u-view{
 		i{
-			.dbi;.y;.size(16px);background:url('@{url}forum/view.png') no-repeat 0 0;
+			.dbi;.y;.size(16px);
+			background:url('@{url}forum/view.png') no-repeat 0 0;
 			margin-top: -1px;
     		margin-right: 3px;
 		}
@@ -80,29 +81,28 @@
 
 	.u-reply{
 		i{
-			.dbi;.y;.size(16px);background:url('@{url}forum/reply.png') no-repeat 0 0;
-			margin-top: 4px;
+			.dbi;.y;.size(16px);
+			background:url('@{url}forum/reply.png') no-repeat 0 0;
+			margin-right: 3px;
 		}
 	}
 
-	.u-report,.u-top,.u-color,.u-share,.u-share,.u-goto{
+	.u-report,.u-share,.u-goto,.u-print{
 		.fr;
 		color:#999;
 		margin-left:10px;
-		i{.dbi;.y;margin-right:3px;background:url('@{url}header/icons2.png') no-repeat 0 0;}
+		i{
+			.dbi;.y;
+			.size(16px);
+			margin-right:3px;
+		}
 		&:hover{
 			color:@zhblue;
+			i{background-position:0 -16px;}
 		}
 	}
 
-	.u-report{
-		i{.size(10px,10px);background-position: -82px -22px;}
-		&:hover i{
-			background-position: -82px -37px;
-		}
-	}
-
-	.u-top{
+	/*.u-top{
 		i{.size(10px,10px);background-position:-134px -22px; }
 		&:hover i{
 			background-position: -134px -37px;
@@ -114,13 +114,18 @@
 		&:hover i{
 			background-position: -56px -37px;
 		}
+	}*/
+
+	.u-report{
+		i{
+			background:url('@{url}forum/report.png') no-repeat 0 0;
+		}
 	}
 
 	.u-share{
 		.pr;.pointer;
-		i{.size(11px,10px);background-position: -67px -22px}
-		&:hover i{
-			background-position: -67px -37px;
+		i{
+			background:url('@{url}forum/share.png') no-repeat 0 0;
 		}
 		.bdsharebuttonbox{
 			.pa;.lt(-39px,26px);.z(2);
@@ -135,9 +140,10 @@
 
 	.u-goto{
 		.pr;.pointer;
-		i{.size(10px,10px);background:url('@{url}forum/goto.png') no-repeat 0 0;}
-		&:hover i{
-			background-position:0 -10px;
+		i{
+			background:url('@{url}forum/goto.png') no-repeat 0 0;
+			margin-top:-1px;
+			margin-right:4px;
 		}
 		.u-goto-box{
 			.pa;.lt(-101px,26px);.z(2);
@@ -154,6 +160,10 @@
 
 		#fj label, #fj input{.lh(24px);}
 		#fj input{.w(60px);}
+	}
+
+	.u-print{
+		i{background:url('@{url}forum/print.png') no-repeat 0 0;}
 	}
 
 
