@@ -24,7 +24,7 @@ $postshowavatars = !($_G['setting']['bannedmessages'] & 2 && ($post['memberstatu
 		<div class="c-fli-content">
 			<!-- dz:回帖奖励获得的奖励 -->
 			<!--{if !$post['first'] && $post['replycredit'] > 0}-->
-				<div class="cm">
+				<div class="cm c-fli-replycredit">
 					<h3 class="psth xs1"><span class="icon_ring vm"></span>
 						{lang replycredit} <span class="xw1 xs2 xi1">+{$post['replycredit']}</span> {$_G['setting']['extcredits'][$_G['forum_thread']['replycredit_rule']['extcreditstype']][unit]}{$_G['setting']['extcredits'][$_G['forum_thread']['replycredit_rule']['extcreditstype']][title]}
 					</h3>
