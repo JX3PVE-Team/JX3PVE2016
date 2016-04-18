@@ -77,56 +77,63 @@
 
 	<div class="c-fli-ctbox {if !$_G[forum_thread][special]}t_fsz{else}pcbs{/if}">
 
-		div.c-fli-primary	
-		$_G['forum_posthtml']['header'][$post[pid]]
-		<!--{if $post['first']}-->
-			<!--{if !$_G[forum_thread][special]}-->
-				<table cellspacing="0" cellpadding="0"><tr><td class="t_f" id="postmessage_$post[pid]">
+		<div class="c-fli-primary">
+			$_G['forum_posthtml']['header'][$post[pid]]
+			<!--{if $post['first']}-->
+				<!--{if !$_G[forum_thread][special]}-->
+					<div class="c-fli-article t_f" id="postmessage_$post[pid]">
+						<!--{if !$_G['inajax']}-->
+							<!--{if $ad_a_pr}-->
+								$ad_a_pr
+							<!--{/if}-->
+						<!--{/if}-->
+						<!--{if !empty($_G['setting']['guesttipsinthread']['flag']) && empty($_G['uid']) && !$post['attachment'] && $_GET['from'] != 'preview'}-->
+							<div class="attach_nopermission attach_tips">
+								<div>
+									<h3><strong>
+											<!--{if !empty($_G['setting']['guesttipsinthread']['text'])}-->
+											{$_G['setting']['guesttipsinthread']['text']}
+											<!--{else}-->
+											{lang guesttipsinthread_text}
+											<!--{/if}-->
+										</strong></h3>
+									<p>{lang attach_nopermission_login} <!--{hook/global_login_text}--></p>
+								</div>
+								<span class="atips_close" onclick="this.parentNode.style.display='none'">x</span>
+							</div>
+						<!--{/if}-->
+						$post[message]
+					</div>
+				<!--{elseif $_G[forum_thread][special] == 1}-->
+					<!--{template forum/viewthread_poll}-->
+				<!--{elseif $_G[forum_thread][special] == 2}-->
+					<!--{template forum/viewthread_trade}-->
+				<!--{elseif $_G[forum_thread][special] == 3}-->
+					<!--{template forum/viewthread_reward}-->
+				<!--{elseif $_G[forum_thread][special] == 4}-->
+					<!--{template forum/viewthread_activity}-->
+				<!--{elseif $_G[forum_thread][special] == 5}-->
+					<!--{template forum/viewthread_debate}-->
+				<!--{elseif $_G[forum_thread][special] == 127}-->
+					$threadplughtml
+					<div class="t_f" id="postmessage_$post[pid]">$post[message]</div>
+				<!--{/if}-->
+			<!--{else}-->
+				<div class="t_f" id="postmessage_$post[pid]">
 				<!--{if !$_G['inajax']}-->
 					<!--{if $ad_a_pr}-->
 						$ad_a_pr
 					<!--{/if}-->
 				<!--{/if}-->
-				<!--{if !empty($_G['setting']['guesttipsinthread']['flag']) && empty($_G['uid']) && !$post['attachment'] && $_GET['from'] != 'preview'}-->
-				<div class="attach_nopermission attach_tips">
-					<div>
-						<h3><strong>
-								<!--{if !empty($_G['setting']['guesttipsinthread']['text'])}-->
-								{$_G['setting']['guesttipsinthread']['text']}
-								<!--{else}-->
-								{lang guesttipsinthread_text}
-								<!--{/if}-->
-							</strong></h3>
-						<p>{lang attach_nopermission_login} <!--{hook/global_login_text}--></p>
-					</div>
-					<span class="atips_close" onclick="this.parentNode.style.display='none'">x</span>
+				<!--{if $post['invisible'] != '-2' || $_G['forum']['ismoderator']}-->
+					$post[message]
+				<!--{else}-->
+					<span class="xg1">{lang moderate_need}</span>
+				<!--{/if}-->
 				</div>
-				<!--{/if}-->
-				$post[message]</td></tr></table>
-			<!--{elseif $_G[forum_thread][special] == 1}-->
-				<!--{template forum/viewthread_poll}-->
-			<!--{elseif $_G[forum_thread][special] == 2}-->
-				<!--{template forum/viewthread_trade}-->
-			<!--{elseif $_G[forum_thread][special] == 3}-->
-				<!--{template forum/viewthread_reward}-->
-			<!--{elseif $_G[forum_thread][special] == 4}-->
-				<!--{template forum/viewthread_activity}-->
-			<!--{elseif $_G[forum_thread][special] == 5}-->
-				<!--{template forum/viewthread_debate}-->
-			<!--{elseif $_G[forum_thread][special] == 127}-->
-				$threadplughtml
-				<table cellspacing="0" cellpadding="0"><tr><td class="t_f" id="postmessage_$post[pid]">$post[message]</td></tr></table>
 			<!--{/if}-->
-		<!--{else}-->
-			<table cellspacing="0" cellpadding="0"><tr><td class="t_f" id="postmessage_$post[pid]">
-			<!--{if !$_G['inajax']}-->
-				<!--{if $ad_a_pr}-->
-					$ad_a_pr
-				<!--{/if}-->
-			<!--{/if}-->
-			<!--{if $post['invisible'] != '-2' || $_G['forum']['ismoderator']}-->$post[message]<!--{else}--><span class="xg1">{lang moderate_need}</span><!--{/if}--></td></tr></table>
-		<!--{/if}-->
-		$_G['forum_posthtml']['footer'][$post[pid]]
+			$_G['forum_posthtml']['footer'][$post[pid]]
+		</div>	
 
 		<!-- 标签 -->
 		<div class="c-fli-tag">
