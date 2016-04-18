@@ -38,6 +38,8 @@ className		z-index			description
 .i-header		20 				移动头部
 .i-footer		20 				移动底部
 .c-alert		21 				紧急公告
+#u-mask			30 				遮罩层
+.i-*-menu		40 				手机弹层菜单
 
 
 

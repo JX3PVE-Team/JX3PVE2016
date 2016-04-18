@@ -4,6 +4,18 @@
 
 .c-panel{
 	.clearfix;
+	/*border:1px solid #ddd;
+	.lh(24px);
+	border-radius: 6px;
+	padding: 2px 10px;
+	margin-bottom:5px;
+	.color(#777,#777,#333);
+	background-color:#fcf9fa;*/
+	.tm(0.4);
+	transition:opacity 0.2s ease-in-out;
+}
+.c-fli-common:hover{
+	.c-panel{.tm(1);}
 }
 
 .c-panel-left{
@@ -24,10 +36,17 @@
 		.fz(12px,16px);
 		.r(2px);
 		padding:4px 8px;
+		.clip;
 
 		i{.dbi;.y;.size(16px);margin-right:5px;}
 		.color(@zhblue,@zhblue);
 		border:1px solid @zhblue;
+
+		&:hover{
+			i{
+				animation:goUp 0.4s ease-in-out;
+			}
+		}
 	}
 
 	.u-top{
