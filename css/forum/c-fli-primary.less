@@ -1,0 +1,62 @@
+//真实内容区(包含追加)
+.c-fli-primary{
+}
+
+//文字内容区
+.c-fli-article{
+	.clearfix;
+
+	//文字
+	color:#222;
+
+	//链接
+	a{text-decoration:none;}
+	a:hover{text-decoration:underline;}
+
+	//图片
+	embed,img{max-width:100%;}
+	img{height: auto;}
+
+	//表格
+	table{
+		margin:10px auto;
+		.w(100%);
+	}
+
+	//水平线
+	hr.l{
+		margin:5px auto;
+	}
+
+	//隐藏可见
+	.locked,.showhide{
+		letter-spacing:0.5px;
+	}
+	.locked{
+		.color(#555,@bluex,#c00) !important;
+		.tips(yel);
+		.x(left) !important;
+		strong{.bold;.color(#f00);}
+	}
+	.showhide{
+		color:@bluex;
+		border:1px dashed @bluex;
+		h4{
+			color:@bluex;border-bottom:1px solid #cceafe;
+			line-height:26px;height:26px;
+		}
+	}
+
+	//引用文字
+	.quote{
+		background: none;
+		padding:10px;
+		border:1px dashed #ddd;
+		background-color:#FCF9FA;
+		blockquote{
+			background:none;
+			.fz(12px,2);
+			a{.fz(12px,2);}
+		}
+	}
+}

@@ -73,149 +73,149 @@
 
 	<!--{/if}-->
 
-	<div class="c-fli-ctbox {if !$_G[forum_thread][special]}t_fsz{else}pcbs{/if}">
 
-		<div class="c-fli-primary">
-			$_G['forum_posthtml']['header'][$post[pid]]
-			<!--{if $post['first']}-->
-				<!--{if !$_G[forum_thread][special]}-->
-					<div class="c-fli-article t_f" id="postmessage_$post[pid]">
-						<!--{if !$_G['inajax']}-->
-							<!--{if $ad_a_pr}-->
-								$ad_a_pr
-							<!--{/if}-->
+	<!-- 内容 -->
+	<div class="c-fli-primary">
+		$_G['forum_posthtml']['header'][$post[pid]]
+		<!--{if $post['first']}-->
+			<!--{if !$_G[forum_thread][special]}-->
+				<!-- 正文 -->
+				<div class="c-fli-article" id="postmessage_$post[pid]">
+					<!--{if !$_G['inajax']}-->
+						<!--{if $ad_a_pr}-->
+							$ad_a_pr
 						<!--{/if}-->
-						<!--{if !empty($_G['setting']['guesttipsinthread']['flag']) && empty($_G['uid']) && !$post['attachment'] && $_GET['from'] != 'preview'}-->
-							<div class="attach_nopermission attach_tips">
-								<div>
-									<h3><strong>
-											<!--{if !empty($_G['setting']['guesttipsinthread']['text'])}-->
-											{$_G['setting']['guesttipsinthread']['text']}
-											<!--{else}-->
-											{lang guesttipsinthread_text}
-											<!--{/if}-->
-										</strong></h3>
-									<p>{lang attach_nopermission_login} <!--{hook/global_login_text}--></p>
-								</div>
-								<span class="atips_close" onclick="this.parentNode.style.display='none'">x</span>
+					<!--{/if}-->
+					<!--{if !empty($_G['setting']['guesttipsinthread']['flag']) && empty($_G['uid']) && !$post['attachment'] && $_GET['from'] != 'preview'}-->
+						<div class="attach_nopermission attach_tips">
+							<div>
+								<h3><strong>
+										<!--{if !empty($_G['setting']['guesttipsinthread']['text'])}-->
+										{$_G['setting']['guesttipsinthread']['text']}
+										<!--{else}-->
+										{lang guesttipsinthread_text}
+										<!--{/if}-->
+									</strong></h3>
+								<p>{lang attach_nopermission_login} <!--{hook/global_login_text}--></p>
 							</div>
-						<!--{/if}-->
-						$post[message]
-					</div>
-				<!--{elseif $_G[forum_thread][special] == 1}-->
-					<!--{template forum/viewthread_poll}-->
-				<!--{elseif $_G[forum_thread][special] == 2}-->
-					<!--{template forum/viewthread_trade}-->
-				<!--{elseif $_G[forum_thread][special] == 3}-->
-					<!--{template forum/viewthread_reward}-->
-				<!--{elseif $_G[forum_thread][special] == 4}-->
-					<!--{template forum/viewthread_activity}-->
-				<!--{elseif $_G[forum_thread][special] == 5}-->
-					<!--{template forum/viewthread_debate}-->
-				<!--{elseif $_G[forum_thread][special] == 127}-->
-					$threadplughtml
-					<div class="c-fli-article t_f" id="postmessage_$post[pid]">$post[message]</div>
-				<!--{/if}-->
-			<!--{else}-->
-				<div class="c-fli-article t_f" id="postmessage_$post[pid]">
-				<!--{if !$_G['inajax']}-->
-					<!--{if $ad_a_pr}-->
-						$ad_a_pr
-					<!--{/if}-->
-				<!--{/if}-->
-				<!--{if $post['invisible'] != '-2' || $_G['forum']['ismoderator']}-->
-					$post[message]
-				<!--{else}-->
-					<span class="xg1">{lang moderate_need}</span>
-				<!--{/if}-->
-				</div>
-			<!--{/if}-->
-			$_G['forum_posthtml']['footer'][$post[pid]]
-		</div>	
-
-		<!-- 标签 -->
-		<div class="c-fli-tag">
-			<!--{if $post['first'] && ($post[tags] || $relatedkeywords) && $_GET['from'] != 'preview'}-->
-				<div class="ptg mbm mtn">
-					<!--{if $post[tags]}-->
-						<!--{eval $tagi = 0;}-->
-						<!--{loop $post[tags] $var}-->
-							<!--{if $tagi}-->, <!--{/if}--><a title="$var[1]" href="misc.php?mod=tag&id=$var[0]" target="_blank">$var[1]</a>
-							<!--{eval $tagi++;}-->
-						<!--{/loop}-->
-					<!--{/if}-->
-					<!--{if $relatedkeywords}--><span>$relatedkeywords</span><!--{/if}-->
-				</div>
-			<!--{/if}-->
-		</div>
-
-		<!-- 最后被编辑 -->
-		<div class="c-fli-modact">
-			<!--{if !IS_ROBOT && $post['first'] && !$_G['forum_thread']['archiveid']}-->
-				<!--{if !empty($lastmod['modaction'])}--><div class="modact"><a href="forum.php?mod=misc&action=viewthreadmod&tid=$_G[tid]" title="{lang thread_mod}" onclick="showWindow('viewthreadmod', this.href)"><!--{if $lastmod['modactiontype'] == 'REB'}-->{lang thread_mod_recommend_by}<!--{else}-->{lang thread_mod_by}<!--{/if}--></a></div><!--{/if}-->
-				<!--{hook/viewthread_modaction}-->
-			<!--{/if}-->
-		</div>
-
-		<!-- 附件 -->
-		<div class="c-fli-attachment">
-			<!--{if $post['attachment'] && $_GET['from'] != 'preview'}-->
-				<div class="attach_nopermission attach_tips">
-					<div>
-						<h3><strong>{lang attach_nopermission_notice}</strong></h3>
-						<p><!--{if $_G['uid']}-->{lang attach_nopermission}<!--{elseif $_G['connectguest']}-->{lang attach_nopermission_connect_fill_profile}<!--{else}-->{lang attach_nopermission_login} <!--{hook/global_login_text}--><!--{/if}--></p>
-					</div>
-					<span class="atips_close" onclick="this.parentNode.style.display='none'">x</span>
-				</div>
-			<!--{elseif $post['imagelist'] || $post['attachlist']}-->
-				<div class="pattl">
-					<!--{if $post['imagelist'] && $_G['setting']['imagelistthumb'] && $post['imagelistcount'] >= $_G['setting']['imagelistthumb']}-->
-						<!--{if !isset($imagelistkey)}-->
-							<!--{eval $imagelistkey = rawurlencode(dsign($_G[tid].'|100|100'))}-->
-							<script type="text/javascript" reload="1">var imagelistkey = '$imagelistkey';</script>
-						<!--{/if}-->
-						<!--{eval $post['imagelistthumb'] = true;}-->
-						<div class="bbda cl mtw mbm pbm">
-							<strong>{lang more_images}</strong>
-							<a href="javascript:;" onclick="attachimglst('$post[pid]', 0)" class="xi2 attl_g">{lang image_small}</a>
-							<a href="javascript:;" onclick="attachimglst('$post[pid]', 1, {echo intval($_G['setting']['lazyload'])})" class="xi2 attl_m">{lang image_big}</a>
+							<span class="atips_close" onclick="this.parentNode.style.display='none'">x</span>
 						</div>
-						<div id="imagelist_$post[pid]" class="cl" style="display:none"><!--{echo showattach($post, 1)}--></div>
-						<div id="imagelistthumb_$post[pid]" class="pattl_c cl"><img src="{IMGDIR}/loading.gif" width="16" height="16" class="vm" /> {lang image_list_openning}</div>
-					<!--{else}-->
-						<!--{echo showattach($post, 1)}-->
 					<!--{/if}-->
-					<!--{if $post['attachlist']}-->
-						<!--{echo showattach($post)}-->
-					<!--{/if}-->
+					$post[message]
 				</div>
+			<!--{elseif $_G[forum_thread][special] == 1}-->
+				<!--{template forum/viewthread_poll}-->
+			<!--{elseif $_G[forum_thread][special] == 2}-->
+				<!--{template forum/viewthread_trade}-->
+			<!--{elseif $_G[forum_thread][special] == 3}-->
+				<!--{template forum/viewthread_reward}-->
+			<!--{elseif $_G[forum_thread][special] == 4}-->
+				<!--{template forum/viewthread_activity}-->
+			<!--{elseif $_G[forum_thread][special] == 5}-->
+				<!--{template forum/viewthread_debate}-->
+			<!--{elseif $_G[forum_thread][special] == 127}-->
+				$threadplughtml
+				<div class="c-fli-article" id="postmessage_$post[pid]">$post[message]</div>
 			<!--{/if}-->
-		</div>
-
-		<!-- 快速回复 -->
-		<div class="c-fli-fastreply">
-			<!--{if $_G['setting']['allowfastreply'] && $post['first'] && $fastpost && $allowpostreply && !$_G['forum_thread']['archiveid'] && $_GET['from'] != 'preview'}-->
-				<form method="post" autocomplete="off" id="vfastpostform" action="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&fromvf=1&extra=$_G[gp_extra]&replysubmit=yes{if $_G['gp_ordertype'] != 1}&infloat=yes&handlekey=vfastpost{/if}{if $_G[gp_from]}&from=$_G[gp_from]{/if}" onsubmit="this.message.value = parseurl(this.message.value);ajaxpost('vfastpostform', 'return_reply', 'return_reply', 'onerror');return false;">
-				<div id="vfastpost" class="fullvfastpost">				
-					<input type="hidden" name="formhash" value="{FORMHASH}" />
-					<table cellspacing="0" cellpadding="0" id="vfastposttb">
-						<tr>
-							<td id="vf_l"></td>
-							<td id="vf_m"><input type="text" name="message" id="vmessage" onKeyDown="seditor_ctlent(event, '$(\'vfastpostform\').submit()');"/></td>
-							<td id="vf_r"></td>						
-							<td id="vf_b">
-								<button type="submit" class="pn pnc" name="replysubmit" id="vreplysubmit" value="true" style="">post_newreply</button>								
-							</td>						
-						</tr>
-					</table>				
-				</div>
-				<div id="vfastpostseccheck"></div>				
-				</form>
-				<script type="text/javascript">vmessage();</script>
+		<!--{else}-->
+			<div class="c-fli-article c-fli-reply" id="postmessage_$post[pid]">
+			<!--{if !$_G['inajax']}-->
+				<!--{if $ad_a_pr}-->
+					$ad_a_pr
+				<!--{/if}-->
 			<!--{/if}-->
-		</div>
+			<!--{if $post['invisible'] != '-2' || $_G['forum']['ismoderator']}-->
+				$post[message]
+			<!--{else}-->
+				<span class="xg1">{lang moderate_need}</span>
+			<!--{/if}-->
+			</div>
+		<!--{/if}-->
+		$_G['forum_posthtml']['footer'][$post[pid]]
+	</div>	
 
+	<!-- 标签 -->
+	<div class="c-fli-tag">
+		<!--{if $post['first'] && ($post[tags] || $relatedkeywords) && $_GET['from'] != 'preview'}-->
+			<div class="ptg mbm mtn">
+				<!--{if $post[tags]}-->
+					<!--{eval $tagi = 0;}-->
+					<!--{loop $post[tags] $var}-->
+						<!--{if $tagi}-->, <!--{/if}--><a title="$var[1]" href="misc.php?mod=tag&id=$var[0]" target="_blank">$var[1]</a>
+						<!--{eval $tagi++;}-->
+					<!--{/loop}-->
+				<!--{/if}-->
+				<!--{if $relatedkeywords}--><span>$relatedkeywords</span><!--{/if}-->
+			</div>
+		<!--{/if}-->
 	</div>
+
+	<!-- 最后被编辑 -->
+	<div class="c-fli-modact">
+		<!--{if !IS_ROBOT && $post['first'] && !$_G['forum_thread']['archiveid']}-->
+			<!--{if !empty($lastmod['modaction'])}--><div class="modact"><a href="forum.php?mod=misc&action=viewthreadmod&tid=$_G[tid]" title="{lang thread_mod}" onclick="showWindow('viewthreadmod', this.href)"><!--{if $lastmod['modactiontype'] == 'REB'}-->{lang thread_mod_recommend_by}<!--{else}-->{lang thread_mod_by}<!--{/if}--></a></div><!--{/if}-->
+			<!--{hook/viewthread_modaction}-->
+		<!--{/if}-->
+	</div>
+
+	<!-- 附件 -->
+	<div class="c-fli-attachment">
+		<!--{if $post['attachment'] && $_GET['from'] != 'preview'}-->
+			<div class="attach_nopermission attach_tips">
+				<div>
+					<h3><strong>{lang attach_nopermission_notice}</strong></h3>
+					<p><!--{if $_G['uid']}-->{lang attach_nopermission}<!--{elseif $_G['connectguest']}-->{lang attach_nopermission_connect_fill_profile}<!--{else}-->{lang attach_nopermission_login} <!--{hook/global_login_text}--><!--{/if}--></p>
+				</div>
+				<span class="atips_close" onclick="this.parentNode.style.display='none'">x</span>
+			</div>
+		<!--{elseif $post['imagelist'] || $post['attachlist']}-->
+			<div class="pattl">
+				<!--{if $post['imagelist'] && $_G['setting']['imagelistthumb'] && $post['imagelistcount'] >= $_G['setting']['imagelistthumb']}-->
+					<!--{if !isset($imagelistkey)}-->
+						<!--{eval $imagelistkey = rawurlencode(dsign($_G[tid].'|100|100'))}-->
+						<script type="text/javascript" reload="1">var imagelistkey = '$imagelistkey';</script>
+					<!--{/if}-->
+					<!--{eval $post['imagelistthumb'] = true;}-->
+					<div class="bbda cl mtw mbm pbm">
+						<strong>{lang more_images}</strong>
+						<a href="javascript:;" onclick="attachimglst('$post[pid]', 0)" class="xi2 attl_g">{lang image_small}</a>
+						<a href="javascript:;" onclick="attachimglst('$post[pid]', 1, {echo intval($_G['setting']['lazyload'])})" class="xi2 attl_m">{lang image_big}</a>
+					</div>
+					<div id="imagelist_$post[pid]" class="cl" style="display:none"><!--{echo showattach($post, 1)}--></div>
+					<div id="imagelistthumb_$post[pid]" class="pattl_c cl"><img src="{IMGDIR}/loading.gif" width="16" height="16" class="vm" /> {lang image_list_openning}</div>
+				<!--{else}-->
+					<!--{echo showattach($post, 1)}-->
+				<!--{/if}-->
+				<!--{if $post['attachlist']}-->
+					<!--{echo showattach($post)}-->
+				<!--{/if}-->
+			</div>
+		<!--{/if}-->
+	</div>
+
+	<!-- 快速回复 -->
+	<div class="c-fli-fastreply">
+		<!--{if $_G['setting']['allowfastreply'] && $post['first'] && $fastpost && $allowpostreply && !$_G['forum_thread']['archiveid'] && $_GET['from'] != 'preview'}-->
+			<form method="post" autocomplete="off" id="vfastpostform" action="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&fromvf=1&extra=$_G[gp_extra]&replysubmit=yes{if $_G['gp_ordertype'] != 1}&infloat=yes&handlekey=vfastpost{/if}{if $_G[gp_from]}&from=$_G[gp_from]{/if}" onsubmit="this.message.value = parseurl(this.message.value);ajaxpost('vfastpostform', 'return_reply', 'return_reply', 'onerror');return false;">
+			<div id="vfastpost" class="fullvfastpost">				
+				<input type="hidden" name="formhash" value="{FORMHASH}" />
+				<table cellspacing="0" cellpadding="0" id="vfastposttb">
+					<tr>
+						<td id="vf_l"></td>
+						<td id="vf_m"><input type="text" name="message" id="vmessage" onKeyDown="seditor_ctlent(event, '$(\'vfastpostform\').submit()');"/></td>
+						<td id="vf_r"></td>						
+						<td id="vf_b">
+							<button type="submit" class="pn pnc" name="replysubmit" id="vreplysubmit" value="true" style="">post_newreply</button>								
+						</td>						
+					</tr>
+				</table>				
+			</div>
+			<div id="vfastpostseccheck"></div>				
+			</form>
+			<script type="text/javascript">vmessage();</script>
+		<!--{/if}-->
+	</div>
+
 
 	<!-- 点评 -->
 	<div id="comment_$post[pid]" class="c-fli-cmt cm">

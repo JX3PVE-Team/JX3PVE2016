@@ -1,7 +1,10 @@
 .c-alert-tipsskin{
-	background-color:#FBFB70;
 	color:#E00A0A;
+	background-color: #FFF897;
 	.nobreak;
+	.lh(30px);
+	.pf;.z(21);
+	.x;.full(x);
 
 	a{
 		color:@blue-link;
@@ -14,10 +17,8 @@
 //IE 6 & 7警告
 .c-alert-ie{
 	.none;
-	.pf;.lb(0,0);.z(21);
-	.x;.full(x);
-	.fz(12px,20px);
-	border-top:1px solid #F97130;
+	.lb(0,0);
+	border-top:1px solid #FFD403;
 	&:extend(.c-alert-tipsskin);
 }
 
@@ -28,11 +29,10 @@
 //服务器维护紧急通告
 .c-alert-warning{
 	.none;
-	.pf;.lt(0,0);.z(21);
-	.x;.full(x);
-	border-bottom:1px solid #F97130;
+	.lt(0,0);
+	border-bottom:1px solid #FFD403;
 	&:extend(.c-alert-tipsskin);
 }
 .alertHTML{
-	body,.c-header{margin-top:20px;}
+	body,.c-header,.i-header{margin-top:30px;}
 }

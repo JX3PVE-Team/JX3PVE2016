@@ -21,7 +21,7 @@
 
 //副标题
 .c-fli-title{
-	.fz(13px);.bold;
+	.bold;
 	margin:10px 0 0 0;
 	color:@blue-link;
 }
@@ -31,48 +31,11 @@
 
 }
 
-//付费
-.c-fli-pay{
-	//帖子需要收费时
-	.c-paysub{
-		@h:30px;
-		padding: 5px 8px 5px 24px !important;
-
-		//购买按钮
-		.u-btn-buysub{
-			.db;.fr;
-			.fzlh(12px,@h);.bold;color:#c00;
-			padding:0 10px;
-			background:#fff;border:1px solid darken(#f5d80e,3%);border-radius:3px;
-			&:hover{
-				border-color:darken(#f5d80e,5%);
-				color:lighten(#c00,1%);
-			}
-			i{
-				background:url('@{url}icon/viewpay.gif') no-repeat center center;
-				.size(16px,@h);.y(top);margin-right:5px;.dbi;
-			}
-		}
-		//本主题需向作者支付 2 米币 才能浏览。
-		.u-msg-paysub{
-			.fz(12px,@h + 2px);
-		}
-		//成为VIP会员全站资源免费下载，无需回复即可查看隐藏内容。
-		.u-msg-tobevip{
-
-		}
-		//已有购买数（隐藏）
-		.u-haspay{
-			.none;
-		}
-	}
-}
-
 //分类信息
 .c-fli-custom{
 	margin:10px auto;
 	padding-bottom:10px;
-	.fz(12px,2.5);
+	line-height:2.5;
 
 	ul{}
 	li{}
@@ -89,75 +52,12 @@
 	}
 }
 
+//内容区
 .t_fsz{
 	min-height:auto;
 }
 .c-fli-content{
 	min-height:80px;
-}
-
-//真实内容区(包含追加)
-.c-fli-primary{
-}
-
-//文字内容区
-.c-fli-article{
-	.clearfix;
-
-	//文字
-	color:#222;
-	.fz(13px,2);
-
-	//链接
-	a{text-decoration:none;}
-	a:hover{text-decoration:underline;}
-
-	//图片
-	embed,img{max-width:100%;}
-	img{height: auto;}
-
-	//表格
-	table{
-		margin:10px auto;
-		.w(100%);
-	}
-
-	//水平线
-	hr.l{
-		margin:5px auto;
-	}
-
-	//隐藏可见
-	.locked,.showhide{
-		.fz(12px,2);letter-spacing:0.5px;
-	}
-	.locked{
-		.color(#555,@bluex,#c00) !important;
-		.tips(yel);
-		.x(left) !important;
-		strong{.bold;.color(#f00);}
-	}
-	.showhide{
-		color:@bluex;
-		border:1px dashed @bluex;
-		h4{
-			color:@bluex;border-bottom:1px solid #cceafe;
-			line-height:26px;height:26px;
-		}
-	}
-
-	//引用文字
-	.quote{
-		background: none;
-		padding:10px;
-		border:1px dashed #ddd;
-		background-color:#FCF9FA;
-		blockquote{
-			background:none;
-			.fz(12px,2);
-			a{.fz(12px,2);}
-		}
-	}
 }
 
 //标签

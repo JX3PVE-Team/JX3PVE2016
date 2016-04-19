@@ -2,13 +2,17 @@
 @import url('../public/path.less');		//路径
 @import url('../global/color.less');	//配色
 
+.wp{
+	.w(960px);
+}
 .push-container{
+	padding:10px 0;
 	#pt{
 		margin-bottom:10px;
 	}
 }
 .m-push-primary{
-	.fz(12px,28px);
+	line-height:28px;
 	.dopt{
 		margin-bottom:10px;
 	}
@@ -22,10 +26,11 @@
 	}
 	.news_tsbtn{
 		margin-left:50px;
+		strong{.db;}
 	}
 }
 .m-push-content{
-	.fz(12px,2.2);
+	line-height:2.2;
 	padding:10px;
 	border:1px dashed #ddd;
 	ol{list-style:decimal;}
@@ -52,11 +57,8 @@
 		.news_tsbtn{
 			margin-left:0;
 			.w(100%);
-			.fzlh(14px,34px);
+			.lh(34px);
 			box-sizing:border-box;
 		}
 	}
-}
-#portal-page .alert_btnleft{
-	//.none;
 }
