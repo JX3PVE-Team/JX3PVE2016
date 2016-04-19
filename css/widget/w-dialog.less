@@ -10,27 +10,60 @@
     	margin-left:10px;
 	}
 }
-.ua-responsive .screen-s{
+.ua-responsive .screen-s .fwinmask{
 
-	.fwinmask{
+	.size(100%) !important;
+	box-sizing:border-box;
+
+	.fwin{
 		.size(100%);
 		box-sizing:border-box;
 	}
 
-	.fwin{
-		.w(100%);
-		box-sizing:border-box;
+	//表格内容区
+	.m_c{
+		.y(top);
 	}
-	
-	//收藏
+	form{
+
+	}
+	//操作内容区
+	.f_c{
+
+	}
+	//操作条
+	.o{
+		background:none;
+		border:none;
+		position: absolute;
+		bottom: 16px;
+		right: 8px;
+		width: 100%;
+		//width: ~"calc(100% - 38px)";
+	}
+
+}
+
+//回复
+.ua-responsive .screen-s #fwin_reply{
+	//隐藏引用内容
+	.m_c .quote{
+		.none;
+	}
+	//加大输入框
+	.tedt .pt{
+		.h(280px);
+	}
+	//本版积分规则
+	.o .y{
+		.none;
+	}
+}
+
+//收藏
+.ua-responsive .screen-s #fwin_k_favorite{
 	.altw{
 		.w(100%);
 		box-sizing:border-box;
 	}
-
-	//回复
-	.m_c .quote{
-		.none;
-	}
-
 }

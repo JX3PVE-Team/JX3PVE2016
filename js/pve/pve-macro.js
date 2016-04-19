@@ -48,7 +48,7 @@ H.ready(['jquery','macro','fixSidebar'],function(){
 		  H.curpage('.u-macro')
 
     	//侧边栏
-		  H.fixSidebar('.pve-sidebar',96,105,223)
+		  H.fixSidebar('.pve-sidebar',96,240,223)
     	
     	//帮助
     	H.route(53)

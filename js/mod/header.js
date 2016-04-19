@@ -24,12 +24,15 @@ H.ready(['jquery'], function(){
         }
 
         //消息通知总数
-        var $count = $("#c-header-msgcount")
+        var $count = $("#c-header-msgcount"),
+            $countpop = $("#c-header-msg-count");
         var count = 0;
         $("#c-header-msgdetails span").each(function(){
             count = count + parseInt($(this).text());
         });
         $count.text(count);
-
+        $countpop.text(count);
+        if(count){$countpop.show()}
+        
     })
 })

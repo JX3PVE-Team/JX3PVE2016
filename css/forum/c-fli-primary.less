@@ -1,9 +1,18 @@
 //真实内容区(包含追加)
 .c-fli-primary{
+	.t_table{
+		td,th{
+			border:1px solid #ddd;
+			padding:3px 8px;
+		}
+	}
+	a{color:@blue-link;}
+	a:hover{text-decoration:underline;}
 }
 
 //文字内容区
 .c-fli-article,.c-fli-reply,.t_f{
+
 	.clearfix;
 
 	//文字
@@ -72,13 +81,12 @@
 
 }
 
-
 //副楼文字内容区
-.c-fli-reply{
+.c-fli-content{
 	//副标题
 	.c-fli-title{
 		.bold;
-		margin:10px 0 0 0;
+		margin:5px 0 0 0;
 		color:@blue-link;
 	}
 }

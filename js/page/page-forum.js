@@ -4,18 +4,18 @@ H.ready(['jquery'],function(){
 		var $mask = $("#u-mask")
 
 		//判断是否出现了弹层
-		$("body").on('click',function(){
+		/*$("body").on('click',function(){
 			if($(".fwinmask").length){
 				$("html").addClass('e-maskactive')
 			}
-		})
+		})*/
 
-		$(".u-mask-tg").on('click',function(){
+		/*$(".u-mask-tg").on('click',function(){
 			$mask.fadeIn()
 		})
 		$("#u-mask").on('click',function(){
 			$mask.fadeOut()
-		})
+		})*/
 
 		//分享
 		$("#c-forum-title-share").on('click',function(){
