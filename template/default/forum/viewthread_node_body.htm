@@ -1,3 +1,4 @@
+<div class="c-fli-content">
 <!--{if !$_G['forum']['ismoderator'] && $_G['setting']['bannedmessages'] & 1 && (($post['authorid'] && !$post['username']) || ($_G['thread']['digest'] == 0 && ($post['groupid'] == 4 || $post['groupid'] == 5 || $post['memberstatus'] == '-1')))}-->
 	<!-- 禁止查看 -->
 	<div class="locked c-fli-tips c-fli-tips-banned">{lang message_banned}</div>
@@ -118,7 +119,7 @@
 				<div class="c-fli-article" id="postmessage_$post[pid]">$post[message]</div>
 			<!--{/if}-->
 		<!--{else}-->
-			<div class="c-fli-article c-fli-reply" id="postmessage_$post[pid]">
+			<div class="c-fli-reply" id="postmessage_$post[pid]">
 			<!--{if !$_G['inajax']}-->
 				<!--{if $ad_a_pr}-->
 					$ad_a_pr
@@ -330,3 +331,4 @@
 
 <!--{/if}-->
 <!--{hook/viewthread_postbottom $postcount}-->
+</div>

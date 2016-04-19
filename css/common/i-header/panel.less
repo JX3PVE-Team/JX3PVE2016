@@ -1,0 +1,29 @@
+.i-header-panel{
+	.pf;.lb(0,0);.z(40);
+	.w(100%);
+	.none;
+
+	&.active{
+		animation:slideUpMenu 0.3s ease-in-out forwards;
+		.db;
+	}
+
+	&.folder{
+		animation:slideDownMenu 0.3s ease-in-out forwards;
+		.db;
+	}
+}
+
+.i-header-panel li{
+	.h(51px);
+	.color(@blue-link,@blue-link,@blue-link);
+	background-color:#fff;
+}
+.i-header-panel li a{
+	.lh(50px);
+	.db;.x;margin:0 15px;
+	border-bottom:1px solid #eee;
+}
+.i-header-panel .u-cancel{
+	margin-top:2px;
+}

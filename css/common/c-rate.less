@@ -1,7 +1,7 @@
-#fwin_rate #rateform .c{
-	//米币评分提示
+.c-rate{
 	.mibi{
 		.pointer;
+		.w(70px);
 		em{
 			background: #f00;
 			color: #fff;
@@ -12,7 +12,7 @@
 			.arrow(l,4px,#f00);
 			&:after{
 				content:'此项将消耗自己积分';
-				.db;.pa;.lt(-40px,-30px);
+				.db;.pa;.lt(-40px,-40px);
 				.tips(yel);
 				padding:2px 5px;
 				border-radius:3px;
@@ -34,19 +34,42 @@
 		}
 	}
 
-	.m-rate-tips{
-		.clearfix;
-		p{
-			color:#EA6100;
-			padding:10px;
-			.x;
-			border-bottom:1px dotted #ddd;
-		}
-		a{
-			padding:10px;
-			.fr;
-			.db;
-			.color(#999,#666);
-		}
+	.tpclg h4{
+		.w(auto);
+	}
+	.reason_slct .px{
+		.lh(32px);
+	}
+}
+
+.m-rate-tips{
+	.clearfix;
+	p{
+		color:#EA6100;
+		.x;
+		border-bottom:1px dotted #ddd;
+	}
+	a{
+		padding:10px;
+		.fr;
+		.db;
+		.color(#999,#666);
+	}
+}
+
+.ua-responsive .screen-s{
+	.c-rate{
+		font-size:12px;
+	}
+	.reason_slct{
+		.w(100%);
+		box-sizing:border-box;
+	}
+	.reason_slct .pt{
+		.w(auto) !important;
+	}
+	.reason_slct .px{
+		width: 100% !important;
+	    box-sizing: border-box;
 	}
 }

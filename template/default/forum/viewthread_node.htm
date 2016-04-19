@@ -16,16 +16,18 @@ $postshowavatars = !($_G['setting']['bannedmessages'] & 2 && ($post['memberstatu
 <div id="pid$post[pid]" class="plhin" summary="pid$post[pid]" cellspacing="0" cellpadding="0">
 	
 	<!-- dz:且如为正常模式 -->
-		<div class="c-fli-header">
-			<!--{subtemplate component/c_fli_header}-->
-		</div>
 		
-		<div class="c-fli-content">
-			<!--{subtemplate forum/viewthread_node_body}-->
-		</div>
+		<!-- jx3pve:c-fli-header -->
+		<!--{subtemplate component/c_fli_header}-->
+		
+		<!-- jx3pve:c-fli-content -->
+		<!--{subtemplate forum/viewthread_node_body}-->
 
+		<!-- jx3pve:c-fli-footer -->
 		<div class="c-fli-footer">
-			<!--{subtemplate component/c_fli_footer}-->
+		<!--{subtemplate component/c_fli_nextpre}-->
+		<!--{subtemplate component/c_fli_commend}-->
+		<!--{subtemplate component/c_fli_panel}-->
 		</div>
 
 		<!-- dz:来自群组(暂停) -->

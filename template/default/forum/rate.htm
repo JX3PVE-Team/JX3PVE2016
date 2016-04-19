@@ -10,14 +10,14 @@
 <!--{/if}-->
 
 <!--{if $_GET[action] == 'rate'}-->
-<div class="tm_c" id="floatlayout_topicadmin">
+<div class="c-rate tm_c" id="floatlayout_topicadmin">
 	<h3 class="flb">
 		<em id="return_rate">{lang rate}</em>
 		<span>
 			<!--{if !empty($_GET['infloat'])}--><a href="javascript:;" class="flbc" onclick="hideWindow('rate')" title="{lang close}">{lang close}</a><!--{/if}-->
 		</span>
 	</h3>
-	<form id="rateform" method="post" autocomplete="off" action="forum.php?mod=misc&action=rate&ratesubmit=yes&infloat=yes" onsubmit="ajaxpost('rateform', 'return_rate', 'return_rate', 'onerror');">
+	<form class="c-rate-content" id="rateform" method="post" autocomplete="off" action="forum.php?mod=misc&action=rate&ratesubmit=yes&infloat=yes" onsubmit="ajaxpost('rateform', 'return_rate', 'return_rate', 'onerror');">
 		<input type="hidden" name="formhash" value="{FORMHASH}" />
 		<input type="hidden" name="tid" value="$_G[tid]" />
 		<input type="hidden" name="pid" value="$_GET[pid]" />
@@ -46,7 +46,7 @@
 					</tr>
 				<!--{/loop}-->
 			</table>
-			<script src="http://js.jx3pve.com/js/mod/rate.js" type="text/javascript" charset="utf-8"></script>
+			<script src="http://js.jx3pve.com/js/mod/rate.min.js" type="text/javascript" charset="utf-8"></script>
 			<div class="tpclg">
 				<h4>{lang user_operation_explain}:</h4>
 				<table cellspacing="0" cellpadding="0" class="reason_slct">

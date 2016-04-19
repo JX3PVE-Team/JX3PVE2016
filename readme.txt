@@ -32,15 +32,15 @@ screen-l/m/s 	->body			responsive screen判断（l:pc m:平板竖屏 s:手机）
 
 //Z-index 
 ---------------------------------------------------
-className		z-index			description
+className			z-index			description
 ---------------------------------------------------
-.c-header		20 				公共头部
-.i-header		20 				移动头部
-.i-footer		20 				移动底部
-.c-alert		21 				紧急公告
-#u-mask			30 				遮罩层
-.i-*-menu		40 				手机弹层菜单
-
+.c-header			20 				公共头部
+.i-header			20 				移动头部
+.i-footer			20 				移动底部
+.c-alert			21 				紧急公告
+#u-mask				30 				遮罩层
+.i-header-panel		40 				手机弹层菜单
+.fwinmask			201 			dz默认弹层
 
 
 //Page width css 
@@ -74,3 +74,6 @@ FAQ				css/system/faq.css 			template/default/common/faq.htm
 
 
 副本专题		css/fb/*					template/fam/portal/*
+
+举报			css/common/c-report			template/default/common/report.htm
+评分			css/common/c-rate			template/default/forum/rate.htm

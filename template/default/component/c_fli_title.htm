@@ -1,0 +1,68 @@
+<div class="c-fli-title">
+	<!-- 主题分类 -->
+	<!--{if $_G['forum_thread']['typeid'] && $_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}-->
+		<!--{if !IS_ROBOT && ($_G['forum']['threadtypes']['listable'] || $_G['forum']['status'] == 3)}-->
+			<a class="u-type" href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid=$_G[forum_thread][typeid]">[{$_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}]</a>
+		<!--{else}-->
+			[{$_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}]
+		<!--{/if}-->
+	<!--{/if}-->
+	<!--{if $threadsorts && $_G['forum_thread']['sortid']}-->
+		<a class="u-sort" href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$_G[forum_thread][sortid]">[{$_G['forum']['threadsorts']['types'][$_G['forum_thread']['sortid']]}]</a>
+	<!--{/if}-->
+
+	<!-- 标题 -->
+	<a class="u-subject" id="thread_subject" href="forum.php?mod=viewthread&tid=$_G[tid]">$_G[forum_thread][subject]</a>
+
+	<!-- 标题标志 -->
+	<span class="u-subjectmark xg1">
+		<!--{if $_G['forum_thread'][displayorder] == -2}-->({lang moderating})
+		<!--{elseif $_G['forum_thread'][displayorder] == -3}-->({lang have_ignored})
+		<!--{elseif $_G['forum_thread'][displayorder] == -4}-->({lang draft})
+			<!--{if $post['first'] && $post['invisible'] == -3}-->
+				<a class="u-psave psave" href="forum.php?mod=misc&action=pubsave&tid=$_G[tid]">{lang published}</a>
+			<!--{/if}-->
+		<!--{/if}-->
+		<!--{if $_G['setting']['threadhidethreshold'] && $_G['forum_thread']['hidden'] >= $_G['setting']['threadhidethreshold']}-->						
+			<!--{if $_G['forum_thread']['authorid'] == $_G['uid']}--><a class="u-psave psave" id="hiderecover" title="{lang hiderecover_tips}" href="forum.php?mod=misc&action=hiderecover&tid=$_G[tid]&formhash={FORMHASH}" onclick="showWindow(this.id, this.href, 'get', 0);">{lang hidden}</a><!--{else}-->({lang hidden})<!--{/if}-->
+			&nbsp;
+		<!--{/if}-->
+
+		<!--{if $_G['forum_thread']['recommendlevel']}-->
+			&nbsp;<img class="u-recommend" src="{IMGDIR}/recommend_$_G['forum_thread']['recommendlevel'].gif" alt="" title="{lang thread_recommend} $_G['forum_thread'][recommends]" />
+		<!--{/if}-->
+
+		<!--{if $_G['forum_thread'][heatlevel]}-->
+			&nbsp;<img class="u-heat" src="{IMGDIR}/hot_$_G['forum_thread'][heatlevel].gif" alt="" title="{lang heats}: $_G['forum_thread']['heats']" />
+		<!--{/if}-->
+
+		<!--{if $_G['forum_thread']['closed'] == 1}-->
+			&nbsp;<img class="u-close" src="{IMGDIR}/locked.gif" alt="{lang close}" title="{lang close}" class="vm" />
+		<!--{/if}-->
+	</span>
+
+	<!-- 收藏 -->
+	<a class="u-fav" href="home.php?mod=spacecp&ac=favorite&type=thread&id=$_G[tid]&formhash={FORMHASH}" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);" onmouseover="this.title = $('favoritenumber').innerHTML + ' {lang activity_member_unit}{lang thread_favorite}'" title="{lang fav_thread}">
+		<i></i>收藏
+		<span class="none" id="favoritenumber"{if !$_G['forum_thread']['favtimes']} style="display:none"{/if}>
+			$_G['forum_thread']['favtimes']
+		</span>
+	</a>
+
+	<!-- 只看楼主 -->
+	<!--{if $post['invisible'] == 0}-->
+		<!--{if !IS_ROBOT && !$_GET['authorid'] && !$_G['forum_thread']['archiveid']}-->
+			<a class="u-only" href="forum.php?mod=viewthread&tid=$post[tid]&page=$page&authorid=$_G[forum_thread][authorid]" rel="nofollow">只看楼主</a>
+		<!--{elseif !$_G['forum_thread']['archiveid']}-->
+			<a class="u-only on" href="forum.php?mod=viewthread&tid=$post[tid]&page=$page" rel="nofollow">取消只看楼主</a>
+		<!--{/if}-->
+	<!--{/if}-->
+
+	<!-- 印戳 -->
+	<!--{if $post['first'] &&  $_G['forum_threadstamp']}-->
+		<div class="w-stamp w-stamp-$_G[forum_thread][stamp]" id="threadstamp">
+			<img src="{STATICURL}image/stamp/$_G[forum_threadstamp][url]" title="$_G[forum_threadstamp][text]" />
+		</div>
+	<!--{/if}-->
+
+</div>

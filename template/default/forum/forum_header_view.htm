@@ -1,8 +1,7 @@
-<link rel="stylesheet" href="http://test.jx3pve.com/css/forum.css" type="text/css" />
-<header class="i-header">
-	<a class="i-header-back" href="javascript:;" onclick="history.go(-1)"><i></i><span>返回</span></a>
+<header class="i-header i-header-view">
+	<a class="i-header-back" href="forum.php?mod=forumdisplay&fid=$_G['fid']"><i></i><span>返回</span></a>
 	<div class="i-header-title">$_G['forum'][name]</div>
-	<div class="i-header-view">
+	<div class="i-header-menu">
 		<!-- 只看楼主 -->
 		<!--{if $post['invisible'] == 0}-->
 			<!--{if !IS_ROBOT && !$_GET['authorid'] && !$_G['forum_thread']['archiveid']}-->
@@ -13,47 +12,32 @@
 		<!--{/if}-->
 
 		<!-- 更多 -->
-		<a class="u-all" id="i-viewpage-menu-tg" href="javascript:;"><span>更多</span></a>
+		<a class="u-all" id="i-header-panel-tg" href="javascript:;"><span>更多</span></a>
 	</div>
 </header>
-<div class="i-viewpage-menu" id="i-viewpage-menu">
-	<!-- 收藏 -->
-	<div class="i-maskmenu-li i-maskmenu-li-fav">
-		<a class="i-maskmenu-li-wrapper u-fav" href="home.php?mod=spacecp&ac=favorite&type=thread&id=$_G[tid]&formhash={FORMHASH}" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);" onmouseover="this.title = $('favoritenumber').innerHTML + ' {lang activity_member_unit}{lang thread_favorite}'" title="{lang fav_thread}">收藏</a>
-	</div>
-
-	<!-- 楼层跳转 -->
-	<!-- <div class="i-maskmenu-li i-maskmenu-li-goto">
-		<div class="i-maskmenu-li-wrapper u-goto">
-			<label class="z">跳转楼层</label>
-			<input type="text" class="px p_fre z" size="2" onkeyup="$('fj_btn').href='forum.php?mod=redirect&ptid=$_G[tid]&authorid=$_GET[authorid]&postno='+this.value" onkeydown="if(event.keyCode==13) {window.location=$('fj_btn').href;return false;}" title="{lang thread_redirect_postno_tips}" />
-			<a href="javascript:;" class="z" title="{lang thread_redirect_postno_tips}"><img src="{IMGDIR}/fj_btn.png" alt="{lang thread_redirect_postno_tips}" class="vm" /></a>
-		</div>
-	</div> -->
-
-	<!-- 举报 -->
-	<!--{if $post['authorid'] != $_G['uid']}-->
-	<div class="i-maskmenu-li i-maskmenu-li-report">
-		<a class="i-maskmenu-li-wrapper  u-report" title="举报" href="javascript:;" onclick="showWindow('miscreport$post[pid]', 'misc.php?mod=report&rtype=post&rid=$post[pid]&tid=$_G[tid]&fid=$_G[fid]', 'get', -1);return false;">{lang report}</a>
-	</div>
-	<!--{/if}-->
-
-	<!-- 倒序 -->
-	<div class="i-maskmenu-li i-maskmenu-li-viewmode">
-		<!--{if !$rushreply}-->
-			<!--{if $ordertype != 1}-->
-				<a href="forum.php?mod=viewthread&tid=$_G[tid]&extra=$_GET[extra]&ordertype=1"  class="i-maskmenu-li-wrapper u-descending" title="倒序浏览 - 最后发布的靠前"><i></i><span>倒序查看</span></a>
-			<!--{else}-->                     
-				<a href="forum.php?mod=viewthread&tid=$_G[tid]&extra=$_GET[extra]&ordertype=2"  class="i-maskmenu-li-wrapper u-descending" title="正序浏览 - 最早发布的靠前"><i></i><span>正序查看</span></a>
-			<!--{/if}-->
+<div class="i-header-panel" id="i-header-panel">
+	<ul>
+		<li>
+			<a class="u-fav u-mask-tg" href="home.php?mod=spacecp&ac=favorite&type=thread&id=$_G[tid]&formhash={FORMHASH}" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);" onmouseover="this.title = $('favoritenumber').innerHTML + ' {lang activity_member_unit}{lang thread_favorite}'" title="{lang fav_thread}">收藏</a>
+		</li>
+		<!--{if $post['authorid'] != $_G['uid']}-->
+		<li>
+			<a class="u-report u-mask-tg" title="举报" href="javascript:;" onclick="showWindow('miscreport$post[pid]', 'misc.php?mod=report&rtype=post&rid=$post[pid]&tid=$_G[tid]&fid=$_G[fid]', 'get', -1);return false;">{lang report}</a>
+		</li>
 		<!--{/if}-->
-	</div>
-
-	<!-- 取消 -->
-	<div class="i-maskmenu-li i-maskmenu-li-cancel">
-		<a href="javascript:;" class="i-maskmenu-li-wrapper u-cancel" id="i-maskmenu-cancel">取消</a>
-	</div>
-
+		<li>
+			<!--{if !$rushreply}-->
+				<!--{if $ordertype != 1}-->
+					<a class="u-viewmode" href="forum.php?mod=viewthread&tid=$_G[tid]&extra=$_GET[extra]&ordertype=1" title="倒序浏览 - 最后发布的靠前"><i></i><span>倒序查看</span></a>
+				<!--{else}-->                     
+					<a class="u-viewmode" href="forum.php?mod=viewthread&tid=$_G[tid]&extra=$_GET[extra]&ordertype=2" title="正序浏览 - 最早发布的靠前"><i></i><span>正序查看</span></a>
+				<!--{/if}-->
+			<!--{/if}-->
+		</li>
+		<li>
+			<a class="u-cancel" href="javascript:;" id="i-header-panel-cancel">取消</a>
+		</li>
+	</ul>
 </div>
 <div class="viewpage-container f-$_G[fid]-container">
 	<div class="wp">

@@ -1,0 +1,42 @@
+.c-fli-title{
+
+	.pr;
+	margin-bottom:5px;
+
+	a:hover{color:@blue-link;}
+
+	.u-type{}
+
+	.u-sort{}
+
+	.u-subject{
+		.fz(14px);.bold;
+	}
+
+	.u-subjectmark{}
+
+	.u-only,.u-fav{
+		.fr;
+   		margin-left:5px;
+	    border-radius: 2px;
+	    padding: 0 8px;
+	    border:1px solid #999;
+	    color:#666;
+	    &:hover,&.on{
+	    	color:@blue-link;
+	    	border-color:@blue-link;
+	    }
+	}
+
+	.w-stamp{
+		.fr;
+		.h(24px);
+	}
+}
+
+
+//mobile
+.ua-responsive .screen-s .c-fli-title{
+	.u-subject{font-size:1.2rem;}
+	.u-only,.u-fav{.none;}
+}

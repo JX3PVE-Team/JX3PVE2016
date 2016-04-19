@@ -9,6 +9,10 @@
 	}
 	.pg{
 		.clearfix;
+		//当前页
+		strong{background-color:#f2f2f2;}
+		a,strong,label{border-color:#ddd;}
+		a:hover{border-color:@zhblue;}
 	}
 }
 
@@ -30,7 +34,7 @@
 //底部下一页按钮
 .u-btn-nextpage,.u-pages-next{
 	&:extend(.u-btn-gray);
-	.fz(13px,20px);
+	.fz(13px,28px);
 	.db;.x;
 	margin-bottom:10px;
 }
@@ -45,6 +49,14 @@
 	img{.none;}
 }
 
-.ua-responsive .screen-s .u-btn-publish{
-	.w(100%);
-}
+//手机端
+.ua-responsive .screen-s{
+
+	.w-pages-bottom .u-btn-publish{
+		.w(100%);
+		margin-bottom:10px;
+	}
+	.viewpage-container .u-btn-publish{
+		.none;
+	}
+} 

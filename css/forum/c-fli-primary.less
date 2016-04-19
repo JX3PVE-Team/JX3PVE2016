@@ -3,11 +3,12 @@
 }
 
 //文字内容区
-.c-fli-article{
+.c-fli-article,.c-fli-reply,.t_f{
 	.clearfix;
 
 	//文字
 	color:#222;
+	font-size:13px;
 
 	//链接
 	a{text-decoration:none;}
@@ -58,5 +59,26 @@
 			.fz(12px,2);
 			a{.fz(12px,2);}
 		}
+	}
+}
+.ua-responsive .screen-s{
+	.c-fli-article,.c-fli-reply,.t_f{
+		font-size:1.2rem;
+	}
+}
+
+//主楼文字内容区
+.c-fli-article{
+
+}
+
+
+//副楼文字内容区
+.c-fli-reply{
+	//副标题
+	.c-fli-title{
+		.bold;
+		margin:10px 0 0 0;
+		color:@blue-link;
 	}
 }
