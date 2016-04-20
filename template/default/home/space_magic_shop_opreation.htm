@@ -4,11 +4,7 @@
 <!--{template common/header}-->
 <!--{if empty($_GET['infloat'])}-->
 <div id="pt" class="bm cl">
-		<div class="z">
-		<a href="./" class="nvhm" title="{lang homepage}">$_G['setting']['bbname']</a> <em>&rsaquo;</em>
-		<a href="home.php">{lang useros}</a><em>&rsaquo;</em>
-		<a href="home.php?mod=medal">{lang medals}</a>
-	</div>
+	<div class="z"><a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em> $navigation</div>
 </div>
 <div id="ct" class="ct2_a wp cl">
 	<div class="mn">
@@ -25,7 +21,7 @@
 			{lang magics_operation_present}{lang magic}
 		<!--{/if}-->
 		</em>
-		<span><!--{if !empty($_GET['infloat'])}--><a href="javascript:;" class="flbc" onclick="hideWindow('$_GET[handlekey]');return false;" title="{lang close}">{lang close}</a><!--{/if}--></span>
+		<span><!--{if !empty($_GET['infloat'])}--><a href="javascript:;" class="flbc u-mask-close" onclick="hideWindow('$_GET[handlekey]');hideMask();return false;" title="{lang close}">{lang close}</a><!--{/if}--></span>
 	</h3>
 	<div class="c">
 		<input type="hidden" name="formhash" value="{FORMHASH}" />
@@ -100,9 +96,9 @@
 <!--{if empty($_GET['infloat'])}--><div class="m_c"><!--{/if}-->
 <div class="o pns">
 	<!--{if $operation == 'buy'}-->
-		<button class="pn pnc" type="submit" name="operatesubmit" id="operatesubmit" value="true"><span>{lang magics_operation_buy}</span></button>
+		<button class="pn pnc u-mask-close" type="submit" name="operatesubmit" id="operatesubmit" value="true"><span>{lang magics_operation_buy}</span></button>
 	<!--{elseif $operation == 'give'}-->
-		<button class="pn pnc" type="submit" name="operatesubmit" id="operatesubmit" value="true" onclick="return confirmMagicOp(e)"><span>{lang magics_operation_present}</span></button>
+		<button class="pn pnc u-mask-close" type="submit" name="operatesubmit" id="operatesubmit" value="true" onclick="return confirmMagicOp(e)"><span>{lang magics_operation_present}</span></button>
 	<!--{/if}-->
 </div>
 <!--{if empty($_GET['infloat'])}--></div><!--{/if}-->

@@ -869,6 +869,43 @@ function doane(event, preventDefault, stopPropagation) {
 	return e;
 }
 
+function DZpreventDefault(){
+	var preventDefault = isUndefined(preventDefault) ? 1 : preventDefault;
+	e = event ? event : window.event;
+	if(!e) {
+		e = getEvent();
+	}
+	if(!e) {
+		return null;
+	}
+	if(preventDefault) {
+		if(e.preventDefault) {
+			e.preventDefault();
+		} else {
+			e.returnValue = false;
+		}
+	}
+	return e;
+}
+function DZstopPropagation(){
+	var stopPropagation = isUndefined(stopPropagation) ? 1 : stopPropagation;
+	e = event ? event : window.event;
+	if(!e) {
+		e = getEvent();
+	}
+	if(!e) {
+		return null;
+	}
+	if(stopPropagation) {
+		if(e.stopPropagation) {
+			e.stopPropagation();
+		} else {
+			e.cancelBubble = true;
+		}
+	}
+	return e;
+}
+
 function loadcss(cssname) {
 	if(!CSSLOADED[cssname]) {
 		if(!$('css_' + cssname)) {
@@ -1317,6 +1354,11 @@ function hideMenu(attr, mtype) {
 	}
 }
 
+//add new function mask hide
+function hideMask(){
+	document.getElementById('u-mask').style.display="none";
+}
+
 function getCurrentStyle(obj, cssproperty, csspropertyNS) {
 	if(obj.style[cssproperty]){
 		return obj.style[cssproperty];
@@ -1528,7 +1570,9 @@ function showWindow(k, url, mode, cache, menuv) {
 	} else {
 		show();
 	}
-	doane();
+	//doane();
+	//should not stop pop,mobile can't close the mask. - 2016.4.20
+	DZpreventDefault();
 }
 
 function showError(msg) {

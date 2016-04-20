@@ -18,11 +18,11 @@
 <div class="i-header-panel" id="i-header-panel">
 	<ul>
 		<li>
-			<a class="u-fav u-mask-tg" href="home.php?mod=spacecp&ac=favorite&type=thread&id=$_G[tid]&formhash={FORMHASH}" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);" onmouseover="this.title = $('favoritenumber').innerHTML + ' {lang activity_member_unit}{lang thread_favorite}'" title="{lang fav_thread}">收藏</a>
+			<a class="u-fav" href="home.php?mod=spacecp&ac=favorite&type=thread&id=$_G[tid]&formhash={FORMHASH}" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);" onmouseover="this.title = $('favoritenumber').innerHTML + ' {lang activity_member_unit}{lang thread_favorite}'" title="{lang fav_thread}">收藏</a>
 		</li>
 		<!--{if $post['authorid'] != $_G['uid']}-->
 		<li>
-			<a class="u-report u-mask-tg" title="举报" href="javascript:;" onclick="showWindow('miscreport$post[pid]', 'misc.php?mod=report&rtype=post&rid=$post[pid]&tid=$_G[tid]&fid=$_G[fid]', 'get', -1);return false;">{lang report}</a>
+			<a class="u-report" title="举报" href="javascript:;" onclick="showWindow('report', 'misc.php?mod=report&rtype=post&rid=$post[pid]&tid=$_G[tid]&fid=$_G[fid]', 'get', -1);return false;">{lang report}</a>
 		</li>
 		<!--{/if}-->
 		<li>

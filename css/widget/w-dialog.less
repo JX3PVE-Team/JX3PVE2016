@@ -12,11 +12,11 @@
 }
 .ua-responsive .screen-s .fwinmask{
 
-	.size(100%) !important;
+	.w(100%) !important;
 	box-sizing:border-box;
 
 	.fwin{
-		.size(100%);
+		.w(100%);
 		box-sizing:border-box;
 	}
 
@@ -32,7 +32,7 @@
 
 	}
 	//操作条
-	.o{
+	/*.o{
 		background:none;
 		border:none;
 		position: absolute;
@@ -40,7 +40,7 @@
 		right: 8px;
 		width: 100%;
 		//width: ~"calc(100% - 38px)";
-	}
+	}*/
 
 }
 
@@ -48,6 +48,10 @@
 .ua-responsive .screen-s #fwin_reply{
 	//隐藏引用内容
 	.m_c .quote{
+		.none;
+	}
+	//隐藏无用的编辑器按钮
+	.fcd,.fqt,.fat,.flnk,.fsml,.fmg{
 		.none;
 	}
 	//加大输入框
@@ -60,10 +64,16 @@
 	}
 }
 
-//收藏
-.ua-responsive .screen-s #fwin_k_favorite{
+//文字类弹层提示
+.ua-responsive .screen-s .fwinmask{
 	.altw{
 		.w(100%);
 		box-sizing:border-box;
 	}
+}
+//收藏
+.ua-responsive .screen-s #fwin_k_favorite{
+}
+//收听提示
+.ua-responsive .screen-s #fwin_followmod{
 }

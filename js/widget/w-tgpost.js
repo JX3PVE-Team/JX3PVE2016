@@ -5,19 +5,23 @@ H.ready(['jquery'], function(){
         	$ct = $(".c-fli"),
         	$icon = $("#w-tgpost-icon"),
         	$tips = $("#w-tgpost-text"),
+            $showall = $("#w-tgpost-showall"),
             isFolderDefault = $(".tgpost-folder").length;
 
             $tg.on('click',function(){
                 $ct.fadeToggle('slow');
-                $icon.hasClass('on') ? $tips.text('展开') : $tips.text('折叠');
                 $icon.toggleClass('on');
+            })
+
+            $showall.on('click',function(){
+                $ct.fadeIn('slow');
+                $(this).fadeOut();
             })
 
             if(isFolderDefault){
                 $ct.hide();
             }else{
                 $icon.addClass('on');
-                $tips.text('折叠');
             }
 
     })

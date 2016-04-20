@@ -15,6 +15,8 @@
 		<!--{if $post[first]}-->
 			<div class="c-fli-first c-fli-common" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
 				<!--{subtemplate forum/viewthread_node}-->
+				<!-- jx3pve:w-tgpost -->
+				<!--{subtemplate widget/w_tgpost}-->
 				<!--{subtemplate forum/viewthread_cmttitle}-->
 			</div>
 		<!--{else}-->
@@ -31,7 +33,7 @@
 	</div>
 
 	<!--{if $_G['blockedpids']}-->
-		<div id='hiddenpoststip'><a href='javascript:display_blocked_post();'>{lang other_reply_hide}</a></div>
+		<div id='hiddenpoststip'><a href='javascript:;' id="w-tgpost-showall">{lang other_reply_hide}</a></div>
 		<div id="hiddenposts"></div>
 	<!--{/if}-->
 
