@@ -38,6 +38,89 @@
 		margin:5px auto;
 	}
 
+	//列表
+	ul,li{
+		list-style:square inside;
+	}
+	ul{
+		margin-left:20px;
+	}
+
+	//编辑器默认
+	strong{
+		.bold;
+	}
+	i{
+		.italic;
+	}
+	u{
+		text-decoration:underline;
+	}
+
+	//引用文字
+	.quote{
+		background: none;
+		padding:10px;
+		border:1px dashed #ddd;
+		background-color:#F8FDFF;
+		overflow:visible;
+		blockquote{
+			background:none;
+			padding:0;
+			line-height:2;
+			.db;
+		}
+		.pr;
+		&:after{
+			content:'QUOTE';
+			.pa;.rt(-1px,-17px);
+			background-color:#F8FDFF;
+			border:1px dashed #ddd;
+			border-bottom:none;
+			.fzlh(12px,12px);color:#45A3C7;
+			padding:2px 5px;
+			font-family: Monaco,Consolas,'Lucida Console','Courier New',serif;
+		}
+	}
+
+	//代码
+	.blockcode{
+		background: none;
+		border:none;
+		padding:0;
+		overflow:visible;
+		ol,li{list-style-position:outside;}
+		//border:1px solid #555;
+		.r(4px);
+		ol{background-color:#272822;margin:0 !important;}
+		li{background-color:#272822;margin-left:40px;}
+		ol li{border-left:1px solid #555;.fz(12px,2.4);color:#f8f8f2;}
+		ol li:hover{background-color:#333;color:#f8f8f2;}
+		em{
+		    .db;background: #f7f8fa;
+		    border: 1px solid #dce0e6;
+		    text-shadow: 0 1px 1px #fff;
+		    margin:0;
+		    //.indent(40px);
+		    color:#555 !important;
+		    .x(right);
+		    padding-right:10px;
+		}
+
+		.pr;
+		&:after{
+			content:'CODE';
+			.pa;.rt(0,-15px);
+			background-color:#333;
+			border:1px solid #555;
+			border-bottom:none;
+			.fzlh(12px,10px);color:#999;
+			padding:2px 5px;
+			font-family: Monaco,Consolas,'Lucida Console','Courier New',serif;
+			.none;
+		}
+	}
+
 	//隐藏可见
 	.locked,.showhide{
 		letter-spacing:0.5px;
@@ -54,19 +137,6 @@
 		h4{
 			color:@bluex;border-bottom:1px solid #cceafe;
 			line-height:26px;height:26px;
-		}
-	}
-
-	//引用文字
-	.quote{
-		background: none;
-		padding:10px;
-		border:1px dashed #ddd;
-		background-color:#FCF9FA;
-		blockquote{
-			background:none;
-			.fz(12px,2);
-			a{.fz(12px,2);}
 		}
 	}
 }

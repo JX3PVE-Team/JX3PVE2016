@@ -24,9 +24,9 @@
 				<!-- 快速回复 -->
 				<!--{if (!$_G['uid'] || $allowpostreply) && !$needhiddenreply}-->
 					<!--{if $post['first']}-->
-						<a class="fastre u-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&reppost=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)"><i></i>引用</a>
+						<a class="fastre u-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&reppost=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)"><i></i>回复</a>
 					<!--{else}-->
-						<a class="fastre u-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&repquote=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)"><i></i>引用</a>
+						<a class="fastre u-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&repquote=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)"><i></i>回复</a>
 					<!--{/if}-->
 				<!--{/if}-->
 			<!--{/if}-->

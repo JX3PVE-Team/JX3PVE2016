@@ -1,22 +1,69 @@
 //点评
+@c-fli-cmt-border:#eee;
+@c-fli-cmt-bg:#fcfcfc;
+
 .c-fli-cmt{
-	/*margin:10px 20px;
-	border-top:1px solid #ddd;*/
-	.psth{
-		/*background: none;
-		padding:0;
-		margin:0;
-		border-bottom:1px dashed #ddd;
-		padding-bottom:10px;
-		margin-bottom:10px;*/
-		margin-bottom:10px;
+	.pr;
+	background-color:@c-fli-cmt-bg;
+	border:1px solid @c-fli-cmt-border;
+	margin-top:40px;
+	margin-bottom:20px;
+}
+.c-fli-cmt-title{
+	.pa;.rt(-1px,-28px);
+    background-color: @c-fli-cmt-bg;
+    border: 1px solid @c-fli-cmt-border;
+    border-bottom:1px solid @c-fli-cmt-bg;
+    padding: 0 13px;
+    color: #259;
+    .pointer;
+    &.on{
+    	background-color:@bluebg;
+    	color:#fff;
+    }
+}
+.c-fli-cmt-list{
+	border-bottom:1px solid @c-fli-cmt-border;
+	padding:10px;
+
+	.u-avatar{
+		.size(18px);.db;.fl;margin-right:5px;
+		img{.db;.full;.y;}
 	}
-	.psta{
-		.nobreak;
+	.u-username,.u-time{
+		.fz(13px,18px);
+		.db;.fl;
 	}
-	.pstl{
-		margin-bottom:20px;
+	.u-username{
+		margin-right:10px;
+		.color(@blue-link,@blue-link);
 	}
+	.u-time{
+		color:#999;
+	}
+	.u-del{
+		.fr;
+		.color(#999,#c00);
+	}
+	.u-words{
+		.db;.clear;
+		padding:10px;
+	}
+}
+.c-fli-cmt-bottom{
+	.clearfix;
+	padding:10px;
+	.w-pages{.fl;}
+	.c-fli-cmt-btn{.fr;}
+}
+.c-fli-cmt-btn{
+	.pa;.rb(10px,10px);
+	&:extend(.u-btn-gray);
+    padding: 0 28px;
+    border-radius: 4px;
+    &:hover{
+    	color:#222;
+    }
 }
 
 .ua-responsive .screen-s{

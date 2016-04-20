@@ -25,9 +25,11 @@ $postshowavatars = !($_G['setting']['bannedmessages'] & 2 && ($post['memberstatu
 
 		<!-- jx3pve:c-fli-footer -->
 		<div class="c-fli-footer">
-		<!--{subtemplate component/c_fli_nextpre}-->
 		<!--{subtemplate component/c_fli_commend}-->
-		<!--{subtemplate component/c_fli_panel}-->
+		<!--{subtemplate component/c_fli_nextpre}-->
+		<!--{if $post[first]}-->
+			<!--{subtemplate component/c_fli_panel}-->
+		<!--{/if}-->
 		</div>
 
 		<!-- dz:来自群组(暂停) -->

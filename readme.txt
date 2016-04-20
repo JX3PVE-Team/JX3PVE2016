@@ -77,3 +77,5 @@ FAQ				css/system/faq.css 			template/default/common/faq.htm
 
 举报			css/common/c-report			template/default/common/report.htm
 评分			css/common/c-rate			template/default/forum/rate.htm
+点评ajax		css/forum/c-fli-cmt			template/default/forum/comment_more.htm
+点评弹层		css/forum/c-fli-cmt			template/default/forum/comment.htm

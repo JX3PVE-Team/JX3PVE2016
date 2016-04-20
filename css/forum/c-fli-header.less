@@ -1,18 +1,41 @@
 .c-fli-header{
+
 	.color(#888,#222,#222);
 	a:hover{
 		text-decoration:underline;
 	}
-	.avatar{
-		img{.size(20px);.dbi;.y;.r(2px);}
+
+	.clearfix;
+	.u-avatar{
+		.fl;
+		img{.size(28px);.dbi;.y;.r(28px);}
 	}
-	.name{
-		.bold;
+	.u-info{
+		.fl;
+		margin-left:10px;
+	}
+	.u-username{
+		.bold;.fl;
 		margin-right:5px;
 	}
-	.floor{
-		.fr;
+	.u-usergroup{
+		.fl;
+		margin-top:6px;
+		margin-right:5px;
+	}
+	.u-verif{
+		.fl;line-height:1;
+		.db;
+		*{.db;.fl;}
+		margin-top:5px;
+		a{margin-right:2px;}
+	}
+	.u-info-1{.clearfix;.db;}
+	.u-info-2{.clearfix;.db;}
+
+	.u-floor{
 		color:#999;
+		.fl;margin-right:5px;
 
 		.u-settop{
 			.dbi;.y;background:url('@{url}header/icons2.png') no-repeat 0 0;
@@ -22,8 +45,13 @@
 		}
 	}
 
+	.u-time{
+		.fl;margin-right:5px;
+		em{.none;}
+	}
+
 	.c-fli-replycredit{
-		.fr;
+		.fl;
 		margin-right: 10px;
 	    border: 1px solid #ddd;
 	    padding: 2px 5px;
@@ -34,7 +62,6 @@
 }
 .ua-responsive .screen-s{
 	.c-fli-header{
-		.nobreak;
 		font-size:12px;
 	}
 	.c-fli-replycredit{.none;}
