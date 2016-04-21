@@ -1,0 +1,6 @@
+<div class="c-fli-modact">
+	<!--{if !IS_ROBOT && $post['first'] && !$_G['forum_thread']['archiveid']}-->
+		<!--{if !empty($lastmod['modaction'])}--><div class="modact"><a href="forum.php?mod=misc&action=viewthreadmod&tid=$_G[tid]" title="{lang thread_mod}" onclick="showWindow('viewthreadmod', this.href)"><!--{if $lastmod['modactiontype'] == 'REB'}-->{lang thread_mod_recommend_by}<!--{else}-->{lang thread_mod_by}<!--{/if}--></a></div><!--{/if}-->
+		<!--{hook/viewthread_modaction}-->
+	<!--{/if}-->
+</div>

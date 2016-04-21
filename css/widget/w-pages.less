@@ -11,7 +11,7 @@
 		.clearfix;
 		//当前页
 		strong{background-color:#f2f2f2;}
-		a,strong,label{border-color:#ddd;}
+		a,strong,label{border-color:#ddd;margin-bottom:5px;}
 		a:hover{border-color:@zhblue;}
 	}
 }
@@ -45,11 +45,18 @@
 //翻页旁发布按钮
 .u-btn-publish{
 	.fzlh(12px,28px);
-	.db;.w(120px);.x;
+	.db;.w(80px);.x;
 	border-radius: 2px;
 	.fl;
 	&:extend(.u-btn-blue);
 	img{.none;}
+}
+
+//没有分页时
+.w-pages-null{
+	.tips(graylight);
+	.x;
+	cursor:default;
 }
 
 //手机端

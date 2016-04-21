@@ -6,11 +6,18 @@
 	<span class="u-info">
 		<span class="u-info-1">
 			<!-- 用户名 -->
-			<a class="u-username" href="home.php?mod=space&uid=$post[authorid]" target="_blank" class="xi2"{if $post[groupcolor]} style="color: $post[groupcolor]"{/if}>$post[author]</a>
+				<a class="u-username" href="home.php?mod=space&uid=$post[authorid]" target="_blank" class="xi2"{if $post[groupcolor]} style="color: $post[groupcolor]"{/if}>$post[author]</a>
+			<!-- 如果是楼主自己 -->
+				<!--{eval $_self = $thread['author'] && $post['author'] == $thread['author'] && $post['position'] !== '1';}-->
+				<!--{if $_self }-->
+					<i class="u-lz">楼主</i>
+				<!--{/if}-->
 			<!-- 用户组 -->
-			<a class="u-usergroup u-group u-group-$post[groupid]" href="home.php?mod=spacecp&ac=usergroup&gid=$post[groupid]"><em id="u-usergroup-id">$post[groupid]</em></a>
+				<i class="u-usergroup">
+					$post['groupid']
+				</i>
 			<!-- 认证 -->
-			<span class="u-verif">$authorverifys</span>
+				<span class="u-verif">$authorverifys</span>
 		</span>
 		<span class="u-info-2">
 			<!-- 楼层 -->
@@ -19,35 +26,33 @@
 				<!--{if isset($post[isstick])}-->
 					<i class="u-settop"></i> {lang from} {$post[number]}{$postnostick}
 				<!--{elseif $post[number] == -1}-->
-					{lang recommend}
+					{lang recommend}回复
 				<!--{else}-->
-					<em>{$post[number]}</em>{$postno[0]}
+					第<em>{$post[number]}</em>楼<!--{$postno[0]}-->
 				<!--{/if}-->
 			</span>
 			<!--{/if}-->
 			<!-- 发布时间 -->
 			<span class="u-time"><em>发布于</em> $post[dateline]</span>
-			<!-- 回帖奖励获得的奖励 -->
-			<!--{if !$post['first'] && $post['replycredit'] > 0}-->
-				<div class="c-fli-replycredit">
-					{lang replycredit} <b>+{$post['replycredit']}</b> {$_G['setting']['extcredits'][$_G['forum_thread']['replycredit_rule']['extcreditstype']][unit]}{$_G['setting']['extcredits'][$_G['forum_thread']['replycredit_rule']['extcreditstype']][title]}
-				</div>
-			<!--{/if}-->
 		</span>
 	</span>
 
+	<!-- 手机版操作栏 -->
 	<div class="u-panel">
+		<span class="u-more"><i></i><span>更多</span></span>
 		<!--{if $post['invisible'] == 0}-->
-			<!-- 点评 -->
 			<!--{if $allowpostreply && $post['allowcomment'] && (!$thread['closed'] || $_G['forum']['ismoderator'])}-->
-				<a class="cmmnt u-cmt u-mask-tg" href="forum.php?mod=misc&action=comment&tid=$post[tid]&pid=$post[pid]&extra=$_GET[extra]&page=$page{if $_G['forum_thread']['special'] == 127}&special=$specialextra{/if}" onclick="showWindow('comment', this.href, 'get', 0)"><i></i>回复</a>
+				<a class="u-cmt u-mask-tg" href="forum.php?mod=misc&action=comment&tid=$post[tid]&pid=$post[pid]&extra=$_GET[extra]&page=$page{if $_G['forum_thread']['special'] == 127}&special=$specialextra{/if}" onclick="showWindow('comment', this.href, 'get', 0)"><i></i><span>回复</span></a>
 			<!--{/if}-->
 		<!--{/if}-->
-		<span class="u-more"><i></i>更多</span>
-		<div class="c-panel">
-			
-		</div>
 	</div>
+
+	<!-- 回帖奖励获得的奖励 -->
+	<!--{if !$post['first'] && $post['replycredit'] > 0}-->
+		<div class="c-fli-replycredit">
+			<i></i>{lang replycredit} <b>+{$post['replycredit']}</b> {$_G['setting']['extcredits'][$_G['forum_thread']['replycredit_rule']['extcreditstype']][unit]}{$_G['setting']['extcredits'][$_G['forum_thread']['replycredit_rule']['extcreditstype']][title]}
+		</div>
+	<!--{/if}-->
 
 <!--{/if}-->
 </div>

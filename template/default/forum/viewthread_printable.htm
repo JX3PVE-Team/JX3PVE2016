@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>$_G[forum_thread][subject] - $_G['setting']['bbname']</title>
+<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
+<link rel="stylesheet" href="http://css.jx3pve.com/css/system/print.css" type="text/css" />
+<script type="text/javascript" src="{$_G['setting']['jspath']}common.js?{VERHASH}"></script>
+<script type="text/javascript" src="{$_G['setting']['jspath']}forum_viewthread.js?{VERHASH}"></script>
+<script type="text/javascript">var STYLEID = '{STYLEID}', STATICURL = '{STATICURL}', IMGDIR = '{IMGDIR}', VERHASH = '{VERHASH}', charset = '{CHARSET}', discuz_uid = '$_G[uid]', cookiepre = '{$_G[config][cookie][cookiepre]}', cookiedomain = '{$_G[config][cookie][cookiedomain]}', cookiepath = '{$_G[config][cookie][cookiepath]}', showusercard = '{$_G[setting][showusercard]}', attackevasive = '{$_G[config][security][attackevasive]}', disallowfloat = '{$_G[setting][disallowfloat]}', creditnotice = '<!--{if $_G['setting']['creditnotice']}-->$_G['setting']['creditnames']<!--{/if}-->', defaultstyle = '$_G[style][defaultextstyle]', REPORTURL = '$_G[currenturl_encode]', SITEURL = '$_G[siteurl]', JSPATH = '$_G[setting][jspath]';</script>
+</head>
+
+<body>
+<a href="###" onclick="this.style.visibility='hidden';window.print();this.style.visibility='visible'">[{lang thread_print}]</a>
+<div class="header">$_G[forum_thread][subject]</h1></div>
+<script type="text/javascript">var zoomstatus = 0;var aimgcount = new Array();</script>
+<!--{loop $postlist $post}-->
+	<div class="meta">
+		<b>{lang author}: </b><!--{if $post['author'] && !$post['anonymous']}-->$post[author]<!--{else}-->{lang anonymous}<!--{/if}-->&nbsp; &nbsp; <b>{lang time}: </b>$post[dateline]
+	</div>
+	
+	<div class="primary">
+		<!--{if $_G['adminid'] != 1 && $_G['setting']['bannedmessages'] && (($post['authorid'] && !$userinfo[$post[authorid]]['username']) || ($userinfo[$post[authorid]]['groupid'] == 4 || $userinfo[$post[authorid]]['groupid'] == 5))}-->
+			{lang message_banned}
+		<!--{elseif $_G['adminid'] != 1 && $post['status'] & 1}-->
+			{lang message_single_banned}
+		<!--{elseif $post['first'] && $_G['forum_threadpay']}-->
+			{lang pay_comment}
+		<!--{else}-->
+			<!--{if $post['subject']}--><h2 class="title">{lang subject}: $post[subject]</h2><!--{/if}-->
+			$post[message]
+			<!--{if $post['imagelist']}-->
+				<!--{echo showattach($post, 1)}-->
+			<!--{/if}-->
+			<!--{if $post['attachlist']}-->
+				<!--{echo showattach($post)}-->
+			<!--{/if}-->
+		<!--{/if}-->
+	</div>
+
+	<!--{if !empty($aimgs[$post[pid]])}-->
+	<script type="text/javascript" reload="1">
+		aimgcount[{$post[pid]}] = [<!--{echo dimplode($aimgs[$post[pid]]);}-->];
+		attachimggroup($post['pid']);
+		<!--{if empty($_G['setting']['lazyload'])}-->
+			<!--{if !$post['imagelistthumb']}-->
+				attachimgshow($post[pid]);
+			<!--{else}-->
+				attachimgshow($post[pid], 1);
+			<!--{/if}-->
+		<!--{/if}-->
+		<!--{if $post['imagelistthumb']}-->
+			attachimglstshow($post['pid'], <!--{echo intval($_G['setting']['lazyload']), 0, 0}-->);
+		<!--{/if}-->
+		<!--{if !IS_ROBOT && !empty($_G[setting][lazyload])}-->
+			new lazyload();
+		<!--{/if}-->
+	</script>
+	<!--{/if}-->
+<!--{/loop}-->
+
+
+
+<div class="footer">
+	FROM : $_G['setting']['bbname'] $_G[siteurl]
+</div>
+
+</body>
+</html>

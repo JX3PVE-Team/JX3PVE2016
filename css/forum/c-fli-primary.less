@@ -29,8 +29,8 @@
 
 	//表格
 	table{
-		margin:10px auto;
-		.w(100%);
+		margin-top:10px;
+		margin-bottom:10px;
 	}
 
 	//水平线
@@ -39,7 +39,7 @@
 	}
 
 	//列表
-	ul,li{
+	ul,ul li{
 		list-style:square inside;
 	}
 	ul{
@@ -55,6 +55,11 @@
 	}
 	u{
 		text-decoration:underline;
+	}
+
+	//最后编辑
+	.pstatus{
+		font-style:normal;
 	}
 
 	//引用文字
@@ -89,11 +94,11 @@
 		border:none;
 		padding:0;
 		overflow:visible;
-		ol,li{list-style-position:outside;}
+		ol,ol li{list-style-position:outside;}
 		//border:1px solid #555;
 		.r(4px);
 		ol{background-color:#272822;margin:0 !important;}
-		li{background-color:#272822;margin-left:40px;}
+		li{background-color:#272822;margin-left:40px;padding-left:10px;}
 		ol li{border-left:1px solid #555;.fz(12px,2.4);color:#f8f8f2;}
 		ol li:hover{background-color:#333;color:#f8f8f2;}
 		em{
@@ -105,6 +110,7 @@
 		    color:#555 !important;
 		    .x(right);
 		    padding-right:10px;
+		    .pointer;
 		}
 
 		.pr;
@@ -142,6 +148,14 @@
 }
 .ua-responsive .screen-s{
 	.c-fli-article,.c-fli-reply,.t_f{
+		.t_table{
+			.w(100%) !important;
+		}
+	}
+	.c-fli-reply,.t_f{
+		font-size:1rem;
+	}
+	.c-fli-article{
 		font-size:1.2rem;
 	}
 }
@@ -157,6 +171,6 @@
 	.c-fli-title{
 		.bold;
 		margin:5px 0 0 0;
-		color:@blue-link;
+		//color:@blue-link;
 	}
 }
