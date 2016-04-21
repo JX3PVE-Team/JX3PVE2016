@@ -1,5 +1,6 @@
 <!--{if $modmenu['thread']}-->
 	<div id="modmenu" class="w-adminbar xi2 pbm">
+		<span class="w-adminbar-close" id="w-adminbar-close">关闭</span>
 		<!--{eval $modopt=0;}-->
 		<!--{if $_G['forum']['ismoderator']}-->
 			<!--{if $_G['group']['allowdelpost']}--><!--{eval $modopt++}--><a href="javascript:;" onclick="modthreads(3, 'delete')">{lang modmenu_deletethread}</a><span class="pipe">|</span><!--{/if}-->

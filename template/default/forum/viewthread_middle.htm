@@ -1,10 +1,12 @@
 <!--{hook/viewthread_beginline}-->
-<div id="postlist" class="pl bm">
+<div id="postlist" class="c-fli-box">
 
 	<!-- jx3pve:c_fli_title -->
-	<!--{subtemplate component/c_fli_title}-->
-	<!--{subtemplate component/c_fli_meta}-->
-	<!--{subtemplate component/c_fli_info}-->
+	<div class="c-fli-top">
+		<!--{subtemplate component/c_fli_title}-->
+		<!--{subtemplate component/c_fli_meta}-->
+		<!--{subtemplate component/c_fli_info}-->
+	</div>
 
 	<!--{eval $postcount = 0;}-->
 	<!--{loop $postlist $post}-->
@@ -28,7 +30,7 @@
 		<!--{eval $postcount++;}-->
 	<!--{/loop}-->
 
-	<div id="postlistreply" class="pl">
+	<div id="postlistreply" class="c-fli-box">
 		<div id="post_new" class="viewthread_table c-fli" style="display: none"></div>
 	</div>
 

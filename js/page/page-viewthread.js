@@ -4,7 +4,7 @@ H.ready(['jquery'],function(){
 		var $mask = $("#u-mask")
 
 		//手机 弹层处理
-		if($("html").hasClass('ua-responsive') && $("html").hasClass('mobile')){
+		if($("html").hasClass('ua-responsive') && $("body").hasClass('screen-s')){
 
 			//需要弹出遮罩层的（局部双层菜单无需弹出浮层）
 			$(".u-mask-tg").on('click',function(e){
@@ -13,7 +13,7 @@ H.ready(['jquery'],function(){
 				$mask.fadeIn()
 			})
 
-			//单页panel弹层菜单特殊处理
+			//主楼panel弹层菜单特殊处理
 			var $panel = $("#i-header-panel"),
 				$panel_tg = $("#i-header-panel-tg"),
 				$panel_close = $("#i-header-panel-cancel")
@@ -25,10 +25,27 @@ H.ready(['jquery'],function(){
 				$mask.fadeOut()
 				$panel.addClass('folder').removeClass('active')
 			})
-			//局部阻止冒泡关闭遮罩层
-			$panel.on('click',function(e){
-				e.stopPropagation()
+
+			//副楼panel扩展菜单
+			$(".c-fli-header .u-more").on('click',function(){
+				$mask.fadeIn()
+				$(this).parent('.u-panel').parent('.c-fli-header').siblings('.c-fli-footer').children('.c-fli-panel').removeClass('folder').addClass('active')
 			})
+			$(".c-fli-panel .u-cancel").on('click',function(){
+				$mask.fadeOut()
+				$(this).parent('.c-fli-panel-right').parent('.c-fli-panel').addClass('folder').removeClass('active')
+			})
+
+			//帖子管理
+			$("#u-adminbar-tg").on('click',function(){
+				$mask.fadeIn()
+				$("#modmenu").fadeIn()
+			})
+			$("#w-adminbar-close").on('click',function(){
+				$mask.fadeOut()
+				$("#modmenu").fadeOut()
+			})
+
 		}
 		
 		//PC 分享
@@ -57,6 +74,15 @@ H.ready(['jquery'],function(){
 				$(this).text('收起回复')
 			}
 		})
+
+		//显示隐藏贴
+		var $showall = $("#w-tgpost-showall"),
+			$ct = $(".c-fli")
+            $showall.on('click',function(){
+                $ct.fadeIn('slow');
+                $(this).fadeOut();
+                TGPOST_STATUS = false;
+            })
 
 
 	})

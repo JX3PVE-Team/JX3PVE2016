@@ -1,0 +1,220 @@
+<!--{template common/header}-->
+<link rel="stylesheet" href="http://css.jx3pve.com/css/app_pc.css" type="text/css" />
+<link rel="stylesheet" href="http://app.jx3pve.com/css/gold_pc.css" type="text/css" />
+<div class="app-container">
+    <input type="hidden" id="userGroupId" value="$_G[groupid]">
+    <input type="hidden" id="userUID" value="$_G[uid]">
+    <div class="wp">
+        <div class="app-header">
+            <div class="m-title">
+                <h1 class="til">全服实时金价</h1>
+                <p class="ac"><!--{block/1780}--></p>
+            </div>
+            <div class="m-banner"></div>
+            <div class="m-extend">
+                <a class="m-help" href="./misc.php?mod=faq&action=faq&id=54&messageid=134" target="_blank"><i></i>使用帮助</a>
+                <a class="m-error" href="./feedback" target="_blank"><i></i>数据异常</a>
+                <div class="m-share">
+                    <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a><a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a><a href="#" class="bds_print" data-cmd="print" title="分享到打印"></a></div>
+                    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+                </div>
+                <div class="m-search">
+                    <!--js:当获取焦点时给.search添加.focus-->
+                    <form class="search" onsubmit="return false">
+                        <input type="text" placeholder="输入服务器名称快速查找" id="search_txt">
+                        <button id="search_btn">搜索</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-main">
+
+            <div class="app-sidebar">
+                <!--{subtemplate app/sidebar_pc}-->
+            </div>
+
+            <div class="app-content">
+                <ul class="app-gold-list" id="app-gold-list">
+                   <li class="app-gold-list-item app-gold-list-header">
+                        <span class="daqu">大区</span>
+                        <span class="fwq">服务器</span>
+                        <span class="shop shop-pk200">
+                            <a class="shop-name" href="">pk200</a>
+                            <em class="lowest">最低</em>
+                            <em class="average">平均</em>
+                            <em class="highest">最高</em>
+                        </span>
+                        <span class="shop shop-5173">
+                            <a class="shop-name" href="">5173</a>
+                            <em class="lowest">最低</em>
+                            <em class="average">平均</em>
+                            <em class="highest">最高</em>
+                        </span>
+                        <span class="shop shop-uu898">
+                            <a class="shop-name" href="">uu898</a>
+                            <em class="lowest">最低</em>
+                            <em class="average">平均</em>
+                            <em class="highest">最高</em>
+                        </span>
+                        <span class="shop shop-taobao">
+                            <a class="shop-name" href="">淘宝</a>
+                            <em class="lowest">最低</em>
+                            <em class="average">平均</em>
+                            <em class="highest">最高</em>
+                        </span>
+                        <span class="map">走势图</span>
+                        <span class="fav">关注</span>
+                    </li>
+                    <li class="app-gold-list-item app-gold-list-item-normal">
+                        <span class="daqu">电信一区</span>
+                        <span class="fwq">长安城</span>
+                        <span class="shop shop-pk200">
+                            <!--最便宜的添加.ok-->
+                            <em class="lowest"><a class="ok" href="#">888</a></em>
+                            <em class="average"><a href="">2000</a></em>
+                            <em class="highest"><a href="">3000</a></em>
+                        </span>
+                        <span class="shop shop-5173">
+                            <em class="lowest"><a href="#">1000</a></em>
+                            <em class="average"><a href="">2000</a></em>
+                            <em class="highest"><a href="">3000</a></em>
+                        </span>
+                        <span class="shop shop-uu898">
+                            <em class="lowest"><a href="#">1000</a></em>
+                            <em class="average"><a href="">2000</a></em>
+                            <em class="highest"><a href="">3000</a></em>
+                        </span>
+                        <span class="shop shop-taobao">
+                            <em class="lowest"><a href="#">1000</a></em>
+                            <em class="average"><a href="">2000</a></em>
+                            <em class="highest"><a href="">3000</a></em>
+                        </span>
+                        <span class="map"><i class="u-icon-map" title="查看走势图"></i></span>
+                        <!--当点击关注后，给i添加.isfav，并将title修改为"取消关注"-->
+                        <span class="fav" data-id="8" data-collect="0"><i class="u-icon-fav" title="关注">关注</i></span>
+                    </li>
+                    <li class="app-gold-list-item app-gold-list-item-normal">
+                        <span class="daqu">电信二区</span>
+                        <span class="fwq">荻花宫</span>
+                        <span class="shop shop-pk200">
+                            <em class="lowest"><a href="#">1000</a></em>
+                            <em class="average"><a href="">2000</a></em>
+                            <em class="highest"><a href="">3000</a></em>
+                        </span>
+                        <span class="shop shop-5173">
+                            <em class="lowest"><a class="ok" href="#">888</a></em>
+                            <em class="average"><a href="">2000</a></em>
+                            <em class="highest"><a href="">3000</a></em>
+                        </span>
+                        <span class="shop shop-uu898">
+                            <em class="lowest"><a href="#">1000</a></em>
+                            <em class="average"><a href="">2000</a></em>
+                            <em class="highest"><a href="">3000</a></em>
+                        </span>
+                        <span class="shop shop-taobao">
+                            <em class="lowest"><a href="#">1000</a></em>
+                            <em class="average"><a href="">2000</a></em>
+                            <em class="highest"><a href="">3000</a></em>
+                        </span>
+                        <span class="map"><i class="u-icon-map" title="查看走势图"></i></span>
+                        <!--当点击关注后，给i添加.isfav，并将title修改为"取消关注"-->
+                        <span class="fav" data-id="8" data-collect="0"><i class="u-icon-fav" title="关注">关注</i></span>
+                    </li>
+                    <li class="app-gold-list-item app-gold-list-item-normal">
+                        <span class="daqu">电信三区</span>
+                        <span class="fwq">忆盈楼</span>
+                        <span class="shop shop-pk200">
+                            <!--最便宜的添加.ok-->
+                            <em class="lowest"><a href="#">1000</a></em>
+                            <em class="average"><a href="">2000</a></em>
+                            <em class="highest"><a href="">3000</a></em>
+                        </span>
+                        <span class="shop shop-5173">
+                            <em class="lowest"><a href="#">1000</a></em>
+                            <em class="average"><a href="">2000</a></em>
+                            <em class="highest"><a href="">3000</a></em>
+                        </span>
+                        <span class="shop shop-uu898">
+                            <em class="lowest"><a class="ok" href="#">888</a></em>
+                            <em class="average"><a href="">2000</a></em>
+                            <em class="highest"><a href="">3000</a></em>
+                        </span>
+                        <span class="shop shop-taobao">
+                            <em class="lowest"><a href="#">1000</a></em>
+                            <em class="average"><a href="">2000</a></em>
+                            <em class="highest"><a href="">3000</a></em>
+                        </span>
+                        <span class="map"><i class="u-icon-map" title="查看走势图"></i></span>
+                        <!--当点击关注后，给i添加.isfav，并将title修改为"取消关注"-->
+                        <span class="fav" data-id="8" data-collect="0"><i class="u-icon-fav" title="关注">关注</i></span>
+                    </li>
+                    <li class="app-gold-list-item app-gold-list-item-normal">
+                        <span class="daqu">电信四区</span>
+                        <span class="fwq">蝶恋花</span>
+                        <span class="shop shop-pk200">
+                            <!--最便宜的添加.ok-->
+                            <em class="lowest"><a href="#">1000</a></em>
+                            <em class="average"><a href="">2000</a></em>
+                            <em class="highest"><a href="">3000</a></em>
+                        </span>
+                        <span class="shop shop-5173">
+                            <em class="lowest"><a href="#">1000</a></em>
+                            <em class="average"><a href="">2000</a></em>
+                            <em class="highest"><a href="">3000</a></em>
+                        </span>
+                        <span class="shop shop-uu898">
+                            <em class="lowest"><a href="#">1000</a></em>
+                            <em class="average"><a href="">2000</a></em>
+                            <em class="highest"><a href="">3000</a></em>
+                        </span>
+                        <span class="shop shop-taobao">
+                            <em class="lowest"><a class="ok" href="#">888</a></em>
+                            <em class="average"><a href="">2000</a></em>
+                            <em class="highest"><a href="">3000</a></em>
+                        </span>
+                        <span class="map"><i class="u-icon-map" title="查看走势图"></i></span>
+                        <!--当点击关注后，给i添加.isfav，并将title修改为"取消关注"-->
+                        <span class="fav" data-id="8" data-collect="0"><i class="u-icon-fav" title="关注">关注</i></span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="app-footer">
+            <div class="m-banner"><!--<!--{subtemplate jx3pve/b_banner_a}-->--></div>
+            <div class="m-author"><!--{block/1781}--></div>
+        </div>
+
+        <div class="app-dialog" style="display:none;">
+            <div class="m-title">
+                <span class="til">提示</span>
+                <span class="close">关闭</span>
+            </div> 
+            <div class="m-content">
+                <!--未登录用户尝试进行置顶和收藏时-->
+                <div class="app-dialog-control-failtips app-dialog-tips" style="display:none;" id="action_error_1">
+                    游客，进行此操作请先登录。
+                    <a class="u-btn-go" href="./member.php?mod=logging&action=login" target="_blank">登录</a>
+                </div>
+                <div class="app-dialog-control-failtips app-dialog-tips" style="display:none;" id="action_error_2">
+                    参数错误
+                </div>
+                <!--用户使用关注功能的操作界面-->
+                <div class="app-dialog-fav-ui app-dialog-tips" style="display:none;">
+                    关注后将自动置顶，您可以为它设置一个背景色，并可以在手机版中“我的”中快速查看这个条目。
+                    <form action="">
+                        <label for="">设置背景色（可选）：</label>
+                        <input type="text" value="#0084ff" id="background-color-input" placeholder="#0084ff">
+                    </form>
+                    <a class="u-btn-go" href="javascript:void(0)">收藏</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script src="http://app.jx3pve.com/js/app/gold_pc.js"></script>
+<!--{template common/footer}-->

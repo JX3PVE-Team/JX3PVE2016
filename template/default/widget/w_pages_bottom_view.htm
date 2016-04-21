@@ -1,11 +1,17 @@
 <!--{if $multipage && $page < $_G['setting']['threadmaxpages'] && $page < $_G['page_next']}-->
-<!--{eval $nxtpage = $page + 1;}-->
+	<!--{eval $nxtpage = $page + 1;}-->
 	<a class="u-btn-nextpage" href="forum.php?mod=viewthread&tid=$_G[tid]{if $_GET[authorid]}&authorid=$_GET[authorid]{/if}&page=$nxtpage" hidefocus="true" >{lang next_page_extra}</a>
+<!--{/if}-->
+
+
+<!--{if !$multipage}-->
+<div class="w-pages-null">
+	没有更多了
+</div>
 <!--{/if}-->
 
 <div class="w-pages-bottom w-pages pgs mtm mbm cl">
 	<div class="w-pages-list pgt">$multipage</div>
-	<span class="pgb y"{if $_G['setting']['visitedforums']} id="visitedforumstmp" onmouseover="$('visitedforums').id = 'visitedforumstmp';this.id = 'visitedforums';showMenu({'ctrlid':this.id,'pos':'21'})"{/if}><a href="$upnavlink">{lang return_forumdisplay}</a></span>
 	<!--{if !$_G['forum_thread']['is_archived']}-->
 		<a class="u-btn-publish" id="newspecialtmp" href="forum.php?mod=post&action=newthread&fid=$_G[fid]">发贴</a>
 	<!--{/if}-->

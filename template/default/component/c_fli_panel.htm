@@ -20,17 +20,6 @@
 				<span class="xg1">({lang moderate_need})</span>
 			<!--{/if}-->
 
-			<!--{if $post['invisible'] == 0}-->
-				<!-- 快速回复 -->
-				<!--{if (!$_G['uid'] || $allowpostreply) && !$needhiddenreply}-->
-					<!--{if $post['first']}-->
-						<a class="fastre u-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&reppost=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)"><i></i>回复</a>
-					<!--{else}-->
-						<a class="fastre u-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&repquote=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)"><i></i>回复</a>
-					<!--{/if}-->
-				<!--{/if}-->
-			<!--{/if}-->
-
 			<!-- 推送 -->
 			<!--{if $post['first'] && $allowblockrecommend}--><a class="push u-push" href="javascript:;" onclick="modaction('recommend', '$_G[forum_firstpid]', 'op=recommend&idtype={if $_G[forum_thread][isgroup]}gtid{else}tid{/if}&id=$_G[tid]&pid=$post[pid]', 'portal.php?mod=portalcp&ac=portalblock')"><i></i>{lang modmenu_blockrecommend}</a><!--{/if}-->
 
@@ -44,6 +33,34 @@
 		
 		<div class="c-fli-panel-right">
 			<!--{if $post['invisible'] == 0}-->
+
+				<!-- 回复 -->
+				<!--{if $post[first]}-->
+					<!-- 主楼回复 -->
+					<!--{if $post['invisible'] == 0}-->
+						<!--{if (!$_G['uid'] || $allowpostreply) && !$needhiddenreply}-->
+							<!--{if $post['first']}-->
+								<a class="u-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&reppost=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)"><i></i>回复</a>
+							<!--{else}-->
+								<a class="u-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&repquote=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)"><i></i>回复</a>
+							<!--{/if}-->
+						<!--{/if}-->
+					<!--{/if}-->
+				<!--{else}-->
+					<!-- 楼层点评 -->
+					<!--{if $allowpostreply && $post['allowcomment'] && (!$thread['closed'] || $_G['forum']['ismoderator'])}-->
+						<a class="u-cmt u-mask-tg" href="forum.php?mod=misc&action=comment&tid=$post[tid]&pid=$post[pid]&extra=$_GET[extra]&page=$page{if $_G['forum_thread']['special'] == 127}&special=$specialextra{/if}" onclick="showWindow('comment', this.href, 'get', 0)"><i></i>回复<em><!--{if $commentcount[$post[pid]] > 0 }-->($commentcount[$post[pid]])<!--{/if}--></em></a>
+					<!--{/if}-->
+					<!--{if $post['invisible'] == 0}-->
+						<!--{if (!$_G['uid'] || $allowpostreply) && !$needhiddenreply}-->
+							<!--{if $post['first']}-->
+								<a class="u-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&reppost=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)"><i></i>引用</a>
+							<!--{else}-->
+								<a class="u-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&repquote=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)"><i></i>引用</a>
+							<!--{/if}-->
+						<!--{/if}-->
+					<!--{/if}-->
+				<!--{/if}-->
 
 				<!-- 设为最佳答案 -->
 				<!--{if $_G['forum_thread']['special'] == 3 && ($_G['forum']['ismoderator'] && (!$_G['setting']['rewardexpiration'] || $_G['setting']['rewardexpiration'] > 0 && ($_G[timestamp] - $_G['forum_thread']['dateline']) / 86400 > $_G['setting']['rewardexpiration']) || $_G['forum_thread']['authorid'] == $_G['uid']) && $post['authorid'] != $_G['forum_thread']['authorid'] && $post['first'] == 0 && $_G['uid'] != $post['authorid'] && $_G['forum_thread']['price'] > 0}-->
@@ -72,6 +89,14 @@
 					{lang manage}
 				</label>
 				<!--{/if}-->
+
+				<!-- 管理 -->
+				<!--{if $post[first]}-->
+					<a class="u-adminbar" id="u-adminbar-tg" href="javascript:;">管理</a>
+				<!--{/if}-->
+
+				<!-- 取消（移动端） -->
+				<a class="u-cancel" href="javascript:;">取消</a>
 
 			<!--{/if}-->
 			<!--{hook/viewthread_postaction $postcount}-->

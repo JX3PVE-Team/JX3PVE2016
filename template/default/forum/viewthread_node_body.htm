@@ -136,22 +136,9 @@
 	</div>	
 
 	<!-- 标签 -->
-	<div class="c-fli-tag">
-		<!--{if $post['first'] && ($post[tags] || $relatedkeywords) && $_GET['from'] != 'preview'}-->
-			<div class="ptg mbm mtn">
-				<!--{if $post[tags]}-->
-					<!--{eval $tagi = 0;}-->
-					<!--{loop $post[tags] $var}-->
-						<!--{if $tagi}-->, <!--{/if}--><a title="$var[1]" href="misc.php?mod=tag&id=$var[0]" target="_blank">$var[1]</a>
-						<!--{eval $tagi++;}-->
-					<!--{/loop}-->
-				<!--{/if}-->
-				<!--{if $relatedkeywords}--><span>$relatedkeywords</span><!--{/if}-->
-			</div>
-		<!--{/if}-->
-	</div>
+	<!--{template component/c_fli_tag}-->
 
-	<!-- 最后被编辑 -->
+	<!-- 管理操作 -->
 	<div class="c-fli-modact">
 		<!--{if !IS_ROBOT && $post['first'] && !$_G['forum_thread']['archiveid']}-->
 			<!--{if !empty($lastmod['modaction'])}--><div class="modact"><a href="forum.php?mod=misc&action=viewthreadmod&tid=$_G[tid]" title="{lang thread_mod}" onclick="showWindow('viewthreadmod', this.href)"><!--{if $lastmod['modactiontype'] == 'REB'}-->{lang thread_mod_recommend_by}<!--{else}-->{lang thread_mod_by}<!--{/if}--></a></div><!--{/if}-->
@@ -195,78 +182,10 @@
 	</div>
 
 	<!-- 快速回复 -->
-	<div class="c-fli-fastreply">
-		<!--{if $_G['setting']['allowfastreply'] && $post['first'] && $fastpost && $allowpostreply && !$_G['forum_thread']['archiveid'] && $_GET['from'] != 'preview'}-->
-			<form method="post" autocomplete="off" id="vfastpostform" action="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&fromvf=1&extra=$_G[gp_extra]&replysubmit=yes{if $_G['gp_ordertype'] != 1}&infloat=yes&handlekey=vfastpost{/if}{if $_G[gp_from]}&from=$_G[gp_from]{/if}" onsubmit="this.message.value = parseurl(this.message.value);ajaxpost('vfastpostform', 'return_reply', 'return_reply', 'onerror');return false;">
-			<div id="vfastpost" class="fullvfastpost">				
-				<input type="hidden" name="formhash" value="{FORMHASH}" />
-				<table cellspacing="0" cellpadding="0" id="vfastposttb">
-					<tr>
-						<td id="vf_l"></td>
-						<td id="vf_m"><input type="text" name="message" id="vmessage" onKeyDown="seditor_ctlent(event, '$(\'vfastpostform\').submit()');"/></td>
-						<td id="vf_r"></td>						
-						<td id="vf_b">
-							<button type="submit" class="pn pnc" name="replysubmit" id="vreplysubmit" value="true" style="">post_newreply</button>								
-						</td>						
-					</tr>
-				</table>				
-			</div>
-			<div id="vfastpostseccheck"></div>				
-			</form>
-			<script type="text/javascript">vmessage();</script>
-		<!--{/if}-->
-	</div>
-
+	<!--{template component/c_fli_fastreply}-->
 
 	<!-- 点评 -->
-	<div class="c-fli-cmt">
-		<h3 class="c-fli-cmt-title">收起回复</h3>
-		<div id="comment_$post[pid]">
-			<!--{if $_GET['from'] != 'preview' && $_G['setting']['commentnumber'] && !empty($comments[$post[pid]])}-->
-				<div class="c-fli-cmt-content">
-					<!--{if $totalcomment[$post[pid]]}--><div class="pstl">$totalcomment[$post[pid]]</div><!--{/if}-->
-					<!--{loop $comments[$post[pid]] $comment}-->
-						<div class="c-fli-cmt-list" id="c-fli-cmt-list">
-							<a class="u-avatar" href="home.php?mod=space&uid=$comment[authorid]" c="1">$comment[avatar]</a>
-							<!--{if $comment['authorid']}-->
-								<a class="u-username" href="home.php?mod=space&uid=$comment[authorid]">$comment[author]</a>
-								<!--{else}-->
-								<span class="u-username">{lang guest}</span>
-							<!--{/if}-->
-							<span class="u-time">
-								<!--{date($comment[dateline], 'u')}-->
-								<small class="none">
-									<!--{if $comment['useip'] && $_G['group']['allowviewip']}-->
-										IP:$comment[useip]{if $comment[port]}:$comment[port]{/if}
-									<!--{/if}-->
-								</small>
-							</span>
-							<!--{if $_G['forum']['ismoderator'] && $_G['group']['allowdelpost']}-->
-								<a class="u-del" href="javascript:;" onclick="modaction('delcomment', $comment[id])">{lang delete}</a>
-							<!--{/if}-->
-							<span class="u-words">
-								$comment[comment]&nbsp;
-							</span>
-						</div>
-					<!--{/loop}-->
-					<div class="c-fli-cmt-bottom">
-						<!--{if $commentcount[$post[pid]] > $_G['setting']['commentnumber']}-->
-							<div class="w-pages">
-								<div class="pg">
-									<a href="javascript:;" class="nxt" onclick="ajaxget('forum.php?mod=misc&action=commentmore&tid=$post[tid]&pid=$post[pid]&page=2', 'comment_$post[pid]')">{lang next_page}</a>
-								</div>
-							</div>
-						<!--{/if}-->
-					</div>
-				</div>
-			<!--{/if}-->
-		</div>
-		<!--{if $post['invisible'] == 0}-->
-			<!--{if $allowpostreply && $post['allowcomment'] && (!$thread['closed'] || $_G['forum']['ismoderator'])}-->
-				<a class="c-fli-cmt-btn u-mask-tg" href="forum.php?mod=misc&action=comment&tid=$post[tid]&pid=$post[pid]&extra=$_GET[extra]&page=$page{if $_G['forum_thread']['special'] == 127}&special=$specialextra{/if}" onclick="showWindow('comment', this.href, 'get', 0)"><i></i>回复</a>
-			<!--{/if}-->
-		<!--{/if}-->
-	</div>
+	<!--{template component/c_fli_cmt}-->
 
 	<!-- 评分 -->
 	<div class="c-fli-rate">
