@@ -2,8 +2,47 @@
 	.none;
 }
 .adminHTML .w-adminbar{
-	//.db;
+	.db;
+}
+.ua-responsive .screen-s{
+	.w-adminbar{
+		.none;
+	}
 }
 
-.w-adminbar-top{}
-.w-adminbar-bottom{}
+.u-adminbar{
+	.none;
+}
+.ua-responsive.adminHTML .screen-s .u-adminbar{
+	.db;
+}
+
+.w-adminbar-close{
+	.none;
+}
+.ua-responsive .screen-s .w-adminbar-close{
+	.db;
+}
+
+.ua-responsive .screen-s{
+	.w-adminbar{
+		.pf;.lt(0,@c-header-height);.z(100);
+	    margin: 40px 20px 20px 20px;
+	    background-color: #fff;
+	    border: 1px solid #ccc;
+	    border-radius: 4px;
+	    padding: 10px;
+	    a{padding:5px 0;.db;.fl;.w(50%);.x;}
+	    .pipe{.none;}
+	}
+	.w-adminbar-close{
+	    position: absolute;
+	    right: -1px;
+	    top: -30px;
+	    background-color: #333;
+	    padding: 0 10px;
+	    border-radius: 2px 2px 0 0;
+	    color: #fff;
+	    line-height: 30px;
+	}
+}

@@ -36,6 +36,16 @@ H.ready(['jquery'],function(){
 				$(this).parent('.c-fli-panel-right').parent('.c-fli-panel').addClass('folder').removeClass('active')
 			})
 
+			//帖子管理
+			$("#u-adminbar-tg").on('click',function(){
+				$mask.fadeIn()
+				$("#modmenu").fadeIn()
+			})
+			$("#w-adminbar-close").on('click',function(){
+				$mask.fadeOut()
+				$("#modmenu").fadeOut()
+			})
+
 		}
 		
 		//PC 分享

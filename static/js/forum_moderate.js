@@ -78,8 +78,10 @@ function modclick(obj, pid) {
 	$('mdct').innerHTML = modclickcount;
 	if(modclickcount > 0) {
 		var offset = fetchOffset(obj);
-		$('mdly').style.top = offset['top'] - 65 + 'px';
-		$('mdly').style.left = offset['left'] - 215 + 'px';
+		//$('mdly').style.top = offset['top'] - 65 + 'px';
+		//$('mdly').style.left = offset['left'] - 215 + 'px';
+		$('mdly').style.top = offset['top'] - 200 + 'px';
+		$('mdly').style.left = offset['left'] - 415 + 'px';
 		$('mdly').style.display = '';
 	} else {
 		$('mdly').style.display = 'none';

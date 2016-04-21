@@ -1,0 +1,33 @@
+.default-main{
+	.pr;
+	padding:10px 0;
+}
+
+.default-sidebar{
+	.pa;.lt(0,0);
+	.w(@sd);
+}
+
+.default-content{
+	margin-left:@sd + 20px;
+}
+
+.ua-responsive .screen-s{
+	.default-sidebar{
+		//.pf;.lt(0,90px);
+		.none;
+	}
+	.default-content{
+		margin-left:0;
+	}
+}
+
+//超级宏等部分栏目无侧边栏
+.f-85{
+	.default-sidebar{.none;}
+	.default-content{margin-left:0;}
+}
+//群组无侧边栏
+#nv_group{
+	&:extend(.f-85);
+}

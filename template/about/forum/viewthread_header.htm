@@ -1,0 +1,57 @@
+<header class="i-header i-header-view">
+	<a class="i-header-back" href="forum.php?mod=forumdisplay&fid=$_G['fid']&filter=sortid&sortid=sort-$_G['forum_thread']['sortid']"><i></i><span>返回</span></a>
+	<div class="i-header-title"><!--{echo $_G['forum']['threadsorts']['types'][$_G['forum_thread']['sortid']]}--></div>
+	<div class="i-header-menu">
+		<!-- 只看楼主 -->
+		<!--{if $post['invisible'] == 0}-->
+			<!--{if !IS_ROBOT && !$_GET['authorid'] && !$_G['forum_thread']['archiveid']}-->
+				<a class="u-only" href="forum.php?mod=viewthread&tid=$post[tid]&page=$page&authorid=$_G[forum_thread][authorid]" rel="nofollow"><span>楼主</span></a>
+			<!--{elseif !$_G['forum_thread']['archiveid']}-->
+				<a class="u-only on" href="forum.php?mod=viewthread&tid=$post[tid]&page=$page" rel="nofollow"><span>取消</span></a>
+			<!--{/if}-->
+		<!--{/if}-->
+
+		<!-- 更多 -->
+		<a class="u-all" id="i-header-panel-tg" href="javascript:;"><span>更多</span></a>
+	</div>
+</header>
+<div class="i-header-panel" id="i-header-panel">
+	<ul>
+		<li>
+			<a class="u-fav" href="home.php?mod=spacecp&ac=favorite&type=thread&id=$_G[tid]&formhash={FORMHASH}" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);" onmouseover="this.title = $('favoritenumber').innerHTML + ' {lang activity_member_unit}{lang thread_favorite}'" title="{lang fav_thread}">收藏</a>
+		</li>
+		<!--{if $post['authorid'] != $_G['uid']}-->
+		<li>
+			<a class="u-report" title="举报" href="javascript:;" onclick="showWindow('report', 'misc.php?mod=report&rtype=post&rid=$post[pid]&tid=$_G[tid]&fid=$_G[fid]', 'get', -1);return false;">{lang report}</a>
+		</li>
+		<!--{/if}-->
+		<li>
+			<!--{if !$rushreply}-->
+				<!--{if $ordertype != 1}-->
+					<a class="u-viewmode" href="forum.php?mod=viewthread&tid=$_G[tid]&extra=$_GET[extra]&ordertype=1" title="倒序浏览 - 最后发布的靠前"><i></i><span>倒序查看</span></a>
+				<!--{else}-->                     
+					<a class="u-viewmode" href="forum.php?mod=viewthread&tid=$_G[tid]&extra=$_GET[extra]&ordertype=2" title="正序浏览 - 最早发布的靠前"><i></i><span>正序查看</span></a>
+				<!--{/if}-->
+			<!--{/if}-->
+		</li>
+		<li>
+			<a class="u-cancel" href="javascript:;" id="i-header-panel-cancel">取消</a>
+		</li>
+	</ul>
+</div>
+<div class="viewpage-container f-$_G[fid]-container system-container">
+	<div class="wp">
+		<div id="pt" class="bm cl">
+			<div class="z">
+				<a href="./" class="nvhm" title="{lang homepage}">$_G['setting']['bbname']</a> 
+				<em>&rsaquo;</em><a href="./about">关于我们</a>
+				<em>&rsaquo;</em><!--{echo $_G['forum']['threadsorts']['types'][$_G['forum_thread']['sortid']]}-->
+				<!-- $navigation -->
+			</div>
+		</div>
+
+		<div class="default-main system-main">
+			<div class="default-sidebar system-sidebar">
+				<!--{template public/about_sidebar}-->
+			</div>
+			<div class="default-content system-content">

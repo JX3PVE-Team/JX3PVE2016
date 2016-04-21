@@ -1,17 +1,27 @@
 @import url('../public/base.less');		//函数
 @import url('../global/color.less');	//配色
-@import url('../public/path.less');		//路径
 @import url('../global/var.less');		//尺寸
 
 .wp{
 	.w(@wp);
 }
-.ct2_a .mn{
-	.w(800px);
-}
-
 .faq-container .wp{
 	.pr;
+}
+
+.m-faq-sidebar{
+	.w(120px);
+	padding:5px 10px;
+	.pa;.lt(0,0);
+}
+.m-faq-content{
+	margin-left:120px + 20px;
+	.w(auto) !important;
+	float:none  !important;
+	.db !important;
+}
+.ua-responsive .screen-s .m-faq-content{
+	margin-left:0 !important;
 }
 
 .m-faq-search{
@@ -32,11 +42,8 @@
 		.fz(12px,28px);
 	}
 }
-.ua-responsive .screen-m .m-faq-search{
-	right:5px;
-}
 .ua-responsive .screen-s .m-faq-search{
-	top:50px;
+	top:-30px;
 	left:0;
 
 	.y{float:none;}
@@ -54,6 +61,39 @@
 }
 .ua-responsive .screen-s .m-faq-main{
 	margin-top:40px;
+}
+
+.m-faq-sidebar{
+	h2{.none;}
+
+	li{
+		color: #777;
+		margin-bottom:5px;
+	}
+	a{
+		.pr;
+		.fz(12px,40px);
+		padding-left:20px;
+		.db;
+	}
+	a:before {
+		content: '';
+		.db;.pa;.lt(0,13px);
+		.size(15px);
+		background:url('@{url}header/icons2.png') no-repeat -215px -4px;
+	}
+	li a:hover,li.a a{
+		&:before{
+			background-position:-215px -24px;
+		}
+		color:@blue-link;
+	}
+	li.a a{
+		.bold;
+	}
+}
+.ua-responsive .screen-s .m-faq-sidebar{
+	.none;
 }
 
 .m-faq-content{
@@ -144,38 +184,5 @@
 		line-height:24px;.x(right);
 		margin-top:5px;padding-top:5px;
 	}
-}
-
-.m-faq-sidebar{
-	h2{.none;}
-
-	li{
-		color: #777;
-		margin-bottom:5px;
-	}
-	a{
-		.pr;
-		.fz(12px,40px);
-		padding-left:20px;
-		.db;
-	}
-	a:before {
-		content: '';
-		.db;.pa;.lt(0,13px);
-		.size(15px);
-		background:url('@{url}header/icons2.png') no-repeat -215px -4px;
-	}
-	li a:hover,li.a a{
-		&:before{
-			background-position:-215px -24px;
-		}
-		color:@blue-link;
-	}
-	li.a a{
-		.bold;
-	}
-}
-.ua-responsive .screen-s .m-faq-sidebar{
-	.none;
 }
 

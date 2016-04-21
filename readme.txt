@@ -41,7 +41,10 @@ className			z-index			description
 #u-mask				30 				遮罩层
 .i-header-panel		40 				手机弹层菜单
 .c-fli-panel		40 				楼层弹层菜单
+.w-adminbar			100				主楼管理弹层（仅移动端）
 .fwinmask			201 			dz默认弹层
+.w-adminpop			350				副楼管理弹层
+
 
 
 //Page width css 
