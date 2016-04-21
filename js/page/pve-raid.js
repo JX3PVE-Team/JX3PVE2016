@@ -1,4 +1,4 @@
-H.ready(['jquery','getRequest'],function(){
+H.ready(['getRequest'],function(){
 	jQuery(function($){
 
 		var $raidlogo = $(".c-raidlogo"),
@@ -6,9 +6,6 @@ H.ready(['jquery','getRequest'],function(){
 			mod = getRequest('mod'),
 			sortid = getRequest('sortid'),
 			aindex = getRequest('sortall')
-
-    	//导航栏激活
-		H.curpage('.u-raid')
 
 		//route助手
 		H.route(56)

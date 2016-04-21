@@ -1,5 +1,4 @@
 //Macro systax
-H.ready(['jquery'], function(){
 
 	if ( ![].indexOf ){
 		Array.prototype.indexOf = function( value ){
@@ -25,7 +24,7 @@ H.ready(['jquery'], function(){
 	};
 
 	var Sytax = function(target, data){
-		this.target = jQuery(target); //document.getElementById(target);
+		this.target = jQuery(target); //jQuery(target); document.getElementById(target)
 		this.content = data;
 		this.install();
 	}
@@ -137,8 +136,7 @@ H.ready(['jquery'], function(){
 		this.splits();
 	}
 
-	window.Macro = Sytax;
+	window.Macro = macro = Sytax;
 
-})
 
 

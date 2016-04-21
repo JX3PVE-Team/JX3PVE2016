@@ -1,4 +1,4 @@
-H.ready(['jquery','getRequest'],function(){
+H.ready(['getRequest'],function(){
 	jQuery(function($){
 
 		//条件筛选·服务器

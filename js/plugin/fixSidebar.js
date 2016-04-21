@@ -10,8 +10,8 @@
 //triggerScroll : while scroll distance bigger than this and trigger the fix state
 //(function($){ 
 
-H.ready(['jquery'], function(){
-		
+jQuery(function($){		
+
 	//定义
 	function fixSidebar(selector, top, bottom, triggerScroll) {
 
@@ -88,7 +88,7 @@ H.ready(['jquery'], function(){
 		});
 	}
 
-	H.fixSidebar = fixSidebar;
+	window.fixSidebar = fixSidebar;
 
 	//触发事件
 	window.onload = function() {
@@ -97,6 +97,7 @@ H.ready(['jquery'], function(){
 	jQuery(window).resize(function() {
 		jQuery(window).trigger('scroll');
 	})
-
+	
 })
+
 //})(jQuery);

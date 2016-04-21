@@ -1,4 +1,4 @@
-H.ready(['jquery','getRequest'],function(){
+H.ready(['getRequest'],function(){
 	jQuery(function($){
 
 		var $sidebar_tg = $("#pvx-sidebar-tg"),
@@ -6,9 +6,6 @@ H.ready(['jquery','getRequest'],function(){
 			$main = $(".pvx-main"),
 			$bookdown = $(".bookdown"),
 			$isdown = $("#isdownload")
-
-		//导航栏激活
-		H.curpage('.u-book')
 
 		//route助手
 		H.route(119)
@@ -37,10 +34,5 @@ H.ready(['jquery','getRequest'],function(){
 		if($isdown.text() == '否'){
 			$bookdown.hide()
 		}
-
-		
-
-
-
 	})
 })
