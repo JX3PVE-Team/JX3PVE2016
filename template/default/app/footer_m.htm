@@ -1,0 +1,23 @@
+<div class="app-footer">
+	<ul>
+		<li class="item-1"><a href="./app">工具</a></li>
+		<li class="item-3">
+			<!--{if $_G['uid'] == 0}-->
+				<a href="./login_m">登录</a>
+			<!--{else}-->
+				<a href="./os_m">会员中心</a>
+			<!--{/if}-->
+		</li>
+		<li class="item-2">
+			<!--{if $_G['uid'] == 0}-->
+				<a href="./login_m">我的</a>
+			<!--{else}-->
+				<a href="javascript:void(0)">我的</a>
+			<!--{/if}-->
+		</li>
+	</ul>
+</div>
+
+<!--{block/1778}-->
+</body>
+</html>
