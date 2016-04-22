@@ -9,7 +9,6 @@ H.load([
 	{'postdate':head_conf.CDNROOT+'mod/postdate.min.js'},
 	{'dialog':head_conf.CDNROOT+'mod/dialog.min.js'},
 	{'custombg':head_conf.CDNROOT+'mod/custombg.min.js'},
-	{'editor':head_conf.CDNROOT+'mod/editor.min.js'},
 	{'sfilter':head_conf.CDNROOT+'mod/sfilter.min.js'},
 	{'widget':head_conf.CDNROOT+'mod/widget.min.js'},
 	{'underscore':head_conf.CDNROOT+'lib/underscore.min.js'},

@@ -1,0 +1,165 @@
+<!--{if $special || ($_G['group']['allowsetpublishdate'] && ($_GET[action] == 'newthread' || ($_GET[action] == 'edit' && $isfirstpost && $thread['displayorder'] == -4))) || ($_GET[action] == 'newthread' && $_G['group']['allowpostrushreply'] && $special != 2) || ($_GET[action] == 'edit' && getstatus($thread['status'], 3))}-->
+	<script type="text/javascript" src="{$_G['setting']['jspath']}calendar.js?{VERHASH}"></script>
+<!--{/if}-->
+
+<!--{if $allowuploadtoday || $special == 1}-->
+	<!--{if empty($_G['setting']['pluginhooks']['post_upload_extend'])}-->
+		<!--{subtemplate common/upload}-->
+		<script type="text/javascript">
+		<!--{if $allowpostimg}-->
+			var imgUpload = new SWFUpload({
+				upload_url: "{$_G[siteurl]}misc.php?mod=swfupload&action=swfupload&operation=upload&fid=$_G[fid]",
+				post_params: {"uid" : "$_G[uid]", "hash":"$swfconfig[hash]", "type":"image"},
+				file_size_limit : "$swfconfig[max]",
+				file_types : "$swfconfig[imageexts][ext]",
+				file_types_description : "$swfconfig[imageexts][depict]",
+				file_upload_limit : $swfconfig['limit'],
+				file_queue_limit : 0,
+				swfupload_preload_handler : preLoad,
+				swfupload_load_failed_handler : loadFailed,
+				file_dialog_start_handler : fileDialogStart,
+				file_queued_handler : fileQueued,
+				file_queue_error_handler : fileQueueError,
+				file_dialog_complete_handler : fileDialogComplete,
+				upload_start_handler : uploadStart,
+				upload_progress_handler : uploadProgress,
+				upload_error_handler : uploadError,
+				upload_success_handler : uploadSuccess,
+				upload_complete_handler : uploadComplete,
+				button_image_url : "{IMGDIR}/uploadbutton.png",
+				button_placeholder_id : "imgSpanButtonPlaceholder",
+				button_width: 100,
+				button_height: 25,
+				button_cursor:SWFUpload.CURSOR.HAND,
+				button_window_mode: "transparent",
+				custom_settings : {
+					progressTarget : "imgUploadProgress",
+					uploadSource: 'forum',
+					uploadType: 'image',
+					imgBoxObj: $('imgattachlist'),
+					<!--{if $swfconfig['maxsizeperday']}-->
+					maxSizePerDay: $swfconfig['maxsizeperday'],
+					<!--{/if}-->
+					<!--{if $swfconfig['maxattachnum']}-->
+					maxAttachNum: $swfconfig['maxattachnum'],
+					<!--{/if}-->
+					<!--{if $swfconfig['filtertype']}-->
+					filterType: $swfconfig['filtertype'],
+					<!--{/if}-->
+					singleUpload: $('{$editorid}_btn_local')
+				},
+				debug: false
+			});
+		<!--{/if}-->
+		<!--{if $_G['group']['allowpostattach']}-->
+			var upload = new SWFUpload({
+				upload_url: "{$_G[siteurl]}misc.php?mod=swfupload&action=swfupload&operation=upload&fid=$_G[fid]",
+				post_params: {"uid":"$_G[uid]", "hash":"$swfconfig[hash]"},
+				file_size_limit : "$swfconfig[max]",
+				file_types : "$swfconfig[attachexts][ext]",
+				file_types_description : "$swfconfig[attachexts][depict]",
+				file_upload_limit : $swfconfig['limit'],
+				file_queue_limit : 0,
+				swfupload_preload_handler : preLoad,
+				swfupload_load_failed_handler : loadFailed,
+				file_dialog_start_handler : fileDialogStart,
+				file_queued_handler : fileQueued,
+				file_queue_error_handler : fileQueueError,
+				file_dialog_complete_handler : fileDialogComplete,
+				upload_start_handler : uploadStart,
+				upload_progress_handler : uploadProgress,
+				upload_error_handler : uploadError,
+				upload_success_handler : uploadSuccess,
+				upload_complete_handler : uploadComplete,
+				button_image_url : "{IMGDIR}/uploadbutton.png",
+				button_placeholder_id : "spanButtonPlaceholder",
+				button_width: 100,
+				button_height: 25,
+				button_cursor:SWFUpload.CURSOR.HAND,
+				button_window_mode: "transparent",
+				custom_settings : {
+					progressTarget : "fsUploadProgress",
+					uploadSource: 'forum',
+					uploadType: 'attach',
+					<!--{if $swfconfig['maxsizeperday']}-->
+					maxSizePerDay: $swfconfig['maxsizeperday'],
+					<!--{/if}-->
+					<!--{if $swfconfig['maxattachnum']}-->
+					maxAttachNum: $swfconfig['maxattachnum'],
+					<!--{/if}-->
+					<!--{if $swfconfig['filtertype']}-->
+					filterType: $swfconfig['filtertype'],
+					<!--{/if}-->
+					singleUpload: $('{$editorid}_btn_upload')
+				},
+
+				debug: false
+			});
+		<!--{/if}-->
+		</script>
+	<!--{else}-->
+		<!--{hook/post_upload_extend}-->
+	<!--{/if}-->
+<!--{/if}-->
+
+<script type="text/javascript">
+	var editorsubmit = $('postsubmit');
+	var editorform = $('postform');
+	<!--{if $isfirstpost && !empty($_G[forum][threadtypes][types])}-->
+		simulateSelect('typeid');
+	<!--{/if}-->
+	<!--{if !$isfirstpost && $thread['special'] == 5 && empty($firststand) && $_GET[action] != 'edit'}-->
+		simulateSelect('stand');
+	<!--{/if}-->
+	function switchpost(href) {
+		editchange = false;
+		saveData(1);
+		location.href = href + '&fid=$_G[fid]&cedit=yes<!--{if !empty($_G[tid])}-->&tid=$_G[tid]<!--{/if}--><!--{if !empty($modelid)}-->&modelid=$modelid<!--{/if}-->&extra=$extra';
+		doane();
+	}
+
+	<!--{if $_GET[action] == 'newthread' && $_G['setting']['sitemessage'][newthread] || $_GET[action] == 'reply' && $_G['setting']['sitemessage'][reply]}-->
+		showPrompt('custominfo', 'mouseover', '<!--{if $_GET[action] == 'newthread'}--><!--{echo trim($_G['setting']['sitemessage'][newthread][array_rand($_G['setting']['sitemessage'][newthread])])}--><!--{elseif $_GET[action] == 'reply'}--><!--{echo trim($_G['setting']['sitemessage'][reply][array_rand($_G['setting']['sitemessage'][reply])])}--><!--{/if}-->', $_G['setting']['sitemessage'][time]);
+	<!--{/if}-->
+	<!--{if $_G['group']['allowpostattach']}-->addAttach();<!--{/if}-->
+	<!--{if $allowpostimg}-->addAttach('img');<!--{/if}-->
+
+	(function () {
+		var oSubjectbox = $('subjectbox'),
+			oSubject = $('subject'),
+			oTextarea = $('e_textarea'),
+			sLen = 0;
+		if(oSubjectbox) {
+			if(oTextarea && oTextarea.style.display == '') {
+				oTextarea.focus();
+			}
+		} else if(oSubject) {
+			if(BROWSER.chrome) {
+				sLen = oSubject.value.length;
+				oSubject.setSelectionRange(sLen, sLen);
+			}
+			oSubject.focus();
+		}
+	})();
+
+	<!--{if empty($_GET['cedit'])}-->
+		if(loadUserdata('forum_'+discuz_uid)) {
+			$('rstnotice').style.display = '';
+		}
+	<!--{/if}-->
+	<!--{if !empty($userextcredit)}-->
+		var have_replycredit = 0;
+		var creditstax = $_G['setting']['creditstax'];
+		var replycredit_result_lang = "{lang replycredit_revenue}{$_G['setting']['extcredits'][$extcreditstype][title]} ";
+		var userextcredit = $userextcredit;
+		<!--{if $thread['replycredit'] > 0}-->
+			have_replycredit = {$thread['replycredit']};
+		<!--{/if}-->
+	<!--{/if}-->
+	<!--{if $_GET[action] == 'edit'}-->
+		extraCheckall();
+	<!--{/if}-->
+</script>
+<!--{if ($_GET['action'] == 'newthread' || $_GET['action'] == 'reply' || $_GET['action'] == 'edit') && $_G['group']['allowat']}-->
+<script type="text/javascript" src="{$_G['setting']['jspath']}at.js?{VERHASH}"></script>
+<!--{/if}-->

@@ -1,4 +1,9 @@
-jQuery(function($) {
+jQuery(function($){
+	
+	//全屏编辑状态
+	$("#e_fullswitcher").on('click',function(){
+		$("body").toggleClass('e-fullscreen-edit');
+	})
 
 	//编辑器底部扩展
 	var $editorEX = $("#c-editor-extend"),
@@ -12,4 +17,7 @@ jQuery(function($) {
 		$editorEX.addClass('showall')
 		$(this).hide()
 	})
+
+
 })
+
