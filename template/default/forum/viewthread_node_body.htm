@@ -182,7 +182,9 @@
 	</div>
 
 	<!-- 快速回复 -->
-	<!--{template component/c_fli_fastreply}-->
+	<!--{if $post[first]}-->
+		<!--{template component/c_fli_fastreply}-->
+	<!--{/if}-->
 
 	<!-- 点评 -->
 	<!--{template component/c_fli_cmt}-->

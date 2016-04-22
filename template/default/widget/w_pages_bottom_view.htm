@@ -5,17 +5,18 @@
 
 
 <!--{if !$multipage}-->
-<div class="w-pages-null">
-	没有更多了
-</div>
+	<div class="w-pages-null">
+		没有更多了
+	</div>
 <!--{/if}-->
 
 <div class="w-pages-bottom w-pages pgs mtm mbm cl">
 	<div class="w-pages-list pgt">$multipage</div>
-	<!--{if !$_G['forum_thread']['is_archived']}-->
-		<a class="u-btn-publish" id="newspecialtmp" href="forum.php?mod=post&action=newthread&fid=$_G[fid]">发贴</a>
-	<!--{/if}-->
-	<!--{if $allowpostreply && !$_G['forum_thread']['archiveid']}-->
-		<a class="u-btn-publish" id="post_replytmp" onclick="showWindow('reply', 'forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]')" href="javascript:;" title="{lang reply}">回复</a>
-	<!--{/if}-->
+	<div class="w-gotofloor" id="w-gotofloor">
+		<div class="w-gotofloor-box" id="fj">
+			<label class="z">跳转楼层</label>
+			<input type="text" class="px p_fre z" size="2" onkeyup="$('fj_btn').href='forum.php?mod=redirect&ptid=$_G[tid]&authorid=$_GET[authorid]&postno='+this.value" onkeydown="if(event.keyCode==13) {window.location=$('fj_btn').href;return false;}" title="{lang thread_redirect_postno_tips}" />
+			<a href="javascript:;" id="fj_btn" class="z" title="{lang thread_redirect_postno_tips}"><img src="{IMGDIR}/fj_btn.png" alt="{lang thread_redirect_postno_tips}" class="vm" /></a>
+		</div>
+	</div>
 </div>

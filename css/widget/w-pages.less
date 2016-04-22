@@ -1,6 +1,10 @@
 //翻页公共
 .w-pages{
 	.clearfix;
+}
+.w-pages-list{
+	.clearfix;
+
 	&#pgt .pg{
 		margin:0;
 	}
@@ -21,14 +25,15 @@
 	padding-bottom:0  !important;
 	border-bottom:none !important;
 }
-
 .viewpage-container .w-pages-top{
 	.none;
 }
 
 //底部翻页
 .w-pages-bottom{
-
+	.w-pages-list{
+		.fr;
+	}
 }
 
 //底部下一页按钮
@@ -69,4 +74,5 @@
 	.viewpage-container .u-btn-publish{
 		.none;
 	}
+
 } 

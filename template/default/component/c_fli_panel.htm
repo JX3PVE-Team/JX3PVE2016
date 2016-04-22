@@ -5,29 +5,30 @@
 
 			<!-- 编辑追加 -->
 			<!--{if (($_G['forum']['ismoderator'] && $_G['group']['alloweditpost'] && (!in_array($post['adminid'], array(1, 2, 3)) || $_G['adminid'] <= $post['adminid'])) || ($_G['forum']['alloweditpost'] && $_G['uid'] && ($post['authorid'] == $_G['uid'] && $_G['forum_thread']['closed'] == 0) && !(!$alloweditpost_status && $edittimelimit && TIMESTAMP - $post['dbdateline'] > $edittimelimit)))}-->
-				<a class="editp u-edit" href="forum.php?mod=post&action=edit&fid=$_G[fid]&tid=$_G[tid]&pid=$post[pid]{if !empty($_GET[modthreadkey])}&modthreadkey=$_GET[modthreadkey]{/if}&page=$page"><i></i><!--{if $_G['forum_thread']['special'] == 2 && !$post['message']}-->{lang post_add_aboutcounter}<!--{else}-->{lang edit}</a><!--{/if}-->
+				<a class="u-edit u-submod" href="forum.php?mod=post&action=edit&fid=$_G[fid]&tid=$_G[tid]&pid=$post[pid]{if !empty($_GET[modthreadkey])}&modthreadkey=$_GET[modthreadkey]{/if}&page=$page"><i></i><!--{if $_G['forum_thread']['special'] == 2 && !$post['message']}-->{lang post_add_aboutcounter}<!--{else}-->{lang edit}</a><!--{/if}-->
 			<!--{elseif $_G['uid'] && $post['authorid'] == $_G['uid'] && $_G['setting']['postappend']}-->
-				<a class="appendp u-edit" href="forum.php?mod=misc&action=postappend&tid=$post[tid]&pid=$post[pid]&extra=$_GET[extra]&page=$page" onClick="showWindow('postappend', this.href, 'get', 0)"><i></i>{lang postappend}</a>
+				<a class="u-edit u-submod" href="forum.php?mod=misc&action=postappend&tid=$post[tid]&pid=$post[pid]&extra=$_GET[extra]&page=$page" onClick="showWindow('postappend', this.href, 'get', 0)"><i></i>{lang postappend}</a>
 			<!--{/if}-->
 
 			<!-- 草稿发布 -->
 			<!--{if $post['first'] && $post['invisible'] == -3}-->
-				<a class="psave u-pub" href="forum.php?mod=misc&action=pubsave&tid=$_G[tid]"><i></i>{lang published}</a>
+				<a class="u-pub u-submod" href="forum.php?mod=misc&action=pubsave&tid=$_G[tid]"><i></i>{lang published}</a>
+			<!--{/if}-->
+
+			<!-- 推送 -->
+			<!--{if $post['first'] && $allowblockrecommend}--><a class="u-push u-submod" href="javascript:;" onclick="modaction('recommend', '$_G[forum_firstpid]', 'op=recommend&idtype={if $_G[forum_thread][isgroup]}gtid{else}tid{/if}&id=$_G[tid]&pid=$post[pid]', 'portal.php?mod=portalcp&ac=portalblock')"><i></i>{lang modmenu_blockrecommend}</a><!--{/if}-->
+
+			<!-- 支持或反对 -->
+			<!--{if !$_G['forum_thread']['special'] && !$rushreply && !$hiddenreplies && $_G['setting']['repliesrank'] && !$post['first'] && !($post['isWater'] && $_G['setting']['filterednovote'])}-->
+			<a class="u-good u-submod" href="forum.php?mod=misc&action=postreview&do=support&tid=$_G[tid]&pid=$post[pid]&hash={FORMHASH}" {if $_G['uid']}onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;"{else} onclick="showWindow('login', this.href)"{/if} onmouseover="this.title = ($('review_support_$post[pid]').innerHTML ? $('review_support_$post[pid]').innerHTML : 0) + ' {lang activity_member_unit} {lang support_reply}'"><i></i>{lang support_reply} <span id="review_support_$post[pid]">$post[postreview][support]</span></a>
+			<a class="u-bad u-submod" href="forum.php?mod=misc&action=postreview&do=against&tid=$_G[tid]&pid=$post[pid]&hash={FORMHASH}" {if $_G['uid']}onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;"{else} onclick="showWindow('login', this.href)"{/if} onmouseover="this.title = ($('review_against_$post[pid]').innerHTML ? $('review_against_$post[pid]').innerHTML : 0) + ' {lang activity_member_unit} {lang against_reply}'"><i></i>{lang against_reply} <span id="review_against_$post[pid]">$post[postreview][against]</span></a>
 			<!--{/if}-->
 
 			<!-- 待审核 -->
 			<!--{if $post['invisible'] == -2 && !$post['first']}-->
-				<span class="xg1">({lang moderate_need})</span>
+				<span class="u-pending u-submod">({lang moderate_need})</span>
 			<!--{/if}-->
 
-			<!-- 推送 -->
-			<!--{if $post['first'] && $allowblockrecommend}--><a class="push u-push" href="javascript:;" onclick="modaction('recommend', '$_G[forum_firstpid]', 'op=recommend&idtype={if $_G[forum_thread][isgroup]}gtid{else}tid{/if}&id=$_G[tid]&pid=$post[pid]', 'portal.php?mod=portalcp&ac=portalblock')"><i></i>{lang modmenu_blockrecommend}</a><!--{/if}-->
-
-			<!-- 支持或反对 -->
-			<!--{if !$_G['forum_thread']['special'] && !$rushreply && !$hiddenreplies && $_G['setting']['repliesrank'] && !$post['first'] && !($post['isWater'] && $_G['setting']['filterednovote'])}-->
-			<a class="replyadd u-good" href="forum.php?mod=misc&action=postreview&do=support&tid=$_G[tid]&pid=$post[pid]&hash={FORMHASH}" {if $_G['uid']}onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;"{else} onclick="showWindow('login', this.href)"{/if} onmouseover="this.title = ($('review_support_$post[pid]').innerHTML ? $('review_support_$post[pid]').innerHTML : 0) + ' {lang activity_member_unit} {lang support_reply}'"><i></i>{lang support_reply} <span id="review_support_$post[pid]">$post[postreview][support]</span></a>
-			<a class="replysubtract u-bad" href="forum.php?mod=misc&action=postreview&do=against&tid=$_G[tid]&pid=$post[pid]&hash={FORMHASH}" {if $_G['uid']}onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;"{else} onclick="showWindow('login', this.href)"{/if} onmouseover="this.title = ($('review_against_$post[pid]').innerHTML ? $('review_against_$post[pid]').innerHTML : 0) + ' {lang activity_member_unit} {lang against_reply}'"><i></i>{lang against_reply} <span id="review_against_$post[pid]">$post[postreview][against]</span></a>
-			<!--{/if}-->
 			<!--{hook/viewthread_postfooter $postcount}-->
 		</div>
 		
@@ -39,64 +40,65 @@
 					<!-- 主楼回复 -->
 					<!--{if $post['invisible'] == 0}-->
 						<!--{if (!$_G['uid'] || $allowpostreply) && !$needhiddenreply}-->
-							<!--{if $post['first']}-->
-								<a class="u-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&reppost=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)"><i></i>回复</a>
-							<!--{else}-->
-								<a class="u-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&repquote=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)"><i></i>回复</a>
-							<!--{/if}-->
+							<a class="u-cmt u-submod" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&reppost=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)"><i></i>回复</a>
 						<!--{/if}-->
 					<!--{/if}-->
 				<!--{else}-->
 					<!-- 楼层点评 -->
 					<!--{if $allowpostreply && $post['allowcomment'] && (!$thread['closed'] || $_G['forum']['ismoderator'])}-->
-						<a class="u-cmt u-mask-tg" href="forum.php?mod=misc&action=comment&tid=$post[tid]&pid=$post[pid]&extra=$_GET[extra]&page=$page{if $_G['forum_thread']['special'] == 127}&special=$specialextra{/if}" onclick="showWindow('comment', this.href, 'get', 0)"><i></i>回复<em><!--{if $commentcount[$post[pid]] > 0 }-->($commentcount[$post[pid]])<!--{/if}--></em></a>
+						<a class="u-cmt u-mask-tg u-submod" href="forum.php?mod=misc&action=comment&tid=$post[tid]&pid=$post[pid]&extra=$_GET[extra]&page=$page{if $_G['forum_thread']['special'] == 127}&special=$specialextra{/if}" onclick="showWindow('comment', this.href, 'get', 0)"><i></i>回复<em><!--{if $commentcount[$post[pid]] > 0 }-->($commentcount[$post[pid]])<!--{/if}--></em></a>
 					<!--{/if}-->
 					<!--{if $post['invisible'] == 0}-->
 						<!--{if (!$_G['uid'] || $allowpostreply) && !$needhiddenreply}-->
-							<!--{if $post['first']}-->
-								<a class="u-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&reppost=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)"><i></i>引用</a>
-							<!--{else}-->
-								<a class="u-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&repquote=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)"><i></i>引用</a>
-							<!--{/if}-->
+							<a class="u-quote u-submod" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&repquote=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)"><i></i>引用</a>
 						<!--{/if}-->
 					<!--{/if}-->
 				<!--{/if}-->
 
 				<!-- 设为最佳答案 -->
 				<!--{if $_G['forum_thread']['special'] == 3 && ($_G['forum']['ismoderator'] && (!$_G['setting']['rewardexpiration'] || $_G['setting']['rewardexpiration'] > 0 && ($_G[timestamp] - $_G['forum_thread']['dateline']) / 86400 > $_G['setting']['rewardexpiration']) || $_G['forum_thread']['authorid'] == $_G['uid']) && $post['authorid'] != $_G['forum_thread']['authorid'] && $post['first'] == 0 && $_G['uid'] != $post['authorid'] && $_G['forum_thread']['price'] > 0}-->
-					<a class="u-best" href="javascript:;" onclick="setanswer($post['pid'], '$_GET[from]')"><i></i>{lang reward_set_bestanswer}</a>
+					<a class="u-best u-submod" href="javascript:;" onclick="setanswer($post['pid'], '$_GET[from]')"><i></i>{lang reward_set_bestanswer}</a>
+					<label class="u-manage u-submod" for="manage$post[pid]">
+						<input type="checkbox" id="manage$post[pid]" class="pc" {if !empty($modclick)}checked="checked" {/if}onclick="pidchecked(this);modclick(this, $post[pid])" value="$post[pid]" autocomplete="off" />
+						{lang manage}
+					</label>
+				<!--{/if}-->
+
+				<!-- 置顶 -->
+				<!--{if !$post[first] && $modmenu['post']}-->
+					<!--{if $_G['forum']['ismoderator'] && $_G['group']['allowstickreply'] || $_G['forum_thread']['authorid'] == $_G['uid']}--><a class="u-stick u-submod" href="javascript:;" onclick="modaction('stickreply',$post[pid])"><i></i>{lang modmenu_stickpost}</a><!--{/if}-->
 				<!--{/if}-->
 
 				<!-- 评分 -->
-				<!--{if !$post['first'] && $_G['group']['raterange'] && $post['authorid']}-->
-					<a class="u-rate" href="javascript:;" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=$_G[tid]&pid=$post[pid]', 'get', -1);return false;"><i></i>{lang rate}</a>
+				<!--{if $_G['group']['raterange'] && $post['authorid']}-->
+					<a class="u-rate u-submod" href="javascript:;" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=$_G[tid]&pid=$post[pid]', 'get', -1);return false;"><i></i>{lang rate}</a>
 				<!--{/if}-->
 
 				<!-- 撤销评分 -->
 				<!--{if !empty($postlist[$post[pid]]['totalrate']) && $_G['forum']['ismoderator']}-->
-					<a class="u-rate u-removerate" href="forum.php?mod=misc&action=removerate&tid=$_G[tid]&pid=$post[pid]&page=$page" onclick="showWindow('rate', this.href, 'get', -1)"><i></i>{lang removerate}</a>
+					<a class="u-rate u-removerate u-submod" href="forum.php?mod=misc&action=removerate&tid=$_G[tid]&pid=$post[pid]&page=$page" onclick="showWindow('rate', this.href, 'get', -1)"><i></i>{lang removerate}</a>
 				<!--{/if}-->
 
 				<!-- 举报 -->
 				<!--{if $post['authorid'] != $_G['uid']}-->
-					<a class="u-report" href="javascript:;" onclick="showWindow('report', 'misc.php?mod=report&rtype=post&rid=$post[pid]&tid=$_G[tid]&fid=$_G[fid]', 'get', -1);return false;"><i></i>{lang report}</a>
+					<a class="u-report u-submod" href="javascript:;" onclick="showWindow('report', 'misc.php?mod=report&rtype=post&rid=$post[pid]&tid=$_G[tid]&fid=$_G[fid]', 'get', -1);return false;"><i></i>{lang report}</a>
 				<!--{/if}-->
 
-				<!-- 管理 -->
+				<!-- 主贴管理 -->
+				<!--{if $post[first]}-->
+					<a class="u-adminbar u-submod" id="u-adminbar-tg" href="javascript:;" title="PC端主贴管理在顶部工具条"><i></i>{lang manage}</a>
+				<!--{/if}-->
+
+				<!-- 回复管理 -->
 				<!--{if !$post['first'] && $modmenu['post']}-->
-				<label class="u-manage" for="manage$post[pid]">
+				<label class="u-manage u-submod" for="manage$post[pid]">
 					<input type="checkbox" id="manage$post[pid]" class="pc" {if !empty($modclick)}checked="checked" {/if}onclick="pidchecked(this);modclick(this, $post[pid])" value="$post[pid]" autocomplete="off" />
 					{lang manage}
 				</label>
 				<!--{/if}-->
 
-				<!-- 管理 -->
-				<!--{if $post[first]}-->
-					<a class="u-adminbar" id="u-adminbar-tg" href="javascript:;">管理</a>
-				<!--{/if}-->
-
 				<!-- 取消（移动端） -->
-				<a class="u-cancel" href="javascript:;">取消</a>
+				<a class="u-cancel u-submod" href="javascript:;">取消</a>
 
 			<!--{/if}-->
 			<!--{hook/viewthread_postaction $postcount}-->

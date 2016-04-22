@@ -51,30 +51,17 @@
 			</script>
 		</div>
 
-		<!-- 楼层跳转 -->
-		<span class="u-goto" id="c-forum-title-goto">
-			<i></i><span>跳转</span>
-			<div class="u-goto-box" id="fj">
-				<label class="z">跳转楼层</label>
-				<input type="text" class="px p_fre z" size="2" onkeyup="$('fj_btn').href='forum.php?mod=redirect&ptid=$_G[tid]&authorid=$_GET[authorid]&postno='+this.value" onkeydown="if(event.keyCode==13) {window.location=$('fj_btn').href;return false;}" title="{lang thread_redirect_postno_tips}" />
-				<a href="javascript:;" id="fj_btn" class="z" title="{lang thread_redirect_postno_tips}"><img src="{IMGDIR}/fj_btn.png" alt="{lang thread_redirect_postno_tips}" class="vm" /></a>
-			</div>
-		</span>
-
 		<!-- 倒序 -->
 		<!--{if !$rushreply}-->
 			<!--{if $ordertype != 1}-->
-				<a href="forum.php?mod=viewthread&tid=$_G[tid]&extra=$_GET[extra]&ordertype=1"  class="u-descending" title="倒序浏览 - 最后发布的靠前"><i></i><span>倒序</span></a>
+				<a href="forum.php?mod=viewthread&tid=$_G[tid]&extra=$_GET[extra]&ordertype=1"  class="u-viewmode" title="最后发布的靠前"><i></i><span>倒序查看</span></a>
 			<!--{else}-->
-				<a href="forum.php?mod=viewthread&tid=$_G[tid]&extra=$_GET[extra]&ordertype=2"  class="u-descending" title="正序浏览 - 最早发布的靠前"><i></i><span>正序</span></a>
+				<a href="forum.php?mod=viewthread&tid=$_G[tid]&extra=$_GET[extra]&ordertype=2"  class="u-viewmode" title="最早发布的靠前"><i></i><span>正序查看</span></a>
 			<!--{/if}-->
 		<!--{/if}-->
 
-		<!-- 举报 -->
-		<!--{if $post['authorid'] != $_G['uid']}-->
-			<a class="u-report" title="举报" href="javascript:;" onclick="showWindow('miscreport$post[pid]', 'misc.php?mod=report&rtype=post&rid=$post[pid]&tid=$_G[tid]&fid=$_G[fid]', 'get', -1);return false;"><i></i><span>{lang report}</span></a>
-		<!--{/if}-->
-
+		<!-- 更多 -->
+		<!-- 预留位置 -->
 
 	</div>
 

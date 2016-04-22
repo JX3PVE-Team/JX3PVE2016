@@ -3,7 +3,7 @@ jQuery(function($){
 	var $mask = $("#u-mask")
 
 	//手机 弹层处理
-	if($("html").hasClass('ua-responsive')){
+	if($("html").hasClass('ua-responsive') && $("body").hasClass('screen-s')){
 
 		//需要弹出遮罩层的（局部双层菜单无需弹出浮层）
 		$(".u-mask-tg").on('click',function(e){
@@ -35,16 +35,18 @@ jQuery(function($){
 			$(this).parent('.c-fli-panel-right').parent('.c-fli-panel').addClass('folder').removeClass('active')
 		})
 
-		//帖子管理
+		//主贴管理
 		$("#u-adminbar-tg").on('click',function(){
-			$mask.fadeIn()
 			$("#modmenu").fadeIn()
 		})
 		$("#w-adminbar-close").on('click',function(){
-			$mask.fadeOut()
 			$("#modmenu").fadeOut()
 		})
-
+	}else{
+		//主贴管理
+		$("#u-adminbar-tg").on('click',function(){
+			alert('主贴管理工具条在顶部 —— PC端');
+		})
 	}
 	
 	//PC 分享

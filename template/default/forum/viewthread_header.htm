@@ -20,20 +20,16 @@
 		<li>
 			<a class="u-fav" href="home.php?mod=spacecp&ac=favorite&type=thread&id=$_G[tid]&formhash={FORMHASH}" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);" onmouseover="this.title = $('favoritenumber').innerHTML + ' {lang activity_member_unit}{lang thread_favorite}'" title="{lang fav_thread}">收藏</a>
 		</li>
-		<!--{if $post['authorid'] != $_G['uid']}-->
-		<li>
-			<a class="u-report" title="举报" href="javascript:;" onclick="showWindow('report', 'misc.php?mod=report&rtype=post&rid=$post[pid]&tid=$_G[tid]&fid=$_G[fid]', 'get', -1);return false;">{lang report}</a>
-		</li>
-		<!--{/if}-->
 		<li>
 			<!--{if !$rushreply}-->
 				<!--{if $ordertype != 1}-->
-					<a class="u-viewmode" href="forum.php?mod=viewthread&tid=$_G[tid]&extra=$_GET[extra]&ordertype=1" title="倒序浏览 - 最后发布的靠前"><i></i><span>倒序查看</span></a>
+					<a class="u-viewmode" href="forum.php?mod=viewthread&tid=$_G[tid]&extra=$_GET[extra]&ordertype=1" title="最后发布的靠前"><i></i><span>倒序查看</span></a>
 				<!--{else}-->                     
-					<a class="u-viewmode" href="forum.php?mod=viewthread&tid=$_G[tid]&extra=$_GET[extra]&ordertype=2" title="正序浏览 - 最早发布的靠前"><i></i><span>正序查看</span></a>
+					<a class="u-viewmode" href="forum.php?mod=viewthread&tid=$_G[tid]&extra=$_GET[extra]&ordertype=2" title="最早发布的靠前"><i></i><span>正序查看</span></a>
 				<!--{/if}-->
 			<!--{/if}-->
 		</li>
+		<!-- 分享与更多预留 -->
 		<li>
 			<a class="u-cancel" href="javascript:;" id="i-header-panel-cancel">取消</a>
 		</li>

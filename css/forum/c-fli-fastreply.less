@@ -1,28 +1,41 @@
-//快速回复
+@c-fli-fastreply-link:28px;
 .c-fli-fastreply{
-	.none;
+	.pr;
 	margin:10px auto;
 }
-.c-fli-first .c-fli-fastreply{
-	.db;
+.c-fli-fastreply-box{
+	padding-left:@c-fli-fastreply-link+10px;
+	padding-top:5px;
+	padding-bottom:5px;
 }
+.ua-responsive .screen-s  .c-fli-fastreply-box{
+	padding-left:@c-fli-fastreply-link+20px;
+	padding-right:10px;
+}
+
 .ua-responsive .screen-s .c-fli-fastreply{
 	margin:0 auto;
+}
+
+.c-fli-fastreply-link{
+	.pa;.lt(0,5px);
+	&:extend(.u-btn-gray);
+	.r(@c-fli-fastreply-link);
+	.size(@c-fli-fastreply-link);
+	i{.db;.full;background:~"url('@{url}forum/advreply.svg') no-repeat center center / auto 50%";}
+}
+.ua-responsive .screen-s .c-fli-fastreply-link{
+	left:10px;
 }
 
 .c-fli-fastreply-content{
 	&#vfastpost{
 		background: none;
-		padding:5px 0;
+		padding:0;
 	}
 	#vfastposttb{
 		.clearfix;
 		.pr;
-	}
-}
-.ua-responsive .screen-s .c-fli-fastreply-content{
-	&#vfastpost{
-		padding:5px 10px;
 	}
 }
 
@@ -89,4 +102,19 @@
 	.o .y{
 		.none;
 	}
+}
+
+
+//显示控制 
+.c-fli-fastreply{
+	.none;	//PC底部的默认隐藏
+}
+.c-fli-first .c-fli-fastreply{
+	.db;	//PC主楼中的显示
+}
+.ua-responsive .screen-s .c-fli-first .c-fli-fastreply{
+	.none;	//M主楼中的隐藏
+}
+.ua-responsive .screen-s .c-fli-fastreply{
+	.db;	//M底部的显示
 }

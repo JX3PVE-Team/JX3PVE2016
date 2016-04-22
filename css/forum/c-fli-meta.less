@@ -50,7 +50,7 @@
 		}
 	}
 
-	.u-report,.u-share,.u-goto,.u-print,.u-descending{
+	.u-share,.u-print,.u-viewmode{
 		.fl;
 		color:#999;
 		margin-left:10px;
@@ -69,13 +69,7 @@
 		}
 	}
 
-	.u-report{
-		.none;
-		i{
-			background:url('@{url}forum/report.png') no-repeat 0 0;
-		}
-	}
-	.u-descending{
+	.u-viewmode{
 		i{
 			background:url('@{url}forum/descending.png') no-repeat 0 0;
 		}
@@ -107,45 +101,13 @@
 		&.on .bdsharebuttonbox{.db;}
 	}
 
-	.u-goto{
-		.pr;.pointer;
-		i{
-			background:url('@{url}forum/goto.png') no-repeat 0 0;
-			margin-top:-1px;
-			margin-right:4px;
-		}
-		.u-goto-box{
-			.pa;.lt(-68px,32px);.z(2);
-			.arrows(t,6px,#fafafa,1px,#ddd) !important;
-			width: 148px;
-    		padding: 6px 10px 6px 10px;
-    		.r(2px);
-			background-color:#fafafa;
-			border:1px solid #ddd;
-			label{color:#999;}
-			label,a,input{margin-right:5px;}
-			a{margin-right:0;}
-		}
-		.u-goto-box{.none;}
-		&.on .u-goto-box{.db;}
-
-		#fj label, #fj input{.lh(22px);}
-		#fj input{.w(60px) !important;padding:0;margin:0 5px;}
-		#fj_btn{line-height:16px;margin-top:2px;}
-	}
 }
 
 //ipad
 .ua-responsive .screen-m .c-fli-meta{
-	.c-fli-meta-left,.c-fli-meta-right{
-		float:none;
-	}
-	.u-report{
-		.db;
-	}
+	.u-view,.u-reply,.u-print{.none;}
 }
 //mobile
 .ua-responsive .screen-s .c-fli-meta{
-	.u-view,.u-reply{.none;}
-	.c-fli-meta-right{.none;}
+	.none;
 }

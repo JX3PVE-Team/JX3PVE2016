@@ -21,6 +21,9 @@
 		.fl;
 		margin-left:10px;
 	}
+	.u-info-1,.u-info-2{
+		.clearfix;.db;
+	}
 	.u-username{
 		.bold;.fl;
 		margin-right:5px;
@@ -48,9 +51,6 @@
 		margin-top:5px;
 		a{margin-right:2px;}
 	}
-	.u-info-1{.clearfix;.db;}
-	.u-info-2{.clearfix;.db;}
-
 	.u-floor{
 		color:#999;
 		.fl;margin-right:5px;
@@ -69,7 +69,7 @@
 		em{.none;}
 	}
 
-	.c-fli-replycredit{
+	.u-replycredit{
 		.fr;
 		margin-right: 10px;
 	    //border: 1px solid #ddd;
@@ -80,17 +80,21 @@
 	}
 
 	.u-panel{
-		.fr;.none;
+		.fr;
 	}
 
-	.u-cmt,.u-more{
-		.db;.fr;
+	.u-reply,.u-more{
+		.db;.fr;.pointer;
 		padding:5px 10px;
 		span{.none;}
-		i{.db;}
+		i{.dbi;.y;}
+		em{color:#aaa;}
+		&:hover{
+			text-decoration:none;
+		}
 	}
 
-	.u-cmt{
+	.u-reply{
 		i{
 			.size(20px,16px);
 			background:~"url('@{url}forum/cmt.svg') no-repeat 0 0 / auto 100%";
@@ -105,13 +109,26 @@
 	}
 
 }
+//PC版楼主不显示
+.c-fli-first .c-fli-header{
+	.none;
+}
+.ua-responsive .screen-s .c-fli-first .c-fli-header{
+	.db;
+}
+//PC版不显示手机操作栏
+.c-fli-header{
+	.u-panel{
+		.none;
+	}
+}
+//手机版显示手机操作栏并隐藏回帖奖励
 .ua-responsive .screen-s .c-fli-header{
 	font-size:12px;
 
-	.c-fli-replycredit{
+	.u-replycredit{
 		.none;
 	}
-
 	.u-panel{
 		.db;
 	}

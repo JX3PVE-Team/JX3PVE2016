@@ -1,5 +1,5 @@
 <div class="c-fli-header">
-<!--{if !$post[first]}-->
+
 	<!-- 头像 -->
 	<a class="u-avatar" href="home.php?mod=space&uid=$post[authorid]" target="_blank"><!--{avatar($post[authorid],small)}--></a>
 
@@ -32,27 +32,37 @@
 				<!--{/if}-->
 			</span>
 			<!--{/if}-->
+
 			<!-- 发布时间 -->
-			<span class="u-time"><em>发布于</em> $post[dateline]</span>
+			<!--{if $post[first]}-->
+				<span class="u-time"><em>最后更新</em> $thread[lastedit]</span>
+			<!--{else}-->
+				<span class="u-time"><em>发布于</em> $post[dateline]</span>
+			<!--{/if}-->
 		</span>
 	</span>
 
 	<!-- 手机版操作栏 -->
 	<div class="u-panel">
 		<span class="u-more"><i></i><span>更多</span></span>
-		<!--{if $post['invisible'] == 0}-->
+		<!--{if $post[first]}-->
+			<!--{if $post['invisible'] == 0}-->
+				<!--{if (!$_G['uid'] || $allowpostreply) && !$needhiddenreply}-->
+					<a class="u-reply" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&reppost=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)"><i></i><span>回复</span><em><!--{if $_G[forum_thread][allreplies] > 0 }-->($_G[forum_thread][allreplies])<!--{/if}--></em></a>
+				<!--{/if}-->
+			<!--{/if}-->
+		<!--{else}-->
 			<!--{if $allowpostreply && $post['allowcomment'] && (!$thread['closed'] || $_G['forum']['ismoderator'])}-->
-				<a class="u-cmt u-mask-tg" href="forum.php?mod=misc&action=comment&tid=$post[tid]&pid=$post[pid]&extra=$_GET[extra]&page=$page{if $_G['forum_thread']['special'] == 127}&special=$specialextra{/if}" onclick="showWindow('comment', this.href, 'get', 0)"><i></i><span>回复</span></a>
+				<a class="u-reply" href="forum.php?mod=misc&action=comment&tid=$post[tid]&pid=$post[pid]&extra=$_GET[extra]&page=$page{if $_G['forum_thread']['special'] == 127}&special=$specialextra{/if}" onclick="showWindow('comment', this.href, 'get', 0)"><i></i><span>回复</span><em><!--{if $commentcount[$post[pid]] > 0 }-->($commentcount[$post[pid]])<!--{/if}--></em></a>
 			<!--{/if}-->
 		<!--{/if}-->
 	</div>
 
 	<!-- 回帖奖励获得的奖励 -->
 	<!--{if !$post['first'] && $post['replycredit'] > 0}-->
-		<div class="c-fli-replycredit">
+		<div class="u-replycredit">
 			<i></i>{lang replycredit} <b>+{$post['replycredit']}</b> {$_G['setting']['extcredits'][$_G['forum_thread']['replycredit_rule']['extcreditstype']][unit]}{$_G['setting']['extcredits'][$_G['forum_thread']['replycredit_rule']['extcreditstype']][title]}
 		</div>
 	<!--{/if}-->
 
-<!--{/if}-->
 </div>
