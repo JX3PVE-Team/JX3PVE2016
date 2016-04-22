@@ -1,15 +1,16 @@
-@import url('app/include/var.less');
-@import url('app/include/base.less');
+@import url('../public/base.less');
+@import url('../global/var.less');
+@import url('../global/color.less');
 
 body{
-	background-color:#f5f5f5;
+	background-color:#f7f7f7;
 }
 .app-container{
 	
 }
 
 .app-header{
-	padding:40px 0;
+	padding:0 0 40px 0;
 	.x;
 	.w(90%);
 	.auto(x);
@@ -27,7 +28,7 @@ body{
 	.db;
 	i{
 		.size(13px);.dbi;.y(-2px);margin-right:5px;
-		background:url('@{app}servers/faq.gif') no-repeat 0 0;
+		background:url('@{url}app/common/faq.gif') no-repeat 0 0;
 	}
 
 	.none;
@@ -79,7 +80,7 @@ body{
 		.pa;.rt(0,0);.db;
 		.size(40px,100%);
 		.indent;.btn-reset;
-		background:url('@{app}servers/search-btn.png') no-repeat center center;
+		background:url('@{url}app/common/search-btn.png') no-repeat center center;
 	}
 }
 .u-btn-go{
@@ -106,7 +107,7 @@ body{
 	.color(#888,#666,#666);
 	i{
 		.dbi;.size(15px);.y(top);margin-right:5px;
-		background:url('@{app}common/ac.gif') no-repeat 0 0;
+		background:url('@{url}app/common/ac.gif') no-repeat 0 0;
 	}
 }
 
@@ -139,9 +140,9 @@ body{
 }
 
 .u-icon-top{
-	background:url('@{app}servers/top.png') no-repeat center center;
+	background:url('@{url}app/common/top.png') no-repeat center center;
 	&.istop{
-		background-image:url('@{app}servers/istop.png');
+		background-image:url('@{url}app/common/istop.png');
 	}
 }
 @keyframes serversTop{
@@ -154,9 +155,9 @@ body{
 }
 
 .u-icon-fav{
-	background:url('@{app}servers/fav.png') no-repeat center center;
+	background:url('@{url}app/common/fav.png') no-repeat center center;
 	&.isfav{
-		background-image:url('@{app}servers/isfav.png');
+		background-image:url('@{url}app/common/isfav.png');
 	}
 }
 @keyframes serversFav{
@@ -170,7 +171,7 @@ body{
 
 
 .u-icon-feed{
-	background:url('@{app}servers/lock.gif') no-repeat center center;
+	background:url('@{url}app/common/lock.gif') no-repeat center center;
 	cursor:default !important;
 	.tm(0.4);
 }

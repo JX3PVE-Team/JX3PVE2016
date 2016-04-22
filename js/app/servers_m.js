@@ -2,7 +2,7 @@
  Author: ec.huyinghuan@gmail.com
  Date: 2015-12-06
 */
-$(function(){
+jQuery(function($){
   var uid = $("#userUID").val();
   var groupId = $("#userGroupId").val();
   var tSource = '{{each serverList as server index}}\n<div class="m-result">\n   <div class="m-info">\n       {{server.area}} > {{server.name}}\n       <span class="status status-{{server.status}}">\n           {{server.status | getStatusText}}\n       </span>\n   </div>\n   <div class="m-info">\n       最新开服记录\n       <span class="recent">\n           {{server.latest}}<em>（{{server.latest | getXQDay}}）</em>\n       </span>\n   </div>\n   <div class="m-info">\n       上一次记录\n       <span class="history">\n           {{server.history}}<em>（{{server.history | getXQDay}}）</em>\n       </span>\n   </div>\n   <div class="m-panel">\n       <ul>\n         <!-- 已结操作后同时还要给li添加.has -->\n         <li class="top" data-id="{{server.id}}" data-top="{{server.isTop}}"><i class="u-icon-top {{if server.isTop}}istop{{/if}}"></i><b>{{server.isTop | getTopText}}</b></li>\n         <li class="fav" data-id="{{server.id}}" data-collect="{{server.isCollect}}"><i class="u-icon-fav {{if server.isCollect}}isfav{{/if}}"></i><b>{{server.isCollect | getCollectText}}</b></li>\n         <!-- <li class="feed" data-id="{{server.id}}" data-top="{{server.isFeed}}"><i class="u-icon-feed"></i><b>订阅</b></li> -->\n       </ul>\n   </div>\n</div>\n{{/each}}';

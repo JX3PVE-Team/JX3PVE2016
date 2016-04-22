@@ -1,6 +1,6 @@
 <!--{template common/header}-->
-<link rel="stylesheet" href="http://css.jx3pve.com/css/app_pc.css" type="text/css" />
-<link rel="stylesheet" href="http://app.jx3pve.com/css/servers_pc.css" type="text/css" />
+<link rel="stylesheet" href="http://css.jx3pve.com/css/app/app_pc.css" type="text/css" />
+<link rel="stylesheet" href="http://css.jx3pve.com/css/app/servers_pc.css" type="text/css" />
 <div class="app-container">
     <input type="hidden" id="userGroupId" value="$_G[groupid]">
     <input type="hidden" id="userUID" value="$_G[uid]">
@@ -93,13 +93,8 @@
     </div>
 
 </div>
-<script>
-    //加载公共模块
-    H.load([
-        {'template':head_conf.CDNROOT+'lib/template.js'},
-        {'color':head_conf.CDNROOT+'lib/color.all.min.js'},
-        {'jqColor':head_conf.CDNROOT+'lib/jqColor.js'}
-    ])
-</script>
-<script src="http://app.jx3pve.com/js/app/servers_pc.min.js"></script>
+<script src="http://js.jx3pve.com/js/lib/template.min.js"></script>
+<script src="http://js.jx3pve.com/js/lib/color.all.min.js"></script>
+<script src="http://js.jx3pve.com/js/lib/jqColor.min.js"></script>
+<script src="http://js.jx3pve.com/js/app/servers_pc.min.js"></script>
 <!--{template common/footer}-->
