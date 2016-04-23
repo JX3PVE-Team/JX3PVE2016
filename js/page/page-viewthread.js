@@ -85,6 +85,14 @@ jQuery(function($){
             TGPOST_STATUS = false;
         })
 
+    //道具层
+    $(".c-fli-footer .u-magic").on('click',function(){
+    	$(this).parent('.c-fli-panel-right').parent('.c-fli-panel').next('.c-fli-magic').slideDown()
+    })
+    $(".c-fli-magic .u-magic-close").on('click',function(){
+    	$(this).parent('li').parent('.c-fli-magic').slideUp()
+    })
+
 
 })
 

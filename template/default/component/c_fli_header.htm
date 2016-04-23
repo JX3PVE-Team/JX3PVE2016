@@ -52,7 +52,7 @@
 				<!--{/if}-->
 			<!--{/if}-->
 		<!--{else}-->
-			<!--{if $allowpostreply && $post['allowcomment'] && (!$thread['closed'] || $_G['forum']['ismoderator'])}-->
+			<!--{if (!$thread['closed'] || $_G['forum']['ismoderator'])}-->
 				<a class="u-reply" href="forum.php?mod=misc&action=comment&tid=$post[tid]&pid=$post[pid]&extra=$_GET[extra]&page=$page{if $_G['forum_thread']['special'] == 127}&special=$specialextra{/if}" onclick="showWindow('comment', this.href, 'get', 0)"><i></i><span>回复</span><em><!--{if $commentcount[$post[pid]] > 0 }-->($commentcount[$post[pid]])<!--{/if}--></em></a>
 			<!--{/if}-->
 		<!--{/if}-->

@@ -84,6 +84,12 @@
 					<a class="u-report u-submod" href="javascript:;" onclick="showWindow('report', 'misc.php?mod=report&rtype=post&rid=$post[pid]&tid=$_G[tid]&fid=$_G[fid]', 'get', -1);return false;"><i></i>{lang report}</a>
 				<!--{/if}-->
 
+				<!-- 道具 -->
+				<!--{if $_G['setting']['magicstatus']}-->
+					<a class="u-magic u-submod" href="javascript:;"><i></i>道具</a>
+					<!--id="mgc_post_$post[pid]" onmouseover="showMenu(this.id)" -->
+				<!--{/if}-->
+
 				<!-- 主贴管理 -->
 				<!--{if $post[first]}-->
 					<a class="u-adminbar u-submod" id="u-adminbar-tg" href="javascript:;" title="PC端主贴管理在顶部工具条"><i></i>{lang manage}</a>
