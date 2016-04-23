@@ -57,11 +57,7 @@
 
 				<!-- 设为最佳答案 -->
 				<!--{if $_G['forum_thread']['special'] == 3 && ($_G['forum']['ismoderator'] && (!$_G['setting']['rewardexpiration'] || $_G['setting']['rewardexpiration'] > 0 && ($_G[timestamp] - $_G['forum_thread']['dateline']) / 86400 > $_G['setting']['rewardexpiration']) || $_G['forum_thread']['authorid'] == $_G['uid']) && $post['authorid'] != $_G['forum_thread']['authorid'] && $post['first'] == 0 && $_G['uid'] != $post['authorid'] && $_G['forum_thread']['price'] > 0}-->
-					<a class="u-best u-submod" href="javascript:;" onclick="setanswer($post['pid'], '$_GET[from]')"><i></i>{lang reward_set_bestanswer}</a>
-					<label class="u-manage u-submod" for="manage$post[pid]">
-						<input type="checkbox" id="manage$post[pid]" class="pc" {if !empty($modclick)}checked="checked" {/if}onclick="pidchecked(this);modclick(this, $post[pid])" value="$post[pid]" autocomplete="off" />
-						{lang manage}
-					</label>
+					<a class="u-best u-submod" href="javascript:;" onclick="setanswer($post['pid'], '$_GET[from]')"><i></i>设为最佳答案</a>
 				<!--{/if}-->
 
 				<!-- 置顶 -->

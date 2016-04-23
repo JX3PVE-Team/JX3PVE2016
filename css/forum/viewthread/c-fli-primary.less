@@ -23,9 +23,17 @@
 	a{text-decoration:none;}
 	a:hover{text-decoration:underline;}
 
+	//普通字体
+	strong{.bold;}
+	i{.italic;}
+	u{text-decoration:underline;}
+
 	//图片
 	embed,img{max-width:100%;}
 	img{height: auto;}
+
+	//水平线
+	hr.l{margin:5px auto;}
 
 	//表格
 	table{
@@ -34,28 +42,15 @@
 		max-width:100%;
 	}
 
-	//水平线
-	hr.l{
-		margin:5px auto;
-	}
-
 	//列表
 	ul,ul li{
 		list-style:square inside;
 	}
-	ul{
+	ol,ol li{
+		list-style:decimal inside;
+	}
+	ul,ol{
 		margin-left:20px;
-	}
-
-	//编辑器默认
-	strong{
-		.bold;
-	}
-	i{
-		.italic;
-	}
-	u{
-		text-decoration:underline;
 	}
 
 	//最后编辑
@@ -96,9 +91,9 @@
 		padding:0;
 		overflow:visible;
 		font-family: Monaco,Consolas,'Lucida Console','Courier New',serif;
-		ol,ol li{list-style-position:outside;}
-		//border:1px solid #555;
 		.r(4px);
+
+		ol,ol li{list-style-position:outside;}
 		ol{background-color:#272822;margin:0 !important;}
 		li{background-color:#272822;margin-left:40px;padding-left:10px;}
 		ol li{border-left:1px solid #555;.fz(12px,2.4);color:#f8f8f2;}
