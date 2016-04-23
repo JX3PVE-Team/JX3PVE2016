@@ -86,10 +86,6 @@
 					<!--{/if}-->
 					<a id="{$editorid}_pasteword" adv="1" title="{lang e_pasteword_title}">{lang e_pasteword}</a>
 					<!--{if $_G['group']['allowdownremoteimg']}--><!--{if !($_G['setting']['magicstatus'] && !empty($_G['setting']['magics']['doodle']))}--><!--{/if}--><a id="{$editorid}_downremoteimg" adv="1" title="{lang e_downremoteimg_title}">{lang e_downremoteimg}</a><!--{/if}-->
-					<!--{if $isfirstpost}-->
-						<a id="{$editorid}_page" adv="1" title="{lang page_separate}">Page</a>
-						<a id="{$editorid}_index" adv="1" title="{lang directory}">Index</a>
-					<!--{/if}-->
 					<a id="{$editorid}_password" adv="1" title="{lang replypassword}">Password</a>
 					<a id="{$editorid}_postbg" adv="1" title="{lang replybackground}">Background</a>
 					<!--{loop $_G['cache']['bbcodes_display'][$_G['groupid']] $tag $bbcode}-->

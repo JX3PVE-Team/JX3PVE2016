@@ -85,6 +85,7 @@
 			border-bottom:none;
 			.fzlh(12px,12px);color:#45A3C7;
 			padding:2px 5px;
+			.none;
 		}
 	}
 
@@ -128,21 +129,28 @@
 	}
 
 	//隐藏可见
-	.locked,.showhide{
-		letter-spacing:0.5px;
-	}
 	.locked{
-		.color(#555,@bluex,#c00) !important;
-		.tips(yel);
-		.x(left) !important;
-		strong{.bold;.color(#f00);}
+		padding:10px;
+		border:1px dashed @bluex;
+		.x;
+		.tobevip{
+			margin-top:-2px;
+		}
 	}
 	.showhide{
-		color:@bluex;
+		.size(auto,auto);
+		background: none;
+		text-indent:0;
+		cursor:default;
+
+		padding:10px;
+		//color:@bluex;
 		border:1px dashed @bluex;
 		h4{
 			color:@bluex;border-bottom:1px solid #cceafe;
 			line-height:26px;height:26px;
+			.x;
+			margin-bottom:5px;
 		}
 	}
 }
