@@ -1,0 +1,49 @@
+@import url('../public/base.less');		//函数
+@import url('../global/var.less');			//常量
+@import url('../global/color.less');		//配色
+@import url('../global/font.less');		//默认字体
+@import url('../global/layout.less');		//默认布局
+@import url('../ui/button.less');		//默认布局
+
+//管理面板
+.pg_portalcp{
+	.jx3pve-container{
+		padding:20px 0;
+	}
+ 	#pt,.wp{
+	 	.w(1180px);
+ 	}
+}
+
+.tb .o{
+	background: none;
+	border:none;
+}
+.tb .o a{
+	&:extend(.u-btn-blue);
+    height:auto;
+    line-height:inherit;
+    padding:0 10px;
+    margin:0;
+}
+
+.pg_portalcp{
+	#block_selection{
+		.mtm{
+			table-layout:auto !important;
+			td:last-child{
+				width:220px !important;
+				a{
+					background: #0084ff;
+					color: #fff;
+					padding: 3px 10px;
+					border-radius: 2px;
+					margin-right: 5px;
+					&:nth-child(2){
+						background: #5DB20F;
+					}
+				}
+			}
+		}
+	}
+}

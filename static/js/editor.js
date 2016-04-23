@@ -1072,12 +1072,12 @@ function showEditorMenu(tag, params) {
 			case 'code':
 				if(wysiwyg) {
 					opentag = '<div class="blockcode"><blockquote>';
-					closetag = '</blockquote></div><br />';
+					closetag = '</blockquote></div>';
 				}
 			case 'quote':
 				if(wysiwyg && tag == 'quote') {
 					opentag = '<div class="quote"><blockquote>';
-					closetag = '</blockquote></div><br />';
+					closetag = '</blockquote></div>';
 				}
 			case 'hide':
 			case 'free':
