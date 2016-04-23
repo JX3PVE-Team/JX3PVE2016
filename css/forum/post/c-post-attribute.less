@@ -80,18 +80,30 @@
 		.lh(26px);
 		padding:0 10px;
 	}
+
+	.xw1{
+		font-weight:normal;
+	}
 	
 
 }
 
 .m-editor-common{
-	//删除按钮
-	.u-btn-delete{
-		background-color:#cc0000;
-		border:1px solid #c00;
-		&:hover{
-			background-color:lighten(#c00,5%);
-		}
+	.m-title{
+		margin-bottom:15px;
+	}
+}
+
+.m-editor-common-block{
+	.pr;
+	min-height:28px;
+	margin-bottom:5px;
+	.u-title{
+		.pa;.lt(0,0);
+	}
+	.u-list{
+		margin-left:80px;.clearfix;
+		li{.fl;margin-right:20px;}
 	}
 	@keyframes hiddenTipshow{
 	    from{opacity:0;transform:translateY(50%);}
@@ -106,23 +118,42 @@
 			.dbi;
 			vertical-align: -3px;margin-left: 4px;
 		}
-		&:after{.none;
+		&:after{
 			content:'当勾选此项时，所有回帖仅你可见';
-			.pa;.lt(-37px,-29px);
-			.tips(yel);
-			.size(180px,24px);padding:0 5px;border-radius:4px;
+			.pa;.lt(-37px,-32px);
+			.tips(warning);
+			.w(200px);.lh(24px);padding:0 5px;border-radius:4px;
 			text-decoration:none;
+			.hide;
 		}
 		&:hover{
 			&:after{
-				.db;
+				.show;
 				animation:hiddenTipshow 0.2s ease-in-out;
 			}
+		}
+	}
+
+	//删除按钮
+	.u-item-del,.u-item-deltip{
+		float:none;
+	}
+
+	.u-item-del{
+		margin-bottom:10px;
+	}
+
+	.u-btn-delete{
+		background:#cc0000;
+		border:1px solid #c00;
+		&:hover{
+			background-color:lighten(#c00,5%);
 		}
 	}
 	.u-msg-delete-warning{
 		color:#999;
 	}
+
 	.u-msg-deltips{
 		border: 1px dashed #ccc;
 		background-color:#FCFADF;
@@ -141,15 +172,12 @@
 }
 
 .m-editor-price{
-	b{
-		font-weight: 700;
-		margin-right:10px;
-	}
 	#price{
 		.w(100px) !important;
 	}
 	.u-msg-saletips{
 		color:#999;
+		.fr;
 	}
 	.xg1{
 		color:@yel !important;
@@ -157,7 +185,12 @@
 }
 
 .m-editor-allow{
-	.xw1{.w(70px);}
+	.xw1{
+		.w(70px);margin-right:20px;
+	}
+	.u-select{
+		.w(120px) !important;
+	}
 }
 
 .m-editor-pubtime{}
@@ -204,3 +237,15 @@
 }
 
 
+.ua-responsive .screen-s .c-editor-extend{
+	.m-title span{
+		.none;
+	}
+	.m-editor-tag .u-text{
+		.db;
+		width: 100%;
+    	box-sizing: border-box;
+	}
+}
+
+    
