@@ -1,4 +1,4 @@
-<div id="threadlist" class="bm bmw"{if $_G['uid']} style="position: relative;"{/if}>
+<div id="threadlist" class="c-flist bm bmw"{if $_G['uid']} style="position: relative;"{/if}>
 	$sorttemplate['header']
 	<form method="post" autocomplete="off" name="moderate" id="moderate" action="forum.php?mod=topicadmin&action=moderate&fid=$_G[fid]&infloat=yes&nopost=yes">
 		$sorttemplate['body']
@@ -9,4 +9,4 @@
 	$sorttemplate['footer']
 </div>
 
-<!--{template widget/w_pages_bottom}-->
+<!--{template widget/w_pages_bottom_list}-->

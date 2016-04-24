@@ -1,4 +1,4 @@
-<span class="addef u-addef">
+<span class="u-addef">
 	<!-- 隐藏帖 -->
 	<!--{if $_G['setting']['threadhidethreshold'] && $thread['hidden'] >= $_G['setting']['threadhidethreshold']}--><span class="xg1">{lang hidden}</span>&nbsp;<!--{/if}-->
 
@@ -72,4 +72,12 @@
 	<!--{if $thread['weeknew']}-->
 		<a href="forum.php?mod=redirect&tid=$thread[tid]&goto=lastpost#lastpost" class="new xi1 u-addef-new">New</a>
 	<!--{/if}-->
+
+
+	<!-- 回贴奖励 -->
+	<!--{if $thread['replycredit'] > 0}-->
+		- <span class="u-addef-replycredit xi1 replycredit">[{lang replycredit} <strong> $thread['replycredit']</strong> ]</span>
+	<!--{/if}-->
+
+	<!--{hook/forumdisplay_thread_subject $key}-->
 </span>

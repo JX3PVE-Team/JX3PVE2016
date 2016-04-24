@@ -1,6 +1,6 @@
 <header class="i-header i-header-view">
-	<a class="i-header-back" href="forum.php?mod=forumdisplay&fid=$_G['fid']"><i></i><span>$_G['forum'][name]</span></a>
-	<div class="i-header-title"></div>
+	<a class="i-header-back" href="javascript:;" onclick="history.go(-1)"><i></i><span>返回</span></a>
+	<div class="i-header-title">$_G['forum'][name]</div>
 	<div class="i-header-menu">
 		<!-- 只看楼主 -->
 		<!--{if $post['invisible'] == 0}-->
@@ -10,7 +10,6 @@
 				<a class="u-only on" href="forum.php?mod=viewthread&tid=$post[tid]&page=$page" rel="nofollow"><span>取消</span></a>
 			<!--{/if}-->
 		<!--{/if}-->
-
 		<!-- 更多 -->
 		<a class="u-all" id="i-header-panel-tg" href="javascript:;"><span>更多</span></a>
 	</div>

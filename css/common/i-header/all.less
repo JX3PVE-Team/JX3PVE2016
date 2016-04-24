@@ -27,12 +27,23 @@
 	}
 	span{
 		.fz(1rem);.bold;
-		//.none;
+		.none;
 	}
 }
 .i-header-menu{
 	.pa;.rt(0,0);
 
+	//更多
+	.u-all{
+		.db;.fl;
+		span{.none;}
+		.size(32px,24px);
+		background:~"url('@{url}forum/i-menu-more.svg') no-repeat 0 0 / auto 100%";
+		margin-top:11px;
+		margin-right:10px;
+	}
+
+	//只看楼主（列表页）
 	.u-only{
 		.fl;
 		border:1px solid #eee;
@@ -44,19 +55,10 @@
 
 		&.on{
 			background-color:@basecolor;
-			//color:@blue;
 		}
 	}
 
-	.u-all{
-		.db;.fl;
-		span{.none;}
-		.size(32px,24px);
-		background:~"url('@{url}forum/i-menu-more.svg') no-repeat 0 0 / auto 100%";
-		margin-top:11px;
-		padding-right:10px;
-	}
-
+	//发表（发布页）
 	.u-pub{
 		padding:0 10px;
 		line-height:24px;
@@ -65,8 +67,20 @@
 			.dbi;.y;.size(32px,24px);
 			background:~"url('@{url}forum/post.svg') no-repeat 0 0 / auto 100%";
 		}
-		
 	}
+
+	//发布（列表页）
+	.u-post{
+		.fl;
+		margin-top:10px;
+		margin-right:10px;
+		i{
+			.db;.size(32px,25px);
+			background:~"url('@{url}forum/write.svg') no-repeat 0 0 / auto 100%";
+		}
+		span{.none;}
+	}
+
 }
 
 .i-header{.none;}

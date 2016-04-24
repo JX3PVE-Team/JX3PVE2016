@@ -1,5 +1,4 @@
 .w-filter{
-	//.none;
 	&.open{
 		.db;
 		//animation:open 0.2s ease-in-out forwards;
@@ -11,32 +10,35 @@
 }
 
 .w-filter-font{
-	.fzlh(12px,28px);
-	border-bottom:1px solid #ddd;
-	//border-top:1px solid #ddd;
-	.fzlh(12px,28px);
+	.lh(28px);
 	.clearfix;
+	
+	.w-listfilter{
+	}
+
 	.til{
-		.fl;
-		.w(90px);margin-right:10px;
-		border-right: 1px solid #ddd;
-			background: #f7f7f7;
-			.indent(10px);
-		span{padding:0 5px;color:#777;}
 	}
 	.item{
 		.fl;
 	}
 	.label{
-		.fl;padding:0 5px;
+		.fl;padding:0 8px;
 		.pointer;
-		margin-right:8px;
+		margin-right:5px;
 		user-select:none;
-		&:hover,&.on{
+		color:#555;
+		border-left:1px solid transparent;
+		border-right:1px solid transparent;
+		&:hover{
 			background-color:#f2f2f2;
+			color:#333;
 		}
 		&.on{
-			.bold;
+			background-color:#f2f2f2;
+			color:#333;
+			border-left:1px solid #ddd;
+			border-right:1px solid #ddd;
+			font-weight:normal;
 		}
 	}
 	.value{

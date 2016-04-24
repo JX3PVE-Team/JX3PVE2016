@@ -1,0 +1,79 @@
+.c-flist-item{
+
+	.db;.clearfix;
+	border-bottom: 1px solid #C2D5E3;
+	padding:5px 10px;
+	.lh(26px);
+
+	&:hover{
+		background-color:#EAF8FC;
+	}
+
+	//管理操作
+	.u-control{
+		.fl;.none;
+		margin-right:3px;
+	}
+
+	//最后更新
+	.u-lastedit{
+		.fl;
+		.fz(12px,20px);
+		margin:3px 10px 3px 3px;
+		color: #fff;
+		padding: 0 5px;
+		border-radius: 2px;
+		background-color:@bluex;
+		
+		&.fail{background-color:#ABA7A5;}
+		&.old{background-color:#F2BF3A;}
+		&.new{background-color:#28B3C5;}
+		&.fresh{background-color:#6DC528;}//#DBAFF9
+		&.ok{background-color:#f00;}
+	}
+
+	//标题
+	.u-title{.fl;}
+	.u-sort{}
+	.u-subject{}
+
+	//来自群组
+	.u-group{.none;}
+	//来自板块
+	.u-fid{.none;}
+
+	//作者
+	.u-author{
+		.fr;
+		a{margin-left:2px;}
+		.u-verif img{margin-top: -3px;}
+	}
+
+	//计数
+	.u-views{.none;}
+	.u-reply{.none;}
+
+	//时间
+	.u-postdate{.none;}
+	.u-lastreply{.none;}
+
+	//分页
+	.u-pages{.none;}
+
+	//隐藏置顶
+	.u-hidestick{
+		.fl;
+	}
+
+	//预览
+	.u-preview{
+		.none;
+	}
+
+}
+
+.adminHTML .c-flist-item{
+	.u-control{
+		//.db;
+	}
+}

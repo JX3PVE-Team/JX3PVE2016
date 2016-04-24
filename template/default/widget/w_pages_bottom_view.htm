@@ -1,6 +1,6 @@
 <!--{if $multipage && $page < $_G['setting']['threadmaxpages'] && $page < $_G['page_next']}-->
 	<!--{eval $nxtpage = $page + 1;}-->
-	<a class="u-btn-nextpage" href="forum.php?mod=viewthread&tid=$_G[tid]{if $_GET[authorid]}&authorid=$_GET[authorid]{/if}&page=$nxtpage" hidefocus="true" >{lang next_page_extra}</a>
+	<a class="w-pages-next" href="forum.php?mod=viewthread&tid=$_G[tid]{if $_GET[authorid]}&authorid=$_GET[authorid]{/if}&page=$nxtpage" hidefocus="true" >{lang next_page_extra}</a>
 <!--{/if}-->
 
 
@@ -10,7 +10,7 @@
 	</div>
 <!--{/if}-->
 
-<div class="w-pages-bottom w-pages pgs mtm mbm cl">
+<div class="w-pages w-pages-bottom pgs">
 	<div class="w-pages-list pgt">$multipage</div>
 	<div class="w-gotofloor" id="w-gotofloor">
 		<div class="w-gotofloor-box" id="fj">

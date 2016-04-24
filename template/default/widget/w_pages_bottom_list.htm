@@ -1,0 +1,22 @@
+<!--{if $multipage && $filter != 'hot'}-->
+	<!--{if !($_GET[filter]=='sortid') && !($_G[forum][picstyle] && !$_G[cookie][forumdefstyle])}-->
+		<a class="w-pages-next" id="autopbn" href="javascript:;" rel="$multipage_more" curpage="$page" totalpage="$maxpage" picstyle="$_G[forum][picstyle]" forumdefstyle="$_G[cookie][forumdefstyle]">加载更多</a>
+		<script type="text/javascript" src="{$_G[setting][jspath]}autoloadpage.js?{VERHASH}"></script>
+	<!--{else}-->
+		<div id="pgbtn"><a class="w-pages-next" href="forum.php?mod=forumdisplay&fid={$_G[fid]}&filter={$filter}&orderby={$_GET[orderby]}{$forumdisplayadd[page]}&{$multipage_archive}&page=$nextpage" hidefocus="true">下一页</a></div>
+	<!--{/if}-->
+<!--{/if}-->
+
+<!--{if !$multipage}-->
+	<div class="w-pages-null">
+		没有更多了
+	</div>
+<!--{/if}-->
+
+<div class="w-pages w-pages-bottom pgs">
+	<span class="w-pages-list pgt" id="fd_page_bottom">$multipage</span>
+	<!--{if !$_GET['archiveid']}-->
+		<a class="u-btn-publish" id="newspecialtmp" href="forum.php?mod=post&action=newthread&fid=$_G[fid]" >发布</a>
+	<!--{/if}-->
+	<!--{hook/forumdisplay_postbutton_bottom}-->
+</div>

@@ -11,7 +11,6 @@ jQuery(function($){
         $star = $(".w-hotstar"),
         $index_tg = $("#w-index-tg"),
         $index = $("#w-index-list"),
-        $filter = $("#w-filter .w-filter-font .item .label"),
         $filter_tg = $("#w-filter-tg")
         
 
@@ -65,18 +64,7 @@ jQuery(function($){
     })
 
     //w-filter
-    //分类信息字段筛选扩展
-    $filter.each(function(){
-        var $label = $(this),
-            $value = $(this).next('.value')
-        $label.on('click',function(){
-            $label.toggleClass('on');
-            $value.slideToggle()
-        })
-    })
-    $filter_tg.on('click',function(){
-        alert('请点击下方筛选条件之一进行展开与关闭')
-    })
+    
 
     //查看脸型原图 imgorigin
     var

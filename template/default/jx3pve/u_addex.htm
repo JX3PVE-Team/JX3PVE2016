@@ -1,18 +1,25 @@
 <span class="u-addex">
 	<!--{if $thread[folder] == 'lock'}-->
-		<img src="{IMGDIR}/folder_lock.gif" />
+		<!-- 加锁 -->
+		<i title="主题已关闭" class="lock"></i>
 	<!--{elseif $thread['special'] == 1}-->
-		<img src="{IMGDIR}/pollsmall.gif" alt="{lang thread_poll}" />
+		<!-- 投票 -->
+		<i title="投票" class="vote"></i>
 	<!--{elseif $thread['special'] == 2}-->
-		<img src="{IMGDIR}/tradesmall.gif" alt="{lang thread_trade}" />
+		<!-- 商品 -->
+		<img class="trade" src="{IMGDIR}/tradesmall.gif" alt="{lang thread_trade}" />
 	<!--{elseif $thread['special'] == 3}-->
-		<img src="{IMGDIR}/rewardsmall.gif" alt="{lang thread_reward}" />
+		<!-- 悬赏 -->
+		<i title="悬赏水晶" class="reward"></i>
 	<!--{elseif $thread['special'] == 4}-->
-		<img src="{IMGDIR}/activitysmall.gif" alt="{lang thread_activity}" />
+		<!-- 活动 -->
+		<img class="active" src="{IMGDIR}/activitysmall.gif" alt="{lang thread_activity}" />
 	<!--{elseif $thread['special'] == 5}-->
-		<img src="{IMGDIR}/debatesmall.gif" alt="{lang thread_debate}" />
+		<!-- 辩论 -->
+		<img class="debate" src="{IMGDIR}/debatesmall.gif" alt="{lang thread_debate}" />
 	<!--{elseif in_array($thread['displayorder'], array(1, 2, 3, 4))}-->
-		<img src="{IMGDIR}/pin_$thread[displayorder].gif" alt="$_G[setting][threadsticky][3-$thread[displayorder]]" />
+		<!-- 置顶 -->
+		<i title="置顶" class="stick"></i>
 	<!--{else}-->
 	<!--{/if}-->
 </span>
