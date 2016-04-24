@@ -5,23 +5,11 @@
 </header>
 <div class="postpage-container f-$_G[fid]-container">
 	<div class="wp">
-
-		<!--{if $_GET['action'] != 'newthread'}-->
-			<!--{eval $subjectcut = cutstr($thread[subject], 30);}-->
-		<!--{/if}-->
-		<!--{block actionsubject}-->
-			<!--{if $_GET['action'] == 'reply'}-->
-				<em>&rsaquo;</em><a href="forum.php?mod=viewthread&tid=$thread[tid]">$subjectcut</a>
-			<!--{elseif $_GET['action'] == 'edit'}-->
-				<em>&rsaquo;</em><a href="forum.php?mod=redirect&goto=findpost&ptid=$thread[tid]&pid=$pid">$subjectcut</a>
-			<!--{/if}-->
-		<!--{/block}-->
 		<div id="pt" class="bm cl">
 			<div class="z">
 				<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
-				$navigation$actionsubject
-				<em>&rsaquo;</em>
-				$actiontitle
+				$navigation
+				$actionsubject
 			</div>
 		</div>
 
