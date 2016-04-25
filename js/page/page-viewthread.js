@@ -84,6 +84,9 @@ jQuery(function($){
             $(this).fadeOut();
             TGPOST_STATUS = false;
         })
+        $("#w-tgpost").on('click',function(){
+        	$showall.fadeOut();
+        })
 
     //道具层
     $(".c-fli-footer .u-magic").on('click',function(){
