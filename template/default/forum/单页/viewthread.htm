@@ -1,8 +1,9 @@
 <!--{template common/header_m}-->
 <!--{subtemplate forum/viewthread_header}-->
 <!--{subtemplate forum/custom_header}-->
-<!--合并后-->
-<div id="ct">
+<!--debug-->
+
+<!--viewthread_block-->
 	<script type="text/javascript">var fid = parseInt('$_G[fid]'), tid = parseInt('$_G[tid]');</script>
 	<!--{if $modmenu['thread'] || $modmenu['post']}-->
 		<script type="text/javascript" src="{$_G['setting']['jspath']}forum_moderate.js?{VERHASH}"></script>
@@ -14,19 +15,13 @@
 	<style id="diy_style" type="text/css"></style>
 	<!--[diy=diynavtop]--><div id="diynavtop" class="area"></div><!--[/diy]-->
 
-	<div id="pt" class="bm cl none">
-		<div class="z">
-			<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
-			<em>&raquo;</em>$navigation 
-			<em>&rsaquo;</em> <a href="forum.php?mod=viewthread&tid=$_G[tid]">$_G[forum_thread][short_subject]</a>
-		</div>
-	</div>
-
 	<!--{hook/viewthread_top}-->
 	<!--{ad/text/wp a_t}-->
 
 	<style id="diy_style" type="text/css"></style>
 	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+
+<div id="ct">
 
 	<!-- dz:w-pages-top -->
 	<!--{subtemplate widget/w_pages_top_view}-->
@@ -38,6 +33,7 @@
 	<!--{subtemplate widget/w_adminbar}-->
 	
 	<!--{hook/viewthread_beginline}-->
+
 	<div id="postlist" class="c-fli-box">
 
 		<!-- jx3pve:c_fli_title -->
@@ -46,6 +42,7 @@
 			<!--{subtemplate component/c_fli_meta}-->
 			<!--{subtemplate component/c_fli_info}-->
 		</div>
+		<!--{hook/viewthread_title_row}-->
 
 		<!--{eval $postcount = 0;}-->
 		<!--{loop $postlist $post}-->
@@ -79,6 +76,7 @@
 		<!--{/if}-->
 
 	</div>
+
 	<form method="post" autocomplete="off" name="modactions" id="modactions">
 		<input type="hidden" name="formhash" value="{FORMHASH}" />
 		<input type="hidden" name="optgroup" />
@@ -110,21 +108,6 @@
 	</div>
 	<!--{hook/viewthread_bottom}-->
 
-	<!--{if ($_G['setting']['visitedforums']) && $_G['forum']['status'] != 3}-->
-		<div id="visitedforums_menu" class="p_pop blk cl" style="display: none;">
-			<table cellspacing="0" cellpadding="0">
-				<tr>
-					<td id="v_forums">
-						<h3 class="mbn pbn bbda xg1">{lang viewed_forums}</h3>
-						<ul class="xl xl1">
-							$_G['setting']['visitedforums']
-						</ul>
-					</td>
-				</tr>
-			</table>
-		</div>
-	<!--{/if}-->
-
 	<!--{if $_G['medal_list']}-->
 	<!--{loop $_G['medal_list'] $medalid $medal}-->
 		<div id="md_{$medalid}_menu" class="tip tip_4" style="display: none;">
@@ -137,6 +120,19 @@
 	<!--{/loop}-->
 	<!--{/if}-->
 
+	<!--{if !IS_ROBOT && !empty($_G[setting][lazyload])}-->
+		<script type="text/javascript">
+		new lazyload();
+		</script>
+	<!--{/if}-->
+
+	<!--{if !IS_ROBOT && $_G['setting']['threadmaxpages'] > 1}-->
+		<script type="text/javascript">document.onkeyup = function(e){keyPageScroll(e, <!--{if $page > 1}-->1<!--{else}-->0<!--{/if}-->, <!--{if $page < $_G['setting']['threadmaxpages'] && $page < $_G['page_next']}-->1<!--{else}-->0<!--{/if}-->, 'forum.php?mod=viewthread&tid=$_G[tid]<!--{if $_GET[authorid]}-->&authorid=$_GET[authorid]<!--{/if}-->', $page);}</script>
+	<!--{/if}-->
+
+</div>
+
+<!--viewthread_block-->
 	<!-- dz:banner-bottom -->
 	<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
 
@@ -215,7 +211,6 @@
 		fixed_top_nv();
 		<!--{/if}-->
 	</script>
-</div>
 
 <!--{subtemplate forum/viewthread_footer}-->
 <!--{subtemplate forum/custom_footer}-->
