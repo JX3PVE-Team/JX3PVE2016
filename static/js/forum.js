@@ -167,7 +167,7 @@ function showTypes(id, mod) {
 	if(!o) return false;
 	var s = o.className;
 	mod = isUndefined(mod) ? 1 : mod;
-	var baseh = o.getElementsByTagName('li')[0].offsetHeight * 2;
+	var baseh = o.getElementsByTagName('a')[0].offsetHeight * 2;
 	var tmph = o.offsetHeight;
 	var lang = ['展开', '收起'];
 	var cls = ['unfold', 'fold'];

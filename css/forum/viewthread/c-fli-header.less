@@ -1,0 +1,135 @@
+.c-fli-header{
+
+	.color(#888,#222,#222);
+	a:hover{
+		text-decoration:underline;
+	}
+	//margin-bottom:10px;
+
+	.clearfix;
+	.u-avatar{
+		.fl;
+		img{
+		    .size(20px);
+		    //.r(2px);
+		    //background-color: #fff;
+		    //border: 1px solid #ddd;
+			.dbi;.y;
+		}
+	}
+	.u-info{
+		.fl;
+		margin-left:10px;
+	}
+	.u-info-1,.u-info-2{
+		.clearfix;.db;
+	}
+	.u-username{
+		.bold;.fl;
+		margin-right:5px;
+	}
+	.u-lz{
+		.db;.fl;
+		.fz(12px);
+		background-color:@basecolor;
+		color:#fff;
+		.r(2px);.x;padding:0 5px;
+	    line-height: 20px;
+    	margin-top: 4px;
+    	margin-right:5px;
+	}
+	.u-usergroup{
+		.fl;
+		//margin-top:3px;
+		//margin-right:5px;
+		.none;
+	}
+	.u-verif{
+		.fl;line-height:1;
+		.db;
+		*{.db;.fl;}
+		margin-top:5px;
+		a{margin-right:2px;}
+	}
+	.u-floor{
+		color:#999;
+		.fl;margin-right:5px;
+
+		.u-settop{
+			.dbi;.y;background:url('@{url}header/icons2.png') no-repeat 0 0;
+			.size(12px,14px);
+			margin-top:-2px;margin-right:3px;
+		    background-position: -210px -147px;
+		}
+		sup{.none;}
+	}
+
+	.u-time{
+		.fl;margin-right:10px;
+		em{.none;}
+	}
+
+	.u-replycredit{
+		.fr;
+		margin-right: 10px;
+	    //border: 1px solid #ddd;
+	    //padding: 2px 5px;
+	    border-radius: 2px;
+	    color:#aaa;
+	    i{.dbi;.y;.size(10px);background:url('@{url}header/icons2.png') no-repeat -55px -22px;margin-top:-3px}
+	}
+
+	.u-panel{
+		.fr;
+	}
+
+	.u-reply,.u-more{
+		.db;.fr;.pointer;
+		padding:5px 10px;
+		span{.none;}
+		i{.dbi;.y;}
+		em{color:#aaa;}
+		&:hover{
+			text-decoration:none;
+		}
+	}
+
+	.u-reply{
+		i{
+			.size(20px,16px);
+			background:~"url('@{url}forum/cmt.svg') no-repeat 0 0 / auto 100%";
+		}
+	}
+
+	.u-more{
+		i{
+			.size(10px,16px);
+			background:~"url('@{url}forum/more.svg') no-repeat 0 0 / auto 100%";
+		}
+	}
+
+}
+//PC版楼主不显示
+.c-fli-first .c-fli-header{
+	.none;
+}
+.ua-responsive .screen-s .c-fli-first .c-fli-header{
+	.db;
+}
+//PC版不显示手机操作栏
+.c-fli-header{
+	.u-panel{
+		.none;
+	}
+}
+//手机版显示手机操作栏并隐藏回帖奖励
+.ua-responsive .screen-s .c-fli-header{
+	font-size:12px;
+
+	.u-replycredit{
+		.none;
+	}
+	.u-panel{
+		.db;
+	}
+}

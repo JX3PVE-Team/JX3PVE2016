@@ -1,5 +1,4 @@
 @import url('../public/base.less');		//函数
-@import url('../public/path.less');		//路径
 @import url('../global/color.less');	//配色
 @import url('../global/var.less');		//尺寸
 
@@ -25,12 +24,12 @@
 .ua-responsive .screen-s .system-title{.none;}
 
 
-.system-sidebar{
-	.pa;.lt(0,0);
+.system-sidebar,.f-392 .default-sidebar{
+	.pa;.lt(0,10px);
 	.w(@sd2);
 
 	ul{
-		padding:10px;
+		padding:0 10px;
 	}
 	li{
 		//border-bottom:1px solid #eee;
@@ -52,7 +51,7 @@
 	}
 }
 
-.system-content{
+.system-content,.f-392 .default-content{
 	margin-left:@sd2;
 }
 

@@ -19,16 +19,6 @@
     //box-sizing: border-box;
 }
 
-.pn,.pnc{
-    &:extend(.u-btn-blue);
-    height:auto;
-}
-.pnc:active,.pn:active{
-    background-position:0 0;
-}
-a.pnc{background-position:0 0;}
-
-
 .u-btn-gray{
     color: #666;
     text-shadow: 0 1px 0 #fff;
@@ -39,7 +29,24 @@ a.pnc{background-position:0 0;}
     box-shadow: 0 1px 0 #fff inset,0 1px 0 rgba(0,0,0,.1);
 }
 
-    
+.pn,.pnc,.u-button{
+    &:extend(.u-btn-blue);
+    height:auto;
+    line-height:inherit;
+}
+.pnc:active,.pn:active{
+    background-position:0 0;
+}
+a.pnc{
+    background-position:0 0;
+}
+.pn em, .pn span, .pn strong,
+.pnc em, .pnc span, .pnc strong,{
+    line-height:inherit;
+    font-weight:normal;
+    height:auto;
+}
+
 
 
 

@@ -1,0 +1,325 @@
+<div id="threadlist" class="c-flist" {if $_G['uid']} style="position: relative;"{/if}>
+	<!-- jx3pve:list-info -->
+	<!--{subtemplate widget/w_lastedit_th}-->
+
+	<!-- jx3pve:c-flist-content -->
+	<div class="c-flist-content bm_c">
+		<!--{if empty($_G['forum']['picstyle']) || $_G['cookie']['forumdefstyle']}-->
+			<script type="text/javascript">var lasttime = $_G['timestamp'];var listcolspan= '{if !$_GET['archiveid'] && $_G['forum']['ismoderator']}6{else}5{/if}';</script>
+		<!--{/if}-->
+		<div id="forumnew" style="display:none"></div>
+		
+		<form method="post" autocomplete="off" name="moderate" id="moderate" action="forum.php?mod=topicadmin&action=moderate&fid=$_G[fid]&infloat=yes&nopost=yes">
+			<input type="hidden" name="formhash" value="{FORMHASH}" />
+			<input type="hidden" name="listextra" value="$extra" />
+			<table class="c-flist-list" summary="forum_$_G[fid]" cellspacing="0" cellpadding="0" id="threadlisttableid">
+				<!--{if $_G['forum_threadcount']}-->
+					<!--{if empty($_G['forum']['picstyle']) || $_G['cookie']['forumdefstyle']}-->
+						<!--{loop $_G['forum_threadlist'] $key $thread}-->
+
+						<!--{if $separatepos <= $key + 1}-->
+							<!--{ad/threadlist}-->
+						<!--{/if}-->
+
+						<tbody id="$thread[id]"{if $_G['hiddenexists'] && $thread['hidden']} style='display:none'{/if}>
+							<tr>
+								<td>
+									<span class="c-flist-item">
+									<!-- 管理操作 -->
+										<!--{if !$_GET['archiveid'] && $_G['forum']['ismoderator']}-->
+											<span class="u-control">
+												<!--{if $thread['fid'] == $_G[fid]}-->
+													<!--{if $thread['displayorder'] <= 3 || $_G['adminid'] == 1}-->
+														<input onclick="tmodclick(this)" type="checkbox" name="moderate[]" value="$thread[tid]" />
+													<!--{else}-->
+														<input type="checkbox" disabled="disabled" />
+													<!--{/if}-->
+												<!--{else}-->
+													<input type="checkbox" disabled="disabled" />
+												<!--{/if}-->
+											</span>
+										<!--{/if}-->
+
+									<!-- 最后更新时间 -->
+										<span class="u-lastedit e-lastedit">
+											$thread[lastedit]
+										</span>
+
+									<!-- 标题 -->
+										<span class="u-title $thread[folder]">
+
+											<!-- 分类信息 -->
+											<span class="u-sort">
+												<!--{hook/forumdisplay_thread $key}-->
+												$thread[typehtml] $thread[sorthtml]
+												<!--{if $thread['moved']}-->
+													{lang thread_moved}:<!--{eval $thread[tid]=$thread[closed];}-->
+												<!--{/if}-->
+											</span>
+
+											<!-- 标题 -->
+											<a class="u-subject" href="forum.php?mod=viewthread&tid=$thread[tid]&{if $_GET['archiveid']}archiveid={$_GET['archiveid']}&{/if}extra=$extra"$thread[highlight]{if $thread['isgroup'] == 1 || $thread['forumstick']} target="_blank"{else} onclick="atarget(this)"{/if} class="s xst">$thread[subject]</a>
+
+										</span>
+
+									<!-- 图标 -->
+									<!--{template jx3pve/u_addex}-->
+									<!--{template jx3pve/u_addef}-->
+
+									<!-- 分页 -->
+										<!--{if $thread[multipage]}-->
+											<span class="u-pages tps">$thread[multipage]</span>
+										<!--{/if}-->
+
+									<!-- 来自群组 -->
+										<!--{if !$thread['forumstick'] && ($thread['isgroup'] == 1 || $thread['fid'] != $_G['fid'])}-->
+											<!--{if $thread['related_group'] == 0 && $thread['closed'] > 1}-->
+												<!--{eval $thread[tid]=$thread[closed];}-->
+											<!--{/if}-->
+											<!--{if $groupnames[$thread[tid]]}-->
+												<span class="u-group fromg xg1"> [{lang from}: <a href="forum.php?mod=group&fid={$groupnames[$thread[tid]][fid]}" target="_blank" class="xg1">{$groupnames[$thread[tid]][name]}</a>]</span>
+											<!--{/if}-->
+										<!--{/if}-->
+
+									<!-- 所属板块·导读特殊 -->
+										<!--{if CURMODULE == 'guide'}-->
+											<a class="u-fid" href="forum.php?mod=forumdisplay&fid=$thread[fid]" target="_blank">$forumnames[$thread[fid]]['name']</a>
+										<!--{/if}-->
+
+									<!-- 作者 -->
+										<span class="u-author">
+											<!--{hook/forumdisplay_author $key}-->
+											<!--{if $thread['authorid'] && $thread['author']}-->
+												<a class="u-username" href="home.php?mod=space&uid=$thread[authorid]" c="1"{if $groupcolor[$thread[authorid]]} style="color: $groupcolor[$thread[authorid]];"{/if}>$thread[author]</a>
+												<!--{if !empty($verify[$thread['authorid']])}--> 
+													<span class="u-verif">$verify[$thread[authorid]]</span>
+												<!--{/if}-->
+											<!--{else}-->
+												$_G[setting][anonymoustext]
+											<!--{/if}-->
+										</span>
+
+									<!-- 查看数 -->
+										<span class="u-views">
+											<!--{if $thread['isgroup'] != 1}-->
+												$thread[views]
+											<!--{else}-->
+												{$groupnames[$thread[tid]][views]}
+											<!--{/if}-->
+										</span>
+
+									<!-- 回复数 -->
+										<span class="u-reply">$thread[allreplies]</span>
+
+									<!-- 发布时间 -->
+										<span class="u-postdate">
+											$thread[dateline]
+										</span>
+
+									<!-- 回复时间 -->
+										<span class="u-lastreply">
+											<!--{if $thread['lastposter']}-->
+												<a href="{if $thread[digest] != -2}home.php?mod=space&username=$thread[lastposterenc]{else}forum.php?mod=viewthread&tid=$thread[tid]&page={echo max(1, $thread[pages]);}{/if}" c="1">$thread[lastposter]</a>
+											<!--{else}-->
+												$_G[setting][anonymoustext]
+											<!--{/if}-->
+											By <a href="{if $thread[digest] != -2 && !$thread[ordertype]}forum.php?mod=redirect&tid=$thread[tid]&goto=lastpost$highlight#lastpost{else}forum.php?mod=viewthread&tid=$thread[tid]{if !$thread[ordertype]}&page={echo max(1, $thread[pages]);}{/if}{/if}">$thread[lastpost]</a>
+										</span>
+
+									<!-- 隐藏置顶 -->
+										<a href="javascript:;" id="content_$thread[tid]" class="u-hidestick showcontent y" title="{lang content_actions}" onclick="CONTENT_TID='$thread[tid]';CONTENT_ID='$thread[id]';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
+										<!--{if in_array($thread['displayorder'], array(1, 2, 3, 4))}-->
+											<a href="javascript:void(0);" onclick="hideStickThread('$thread[tid]')" class="u-hidestick showhide y" title="{lang hidedisplayorder}">{lang hidedisplayorder}</a></em>
+										<!--{/if}-->
+										<!--{if !$thread['forumstick'] && $thread['closed'] > 1 && ($thread['isgroup'] == 1 || $thread['fid'] != $_G['fid'])}-->
+											<!--{eval $thread[tid]=$thread[closed];}-->
+										<!--{/if}-->
+
+									<!-- 预览内容 -->
+										<!--{if !$_G['setting']['forumdisplaythreadpreview'] && !($thread['readperm'] && $thread['readperm'] > $_G['group']['readaccess'] && !$_G['forum']['ismoderator'] && $thread['authorid'] != $_G['uid'])}-->
+											<!--{if !(!empty($_G['setting']['antitheft']['allow']) && empty($_G['setting']['antitheft']['disable']['thread']) && empty($_G['forum']['noantitheft']))}-->
+												<a class="u-preview tdpre y" href="javascript:void(0);" onclick="previewThread('{echo $thread['moved'] ? $thread[closed] : $thread[tid]}', '$thread[id]');">{lang preview}</a>
+											<!--{/if}-->
+										<!--{/if}-->
+
+									</span>
+								</td>
+							</tr>
+						</tbody>
+						<!--{/loop}-->
+						</table><!-- end of table "forum_G[fid]" branch 1/3 -->
+						<!--{if $_G['hiddenexists']}-->							
+							<div id="hiddenthread"{if $thread['hidden']} class="last"{/if}><a href="javascript:;" onclick="display_blocked_thread()">{lang other_reply_hide}</a></div>
+						<!--{/if}-->
+					<!--{else}-->
+						<!-- dz:瀑布流排版 -->
+						</table><!-- end of table "forum_G[fid]" branch 2/3 -->
+						<ul id="waterfall" class="ml waterfall cl">
+							<!--{loop $_G['forum_threadlist'] $key $thread}-->
+							<!--{if $_G['hiddenexists'] && $thread['hidden']}-->
+								<!--{eval continue;}-->
+							<!--{/if}-->
+							<!--{if !$thread['forumstick'] && ($thread['isgroup'] == 1 || $thread['fid'] != $_G['fid'])}-->
+								<!--{if $thread['related_group'] == 0 && $thread['closed'] > 1}-->
+									<!--{eval $thread[tid]=$thread[closed];}-->
+								<!--{/if}-->
+							<!--{/if}-->
+							<!--{eval $waterfallwidth = $_G[setting][forumpicstyle][thumbwidth] + 24; }-->
+							<li style="width:{$waterfallwidth}px">
+								<!--{if !$_GET['archiveid'] && $_G['forum']['ismoderator']}-->
+									<div style="position:absolute;margin:1px;padding:2px;background:#FFF">
+									<!--{if $thread['fid'] == $_G[fid]}-->
+										<!--{if $thread['displayorder'] <= 3 || $_G['adminid'] == 1}-->
+											<input onclick="tmodclick(this)" type="checkbox" name="moderate[]" value="$thread[tid]" />
+										<!--{else}-->
+											<input type="checkbox" disabled="disabled" />
+										<!--{/if}-->
+									<!--{else}-->
+										<input type="checkbox" disabled="disabled" />
+									<!--{/if}-->
+									</div>
+								<!--{/if}-->
+								<div class="c cl">
+									<a href="forum.php?mod=viewthread&tid=$thread[tid]&{if $_GET['archiveid']}archiveid={$_GET['archiveid']}&{/if}extra=$extra" {if $thread['isgroup'] == 1 || $thread['forumstick'] || CURMODULE == 'guide'} target="_blank"{else} onclick="atarget(this)"{/if} title="$thread[subject]" class="z">
+										<!--{if $thread['cover']}-->
+											<img src="$thread[coverpath]" alt="$thread[subject]" width="{$_G[setting][forumpicstyle][thumbwidth]}" />
+										<!--{else}-->
+											<span class="nopic" style="width:{$_G[setting][forumpicstyle][thumbwidth]}px; height:{$_G[setting][forumpicstyle][thumbwidth]}px;"></span>
+										<!--{/if}-->
+									</a>
+								</div>
+								<h3 class="xw0">
+									<!--{hook/forumdisplay_thread $key}-->
+									<a href="forum.php?mod=viewthread&tid=$thread[tid]&{if $_GET['archiveid']}archiveid={$_GET['archiveid']}&{/if}extra=$extra"$thread[highlight]{if $thread['isgroup'] == 1 || $thread['forumstick']} target="_blank"{else} onclick="atarget(this)"{/if} title="$thread[subject]">$thread[subject]</a>
+								</h3>
+								<div class="auth cl">
+									<cite class="xg1 y">
+										{lang like}: <!--{if $thread[recommends]}-->$thread[recommends]<!--{else}-->0<!--{/if}-->
+										 &nbsp; {lang reply}: <a href="forum.php?mod=viewthread&tid=$thread[tid]&extra=$extra" title="$thread[replies] {lang reply}">$thread[replies]</a>
+									</cite>
+									<!--{hook/forumdisplay_author $key}-->
+									<!--{if $thread['authorid'] && $thread['author']}-->
+										<a href="home.php?mod=space&uid=$thread[authorid]">$thread[author]</a><!--{if !empty($verify[$thread['authorid']])}--> $verify[$thread[authorid]]<!--{/if}-->
+									<!--{else}-->
+										$_G[setting][anonymoustext]
+									<!--{/if}-->
+								</div>
+							</li>
+							<!--{/loop}-->
+						</ul>
+						<div id="tmppic" style="display: none;"></div>
+						<script type="text/javascript" src="{$_G[setting][jspath]}redef.js?{VERHASH}"></script>
+						<script type="text/javascript" reload="1">
+						var wf = {};
+
+						_attachEvent(window, "load", function () {
+							if($("waterfall")) {
+								wf = waterfall();
+							}
+
+							<!--{if $page < $_G['page_next'] && !$subforumonly}-->
+								var page = $page + 1,
+									maxpage = Math.min($page + 10,$maxpage + 1),
+									stopload = 0,
+									scrolltimer = null,
+									tmpelems = [],
+									tmpimgs = [],
+									markloaded = [],
+									imgsloaded = 0,
+									loadready = 0,
+									showready = 1,
+									nxtpgurl = 'forum.php?mod=forumdisplay&fid={$_G[fid]}&filter={$filter}&orderby={$_GET[orderby]}{$forumdisplayadd[page]}&page=',
+									wfloading = "<img src=\"{IMGDIR}/loading.gif\" alt=\"\" width=\"16\" height=\"16\" class=\"vm\" /> {lang onloading}...",
+									pgbtn = $("pgbtn").getElementsByTagName("a")[0];
+
+								function loadmore() {
+									var url = nxtpgurl + page + '&t=' + parseInt((+new Date()/1000)/(Math.random()*1000));
+									var x = new Ajax("HTML");
+									x.get(url, function (s) {
+										s = s.replace(/\n|\r/g, "");
+										if(s.indexOf("id=\"pgbtn\"") == -1) {
+											$("pgbtn").style.display = "none";
+											stopload++;
+											window.onscroll = null;
+										}
+
+										s = s.substring(s.indexOf("<ul id=\"waterfall\""), s.indexOf("<div id=\"tmppic\""));
+										s = s.replace("id=\"waterfall\"", "");
+										$("tmppic").innerHTML = s;
+										loadready = 1;
+									});
+								}
+
+								window.onscroll = function () {
+									if(scrolltimer == null) {
+										scrolltimer = setTimeout(function () {
+											try {
+												if(page < maxpage && stopload < 2 && showready && ((document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.clientHeight + 500) >= document.documentElement.scrollHeight) {
+													pgbtn.innerHTML = wfloading;
+													loadready = 0;
+													showready = 0;
+													loadmore();
+													tmpelems = $("tmppic").getElementsByTagName("li");
+													var waitingtimer = setInterval(function () {
+														stopload >= 2 && clearInterval(waitingtimer);
+														if(loadready && stopload < 2) {
+															if(!tmpelems.length) {
+																page++;
+																pgbtn.href = nxtpgurl + Math.min(page, $maxpage);
+																pgbtn.innerHTML = "{lang next_page_extra}";
+																showready = 1;
+																clearInterval(waitingtimer);
+															}
+															for(var i = 0, j = tmpelems.length; i < j; i++) {
+																if(tmpelems[i]) {
+																	tmpimgs = tmpelems[i].getElementsByTagName("img");
+																	imgsloaded = 0;
+																	for(var m = 0, n = tmpimgs.length; m < n; m++) {
+																		tmpimgs[m].onerror = function () {
+																			this.style.display = "none";
+																		};
+																		markloaded[m] = tmpimgs[m].complete ? 1 : 0;
+																		imgsloaded += markloaded[m];
+																	}
+																	if(imgsloaded == tmpimgs.length) {
+																		$("waterfall").appendChild(tmpelems[i]);
+																		wf = waterfall({
+																			"index": wf.index,
+																			"totalwidth": wf.totalwidth,
+																			"totalheight": wf.totalheight,
+																			"columnsheight": wf.columnsheight
+																		});
+																	}
+																}
+															}
+														}
+													}, 40);
+												}
+											} catch(e) {}
+											scrolltimer = null;
+										}, 320);
+									}
+								};
+							<!--{/if}-->
+
+						});
+
+						</script>
+					<!--{/if}-->
+				<!--{else}-->
+					<div class="c-flist-null">
+						<i></i>未检索到相关条目
+					</div>
+					</table><!-- end of table "forum_G[fid]" branch 3/3 -->
+				<!--{/if}-->
+					
+			<!--{if $_G['forum']['ismoderator'] && $_G['forum_threadcount']}-->
+				<!--{template forum/topicadmin_modlayer}-->
+			<!--{/if}-->
+		</form>
+	</div>
+	<!--{hook/forumdisplay_threadlist_bottom}-->
+</div>
+
+<!-- dz:w-pages-bottom -->
+<!--{subtemplate widget/w_pages_bottom_list}-->

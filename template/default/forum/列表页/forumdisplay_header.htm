@@ -1,0 +1,27 @@
+<header class="i-header i-header-list">
+	<a class="i-header-back" href="javascript:;" onclick="history.go(-1)"><i></i><span>返回</span></a>
+	<div class="i-header-title">$_G['forum'][name]</div>
+	<div class="i-header-menu">
+		<!-- 发布帖子 -->
+		<a class="u-post" href="forum.php?mod=post&action=newthread&fid=$_G['fid']"><i></i><span>发贴</span></a>
+		<!-- 展开侧边栏 -->
+		<a class="u-all" id="i-header-sidebar-tg" href="javascript:;"><span>更多</span></a>
+	</div>
+</header>
+
+
+<div class="listpage-container f-$_G[fid]-container">
+	<div class="wp">
+		<div id="pt" class="bm cl">
+			<div class="z">
+				<a href="./" class="nvhm" title="{lang homepage}">$_G['setting']['bbname']</a> 
+				$navigation
+				
+			</div>
+		</div>
+
+		<div class="default-main">
+			<div class="default-sidebar">
+				<!--{subtemplate forum/sidebar}-->
+			</div>
+			<div class="default-content">

@@ -1,0 +1,113 @@
+.c-fli-meta{
+	
+	.clearfix;
+	.c-fli-meta-left{.fl;.clearfix;}
+	.c-fli-meta-right{.fr;.clearfix;}
+
+	//隐藏发布时间
+	.u-posttime{.none;}
+
+	.u-author,.u-posttime,.u-lastedit,.u-view,.u-reply{
+		color:#555;
+	}
+
+	.u-posttime,.u-lastedit,.u-view,.u-reply{
+		margin-left:10px;
+	}
+	
+	.u-author{
+		margin-right:2px;
+		img{.size(20px);.r(2px);.y;}
+		a{.bold;}
+		a:hover{
+			text-decoration:underline;
+		}
+	}
+
+	.u-follow{
+		color:#999;
+		i{
+			.dbi;.y;.size(16px);background:url('@{url}forum/follow.png') no-repeat 0 0;
+		    margin-top: -2px;
+			margin-right: 3px;
+		}
+	}
+
+	.u-view{
+		i{
+			.dbi;.y;.size(16px);
+			background:url('@{url}forum/view.png') no-repeat 0 0;
+			margin-top: -1px;
+    		margin-right: 3px;
+		}
+	}
+
+	.u-reply{
+		i{
+			.dbi;.y;.size(16px);
+			background:url('@{url}forum/reply.png') no-repeat 0 0;
+			margin-right: 3px;
+		}
+	}
+
+	.u-share,.u-print,.u-viewmode{
+		.fl;
+		color:#999;
+		margin-left:10px;
+		i{
+			.dbi;.y;
+			.size(16px);
+			margin-right:3px;
+		    margin-top: -2px;
+		}
+		&:hover{
+			color:@zhblue;
+			i{background-position:0 -16px;}
+		}
+		span{
+			//.none;
+		}
+	}
+
+	.u-viewmode{
+		i{
+			background:url('@{url}forum/descending.png') no-repeat 0 0;
+		}
+	}
+
+	.u-print{
+		i{background:url('@{url}forum/print.png') no-repeat 0 0;}
+	}
+
+	.u-share{
+		.pr;.pointer;
+		i{
+			background:url('@{url}forum/share.png') no-repeat 0 0;
+		}
+		.bdsharebuttonbox{
+			.pa;.lt(-39px,32px);.z(2);
+			.w(115px);
+			padding:5px 5px 5px 10px;
+			.r(2px);
+			background-color:#fafafa;
+			border:1px solid #ddd;
+			.arrows(t,6px,#fafafa,1px,#ddd) !important;
+
+			&:after{
+			    visibility:visible !important;	//reset baidu default style
+			}
+		}
+		.bdsharebuttonbox{.none;}
+		&.on .bdsharebuttonbox{.db;}
+	}
+
+}
+
+//ipad
+.ua-responsive .screen-m .c-fli-meta{
+	.u-view,.u-reply,.u-print{.none;}
+}
+//mobile
+.ua-responsive .screen-s .c-fli-meta{
+	.none;
+}

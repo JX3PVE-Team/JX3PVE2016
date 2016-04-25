@@ -1,5 +1,5 @@
-<!--{subtemplate app/header_m}-->
-<link rel="stylesheet" href="http://app.jx3pve.com/css/servers_m.css" type="text/css"/>
+<!--{template common/header_m}-->
+<link rel="stylesheet" href="http://css.jx3pve.com/css/app/servers_m.css" type="text/css"/>
 <div class="app-header">
 	<h1 class="m-title">开服监控与记录</h1>
 	<a class="m-back" id="top-back" href="javascript:void(0)">&lt; 返回查找</a>
@@ -60,13 +60,8 @@
 	</div>
 	
 </div>
-<script>
-    //加载公共模块
-    H.load([
-        {'template':head_conf.CDNROOT+'lib/template.js'},
-        {'color':head_conf.CDNROOT+'lib/color.all.min.js'},
-        {'jqColor':head_conf.CDNROOT+'lib/jqColor.js'}
-    ])
-</script>
-<script src="http://app.jx3pve.com/js/app/servers_m.min.js"></script>
-<!--{subtemplate app/footer_m}-->
+<script src="http://js.jx3pve.com/js/lib/template.min.js"></script>
+<script src="http://js.jx3pve.com/js/lib/color.all.min.js"></script>
+<script src="http://js.jx3pve.com/js/lib/jqColor.min.js"></script>
+<script src="http://js.jx3pve.com/js/app/servers_m.min.js"></script>
+<!--{template common/footer}-->

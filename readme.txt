@@ -38,6 +38,7 @@ className			z-index			description
 .i-header			20 				移动头部
 .i-footer			20 				移动底部
 .c-alert			21 				紧急公告
+.c-fli-magic		22/41			道具层
 #u-mask				30 				遮罩层
 .i-header-panel		40 				手机弹层菜单
 .c-fli-panel		40 				楼层弹层菜单

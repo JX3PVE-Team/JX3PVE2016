@@ -1,0 +1,252 @@
+//PC版半透明 移动版恢复正常透明度
+.c-fli-panel{
+	.tm(0.4);
+	transition:opacity 0.2s ease-in-out;
+}
+.c-fli-common:hover{
+	.c-fli-panel{.tm(1);}
+}
+.ua-responsive .screen-s .c-fli-panel{
+	.tm(1);
+}
+
+//浮动处理
+.c-fli-panel{
+	.clearfix;
+}
+.c-fli-panel-left{
+	.fl;
+	.u-submod{
+		margin-right:10px;
+	}
+}
+.c-fli-panel-right{
+	.fr;
+	.u-submod{
+		margin-left:10px;
+	}
+}
+.ua-responsive .screen-s .c-fli-panel{
+	.u-submod{
+		margin:0;
+	}
+}
+
+.c-fli-panel{
+	
+	.color(#999,#999,@zhblue);
+
+	.u-submod{
+		.pointer;
+		.fl;
+		min-width:41px;
+	}
+
+	.u-submod i{
+		.dbi;.y;
+		background:url('@{url}header/icons2.png') no-repeat 0 0;
+	}
+
+	//编辑、追加
+	.u-edit{
+		i{
+			.size(12px,12px);margin-right:3px;
+			background-position: -120px -51px;
+		}
+		&:hover{
+			i{background-position: -133px -51px;}
+		}
+	}
+
+	//发布草稿
+	.u-pub{
+		i{
+			.size(14px,12px);
+			margin-top:-2px;margin-right:3px;
+			background-position: -90px -4px;
+		}
+	}
+
+	//推送（暂时禁用）
+	.u-push{
+		i{
+			.size(12px,12px);
+			margin-top:-2px;margin-right:3px;
+		    background-position: -27px -67px;
+		}
+		.none !important;
+	}
+
+	//支持反对（部分禁用）
+	.u-good,.u-bad{
+		i{
+			.size(12px,12px);
+			margin-top:-2px;margin-right:1px;
+		}
+		.none !important;
+	}
+	.u-good{
+		i{
+			background-position: -108px -22px;
+		}
+		&:hover{
+			i{background-position:-108px -37px;}
+		}
+	}
+	.u-bad{
+		i{
+			background-position: -121px -22px;
+		}
+		&:hover{
+			i{background-position:-121px -37px;}
+		}
+	}
+
+
+	//待审核提醒
+	.u-pending{
+		color:@yel;
+	}
+
+	//回复
+	.u-cmt{
+		i{
+			.size(9px,12px);margin-top:-2px;margin-right:3px;
+			background-position: -28px -22px;
+		}
+		&:hover{
+			i{background-position:-28px -37px;}
+		}
+	}
+
+	//引用
+	.u-quote{
+		i{
+			.size(10px,12px);margin-top:-2px;margin-right:3px;
+			background-position: -68px -22px;
+		}
+		&:hover{
+			i{background-position:-68px -37px;}
+		}
+	}
+
+	//设为最佳答案
+	.u-best{
+		i{
+			.size(12px,14px);
+			margin-top:-2px;margin-right:3px;
+		    background-position: -210px -147px;
+		}
+	}
+
+	//置顶回帖
+	.u-stick{
+		i{
+			.size(10px,12px);
+			margin-right:3px;
+		    background-position: -134px -22px;
+		}
+		&:hover{
+			i{background-position:-134px -37px;}
+		}
+	}
+
+	//评分
+	.u-rate{
+		i{
+			.size(12px,12px);
+			margin-top:-2px;margin-right:3px;
+		    background-position: -249px -46px;
+		}
+	}
+
+	//举报
+	.u-report{
+		i{
+			.size(12px,12px);
+			margin-top:-2px;margin-right:3px;
+		    background-position: -71px -182px;
+		}
+		&:hover{
+			i{background-position:-71px -169px;}
+		}
+	}
+
+	//道具
+	.u-magic{
+		i{
+			.size(12px,12px);
+			margin-top:-2px;margin-right:3px;
+		    background-position: -27px -67px;
+		}
+	}
+}
+//PC.取消不可见
+.c-fli-panel{
+	.u-cancel{
+		.none;
+	}
+}
+//M.移动端可见取消
+.ua-responsive .screen-s .c-fli-panel{
+	.u-cancel{
+		.db;
+	}
+}
+
+//PC.非管理默认不可见
+.c-fli-panel{
+	.u-manage,.u-adminbar{
+		.none !important;
+	}
+}
+//PC.管理可见
+.adminHTML .c-fli-panel{
+	.u-manage,.u-adminbar{
+		.db !important;
+	}
+}
+
+//移动端隐藏回帖
+.ua-responsive .screen-s .c-fli-panel{
+	.u-cmt{
+		.none !important;
+	}
+}
+
+//移动端扩展操作条样式变更
+.ua-responsive .screen-s .c-fli-panel{
+
+	.none;	//默认隐藏
+
+	.c-fli-panel-left,.c-fli-panel-right{float:none;}
+
+	.pf;.lb(0,0);.z(40);
+	.full(x);
+	
+	.u-submod{
+		.db;.x;
+		float:none;
+		.lh(51px);
+		.color(@blue-link,@blue-link,@blue-link);
+		border-bottom:1px solid #eee;
+		background-color:#fff;
+		i{.none;}
+		margin-right:0;
+	}
+
+	.u-cancel{
+		margin-top:2px;
+	}
+
+	&.active{
+		animation:slideUpMenu 0.3s ease-in-out forwards;
+		.db;
+	}
+
+	&.folder{
+		animation:slideDownMenu 0.3s ease-in-out forwards;
+		.db;
+	}
+
+}

@@ -1,0 +1,128 @@
+@c-fli-fastreply-link:28px;
+.c-fli-fastreply{
+	.pr;
+	margin:10px auto;
+}
+.c-fli-fastreply-box{
+	padding-left:@c-fli-fastreply-link+10px;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.ua-responsive .screen-s  .c-fli-fastreply-box{
+	padding-left:@c-fli-fastreply-link+20px;
+	padding-right:10px;
+}
+
+.ua-responsive .screen-s .c-fli-fastreply{
+	margin:0 auto;
+}
+
+.c-fli-fastreply-link{
+	.pa;.lt(0,5px);
+	&:extend(.u-btn-gray);
+	.r(@c-fli-fastreply-link);
+	.size(@c-fli-fastreply-link);
+	i{.db;.full;background:~"url('@{url}forum/advreply.svg') no-repeat center center / auto 50%";}
+}
+.ua-responsive .screen-s .c-fli-fastreply-link{
+	left:10px;
+}
+
+.c-fli-fastreply-content{
+	&#vfastpost{
+		background: none;
+		padding:0;
+	}
+	#vfastposttb{
+		.clearfix;
+		.pr;
+	}
+}
+
+.c-fli-fastreply-txt{
+	.db;
+	border:1px solid #ddd;
+	background-color:#fff;
+	box-sizing:border-box;
+	.lh(30px);.r(2px);
+	margin-right:60px;
+	padding:0 10px;
+	.u-form-txt{
+		background: none;
+		border:none;
+		.full;
+	}
+}
+
+.c-fli-fastreply-btn{
+	.db;.pa;.rt(0,0);
+	border:1px solid @bluebg;
+	box-sizing:border-box;
+	background-color:@bluebg;
+	color:#fff;
+	.lh(28px);.r(2px);
+	.w(50px);
+
+	.u-form-button{
+		background: none;
+		border:none;
+		.full;
+		*color:#fff;
+	}
+}
+
+.c-fli-fastreply-logintips{
+	.pa;.lt(0,0);
+	.db;.full;.x;color:#999;
+	span{.none;}
+}
+
+
+
+.ua-responsive .screen-s .c-fli-fastreply{
+	.w(100%);.h(42px);
+	.pf;.lb(0,@c-footer-height);.z(20);
+	background-color:#f8f8f8;
+	border-top:1px solid #ddd;
+}
+
+.ua-responsive .screen-s{
+	.viewpage-container{
+		padding-bottom:@c-footer-height;
+	}
+}
+
+//回复弹层
+.ua-responsive .screen-s #fwin_reply{
+	//隐藏引用内容
+	.m_c .quote{
+		.none;
+	}
+	//隐藏无用的编辑器按钮
+	.fcd,.fqt,.fat,.flnk,.fsml,.fmg{
+		.none;
+	}
+	//加大输入框
+	.tedt .pt{
+		.h(280px);
+	}
+	//本版积分规则
+	.o .y{
+		.none;
+	}
+}
+
+
+//显示控制 
+.c-fli-fastreply{
+	.none;	//PC底部的默认隐藏
+}
+.c-fli-first .c-fli-fastreply{
+	.db;	//PC主楼中的显示
+}
+.ua-responsive .screen-s .c-fli-first .c-fli-fastreply{
+	.none;	//M主楼中的隐藏
+}
+.ua-responsive .screen-s .c-fli-fastreply{
+	.db;	//M底部的显示
+}

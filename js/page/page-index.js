@@ -1,4 +1,4 @@
-H.ready(['jquery','swiper'],function(){
+H.ready(['swiper'],function(){
 	jQuery(function($){
 
 		var mySwiper = new Swiper('.swiper-container',{

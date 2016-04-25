@@ -1,9 +1,6 @@
-H.ready(['jquery','getRequest'],function(){
+H.ready(['getRequest'],function(){
 	jQuery(function($){
 
-
-    	//导航栏激活
-		H.curpage('.u-face')
 
 		//route助手
 		H.route(50)

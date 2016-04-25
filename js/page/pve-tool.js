@@ -1,4 +1,4 @@
-H.ready(['jquery','dialog'],function(){
+H.ready(['dialog'],function(){
 	jQuery(function($){
 
 		//下载地址写入
@@ -59,16 +59,10 @@ H.ready(['jquery','dialog'],function(){
     	})
 
 
-    	//导航栏激活
-		H.curpage('.u-tool')
-
 		//侧边栏
 		//H.fixSidebar('.pve-sidebar',96,105,100)
 
 		//帮助
     	H.route(54)
-
-
-
 	})
 })

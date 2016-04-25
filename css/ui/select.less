@@ -1,0 +1,52 @@
+//模拟select
+.ftid a{
+	border:1px solid #ddd;
+	box-shadow: 0 0 1px #ddd inset;
+	padding:2px 14px 2px 7px;
+	.r(2px);
+	.lh(22px);
+	font-size:inherit;
+	background:url('@{url}forum/select.png') no-repeat right 4px;
+}
+.ftid a:hover, .ftid a:focus{
+	background-position:right -36px;
+}
+.alertHTML .sltm{
+	margin-top:-30px;
+}
+.ua-responsive .screen-s .sltm{
+	.w(80%) !important;
+}
+
+.dpbtn{
+	.lh(26px);
+	border:1px solid #ddd;
+	border-left:none;
+	box-shadow: 0 0 1px #ddd inset;
+	.r(2px);
+	background:url('@{url}forum/select.png') no-repeat center 4px;
+
+	&:hover,&:focus{
+		background-position:center -36px;
+	}
+}
+
+//原生select
+//原默认为.ps 和定位有冲突
+.u-select{
+	padding:0;
+	margin:0;
+	line-height:inherit;
+	height:auto;
+
+	border: 1px solid #ddd;
+    box-shadow: 0 0 1px #ddd inset;
+    border-radius: 2px;
+    background:#fff;
+    transition:0.2s ease-in-out;
+}
+
+.u-select:focus{
+    box-shadow: 0 0 3px #8DACE6;
+    border-color:#0D6EB8;
+}

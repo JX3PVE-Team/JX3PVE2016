@@ -26,7 +26,6 @@
 		transform: scale(1) rotate(-50deg) skew(-10deg) translateZ(0);
 	}
 	span{
-		padding-left:24px;
 		.fz(1rem);.bold;
 		.none;
 	}
@@ -34,6 +33,17 @@
 .i-header-menu{
 	.pa;.rt(0,0);
 
+	//更多
+	.u-all{
+		.db;.fl;
+		span{.none;}
+		.size(32px,24px);
+		background:~"url('@{url}forum/i-menu-more.svg') no-repeat 0 0 / auto 100%";
+		margin-top:11px;
+		margin-right:10px;
+	}
+
+	//只看楼主（列表页）
 	.u-only{
 		.fl;
 		border:1px solid #eee;
@@ -45,51 +55,32 @@
 
 		&.on{
 			background-color:@basecolor;
-			//color:@blue;
 		}
 	}
 
-	.u-all{
-		.db;.fl;
+	//发表（发布页）
+	.u-pub{
+		padding:0 10px;
+		line-height:24px;
+		font-size:1.2rem;
+		i{
+			.dbi;.y;.size(32px,24px);
+			background:~"url('@{url}forum/post.svg') no-repeat 0 0 / auto 100%";
+		}
+	}
+
+	//发布（列表页）
+	.u-post{
+		.fl;
+		margin-top:10px;
+		margin-right:10px;
+		i{
+			.db;.size(32px,25px);
+			background:~"url('@{url}forum/write.svg') no-repeat 0 0 / auto 100%";
+		}
 		span{.none;}
-		.size(32px,24px);
-		background:~"url('@{url}forum/i-menu-more.svg') no-repeat 0 0 / auto 100%";
-		margin-top:11px;
-		padding-right:10px;
 	}
-}
 
-.i-header-nav{.fl;}
-.i-header-extend{
-	.pa;.rt(0,@c-header-height);.z(100);
-	.none;
-	text-align: left;
-	box-shadow: 2px 1px 1px rgba(0,0,0,.4);
-	li{
-		width: 120px;
-		background-color: #23283d;
-		border-top: 1px solid #1e2133;
-		a{
-			.db;
-			padding-left: 44px;
-			background:url('@{url}m/icon2.png') no-repeat;
-			background-size: 43px auto;
-		}
-		.exchange{
-			background-position:3px -1031px;
-		}
-		.fav{
-		  	background-position: 6px -937px;
-		}
-		.reply{
-			background-position:9px 5px;
-			background-size:34px auto;
-		}
-		.qcsearch{
-			background-size:34px auto;
-			background-position:9px -657px;
-		}
-	}
 }
 
 .i-header{.none;}

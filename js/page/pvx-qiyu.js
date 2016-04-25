@@ -1,12 +1,6 @@
-H.ready(['jquery'],function(){
-	jQuery(function($){
+jQuery(function($){
 
+	//route助手
+	H.route(130)
 
-    	//导航栏激活
-		H.curpage('.u-qiyu')
-
-		//route助手
-		H.route(130)
-
-	})
 })
