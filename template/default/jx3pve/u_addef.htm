@@ -1,11 +1,73 @@
 <span class="u-addef">
+
+	<!-- 置顶 -->
+	<!--{if in_array($thread['displayorder'], array(1, 2, 3, 4))}-->
+		<i title="置顶" class="u-addef-stick"></i>
+	<!--{/if}-->
+
+	<!-- 加锁 -->
+	<!--{if $thread[folder] == 'lock'}-->
+		<i title="主题已关闭" class="u-addef-lock"></i>
+	<!--{/if}-->
+
+	<!-- 投票 -->
+	<!--{if $thread['special'] == 1}-->
+		<i title="投票" class="u-addef-vote"></i>
+	<!--{/if}-->
+
+	<!-- 悬赏 -->
+	<!--{if $thread['special'] == 3}-->
+		<i title="悬赏水晶" class="u-addef-reward"></i>
+	<!--{/if}-->
+	
+	<!-- stamp 自定义图标·资料片等 -->
+	<!--{if $thread[icon] >= 0}-->
+		<img class="u-addef-sp" src="{STATICURL}image/stamp/{$_G[cache][stamps][$thread[icon]][url]}" alt="{$_G[cache][stamps][$thread[icon]][text]}" align="absmiddle" />
+	<!--{/if}-->
+
+	<!-- 精华 -->
+	<!--{if $thread['digest'] > 0 && $filter != 'digest'}-->
+		<img class="u-addef-digest" src="http://img.jx3pve.com/img/forum/digest.png" align="absmiddle" alt="加入精华" />
+	<!--{/if}-->
+
+	<!-- 点赞 -->
+	<!--{if $thread['displayorder'] == 0}-->
+		<!--{if $thread[recommendicon]}-->
+			<img class="u-addef-recommend" src="http://img.jx3pve.com/img/forum/zan.png" align="absmiddle" alt="点赞超多" />
+		<!--{/if}-->
+	<!--{/if}-->
+
+	<!-- 新帖 -->
+	<!--{if $thread['weeknew']}-->
+		<img class="u-addef-new" src="http://img.jx3pve.com/img/forum/new.gif" align="absmiddle" alt="本周新作" />
+	<!--{/if}-->
+	
+	<!-- 主题分类 -->
+	<!--{if $stemplate && $sortid}-->$stemplate[$sortid][$thread[tid]]<!--{/if}-->
+
+	<!-- 回贴奖励 -->
+	<!--{if $thread['replycredit'] > 0}-->
+		- <span class="u-addef-replycredit xi1 replycredit">[{lang replycredit} <strong> $thread['replycredit']</strong> ]</span>
+	<!--{/if}-->
+
+	<!-- 阅读价格 -->
+	<!--{if $thread['price'] > 0}-->
+	<span style="display:none;" class="u-addef-price">
+		<!--{if $thread['special'] == '3'}-->
+		- <a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=specialtype&specialtype=reward$forumdisplayadd[specialtype]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}&rewardtype=1"><span class="xi1">[{lang thread_reward} <span class="xw1">$thread[price]</span> {$_G[setting][extcredits][$_G['setting']['creditstransextra'][2]][unit]}{$_G[setting][extcredits][$_G['setting']['creditstransextra'][2]][title]}]</span></a>
+		<!--{else}-->
+		- [{lang price} <span class="xw1">$thread[price]</span> {$_G[setting][extcredits][$_G['setting']['creditstransextra'][1]][unit]}{$_G[setting][extcredits][$_G['setting']['creditstransextra'][1]][title]}]
+		<!--{/if}-->
+	<!--{elseif $thread['special'] == '3' && $thread['price'] < 0}-->
+		- <a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=specialtype&specialtype=reward$forumdisplayadd[specialtype]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}&rewardtype=2">[{lang reward_solved}]</a>
+	</span>
+	<!--{/if}-->
+	
+	<!-- 阅读权限 -->
+	<!--{if $thread['readperm']}--> - <span class="xw1 u-addef-readperm">[{lang readperm} $thread[readperm]</span>]<!--{/if}-->
+
 	<!-- 隐藏帖 -->
 	<!--{if $_G['setting']['threadhidethreshold'] && $thread['hidden'] >= $_G['setting']['threadhidethreshold']}--><span class="xg1">{lang hidden}</span>&nbsp;<!--{/if}-->
-
-	<!-- 帖子图标·自定义图标·资料片等 -->
-	<!--{if $thread[icon] >= 0}-->
-		<img class="u-addef-sp" src="http://img.jx3pve.com/static/image/stamp/{$_G[cache][stamps][$thread[icon]][url]}" alt="{$_G[cache][stamps][$thread[icon]][text]}" align="absmiddle" />
-	<!--{/if}-->
 
 	<!-- 快速回复 -->
 	<!--{if $thread['rushreply']}-->
@@ -13,70 +75,6 @@
 		<!--{if $rushinfo[$thread[tid]]}-->
 		<span id="rushtimer_$thread[tid]"> {lang havemore_special} <span id="rushtimer_body_$thread[tid]"></span> <script language="javascript">settimer($rushinfo[$thread[tid]]['timer'], 'rushtimer_body_$thread[tid]');</script>{if $rushinfo[$thread[tid]]['timertype'] == 'start'} {lang header_start} {else} {lang over} {/if} {lang right_special}</span>
 		<!--{/if}-->
-	<!--{/if}-->
-
-	<!-- 主题分类 -->
-	<!--{if $stemplate && $sortid}-->$stemplate[$sortid][$thread[tid]]<!--{/if}-->
-
-	<!-- 阅读权限 -->
-	<!--{if $thread['readperm']}--> - [{lang readperm} <span class="xw1 u-addef-readperm">$thread[readperm]</span>]<!--{/if}-->
-
-	<!-- 阅读价格 -->
-	<!--{if $thread['price'] > 0}-->
-	<span style="display:none;" class="u-addef-price">
-	<!--{if $thread['special'] == '3'}-->
-	- <a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=specialtype&specialtype=reward$forumdisplayadd[specialtype]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}&rewardtype=1"><span class="xi1">[{lang thread_reward} <span class="xw1">$thread[price]</span> {$_G[setting][extcredits][$_G['setting']['creditstransextra'][2]][unit]}{$_G[setting][extcredits][$_G['setting']['creditstransextra'][2]][title]}]</span></a>
-	<!--{else}-->
-	- [{lang price} <span class="xw1">$thread[price]</span> {$_G[setting][extcredits][$_G['setting']['creditstransextra'][1]][unit]}{$_G[setting][extcredits][$_G['setting']['creditstransextra'][1]][title]}]
-	<!--{/if}-->
-	<!--{elseif $thread['special'] == '3' && $thread['price'] < 0}-->
-		- <a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=specialtype&specialtype=reward$forumdisplayadd[specialtype]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}&rewardtype=2">[{lang reward_solved}]</a>
-	</span>
-	<!--{/if}-->
-
-	<!-- 是否存在附件 -->
-	<!--{if $thread['attachment'] == 2}-->
-		<img class="u-addef-att" src="{STATICURL}image/filetype/image_s.gif" alt="attach_img" align="absmiddle" />
-	<!--{elseif $thread['attachment'] == 1}-->
-		<img class="u-addef-att" src="{STATICURL}image/filetype/common.gif" alt="attachment" align="absmiddle" />
-	<!--{/if}-->
-
-	<!-- 手机版发布 -->
-	<!--{if $thread['mobile']}-->
-		<img class="u-addef-mobile" src="{IMGDIR}/mobile-attach-$thread['mobile'].png" alt="{lang post_mobile}" align="absmiddle" />
-	<!--{/if}-->
-
-	<!-- 精华 -->
-	<!--{if $thread['digest'] > 0 && $filter != 'digest'}-->
-		<img class="u-addef-digest" src="{IMGDIR}/digest_$thread[digest].gif" align="absmiddle" alt="digest" />
-	<!--{/if}-->
-
-	<!--{if $thread['displayorder'] == 0}-->
-	<!-- 推荐图标（点赞） -->
-		<!--{if $thread[recommendicon]}-->
-			<img class="u-addef-recommend" src="{IMGDIR}/recommend_$thread[recommendicon].gif" align="absmiddle" alt="recommend" />
-		<!--{/if}-->
-	<!-- 热度值 -->
-		<!--{if $thread[heatlevel]}-->
-			<img class="u-addef-hot" src="{IMGDIR}/hot_$thread[heatlevel].gif" align="absmiddle" alt="heatlevel" />
-		<!--{/if}-->
-	<!-- 评分 -->
-		<!--{if $thread['rate'] > 0}-->
-			<img class="u-addef-rate" src="{IMGDIR}/agree.gif" align="absmiddle" alt="agree"  />
-		<!--{elseif $thread['rate'] < 0}-->
-			<img class="u-addef-rate" src="{IMGDIR}/disagree.gif" align="absmiddle" alt="disagree" />
-		<!--{/if}-->
-	<!--{/if}-->
-
-	<!-- 新帖 -->
-	<!--{if $thread['weeknew']}-->
-		<a href="forum.php?mod=redirect&tid=$thread[tid]&goto=lastpost#lastpost" class="new xi1 u-addef-new">New</a>
-	<!--{/if}-->
-
-
-	<!-- 回贴奖励 -->
-	<!--{if $thread['replycredit'] > 0}-->
-		- <span class="u-addef-replycredit xi1 replycredit">[{lang replycredit} <strong> $thread['replycredit']</strong> ]</span>
 	<!--{/if}-->
 
 	<!--{hook/forumdisplay_thread_subject $key}-->

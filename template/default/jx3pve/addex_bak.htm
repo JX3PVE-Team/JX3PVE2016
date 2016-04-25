@@ -1,0 +1,23 @@
+<!-- 是否存在附件 -->
+<!--{if $thread['attachment'] == 2}-->
+	<img class="none u-addef-att" src="{STATICURL}image/filetype/image_s.gif" alt="attach_img" align="absmiddle" />
+<!--{elseif $thread['attachment'] == 1}-->
+	<img class="none u-addef-att" src="{STATICURL}image/filetype/common.gif" alt="attachment" align="absmiddle" />
+<!--{/if}-->
+
+<!-- 手机版发布 -->
+<!--{if $thread['mobile']}-->
+	<img class="none u-addef-mobile" src="{IMGDIR}/mobile-attach-$thread['mobile'].png" alt="{lang post_mobile}" align="absmiddle" />
+<!--{/if}-->
+
+<!-- 评分 -->
+<!--{if $thread['rate'] > 0}-->
+	<img class="u-addef-rate" src="{IMGDIR}/agree.gif" align="absmiddle" alt="agree"  />
+<!--{elseif $thread['rate'] < 0}-->
+	<img class="u-addef-rate" src="{IMGDIR}/disagree.gif" align="absmiddle" alt="disagree" />
+<!--{/if}-->
+
+<!-- 热度值 -->
+<!--{if $thread[heatlevel]}-->
+	<img class="u-addef-hot" src="{IMGDIR}/hot_$thread[heatlevel].gif" align="absmiddle" alt="heatlevel" />
+<!--{/if}-->

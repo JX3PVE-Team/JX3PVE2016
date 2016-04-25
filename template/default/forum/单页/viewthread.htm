@@ -1,11 +1,220 @@
 <!--{template common/header_m}-->
 <!--{subtemplate forum/viewthread_header}-->
 <!--{subtemplate forum/custom_header}-->
-
+<!--合并后-->
 <div id="ct">
-	<!--{subtemplate forum/viewthread_top}-->
-	<!--{subtemplate forum/viewthread_middle}-->
-	<!--{subtemplate forum/viewthread_bottom}-->
+	<script type="text/javascript">var fid = parseInt('$_G[fid]'), tid = parseInt('$_G[tid]');</script>
+	<!--{if $modmenu['thread'] || $modmenu['post']}-->
+		<script type="text/javascript" src="{$_G['setting']['jspath']}forum_moderate.js?{VERHASH}"></script>
+	<!--{/if}-->
+
+	<script type="text/javascript" src="{$_G['setting']['jspath']}forum_viewthread.js?{VERHASH}"></script>
+	<script type="text/javascript">zoomstatus = parseInt($_G['setting']['zoomstatus']);var imagemaxwidth = '{$_G['setting']['imagemaxwidth']}';var aimgcount = new Array();</script>
+
+	<style id="diy_style" type="text/css"></style>
+	<!--[diy=diynavtop]--><div id="diynavtop" class="area"></div><!--[/diy]-->
+
+	<div id="pt" class="bm cl none">
+		<div class="z">
+			<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
+			<em>&raquo;</em>$navigation 
+			<em>&rsaquo;</em> <a href="forum.php?mod=viewthread&tid=$_G[tid]">$_G[forum_thread][short_subject]</a>
+		</div>
+	</div>
+
+	<!--{hook/viewthread_top}-->
+	<!--{ad/text/wp a_t}-->
+
+	<style id="diy_style" type="text/css"></style>
+	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+
+	<!-- dz:w-pages-top -->
+	<!--{subtemplate widget/w_pages_top_view}-->
+
+	<!-- dz:admin pop -->
+	<!--{subtemplate widget/w_adminpop}-->
+
+	<!-- dz:admin bar -->
+	<!--{subtemplate widget/w_adminbar}-->
+	
+	<!--{hook/viewthread_beginline}-->
+	<div id="postlist" class="c-fli-box">
+
+		<!-- jx3pve:c_fli_title -->
+		<div class="c-fli-top">
+			<!--{subtemplate component/c_fli_title}-->
+			<!--{subtemplate component/c_fli_meta}-->
+			<!--{subtemplate component/c_fli_info}-->
+		</div>
+
+		<!--{eval $postcount = 0;}-->
+		<!--{loop $postlist $post}-->
+			<!--{if $rushreply && $_GET['checkrush'] && $post['rewardfloor'] != 1}-->
+				<!--{eval continue;}-->
+			<!--{/if}-->
+
+			<!--{if $post[first]}-->
+				<div class="c-fli-first c-fli-common" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
+					<!--{subtemplate forum/viewthread_node}-->
+					<!-- jx3pve:w-tgpost -->
+					<!--{subtemplate widget/w_tgpost}-->
+					<!--{subtemplate forum/viewthread_cmttitle}-->
+				</div>
+			<!--{else}-->
+				<div class="c-fli c-fli-common" id="post_$post[pid]" {if $_G['blockedpids'] && $post['inblacklist']}style="display:none;"{/if}>
+					<!--{subtemplate forum/viewthread_node}-->
+				</div>
+			<!--{/if}-->
+
+			<!--{eval $postcount++;}-->
+		<!--{/loop}-->
+
+		<div id="postlistreply" class="c-fli-box">
+			<div id="post_new" class="viewthread_table c-fli" style="display: none"></div>
+		</div>
+
+		<!--{if $_G['blockedpids']}-->
+			<div id='hiddenpoststip'><a href='javascript:;' id="w-tgpost-showall">{lang other_reply_hide}</a></div>
+			<div id="hiddenposts"></div>
+		<!--{/if}-->
+
+	</div>
+	<form method="post" autocomplete="off" name="modactions" id="modactions">
+		<input type="hidden" name="formhash" value="{FORMHASH}" />
+		<input type="hidden" name="optgroup" />
+		<input type="hidden" name="operation" />
+		<input type="hidden" name="listextra" value="$_GET[extra]" />
+		<input type="hidden" name="page" value="$page" />
+	</form>
+	$_G['forum_tagscript']
+
+	<!-- dz:w-pages-bottom -->
+	<!--{subtemplate widget/w_pages_bottom_view}-->
+
+	<!--{hook/viewthread_middle}-->
+
+	<!-- jx3pve:fastreply -->
+	<!--{template component/c_fli_fastreply}-->
+
+	<!-- jx3pve:fastpost -->
+	<div class="w-fastpost w-fastpost-view">
+		<!-- jx3pve:tips & folder list -->
+		<div class="w-fastpost-tip">
+			<!--{block/1284}-->
+		</div>
+		
+		<!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->
+		<!--{if $fastpost}-->
+			<!--{subtemplate forum/viewthread_fastpost}-->
+		<!--{/if}-->
+	</div>
+	<!--{hook/viewthread_bottom}-->
+
+	<!--{if ($_G['setting']['visitedforums']) && $_G['forum']['status'] != 3}-->
+		<div id="visitedforums_menu" class="p_pop blk cl" style="display: none;">
+			<table cellspacing="0" cellpadding="0">
+				<tr>
+					<td id="v_forums">
+						<h3 class="mbn pbn bbda xg1">{lang viewed_forums}</h3>
+						<ul class="xl xl1">
+							$_G['setting']['visitedforums']
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+	<!--{/if}-->
+
+	<!--{if $_G['medal_list']}-->
+	<!--{loop $_G['medal_list'] $medalid $medal}-->
+		<div id="md_{$medalid}_menu" class="tip tip_4" style="display: none;">
+			<div class="tip_horn"></div>
+			<div class="tip_c">
+				<h4>$medal[name]</h4>
+				<p>$medal[description]</p>
+			</div>
+		</div>
+	<!--{/loop}-->
+	<!--{/if}-->
+
+	<!-- dz:banner-bottom -->
+	<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+
+	<!--{if $_G['relatedlinks'] || $_GET['highlight']}-->
+		<script type="text/javascript">
+			var relatedlink = [];
+			<!--{loop $_G['relatedlinks'] $key $link}-->
+			relatedlink[$key] = {'sname':'$link[name]', 'surl':'$link[url]'};
+			<!--{/loop}-->
+			{eval $highlights = explode(' ', str_replace(array('\'', chr(125)), array('&#039;', '&#125;'), dhtmlspecialchars($_GET['highlight'])));}
+			<!--{loop $highlights $word}-->
+			{eval $key++;}
+			relatedlink[$key] = {'sname':'$word', 'surl':''};
+			<!--{/loop}-->
+			relatedlinks('postmessage_$_G[forum_firstpid]');
+		</script>
+	<!--{/if}-->
+
+	<!--{if !empty($_G['cookie']['clearUserdata']) && $_G['cookie']['clearUserdata'] == 'forum'}-->
+		<script type="text/javascript">saveUserdata('forum_'+discuz_uid, '')</script>
+	<!--{/if}-->
+
+	<script type="text/javascript">
+		<!--{if $_G['forum']['picstyle'] && ($_G['forum']['ismoderator'] || $_G['uid'] == $_G['thread']['authorid'])}-->
+		function showsetcover(obj) {
+			if(obj.parentNode.id == 'postmessage_$_G[forum_firstpid]') {
+				var defheight = $_G['setting']['forumpicstyle']['thumbheight'];
+				var defwidth = $_G['setting']['forumpicstyle']['thumbwidth'];
+				var newimgid = 'showcoverimg';
+				var imgsrc = obj.src ? obj.src : obj.file;
+				if(!imgsrc) return;
+
+				var tempimg=new Image();
+				tempimg.src=imgsrc;
+				if(tempimg.complete) {
+					if(tempimg.width < defwidth || tempimg.height < defheight) return;
+				} else {
+					return;
+				}
+				if($(newimgid) && obj.id != newimgid) {
+					$(newimgid).id = 'img'+Math.random();
+				}
+				if($(newimgid+'_menu')) {
+					var menudiv = $(newimgid+'_menu');
+				} else {
+					var menudiv = document.createElement('div');
+					menudiv.className = 'tip tip_4 aimg_tip';
+					menudiv.id = newimgid+'_menu';
+					menudiv.style.position = 'absolute';
+					menudiv.style.display = 'none';
+					obj.parentNode.appendChild(menudiv);
+				}
+				menudiv.innerHTML = '<div class="tip_c xs0"><a onclick="showWindow(\'setcover_'+newimgid+'\', this.href)" href="forum.php?mod=ajax&amp;action=setthreadcover&amp;tid=$_G[tid]&amp;pid=$_G[forum_firstpid]&amp;fid=$_G[fid]&imgurl='+imgsrc+'">{lang set_cover}</a></div>';
+				obj.id = newimgid;
+				showMenu({'ctrlid':newimgid,'pos':'12'});
+			}
+			return;
+		}
+		<!--{/if}-->
+		function succeedhandle_followmod(url, msg, values) {
+			var fObj = $('followmod_'+values['fuid']);
+			if(values['type'] == 'add') {
+				fObj.innerHTML = '{lang nofollow}';
+				fObj.href = 'home.php?mod=spacecp&ac=follow&op=del&fuid='+values['fuid'];
+			} else if(values['type'] == 'del') {
+				fObj.innerHTML = '{lang follow}';
+				fObj.href = 'home.php?mod=spacecp&ac=follow&op=add&hash={FORMHASH}&fuid='+values['fuid'];
+			}
+		}
+		<!--{if $_G['blockedpids']}-->
+		var blockedPIDs = [<!--{echo implode(',', $_G['blockedpids'])}-->];
+		<!--{/if}-->
+		<!--{if $postlist && empty($_G['setting']['disfixedavatar'])}-->
+		fixed_avatar([<!--{echo implode(',', array_keys($postlist))}-->], {if empty($_G['setting']['disfixednv_viewthread']) }1{else}0{/if});
+		<!--{elseif empty($_G['setting']['disfixednv_viewthread'])}-->
+		fixed_top_nv();
+		<!--{/if}-->
+	</script>
 </div>
 
 <!--{subtemplate forum/viewthread_footer}-->
