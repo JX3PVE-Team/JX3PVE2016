@@ -6,7 +6,6 @@ H.load([
 	{'macro':head_conf.CDNROOT+'plugin/macro.min.js'},
 	{'fixSidebar':head_conf.CDNROOT+'plugin/fixSidebar.min.js'},
 	{'getRequest':head_conf.CDNROOT+'plugin/getRequest.js'},
-	{'postdate':head_conf.CDNROOT+'mod/postdate.min.js'},
 	{'dialog':head_conf.CDNROOT+'mod/dialog.min.js'},
 	{'custombg':head_conf.CDNROOT+'mod/custombg.min.js'},
 	{'sfilter':head_conf.CDNROOT+'mod/sfilter.min.js'},

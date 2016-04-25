@@ -22,7 +22,7 @@
 	autopbn.onclick = function() {
 		var oldloadstatus = loadstatus;
 		loadstatus = 2;
-		autopbn.innerHTML = '加载更多';
+		autopbn.innerHTML = '正在加载...';
 		getnextpagecontent();
 		loadstatus = oldloadstatus;
 	};
@@ -79,6 +79,7 @@
 						tableobj.replaceChild(div.childNodes[0].childNodes[0], tableobj.lastChild);
 					}
 				}
+				IRX_postdate();
 			} else {
 				var nexts = s.match(/\<li style="width:\d+px;" id="picstylethread_(\d+)"\>(.+?)\<\/li\>/g);
 				for(i in nexts) {
@@ -91,11 +92,11 @@
 			var pageinfo = s.match(/\<span id="fd_page_bottom"\>(.+?)\<\/span\>/);
 			nextpageurl = nextpageurl.replace(/&page=\d+/, '&page=' + (curpage + 1));
 
-			$('fd_page_bottom').innerHTML = pageinfo[1];
+			$('fd_page_bottom').innerHTML = jQuery('#fd_page_bottom').eq(0).html();
 			if(curpage + 1 > totalpage) {
 				autopbn.style.display = 'none';
 			} else {
-				autopbn.innerHTML = '下一页 &raquo;';
+				autopbn.innerHTML = '加载更多';
 			}
 			loadstatus = 0;
 		});
