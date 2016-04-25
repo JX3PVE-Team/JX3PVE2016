@@ -22,17 +22,18 @@
 		margin:3px 10px 3px 3px;
 		padding: 0 5px;
 		border-radius: 2px;
-		background-color:#DDFBFF;color:#28B3C5;
+		background-color:#EEFDFF;color:#28B3C5;
 		
 		&.fail{background-color:#aaa;color:#fff;}
 		&.old{background-color:#FFF7DC;color: #EA8202;}
-		&.new{background-color:#DDFBFF;color:#28B3C5;}
-		&.fresh{background-color:#E6F9D8;color: #20961E;}//#DBAFF9
-		&.ok{background-color: #FFF5F5;color: #F93434;}}
+		&.new{background-color:#EEFDFF;color:#28B3C5;}
+		&.fresh{background-color:#EFFDE5;color: #20961E;}//#DBAFF9
+		&.ok{background-color: #FFF5F5;color: #F93434;}
+	}
 
 	//标题
 	.u-title{.fl;}
-	.u-sort{}
+	.u-sort{.color(#999,@blue-link,#c00);}
 	.u-subject{}
 
 	//来自群组
@@ -61,6 +62,19 @@
 	//隐藏置顶
 	.u-hidestick{
 		.fl;
+
+		&.showhide{
+		    width: 12px;
+		    height: 12px;
+		    background:url('@{urls}common/close.gif') no-repeat 0 0;
+		    text-indent: -999em;
+		    cursor: pointer;
+		    overflow: hidden;
+		    margin: 5px 5px 0px 5px;
+		    &:hover{
+		    	background-position: 0 -12px;
+		    }
+	    }
 	}
 
 	//预览
