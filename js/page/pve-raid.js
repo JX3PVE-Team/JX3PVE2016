@@ -8,7 +8,7 @@ H.ready(['getRequest'],function(){
 			aindex = getRequest('sortall')
 
 		//route助手
-		H.route(56)
+		//H.route(56)
 
 		//认证角标
 		$raidlogo.add(".c-raidavt").each(function(i){

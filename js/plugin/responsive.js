@@ -34,7 +34,10 @@ jQuery(function($){
         }
 
         $body.addClass(bodyClazz);
-        //$wp.width($(".guides").width())
+
+        //判断是否满足条件
+        window.isMobile = $("html").hasClass('ua-responsive') && $body.hasClass('screen-s');
+        
     };
     resetLayout()
     w.bind('onResizeEx', resetLayout);

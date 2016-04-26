@@ -28,6 +28,6 @@ jQuery(function($) {
 	})
 
 	//帮助
-	H.route(129)
+	//H.route(129)
 
 })

@@ -33,7 +33,6 @@ jQuery(function($){
 
     //w_route:导航
     //版主开关
-    H.fadeshow($route_t,$route)
 
     //w_hotstart
     //热度加星

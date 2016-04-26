@@ -24,7 +24,7 @@ H.ready(['macro'],function(){
   		  //fixSidebar('.pve-sidebar',96,240,223)
       	
       	//帮助
-      	H.route(53)
+      	//H.route(53)
 
   	})
 })

@@ -1,6 +1,6 @@
 jQuery(function($) {
 
 	//帮助
-	H.route(55)
+	//H.route(55)
 
 })

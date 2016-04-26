@@ -1,5 +1,6 @@
 .w-listfilter{
-	.pr;.clearfix;
+	//.pr;
+	.clearfix;
 	border:none;
 	padding:0;margin:0;
 	border-top:1px solid #ddd;
@@ -9,7 +10,7 @@
 }
 
 .w-listfilter-title{
-	.w(100px);.h(28px);
+	.w(99px);.h(28px);
 	.fl;
 	border-right: 1px solid #ddd;
 	background: #f7f7f7;
@@ -18,7 +19,7 @@
 }
 
 .w-listfilter-list{
-	margin-left:100px;
+	margin-left:99px;
 	padding:0 10px;
 	.h(28px);
 	.clip;
@@ -51,4 +52,32 @@
 	.divding{
 		.none;
 	}
+
+}
+
+.ua-responsive .screen-s{
+	.w-listmode{
+		.clearfix;
+		.pr;
+		&.isfocus{
+			.z(40);
+		}
+	}
+	.w-listfilter,.w-filter{.fl;}
+
+	.w-listfilter-list{
+		.none;
+		.pa;.lt(0,28px);.z(2);
+		.w(100%);
+		box-sizing:border-box;
+		margin:10px 0 0 0;
+		background-color:#f7f7f7;
+		border:1px solid #ddd;
+		.r(2px);
+	}
+	.w-listfilter-title{
+		border-left:1px solid #ddd;margin-left:-1px;
+		&.on{background-color:#fff;}
+	}
+
 }

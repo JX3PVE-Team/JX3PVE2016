@@ -15,7 +15,6 @@ t-$tid  		->body			帖子唯一ID			//仅当帖子页存在
 sort-$sort		->body			帖子所属分类信息ID	//列表页、帖子页、发布页存在
 type-$type		->body			帖子所属主题分类ID 	//列表页、帖子页、发布页存在
 
-
 //Special Class Name
 ---------------------------------------------------
 className		position		description
@@ -28,6 +27,7 @@ ua-responsive	->html 			responsive ua判断，启用了移动适配头
 ie-*/BRS-*		->html 			headjs hack
 #path-page		->html 			headjs path+page 特殊处理（此条为id）
 screen-l/m/s 	->body			responsive screen判断（l:pc m:平板竖屏 s:手机）
+isfixed			->html 			开启了遮罩层时不允许滚动
 
 
 //Z-index 
@@ -42,6 +42,7 @@ className			z-index			description
 #u-mask				30 				遮罩层
 .i-header-panel		40 				手机弹层菜单
 .c-fli-panel		40 				楼层弹层菜单
+.c-filtermode		40 				分类排序移动端时
 .w-adminbar			100				主楼管理弹层（仅移动端）
 .fwinmask			201 			dz默认弹层
 .w-adminpop			350				副楼管理弹层
@@ -90,3 +91,4 @@ FAQ				css/system/faq.css 			template/default/common/faq.htm
 key					value			description
 ---------------------------------------------------
 TGPOST_STATUS		boolean			默认设为关闭，折叠true，不折叠false
+isMobile			boolean			移动端状态

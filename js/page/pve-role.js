@@ -81,6 +81,6 @@ jQuery(function($){
     //H.fixSidebar('.pve-sidebar',96,105,100)
 
     //帮助
-    H.route(85)
+    //H.route(85)
 
 });

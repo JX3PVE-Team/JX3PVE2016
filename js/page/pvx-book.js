@@ -8,7 +8,7 @@ H.ready(['getRequest'],function(){
 			$isdown = $("#isdownload")
 
 		//route助手
-		H.route(119)
+		//H.route(119)
 
 		//角标遍历
 		$(".book").each(function(){

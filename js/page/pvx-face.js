@@ -3,7 +3,7 @@ H.ready(['getRequest'],function(){
 
 
 		//route助手
-		H.route(50)
+		//H.route(50)
 
 
 		//列表页遍历

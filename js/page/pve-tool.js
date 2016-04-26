@@ -63,6 +63,6 @@ H.ready(['dialog'],function(){
 		//H.fixSidebar('.pve-sidebar',96,105,100)
 
 		//帮助
-    	H.route(54)
+    	//H.route(54)
 	})
 })

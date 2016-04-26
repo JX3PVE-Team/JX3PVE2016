@@ -1354,11 +1354,6 @@ function hideMenu(attr, mtype) {
 	}
 }
 
-//add new function mask hide
-function hideMask(){
-	document.getElementById('u-mask').style.display="none";
-}
-
 function getCurrentStyle(obj, cssproperty, csspropertyNS) {
 	if(obj.style[cssproperty]){
 		return obj.style[cssproperty];
