@@ -1,12 +1,18 @@
 .c-flist-item{
 
+	.pr;
 	.db;.clearfix;
 	border-bottom: 1px solid #C2D5E3;
 	padding:5px 10px;
 	.lh(26px);
 
+	.nobreak;
+
 	&:hover{
 		background-color:#EAF8FC;
+		.u-author{
+			background-color:#EAF8FC;
+		}
 	}
 
 	//管理操作
@@ -43,7 +49,9 @@
 
 	//作者
 	.u-author{
-		.fr;
+		//.fr;
+		.pa;.rt(10px,5px);
+		background-color:#fff;padding-left:20px;
 		a{margin-left:2px;}
 		.u-verif img{margin-top: -3px;}
 	}
@@ -86,6 +94,12 @@
 
 .adminHTML .c-flist-item{
 	.u-control{
-		//.db;
+		.db;
 	}
+}
+
+.ua-responsive .screen-s .c-flist-item{
+	padding:5px 0;
+	.u-title{max-width:60%;.nobreak;}
+	.u-author{.none;}
 }
