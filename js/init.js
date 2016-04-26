@@ -11,7 +11,9 @@ H.load([
 	{'sfilter':head_conf.CDNROOT+'mod/sfilter.min.js'},
 	{'widget':head_conf.CDNROOT+'mod/widget.min.js'},
 	{'underscore':head_conf.CDNROOT+'lib/underscore.min.js'},
-	{'swiper':head_conf.CDNROOT+'plugin/swiper2.min.js'}
+	{'swiper':head_conf.CDNROOT+'plugin/swiper2.min.js'},
+	{'clipboard':head_conf.CDNROOT+'plugin/clipboard.js'},
+	{'copycode':head_conf.CDNROOT+'widget/copycode.js'}
 ]);
 
 //开关
