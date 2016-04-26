@@ -4,6 +4,7 @@ jQuery.noConflict();
 //加载公共模块
 H.load([
 	{'macro':head_conf.CDNROOT+'plugin/macro.min.js'},
+	{'custom':head_conf.CDNROOT+'widget/w-custom.min.js'},
 	{'fixSidebar':head_conf.CDNROOT+'plugin/fixSidebar.min.js'},
 	{'getRequest':head_conf.CDNROOT+'plugin/getRequest.js'},
 	{'dialog':head_conf.CDNROOT+'mod/dialog.min.js'},

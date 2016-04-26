@@ -13,6 +13,9 @@
 			<input type="hidden" name="formhash" value="{FORMHASH}" />
 			<input type="hidden" name="listextra" value="$extra" />
 			<table class="c-flist-list" summary="forum_$_G[fid]" cellspacing="0" cellpadding="0" id="threadlisttableid">
+				<!--{if !$separatepos || !$_G['setting']['forumseparator']}-->
+					<tbody id="separatorline" class="none"><tr><td></td></tr></tbody>
+				<!--{/if}-->
 				<!--{if $_G['forum_threadcount']}-->
 					<!--{if empty($_G['forum']['picstyle']) || $_G['cookie']['forumdefstyle']}-->
 						<!--{loop $_G['forum_threadlist'] $key $thread}-->

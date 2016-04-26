@@ -7,6 +7,12 @@ jQuery(function($){
         //图标
     	$icon = $("#w-tgpost-icon")
 
+    //当根本不存在回复楼层时隐藏该组件
+    if($ct.length < 2){
+        $tg.hide(); 
+        return;
+    }
+
     //默认设为关闭，折叠true，不折叠false
     window.TGPOST_STATUS = false;
 
@@ -35,5 +41,6 @@ jQuery(function($){
             TGPOST_STATUS = true;
         }
     })
+
 
 })

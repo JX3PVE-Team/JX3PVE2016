@@ -1,4 +1,4 @@
-<!--{if !IS_ROBOT && $post['first'] && !$_G['forum_thread']['archiveid']}-->
+<!--{if $_G['uid'] && !IS_ROBOT && $post['first'] && !$_G['forum_thread']['archiveid']}-->
 	<!--{if $post['invisible'] == 0}-->
 	<div class="c-fli-commend">
 		<!-- 置顶 -->

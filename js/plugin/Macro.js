@@ -1,5 +1,5 @@
 //Macro systax
-
+//(function(){
 	if ( ![].indexOf ){
 		Array.prototype.indexOf = function( value ){
 			var j = -1;
@@ -136,7 +136,37 @@
 		this.splits();
 	}
 
-	window.Macro = macro = Sytax;
+	window.macro = macro = Sytax;
+
+//})()
+
+/**
+  Author: [huyinghuan](xiacijian@163.com)
+  Date: 2015.11.03
+  Desc: 修改高亮部位初始化DOM逻辑， 从基于ID变为基于class
+
+  Author: [huyinghuan](xiacijian@163.com)
+  Date: 2015.11.04
+  Desc: 修复IE8下代码高亮问题
+**/
+
+jQuery(function($){
+	//定义所有需要高亮的数据所在的DOM的class
+	//var needHighlightDOMClass = "e-macro";
+	var needHighlightDOMClass = "macro-ct";
+	var needVipTips = '隐藏可见';//;'<div class="u-tobevip">本帖隐藏内容需<a href="http://www.jx3pve.com/forum.php?mod=post&action=reply&fid=' + fid + '&tid=' + tid + 'onclick="showWindow("reply", this.href)">回复</a>，加入 <a class="u-vip" href="./vip" target="_blank">VIP会员</a> 享受无需回复查看隐藏内容、无限制下载、免广告极速等多项特权。</div>';
+
+	//宏语法高亮
+	$("." + needHighlightDOMClass).each(function(){
+		var content = this.textContent || this.innerText
+		content = $.trim(content);
+		if(content.indexOf('回复可见') === -1){
+			new macro(this, content);
+		}else{
+			$(this).html(needVipTips);
+		}
+	});
+})
 
 
 

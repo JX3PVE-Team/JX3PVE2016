@@ -1,8 +1,10 @@
 jQuery(function($){
+
+	var $body = $("body")
 	
 	//全屏编辑状态
 	$("#e_fullswitcher").on('click',function(){
-		$("body").toggleClass('e-fullscreen-edit');
+		$body.toggleClass('e-fullscreen-edit');
 	})
 
 	//编辑器底部扩展
@@ -16,6 +18,17 @@ jQuery(function($){
 	$editorMore.on('click',function(){
 		$editorEX.addClass('showall')
 		$(this).hide()
+	})
+
+	//手机端默认折叠扩展
+	if($body.hasClass('screen-s')){
+		$editorEXtg.text('展开')
+		$editorEX.toggleClass('folder')
+	}
+
+	//手机版模拟顶部按钮提交表单
+	$("#i-header-postbtn").on('click',function(){
+		$("#postform").submit();
 	})
 
 

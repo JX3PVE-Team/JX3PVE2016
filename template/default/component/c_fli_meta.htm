@@ -5,7 +5,7 @@
 		<span class="u-author">
 			<!--{if $_G[forum_thread][authorid] && $_G[forum_thread][author]}-->
 				<a class="avatar" href="home.php?mod=space&uid=$_G[forum_thread][authorid]" title="$_G[forum_thread][author]"><!--{avatar($_G[forum_thread][authorid],small)}--></a>
-				<a href="home.php?mod=space&uid=$_G[forum_thread][authorid]" title="$_G[forum_thread][author]">$_G[forum_thread][author]</a>
+				<a href="home.php?mod=space&uid=$_G[forum_thread][authorid]" title="$_G[forum_thread][author]" id="e-threadauthor">$_G[forum_thread][author]</a>
 			<!--{else}-->
 				<!--{if $_G['forum']['ismoderator']}-->
 					<a href="home.php?mod=space&uid=$_G[forum_thread][authorid]">{lang anonymous}</a>

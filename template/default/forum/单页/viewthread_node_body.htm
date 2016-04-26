@@ -191,11 +191,6 @@
 		<!--{/if}-->
 	</div>
 
-	<!-- 快速回复 -->
-	<!--{if $post[first]}-->
-		<!--{template component/c_fli_fastreply}-->
-	<!--{/if}-->
-
 	<!-- 点评 -->
 	<!--{template component/c_fli_cmt}-->
 
@@ -251,7 +246,7 @@
 							</tbody>
 						</table>
 						<p class="ratc">
-							<a href="forum.php?mod=misc&action=viewratings&tid=$_G[tid]&pid=$post[pid]" onclick="showWindow('viewratings', this.href)" title="{lang rate_view}" class="xi2">{lang rate_view}</a>
+							<a href="forum.php?mod=misc&action=viewratings&tid=$_G[tid]&pid=$post[pid]" onclick="showWindow('viewratings', this.href)" title="{lang rate_view}" class="xi2 u-mask-tg">{lang rate_view}</a>
 						</p>
 					<!--{else}-->
 						<ul class="cl">
