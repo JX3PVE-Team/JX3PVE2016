@@ -4,15 +4,18 @@
 	.pr;
 	.h(33px);
     .w(380px);
+    .clip;
 }
 
-.c-header-search-input{
+
+.c-header-search-input(){
 	.db;
 	padding: 7px 50px 7px 10px;
     width:100%;
+    margin:0 ; //IPAD BAIDU MOBILE SEARCH BUG
     *width:318px;
     color: #49525c;
-    line-height: 17px;
+    line-height:17px;
     //height:17px;
     background-color: #e1eaf2;
     border: 1px solid #045bb2;
@@ -29,7 +32,7 @@
     }
 }
 
-.c-header-search-buttonbg{
+.c-header-search-buttonbg(){
 	.db;.pa;.rt(0,0);
     width: 40px;
     height: 33px;
@@ -50,6 +53,10 @@
     	background:url('@{url}header/icons.png') no-repeat 0 -40px;
     }
 }
+//IPAD BAIDU MOBILE SEARCH BUG
+.c-header-search-input{.c-header-search-input() !important;} 
+.c-header-search-buttonbg{.c-header-search-buttonbg() !important;}
+
 .ie8,.ie9,.ie10,.ie11{
     .c-header-search-buttonbg{
         height:32px;
