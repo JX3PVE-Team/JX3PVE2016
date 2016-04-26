@@ -1,27 +1,8 @@
 <header class="i-header i-header-post">
-	<a class="i-header-back" href="javascript:;" onclick="history.go(-1)"><i></i><span>返回</span></a>
-	<div class="i-header-title">$_G['forum'][name]</div>
+	<a class="i-header-back" href="forum.php?mod=forumdisplay&fid=$_G['fid']"><i></i><span>$_G['forum'][name]</span></a>
+	<div class="i-header-title"></div>
 	<div class="i-header-menu">
-		<!-- 提交发布 -->
-		<button type="submit" id="postsubmit" class="u-pub" value="true" name="{if $_GET[action] == 'newthread'}topicsubmit{elseif $_GET[action] == 'reply'}replysubmit{elseif $_GET[action] == 'edit'}editsubmit{/if}">
-			<i></i>
-			<!--{if $_GET[action] == 'newthread'}-->
-				<!--{if $special == 0}--><span>{lang post_newthread}</span>
-				<!--{elseif $special == 1}--><span>{lang post_newthreadpoll}</span>
-				<!--{elseif $special == 2}--><span>{lang post_newthreadtrade}</span>
-				<!--{elseif $special == 3}--><span>{lang post_newthreadreward}</span>
-				<!--{elseif $special == 4}--><span>{lang post_newthreadactivity}</span>
-				<!--{elseif $special == 5}--><span>{lang post_newthreaddebate}</span>
-				<!--{elseif $special == 127}-->
-					<span><!--{if $buttontext}-->$buttontext<!--{else}-->{lang post_newthread}<!--{/if}--></span>
-				<!--{/if}-->
-			<!--{elseif $_GET[action] == 'reply' && !empty($_GET['addtrade'])}--><span>{lang trade_add_post}</span>
-			<!--{elseif $_GET[action] == 'reply'}--><span>{lang join_thread}</span>
-			<!--{elseif $_GET[action] == 'edit' && $isfirstpost && $thread['displayorder'] == -4}-->
-				<span>{lang post_newthread}</span>
-			<!--{elseif $_GET[action] == 'edit'}--><span>{lang edit_save}</span>
-			<!--{/if}-->
-		</button>
+		<a class="u-pub i-header-postbtn" id="i-header-postbtn" href="javascript:;"><i></i><span>发布</span></a>
 	</div>
 </header>
 

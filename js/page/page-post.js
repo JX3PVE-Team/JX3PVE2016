@@ -18,6 +18,11 @@ jQuery(function($){
 		$(this).hide()
 	})
 
+	//手机版模拟顶部按钮提交表单
+	$("#i-header-postbtn").on('click',function(){
+		$("#postform").submit();
+	})
+
 
 })
 

@@ -70,10 +70,13 @@
 								<!--{if ($_GET[action] == 'newthread' || $_GET[action] == 'edit' && $isfirstpost)}-->
 									<label for="allownoticeauthor"><input type="checkbox" name="allownoticeauthor" id="allownoticeauthor" class="pc" value="1"{if $allownoticeauthor} checked="checked"{/if} />{lang post_noticeauthor}</label>
 								<!--{/if}-->
+							</li>
+							<li class="u-item-msg">
 								<!--{if $_GET[action] != 'edit' && helper_access::check_module('feed') && $_G['forum']['allowfeed']}-->
 									<label for="addfeed"><input type="checkbox" name="addfeed" id="addfeed" class="pc" value="1" $addfeedcheck>{lang addfeed}</label>
 								<!--{/if}-->
 							</li>
+							
 
 							<!-- 使用签名 -->
 							<li class="u-item-sign">
@@ -124,7 +127,7 @@
 							</li>
 						</ul>
 					</div>
-					<div class="m-editor-common-block">
+					<div class="m-editor-common-block none">
 						<h3 class="u-title">{lang manage_operation}</h3>
 						<ul class="u-list">
 							<!--{if $_GET[action] == 'newthread' && $_G['forum']['ismoderator'] && ($_G['group']['allowdirectpost'] || !$_G['forum']['modnewposts'])}-->
