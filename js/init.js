@@ -14,7 +14,7 @@ H.load([
 	{'underscore':head_conf.CDNROOT+'lib/underscore.min.js'},
 	{'swiper':head_conf.CDNROOT+'plugin/swiper2.min.js'},
 	{'clipboard':head_conf.CDNROOT+'plugin/clipboard.js'},
-	{'copycode':head_conf.CDNROOT+'widget/copycode.min.js'}
+	{'copycode':head_conf.CDNROOT+'widget/copycode.js'}
 ]);
 
 //开关
