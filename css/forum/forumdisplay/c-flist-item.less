@@ -1,17 +1,20 @@
 .c-flist-item{
 
+	@border:#C2D5E3;
+	@bg:#EAF8FC;
+
 	.pr;
 	.db;.clearfix;
-	border-bottom: 1px solid #C2D5E3;
+	border-bottom: 1px solid @border;
 	padding:5px 10px;
 	.lh(28px);
 
 	.nobreak;
 
 	&:hover{
-		background-color:#EAF8FC;
+		background-color:@bg;
 		.u-author{
-			background-color:#EAF8FC;
+			background-color:@bg;
 		}
 	}
 
