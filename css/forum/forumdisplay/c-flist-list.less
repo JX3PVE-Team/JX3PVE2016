@@ -37,22 +37,19 @@
 	//单个帖子
 	tbody{
 
+		@h:39px;
+
 		//块级化处理
 		.db;.fl;.w(100%);overflow:hidden;
 
-		.h(36px + 1px);
+		.h(@h);
 		img{
 			.y;
 		}
 
-		tr{
+		tr,td{
 			.db;.fl;.w(100%);
-			.h(36px + 1px);
+			.h(@h);
 		}
-		td{
-			.db;.fl;.w(100%);
-			.h(36px + 1px);
-		}
-		
 	}
 }

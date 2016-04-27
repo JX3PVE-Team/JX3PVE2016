@@ -15,8 +15,8 @@ jQuery(function($){
         $body.removeClass('screen-s screen-m screen-l')
         var screenSize = {
             'screen-s': [0, 768],
-            "screen-m": [768, 1024],
-            "screen-l": [1024]
+            "screen-m": [768, 1280],
+            "screen-l": [1280]
         };
         var bodyClazz = ""
         for(var clazz in screenSize){
