@@ -47,7 +47,7 @@
 
 	<!-- 回贴奖励 -->
 	<!--{if $thread['replycredit'] > 0}-->
-		- <span class="u-addef-replycredit xi1 replycredit">[{lang replycredit} <strong> $thread['replycredit']</strong> ]</span>
+		- <span class="u-addef-replycredit xi1 replycredit">[回帖奖励 <strong> $thread['replycredit']</strong> ]</span>
 	<!--{/if}-->
 
 	<!-- 阅读价格 -->
@@ -64,7 +64,7 @@
 	<!--{/if}-->
 	
 	<!-- 阅读权限 -->
-	<!--{if $thread['readperm']}--> - <span class="xw1 u-addef-readperm">[{lang readperm} $thread[readperm]</span>]<!--{/if}-->
+	<!--{if $thread['readperm']}--> - <span class="xw1 u-addef-readperm">[阅读权限 $thread[readperm]</span>]<!--{/if}-->
 
 	<!-- 隐藏帖 -->
 	<!--{if $_G['setting']['threadhidethreshold'] && $thread['hidden'] >= $_G['setting']['threadhidethreshold']}--><span class="xg1">{lang hidden}</span>&nbsp;<!--{/if}-->
