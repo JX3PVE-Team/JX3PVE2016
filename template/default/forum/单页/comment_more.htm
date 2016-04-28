@@ -1,37 +1,43 @@
 <!--{template common/header}-->
 <!--{if $comments}-->
-	
-		<!--{loop $comments $comment}-->
-			<div class="c-fli-cmt-list" id="c-fli-cmt-list">
-				<a class="u-avatar" href="home.php?mod=space&uid=$comment[authorid]" c="1">$comment[avatar]</a>
-				<!--{if $comment['authorid']}-->
-					<a class="u-username" href="home.php?mod=space&uid=$comment[authorid]">$comment[author]</a>
-					<!--{else}-->
-					<span class="u-username">{lang guest}</span>
+	<!--{loop $comments $comment}-->
+	<div class="c-fli-cmt-list c-fli-cmt-item">
+		<a class="u-avatar" href="home.php?mod=space&uid=$comment[authorid]" c="1">$comment[avatar]</a>
+		<!--{if $comment['authorid']}-->
+			<a class="u-username" href="home.php?mod=space&uid=$comment[authorid]" c="1">$comment[author]</a>
+			<!--{else}-->
+			<span class="u-username">{lang guest}</span>
+		<!--{/if}-->
+		<span class="u-time">
+			$comment[dateline]
+			<small class="none">
+				<!--{if $comment['useip'] && $_G['group']['allowviewip']}-->
+					IP:$comment[useip]{if $comment[port]}:$comment[port]{/if}
 				<!--{/if}-->
-				<span class="u-time">
-					$comment[dateline]
-					<small class="none">
-						<!--{if $comment['useip'] && $_G['group']['allowviewip']}-->
-							IP:$comment[useip]{if $comment[port]}:$comment[port]{/if}
-						<!--{/if}-->
-					</small>
-				</span>
-				<!--{if $_G['forum']['ismoderator'] && $_G['group']['allowdelpost']}-->
-					<a class="u-del" href="javascript:;" onclick="modaction('delcomment', $comment[id])">{lang delete}</a>
-				<!--{/if}-->
-				<span class="u-words">
-					$comment[comment]
-				</span>
-			</div>
-		<!--{/loop}-->
-		<div class="c-fli-cmt-bottom">
-			<div class="w-pages">
-				<div class="w-pages-list">
-					$multi
-				</div>
+			</small>
+		</span>
+		<!--{if $_G['forum']['ismoderator'] && $_G['group']['allowdelpost']}-->
+			<a class="u-del" href="javascript:;" onclick="modaction('delcomment', $comment[id])">{lang delete}</a>
+		<!--{/if}-->
+		<span class="u-words">
+			$comment[comment]
+		</span>
+		<span class="none">
+			<!--{if $comment[rpid]}-->
+				<a href="forum.php?mod=redirect&goto=findpost&pid=$comment[rpid]&ptid=$_G[tid]" class="xi2">{lang detail}</a>
+				<a href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&reppost=$comment[rpid]&extra=$_GET[extra]&page=$page{if $_GET[from]}&from=$_GET[from]{/if}" class="xi2" onclick="showWindow('reply', this.href)">{lang reply}</a>
+			<!--{/if}-->
+		</span>
+	</div>
+	<!--{/loop}-->
+<!--{/if}-->
+<div class="c-fli-cmt-bottom">
+	<!--{if $multi}-->
+		<div class="w-pages">
+			<div class="w-pages-list">
+				$multi
 			</div>
 		</div>
-	
-<!--{/if}-->
+	<!--{/if}-->
+</div>
 <!--{template common/footer}-->
