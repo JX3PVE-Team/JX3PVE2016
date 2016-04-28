@@ -6,7 +6,7 @@ jQuery(function($){
             b.innerHTML = '<!--[if IE]><i></i><![endif]-->';
             return b.getElementsByTagName('i').length === 1
         }
-        for(var i = 0, len = verArr; i < len; i++){
+        for(var i = 0, len = verArr.length; i < len; i++){
             b.innerHTML = '<!--[if IE ' + verArr[i] + ']><i></i><![endif]-->'
             if(b.getElementsByTagName('i').length === 1){
                 return true
