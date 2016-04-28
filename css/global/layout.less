@@ -1,3 +1,6 @@
+html.isfixed{
+	.full;overflow:hidden;
+}
 body{
 	.pr;
 }
@@ -7,9 +10,7 @@ body{
 //背景层
 .main {
 }
-.isfixed{
-	.full;overflow:hidden;
-}
+
 
 
 //尺寸规划
@@ -34,7 +35,7 @@ body{
 
 	//默认
 	.wp{
-	    width:1180px;
+	    width:@wp;
 	   .auto(x);
 	}
 	//逐步上线新页面
@@ -43,7 +44,7 @@ body{
 	}
 	//固定为1180px的老页面
 	.ua-oldpc .wp{
-		.w(1180px) !important;
+		.w(@wp);
 	}
 	//平板竖屏&手机版
 	.ua-responsive .screen-m,.ua-responsive .screen-s{

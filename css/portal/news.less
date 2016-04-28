@@ -1,9 +1,33 @@
 @import url('../public/base.less');		//函数
-@import url('../public/path.less');		//路径
+@import url('../global/var.less');		//路径
 @import url('../global/color.less');	//配色
 
-@wp:1180px;
+.portal-container{
+	background:#f2f2f2 url("http://ww1.sinaimg.cn/large/bcc700eegw1eicfycbdj6j21hc0u07qf.jpg") repeat-x top center;
+}
+.portal-main{
+	margin:0 auto;padding:20px 0;min-height:940px;position:relative;
+	.clearfix;
 
+	.wp{
+		.clearfix;
+		background:url("@{url}portal/news_sdbg.png") no-repeat 820px 20px;
+	}
+}
+
+.portal-content{
+	width:780px;border-radius:8px;background:#fff;padding:20px;.fl;
+}
+
+.portal-title{
+	background:url("@{url}portal/news_h1.png") no-repeat center bottom;
+	height:32px;text-align:center;line-height:30px;
+	.nobreak;
+}
+
+.portal-sidebar{
+	.fl;
+}
 .portal-sidebar{
 	padding:580px 20px 20px 20px;
 	.pr;
@@ -40,26 +64,25 @@
 
 }
 .portal-listpage{
-	
-	.portal-list{
-		padding:10px 0;
-		li{
-			a{
-				.db;
-				.fz(12px,14px);
-				.color(#555,#c00);
-				padding:10px 0 10px 0;
-				border-bottom:1px dotted #ddd;
+}
+.portal-list{
+	padding:10px 0;
+	li{
+		a{
+			.clearfix;
+			.db;
+			.fz(12px,2);
+			.color(#555,#c00);
+			padding:10px 0 10px 0;
+			border-bottom:1px dotted #ddd;
 
-				span{
-					.fr;color:#888;
-				}
+			span{
+				.fr;color:#888;
 			}
-			padding:0 10px 0 30px;
-			
 		}
+		padding:0 10px 0 30px;
+		
 	}
-	
 }
 .portal-primary{
 	.m-top{
@@ -104,29 +127,23 @@
 		margin-bottom:10px;
 	}
 }
-.portal-container{
-	background:#f2f2f2 url("http://ww1.sinaimg.cn/large/bcc700eegw1eicfycbdj6j21hc0u07qf.jpg") repeat-x top center;
-
-	.portal-main{
-		width:@wp;margin:0 auto;padding:20px 0;min-height:940px;position:relative;
-		background:url("@{url}portal/news_sdbg.png") no-repeat 820px 20px;
-		.clearfix;
-	}
-
-	.portal-content{
-		width:780px;border-radius:8px;background:#fff;padding:20px;.fl;
-	}
-
-	.portal-title{
-		background:url("@{url}portal/news_h1.png") no-repeat center bottom;
-		height:32px;text-align:center;line-height:30px;
-	}
-
-	.portal-sidebar{
-		.fl;
-	}
-
-}
 .portal-allcmt{
 	.bm{border:none;}
+}
+.ua-responsive .screen-m,.ua-responsive .screen-s{
+	.portal-sidebar{.none;}
+	.portal-content{float:none;.auto(x);}
+}
+.ua-responsive .screen-s{
+	.portal-content{
+		.w(auto);
+	}
+	.portal-primary .m-top .m-info,
+	.portal-primary .m-panel,
+	.portal-primary .pren
+	{.none;}
+
+	.portal-list li{
+		padding-left:0;
+	}
 }

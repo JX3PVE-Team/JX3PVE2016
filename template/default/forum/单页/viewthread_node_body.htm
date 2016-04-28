@@ -192,7 +192,57 @@
 	</div>
 
 	<!-- 点评 -->
-	<!--{template component/c_fli_cmt}-->
+	<!--{if $commentcount[$post[pid]]>0}-->
+	<div class="c-fli-cmt">
+		<h3 class="c-fli-cmt-title">收起回复</h3>
+		<div class="c-fli-cmt-content">
+			<div id="comment_$post[pid]">
+				<!--{if $_GET['from'] != 'preview' && $_G['setting']['commentnumber'] && !empty($comments[$post[pid]])}-->
+					<!--{loop $comments[$post[pid]] $comment}-->
+						<div class="c-fli-cmt-list" id="c-fli-cmt-list">
+							<a class="u-avatar" href="home.php?mod=space&uid=$comment[authorid]" c="1">$comment[avatar]</a>
+							<!--{if $comment['authorid']}-->
+								<a class="u-username" href="home.php?mod=space&uid=$comment[authorid]">$comment[author]</a>
+								<!--{else}-->
+								<span class="u-username">{lang guest}</span>
+							<!--{/if}-->
+							<span class="u-time">
+								<!--{date($comment[dateline], 'u')}-->
+								<small class="none">
+									<!--{if $comment['useip'] && $_G['group']['allowviewip']}-->
+										IP:$comment[useip]{if $comment[port]}:$comment[port]{/if}
+									<!--{/if}-->
+								</small>
+							</span>
+							<!--{if $_G['forum']['ismoderator'] && $_G['group']['allowdelpost']}-->
+								<a class="u-del" href="javascript:;" onclick="modaction('delcomment', $comment[id])">{lang delete}</a>
+							<!--{/if}-->
+							<span class="u-words">
+								$comment[comment]
+							</span>
+						</div>
+					<!--{/loop}-->
+					<div class="c-fli-cmt-bottom">
+						<!--{if $commentcount[$post[pid]] > $_G['setting']['commentnumber']}-->
+							<div class="w-pages">
+								<div class="w-pages-list">
+									<div class="pg">
+										<a href="javascript:;" class="nxt" onclick="ajaxget('forum.php?mod=misc&action=commentmore&tid=$post[tid]&pid=$post[pid]&page=2', 'comment_$post[pid]')">下一页</a>
+									</div>
+								</div>
+							</div>
+						<!--{/if}-->
+					</div>
+				<!--{/if}-->
+			</div>
+			<!--{if $post['invisible'] == 0}-->
+				<!--{if $allowpostreply && $post['allowcomment'] && (!$thread['closed'] || $_G['forum']['ismoderator'])}-->
+					<a class="c-fli-cmt-btn u-mask-tg" href="forum.php?mod=misc&action=comment&tid=$post[tid]&pid=$post[pid]&extra=$_GET[extra]&page=$page{if $_G['forum_thread']['special'] == 127}&special=$specialextra{/if}" onclick="showWindow('comment', this.href, 'get', 0)"><i></i>我也说两句</a>
+				<!--{/if}-->
+			<!--{/if}-->
+		</div>
+	</div>
+	<!--{/if}-->
 
 	<!-- 评分 -->
 	<div class="c-fli-rate">

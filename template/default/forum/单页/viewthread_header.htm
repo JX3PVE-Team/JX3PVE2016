@@ -19,6 +19,13 @@
 		<li>
 			<a class="u-fav" href="home.php?mod=spacecp&ac=favorite&type=thread&id=$_G[tid]&formhash={FORMHASH}" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);" onmouseover="this.title = $('favoritenumber').innerHTML + ' {lang activity_member_unit}{lang thread_favorite}'" title="{lang fav_thread}">收藏</a>
 		</li>
+		<!--{if $post[authorid] != $_G[uid]}-->
+			<!--{if helper_access::check_module('follow')}-->
+		<li>
+			<a class="u-follow" href="home.php?mod=spacecp&ac=follow&op=add&hash={FORMHASH}&fuid=$post[authorid]" id="followmod_$post[authorid]" onclick="showWindow('followmod', this.href, 'get', 0);">关注作者</a>
+		</li>
+			<!--{/if}-->
+		<!--{/if}-->
 		<li>
 			<!--{if !$rushreply}-->
 				<!--{if $ordertype != 1}-->

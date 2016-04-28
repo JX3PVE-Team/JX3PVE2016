@@ -24,13 +24,23 @@ jQuery(function($){
 	var $mask = jQuery('#u-mask')
 
 	//开关遮罩层
+	window.MASK_STATUS = false;
 	window.showMask =function(){
 		$mask.fadeIn()
 		$html.addClass('isfixed')
+		MASK_STATUS = true;
 	}
 	window.hideMask = function(){
 		$mask.fadeOut()
 		$html.removeClass('isfixed')
+		MASK_STATUS = false;
+	}
+	window.toggleMask = function(){
+		if(!MASK_STATUS){
+			showMask()
+		}else{
+			hideMask()
+		}
 	}
 
 })

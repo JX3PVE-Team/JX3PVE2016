@@ -93,7 +93,7 @@ jQuery(function($){
         }
     })
     //脸型原图
-    $boxclose.add($mask).on('click',function(){
+    $boxclose.on('click',function(){
         $mask.fadeOut()
         $html.removeClass('fixpage')
         $showbox.fadeOut()

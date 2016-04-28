@@ -1,0 +1,24 @@
+<header class="i-header i-header-post">
+	<a class="i-header-back" href="forum.php?mod=forumdisplay&fid=$_G['fid']&filter=sortid&sortid=$_GET['sortid']"><i></i><span>$_G['forum']['threadsorts']['types'][$_GET['sortid']]</span></a>
+	<div class="i-header-title"></div>
+	<div class="i-header-menu">
+		<a class="u-pub i-header-postbtn" id="i-header-postbtn" href="javascript:;"><i></i><span>发布</span></a>
+	</div>
+</header>
+
+<div class="postpage-container f-$_G[fid]-container">
+	<div class="wp">
+		<div id="pt" class="bm cl">
+			<div class="z">
+				<a href="./" class="nvhm" title="{lang homepage}">$_G['setting']['bbname']</a> 
+				<em>&rsaquo;</em><a href="./about">关于我们</a>
+				<em>&rsaquo;</em><a href="forum.php?mod=forumdisplay&fid=$_G['fid']&filter=sortid&sortid=$_GET['sortid']">$_G['forum']['threadsorts']['types'][$_GET['sortid']]</a>
+			</div>
+			<!--{template widget/w_custom}-->
+		</div>
+
+		<div class="default-main">
+			<div class="default-sidebar">
+				<!--{subtemplate forum/sidebar}-->
+			</div>
+			<div class="default-content">

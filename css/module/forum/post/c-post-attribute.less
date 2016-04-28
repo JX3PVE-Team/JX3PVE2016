@@ -1,0 +1,253 @@
+.c-editor-extend{
+	.pr;overflow:hidden;
+	background-color:#f7f7f7;
+	border: 1px solid #ddd;
+	margin:20px auto;
+	padding:15px;
+	&.folder{
+		.h(28px);
+		transition:0.3s ease-in-out;
+	}
+}
+.c-editor-extend-content{
+	padding:0 !important;
+}
+#post_extra{}
+
+#post_extra_tb{.none;}
+
+#post_extra_c{}
+
+.c-editor-extend-tg{
+	.z(2);
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	display: block;
+	width: 60px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	background: #7DBD20;
+	border-radius: 4px;
+	color: #fff;
+	.pointer;
+	user-select:none;
+}
+
+.c-editor-extend{
+	.m-title{
+		margin-bottom:5px;
+		.pr;
+		b{
+			color: #fff;
+			background: #0084ff;
+			width: 80px;
+			border-radius: 3px;
+			text-align: center;
+			.db;
+		}
+		span{
+			.pa;.rt(0,0);color:#999;
+		}
+	}
+}
+
+.m-editor-mod{
+	line-height:28px;
+	border-bottom: 1px dotted #ccc;
+	margin-bottom:10px;
+	padding-bottom:10px;
+	&:last-child{
+		border-bottom:none;
+	}
+	.exfm{
+		background: none !important;
+		border:none !important;
+		margin:0 !important;
+		table td{
+			padding:2px 2px;
+		}
+	}
+
+	.u-text{
+		padding:0 10px;
+		margin:0 5px;
+		.lh(24px);
+	}
+
+	.u-select{
+		.lh(26px);
+		padding:0 10px;
+	}
+
+	.xw1{
+		font-weight:normal;
+	}
+	
+
+}
+
+.m-editor-common{
+	.m-title{
+		margin-bottom:15px;
+	}
+}
+
+.m-editor-common-block{
+	.pr;
+	min-height:28px;
+	margin-bottom:5px;
+	.u-title{
+		.pa;.lt(0,0);
+	}
+	.u-list{
+		margin-left:80px;.clearfix;
+		li{.fl;margin-right:20px;}
+	}
+	//仅楼主可见
+	.hiddenreplies{
+		.pr;.w(146px)!important;
+		text-decoration: underline;
+		i{
+			background:url('@{url}icon/icon-report-16.png') no-repeat 0 0;.size(16px);
+			.dbi;
+			vertical-align: -3px;margin-left: 4px;
+		}
+		&:after{
+			content:'当勾选此项时，所有回帖仅你可见';
+			.lt(-37px,-32px);
+			.w(200px);
+			padding:0 5px;
+		}
+		.hiddenTipshow;
+	}
+
+	//删除按钮
+	.u-item-del,.u-item-deltip{
+		float:none;
+	}
+
+	.u-item-del{
+		margin-bottom:10px;
+	}
+
+	.u-btn-delete{
+		background:#cc0000;
+		border:1px solid #c00;
+		&:hover{
+			background-color:lighten(#c00,5%);
+		}
+	}
+	.u-msg-delete-warning{
+		color:#999;
+	}
+
+	.u-msg-deltips{
+		border: 1px dashed #ccc;
+		background-color:#FCFADF;
+		padding: 5px;
+		display: block;
+		i{
+			background:url('@{url}icon/icon-report-16.png') no-repeat 0 0;
+			.size(16px);.dbi;.y(-3px);margin-right:5px;
+		}
+		a{
+			color: #369;
+				text-decoration: underline;
+				&:hover{color:#c00;}
+			}
+	}
+}
+
+.m-editor-price{
+	#price{
+		.w(100px) !important;
+	}
+	.u-msg-saletips{
+		color:#999;
+		.fr;
+	}
+	.xg1{
+		color:@yel !important;
+	}
+}
+
+.m-editor-allow{
+	.xw1{
+		.w(70px);margin-right:20px;
+	}
+	.u-select{
+		.w(120px) !important;
+	}
+}
+
+.m-editor-pubtime{}
+
+.m-editor-replys{}
+
+.m-editor-tag{}
+
+.m-editor-activity{
+	.sinf{
+		float:none;
+		//.fl;
+		background: none;
+		border:none;
+		//border-right:1px dashed #ccc;
+	}
+	.sadd{
+		float:none;
+		margin-top: 10px;
+		//.w(400px);margin-left:20px;
+		dl dd{
+			.w(auto);
+		}
+	}
+}
+
+.m-editor-extend-more{
+	line-height:24px;.x;
+	background-color:#E6F4F5;
+	.pointer;
+	margin-top:-10px;
+	&:hover{
+		background-color:darken(#E6F4F5,5%);
+	}
+}
+
+.m-editor-mod{.none;}
+.m-editor-common{.db !important;}
+.c-editor-extend.showall{
+	.m-editor-mod{
+		.db;
+		animation:fadeIn 0.3s ease-in-out;
+	}
+}
+
+
+.ua-responsive .screen-s .c-editor-extend{
+	.m-title span{
+		.none;
+	}
+	.m-editor-tag .u-text{
+		.db;
+		width: 100%;
+    	box-sizing: border-box;
+	}
+	.u-item-justforauthor{
+		i{.none;}
+		label{text-decoration:none;}
+		label:after{.none;}
+	}
+	.m-editor-activity{
+		.none;
+	}
+}
+
+
+.c-post{
+	#extra_additional_c label{.w(auto);}
+}
+
+    

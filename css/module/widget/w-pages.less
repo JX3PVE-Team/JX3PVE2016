@@ -1,0 +1,70 @@
+//翻页公共
+.w-pages{
+	.clearfix;
+}
+
+//翻页的列表
+.w-pages-list{
+	.fr;
+	.clearfix;
+	//当前页
+	strong{background-color:#f2f2f2;cursor:default;}
+	a,strong,label{border-color:#ddd;margin-bottom:5px;}
+	a:hover{border-color:#666;color:#333;}
+
+	.pg{margin:0 !important;}
+}
+
+//翻页旁发布按钮
+.u-btn-publish{
+	.fzlh(13px,28px);
+	.db;.w(80px);.x;
+	border-radius: 2px;
+	.fl;
+	&:extend(.u-btn-blue);
+	img{.none;}
+}
+
+//底部下一页按钮
+.w-pages-next,.u-btn-nextpage,.u-pages-next,#autopbn{
+	&:extend(.u-btn-gray);
+	.fz(13px,28px);
+	.db;.x;.r(2px);
+	margin-bottom:10px;
+	border:1px solid #ddd;
+	box-shadow:none;
+	&:hover{
+    	color:#222;
+    	background:#f7f7f7;
+    }
+}
+
+//没有分页时
+.w-pages-null{
+	.tips(graylight);
+	.x;
+	cursor:default;
+	margin-bottom:10px;
+}
+
+//顶部翻页
+.w-pages-top{
+	padding-bottom:0  !important;
+	border-bottom:none !important;
+}
+.viewpage-container .w-pages-top{.none;}
+.ua-responsive .screen-s .w-pages-top{.none;}
+
+
+//底部翻页
+.w-pages-bottom{
+	margin-bottom:10px;
+}
+
+.ua-responsive .screen-s{
+	.w-pages-bottom .u-btn-publish{
+		.w(100%);
+		margin-bottom:10px;
+		.none;
+	}
+} 

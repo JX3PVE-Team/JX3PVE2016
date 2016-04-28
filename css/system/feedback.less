@@ -1,0 +1,60 @@
+@import url('../public/base.less');		//函数
+@import url('../global/color.less');	//配色
+@import url('../global/var.less');		//尺寸
+
+.f-365{
+	.default-sidebar{.none;}
+	.default-content{
+		margin-left:0;
+		padding:0;
+	}
+}
+.f-365-container{
+	background-color:#fff;
+}
+.c-fli-commend{
+	.none;
+}
+.pg_forumdisplay .i-header-menu .u-all{
+	.none;
+}
+
+
+.c-post-category{
+	.w(180px);
+}
+.c-post-subject .u-subject{
+	margin-left:210px;
+}
+#typeid_ctrl_menu.sltm{
+	.w(180px) !important;
+	li{
+		padding:0 5px;
+	}
+	li:hover{
+		background-color:#f7f7f7;
+	}
+}
+.ua-responsive .screen-s #typeid_ctrl_menu.sltm{
+	.w(80%) !important;
+}
+
+
+#u-feedback-showtip{
+	.none;
+	background:~"url('@{url}icon/info.gif') no-repeat right center / auto 80%";
+	color:#222;
+}
+.ua-responsive .screen-s{
+	#u-feedback-showtip{.db;}
+	#u-feedback-showtipct{.none;}
+
+	#u-feedback-showtipct{
+		.pf;.lt(0,0);.full;
+		z-index: 40;
+	    background-color: rgba(255,255,255,0.95);
+	    padding: 20px;
+	    box-sizing: border-box;
+        overflow: auto;
+	}
+} 

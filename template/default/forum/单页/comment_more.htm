@@ -1,7 +1,6 @@
 <!--{template common/header}-->
 <!--{if $comments}-->
 	
-		<!--{if $totalcomment}--><div class="pstl">$totalcomment</div><!--{/if}-->
 		<!--{loop $comments $comment}-->
 			<div class="c-fli-cmt-list" id="c-fli-cmt-list">
 				<a class="u-avatar" href="home.php?mod=space&uid=$comment[authorid]" c="1">$comment[avatar]</a>
@@ -27,7 +26,11 @@
 			</div>
 		<!--{/loop}-->
 		<div class="c-fli-cmt-bottom">
-			<div class="w-pages">$multi</div>
+			<div class="w-pages">
+				<div class="w-pages-list">
+					$multi
+				</div>
+			</div>
 		</div>
 	
 <!--{/if}-->

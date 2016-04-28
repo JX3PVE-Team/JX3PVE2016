@@ -1,0 +1,77 @@
+.w-fastpost{
+	
+}
+.w-fastpost-tip{
+	.attips{
+		border:1px solid #ddd;
+		.r(2px);
+		padding:2px 10px;
+		b{.bold;.color(#f39);}
+	}
+}
+.w-fastpost-box{
+	.pr;
+}
+.w-fastpost-sidebar{
+	.fl;
+
+	.avatar{
+		margin-top:0 !important;
+		img{
+			.size(118px);padding:5px;
+			border:1px solid #ddd;
+			background:#fff;
+		}
+	}
+}
+.w-fastpost-content{
+	margin-left:118px + 10px + 20px;
+	margin-top:15px;
+
+	#fastsmiliesdiv{.none;}
+	.hasfsl{margin-right:0;}
+	.tedt .pt{box-shadow:none;}
+}
+.w-fastpost-button{
+	margin-top:10px;
+	.pn{
+		height:auto;
+		padding:0 10px;
+	}
+}
+
+//没有登录时没有头像
+.w-fastpost-box-noloin{
+	.w-fastpost-sidebar{.none;}
+	.w-fastpost-content{margin-left:0;}
+}
+
+.ua-responsive{
+	//ipad
+	.screen-m,.screen-s{
+		.w-fastpost-sidebar{.none;}
+		.w-fastpost-content{margin-left:0;}
+	}
+	//mobile
+	.screen-s{
+		.w-fastpost{
+			.none;
+		}
+		.w-fastpost-button{
+			//按钮附近的移除
+			.y,label{.none;}
+			.pn{
+				.w(100%);
+			}
+		}
+		.w-fastpost-content .bar{
+			//隐藏部分编辑器功能
+			.fpd a.fqt,.fpd a.fcd,.fpd a.fat{
+				.none;
+			}
+		}
+		.w-fastpost-tip .attips{
+			.none;
+		}
+	}
+}

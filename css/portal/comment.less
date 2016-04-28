@@ -1,5 +1,5 @@
 @import url('../public/base.less');		//函数
-@import url('../public/path.less');		//路径
+@import url('../global/var.less');		//路径
 @import url('../global/color.less');	//配色
 
 .c-cmt{
@@ -97,4 +97,9 @@
 	.color(#999,#999,#c00);
 }
 
-
+.ua-responsive .screen-s{
+	.c-cmt-top .c-cmt-avt{.none;}
+	.c-cmt-top .c-cmt-textarea{margin-left:0;}
+	.c-cmt-liavt{.none;}
+	.c-cmt-li{margin-left:0;}
+}

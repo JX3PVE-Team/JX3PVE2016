@@ -2,7 +2,6 @@
 @import url('../global/color.less');	//配色
 @import url('../global/var.less');		//尺寸
 
-.wp{.w(@wp);}
 
 .system-container{
 }
@@ -16,17 +15,11 @@
 	padding:10px 0;
 }
 
-.system-title{
-	.fz(20px,2);
-	border-bottom:1px dotted #ddd;
-	margin-bottom:20px;
-}
-.ua-responsive .screen-s .system-title{.none;}
-
 
 .system-sidebar,.f-392 .default-sidebar{
-	.pa;.lt(0,10px);
+	.pa;.lt(0,15px);
 	.w(@sd2);
+	padding:0;
 
 	ul{
 		padding:0 10px;
@@ -53,11 +46,11 @@
 
 .system-content,.f-392 .default-content{
 	margin-left:@sd2;
+	padding:0;
 }
 
 .ua-responsive .screen-s .system-sidebar{.none;}
 .ua-responsive .screen-s .system-content{margin-left:0;}
-
 
 //网站地图
 .sitemap-container {

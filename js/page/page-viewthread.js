@@ -54,14 +54,6 @@ jQuery(function($){
 		$(this).toggleClass('on');
 	})
 
-	//PC 跳转楼层
-	$("#c-forum-title-goto").on('click',function(){
-		$(this).toggleClass('on');
-	})
-	$("#c-forum-title-goto #fj").on('click',function(e){
-		e.stopPropagation()
-	})
-
 	//公共 楼层回复开关
 	var cmt_status = false;
 	$(".c-fli-cmt-title").on('click',function(){
