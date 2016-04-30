@@ -8,18 +8,26 @@
 }
 
 .default-sidebar{
-	.pa;.lt(0,10px);
+	.pa;.lt(0,0);
 	.w(@sd);
-	padding:20px;
-	background-color:#fff;
-	.r(4px);
+	//padding:20px;
+	//background-color:#fff;
+	//.r(4px);
 }
 
 .default-content{
-	margin-left:@sd + 20px*2 + 20px;
-	padding:20px 20px 10px 20px;
+	margin-left:@sd + 20px;
+	padding:20px;
 	background-color:#fff;
+	//border:1px solid #ddd;
+    //box-shadow: 0 0 4px rgba(0,0,0,0.1);
 	.r(4px);
+}
+
+.postpage-container{
+	.default-content{
+		border:none;
+	}
 }
 
 .ua-responsive .screen-s{
@@ -33,6 +41,7 @@
 	.default-content{
 		margin-left:0;
 		padding:0;
+		border:none;
 	}
 }
 

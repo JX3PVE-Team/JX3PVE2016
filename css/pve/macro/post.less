@@ -1,0 +1,45 @@
+.macro-grammar{
+	margin:20px 0;
+	border:1px solid #222;padding:2px 5px;background-color:#444;.x;
+	.r(4px);
+	span{
+		line-height:2;
+		&.macro-mg-action{color:#00ccff;}
+		&.macro-mg-if{color:#ff3399;}
+		&.macro-mg-do{color:#00ff00;}
+	}
+}
+.macro-mg-table{
+	margin-bottom:20px;
+	font-family: Verdana;
+	th,td{
+		border:1px solid #ddd;
+		padding: 3px 6px;
+	}
+	th{
+		background-color:#f2f2f2;
+		.x;
+	}
+	td{
+		background: #fff;
+		font-size:12px;
+	}
+}
+
+
+.m-macro-systax{
+	.none;
+}
+.postpage-container{
+	.default-sidebar-title,.default-sidebar-content{.none;}
+	.m-macro-systax{.db;}
+}
+
+html{
+	font-size:13px;
+}
+
+.ua-responsive .screen-s{
+	//手机端加大内容输入框
+	#typeoption_macro_ct1,#typeoption_macro_ct2{.h(500px);}
+}

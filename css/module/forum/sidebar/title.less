@@ -1,0 +1,57 @@
+//标题
+.default-sidebar-title{
+	line-height:1.5;
+	color:#555;
+	padding: 5px 0;
+	border-bottom: 1px dotted #ddd;
+	margin-bottom: 5px;
+	.pr;.clearfix;
+	margin-top:10px;
+
+	//更多
+	.u-more{
+		.ct(y,12px);right:0;
+		background:url('@{url}icon/more.png') no-repeat 0 0;
+		.size(40px,12px);
+		.indent;
+		&:hover{
+			background-position:0 -12px;
+		}
+	}
+
+	//faq提示
+	.u-tips-faq{
+		background:url('@{url}icon/faq.gif') no-repeat 0 0;
+		.dbi;.size(13px);.y(-2px);margin-left:3px;.indent;
+	}
+
+	//快速发布
+	.u-btn-pub{
+		.fr;.fz(12px,20px);
+		background:url('@{url}icon/addbuddy.gif') no-repeat 0 center;
+		padding:0 5px 0 20px;
+	}
+
+	//小发布
+	.u-btn-pub2{
+		.fr;.color(#999,@bluex);
+		.normal;font-size:12px;
+		i{
+			background:url('@{url}icon/app_add.gif') no-repeat 0 0;
+			.dbi;.size(12px);.y(-2px);margin-right:3px;
+		}
+	}
+
+	//搜索
+	.u-search{
+		.fr;.size(15px);
+		background:url('@{url}icon/icon_search.png') no-repeat 0 0;
+		.none;
+	}
+
+}
+
+//搜索
+.ua-responsive .screen-s .default-sidebar-title .u-search{
+	.db;
+}

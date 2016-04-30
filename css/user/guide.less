@@ -1,8 +1,20 @@
 @import url('../public/base.less');		//函数
 @import url('../global/color.less');	//配色
 @import url('../global/var.less');		//尺寸
+@import url('../tobe/skin/button.less');		//尺寸
 
-/*.pg_guide{
+.user-guide-main{
+	.clearfix;
+}
+
+.user-guide-content{
+	.fr;
+	.w(1180px - 180px);
+	margin:0 !important;
+}
+
+
+.pg_guide{
 	#fwin_nav{
 		#postbtn.xg1{
 			background: #ccc;
@@ -18,8 +30,8 @@
 		.r(24px);
 	}
 }
-*/
-/*.user-guide-main{
+
+.user-guide-main{
 	.w(@wp);.auto(x);
 
 	.user-guide-content{
@@ -80,4 +92,9 @@
 	.fl;
 	.fz(12px,28px);
 	a{.db;.size(77px,28px);margin-right:10px;.fl;.x;.u-btn-blue(b);}
+}
+
+/*.m-jiyu-status{
+	.color(#fff,#fff,#fff);
+	padding:0 10px;
 }*/

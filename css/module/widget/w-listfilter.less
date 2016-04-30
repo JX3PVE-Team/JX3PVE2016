@@ -6,12 +6,15 @@
 	border-top:1px solid #ddd;
 	border-bottom:1px solid #ddd;
 	margin-top:-1px;
-	.lh(28px);
+	line-height:28px;
+	.pr;
 }
 
 .w-listfilter-title{
-	.w(99px);.h(28px);
-	.fl;
+	.w(99px);
+	//.h(28px);
+	//.fl;
+	.pa;.lt(0,0);.h(100%);
 	border-right: 1px solid #ddd;
 	background: #f7f7f7;
 	.indent(10px);
@@ -21,7 +24,7 @@
 .w-listfilter-list{
 	margin-left:99px;
 	padding:0 10px;
-	.h(28px);
+	//.h(28px);
 	.clip;
 
 	.u-item{
@@ -63,7 +66,12 @@
 			.z(40);
 		}
 	}
-	.w-listfilter,.w-filter{.fl;}
+	
+	.w-filter{.fl;}
+
+	.w-listfilter,.w-listfilter-title{
+		.ps;.fl;
+	}
 
 	.w-listfilter-list{
 		.none;

@@ -1,30 +1,83 @@
-H.ready(['macro'],function(){
-  	jQuery(function($){
+jQuery(function($){
 
-    		//辅助工具
-    		var $toolbox = $('#macro_tools'),
-    			toollink = Boolean($toolbox.attr('href'))
-    		if(!toollink){
-    			$toolbox.attr('href','http://www.jx3pve.com/jx3/tools/keypress/')
-    		}
+    //帖子页
+    if($(".viewpage-container").length){
+    	//非必填字段为空隐藏
+        	$('.m-macro-roleinfo').each(function(i,item){
+        		if($(this).children('.content').length!=0){
+        			var block_l_temp = $(this).children('.content').text(),
+        				block_l = $.trim(block_l_temp)
+        			if(!block_l){
+        				$(this).hide();
+        			}
+        		}
+        	})
+        //基本信息块初始化
+            //心法
+            var role = $(".c-fli-title .u-type").text().replace('[','').replace(']','')
+            $("#u-macro-role").text(role)
 
+            //资料片
+            var zlp = $("#u-macro-zlp").html().split('&nbsp;')
+            var _zlp = []
+            $(zlp).each(function(i,ele){
+                ele = '<b>' + ele + '</b>'
+                _zlp.push(ele)
+            })
+            _zlp.pop()
+            _zlp = _zlp.join('')
+            $("#u-macro-zlp").html(_zlp)
 
-    		//非必填字段为空隐藏
-    		$('.role-info').each(function(i,item){
-    			if($(this).children('.content').length!=0){
-    				var block_l_temp = $(this).children('.content').text(),
-    					block_l = $.trim(block_l_temp)
-    				if(!block_l){
-    					$(this).hide();
-    				}
-    			}
-    		})
+            //独家首发
+            var isDJ = $("#u-macro-justjx3pve").text().indexOf('是') != -1
+            if(isDJ) $(".u-macro-justjx3pve").addClass('true')
+            //console.log(isDJ)
 
-      	//侧边栏
-  		  //fixSidebar('.pve-sidebar',96,240,223)
-      	
-      	//帮助
-      	//H.route(53)
+            //点赞破万
+            var isDZ = parseInt($("#u-macro-zan").text()) >= 1000
+            if(isDZ) $(".u-macro-zan").addClass('true')
+            //console.log(isDZ)
 
-  	})
+            //几年老宏
+            var posttime = parseInt($("#u-macro-posttime").text()) * 1000
+            //console.log('发布时间' + posttime)
+            var timestamp = new Date().getTime()
+            //console.log('当前时间' + timestamp)
+            var oneYear = Date.parse('1971/1/1')
+            var twoYear = Date.parse('1972/1/1')
+            var isOneYear =  (timestamp - posttime) >= oneYear
+            var isTwoYear = (timestamp - posttime) >= twoYear
+            //console.log(isOneYear)
+            //console.log(isTwoYear)
+
+            if(isOneYear){
+                $(".u-macro-posttime").addClass('true')
+                if(isTwoYear){
+                    $("#u-macro-posttime-ex").addClass('u-macro-posttime-2')
+                    $("#u-macro-posttime-ex").text('两年老字号')
+                }else{
+                    $("#u-macro-posttime-ex").addClass('u-macro-posttime-1')
+                }
+            }
+    }
+
+    //列表页
+    if(isMobile){
+        $("#i-header-sidebar-tg").on('click',function(){
+            $(".i-header").toggleClass('showSidebar')
+            $(".default-sidebar").slideToggle()
+            toggleMask();
+        })
+        $("#u-mask").on('click',function(){
+            $(".default-sidebar").slideUp()
+            $(".i-header").toggleClass('showSidebar')
+        })
+        $(".default-sidebar-title").on('click',function(){
+            $(this).next('.default-sidebar-content').fadeIn()
+        })
+        $(".default-sidebar-content").on('click',function(){
+            $(this).fadeOut()
+        })
+    }
+
 })

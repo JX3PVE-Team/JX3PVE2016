@@ -29,8 +29,11 @@
 	u{text-decoration:underline;}
 
 	//图片
-	embed,img{max-width:100%;}
-	img{height: auto;}
+	embed{
+		width:800px;height:600px;
+		max-width:100%;min-height:400px;
+	}
+	img{max-width:100%;height: auto;}
 
 	//水平线
 	hr.l{margin:5px auto;}
@@ -127,9 +130,8 @@
 
 	//隐藏可见
 	.locked{
-		padding:10px;
+		padding: 5px 10px 5px 25px;
 		border:1px dashed @bluex;
-		.x;
 		.tobevip{
 			margin-top:-2px;
 		}
@@ -177,5 +179,48 @@
 		.bold;
 		margin:5px 0 0 0;
 		//color:@blue-link;
+	}
+}
+
+
+//分类信息回复可见
+.u-tobevip{
+	.pointer;
+	.db;
+	//.lh(28px);
+	/*padding: 5px;margin: 10px 0;
+	color:#A97413;
+	background: #fffddf;
+	border: 1px dashed #f0ea8e;*/
+	.color(#555,@blue-link,@blue-link);
+	a:hover{
+		text-decoration:underline;
+	}
+
+	.fz(12px,2);
+	letter-spacing: .5px;
+	color: #555 !important;
+	text-align: left !important;
+	margin: 10px 0;
+	padding: 8px 8px 8px 24px;
+	background:url('@{urls}common/locked.gif') no-repeat 6px 50%;
+	background-color: #fffddf;
+	border: 1px solid #f0ea8e;
+
+	/*&:hover{
+		color:#CC9300;
+		background-color:#FFFCCA;
+	}*/
+
+	b{
+		color:@bluex;
+		//text-decoration:underline;
+	}
+	i{
+		.size(84px,16px);.dbi;.y;
+		background:url('@{url}vip/vip.gif') no-repeat 0 0;
+		margin: 0 3px;
+		.pr;top:-1px;
+		.indent;
 	}
 }

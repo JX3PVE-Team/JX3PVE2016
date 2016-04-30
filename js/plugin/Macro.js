@@ -153,11 +153,11 @@
 jQuery(function($){
 	//定义所有需要高亮的数据所在的DOM的class
 	//var needHighlightDOMClass = "e-macro";
-	var needHighlightDOMClass = "macro-ct";
-	var needVipTips = '隐藏可见';//;'<div class="u-tobevip">本帖隐藏内容需<a href="http://www.jx3pve.com/forum.php?mod=post&action=reply&fid=' + fid + '&tid=' + tid + 'onclick="showWindow("reply", this.href)">回复</a>，加入 <a class="u-vip" href="./vip" target="_blank">VIP会员</a> 享受无需回复查看隐藏内容、无限制下载、免广告极速等多项特权。</div>';
-
+	var needHighlightDOMClass = "e-macro";
 	//宏语法高亮
 	$("." + needHighlightDOMClass).each(function(){
+
+		var needVipTips = '<div class="u-tobevip">本帖隐藏内容需<a href="http://www.jx3pve.com/forum.php?mod=post&action=reply&fid=' + fid + '&tid=' + tid + '"' + '>回复</a>，加入 <a class="u-vip" href="./vip" target="_blank"><i></i>VIP会员</a> 享受无需回复查看隐藏内容、无限制下载、免广告极速等多项特权。</div>';
 		var content = this.textContent || this.innerText
 		content = $.trim(content);
 		if(content.indexOf('回复可见') === -1){

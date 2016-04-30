@@ -19,9 +19,35 @@ H.load([
 //移动端全局变量&&函数，事件触发仅限于移动端且新版适配时
 jQuery(function($){
 
-	var $html = jQuery('html')
-	var $body = jQuery('body')
-	var $mask = jQuery('#u-mask')
+	//常用对象缓存
+	var $win = $(window)
+	var $html = $('html')
+	var $body = $('body')
+	var $mask = $('#u-mask')
+	window.uid = $("#e-uid").text()
+
+	//常量声明
+	window.c_header_height = 45
+	window.c_footer_height = 46
+
+	//unix时间戳转换
+    H.time = function(selector,dividing){
+        var $ = jQuery
+        if(dividing == undefined) dividing='-'
+        $(selector).each(function(){
+            unixtime = $.trim($(this).text()),
+            _time = new Date(parseInt(unixtime) * 1000),
+            time = _time.getFullYear() + '-' + (_time.getMonth()+1) + '-' + _time.getDate(),
+            arr = time.split('-')
+
+            for (var i = 0; i < 3; i++) {
+                if (arr[i] < 10 ) arr[i] = '0' + arr[i]
+            }
+
+            time = arr.join(dividing)
+            $(this).text(time)
+        })
+    }
 
 	//开关遮罩层
 	window.MASK_STATUS = false;
@@ -42,5 +68,28 @@ jQuery(function($){
 			hideMask()
 		}
 	}
+
+	//自适应界面布局
+		//当PC版，内容区少于侧边栏高度时，给内容包裹区设置最小高度等于侧边栏
+		var $sidebar = $(".default-sidebar")
+		var $content = $(".default-content")
+		var $main = $(".default-main")
+		var isDefaultSkin = $sidebar.length && $content.length;
+		if(isDefaultSkin && isNotMobile){
+			var sidebar_H = $sidebar.outerHeight()
+			var content_H = $content.outerHeight()
+			if(sidebar_H > content_H){
+				$main.css('min-height',sidebar_H)
+			}
+		}
+		//当内容区小于窗口高度时，设置内容包裹区高度最小高度让全部内容满屏
+		var win_H = $win.height()
+		var body_H = $body.innerHeight()
+		var isNotFullscreen = body_H < win_H;
+		if(isNotFullscreen && isNotMobile){
+			var diff_win_body = win_H - body_H
+			var body_minHeight = diff_win_body - c_header_height
+			$box.css('min-height',body_minHeight)
+		}
 
 })

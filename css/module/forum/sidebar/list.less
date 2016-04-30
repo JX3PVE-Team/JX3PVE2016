@@ -1,0 +1,28 @@
+.default-sidebar-downlist{
+	a{
+		.db;.lh(28px);
+		.indent(22px);
+		background:url('@{url}icon/icon-down_12.png') no-repeat 0 center;
+
+	}
+	a:hover{color:@blue-link;}
+}
+
+.default-sidebar-wordlist{
+	a{
+		.db;.lh(28px);
+		.indent(22px);
+		background:url('@{url}icon/icon-arrow_8.png') no-repeat 2px center;
+		transition:background 0.15s ease-in;
+		&:hover{
+				background-position:10px center;
+				color:@blue-link;
+		}
+	}
+}
+
+.default-sidebar-tasklist{
+	ul{padding:5px;}
+	li{.lh(28px);padding-left:24px;}
+	a:hover{color:@blue-link;}
+}

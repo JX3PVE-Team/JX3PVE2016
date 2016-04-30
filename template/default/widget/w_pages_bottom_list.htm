@@ -1,4 +1,4 @@
-<!--{if $multipage && $filter != 'hot'}-->
+<!--{if $multipage && !($_GET[filter]=='sortid')}-->
 	<!--{if !($_GET[filter]=='sortid') && !($_G[forum][picstyle] && !$_G[cookie][forumdefstyle])}-->
 		<a class="w-pages-next" id="autopbn" href="javascript:;" rel="$multipage_more" curpage="$page" totalpage="$maxpage" picstyle="$_G[forum][picstyle]" forumdefstyle="$_G[cookie][forumdefstyle]">加载更多</a>
 		<script type="text/javascript" src="{$_G[setting][jspath]}autoloadpage.js?{VERHASH}"></script>

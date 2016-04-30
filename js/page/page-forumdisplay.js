@@ -5,14 +5,13 @@ jQuery(function($){
     var  $filter_value = $("#w-filter .w-filter-font .item .value")
 
     $filter_label.each(function(){
-        var $label = $(this),
-            $value = $(this).next('.value')
-
-        $label.on('click',function(){
+        $(this).on('click',function(){
+            var $label = $(this)
+            var $value = $(this).next('.value')
 
             //避免同时展开
-            $filter_label.removeClass('on')
-            $filter_value.hide()
+            $filter_label.not($label).removeClass('on')
+            $filter_value.not($value).hide()
 
             $label.toggleClass('on');
             $value.slideToggle()
