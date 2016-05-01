@@ -1,0 +1,43 @@
+.user-sidebar-title{
+	user-select:none;
+	.pointer;
+	.fz(13px,32px);
+	border-bottom:1px dotted #ddd;
+	margin-bottom:5px;
+	&:hover{color:@blue-link;}
+}
+h2.user-sidebar-title{
+	padding:0 5px;
+}
+h3.user-sidebar-title{
+	padding:0 5px 0 25px;
+	background:url('@{url}icon/add.gif') no-repeat 5px center;
+	&.on{
+		background:url('@{url}icon/desc.gif') no-repeat 5px center;
+	}
+}
+
+.user-sidebar-list{
+	
+	.color(#888,#555,@blue-link);
+
+	li{
+		.lh(28px);
+		margin-bottom:5px;
+	}
+	.on,li:hover{
+		background-color:#f7f7f7;
+	}
+	.on{
+		//.bold;
+	}
+	a{
+		.db;
+		padding:0 10px 0 25px;
+	}
+
+	.none;
+	&.on{
+		.db;
+	}
+}

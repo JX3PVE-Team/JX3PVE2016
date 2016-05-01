@@ -1,0 +1,64 @@
+@import url('../../public/base.less');		//函数
+@import url('../../global/color.less');	//配色
+@import url('../../global/var.less');		//尺寸
+
+h1.mt .u-btn-publish{
+	.fr;
+}
+
+.user-guide-type{
+	margin-bottom:10px;
+	a{padding:0 10px;}
+}
+
+#thread_types{
+	.none;
+}
+
+#threadlist .th{
+	*{color:#555 !important;}
+	.u-title{
+		.indent(20px);
+	}
+}
+
+#threadlist{
+	.bm_c{padding:0;}
+	table{.w(100%);}
+	.u-title,.u-count,.u-pubtime{
+		.db;.fl;
+	}
+	.u-count,.u-pubtime{
+		.x(right);
+	}
+	.u-title{.w(70%);}
+	.u-count{.w(15%);}
+	.u-pubtime{.w(15%);}
+
+	.u-title{
+		.color(@blue-link,@blue-link,#c00);
+		.tps{.none;}
+	}
+	.u-bankuai{
+		.color(#666,#666,#666);
+		margin-right:5px;
+	}
+	.u-count,.u-pubtime{
+		color:#555;
+	}
+}
+
+.u-guideitem{
+	.db;
+	border-bottom:1px dashed #ddd;
+	line-height:36px;
+	.clearfix;
+}
+.u-guideitem-reply,.u-guideitem-cmt{
+	.db;.clearfix;
+	line-height:36px;
+	color:#888;
+}
+.u-guideitem-cmt{
+	padding:0 10px;
+}

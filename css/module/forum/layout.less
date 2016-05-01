@@ -3,25 +3,32 @@
 }
 
 .default-main{
-	.pr;
+	//.pr;
 	padding:10px 0 20px 0;
+	.clearfix;
 }
 
 .default-sidebar{
-	.pa;.lt(0,0);
+	//.pa;.lt(0,0);
 	.w(@sd);
+	.fl;
 	//padding:20px;
 	//background-color:#fff;
 	//.r(4px);
 }
 
 .default-content{
-	margin-left:@sd + 20px;
+	//margin-left:@sd + 20px;
+	.fr;
 	padding:20px;
 	background-color:#fff;
 	//border:1px solid #ddd;
     //box-shadow: 0 0 4px rgba(0,0,0,0.1);
 	.r(4px);
+	.w(@ct - 20px*2);
+}
+.ua-responsive .screen-m{
+	.default-content{.w(@ctm  - 20px*2);}
 }
 
 .postpage-container{
@@ -35,13 +42,14 @@
 		background-color:#fff;
 	}
 	.default-sidebar{
-		//.pf;.lt(0,90px);
 		.none;
 	}
 	.default-content{
 		margin-left:0;
 		padding:0;
 		border:none;
+		float:none;
+		.w(auto);
 	}
 }
 

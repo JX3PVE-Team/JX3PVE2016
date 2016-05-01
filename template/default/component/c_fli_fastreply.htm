@@ -7,13 +7,13 @@
 			<div id="vfastposttb">
 				<span class="c-fli-fastreply-txt"><input class="u-form-txt" type="text" name="message" id="vmessage" onKeyDown="seditor_ctlent(event, '$(\'vfastpostform\').submit()');" placeholder="回复楼主"/></span>
 				<button class="c-fli-fastreply-btn u-form-button" type="submit" name="replysubmit" id="vreplysubmit" value="true" style="">发送</button>
-				<!--{if !$_G[uid]}-->
-					<a class="c-fli-fastreply-logintips" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]" onclick="showWindow('login', this.href)"><span>请先登录</span></a>
-				<!--{/if}-->
 			</div>				
 		</div>
 		<div id="vfastpostseccheck"></div>				
 		</form>
 		<script type="text/javascript">vmessage();</script>
 	</div>
+	<!--{if !$_G[uid]}-->
+		<a class="c-fli-fastreply-logintips" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]"><span>请先登录</span></a>
+	<!--{/if}-->
 </div>

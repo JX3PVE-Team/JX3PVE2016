@@ -18,18 +18,18 @@
 	.w(80%) !important;
 }
 
-.dpbtn{
-	.lh(26px);
+/*.dpbtn{
+	.lh(26px);.w(26px);
 	border:1px solid #ddd;
 	border-left:none;
 	box-shadow: 0 0 1px #ddd inset;
 	.r(2px);
-	background:url('@{url}forum/select.png') no-repeat center 4px;
+	background:url('@{url}forum/select.png') no-repeat left 2px;
 
 	&:hover,&:focus{
 		background-position:center -36px;
 	}
-}
+}*/
 
 //原生select
 //原默认为.ps 和定位有冲突
@@ -51,10 +51,13 @@
     border-color:#0D6EB8;
 }
 
-.colorwd{
-	.size(23px) !important;
-	padding:0 !important;
+.colorwd(){
+	.size(23px);
+	padding:0;
+	border: 1px solid #999;
+	background: url(http://img.jx3pve.com/static/image/common//pn_color.png) #666 !important;
 }
+.colorwd{.colorwd() !important;}
 
 select{
     max-width: 100%;

@@ -2,23 +2,14 @@
 @import url('../global/color.less');	//配色
 @import url('../global/var.less');		//尺寸
 
-
-.system-container{
-}
-
-.system-route{
-	
-}
-
 .system-main{
-	.pr;
 	padding:10px 0;
+	.clearfix;
 }
-
 
 .system-sidebar,.f-392 .default-sidebar{
-	.pa;.lt(0,15px);
-	.w(@sd2);
+	//.pa;.lt(0,15px);
+	.w(@sd2);.fl;
 	padding:0;
 
 	ul{
@@ -43,51 +34,38 @@
 		}
 	}
 }
-
 .system-content,.f-392 .default-content{
-	margin-left:@sd2;
+	//margin-left:@sd2;
+	.fr;.w(@wp - @sd2 - 20px);
 	padding:0;
 }
 
+.ua-responsive .screen-m .system-content,
+.ua-responsive .screen-m.f-392 .default-content{
+	margin-left:0;
+	.w(@wpm - @sd2 - 20px);
+}
+
 .ua-responsive .screen-s .system-sidebar{.none;}
-.ua-responsive .screen-s .system-content{margin-left:0;}
-
-//网站地图
-.sitemap-container {
+.ua-responsive .screen-s .system-sidebar{
+	//.db;
+	.pf;.lt(0,@c-header-height);
+	.z(40);
+	.w(100%);
 	padding:10px 0;
-	#pt{margin-bottom:10px;}
+	border-bottom:1px solid #ddd;
+	background-color:#fff;
+	.r(0);
 }
-.m-sitemap-block{
-	margin-bottom:10px;
-	padding-left:80px;
-	.pr;
-
-	.color(#222,@blue-link,@blue-link);
-
-	h2{
-		.bold;
-		.pa;.lt(0,0);
-	}
-
-	ul{
-		.clearfix;
-	}
-
-	li{
-		.fl;
-		margin-right:20px;
-		margin-bottom:10px;
-	}
-
-	a:hover{
-		text-decoration:underline;
-	}
-
-	li a span{
-		.dbi;
-		color:#999;
-		padding:0 2px;
-		transform:scale(0.8);
-	}
+.i-header.showSidebar{
+	.z(40);
 }
+.alertHTML.ua-responsive .screen-s .system-sidebar{
+	top:@c-header-height + @c-alert-height;
+}
+.ua-responsive .screen-s .system-content{
+	.w(auto);
+	float:none;
+}
+
 

@@ -1,4 +1,6 @@
 <!--{template common/header}-->
+
+
 <!--{subtemplate home/spacecp_header}-->
 	<!--{if $validate}-->
 		<p class="tbmu mbm">{lang validator_comment}</p>
@@ -24,14 +26,14 @@
 		</table>
 		</div></div>
 		<div class="appl">
-		<!--{subtemplate home/sidebar_l}-->
+		<!--{subtemplate home/spacecp_footer}-->
 	</div>
 	<!--{else}-->
 		<!--{if $operation == 'password'}-->
 			<script type="text/javascript" src="{$_G[setting][jspath]}register.js?{VERHASH}"></script>
 			<p class="bbda pbm mbm">
 				<!--{if !$_G['member']['freeze']}-->
-					<!--{if !$_G['setting']['connect']['allow'] || !$conisregister}-->{lang old_password_comment}<!--{else}-->{lang connect_config_newpassword_comment}<!--{/if}-->
+					<!--{if !$_G['setting']['connect']['allow'] || !$conisregister}-->{lang old_password_comment}<!--{elseif $wechatuser}-->{lang wechat_config_newpassword_comment}<!--{else}-->{lang connect_config_newpassword_comment}<!--{/if}-->
 				<!--{elseif $_G['member']['freeze'] == 1}-->
 					<strong class="xi1">{lang freeze_pw_tips}</strong>
 				<!--{elseif $_G['member']['freeze'] == 2}-->
@@ -75,7 +77,7 @@
 							<!--{if $_G['setting']['regverify'] == 1 && (($_G['group']['grouptype'] == 'member' && $_G['adminid'] == 0) || $_G['groupid'] == 8) || $_G['member']['freeze']}--><p class="d">{lang memcp_profile_email_comment}</p><!--{/if}-->
 						</td>
 					</tr>
-					
+
 					<!--{if $_G['member']['freeze'] == 2}-->
 					<tr>
 						<th>{lang freeze_reason}</th>
@@ -110,13 +112,13 @@
 							<input type="text" name="answernew" id="answernew" class="px" />
 							<p class="d">{lang memcp_profile_security_answer_comment}</p>
 						</td>
-					</tr>					
+					</tr>
 					<!--{if $secqaacheck || $seccodecheck}-->
 					</table>
 						<!--{eval $sectpl = '<table cellspacing="0" cellpadding="0" class="tfm"><tr><th><sec></th><td><sec><p class="d"><sec></p></td></tr></table>';}-->
 						<!--{subtemplate common/seccheck}-->
 					<table summary="{lang memcp_profile}" cellspacing="0" cellpadding="0" class="tfm">
-					<!--{/if}-->					
+					<!--{/if}-->
 					<tr>
 						<th>&nbsp;</th>
 						<td><button type="submit" name="pwdsubmit" value="true" class="pn pnc" /><strong>{lang save}</strong></button></td>
@@ -138,15 +140,7 @@
 			<!--{hook/spacecp_profile_top}-->
 			<!--{subtemplate home/spacecp_profile_nav}-->
 				<!--{if $vid}-->
-				<div class="c-verif-warning">
-					<p class="tbms mtm {if !$showbtn}tbms_r{/if}">
-						<!--{if $showbtn}-->
-							<!--{block/448}-->
-						<!--{else}-->
-							{lang spacecp_profile_message2}
-						<!--{/if}-->
-					</p>
-				</div>
+				<p class="tbms mtm {if !$showbtn}tbms_r{/if}"><!--{if $showbtn}-->{lang spacecp_profile_message1}<!--{else}-->{lang spacecp_profile_message2}<!--{/if}--></p>
 				<!--{/if}-->
 			<iframe id="frame_profile" name="frame_profile" style="display: none"></iframe>
 			<form action="{if $operation != 'plugin'}home.php?mod=spacecp&ac=profile&op=$operation{else}home.php?mod=spacecp&ac=plugin&op=profile&id=$_GET[id]{/if}" method="post" enctype="multipart/form-data" autocomplete="off"{if $operation != 'plugin'} target="frame_profile"{/if} onsubmit="clearErrorInfo();">
@@ -295,7 +289,7 @@
 		</div>
 	</div>
 	<div class="appl">
-		<!--{subtemplate home/sidebar_l}-->
+		<!--{subtemplate home/spacecp_footer}-->
 	</div>
 	<!--{/if}-->
 </div>

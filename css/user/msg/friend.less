@@ -1,0 +1,34 @@
+@import url('../../public/base.less');		//函数
+@import url('../../global/var.less');			//常量
+@import url('../../global/color.less');		//配色
+
+#friend_ul{
+	ul{
+		padding:10px;
+	}
+	li{
+		.fl;
+		.w(25%);
+		min-width:220px;
+		margin-bottom:20px;
+
+		h4{
+			img{margin-top:-2px;margin-left:2px;}
+			//span{.fl;margin-right:2px;}
+			.xg1{.none;}
+		}
+		.maxh{.none;}
+	}
+}
+
+.buddy_group{
+	li{
+		.o,.b{
+			.fr;
+			.color(#888,@blue-link);
+		}
+		.o{
+			margin-right:5px;
+		}
+	}
+}

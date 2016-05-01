@@ -24,6 +24,7 @@ jQuery(function($){
 	var $html = $('html')
 	var $body = $('body')
 	var $mask = $('#u-mask')
+	var $box = $(".jx3pve-container")
 	window.uid = $("#e-uid").text()
 
 	//常量声明
@@ -70,7 +71,7 @@ jQuery(function($){
 	}
 
 	//自适应界面布局
-		//当PC版，内容区少于侧边栏高度时，给内容包裹区设置最小高度等于侧边栏
+		/*//当PC版，内容区少于侧边栏高度时，给内容包裹区设置最小高度等于侧边栏
 		var $sidebar = $(".default-sidebar")
 		var $content = $(".default-content")
 		var $main = $(".default-main")
@@ -81,15 +82,16 @@ jQuery(function($){
 			if(sidebar_H > content_H){
 				$main.css('min-height',sidebar_H)
 			}
-		}
+		}*/
 		//当内容区小于窗口高度时，设置内容包裹区高度最小高度让全部内容满屏
 		var win_H = $win.height()
 		var body_H = $body.innerHeight()
 		var isNotFullscreen = body_H < win_H;
+		var alertHeight = ( $("#c-alert-warning").html().length > 2 ) ? 30 : 0;
 		if(isNotFullscreen && isNotMobile){
 			var diff_win_body = win_H - body_H
-			var body_minHeight = diff_win_body - c_header_height
-			$box.css('min-height',body_minHeight)
+			var box_minHeight = body_H - c_header_height - 237 - alertHeight + diff_win_body
+			$box.css('min-height',box_minHeight)
 		}
 
 })

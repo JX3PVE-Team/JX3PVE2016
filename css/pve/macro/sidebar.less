@@ -61,6 +61,12 @@
 		
 	}
 }
+.ua-responsive .screen-s .m-macro-nav{
+	ul{.w(100%);padding:0;box-sizing:border-box;}
+	li{.w(50%);}
+}
+
+
 //任务
 .m-macro-task{
 	.u-list-1{
@@ -73,10 +79,11 @@
 		background:url('@{url}medal/macro_3.gif') no-repeat 0 center;
 	}
 }
-//语法手册在手机端时
-.ua-responsive .screen-s .m-macro-systax{
-	.db;
-}
+
+
+
+
+
 
 .ua-responsive .screen-s.f-294{
 	.i-header.showSidebar{
@@ -84,21 +91,20 @@
 	}
 	.default-sidebar{
 		.none;
-		background:#fff;
-		border-bottom:1px solid #ddd;
 		.w(100%);
 		.pf;top:@c-header-height;.z(40);
-		padding-bottom:10px;
 	}
 	.default-sidebar-title{
 		padding:10px;
 		margin:0;
+		background:#fff;
+		border-bottom:1px solid #ddd;
 	}
 	.default-sidebar-content{
 		.none;
 		.pf;.lt(0,0);.full;.z(40);
 		overflow:auto;
-		background-color:#fff;
+		background-color:rgba(255,255,255,.95);
 		padding:20px;
 		box-sizing:border-box;
 	}

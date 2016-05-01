@@ -1,51 +1,51 @@
-<!--{if $_G[setting][homepagestyle]}-->
-	<!--{subtemplate home/space_header}-->
-	<div id="ct" class="ct2 wp cl">
-		<div class="mn">
-			<div class="bm">
-				<div class="bm_h">
-					<h1 class="mt">{lang memcp_profile}</h1>
-				</div>
-			<div class="bm_c">
-<!--{else}-->
-	<!--{template common/header}-->
-	<div id="pt" class="bm cl">
-		<div class="z">
-			<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> 
-			<em>&rsaquo;</em> <a href="home.php">{lang useros}</a>
-			<em>&rsaquo;</em>
-			<a href="home.php?mod=space&uid=$space[uid]">{$space[username]}</a> <em>&rsaquo;</em>
-			{lang memcp_profile}
-		</div>
-	</div>
-	<style id="diy_style" type="text/css"></style>
+<!--{template common/header_}-->
+<link rel="stylesheet" href="http://test.jx3pve.com/css/user/user.css" type="text/css" />
+<link rel="stylesheet" href="http://test.jx3pve.com/css/user/profile/profile.css" type="text/css" />
+<div class="user-container">
 	<div class="wp">
-		<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
-	</div>
-	<!--{template home/space_menu}-->
-	<div id="ct" class="ct1 wp cl">
-		<div class="mn">
-			<!--[diy=diycontenttop]--><div id="diycontenttop" class="area"></div><!--[/diy]-->
-			<div class="bm bw0">
-				<div class="bm_c">
-<!--{/if}-->
 
-				<!--{subtemplate home/space_profile_body}-->
-		
-				<!--{if !$_G[setting][homepagestyle]}--><!--[diy=diycontentbottom]--><div id="diycontentbottom" class="area"></div><!--[/diy]--><!--{/if}-->
+		<div id="pt" class="bm cl">
+			<div class="z">
+				<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> 
+				<em>&rsaquo;</em> <a href="home.php">{lang useros}</a>
+				<em>&rsaquo;</em>
+				<a href="home.php?mod=space&uid=$space[uid]">{$space[username]}</a> <em>&rsaquo;</em>
+				{lang memcp_profile}
+			</div>
+		</div>
+
+		<div class="user-main">
+
+			<div id="pt" class="bm cl">
+				<div class="z">
+					<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
+					<a href="home.php">{lang useros}</a> <em>&rsaquo;</em>
+					<!--{subtemplate home/spacecp_header_name}-->
 				</div>
 			</div>
-			<!--{if $_G[setting][homepagestyle]}-->
+
+			<div class="user-main">
+				<!--{subtemplate home/sidebar}-->
+				<div class="user-content">
+
+					<!--{template home/space_menu}-->
+					<div id="ct" class="ct1 wp cl">
+						<div class="mn">
+							<div class="bm bw0">
+								<div class="bm_c">
+									<!--{subtemplate home/space_profile_body}-->
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
 		</div>
-		<div class="sd">
-			<!--{subtemplate home/space_userabout}-->
-		<!--{/if}-->
+
 	</div>
 </div>
+<script src="http://js.jx3pve.com/js/user/user.min.js"></script>
+<script src="http://js.jx3pve.com/js/user/user-profile.min.js"></script>
 
-<!--{if !$_G[setting][homepagestyle]}-->
-	<div class="wp mtn">
-		<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
-	</div>
-<!--{/if}-->
 <!--{template common/footer}-->

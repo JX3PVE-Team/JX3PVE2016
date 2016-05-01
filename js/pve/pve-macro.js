@@ -63,6 +63,7 @@ jQuery(function($){
 
     //列表页
     if(isMobile){
+        //侧边栏展开与关闭
         $("#i-header-sidebar-tg").on('click',function(){
             $(".i-header").toggleClass('showSidebar')
             $(".default-sidebar").slideToggle()
@@ -70,13 +71,28 @@ jQuery(function($){
         })
         $("#u-mask").on('click',function(){
             $(".default-sidebar").slideUp()
-            $(".i-header").toggleClass('showSidebar')
+            $(".i-header").removeClass('showSidebar')
         })
         $(".default-sidebar-title").on('click',function(){
             $(this).next('.default-sidebar-content').fadeIn()
         })
         $(".default-sidebar-content").on('click',function(){
             $(this).fadeOut()
+        })
+
+        //搜索禁止冒泡
+        $(".default-sidebar-search form").on('click',function(e){
+            e.stopPropagation()
+        })
+    }
+
+    //发布页
+    if(isMobile){
+        $("#c-post-tips-tg").on('click',function(){
+            $("#c-post-tips-content").hide()
+            $(".default-sidebar").show()
+            $(".default-sidebar-title").hide()
+            $(".default-sidebar-content.m-macro-systax").fadeIn()
         })
     }
 

@@ -39,18 +39,17 @@ body{
 	   .auto(x);
 	}
 	//逐步上线新页面
-	.ua-responsive .wp{
-		//.w(960px);
+	.ua-responsive .screen-m .wp{
+		.w(@wpm);
+	}
+	//平板竖屏&手机版
+	.ua-responsive .screen-s .wp{
+		.w(auto);padding:0 10px;
 	}
 	//固定为1180px的老页面
 	.ua-oldpc .wp{
 		.w(@wp);
-	}
-	//平板竖屏&手机版
-	.ua-responsive .screen-m,.ua-responsive .screen-s{
-		.wp{
-			.w(auto);padding:0 10px;
-		}
+		min-width:1180px;
 	}
 
 //old 
