@@ -1,0 +1,102 @@
+@import url('../../public/base.less');		//函数
+@import url('../../global/var.less');			//常量
+@import url('../../global/color.less');		//配色
+@import url('../../module/ui/button.less');	
+
+
+//成功提示
+.m-tips-success{
+	background-color:#f2f2f2;border:none;border-radius:4px;
+  	padding: 2px 10px;
+}
+
+//已邀请列表
+.m-list-success{
+	border-bottom:none;
+	ul li{
+		.avt{
+			img{
+				border-radius:48px;
+			}
+		}
+	}
+}
+
+//邀请码
+.tfm caption, .tfm th, .tfm td{
+	padding:2px 0;
+}
+.m-box-invite{
+	margin-top: 20px;
+	padding-bottom:10px;
+	margin-bottom:10px;
+	//border-bottom:1px dotted #ccc;
+
+	.til{.none;}
+	
+	.m-title{
+		background: #0084ff;color: #fff;
+		td{padding-left:5px;}
+		.bbda{border:none;}
+		padding:0 5px;
+		.r(4px);
+	}
+
+	#invitelist{
+		.bbda{
+			border-bottom:1px solid #ddd;
+			.color(#12880F,#777,#555);
+		}
+		span{.bold;}
+	}
+
+	.m-admin{
+		.none;
+	}
+
+	.m-go{
+		background: #f7f7f7;
+		color: #555;
+		border-radius: 4px;
+		line-height: 28px;
+		padding: 2px 10px;
+	}
+}
+
+.pn.vm{
+	padding:0 10px;
+}
+.m-invite-tips,.m-invite-buy{
+	padding:0 10px;
+}
+
+//邀请信
+.m-mail{
+	.none;
+}
+
+//邀请页面
+.m-invite-linkpage{
+	
+	padding:20px;
+	.mn{.w(auto);float:none;}
+	.bm{border:none;}
+
+	.quote{
+		color:#555;
+	}
+
+	.u-btn-ok,.u-btn-no{
+		&:extend(.u-btn-blue);
+		padding:0 10px;
+	}
+	.u-btn-ok{
+	
+	}
+	.u-btn-no{
+		background: #999;
+   		border: 1px solid #888;
+	}
+
+}
+

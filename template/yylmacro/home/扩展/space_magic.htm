@@ -1,0 +1,48 @@
+<!--{template common/header_m}-->
+<link rel="stylesheet" href="http://test.jx3pve.com/css/user/user.css" type="text/css" />
+<link rel="stylesheet" href="http://test.jx3pve.com/css/user/extend/magic.css" type="text/css" />
+<div class="user-container">
+	<div class="wp">
+
+		<div id="pt" class="bm cl">
+			<div class="z">
+				<a href="./" class="nvhm" title="{lang homepage}">$_G['setting']['bbname']</a> <em>&rsaquo;</em>
+				<a href="home.php">{lang useros}</a><em>&rsaquo;</em>
+				<a href="home.php?mod=magic">{lang memcp_magic_yz}</a>
+			</div>
+		</div>
+
+		<div class="user-main">
+			<!--{subtemplate home/sidebar}-->
+			<div class="user-content">
+				<div id="ct" class="ct2_a cl">
+					<div class="mn">
+						<div class="bm bw0">
+							<h1 class="mt">
+								<img src="{STATICURL}image/feed/magic.gif" alt="{lang magic}" class="vm" />
+								<!--{if $action == 'shop'}-->{lang magics_shop}
+								<!--{elseif $action == 'mybox'}-->{lang magics_user}
+								<!--{elseif $action == 'log'}-->{lang magics_log}
+								<!--{else}-->{lang magics_title}<!--{/if}-->
+							</h1>
+							<!--{if !$_G['setting']['magicstatus'] && $_G['adminid'] == 1}-->
+								<div class="emp">{lang magics_tips}</div>
+							<!--{/if}-->
+
+							<!--{if $action == 'shop'}-->
+								<!--{subtemplate home/space_magic_shop}-->
+							<!--{elseif $action == 'mybox'}-->
+								<!--{subtemplate home/space_magic_mybox}-->
+							<!--{elseif $action == 'log'}-->
+								<!--{subtemplate home/space_magic_log}-->
+							<!--{/if}-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="http://js.jx3pve.com/js/user/user.min.js"></script>
+<script src="http://js.jx3pve.com/js/user/user-extend-magic.min.js"></script>
+<!--{template common/footer}-->

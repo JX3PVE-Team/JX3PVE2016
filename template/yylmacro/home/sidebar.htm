@@ -6,25 +6,26 @@
 		<li {if ($_GET['do']=="notice")} class="on"{/if}><a href="home.php?mod=space&do=notice">系统通知</a></li>
 		<li {if ($_GET['do']=="friend")} class="on"{/if}><a href="home.php?mod=space&do=friend">我的好友</a></li>
 	</ul>
-	<h3 class="user-sidebar-title">积分</h3>
-	<ul class="user-sidebar-list">
-		<li$actives[invite]><a href="home.php?mod=spacecp&ac=credit&op=log">我的积分</a></li>
-		<li$actives[invite]><a href="home.php?mod=spacecp&ac=invite">邀请码</a></li>
-		<li{if $_GET['topicid'] == '107'} class="a"{/if}><a class="gift" href="./gift">积分兑换</a></li>
-		<li$actives[credit]><a class="buy" href="home.php?mod=spacecp&ac=credit&op=buy">充  值</a></li>
-		<li$actives[usergroup]><a class="vip" href="home.php?mod=spacecp&ac=usergroup&do=list">开通VIP会员</a></li>
-	</ul>
 
 	<h3 class="user-sidebar-title">资料</h3>
 	<ul class="user-sidebar-list">
-		<li {if ($_GET['ac']=="profile") && ($_GET['op']=="password")} class="on"{/if}><a href="home.php?mod=spacecp&ac=profile&op=password">密码邮箱</a></li>
-		<li {if ($_GET['ac']=="avatar")} class="on"{/if}><a href="home.php?mod=spacecp&ac=avatar">设置头像</a></li>
-		<li {if ($_GET['ac']=="profile") && !($_GET['op']=="password")} class="on"{/if}><a href="home.php?mod=spacecp&ac=profile">详细资料</a></li>
+		<li {if ($_GET['ac']=="profile") && ($_GET['op']=="password")} class="on"{/if}><a href="home.php?mod=spacecp&ac=profile&op=password">修改密码</a></li>
 		<li{if ($_GET['mod']=="spacecp" && $_GET['ac']=="plugin" && $_GET['id']=="k_gaiming:k_gaiming")} class="on"{/if}><a href="home.php?mod=spacecp&ac=plugin&op=profile&id=k_gaiming:k_gaiming">修改用户名</a></li>
+		<li {if ($_GET['ac']=="avatar")} class="on"{/if}><a href="home.php?mod=spacecp&ac=avatar">设置头像</a></li>
+		<li {if ($_GET['ac']=="profile") && !($_GET['op']=="password") && !($_GET['op']=="verify")} class="on"{/if}><a href="home.php?mod=spacecp&ac=profile">详细资料</a></li>
+		<li{if ($_GET['op']=="verify")} class="on"{/if}><a href="{if $_G['setting']['verify']['enabled']}home.php?mod=spacecp&ac=profile&op=verify{else}home.php?mod=spacecp&ac=videophoto{/if}">申请认证</a></li>
 		<li{if ($_GET['mod']=="spacecp" && $_GET['ac']=="plugin" && $_GET['id']=="qqconnect:spacecp")} class="on"{/if}><a href="home.php?mod=spacecp&ac=plugin&id=qqconnect:spacecp">绑定QQ</a></li>
 		<li{if ($_GET['mod']=="spacecp" && $_GET['ac']=="plugin" && $_GET['id']=="mpage_weibo:bind")} class="on"{/if}><a href="home.php?mod=spacecp&ac=plugin&id=mpage_weibo:bind">绑定新浪微博</a></li>
-		<li {if ($_GET['id']=="wechat:bind")} class="on"{/if}><a href="plugin.php?id=wechat:bind">微信绑定</a></li>
-		<li{if ($_GET['op']=="verify")} class="on"{/if}><a href="{if $_G['setting']['verify']['enabled']}home.php?mod=spacecp&ac=profile&op=verify{else}home.php?mod=spacecp&ac=videophoto{/if}">认证中心</a></li>
+		<!-- <li {if ($_GET['id']=="wechat:bind")} class="on"{/if}><a href="plugin.php?id=wechat:bind">绑定微信</a></li> -->
+	</ul>
+
+	<h3 class="user-sidebar-title">积分</h3>
+	<ul class="user-sidebar-list">
+		<li {if ($_GET['ac']=="credit" && $_GET['op']!="base" && $_GET['op']!="buy")} class="on"{/if}><a href="home.php?mod=spacecp&ac=credit&op=log">我的积分</a></li>
+		<li {if ($_GET['ac']=="credit" && $_GET['op']=="base") || ($_GET['ac']=="credit" && $_GET['op']=="buy")} class="on"{/if}><a class="buy" href="home.php?mod=spacecp&ac=credit&op=buy">充 值</a></li>
+		<!-- <li {if $_GET['topicid'] == '118'} class="on"{/if}><a class="gift" href="javascript:;" title="即将开放">礼品兑换</a></li> -->
+		<li {if ($_GET['ac']=="usergroup")} class="on"{/if}><a class="vip" href="home.php?mod=spacecp&ac=usergroup&do=list">开通VIP会员</a></li>
+		<li {if ($_GET['ac']=="invite")} class="on"{/if}><a href="home.php?mod=spacecp&ac=invite">邀请码</a></li>
 	</ul>
 
 	<h3 class="user-sidebar-title">帖子</h3>
@@ -35,14 +36,14 @@
 		<li {if ($_GET['id']=="luckypost")} class="on"{/if}><a href="luckypost-luckypost.html">我的际遇</a></li>
 	</ul>
 
-	<h3 class="user-sidebar-title">空间</h3>
+	<!-- <h3 class="user-sidebar-title">空间</h3>
 	<ul class="user-sidebar-list">
 		<li {if ($_GET['do']=="blog")} class="on"{/if}><a href="home.php?mod=space&do=blog">我的日志</a></li>
 		<li {if ($_GET['do']=="album")} class="on"{/if}><a href="home.php?mod=space&do=album">我的相册</a></li>
 		<li {if ($_GET['do']=="share")} class="on"{/if}><a href="home.php?mod=space&do=share">我的分享</a></li>
 		<li {if ($_GET['do']=="doing")} class="on"{/if}><a href="home.php?mod=space&do=doing">我的记录</a></li>
 		<li><a href="home.php?mod=space" data-target="_blank">我的空间</a></li>
-	</ul>
+	</ul> -->
 
 	<h3 class="user-sidebar-title">扩展</h3>
 	<ul class="user-sidebar-list">

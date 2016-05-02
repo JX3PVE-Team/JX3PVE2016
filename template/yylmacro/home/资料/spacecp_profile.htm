@@ -156,7 +156,18 @@
 										<div class="c-verif-warning">
 											<p class="tbms mtm {if !$showbtn}tbms_r{/if}">
 												<!--{if $showbtn}-->
-													<!--{block/448}-->
+														<div class="user-profile-verif-ac"><!--{block/448}--></div>
+													<!--{if $_GET['vid']=="5"}-->
+														<div class="user-profile-verif-tips"><!--{block/1794}--></div>
+													<!--{elseif $_GET['vid']=="4"}-->
+														<div class="user-profile-verif-tips"><!--{block/1795}--></div>
+													<!--{elseif $_GET['vid']=="3"}-->
+														<div class="user-profile-verif-tips"><!--{block/1796}--></div>
+													<!--{elseif $_GET['vid']=="2"}-->
+														<div class="user-profile-verif-tips"><!--{block/1797}--></div>
+													<!--{else}-->
+														<div class="user-profile-verif-tips"><!--{block/1798}--></div>
+													<!--{/if}-->
 												<!--{else}-->
 													{lang spacecp_profile_message2}
 												<!--{/if}-->

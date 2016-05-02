@@ -1,5 +1,5 @@
 //Macro systax
-//(function(){
+jQuery(function($){
 	if ( ![].indexOf ){
 		Array.prototype.indexOf = function( value ){
 			var j = -1;
@@ -138,7 +138,7 @@
 
 	window.macro = macro = Sytax;
 
-//})()
+})
 
 /**
   Author: [huyinghuan](xiacijian@163.com)

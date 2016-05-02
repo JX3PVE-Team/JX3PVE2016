@@ -1,0 +1,40 @@
+<!--{template common/header_m}-->
+<link rel="stylesheet" href="http://test.jx3pve.com/css/user/user.css" type="text/css" />
+<link rel="stylesheet" href="http://test.jx3pve.com/css/user/extend/task.css" type="text/css" />
+<div class="user-container">
+	<div class="wp">
+		<div id="pt" class="bm cl">
+			<div class="z">
+				<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> 
+				<em>&rsaquo;</em> <a href="home.php">{lang useros}</a>
+				<em>&rsaquo;</em> <a href="home.php?mod=task">{lang task}</a>
+			</div>
+		</div>
+
+		<div class="user-main">
+			<!--{subtemplate home/sidebar}-->
+			<div class="user-content">
+				<div id="ct" class="ct2_a cl">
+					<div class="mn">
+						<div class="bm bw0">
+						<ul class="tb cl">
+							<li$actives[new]><a href="home.php?mod=task&item=new">{lang task_new}</a></li>
+							<li$actives[doing]><a href="home.php?mod=task&item=doing">{lang task_doing}</a></li>
+							<li$actives[done]><a href="home.php?mod=task&item=done">{lang task_done}</a></li>
+							<li$actives[failed]><a href="home.php?mod=task&item=failed">{lang task_failed}</a></li>
+						</ul>
+						<!--{if empty($do)}-->
+							<!--{subtemplate home/space_task_list}-->
+						<!--{elseif $do == 'view'}-->
+							<!--{subtemplate home/space_task_detail}-->
+						<!--{/if}-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="http://js.jx3pve.com/js/user/user.min.js"></script>
+<script src="http://js.jx3pve.com/js/user/user-extend-task.min.js"></script>
+<!--{template common/footer}-->

@@ -41,6 +41,7 @@
 						<h1 class="mt">
 							我的帖子
 							<a class="u-btn-publish" onclick="showWindow('nav', this.href, 'get', 0)" href="forum.php?mod=misc&amp;action=nav">快速发布</a>
+							<div class="m-guide-authortips"><!--{block/1799}--></div>
 						</h1>
 						<ul class="user-guide-type user-nav">
 							<!--{if $view == 'my'}-->
@@ -128,7 +129,7 @@
 												<!--{/if}-->
 												<!--{if $viewtype == 'thread'}-->
 												&nbsp; {lang keyword}: <input type="text" id="searchmypost" class="px vm" name="searchkey" size="20" value="$searchkey" >
-												<!--{/if}--><button class="pn vm"><em>{lang search}</em></button>
+												<!--{/if}--><button class="pn vm">{lang search}</button>
 												</form>
 											</td>
 										</tr>

@@ -2,8 +2,54 @@
 @import url('../../global/color.less');	//配色
 @import url('../../global/var.less');		//尺寸
 
+.tl .th{
+	background: none;
+	border:none;
+	padding:0;
+}
+.tl th, .tl td{
+	padding:0;
+	border:none;
+}
+.tl tr:hover th,.tl tr:hover td{
+	background:@blue-bg;
+}
+.th tr:hover td{
+	background: none;
+}
+.tl .th td, .tl .th th{
+	padding:0;
+}
+.th *{
+	.db;
+}
+.tl_reply{
+	background: none;
+	padding:0;
+}
+.tl .th td, .tl .th th{
+	.h(auto);
+}
+.pn.vm{
+	margin-top:5px;
+	padding:0 10px;
+}
+.xst{
+	font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif,"宋体";
+	font-size:inherit;
+}
+
+
 h1.mt .u-btn-publish{
 	.fr;
+}
+.m-guide-authortips{
+	.fr;
+	.fz(13px);
+	margin-right:10px;
+	a{padding:0 5px;}
+	.color(#555,@blue-link,@blue-link);
+	a:hover{text-decoration:underline;}
 }
 
 .user-guide-type{
@@ -16,9 +62,12 @@ h1.mt .u-btn-publish{
 }
 
 #threadlist .th{
-	*{color:#555 !important;}
+	.u-guideitem{
+		color:#555;
+	}
 	.u-title{
 		.indent(20px);
+		color:#555;
 	}
 }
 
@@ -38,6 +87,7 @@ h1.mt .u-btn-publish{
 	.u-title{
 		.color(@blue-link,@blue-link,#c00);
 		.tps{.none;}
+		img{margin-left:3px;margin-top:-3px;}
 	}
 	.u-bankuai{
 		.color(#666,#666,#666);

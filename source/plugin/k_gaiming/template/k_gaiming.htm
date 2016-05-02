@@ -20,6 +20,7 @@
             	<font class="xg1">{$setting['tips']}<!--{if $setting['creditnum'] && $setting['creditunit']}-->{lang k_gaiming:tipsunit}&nbsp;{$setting['creditnum']}&nbsp;{$_G['setting']['extcredits'][$setting['creditunit']]['unit']}{$_G['setting']['extcredits'][$setting['creditunit']]['title']}<!--{/if}--></font><!--{if $c < $setting['creditnum']}--><font color="#FF0000">&nbsp;({lang k_gaiming:nocredit})</font><!--{/if}-->
             <!--{/if}-->
         </span>
+        <span class="m-nicname-tips"><!--{block/1495}--></span>
 	</td>
 </tr>
 <!--{if !in_array($_G['member']['groupid'], $setting['usergroups'])}-->
