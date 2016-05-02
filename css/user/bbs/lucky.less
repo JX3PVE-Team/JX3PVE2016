@@ -28,7 +28,11 @@ ul#thread_types{
 	.clearfix;
 	border:none;
 	padding:5px 0 5px 0;
-	border-bottom:1px dashed #ddd;
+	//border-bottom:1px dashed #ddd;
+	border:none;
+
+	li{.fl;margin-right:5px;}
+	li a{.db;}
 
 	//border-top:1px dashed #ddd;
 }
@@ -58,10 +62,25 @@ ul#thread_types{
 
 .bm_c{
 	padding:0;
+	table{
+		.w(100%);
+	}
+	
+}
+
+.m-jiyu-listth,.bm_c{
+	table,tbody,tr,td{.db;}
+}
+
+.m-jiyu-listth{
+	color:#555;
 }
 
 .m-jiyu-item{
 	.db;
+	line-height:36px;
+
+	border-bottom:1px solid #eee;
 
 	.u-up{
 		.size(16px);
