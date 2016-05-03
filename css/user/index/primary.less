@@ -1,0 +1,70 @@
+.user-os-primary{
+	@bocolor:#eee;
+	margin-bottom:20px;
+	ul{
+		.clearfix;
+		.full(x);
+		border-top:1px solid @bocolor;
+		border-left:1px solid @bocolor;
+	}
+	li{
+		.fl;
+		.size(155px);
+	}
+	a{
+		.db;
+		padding:(155px - 100px)/2 0;
+		border-right:1px solid @bocolor;
+		border-bottom:1px solid @bocolor;
+		//background-color:#f9f9f9;
+	}
+	i{
+		.db;.size(64px);.auto(x);
+		background-repeat:no-repeat;
+		background-position:0 0;
+	}
+	span{
+		.db;.fz(14px,2.5);.x;
+		color:#888;
+	}
+	a:hover{
+		background-color:#049abf;
+		transition:0.2s ease-in-out;
+
+		i{
+			background-position:0 -64px;
+		}
+		span{
+			color:#fff;
+		}
+	}
+
+	.code i{background-image:url('@{url}os/code.png');}
+	.password i{background-image:url('@{url}os/password.png');}
+	.buy i{background-image:url('@{url}os/buy.png');}
+	.vip i{background-image:url('@{url}os/vip.png');}
+	.gift{
+		i{
+			background-image:url('@{url}os/gift.png');
+			//background-image:url('@{url}os/gift-null.png');
+		}
+		/*&:hover{
+			background-color:#fff;
+			span{color:#888;}
+			i{background-position:0 0;}
+		}*/
+	}
+	.msg i{background-image:url('@{url}os/msg.png');}
+	.mywork i{background-image:url('@{url}os/mywork.png');}
+	.fav i{background-image:url('@{url}os/fav.png');}
+	.friend i{background-image:url('@{url}os/friend.png');}
+	.feedback i{background-image:url('@{url}os/feedback.png');}
+	.task i{background-image:url('@{url}os/task.png');}
+	.magic i{background-image:url('@{url}os/magic.png');}
+	.medal i{background-image:url('@{url}os/medal.png');}
+	.verif i{background-image:url('@{url}os/verif.png');}
+	.faq i{background-image:url('@{url}os/faq.png');}
+
+
+
+}

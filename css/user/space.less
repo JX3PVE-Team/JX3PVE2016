@@ -1,124 +1,17 @@
 @import url('../public/base.less');		//函数
 @import url('../global/var.less');			//常量
 @import url('../global/color.less');		//配色
+
 @import url('../module/ui/text.less');		//配色
+@import url('../module/ui/textarea.less');		//配色
+@import url('../module/ui/button.less');		//配色
 
 @import url('space/share.less');
-
-.jx3pve-container{
-	padding-bottom:10px;
-}
-
-//公共头部
-	#pt{
-		margin-bottom:10px;
-	}
-	#pt,#uhd{
-		.w(@wp);
-		.auto(x);
-	}
-	#uhd{
-		background-color:#f7f7f7;
-	}
-	#uhd .tb a{
-		border-top:none;
-		border-bottom:none;
-	}
-
-//详细资料
-	.u_profile{
-		*{line-height:2.2;}
-		h2{line-height:2;}
-	}
-	.m-name,.m-base{
-		padding:0 !important;
-		margin:0 !important;
-	}
-	.m-count{
-		margin-bottom:10px;
-	}
-	.m-verif *{
-		line-height:1 !important;
-	}
-	.m-verif h2{
-		line-height:2 !important;
-		margin-bottom:0 !important;
-	}
-	.m-warning{
-		.dt{border-left:1px solid #cdcdcd;border-right:1px solid #cdcdcd;}
-		.dt td, .dt th{padding:0 5px;}
-		.dt th{background-color:#f7f7f7;}
-	}
-
-//留言板
-
-
-//记录
-	.m-record-item{
-		.cmt .pts{
-			&:extend(.u-text);
-			.lh(28px);
-			padding:0 10px;
-			// box-sizing:border-box;
-		}
-		.cmt{
-			background-color:#f7f7f7;
-		}
-	}
-	#moodfm{
-		table{
-			.w(100%);
-		}
-		.moodfm_input{
-			padding-right:10px;
-		}
-		#message{
-			.full(x);
-		}
-		.moodfm_btn{
-			.w(120px);
-			button{
-				.db;
-				.w(100%);
-				.lh(60px);
-			}
-		}
-	}
-
-//相册
-	.tbmu .pn{
-		.lh(28px);
-	}
-
-	.bm_h{
-		border:1px solid #ddd;
-	}
-	#click_div{
-		padding:10px;
-	}
-
-//日志
-	.ct_vw_mn{
-		float:none;
-		.w(auto);
-		.tedt{
-			.w(auto);
-		}
-	}
-	#blog_article{
-		line-height:2.2;
-	}
-
-//主题
-	.m-space-threadlist{
-		.th{
-			background: none;
-			td,th{
-				border-bottom:1px dashed #ddd;
-				color:#555;
-			}
-		}
-		tr:hover th, tr:hover td{
-			background-color:@blue-bg;
-		}
-	}
+@import url('space/doing.less');
+@import url('space/album.less');
+@import url('space/wall.less');
+@import url('space/thread.less');
+@import url('space/blog.less');
+@import url('space/profile.less');
+@import url('space/follow.less');
+@import url('space/common.less');

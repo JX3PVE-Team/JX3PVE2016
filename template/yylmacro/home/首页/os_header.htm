@@ -1,0 +1,61 @@
+<div class="user-os-header">
+
+	<div class="user-os-profile">
+ 		<div class="user-os-avt">
+ 			<!--{if $_G['uid']}-->
+	 			<a class="u-avt" href="home.php?mod=space&uid=$_G[uid]"><!--{avatar($_G[uid],small)}--></a>
+	 			<span class="u-name">$_G[member][username]</span>
+	 			<span class="u-uid">UID:<b>$_G[uid]</b></span>
+ 			<!--{else}-->
+ 				<a class="u-avt null" href="./login"></a>
+ 				<a class="u-name" href="./login">登录</a>
+	 		<!--{/if}-->
+ 		</div>
+
+		<div class="user-os-info">
+			<span class="u-mail">
+				<em title="点击修改绑定邮箱"><a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=profile&op=password">$space[email]</a></em> 
+				( <i id="user-email-status"><a title="点击修改绑定邮箱" href="http://www.jx3pve.com/home.php?mod=spacecp&ac=profile&op=password" target="_blank">
+				<!--{if $space[emailstatus] > 0}-->{lang profile_verified}
+				<!--{else}-->{lang profile_no_verified}
+				<!--{/if}-->
+				</a></i> )
+			</span>
+			<a class="u-space" href="home.php?mod=space&uid=$_G[uid]" data-target="_blank">[ 我的个人空间 ]</a>
+		</div>
+	</div>
+
+	<div class="user-os-meta">
+		<ul>
+
+			<li class="cre">
+				<label>米 币</label> 
+				<span><!--{echo getuserprofile('extcredits4');}--></span> 
+				<a href="./buy" class="u-btn-cre"></a>
+			</li>
+
+			<li class="usergroup">
+				<label>用户组</label> 
+				<a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=usergroup">$_G[group][grouptitle]<!--{eval g_icon($space[groupid]);}--></a>
+			</li>
+
+			<li class="verf">
+				<label>认 证</label> 
+				<span>
+				<!--{if $_G['setting']['verify']['enabled']}-->
+					<!--{loop $_G['setting']['verify'] $vid $verify}-->
+						<!--{if $verify['available']}-->
+							<!--{if $space['verify'.$vid] == 1}-->
+								<a href="home.php?mod=spacecp&ac=profile&op=verify&vid=$vid" target="_blank"><!--{if $verify['icon']}--><img src="$verify['icon']" class="vm" alt="$verify[title]" title="$verify[title]" /><!--{else}-->$verify[title]<!--{/if}--></a>
+							<!--{elseif !empty($verify['unverifyicon'])}-->
+								<a href="home.php?mod=spacecp&ac=profile&op=verify&vid=$vid" target="_blank"><!--{if $verify['unverifyicon']}--><img src="$verify['unverifyicon']" class="vm" alt="$verify[title]" title="$verify[title]" /><!--{/if}--></a>
+							<!--{/if}-->
+						<!--{/if}-->
+					<!--{/loop}-->
+				<!--{/if}-->
+				</span>
+			</li>
+		</ul>
+	</div>
+	
+</div>

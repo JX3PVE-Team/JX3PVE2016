@@ -43,7 +43,7 @@
 							<a class="u-btn-publish" onclick="showWindow('nav', this.href, 'get', 0)" href="forum.php?mod=misc&amp;action=nav">快速发布</a>
 							<div class="m-guide-authortips"><!--{block/1799}--></div>
 						</h1>
-						<ul class="user-guide-type user-nav">
+						<ul class="subtb">
 							<!--{if $view == 'my'}-->
 								<li {if ($_GET['type']=="thread")} class="on"{/if} ><a href="forum.php?mod=guide&view=my&type=thread" $orderactives[thread]>{lang forum_threads}</a></li>
 								<li {if ($_GET['type']=="reply")} class="on"{/if} ><a href="forum.php?mod=guide&view=my&type=reply" $orderactives[reply]>{lang reply}</a></li>
@@ -169,5 +169,5 @@
 	</div>
 </div>
 <script src="http://js.jx3pve.com/js/user/user.min.js"></script>
-<script src="http://js.jx3pve.com/js/user/user-bbs-guide.min.js"></script>
+<script src="http://js.jx3pve.com/js/user/bbs.min.js"></script>
 <!--{template common/footer}-->

@@ -13,10 +13,7 @@
 			<div class="bm_c">
 <!--{else}-->
 	<!--{template common/header_m}-->
-	<link rel="stylesheet" href="http://test.jx3pve.com/css/user/user.css" type="text/css" />
-	<link rel="stylesheet" href="http://test.jx3pve.com/css/user/space/space.css" type="text/css" />
-	<div class="space-container">
-		<div class="wp">
+	<div class="user-container">
 
 	<div id="pt" class="bm cl">
 		<div class="z">
@@ -232,7 +229,7 @@
 									<!--{if $multi}--><div class="pgs cl mtm">$multi</div><!--{/if}-->
 								</div>
 								<!--{if helper_access::check_module('album')}-->
-								<form id="quickcommentform_{$picid}" name="quickcommentform_{$picid}" action="home.php?mod=spacecp&ac=comment&handlekey=qcpic_{$picid}" method="post" autocomplete="off" onsubmit="ajaxpost('quickcommentform_{$picid}', 'return_qcpic_{$picid}');doane(event);" class="bm bw0" style="width: 600px;">
+								<form id="quickcommentform_{$picid}" name="quickcommentform_{$picid}" action="home.php?mod=spacecp&ac=comment&handlekey=qcpic_{$picid}" method="post" autocomplete="off" onsubmit="ajaxpost('quickcommentform_{$picid}', 'return_qcpic_{$picid}');doane(event);" class="bm bw0 m-album-comment">
 									<!--{if $_G['uid']}-->
 										<p>
 											<span id="comment_face" onclick="showFace(this.id, 'comment_message');return false;" class="cur1"><img src="{IMGDIR}/facelist.gif" alt="facelist" class="vm" /></span>
@@ -366,6 +363,8 @@
 	</div>
 <!--{/if}-->
 
+<link rel="stylesheet" href="http://css.jx3pve.com/css/user/user.css" type="text/css" />
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/space.css" type="text/css" />
+<script src="http://js.jx3pve.com/js/user/user.min.js"></script>
 <script src="http://js.jx3pve.com/js/user/space.min.js"></script>
 <!--{template common/footer}-->

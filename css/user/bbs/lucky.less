@@ -7,7 +7,7 @@
 }
 
 .mn .bm.bml.pbn{
-	.db;
+	.none;
 	border:none;
 	margin-bottom:0;
 	padding:0 !important;
@@ -24,19 +24,13 @@
 	}
 }
 
-/*ul#thread_types{
-	.clearfix;
-	border:none;
-	padding:5px 0 5px 0;
-	//border-bottom:1px dashed #ddd;
-	border:none;
-
-	li{.fl;margin-right:5px;}
-	li a{.db;}
-
-	//border-top:1px dashed #ddd;
-}*/
-
+.m-lucky-topbox{
+	.pr;
+	.y{
+		.pa;.rt(0,0);
+		color:#555;
+	}
+}
 #pgt .pg, #pgt .pgb{
 	margin-top:0;
 }
@@ -44,6 +38,9 @@
 	.none;
 }
 
+.tl th, .tl td{
+	border-bottom:none;
+}
 .tl .th td, .tl .th th{
 	.h(auto);border:none;
 }
@@ -67,6 +64,9 @@
 	}
 	
 }
+#threadlist{
+	padding:0 10px;
+}
 
 .m-jiyu-listth,.bm_c{
 	table,tbody,tr,td{.db;}
@@ -74,11 +74,14 @@
 
 .m-jiyu-listth{
 	color:#555;
+	tr:hover th, tr:hover td{
+		background: none;
+	}
 }
 
 .m-jiyu-item{
 	.db;
-	line-height:36px;
+	line-height:38px;
 
 	border-bottom:1px solid #eee;
 
@@ -115,8 +118,10 @@
 		.fl;.w(50%);
 	}
 	.u-title{
-		.x;
-		font-size:14px;
+		.x;.bold;
+		color:@blue-link;
+		line-height:2.5;
+		padding:10px 0;
 	}
 
 	.pstyle{

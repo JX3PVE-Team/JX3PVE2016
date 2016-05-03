@@ -11,7 +11,7 @@
 				</div>
 			<div class="bm_c">
 <!--{else}-->
-	<!--{template common/header}-->
+	<!--{template common/header_m}-->
 	<div id="pt" class="bm cl">
 		<div class="z">
 			<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> 
@@ -33,7 +33,7 @@
 				<div class="bm_c">
 <!--{/if}-->
 		<!--{if helper_access::check_module('wall')}-->
-		<form id="quickcommentform_{$space[uid]}" action="home.php?mod=spacecp&ac=comment" method="post" autocomplete="off" onsubmit="ajaxpost('quickcommentform_{$space[uid]}', 'return_qcwall_$space[uid]');doane(event);">
+		<form id="quickcommentform_{$space[uid]}" action="home.php?mod=spacecp&ac=comment" method="post" autocomplete="off" onsubmit="ajaxpost('quickcommentform_{$space[uid]}', 'return_qcwall_$space[uid]');doane(event);" class="m-wall-box">
 			<p>
 				<span id="comment_face" title="{lang insert_emoticons}" onclick="showFace(this.id, 'comment_message');return false;" class="cur1"><img src="{IMGDIR}/facelist.gif" alt="facelist" class="vm" /></span>
 				<!--{hook/space_wall_face_extra}-->
@@ -111,6 +111,8 @@
 	</div>
 <!--{/if}-->
 
+<link rel="stylesheet" href="http://css.jx3pve.com/css/user/user.css" type="text/css" />
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/space.css" type="text/css" />
+<script src="http://js.jx3pve.com/js/user/user.min.js"></script>
 <script src="http://js.jx3pve.com/js/user/space.min.js"></script>
 <!--{template common/footer}-->

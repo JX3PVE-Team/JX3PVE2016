@@ -21,7 +21,7 @@
 					</div>
 				<div class="bm_c">
 	<!--{else}-->
-		<!--{template common/header}-->
+		<!--{template common/header_m}-->
 		<div id="pt" class="bm cl">
 			<div class="z">
 				<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> 
@@ -44,7 +44,7 @@
 					<div class="bm_c">
 	<!--{/if}-->
 <!--{else}-->
-	<!--{template common/header}-->
+	<!--{template common/header_m}-->
 	<div id="pt" class="bm cl">
 		<div class="z">
 			<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
@@ -226,7 +226,7 @@
 								<!--{/if}-->
 
 								<td class="num">
-									<a href="forum.php?mod=viewthread&tid=$thread[tid]" class="xi2" target="_blank">$thread[replies]</a>
+									<a href="forum.php?mod=viewthread&tid=$thread[tid]" class="xi2" target="_blank">$thread[replies]</a> / 
 									<em>$thread[views]</em>
 								</td>
 
@@ -303,6 +303,8 @@
 	</div>
 <!--{/if}-->
 
+<link rel="stylesheet" href="http://css.jx3pve.com/css/user/user.css" type="text/css" />
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/space.css" type="text/css" />
+<script src="http://js.jx3pve.com/js/user/user.min.js"></script>
 <script src="http://js.jx3pve.com/js/user/space.min.js"></script>
 <!--{template common/footer}-->

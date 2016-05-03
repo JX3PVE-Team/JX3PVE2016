@@ -1,0 +1,33 @@
+//主题
+.m-space-threadlist{
+	table{
+		.w(100%);
+	}
+	td,th{
+		padding:6px 5px;
+		border-bottom:1px solid #ddd;
+		line-height:2.2;
+	}
+	.th{
+		background: none;
+		td,th{
+			border-bottom:1px dashed #ddd;
+			color:#555;
+		}
+	}
+	tr:hover th, tr:hover td{
+		background-color:@blue-bg;
+	}
+	.num{
+		padding:0 10px;
+		em{.di;}
+		.w(120px);
+	}
+	.num,.by{
+		.x(right);
+		line-height:2;
+	}
+	.by{
+		em{.color(#555,#888,#888);}
+	}
+}

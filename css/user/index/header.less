@@ -1,0 +1,72 @@
+.user-os-header{
+	padding:10px 0;
+	.clearfix;
+}
+
+.user-os-profile{
+	.pr;
+	.clearfix;
+	padding-bottom:10px;
+	border-bottom:1px dotted #ddd;
+}
+
+.user-os-avt{
+	.fl;
+	padding-left:52px + 10px;
+	.u-avt{
+		.db;.pa;.lt(0,0);
+		.size(48px);.r(48px);padding:2px;background-color:#fff;border:1px solid #ddd;
+		img{.db;.full;}
+		&.null{
+			background:url('@{url}common/anonymous.png') no-repeat center center;
+		}
+	}
+	.u-name{
+		.db;
+		.bold;
+	}
+	.u-uid{
+		.db;letter-spacing:1px;
+		color:#555;
+		b{.color(@yel);margin-left:5px;}
+	}
+}
+
+.user-os-info{
+	.fr;.x(right);
+	.u-mail{
+		.db;
+		text-indent:24px;
+		&.novalidate{background:url('@{url}user/mail_inactive.png') no-repeat 0 center;}
+		&.validate{background:url('@{url}user/mail_active.png') no-repeat 0 center;}
+	}
+	.u-space{.db;}
+}
+
+.user-os-meta{
+	.clearfix;padding:10px 0;letter-spacing:1px;
+	border-bottom:1px dotted #ddd;
+
+	li{
+		.fl;.dbi;.y;.nobreak;height:28px;line-height:28px;margin-right:80px;
+		label{background-color:#f2f2f2;border-radius:3px;padding: 5px 8px;cursor:default;}
+	}
+
+	.cre{
+		label{}//letter-spacing:4px;
+		span{.bold;color:#ff0000;}
+	}
+
+	.usergroup{
+		.vm{
+			vertical-align: -4px;
+			margin-left:3px;
+		}
+	}
+
+	.verf{
+		label{}//letter-spacing:4px;
+		span{.dbi;}
+		img{margin-right:2px;}
+	}
+}
