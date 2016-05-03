@@ -24,7 +24,7 @@
 			<!--{subtemplate home/sidebar}-->
 			<div class="user-content">
 				<div class="boardnav">
-					<div id="ct" class="cl{if $_G['forum']['allowside']} ct2{/if}"{if $leftside} style="margin-left:{$_G['leftsidewidth_mwidth']}px"{/if}>
+					<div id="ct" class="cl ct2_a"{if $leftside} style="margin-left:{$_G['leftsidewidth_mwidth']}px"{/if}>
 						<div class="mn">
 							<div class="bm bml pbn">
 								<div class="bm_h cl">
@@ -51,7 +51,7 @@
 									<img src="{IMGDIR}/pn_post.png" alt="{lang send_posts}" />
 								</a>
 							</div>
-							<ul id="thread_types" class="ttp bm cl">
+							<ul id="thread_types" class="tb cl">
 								<li $opactives[list]><a href="plugin.php?id=luckypost">{lang luckypost:lucky_all_event}</a></li>
 								<li $opactives[my]><a href="plugin.php?id=luckypost&op=my">{lang luckypost:lucky_my_event}</a></li>
 								<li $opactives[stat]><a href="plugin.php?id=luckypost&ac=stat">{lang luckypost:lucky_rank}</a></li>

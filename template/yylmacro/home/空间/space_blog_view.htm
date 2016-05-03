@@ -5,7 +5,6 @@
 	$friendsname = array(1 => '{lang friendname_1}',2 => '{lang friendname_2}',3 => '{lang friendname_3}',4 => '{lang friendname_4}');
 }
 
-
 <!--{if $_G[setting][homepagestyle]}-->
 	<!--{subtemplate home/space_header}-->
 	<div id="ct" class="ct2 wp cl">
@@ -294,5 +293,8 @@
 <!--{if !empty($_G['cookie']['clearUserdata']) && $_G['cookie']['clearUserdata'] == 'home'}-->
 	<script type="text/javascript">saveUserdata('home', '')</script>
 <!--{/if}-->
+
+<link rel="stylesheet" href="http://css.jx3pve.com/css/user/space.css" type="text/css" />
+<script src="http://js.jx3pve.com/js/user/space.min.js"></script>
 
 <!--{template common/footer}-->
