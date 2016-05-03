@@ -2,8 +2,7 @@
 	<h2 class="user-sidebar-title"><a href="./home.php">个人中心</a></h2>
 	<h3 class="user-sidebar-title">消息</h3>
 	<ul class="user-sidebar-list">
-		<li {if ($_GET['do']=="pm")} class="on"{/if}><a href="home.php?mod=space&do=pm">我的消息</a></li>
-		<li {if ($_GET['do']=="notice")} class="on"{/if}><a href="home.php?mod=space&do=notice">系统通知</a></li>
+		<li {if ($_GET['do']=="pm") || ($_GET['do']=="notice")} class="on"{/if}><a href="home.php?mod=space&do=pm">我的消息</a></li>
 		<li {if ($_GET['do']=="friend")} class="on"{/if}><a href="home.php?mod=space&do=friend">我的好友</a></li>
 	</ul>
 
@@ -24,7 +23,7 @@
 		<li {if ($_GET['ac']=="credit" && $_GET['op']!="base" && $_GET['op']!="buy")} class="on"{/if}><a href="home.php?mod=spacecp&ac=credit&op=log">我的积分</a></li>
 		<li {if ($_GET['ac']=="credit" && $_GET['op']=="base") || ($_GET['ac']=="credit" && $_GET['op']=="buy")} class="on"{/if}><a class="buy" href="home.php?mod=spacecp&ac=credit&op=buy">充 值</a></li>
 		<!-- <li {if $_GET['topicid'] == '118'} class="on"{/if}><a class="gift" href="javascript:;" title="即将开放">礼品兑换</a></li> -->
-		<li {if ($_GET['ac']=="usergroup")} class="on"{/if}><a class="vip" href="home.php?mod=spacecp&ac=usergroup&do=list">开通VIP会员</a></li>
+		<li {if ($_GET['ac']=="usergroup")} class="on"{/if}><a class="vip" href="home.php?mod=spacecp&ac=usergroup&do=list">VIP会员</a></li>
 		<li {if ($_GET['ac']=="invite")} class="on"{/if}><a href="home.php?mod=spacecp&ac=invite">邀请码</a></li>
 	</ul>
 
@@ -33,7 +32,7 @@
 		<li {if ($_GET['mod']=="guide")} class="on"{/if}><a href="forum.php?mod=guide&view=my&type=thread">我的帖子</a></li>
 		<li {if ($_GET['do']=="favorite")} class="on"{/if}><a href="home.php?mod=space&do=favorite&view=me">我的收藏</a></li>
 		<li {if ($_GET['mod']=="follow")} class="on"{/if}><a href="home.php?mod=follow">我的关注</a></li>
-		<li {if ($_GET['id']=="luckypost")} class="on"{/if}><a href="luckypost-luckypost.html">我的际遇</a></li>
+		<li {if ($_GET['id']=="luckypost")} class="on"{/if}><a href="plugin.php?id=luckypost">我的际遇</a></li>
 	</ul>
 
 	<!-- <h3 class="user-sidebar-title">空间</h3>

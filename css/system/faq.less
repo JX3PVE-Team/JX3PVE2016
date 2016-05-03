@@ -1,6 +1,11 @@
 @import url('../public/base.less');		//函数
 @import url('../global/color.less');	//配色
 @import url('../global/var.less');		//尺寸
+@import url('../module/ui/text.less');		//尺寸
+
+.ct2_a .mn{
+	margin-right:0;
+}
 
 .faq-container{
 	min-height:400px;
@@ -29,36 +34,45 @@
 }
 
 .m-faq-search{
-	.pa;.rt(0,3px);.z(2);
+	.pa;.rt(0,5px);.z(2);
 	.mtn{margin-top:0 !important;} //reset dz default 
-	.px{
-		.fzlh(12px,28px);
-		box-sizing:border-box;
-		*height:23px;
-		*line-height:23px;
-		*margin-right:5px;
-		//padding:2px 4px;
+	.u-text-wp{
+		.db;.fl;
 		.w(180px);
-		padding:0 10px;
 		margin-top:1px;
+		.fzlh(13px,26px);
+		margin-right:5px;
+		overflow:visible;
+		border:1px solid #ddd;
+		.r(3px);
 	}
-	.pn{
+	.u-text{
+		//padding:2px 4px;
+		padding:0 10px;
+		background: none;
+		border:none;
+		box-sizing:border-box;
+		.full;
+	}
+	.u-button{
+		.fl;
 		.size(80px,28px);
-		.fz(12px,28px);
+		.fz(13px,28px);
 	}
 }
 .ua-responsive .screen-s .m-faq-search{
-	top:-30px;
-	left:0;
+	.pa;.lt(0,-30px);.w(100%);
+	padding:0 20px;box-sizing:border-box;
 
-	.y{float:none;}
-	padding:0 5%;
-	.px{
-		.w(70%);
+	form{.w(100%);}
+
+	.u-button{.pa;.rt(20px,0);}
+	.u-text-wp{
+		float:none;
+		margin-right:80px + 5px ;
+		.w(auto);
 	}
-	.pn{
-		.w(20%);
-	}
+
 }
 
 .m-faq-main{
@@ -77,7 +91,7 @@
 	}
 	a{
 		.pr;
-		.fz(12px,40px);
+		.fz(13px,40px);
 		padding-left:20px;
 		.db;
 	}
@@ -121,14 +135,12 @@
 
 	h1{
 		background-color:#f2f2f2;border-radius:24px;
-		line-height:24px;font-size:12px;
 		padding:0 10px;
 	}
 
 	.m-faq-cattitle{
 		.bold;
 		border-bottom:1px dotted #ddd;
-		font-size:12px;line-height:24px;
 		a{color:@blue-link;}
 	}
 
@@ -139,17 +151,31 @@
 
 	//折叠的详情
 	.umh{
-		h3{font-size:12px;color:@blue-link;.bold;}
+		h3{font-size:13px;color:@blue-link;.bold;}
 		&.umn{
 			h3{color:#555;font-weight:normal;}
 		}
+	}
+	//虚线
+	.umn{
+		background-position:0 center;
+	}
+	//展开
+	.umh h3{
+		background-position:right 8px;
+	}
+	//折叠
+	.umh.umn h3{
+		background-position:right -32px;
+	}
+	.umh_act{
+		.fz(12px,26px);
 	}
 	//展开的详情
 	.um{
 		//transition:0.3s ease-in;
 		border:1px dotted #ddd;padding:10px;
 		background:#f7f7f7;
-		line-height:24px;
 
 		a{
 			.color(@blue-link,@blue-link);
@@ -176,7 +202,8 @@
 		}
 
 		table{
-			//width:100%;
+			max-width:100%;
+			margin:5px auto;
 		}
 
 		table td{
@@ -196,11 +223,13 @@
 		}
 
 	}
-
-	.m-faq-help{
-		border-top:1px dashed #999;
-		line-height:24px;.x(right);
-		margin-top:5px;padding-top:5px;
-	}
 }
-
+.m-faq-details{
+	line-height:2.4;
+}
+.m-faq-help{
+	border-top:1px dashed #999;
+	.x(right);
+	margin-top:5px;padding-top:5px;
+	.fz(12px,24px);
+}

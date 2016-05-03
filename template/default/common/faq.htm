@@ -15,8 +15,10 @@
 			<form method="post" autocomplete="off" action="misc.php?mod=faq&action=search" class="y mtn pns">
 				<input type="hidden" name="formhash" value="{FORMHASH}" />
 				<input type="hidden" name="searchtype" value="all" />
-				<input type="text" name="keyword" size="16" value="$keyword" class="px vm" placeholder="请输入关键词"/>
-				<button type="submit" name="searchsubmit" class="pn vm" value="yes">{lang search}</button>
+				<span class="u-text-wp">
+					<input type="text" name="keyword" size="16" value="$keyword" class="u-text" placeholder="请输入关键词"/>
+				</span>
+				<button type="submit" name="searchsubmit" class="u-button" value="yes">{lang search}</button>
 			</form>
 		</div>
 
@@ -68,7 +70,7 @@
 						<!--some question-->
 						<h1 class="mt mbm">$ctitle</h1>
 						<!--{loop $faqlist $faq}-->
-							<div id="messageid$faq[id]_c" class="m-faq-detailsfolder umh{if $messageid != $faq[id]} umn{/if}">
+							<div id="messageid$faq[id]_c" class="umh{if $messageid != $faq[id]} umn{/if}">
 								<h3 onclick="toggle_collapse('messageid$faq[id]', 1, 1);">$faq[title]</h3>
 								<div class="umh_act">
 									<p class="umh_cb" onclick="toggle_collapse('messageid$faq[id]', 1, 1);">[ {lang open} ]</p>
