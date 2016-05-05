@@ -1,5 +1,9 @@
 <!--{if $do == 'feed'}-->
 <!--{template common/header_m}-->
+<header class="i-header">
+	<a class="i-header-back" href="./home.php"><i></i></a>
+	<div class="i-header-title">关注</div>
+</header>
 	<div class="user-container">
 		<div class="wp">
 
@@ -398,12 +402,14 @@
 
 			<!--{if in_array($do, array('feed', 'view'))}-->
 				<!--{if $do == 'feed' && $_G[setting][homestyle]}-->
+				<div class="tbbox">
 				<ul class="mbw tb cl">
 					<li$actives[follow]><a href="home.php?mod=follow&view=follow">{lang follow_following}</a></li>
 					<li$actives[special]><a href="home.php?mod=follow&view=special">{lang follow_special_following}</a></li>
 					<li$actives[other]><a href="home.php?mod=follow&view=other">{lang follow_hall}</a></li>
 					<!--{hook/follow_nav_extra}-->
 				</ul>
+				</div>
 				<!--{/if}-->
 				<!--{if !empty($list['feed'])}-->
 					<div class="flw_feed">

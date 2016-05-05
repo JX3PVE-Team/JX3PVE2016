@@ -9,14 +9,14 @@
 				</span>
 				<span class="username">
 					{$_G[member][username]}
-					<b id="c-header-msg-count"></b>
+					<b class="e-msg"></b>
 				</span>
 			</a>
 		</div>
 		<div class="m-extend" id="c-header-user-login-extend">
 			<ul>
 				<li><a href="./home.php"><i class="os"></i>个人中心</a></li>
-				<li><a href="./home.php?mod=space&do=pm"><i class="msg"></i>消息 (<em id="c-header-msgcount">$_G[member][newpm]</em>)</a></li>
+				<li><a href="./home.php?mod=space&do=pm"><i class="msg"></i>消息 (<em class="e-msg">$_G[member][newpm]</em>)</a></li>
 				<li><a href="./home.php?mod=spacecp&ac=profile&op=password"><i class="setting"></i>设置</a></li>
 				<!--{if ($_G['group']['allowmanagearticle'] || $_G['group']['allowpostarticle'] || $_G['group']['allowdiy'] || getstatus($_G['member']['allowadmincp'], 4) || getstatus($_G['member']['allowadmincp'], 6) || getstatus($_G['member']['allowadmincp'], 2) || getstatus($_G['member']['allowadmincp'], 3))}-->
 				<li class="e-admin-bar"><a href="portal.php?mod=portalcp" target="_blank"><i class="mag"></i><!--{if $_G['setting']['portalstatus'] }-->{lang portal_manage}<!--{else}-->{lang portal_block_manage}<!--{/if}--></a></li>
@@ -63,7 +63,7 @@
 		</div>
 	</div>
 <!--{/if}-->
-
+ 
 <!--{if $_G['uid']}-->
 <p id="c-header-msgdetails" class="none">
 	<span>$_G[member][newpm]</span>

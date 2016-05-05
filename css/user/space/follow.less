@@ -1,13 +1,12 @@
+.my_flw_stats{
+	.pa;.rt(0,0);
+	.w(168px);
+	ul{}
+	li{line-height:36px;border-bottom:1px solid #ddd;}
+	a{margin-left:5px;}
+}
 #flw_header{
 	.pr;
-
-	.my_flw_stats{
-		.pa;.rt(0,0);
-		.w(168px);
-		ul{}
-		li{line-height:36px;border-bottom:1px solid #ddd;}
-		a{margin-left:5px;}
-	}
 
 	#fastpostform{
 		float:none !important;
@@ -76,4 +75,25 @@
 .flw_readfull{
 	.color(@blue-link,@blue-link);
 	&:hover{text-decoration:underline;}
+}
+
+.ua-responsive .screen-s{
+	
+	.my_flw_stats{
+		.ps;float:none;
+		li{.fl;.w(33%);.x;}
+		ul{.clearfix;}
+		.w(auto);
+	}
+
+	#flw_header #fastpostform{
+		margin:10px 10px 0 10px;
+	}
+
+	#flw_header{
+		margin-bottom: 0 !important;
+	}
+
+	#followlist li{padding:0 10px;}
+
 }

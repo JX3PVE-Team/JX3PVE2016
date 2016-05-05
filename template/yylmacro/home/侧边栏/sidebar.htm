@@ -2,7 +2,7 @@
 	<h2 class="user-sidebar-title"><a href="./home.php">个人中心</a></h2>
 	<h3 class="user-sidebar-title">消息</h3>
 	<ul class="user-sidebar-list">
-		<li {if ($_GET['do']=="pm") || ($_GET['do']=="notice")} class="on"{/if}><a href="home.php?mod=space&do=pm">我的消息</a></li>
+		<li {if ($_GET['do']=="pm") || ($_GET['do']=="notice") || ($_GET['ac']=="pm")} class="on"{/if}><a href="home.php?mod=space&do=pm">我的消息</a></li>
 		<li {if ($_GET['do']=="friend")} class="on"{/if}><a href="home.php?mod=space&do=friend">我的好友</a></li>
 	</ul>
 

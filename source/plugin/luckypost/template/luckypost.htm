@@ -1,6 +1,10 @@
 <!--{template common/header_m}-->
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/user.css" type="text/css" />
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/bbs/lucky.css" type="text/css" />
+<header class="i-header">
+	<a class="i-header-back" href="./home.php"><i></i></a>
+	<div class="i-header-title">际遇</div>
+</header>
 <div class="user-container">
 	<div class="wp">
 
@@ -41,7 +45,6 @@
 							<div id="pgt" class="w-pages w-pages-top bm bw0 pgs cl">
 							<!--{if $action != 'stat'}-->
 								<div class="w-pages-list">$multipage</div>
-								<span class="pgb y"><a href="{$page_url}">{lang luckypost:home_page}</a></span>
 							<!--{/if}-->
 								<a class="u-btn-publish" onclick="showWindow('nav', this.href, 'get', 0)" href="forum.php?mod=misc&amp;action=nav">
 									<span>发贴碰际遇</span>

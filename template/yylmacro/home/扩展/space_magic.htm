@@ -1,4 +1,8 @@
 <!--{template common/header_m}-->
+<header class="i-header">
+	<a class="i-header-back" href="./home.php"><i></i></a>
+	<div class="i-header-title">道具</div>
+</header>
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/user.css" type="text/css" />
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/extend/extend.css" type="text/css" />
 <div class="user-container">
@@ -25,6 +29,12 @@
 								<!--{elseif $action == 'log'}-->{lang magics_log}
 								<!--{else}-->{lang magics_title}<!--{/if}-->
 							</h1>
+							<ul class="tb cl">
+								<li $actives[shop]><a href="home.php?mod=magic&action=shop">{lang memcp_magic_yz}</a></li>
+								<li $actives[mybox]><a href="home.php?mod=magic&action=mybox">{lang magics_user}</a></li>
+								<li $actives[log]><a href="home.php?mod=magic&action=log&operation=uselog">{lang magics_log}</a></li>
+							</ul>
+
 							<!--{if !$_G['setting']['magicstatus'] && $_G['adminid'] == 1}-->
 								<div class="emp">{lang magics_tips}</div>
 							<!--{/if}-->

@@ -37,6 +37,13 @@
 	<!--{/if}-->
 <!--{else}-->
 	<!--{template common/header_m}-->
+	<header class="i-header">
+		<a class="i-header-back" href="./home.php"><i></i></a>
+		<div class="i-header-title">日志</div>
+		<div class="i-header-menu">
+			<a class="u-pub" href="home.php?mod=spacecp&ac=blog"><i></i><span>发表</span></a>
+		</div>
+	</header>
 	<div class="user-container">
 		<div class="wp">
 
@@ -58,6 +65,7 @@
 				<!--[diy=diycontenttop]--><div id="diycontenttop" class="area"></div><!--[/diy]-->
 				<div class="bm bw0">
 					<h1 class="mt"><img alt="blog" src="{STATICURL}image/feed/blog.gif" class="vm" /> {lang blog}</h1>
+					<div class="tbbox">
 					<ul class="tb cl">
 						<li$actives[we]><a href="home.php?mod=space&do=blog&view=we">{lang friend_blog}</a></li>
 						<li$actives[me]><a href="home.php?mod=space&do=blog&view=me">{lang my_blog}</a></li>
@@ -66,6 +74,7 @@
 						<li class="o"><a href="home.php?mod=spacecp&ac=blog">{lang post_new_blog}</a></li>
 						<!--{/if}-->
 					</ul>
+					</div>
 				</div>
 		<!--{else}-->
 			<div class="appl">
@@ -176,7 +185,11 @@
 				<p class="mtm">{lang hide_blog}</p>
 			<!--{/if}-->
 			</div>
-			<!--{if $multi}--><div class="pgs cl mtm">$multi</div><!--{/if}-->
+			<!--{if $multi}-->
+				<div class="w-pages pgs cl mtm">
+					<div class="w-pages-list">$multi</div>
+				</div>
+			<!--{/if}-->
 		<!--{else}-->
 			<div class="emp">{lang no_related_blog}</div>
 		<!--{/if}-->

@@ -2,6 +2,10 @@ jQuery(function($){
 
 	var $mask = $("#u-mask")
 
+	$("#w-custom-zoom").on('click',function(){
+		alert('按住【ctrl】，滚动鼠标【滚轮】即可缩放界面');
+	})
+
 	//手机 弹层处理
 	if($("html").hasClass('ua-responsive') && $("body").hasClass('screen-s')){
 

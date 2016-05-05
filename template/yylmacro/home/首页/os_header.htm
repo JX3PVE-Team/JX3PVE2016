@@ -1,61 +1,96 @@
 <div class="user-os-header">
-
 	<div class="user-os-profile">
  		<div class="user-os-avt">
  			<!--{if $_G['uid']}-->
-	 			<a class="u-avt" href="home.php?mod=space&uid=$_G[uid]"><!--{avatar($_G[uid],small)}--></a>
-	 			<span class="u-name">$_G[member][username]</span>
-	 			<span class="u-uid">UID:<b>$_G[uid]</b></span>
+	 			<a class="u-avt" href="home.php?mod=space&uid=$_G[uid]">
+	 				<!--{avatar($_G[uid],small)}-->
+	 			</a>
+	 			<div class="u-meta">
+		 			<div class="u-meta-1">
+		 				<span class="u-name">
+		 					$_G[member][username]
+		 				</span>
+		 				<!--{if ($_G[groupid]==22)}-->
+		 					<a href="./vip" class="e-vip e-vip-true"></a>
+		 				<!--{else}-->
+		 					<a href="./vip" class="e-vip e-vip-false"></a>
+		 				<!--{/if}-->
+		 				<a class="u-logout" href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+		 			</div>
+		 			<div class="u-meta-2">
+		 				<span class="u-uid">
+			 				UID:<b>$_G[uid]</b>
+			 			</span>
+		 				<a class="u-group" href="./home.php?mod=spacecp&ac=usergroup">$_G[group][grouptitle]</a>
+		 				<span class="u-verif">
+		 					<!--{if $_G['setting']['verify']['enabled']}-->
+								<!--{loop $_G['setting']['verify'] $vid $verify}-->
+									<!--{if $verify['available']}-->
+										<!--{if $space['verify'.$vid] == 1}-->
+											<a href="home.php?mod=spacecp&ac=profile&op=verify&vid=$vid" data-target="_blank"><!--{if $verify['icon']}--><img src="$verify['icon']" class="vm" alt="$verify[title]" title="$verify[title]" /><!--{else}-->$verify[title]<!--{/if}--></a>
+										<!--{elseif !empty($verify['unverifyicon'])}-->
+											<a href="home.php?mod=spacecp&ac=profile&op=verify&vid=$vid" target="_blank"><!--{if $verify['unverifyicon']}--><img src="$verify['unverifyicon']" class="vm" alt="$verify[title]" title="$verify[title]" /><!--{/if}--></a>
+										<!--{/if}-->
+									<!--{/if}-->
+								<!--{/loop}-->
+							<!--{/if}-->
+		 				</span>
+		 			</div>
+	 			</div>
  			<!--{else}-->
  				<a class="u-avt null" href="./login"></a>
- 				<a class="u-name" href="./login">登录</a>
+ 				<div class="u-meta">
+ 					<a class="u-login" href="./login">登录</a>
+ 				</div>
 	 		<!--{/if}-->
  		</div>
 
+		<!--{if $_G['uid']}-->
 		<div class="user-os-info">
-			<span class="u-mail">
-				<em title="点击修改绑定邮箱"><a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=profile&op=password">$space[email]</a></em> 
-				( <i id="user-email-status"><a title="点击修改绑定邮箱" href="http://www.jx3pve.com/home.php?mod=spacecp&ac=profile&op=password" target="_blank">
-				<!--{if $space[emailstatus] > 0}-->{lang profile_verified}
-				<!--{else}-->{lang profile_no_verified}
-				<!--{/if}-->
-				</a></i> )
-			</span>
-			<a class="u-space" href="home.php?mod=space&uid=$_G[uid]" data-target="_blank">[ 我的个人空间 ]</a>
+			<div class="u-meta-3">
+				<span class="u-mail">
+					<em title="点击修改绑定邮箱"><a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=profile&op=password">$space[email]</a></em> 
+					( <i id="user-email-status"><a title="点击修改绑定邮箱" href="http://www.jx3pve.com/home.php?mod=spacecp&ac=profile&op=password" target="_blank">
+					<!--{if $space[emailstatus] > 0}-->{lang profile_verified}
+					<!--{else}-->{lang profile_no_verified}
+					<!--{/if}-->
+					</a></i> )
+				</span>
+				<a class="u-space" href="home.php?mod=space&uid=$_G[uid]" data-target="_blank">[ 我的个人空间 ]</a>
+			</div>
+			<div class="u-meta-4">
+				<span class="u-sign"><!--{hook/global_usernav_extra2}--></span>
+			</div>
 		</div>
+		<!--{/if}-->
 	</div>
 
-	<div class="user-os-meta">
-		<ul>
-
+	<!--{if $_G['uid']}-->
+	<div class="user-os-credit">
+		<ul class="u-credit-list">
+			<li class="cre">
+				<label>金钱</label> 
+				<span><!--{echo getuserprofile('extcredits2');}--></span> 
+			</li>
 			<li class="cre">
 				<label>米 币</label> 
 				<span><!--{echo getuserprofile('extcredits4');}--></span> 
-				<a href="./buy" class="u-btn-cre"></a>
+				<a href="./buy">[充值]</a>
 			</li>
-
-			<li class="usergroup">
-				<label>用户组</label> 
-				<a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=usergroup">$_G[group][grouptitle]<!--{eval g_icon($space[groupid]);}--></a>
+			<li class="cre">
+				<label>人气</label> 
+				<span><!--{echo getuserprofile('extcredits5');}--></span> 
 			</li>
-
-			<li class="verf">
-				<label>认 证</label> 
-				<span>
-				<!--{if $_G['setting']['verify']['enabled']}-->
-					<!--{loop $_G['setting']['verify'] $vid $verify}-->
-						<!--{if $verify['available']}-->
-							<!--{if $space['verify'.$vid] == 1}-->
-								<a href="home.php?mod=spacecp&ac=profile&op=verify&vid=$vid" target="_blank"><!--{if $verify['icon']}--><img src="$verify['icon']" class="vm" alt="$verify[title]" title="$verify[title]" /><!--{else}-->$verify[title]<!--{/if}--></a>
-							<!--{elseif !empty($verify['unverifyicon'])}-->
-								<a href="home.php?mod=spacecp&ac=profile&op=verify&vid=$vid" target="_blank"><!--{if $verify['unverifyicon']}--><img src="$verify['unverifyicon']" class="vm" alt="$verify[title]" title="$verify[title]" /><!--{/if}--></a>
-							<!--{/if}-->
-						<!--{/if}-->
-					<!--{/loop}-->
-				<!--{/if}-->
-				</span>
+			<li class="cre">
+				<label>水晶</label> 
+				<span><!--{echo getuserprofile('extcredits8');}--></span> 
 			</li>
 		</ul>
+		<p class="u-credit-extend">
+			<a class="u-gift" href="javascript:;" title="即将开放">积分兑换</a>
+			<a class="u-code" href="./home.php?mod=spacecp&ac=invite">邀请码</a>
+		</p>
 	</div>
+	<!--{/if}-->
 	
 </div>

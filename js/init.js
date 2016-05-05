@@ -6,8 +6,7 @@ H.load([
 	{'macro':head_conf.CDNROOT+'plugin/macro.min.js'},
 	{'copycode':head_conf.CDNROOT+'widget/copycode.min.js'},
 	{'clipboard':head_conf.CDNROOT+'plugin/clipboard.js'},
-	{'custom':head_conf.CDNROOT+'widget/w-custom.min.js'},
-	{'getRequest':head_conf.CDNROOT+'plugin/getRequest.js'},
+	{'getRequest':head_conf.CDNROOT+'plugin/getRequest.min.js'},
 	{'dialog':head_conf.CDNROOT+'mod/dialog.min.js'},
 	{'custombg':head_conf.CDNROOT+'mod/custombg.min.js'},
 	{'sfilter':head_conf.CDNROOT+'mod/sfilter.min.js'},
@@ -70,28 +69,29 @@ jQuery(function($){
 		}
 	}
 
-	//自适应界面布局
-		/*//当PC版，内容区少于侧边栏高度时，给内容包裹区设置最小高度等于侧边栏
-		var $sidebar = $(".default-sidebar")
-		var $content = $(".default-content")
-		var $main = $(".default-main")
-		var isDefaultSkin = $sidebar.length && $content.length;
-		if(isDefaultSkin && isNotMobile){
-			var sidebar_H = $sidebar.outerHeight()
-			var content_H = $content.outerHeight()
-			if(sidebar_H > content_H){
-				$main.css('min-height',sidebar_H)
-			}
-		}*/
-		//当内容区小于窗口高度时，设置内容包裹区高度最小高度让全部内容满屏
-		var win_H = $win.height()
-		var body_H = $body.innerHeight()
-		var isNotFullscreen = body_H < win_H;
-		var alertHeight = ( $("#c-alert-warning").html().length > 2 ) ? 30 : 0;
-		if(isNotFullscreen && isNotMobile){
-			var diff_win_body = win_H - body_H
-			var box_minHeight = body_H - c_header_height - 237 - alertHeight + diff_win_body
-			$box.css('min-height',box_minHeight)
-		}
+	//自适应界面布局 当内容区小于窗口高度时，设置内容包裹区高度最小高度让全部内容满屏
+	var win_H = $win.height()
+	var body_H = $body.innerHeight()
+	var isNotFullscreen = body_H < win_H;
+	var alertHeight = ( $("#c-alert-warning").html().length > 2 ) ? 30 : 0;
+	if(isNotFullscreen && isNotMobile){
+		var diff_win_body = win_H - body_H
+		var box_minHeight = body_H - c_header_height - 237 - alertHeight + diff_win_body
+		$box.css('min-height',box_minHeight)
+	}
+
+	//tab卡移动版
+	if(isMobile){
+		$(".tb").add('.subtb').each(function(){
+			var w = 0;
+			var $tb = $(this)
+			$tb.children('li').each(function(){
+				var $li = $(this)
+				w = w + $li.outerWidth()
+			})
+			$tb.css('width',w)
+		})
+	}
+
 
 })

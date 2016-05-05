@@ -1,0 +1,32 @@
+.user-os-content{
+	background-color:#fff;
+	margin-bottom:20px;
+	border-bottom:1px solid #ddd;
+	border-top:1px solid #ddd;
+}
+.m-title{
+	.lh(50px);
+	border-bottom:1px solid #eee;
+	padding:0 10px;
+}
+.m-list{
+	@s:80px;
+	.full(x);
+	overflow-x:auto;
+
+	ul{
+		.clearfix;
+		.h(@s*2);
+		.w(6*@s + 6*1px);
+	}
+	li{
+		.fl;.size(@s);
+		border-right:1px solid #eee;
+		border-bottom:1px solid #eee;
+	}
+	a{
+		.db;.full;
+		line-height:@s;
+		.x;font-size:12px;
+	}
+}

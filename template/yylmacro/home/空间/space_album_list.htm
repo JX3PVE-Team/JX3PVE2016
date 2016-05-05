@@ -36,6 +36,10 @@
 	<!--{/if}-->
 <!--{else}-->
 	<!--{template common/header_m}-->
+	<header class="i-header">
+		<a class="i-header-back" href="./home.php"><i></i></a>
+		<div class="i-header-title">相册</div>
+	</header>
 	<div class="user-container">
 		<div class="wp">
 
@@ -126,7 +130,11 @@
 							</li>
 							<!--{/loop}-->
 						</ul>
-						<!--{if $multi}--><div class="pgs cl mtm">$multi</div><!--{/if}-->
+							<!--{if $multi}-->
+								<div class="w-pages pgs cl mtm">
+									<div class="w-pages-list">$multi</div>
+								</div>
+							<!--{/if}-->
 						<!--{else}-->
 						<div class="emp">{lang no_album}</div>
 						<!--{/if}-->

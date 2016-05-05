@@ -1,4 +1,4 @@
-<!--{template common/header}-->
+<!--{template common/header_m}-->
 
 <!--{if $_GET[op] == 'delete'}-->
 <h3 class="flb">
@@ -62,6 +62,10 @@
 	</p>
 </form>
 <!--{else}-->
+<header class="i-header">
+	<a class="i-header-back" href="./home.php"><i></i></a>
+	<div class="i-header-title">日志</div>
+</header>
 <div id="pt" class="bm cl">
 	<div class="z">
 		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
@@ -283,5 +287,7 @@ if($('subject')) {
 <!--{/if}-->
 
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/user.css" type="text/css" />
+<link rel="stylesheet" href="http://css.jx3pve.com/css/user/space.css" type="text/css" />
 <script src="http://js.jx3pve.com/js/user/user.min.js"></script>
+<script src="http://js.jx3pve.com/js/user/space.min.js"></script>
 <!--{template common/footer}-->
