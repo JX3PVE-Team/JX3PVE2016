@@ -1,5 +1,6 @@
 .listpage-container,.viewpage-container,.postpage-container{
-	background-color:#f7f7f7;
+	//background-color:#f7f7f7;
+	padding-top:2px;
 }
 
 .default-main{
@@ -20,12 +21,12 @@
 .default-content{
 	//margin-left:@sd + 20px;
 	.fr;
-	padding:20px;
+	//padding:10px 0;
 	background-color:#fff;
 	//border:1px solid #ddd;
     //box-shadow: 0 0 4px rgba(0,0,0,0.1);
 	.r(4px);
-	.w(@ct - 20px*2);
+	.w(@ct);
 }
 .ua-responsive .screen-m{
 	.default-content{.w(@ctm  - 20px*2);}
@@ -36,6 +37,9 @@
 		border:none;
 	}
 }
+
+
+
 
 .ua-responsive .screen-s{
 	.listpage-container,.viewpage-container,.postpage-container{
@@ -62,3 +66,4 @@
 #nv_group{
 	&:extend(.f-85);
 }
+

@@ -21,4 +21,10 @@ jQuery(function($){
         $('html').addClass('alertHTML');
     }
 
+    //个人中心on
+    var url = window.location.href
+    if(url.indexOf('home.php') !=-1){
+        $('.i-footer .u-os').addClass('on')
+    }
+
 })

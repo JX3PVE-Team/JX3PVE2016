@@ -1,6 +1,10 @@
 <!--{template common/header_m}-->
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/user.css" type="text/css" />
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/bbs/guide.css" type="text/css" />
+<header class="i-header">
+	<a class="i-header-back" href="./home.php"><i></i></a>
+	<div class="i-header-title">我的帖子</div>
+</header>
 <div class="user-container guide-container">
 	<div class="wp">
 		<div id="pt" class="bm cl">
@@ -39,17 +43,19 @@
 							<!--{/if}-->
 						</div>
 						<h1 class="mt">
-							我的帖子
+							导读
 							<a class="u-btn-publish" onclick="showWindow('nav', this.href, 'get', 0)" href="forum.php?mod=misc&amp;action=nav">快速发布</a>
-							<div class="m-guide-authortips"><!--{block/1799}--></div>
 						</h1>
-						<ul class="subtb">
-							<!--{if $view == 'my'}-->
-								<li {if ($_GET['type']=="thread")} class="on"{/if} ><a href="forum.php?mod=guide&view=my&type=thread" $orderactives[thread]>{lang forum_threads}</a></li>
-								<li {if ($_GET['type']=="reply")} class="on"{/if} ><a href="forum.php?mod=guide&view=my&type=reply" $orderactives[reply]>{lang reply}</a></li>
-								<li {if ($_GET['type']=="postcomment")} class="on"{/if} ><a href="forum.php?mod=guide&view=my&type=postcomment" $orderactives[postcomment]>{lang comments}</a></li>
-							<!--{/if}-->
-						</ul>
+						<div class="tbbox">
+							<ul class="tb">
+								<!--{if $view == 'my'}-->
+									<li {if ($_GET['type']=="thread")} class="on"{/if} ><a href="forum.php?mod=guide&view=my&type=thread" $orderactives[thread]>{lang forum_threads}</a></li>
+									<li {if ($_GET['type']=="reply")} class="on"{/if} ><a href="forum.php?mod=guide&view=my&type=reply" $orderactives[reply]>{lang reply}</a></li>
+									<li {if ($_GET['type']=="postcomment")} class="on"{/if} ><a href="forum.php?mod=guide&view=my&type=postcomment" $orderactives[postcomment]>{lang comments}</a></li>
+								<!--{/if}-->
+							</ul>
+							<div class="m-guide-authortips"><!--{block/1799}--></div>
+						</div>
 						<ul id="thread_types" class="ttp bm cl">
 							<li $currentview['hot']><a href="forum.php?mod=guide&view=hot">{lang guide_hot}</a></li>
 							<li $currentview['digest']><a href="forum.php?mod=guide&view=digest">{lang guide_digest}</a></li>

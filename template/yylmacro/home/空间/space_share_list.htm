@@ -34,6 +34,10 @@
 	<!--{/if}-->
 <!--{else}-->
 	<!--{template common/header_m}-->
+	<header class="i-header">
+		<a class="i-header-back" href="./home.php"><i></i></a>
+		<div class="i-header-title">分享</div>
+	</header>
 	<div class="user-container">
 		<div class="wp">
 
@@ -111,7 +115,7 @@
 			<!--{if $pricount}-->
 				<p class="mtm">{lang hide_share}</p>
 			<!--{/if}-->
-			<!--{if $multi}--><div class="pgs cl mtm">$multi</div><!--{/if}-->
+			<!--{if $multi}--><div class="w-pages pgs cl mtm"><div class="w-pages-list">$multi</div></div><!--{/if}-->
 		<!--{else}-->
 			<ul id="share_ul" class="el sl"></ul>
 			<p class="emp">{lang not_share_yet}</p>

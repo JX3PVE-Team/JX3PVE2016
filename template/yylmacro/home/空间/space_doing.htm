@@ -32,6 +32,10 @@
 	<!--{if $space[self] && helper_access::check_module('doing')}--><!--{template home/space_doing_form}--><!--{/if}-->
 <!--{else}-->
 	<!--{template common/header_m}-->
+	<header class="i-header">
+		<a class="i-header-back" href="./home.php"><i></i></a>
+		<div class="i-header-title">记录</div>
+	</header>
 	<div class="user-container">
 		<div class="wp">
 
@@ -118,7 +122,7 @@
 			<!--{/if}-->
 			</div>
 			<!--{if $multi}-->
-			<div class="pgs cl mtm">$multi</div>
+			<div class="w-pages pgs cl mtm"><div class="w-pages-list">$multi</div></div>
 			<!--{elseif $_GET[highlight]}-->
 			<div class="pgs cl mtm"><div class="pg"><a href="home.php?mod=space&do=doing&view=me">{lang viewmore}</a></div></div>
 			<!--{/if}-->

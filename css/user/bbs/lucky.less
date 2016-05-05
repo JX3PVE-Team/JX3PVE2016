@@ -23,7 +23,9 @@
     	color: #555;
 	}
 }
-
+.tl th, .tl td{
+	padding:0;
+}
 .m-lucky-topbox{
 	.pr;
 	.y{
@@ -99,9 +101,8 @@
 	.u-role{
 		.color(#555,#555,@blue-link);
 		.fr;
-		.xi1{
-			color:#999;
-		}
+		span{color:#999;}
+		a{.none;}
 	}
 	.u-address{
 		.none;
@@ -136,5 +137,14 @@
 		&:hover{
 			background-color:@blue-bg;
 		}
+	}
+}
+
+.ua-responsive .screen-s{
+	.m-lucky-topbox .y{.none;}
+
+	.m-jiyu-toplist .up, .m-jiyu-toplist .down{
+		.w(100%);
+		float:none;
 	}
 }

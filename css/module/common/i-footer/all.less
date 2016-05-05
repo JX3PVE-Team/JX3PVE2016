@@ -54,7 +54,16 @@
 		&.on i{background-image:url('@{url}footer/search2.svg');}
 	}
 	.u-os{
-		i{background-image:url('@{url}footer/os.svg');}
+		i{
+			.pr;
+			background-image:url('@{url}footer/os.svg');
+			em{
+				.pa;.rt(-9px,0);
+				.db;background-color:#f00;.indent;
+				.size(10px);.r(10px);
+				.none;
+			}
+		}
 		&.on i{background-image:url('@{url}footer/os2.svg');}
 	}
 }

@@ -2,6 +2,10 @@
 <!--{template common/header_m}-->
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/user.css" type="text/css" />
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/msg/friend.css" type="text/css" />
+<header class="i-header">
+	<a class="i-header-back" href="./home.php"><i></i></a>
+	<div class="i-header-title">好友</div>
+</header>
 <div class="user-container">
 	<div class="wp">
 		<div id="pt" class="bm cl">
@@ -25,6 +29,7 @@
 
 							<!--{if $space[self]}-->
 								<h1 class="mt"><img alt="friend" src="{STATICURL}image/feed/friend.gif" class="vm" /> {lang friend_list}</h1>
+								<div class="tbbox">
 								<ul class="tb cl">
 									<li{$a_actives[me]}><a href="home.php?mod=space&do=friend">{lang all_friend_list}</a></li>
 									<!--{if empty($_G['setting']['sessionclose'])}-->
@@ -36,6 +41,7 @@
 									<li{$a_actives[trace]}><a href="home.php?mod=space&do=friend&view=trace">{lang my_trace}</a></li>
 									<li{$a_actives[blacklist]}><a href="home.php?mod=space&do=friend&view=blacklist">{lang my_blacklist}</a></li>
 								</ul>
+								</div>
 								<div class="tbmu cl">
 									<!--{if $_GET['view']=='blacklist'}-->
 										{lang blacklist_message}
@@ -70,7 +76,7 @@
 
 								<!--{if $_GET['view']=='blacklist'}-->
 								<h2 class="mtw xs2">{lang add_blacklist}</h2>
-								<div class="bm bmn mtm cl">
+								<div class="bm bmn mtm cl m-friend-black">
 									<form method="post" autocomplete="off" name="blackform" action="home.php?mod=spacecp&ac=friend&op=blacklist&start=$_GET[start]">
 										<table cellpadding="0" cellspacing="0" class="tfm">
 											<tr>
@@ -121,8 +127,8 @@
 					<!--{/if}-->
 								<!--{if $space[self]}-->
 									<!--{if $groups}-->
-										<div class="cl" style="padding-right: 263px;">
-											<div style="float: right; margin-right: -263px; width: 263px; display: inline;">
+										<div class="m-friend-box cl" style="padding-right: 263px;">
+											<div class="m-friend-search" style="float: right; margin-right: -263px; width: 263px; display: inline;">
 												<div class="bm mtm">
 													<div class="bm_h">
 														<h3>{lang search_friend}</h3>
@@ -268,7 +274,11 @@
 													<!--{/loop}-->
 													</ul>
 												</div>
-												<!--{if $multi}--><div class="pgs cl mtm">$multi</div><!--{/if}-->
+												<!--{if $multi}-->
+													<div class="w-pages pgs cl mtm">
+														<div class="w-pages-list">$multi</div>
+													</div>
+												<!--{/if}-->
 											<!--{else}-->
 							                	<!--{if $_GET['view'] == 'me' && !$friendnum}-->
 							                    	<!--{if $specialuser_list}-->
