@@ -27,31 +27,32 @@
 
 	.tobuy-custom{
 		margin:10px auto;
-		.size(342px,42px);
+		.size(280px,40px);
+		padding:0 50px 0 10px;
+		border:1px solid #ddd;
+		box-shadow:0 0 2px #eee inset;
+		transition:0.2s ease-in-out;
+		.r(2px);
 		.pr;
 		.u-text-buynum{
-			border:1px solid #ddd;
-			.r(2px);
-			.size(280px,40px) !important;
+			background: none;
+			border:none;
+			line-height:40px;
 			.fz(16px,40px);
 			.db;.auto(x);
-			padding:0 50px 0 10px;
-			box-shadow:0 0 2px #eee inset;
-			transition:0.2s ease-in-out;
+			.full;
 			.tip(custom,color,#ccc);
 		}
 		.price{
-			.pa;.rt(10px,10px);
+			.pa;.rt(10px,5px);
 			.fz(14px);
 			color:#ccc;
 			transition:0.1s ease-in-out;
 			background-color:#fff;
 		}
 		&.u-focus{
-			.u-text-buynum{
-				border:1px solid @yel;
-				box-shadow:0 0 6px #eee inset;
-			}
+			border:1px solid @yel;
+			box-shadow:0 0 6px #eee inset;
 			.price{
 				color:@yel;
 			}
@@ -92,6 +93,18 @@
 		}
 	}
 }
+.ua-responsive .screen-s{
+	.buy-pc-primary .tobuy-custom{
+		.w(100%);
+		box-sizing:border-box;
+	}
+	.buy-pc-primary .m-custom .tobuy-custom, .buy-pc-primary .m-custom .u-buy-tips{
+		float:none;
+		.x(left);
+		margin:0;
+	}
+}
+
 //充值记录
 .buy-pc-log{
 	.m-gobutton{
@@ -117,6 +130,11 @@
 			padding:0 20px;
 		}
 	}
+}
+.ua-responsive .screen-s .buy-pc-log{
+	.m-credit-log-system{.full(x);overflow-x:auto;}
+	.exfm table{.table(block);}
+	.exfm *{.clearfix;}
 }
 
 //我的积分

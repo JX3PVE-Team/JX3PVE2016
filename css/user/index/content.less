@@ -8,11 +8,14 @@
 	.lh(50px);
 	border-bottom:1px solid #eee;
 	padding:0 10px;
+	color:#555;
 }
 .m-list{
 	@s:80px;
 	.full(x);
+	.h(@s*2 - 1px);
 	overflow-x:auto;
+	overflow-y:hidden;
 
 	ul{
 		.clearfix;
@@ -30,3 +33,5 @@
 		.x;font-size:12px;
 	}
 }
+.user-os-content{.none;}
+.ua-responsive .screen-s .user-os-content{.db;}

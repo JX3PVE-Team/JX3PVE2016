@@ -24,12 +24,14 @@
 							<h1 class="mt">
 								任务中心
 							</h1>
+							<div class="tbbox">
 							<ul class="tb cl">
 								<li$actives[new]><a href="home.php?mod=task&item=new">{lang task_new}</a></li>
 								<li$actives[doing]><a href="home.php?mod=task&item=doing">{lang task_doing}</a></li>
 								<li$actives[done]><a href="home.php?mod=task&item=done">{lang task_done}</a></li>
 								<li$actives[failed]><a href="home.php?mod=task&item=failed">{lang task_failed}</a></li>
 							</ul>
+							</div>
 							<!--{if empty($do)}-->
 								<!--{subtemplate home/space_task_list}-->
 							<!--{elseif $do == 'view'}-->

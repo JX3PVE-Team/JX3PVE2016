@@ -51,8 +51,10 @@
 	</tr>
 	<!--{/loop}-->
 <!--{else}-->
-	<link rel="stylesheet" href="http://css.jx3pve.com/css/user/user.css" type="text/css" />
-	<link rel="stylesheet" href="http://css.jx3pve.com/css/user/credit/invite.css" type="text/css" />
+	<header class="i-header">
+		<a class="i-header-back" href="./home.php"><i></i></a>
+		<div class="i-header-title">邀请码</div>
+	</header>
 	<div class="user-container">
 		<div class="wp">
 
@@ -139,7 +141,7 @@
 											</caption>
 
 											<tbody>
-												<tr class="m-title">
+												<tr class="m-title invitelist">
 													<td class="bbda"><strong>{lang invite_link}</strong></td>
 													<td class="bbda"><strong>{lang invite_code}</strong></td>
 												</tr>
@@ -269,6 +271,8 @@
 			</div>
 		</div>
 	</div>
+	<link rel="stylesheet" href="http://css.jx3pve.com/css/user/user.css" type="text/css" />
+	<link rel="stylesheet" href="http://css.jx3pve.com/css/user/credit/invite.css" type="text/css" />
 	<script src="http://js.jx3pve.com/js/user/user.min.js"></script>
 	<script src="http://js.jx3pve.com/js/user/invite.min.js"></script>
 <!--{/if}-->

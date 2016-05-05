@@ -124,11 +124,13 @@
 																<a href="{if $value['pid']}forum.php?mod=redirect&goto=findpost&ptid=$value['tid']&pid=$value['pid']{else}forum.php?mod=viewthread&tid=$value['tid']{/if}" target="_blank" class="xst" >$value[event]</a>
 															</span>
 															<span class="u-role">
+																<em class="none">
 																<!--{if $value['uid'] && $value[username] && !$value[anonymous] || $action == 'my'}-->
 																	<a href="home.php?mod=space&uid=$value['uid']" c="1">$value[username]</a>
 																<!--{else}-->
 																	$_G[setting][anonymoustext]
 																<!--{/if}-->
+																</em>
 																<span{if $value['istoday']} class="xi1"{/if}><!--{date($value['dateline'], 'Y-n-j H:i:s')}--></span>
 															</span>
 															<span class="u-address">

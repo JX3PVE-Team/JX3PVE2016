@@ -1,6 +1,10 @@
 <!--{template common/header_m}-->
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/user.css" type="text/css" />
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/credit/buy.css" type="text/css" />
+<header class="i-header">
+	<a class="i-header-back" href="./home.php"><i></i></a>
+	<div class="i-header-title">积分</div>
+</header>
 <div class="user-container">
 	<div class="wp">
 		<div id="pt" class="bm cl">
@@ -101,6 +105,7 @@
 										<input type="hidden" name="mod" value="spacecp" />
 									</form>
 									<!--{elseif $_GET[suboperation] == 'creditrulelog'}-->
+									<div class="m-credit-log-system">
 										<table summary="{lang get_credit_histroy}" cellspacing="0" cellpadding="0" class="dt">
 											<tr>
 												<th class="xw1" width="80">{lang action_name}</th>
@@ -126,6 +131,7 @@
 											</tr>
 											<!--{/loop}-->
 										</table>
+									</div>
 									<!--{/if}-->
 									<!--{if $multi}--><div class="pgs cl mtm">$multi</div><!--{/if}-->
 								</div>

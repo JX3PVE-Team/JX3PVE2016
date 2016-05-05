@@ -1,6 +1,10 @@
 <!--{template common/header_m}-->
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/user.css" type="text/css" />
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/setting/setting.css" type="text/css" />
+<header class="i-header">
+	<a class="i-header-back" href="./home.php"><i></i></a>
+	<div class="i-header-title">隐私设置</div>
+</header>
 <div class="user-container">
 	<div class="wp">
 
@@ -19,13 +23,15 @@
 						<div class="bm bw0">
 							<h1 class="mt"><!--{subtemplate home/spacecp_header_name}--></h1>
 							<!--{hook/spacecp_privacy_top}-->
-							<ul class="tb cl">
-								<li$opactives[base]><a href="home.php?mod=spacecp&ac=privacy&op=base">{lang personal_privacy_settings}</a></li>
-								<!--{if helper_access::check_module('feed')}-->
-								<li$opactives[feed]><a href="home.php?mod=spacecp&ac=privacy&op=feed">{lang personal_feed_settings}</a></li>
-								<li$opactives[filter]><a href="home.php?mod=spacecp&ac=privacy&op=filter">{lang feed_filter}</a></li>
-								<!--{/if}-->
-							</ul>
+							<div class="tbbox">
+								<ul class="tb cl">
+									<li$opactives[base]><a href="home.php?mod=spacecp&ac=privacy&op=base">{lang personal_privacy_settings}</a></li>
+									<!--{if helper_access::check_module('feed')}-->
+									<li$opactives[feed]><a href="home.php?mod=spacecp&ac=privacy&op=feed">{lang personal_feed_settings}</a></li>
+									<li$opactives[filter]><a href="home.php?mod=spacecp&ac=privacy&op=filter">{lang feed_filter}</a></li>
+									<!--{/if}-->
+								</ul>
+							</div>
 							<form method="post" autocomplete="off" action="home.php?mod=spacecp&ac=privacy&op=$operation">
 								<input type="hidden" name="formhash" value="{FORMHASH}" />
 

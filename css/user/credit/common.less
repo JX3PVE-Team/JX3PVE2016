@@ -82,7 +82,7 @@
 	}
 	.m-days,.m-payway{
 		.auto(x);
-		.w(242px*3 - 20px);
+		//.w(242px*3 - 20px);
 
 		form,.m-wrapper{
 			.w(242px*3);
@@ -196,6 +196,20 @@
 		letter-spacing:1px;
 	}
 }
+.ua-responsive .screen-s{
+	.m-credit-primary .m-days label, .m-credit-primary .m-payway label{
+		.w(auto);
+		float:none;
+		margin:0 0 10px 0;
+	}
+	.m-credit-primary .m-days form, .m-credit-primary .m-payway form, .m-credit-primary .m-days .m-wrapper, .m-credit-primary .m-payway .m-wrapper{
+		.w(100%) !important;
+		.auto(x);
+	}
+	.m-credit-primary .m-msg{
+		.w(auto);
+	}
+}
 
 //块头
 .m-block{
@@ -228,4 +242,8 @@
 }
 .u-icon-error{
 	background-image:url('@{url}icon/error.gif');
+}
+
+.ua-responsive .screen-s{
+	.m-status .profile .credit{.none;}
 }

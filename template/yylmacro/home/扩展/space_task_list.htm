@@ -7,11 +7,11 @@
 </h1>
 <div class="ptm">
 	<!--{if $tasklist}-->
-		<table cellspacing="0" cellpadding="0" width="100%">
+		<table cellspacing="0" cellpadding="0" width="100%" class="m-task-box">
 			<!--{loop $tasklist $task}-->
 				<tr>
-					<td width="80" class="bbda"><img class="m-task-icon" src="$task[icon]" width="64" height="64" alt="$task[name]" /></td>
-					<td class="bbda ptm pbm">
+					<td width="80" class="m-task-item-icon bbda"><img class="m-task-icon" src="$task[icon]" width="64" height="64" alt="$task[name]" /></td>
+					<td class="bbda ptm pbm m-task-item-ct">
 						<h3 class="xs2 xi2"><a href="home.php?mod=task&do=view&id=$task[taskid]">$task[name]</a> <span class="xs1 xg2 xw0">({lang task_applies}: <a href="home.php?mod=task&do=view&id=$task[taskid]#parter">$task[applicants]</a> )</span></h3>
 						<p class="xg2">$task[description]</p>
 						<!--{if $_GET['item'] == 'doing'}-->
@@ -21,7 +21,7 @@
 						</div>
 						<!--{/if}-->
 					</td>
-					<td class="xi1 bbda hm" width="200">
+					<td class="xi1 bbda hm m-task-item-gift" width="200">
 						<!--{if $task['reward'] == 'credit'}-->
 							{lang credits} $_G['setting']['extcredits'][$task[prize]][title] $task[bonus] $_G['setting']['extcredits'][$task[prize]][unit]
 						<!--{elseif $task['reward'] == 'magic'}-->
@@ -34,7 +34,7 @@
 							{lang usergroup} $listdata[$task[prize]] <!--{if $task['bonus']}--> $task[bonus] {lang days} <!--{/if}-->
 						<!--{/if}-->
 					</td>
-					<td width="120" class="bbda">
+					<td width="120" class="bbda m-task-item-go">
 						<!--{if $_GET['item'] == 'new'}-->
 							<!--{if $task['noperm']}-->
 								<a href="javascript:;" onclick="doane(event);showDialog('{lang task_group_nopermission}')"><img src="{STATICURL}image/task/disallow.gif" title="{lang task_group_nopermission}" alt="disallow" /></a>

@@ -15,6 +15,10 @@
 				<div class="bm_c">
 	<!--{else}-->
 		<!--{template common/header_m}-->
+		<header class="i-header">
+			<a class="i-header-back" href="./home.php"><i></i></a>
+			<div class="i-header-title">相册</div>
+		</header>
 		<div id="pt" class="bm cl">
 			<div class="z">
 				<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
@@ -84,7 +88,7 @@
 <!--{/if}-->
 
 		<div class="tbmu cl">
-			<!--{if helper_access::check_module('album') && $space[self] && (($diymode && !$_G[setting][homepagestyle]) || (!$diymode && !$_G[setting][homestyle]))}--><a href="home.php?mod=spacecp&ac=upload" class="y pn pnc"><strong>{lang upload_pic}</strong></a><!--{/if}-->
+			<!--{if helper_access::check_module('album') && $space[self] && (($diymode && !$_G[setting][homepagestyle]) || (!$diymode && !$_G[setting][homestyle]))}--><a href="home.php?mod=spacecp&ac=upload" class="y pn pnc user-space-album-pub"><strong>{lang upload_pic}</strong></a><!--{/if}-->
 
 			<!--{if $space[self] && $_GET['view']=='me'}-->
 				{lang explain_album}

@@ -22,6 +22,10 @@
 				<div class="bm_c">
 	<!--{else}-->
 		<!--{template common/header_m}-->
+		<header class="i-header">
+			<a class="i-header-back" href="./home.php"><i></i></a>
+			<div class="i-header-title">主题</div>
+		</header>
 		<div id="pt" class="bm cl">
 			<div class="z">
 				<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> 
@@ -31,10 +35,6 @@
 				<a href="home.php?mod=space&uid=$space[uid]">{$space[username]}</a> <em>&rsaquo;</em>
 				<a href="home.php?mod=space&uid=$space[uid]&do=blog&view=me">{lang thread}</a>
 			</div>
-		</div>
-		<style id="diy_style" type="text/css"></style>
-		<div class="wp">
-			<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
 		</div>
 		<!--{template home/space_menu}-->
 		<div id="ct" class="ct1 wp cl">
