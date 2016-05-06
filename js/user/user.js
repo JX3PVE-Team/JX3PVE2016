@@ -2,7 +2,7 @@ jQuery(function($){
 
 	//侧边栏展开
 	$(".user-sidebar-title").on('click',function(){
-		$(this).toggleClass('on');
+		//$(this).toggleClass('on');
 		$(this).next('.user-sidebar-list').slideToggle()
 	})
 	$(".user-sidebar-list li").each(function(){
