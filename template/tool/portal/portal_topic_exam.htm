@@ -1,0 +1,122 @@
+<!--{template app/header}-->
+<link rel="stylesheet" href="http://css.jx3pve.com/css/app/app.css" type="text/css" />
+<link rel="stylesheet" href="http://css.jx3pve.com/css/app/exam.css" type="text/css" />
+<div class="app-container">
+
+	<!-- 此处可以通过模板获取到当前用户的uid和用户组id，所有前后台数据通过ajax交互 -->
+	<input type="hidden" id="userGroupId" value="$_G[groupid]">
+    <input type="hidden" id="userUID" value="$_G[uid]">
+
+    <!-- search，尽量支持智能搜索，例如拼音 -->
+    <div class="app-search">
+        <form class="search" onsubmit="return false">
+            <input type="text" placeholder="输入需要查找的关键词" id="search_txt">
+            <button id="search_btn">搜索</button>
+        </form>
+    </div>
+
+    <!-- stat，获取后台数据，插入dom -->
+   	<p class="m-exam-stat">
+   		<i class="u-icon-stat"></i>
+		目前题库总计<b id="exam-count">$</b>道题，
+		已确认题目<b id="exam-confirm">$</b>道，
+		待确认题目<b id="exam-unconfirmed">$</b>道。
+		<span>
+			<!-- 点击此列出目前待确认的条目 -->
+			<a class="u-exam-listed" href="javascript:;" title="帮助确认正确答案"><i class="u-icon-want"></i>我愿意帮助确认</a>
+			<!-- 添加新题目 -->
+			<a class="u-exam-add" href="javascript:;" title="添加新题目"><i class="u-icon-add"></i>添加新题目</a>
+		</span>
+	</p>
+    <div class="app-content">
+
+    	<!-- msg -->
+    	<div class="m-exam-msg">
+	    	<!-- 1.当刚进入页面时 -->
+	        <p class="m-exam-msg-item" id="exam-msg-begin" style="display:none">
+	        	请在上方搜索框输入要查找的题目
+	        </p>
+	        <!-- 2.当没有检索到数据库中存在相关信息时 -->
+	        <p class="m-exam-msg-item" id="exam-msg-null" style="display:none">没有查到匹配的信息，请尝试<a class="u-exam-add" href="javascript:;">添加题目</a></p>
+
+	        <!-- 3.其它提示使用原生alert提示框即可 -->
+		</div>
+
+		<!-- list -->
+		<div class="m-exam-result" style="display:none">
+	    	<!-- sample，展示搜索出的结果或列出待确认的条目 -->
+	    	<div id="exam-list">
+	    		<!-- 已确认的表现形式 -->
+		    	<div class="m-exam-item">
+		    		<div class="m-title">
+		    			<span>题目</span><!-- 状态代码 0待确认 1已确认，确认class名为u-ture，待确认为u-false -->
+		    			<p id="exam-question"><b id="exam-status" class="u-ture">（已确认）</b>科举题目的标题</p>
+		    		</div>
+		    		<div class="m-content">
+		    			<span>答案</span>
+		    			<p id="exam-anwser">科举题目的答案</p>
+		    		</div>
+		    		<div class="m-extend">
+		    			<!-- 这种已经确认的则让他们去反馈版反馈，我们需要重新将该题目重新转为待确认状态 -->
+		    			<a class="u-report" href="./feedback" title="反馈已确认题目的错误"><i class="u-icon-report"></i>反馈错误</a>
+		    			<!-- 此处需输出题目的贡献者信息，名字和头像和提交时间，如为未登录则全局UID会为0，则记录为0，表现显示为“匿名”，使用默认头像即可 -->
+		    			贡献者：<a href="home.php?mod=space&uid=$uid" data-target="_blank"><img src="http://img.jx3pve.com/img/common/anonymous.png" alt="">用户名</a><span>2016/08/08 12:00:00</span>
+		    		</div>
+		    		<!-- 以下操作只有groupid组为1的可以使用，后台还需要判断下用户组权限 -->
+		    		<!-- 某些情况可能需要重新进行题目确认时，点击清空则清空该条目的贡献人，并清空记分 -->
+		    		<!-- 需要确认操作，但我建议这里数据表里再增加一个字段为visible，被删除的只会进入hidden状态，也就是不会被前台列出来，但并不直接从数据库中删除，以防一些未知的情况 -->
+		    		<div class="m-admin">
+			    		<a id="exam-reset" href="javascript:;">清空</a>
+			    		<a id="exam-delete" href="javascript:;">删除</a>
+		    		</div>
+		    	</div>
+
+				<!-- 未确认的表现形式 -->
+		    	<div class="m-exam-item">
+		    		<div class="m-title">
+		    			<span>题目</span><!-- 状态代码 0待确认 1已确认，确认class名为u-ture，待确认为u-false -->
+		    			<p id="exam-question"><b id="exam-status" class="u-false">（未确认）</b>科举题目的标题</p>
+		    		</div>
+		    		<div class="m-content">
+		    			<span>答案</span>
+		    			<p id="exam-anwser">科举题目的答案</p>
+		    		</div>
+		    		<!-- 当没有确认时由用户名发起加分，groupid 24，25，26，37，1，2，3这几个用户组加分时则+3分，其它用户组（包括游客在内）都是+1分，累计20分转为确认状态 -->
+		    		<div class="m-vote">
+		    			<a id="exam-vote-ture" href="javascript:;"><i></i>确认答案正确</a>
+		    			<!-- 当用户选择错误的时候，请显示相关msg信息引导用户重新提交该题目和正确答案，也就是说同一个题目，是可以存在多个的。 -->
+		    			<a id="exam-vote-false" href="javascript:;"><i></i>它是错误的</a>
+		    			<!-- 所有.u-exam-add类点击事件时都可以放出添加表单，但是如果从这里添加的话，需要记录此条目的题目，也就是用户不需要再手动填题目 -->
+		    			<span id="exam-vote-false-tips">请重新添加该条目及您认为正确的答案（会自动填写题目），感谢亲～。<a id="exam-rewrite" class="u-exam-add" href="javascript:;" >重新添加</a></span>
+		    		</div>
+		    		<!-- 在没有确认之前不显示贡献者名称 -->
+		    		<div class="m-extend none">
+		    			<!-- 此处需输出题目的贡献者信息，名字和头像，如为未登录则全局UID会为0，则记录为0，表现显示为“匿名”，使用默认头像即可 -->
+		    			贡献者：<a href="home.php?mod=space&uid=$uid" data-target="_blank"><img src="http://img.jx3pve.com/img/common/anonymous.png" alt="">用户名</a>
+		    		</div>
+		    	</div>
+	    	</div>
+		</div>
+
+		<!-- addform -->
+		<div class="m-exam-active">
+			<form action="">
+				<p class="m-title">题目：<input type="text" name="" id="" value="" class="u-text"></p>
+				<p class="m-anwser">答案：<textarea name="" id="" cols="30" rows="10" class="u-textarea"></textarea></p>
+				<p class="m-submit"><button type="submit" class="u-button">提交</button></p>
+			</form>
+		</div>
+
+    </div>
+
+    <div class="app-footer">
+    	<p>本应用如有其它问题，请至<a href="./bbs">综合版</a>进行讨论。</p>
+        <div class="m-author">
+        	本应用目前仍处于开发状态，请勿使用！
+        </div>
+    </div>
+</div>
+<script src="http://js.jx3pve.com/js/app/app.min.js"></script>
+<script src="http://js.jx3pve.com/js/app/exam.min.js"></script>
+<!--{template app/footer}-->
+

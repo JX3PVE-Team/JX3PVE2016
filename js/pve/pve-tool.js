@@ -32,4 +32,29 @@ jQuery(function($){
 	$("#newspecial,#newspecialtmp").attr('href','forum.php?mod=post&action=newthread&sortid=5&fid=321')
 	$(".c-post-tab").children('li:first').children('a:first').text('发布教程')
 
+	//列表页
+    if(isMobile){
+        //侧边栏展开与关闭
+        $("#i-header-sidebar-tg").on('click',function(){
+            $(".i-header").toggleClass('showSidebar')
+            $(".default-sidebar").slideToggle()
+            toggleMask();
+        })
+        $("#u-mask").on('click',function(){
+            $(".default-sidebar").slideUp()
+            $(".i-header").removeClass('showSidebar')
+        })
+        $(".default-sidebar-title").on('click',function(){
+            $(this).next('.default-sidebar-content').fadeIn()
+        })
+        $(".default-sidebar-content").on('click',function(){
+            $(this).fadeOut()
+        })
+
+        //搜索禁止冒泡
+        $(".default-sidebar-search form").on('click',function(e){
+            e.stopPropagation()
+        })
+    }
+
 })

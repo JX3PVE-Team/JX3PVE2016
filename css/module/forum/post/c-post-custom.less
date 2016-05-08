@@ -38,14 +38,19 @@
 		margin-top:5px;
 	}
 
-	.u-text{
+	.u-input{
 		padding:0 10px;
 		.db;.full(x);
 		box-sizing:border-box;
-		.lh(28px)
 	}
+
+	.u-text{
+		.lh(28px);
+		&:extend(.c-post-custom-listitem .u-input);
+	}
+	
 	.u-textarea{
-		&:extend(.c-post-custom-listitem .u-text);
+		&:extend(.c-post-custom-listitem .u-input);
 		padding:5px 10px;
 	}
 
@@ -60,7 +65,7 @@
 	}
 
 	.u-select{
-		&:extend(.c-post-custom-listitem .u-text);
+		&:extend(.c-post-custom-listitem .u-input);
 		padding:4px 10px;
 		.pointer;
 	}

@@ -1,37 +1,49 @@
 .app-sidebar{
-	.w(220px);
-	.fl;margin-right:20px;
+
+}
+.default-sidebar-title{
+	margin-bottom:10px;
 }
 .app-list{
-	ul{}
 	li{
-		margin-bottom:10px;
-		border-bottom:1px solid #ddd;
-		padding-bottom:5px;
+		margin-bottom:5px;
 	}
-	a{.db;.clearfix;.pr;padding-left:50px;}
-	i{.pa;.lt(0,5px);}
-	span{.db;.normal;}
-	.on{
-		.til{color:@bluex;}
+	a{
+		.db;
+		.lh(32px);
+		//padding:10px;
 	}
-	.til{
-		.fz(15px,2);
+	i{
+		.dbi;.size(16px);.y;
+		margin:-5px 6px 0 10px;
 	}
-	.des{
-		.fz(10px,2);
-		transform:scale(0.8);
-		-ms-transform:scale(1);
-		transform-origin:left top;
-		color:#888;
+	.on,a:hover{
+		background-color:#f7f7f7;
 	}
-}
-.u-app-servers{
-	.size(40px);
-	background:url('@{url}app/servers/logo_40_noshadow.png') no-repeat 0 0;
+	a:hover{
+		color:@blue-link;
+	}
+	margin-bottom:20px;
 }
 
-.app-code{
-	.x;.fz(12px,2);
-	b{color:#f00;.bold;}
+.app-list-in{
+
+}
+
+.app-list-out{
+	i{.none;}
+	a{padding:0 10px;}
+}
+
+.app-sidebar-code{
+	.x;
+	border-top:1px dotted #ddd;
+}	
+
+
+.u-icon-exam{
+	background:url('@{url}app/sidebar/exam.png') no-repeat center center;
+}
+.u-icon-servers{
+	background:url('@{url}app/sidebar/servers.png') no-repeat center center;
 }

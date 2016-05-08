@@ -1,0 +1,167 @@
+@import url('../public/base.less');
+@import url('../global/var.less');
+@import url('../global/color.less');
+
+.app-help .m-help, .app-help .m-error{
+	.none;
+}
+
+.m-exam-msg{
+	p{
+		padding:20px;
+	}
+}
+
+#exam-msg-null{
+	a{color:@blue-link;text-decoration:underline;}
+	a:hover{color:#c00;}
+}
+
+.m-exam-stat{
+	padding:5px 10px;
+	border-bottom:1px dashed #ddd;
+	.u-icon-stat{
+		margin-top:-3px;
+	}
+	b{
+		padding:0 5px;
+		.bold;
+	}
+	#exam-count{
+		color:#c00;
+	}
+	#exam-confirm{
+		color:@green;
+	}
+	#exam-unconfirmed{
+		color:@yel;
+	}
+	span{
+		.fr;
+		color:#888;
+		i{
+			margin-top:-3px;
+			margin-right:3px;
+		}
+	}
+	a{
+		color:@blue-link;
+		padding:0 5px;
+	}
+	a:hover{
+		text-decoration:underline;
+	}
+}
+
+.m-exam-item{
+	padding:20px 10px 5px 10px;
+	border-bottom:1px dotted #ddd;
+	line-height: 2.2;
+	&:hover{
+		background-color:#f9f9f9;
+	}
+	.m-title span,.m-content span{.fl;.bold;margin-right:10px;color:#555;}
+	.m-title span{}
+	.m-content span{}
+	.u-ture{color:@green;.bold;}
+	.u-false{color:@yel;.bold;}
+
+
+	.pr;
+	.m-admin{
+		.pa;.rt(10px,20px);
+		.color(#888,#888,#f00);
+	}
+
+	.m-extend{
+		margin-top:10px;
+		.x(right);
+		.fz(13px,2);
+		img{.size(21px);.r(21px);.y;margin-top:-3px;margin-right:2px;}
+		.color(#555,#222,@blue-link);
+		a:hover{text-decoration:underline;}
+
+		.u-report{
+			.fl;color:#555;
+			i{margin-top:-5px;margin-right:2px;}
+			.tm(0.5);
+			&:hover{
+				.tm(1);
+			}
+		}
+	}
+
+	.m-vote{
+		margin-top:10px;
+		i{
+			.size(16px);.y;.dbi;
+			margin-top:-3px;
+			margin-right:5px;
+		}
+		a{
+			margin-right:20px;
+		}
+		#exam-vote-ture i{
+			background:url('@{url}icon/check_right.gif') no-repeat 0 0;
+		}
+		#exam-vote-false i{
+			background:url('@{url}icon/check_error.gif') no-repeat 0 0;
+		}
+		#exam-vote-false-tips{
+			.db;
+			color:#c00;
+		}
+		.u-exam-add{
+			color:@blue-link;
+			&:hover{text-decoration:underline;}
+		}
+	}
+
+	#exam-question{}
+}
+
+
+.m-exam-active{
+	margin-top:20px;
+	form{
+	}
+	
+	p{
+		margin-bottom:10px;
+		.clearfix;
+	}
+
+	.u-text{
+		.lh(26px);
+	}
+
+	.u-text,.u-textarea{
+		.w(698px);
+		padding:0 10px;
+	}
+
+	.u-button{
+		.fr;
+		padding:5px 40px;
+	}
+
+}
+
+
+.app-footer{
+	margin-top:20px;
+	p{
+		background:url('@{url}icon/info_small.gif') no-repeat 10px center;
+		padding-left:35px;
+		a{color:@blue-link;text-decoration:underline;}
+		a:hover{color:#c00;}
+		border:1px solid #ddd;
+		background-color:#f9f9f9;
+	}
+}
+
+.m-author{
+	.bold;
+	background-color:#ff0;
+	color:#f00 !important;
+}
