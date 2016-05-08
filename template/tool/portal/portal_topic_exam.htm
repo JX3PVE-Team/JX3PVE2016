@@ -96,7 +96,7 @@
 						<!-- 2.最后被确认为正确答案的，+1水晶（8号积分） -->
 
 		    		<!-- 在没有确认之前不显示贡献者名称 -->
-		    		<div class="m-extend none">
+		    		<div class="m-extend" style="display:none">
 		    			<!-- 此处需输出题目的贡献者信息，名字和头像，如为未登录则全局UID会为0，则记录为0，表现显示为“匿名”，使用默认头像即可 -->
 		    			贡献者：<a href="home.php?mod=space&uid=$uid" data-target="_blank"><img src="http://img.jx3pve.com/img/common/anonymous.png" alt="">用户名</a>
 		    		</div>
@@ -105,7 +105,7 @@
 		</div>
 
 		<!-- addform -->
-		<div class="m-exam-active">
+		<div class="m-exam-active" style="display:none">
 			<form action="">
 				<p class="m-title">题目：<input type="text" name="" id="" value="" class="u-text"></p>
 				<p class="m-anwser">答案：<textarea name="" id="" cols="30" rows="10" class="u-textarea"></textarea></p>
