@@ -1,0 +1,43 @@
+<div class="m-face-view">
+	<div class="m-default">
+		<div class="m-short">
+			<span class="img u-imgorigin" title="点击查看原图"><img src="{faceshot_value}" alt=""></span>
+		</div>
+		<div class="m-info">
+			<div class="m-details">
+				<p class="item u-author"><em>脸型作者：</em><span><a href="http://www.jx3pve.com/forum.php?mod=forumdisplay&fid=92&filter=sortid&sortid=15&searchoption%5B101%5D%5Bvalue%5D={faceauthor_value}">{faceauthor_value}</a></span></p>
+				<p class="item u-wb"><em>作者微博：</em>
+					<em class="w-weibo" id="w-weibo">{author_wb_value}</em>
+					<span class="w-weibo-win" id="w-weibo-win"><wb:follow-button uid="{author_wb_value}" type="red_1" width="67" height="24" ></wb:follow-button></span>
+				</p>
+			</div>
+			<div class="m-price">
+				<p class="item u-price"><em>收费零件：</em><span>{face_price_value}</span></p>
+				<p class="item u-tips">小提示：数据如无法导入或提示非法数据，则很可能是因为含有商城收费零件。</p>
+			</div>
+			<div class="m-down">
+				<a class="u-btn-facedown" href="{facedown_value}">点击下载</a>
+				<span class="counts"><em>累计下载次数：</em><span>{facedown_downloads}</span></span>
+				<a class="tips" href="javascript:;" onclick="showWindow('miscreport', 'misc.php?mod=report&url='+REPORTURL);return false;"><i></i>无法下载或使用？<b>点击提交</b></a>
+			</div>
+		</div>
+	</div>
+	<div class="m-extend">
+		<div class="m-til"><h3>多角度</h3></div>
+		<ul class="minipic">
+			<li class="img u-imgorigin" title="点击查看原图">
+				<span>正面影像</span>
+				<img src="{face_shot1_value}">
+			</li>
+			<li class="img u-imgorigin" title="点击查看原图">
+				<span>侧面影像</span>
+				<img src="{face_shot2_value}">
+			</li>
+			<li class="img u-imgorigin" title="点击查看原图">
+				<span>俯视影像</span>
+				<img src="{face_shot3_value}">
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="m-til"><h3>作者说明</h3></div>

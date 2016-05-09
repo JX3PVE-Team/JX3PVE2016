@@ -1,0 +1,24 @@
+<div class="m-jiebao-list">
+	<ul>
+		<li class="th">
+			<span class="control"></span>
+			<span class="fb-name">副本名称</span>
+			<span class="boss-name">BOSS名称</span>
+			<span class="fwq">服务器</span>
+			<span class="team">拿甲团队</span>
+			<span class="time">出甲时间</span>
+		</li>
+		[loop]
+		<li>
+			<span class="control">{modcheck}</span>
+			<a href="{subject_url}" target="_blank">
+				<span class="fb-name">{fbname_value}</span>
+				<span class="boss-name">{wujiaboss_value}</span>
+				<span class="fwq">{fuwuqi_value}</span>
+				<span class="team">{raidname_value}</span>
+				<span class="time">{toptime_value}</span>
+			</a>
+		</li>
+		[/loop]
+	</ul>
+</div>

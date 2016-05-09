@@ -22,7 +22,7 @@ jQuery(function($){
         alert('按住【ctrl】，滚动鼠标【滚轮】即可缩放界面');
     })
 
-    //列表模式手机端适配
+    //筛选模块
     if(isMobile){
 
         var $mask = $("#u-mask")
@@ -51,6 +51,31 @@ jQuery(function($){
             $filter_title.removeClass('on')
             $filter_list.hide()
             $filter_box.removeClass('isfocus')
+        })
+    }
+
+    //侧边栏展开与关闭
+    if(isMobile){
+       
+        $("#i-header-sidebar-tg").on('click',function(){
+            $(".i-header").toggleClass('showSidebar')
+            $(".default-sidebar").slideToggle()
+            toggleMask();
+        })
+        $("#u-mask").on('click',function(){
+            $(".default-sidebar").slideUp()
+            $(".i-header").removeClass('showSidebar')
+        })
+        $(".default-sidebar-title").on('click',function(){
+            $(this).next('.default-sidebar-content').fadeIn()
+        })
+        $(".default-sidebar-content").on('click',function(){
+            $(this).fadeOut()
+        })
+
+        //搜索禁止冒泡
+        $(".default-sidebar-search form").on('click',function(e){
+            e.stopPropagation()
         })
     }
 

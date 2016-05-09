@@ -1,0 +1,99 @@
+@c-role-imgurl:'@{url}role/';
+.m-role-nav{
+	ul{
+		.clearfix;
+		padding-left:2px;
+		li{
+			.w(50%);.fl;
+			a{
+				.db;.full(x);.fz(12px,32px);
+				i{
+					background:url('@{c-role-imgurl}m-role-nav.png') no-repeat;
+					.size(32px);.dbi;.y;
+					margin-right:5px;
+				}
+				&:hover{
+					.bold;
+					color:#333;
+				}
+			}
+		}
+		.ty{
+			.w(100%);
+		}
+	}
+
+	.bgis(@x,@y){
+		a i{background-position:@x @y;}
+	}
+	.qx{.bgis(0,0);}
+	.wh{.bgis(-33px,0);}
+	.wd{.bgis(-66px,0);}
+	.tc{.bgis(-99px,0);}
+	.mj{.bgis(-132px,0);}
+	.sl{.bgis(-165px,0);}
+	.cyun{.bgis(-198px,0);}
+	.cy{.bgis(-231px,0);}
+	.tm{.bgis(-264px,0);}
+	.cj{.bgis(-297px,0);}
+	.gb{.bgis(-330px,0);}
+	.ty{.bgis(-363px,0);}
+	.cgm{
+		i{background-image:url('@{c-role-imgurl}role-mp/cgm.png');}
+	}
+}
+
+/*.m-role-task{
+	.u-list-1{
+		background:url('@{url}medal/role_1.gif') no-repeat 0 center;
+	}
+	.u-list-2{
+		background:url('@{url}medal/role_2.gif') no-repeat 0 center;
+	}
+	.u-list-3{
+		background:url('@{url}medal/role_3.gif') no-repeat 0 center;
+	}
+	.u-list-4{
+		background:url('@{url}medal/role_4.gif') no-repeat 0 center;
+	}
+}
+*/
+.m-role-link{
+	padding:5px 0;
+	li{
+		margin-bottom:5px;
+		background-color:#fff;
+		border:1px solid #ddd;
+		border-radius:3px;
+		a{
+			.db;line-height:24px;
+			padding:5px 10px;
+
+			i{.size(24px);.dbi;.y(top);margin-right:6px;}
+
+			em{
+				.fr;
+				.fz(12px);color:#999;
+				text-transform:uppercase;
+				letter-spacing:0.5px;
+				//transform:scale(0.8);
+				font-family: "Trebuchet MS",'Helvetica Neue',Helvetica,Arial,sans-serif;
+				.none;
+			}
+		}
+		&:hover,&.on{
+			background-color:#f7f7f7;
+			box-shadow: 0 0 2px #eee inset;
+			transition:0.15s ease-in-out;
+			em{.db;animation:fadeIn 0.2s ease-in-out;}
+		}
+		.u-wiki{background:url('@{url}tool/book.png') no-repeat 0 0;}
+		.u-tool{background:url('@{url}tool/role.png') no-repeat 0 0;}
+	}
+
+}
+
+.default-sidebar-content{
+	margin-bottom:20px;
+}
+

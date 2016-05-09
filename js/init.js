@@ -10,7 +10,6 @@ H.load([
 	{'dialog':head_conf.CDNROOT+'mod/dialog.min.js'},
 	{'custombg':head_conf.CDNROOT+'mod/custombg.min.js'},
 	{'sfilter':head_conf.CDNROOT+'mod/sfilter.min.js'},
-	{'widget':head_conf.CDNROOT+'mod/widget.min.js'},
 	{'underscore':head_conf.CDNROOT+'lib/underscore.min.js'},
 	{'swiper':head_conf.CDNROOT+'plugin/swiper2.min.js'}
 ]);

@@ -14,10 +14,10 @@
 	}
 }
 
-.default-sidebar-wordlist{
+.default-sidebar-wordlist,.default-sidebar-tasklist{
 	a{
 		.db;.lh(28px);
-		.indent(22px);
+		.indent(20px);
 		background:url('@{url}icon/icon-arrow_8.png') no-repeat 2px center;
 		transition:background 0.15s ease-in;
 		&:hover{
@@ -26,15 +26,16 @@
 		}
 	}
 }
-.ua-responsive .screen-s .default-sidebar-wordlist{
+.ua-responsive .screen-s .default-sidebar-wordlist,
+.ua-responsive .screen-s .default-sidebar-tasklist{
 	a{
 		.lh(40px);
 		border-bottom:1px solid #ddd;
 	}
 }
 
-.default-sidebar-tasklist{
-	ul{padding:5px;}
+/*.default-sidebar-tasklist{
+	ul{padding:5px 0;}
 	li{.lh(28px);padding-left:24px;}
 	a:hover{color:@blue-link;}
 }
@@ -43,5 +44,19 @@
 	li{
 		.lh(40px);
 		border-bottom:1px solid #ddd;
+	}
+}*/
+
+
+.default-sidebar-helplist{
+	a{
+		.db;
+		padding-left:26px;
+		background:url('@{url}icon/faq.gif') no-repeat 4px center;
+		.fz(13px,28px);
+		&:hover{
+			color:@blue-link;
+			text-decoration:underline;
+		}
 	}
 }
