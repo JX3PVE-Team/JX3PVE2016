@@ -87,8 +87,10 @@
 	}
 }
 .m-macro-roleinfo{
-	.pr;
-	&:before{content:'';.db;width:90%;height:1px;background-color:#ddd;.pa;right:0;top:17px;}
+	.til{
+		.pr;
+		&:before{content:'';.db;width:90%;height:1px;background-color:#ddd;.ct(y,2px);right:0;}
+	}
 	h3{
 		.dbi;width:70px;.fzlh(13px,24px);border-radius:24px;background-color:#eee;.x;color:#555;
 		.pr;.z(2);
@@ -98,8 +100,10 @@
 	}
 }
 .m-macro-frag{
-	.pr;
-	&:before{content:'';.db;width:90%;height:1px;border-bottom:1px dotted #ddd;.pa;right:0;top:17px;}
+	.til{
+		.pr;
+		&:before{content:'';.db;width:90%;height:1px;border-bottom:1px dotted #ddd;.ct(y,2px);right:0;}
+	}
 	h3{
 		.dbi;width:70px;.fzlh(13px,24px);border-radius:24px;background-color:#0084ff;.x;color:#fff;
 		.pr;.z(2);
@@ -108,6 +112,7 @@
 		border-radius:4px;color:#fff;
 		background-color: #4FBD31;
 		padding: 3px;position: relative;
+		margin-left:10px;
 	}
 }
 .e-macro{

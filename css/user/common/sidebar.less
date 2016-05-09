@@ -1,24 +1,30 @@
-.user-sidebar-title{
+.user-sidebar h3{
 	user-select:none;
 	.pointer;
 	.fz(14px,32px);
 	border-bottom:1px dotted #ddd;
-	margin-bottom:5px;
-	&:hover{color:@blue-link;}
+	padding:10px;
+	&:hover{
+		background-color:#f9f9f9;
+	}
+	&.on{
+		.bold;
+		.color(#0F75BF,#0F75BF,#0F75BF);
+	}
 }
-h2.user-sidebar-title{
-	padding:0 5px;
+.user-sidebar h3 i{
+	.dbi;.y;.size(24px);margin-right:8px;
 }
-h3.user-sidebar-title{
+/*h3{
 	padding:5px 5px 5px 30px;
 	background:url('@{url}icon/add.gif') no-repeat 5px center;
 	&.on{
 		background:url('@{url}icon/desc.gif') no-repeat 5px center;
 	}
-}
+}*/
 
 .user-sidebar-list{
-	
+	padding-top:5px;
 	.color(#888,#555,@blue-link);
 
 	li{
@@ -33,7 +39,7 @@ h3.user-sidebar-title{
 	}
 	a{
 		.db;
-		padding:0 10px 0 25px;
+		padding:0 10px 0 40px;
 	}
 
 	.none;
@@ -44,3 +50,12 @@ h3.user-sidebar-title{
 .ua-responsive .screen-s .user-sidebar{
 	.none;
 }
+
+.u-user-os-index{background:url('@{url}user/sidebar/index.png') no-repeat center center;background-size:96% auto;}
+.u-user-os-msg{background:url('@{url}user/sidebar/msg.png') no-repeat center center;background-size:95% auto;}
+.u-user-os-thread{background:url('@{url}user/sidebar/book.png') no-repeat 0 0;}
+.u-user-os-setting{background:url('@{url}user/sidebar/setting.png') no-repeat 0 0;}
+.u-user-os-credit{background:url('@{url}user/sidebar/coin.png') no-repeat 0 0;}
+.u-user-os-space{background:url('@{url}user/sidebar/home.png') no-repeat 0 0;}
+.u-user-os-extend{background:url('@{url}user/sidebar/extend.png') no-repeat 0 0;}
+.u-user-os-other{background:url('@{url}user/sidebar/lock.png') no-repeat center center;background-size:95% auto;}

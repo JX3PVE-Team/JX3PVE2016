@@ -1,0 +1,113 @@
+.m-tool-primary{
+}
+
+.m-tool-block{
+	margin-bottom:20px;
+}
+.m-tool-baseinfo{
+	.pr;
+
+	.information{
+		ul{
+			li{
+				border-bottom:1px dotted #eee;
+				.lh(24px);
+				.nobreak;
+				padding:6px 0;
+				
+				span{
+					.dbi;width:70px;border-radius:24px;background-color:#eee;.x;
+					.y;
+					margin-right:15px;
+					margin-top:-3px;
+				}
+				&.tool_pwd{
+					color: #f00;.bold;
+					span{
+						background-color:#62CC00;
+						color:#fff;
+						.normal;
+					}
+				}
+				.down_url{
+					.dbi;.y;
+					.r(4px);
+					padding:0 5px;
+					margin-right:10px;
+					/*border:1px solid darken(@yel,5%);
+					background-color:@yel;
+					color:#fff;*/
+					&:extend(.u-btn-blue);
+					/*&:hover{
+						background-color:lighten(@yel,5%);
+					}*/
+				}
+				.down_url_data{
+					.none;
+				}
+			}
+		}
+	}
+	.m-tool-relative{
+		.clearfix;
+		padding-right:10px;
+		padding-top:5px;
+		.color(#555,#555,#555);
+		a:hover{
+			text-decoration:underline;
+		}
+		li{
+			.fr;
+			margin-left:20px;
+		}
+		.u-report{
+			i{.dbi;.size(16px);.y;margin-right:4px;margin-top:-2px;
+			background:url('@{url}icon/icon-report-16.png') no-repeat 0 0;}
+		}
+		.u-down{
+			i{.dbi;.size(16px,21px);.y;margin-right:3px;
+			background:url('@{url}icon/down1.png') no-repeat 0 0;}
+		}
+	}
+}
+.m-tool-important{
+	.pr;
+
+	h3{
+		color:#aba6a6;letter-spacing:1px;
+		span{margin-left:10px;font-family:Verdana;}
+	}
+	.content{
+		background:#f7f7f7;border-radius:4px;
+		border:1px solid #ddd;
+		margin:10px 0 0 0;
+		padding:10px;
+		.clearfix;
+
+		/*.tool_icon{
+			.fl;margin:0 10px 10px 0;
+			.r(4px);
+			max-width:60px;
+			max-height:60px;
+		}*/
+	}
+}
+.m-tool-info{
+	.til{
+		.pr;
+		&:before{content:'';.db;width:90%;height:1px;background-color:#ddd;.ct(y,2px);right:0;}
+	}
+	h3{
+		.dbi;width:70px;.fzlh(13px,24px);border-radius:24px;background-color:#eee;.x;color:#555;
+		.pr;.z(2);
+	}
+	.content{
+		.min-height(60);padding:10px;
+	}
+}
+.m-tool-extend{
+	h3{
+		background-color:@basecolor;
+		.w(90px);color:#fff;
+	}
+}

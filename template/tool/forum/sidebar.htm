@@ -1,39 +1,32 @@
 <!-- jx3pve:分类导航 -->
-<h2>分类导航</h2>
-<ul class="m-tool-nav">
-	<li><a class="keyboard" href="./forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=315&orderby=lastedit"><i></i>按键辅助<em>Keyboard</em></a></li>
-	<li><a class="role" href="./forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=317&orderby=lastedit"><i></i>职业工具<em>Role</em></a></li>
-	<li><a class="tool" href="./forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=316&orderby=lastedit"><i></i>实用工具<em>Tools</em></a></li>
-	<li><a class="source" href="./forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=320&orderby=lastedit"><i></i>其他资源<em>Source</em></a></li>
-	<li><a class="plugins" href="./forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=318&orderby=lastedit"><i></i>游戏插件<em>Plugin</em></a></li>
-	<li><a class="book" href="./forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=319&orderby=lastedit"><i></i>相关教程<em>Course</em></a></li>
+<h2 class="default-sidebar-title">分类导航<a class="u-more" href="./tool" title="全部">全部</a></h2>
+<ul class="default-sidebar-content m-tool-nav">
+	<li {if ($_GET['typeid']==315)} class="on"{/if}><a class="u-keyboard" href="./forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=315&orderby=lastedit"><i></i>按键辅助<em>Keyboard</em></a></li>
+	<li {if ($_GET['typeid']==317)} class="on"{/if}><a class="u-role" href="./forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=317&orderby=lastedit"><i></i>职业工具<em>DPS</em></a></li>
+	<li {if ($_GET['typeid']==316)} class="on"{/if}><a class="u-tool" href="./forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=316&orderby=lastedit"><i></i>实用工具<em>Tool</em></a></li>
+	<li {if ($_GET['typeid']==318)} class="on"{/if}><a class="u-snow new" href="./forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=318&sortid=8&orderby=lastedit"><i></i>读条皮肤<em>Skin</em></a></li>
+	<li {if ($_GET['typeid']==320)} class="on"{/if}><a class="u-plugin" href="./forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=320&orderby=lastedit"><i></i>插件扩展<em>Plugin</em></a></li>
+	<li {if ($_GET['typeid']==319)} class="on"{/if}><a class="u-book" href="./forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=319&orderby=lastedit"><i></i>相关教程<em>Course</em></a></li>
 </ul>
 
 <!-- jx3pve:工具名称搜索 -->
-<h2>工具搜索</h2>
-<div class="m-tool-search m-pve-search">
+<h2 class="default-sidebar-title">工具搜索<i class="u-search"></i></h2>
+<div class="default-sidebar-content m-tool-search default-sidebar-search">
 	<form method="post" autocomplete="off" name="searhsort" id="searhsort" action="forum.php?mod=forumdisplay&amp;fid=321&amp;filter=sortid&amp;sortid=5">
-	    <input type="text" name="searchoption[41][value]" size="15" class="px vm" value="">
-	    <button type="submit" class="u-button-search" name="searchsortsubmit"><em>搜索</em></button>
+	    <input type="text" name="searchoption[41][value]" size="15" class="u-text" value="">
+	    <button type="submit" class="u-button-search u-button" name="searchsortsubmit"><em>搜索</em></button>
 	</form>
-	<div class="hotkey">
-		<p class="keytg" id="m-hotkey-keytg">关键词检索<i></i></p>
-		<ul class="keylist" id="m-hotkey-keylist">
-			<!--{block/1290}-->
-		</ul>
-    </div>
-    <a class="getanew" href="http://www.jx3pve.com/thread-10895-1-1.html" target="_blank"><i></i>没找到想要的？试试来提需求。</a>
+    <a class="getanew" href="./thread-10895-1-1.html" target="_blank"><i></i>没找到想要的？试试来提需求。</a>
 </div>
 
 <!-- jx3pve:帮助文档 -->
-<h2>帮助文档</h2>
-<div class="m-tool-help m-alist">
+<h2 class="default-sidebar-title">帮助文档<a class="u-btn-pub2" href="./forum.php?mod=post&action=newthread&fid=2"  data-target="blank" title="分享经验"><i></i>分享</a></h2>
+<div class="default-sidebar-content m-tool-help default-sidebar-wordlist">
 	<!--{block/1242}-->
 </div>
 
 <!-- jx3pve:任务 -->
-<h2>任务奖励<a class="more" href="http://www.jx3pve.com/home.php?mod=task" target="_blank"></a></h2>
-<div class="m-tool-task m-tasklist">
+<h2 class="default-sidebar-title">任务奖励<a class="u-more" href="./home.php?mod=task" data-target="blank" title="查看更多">更多任务</a></h2>
+<div class="default-sidebar-content m-tool-task default-sidebar-tasklist">
 	<!--{block/1286}-->
 </div>
-

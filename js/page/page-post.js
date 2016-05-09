@@ -35,6 +35,12 @@ jQuery(function($){
 		$("#postform").submit();
 	})
 
+	//PC有特殊发布警告时
+	$("#c-post-tips-moretg").on('click',function(){
+		$("#c-post-tips-content").fadeToggle()
+		$(this).toggleClass('open');
+	})
+
 	//手机版发布提示
 	if(isMobile){
 		$("#c-post-tips-tg").on('click',function(){
