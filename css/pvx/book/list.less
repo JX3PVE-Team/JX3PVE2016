@@ -1,0 +1,55 @@
+.m-book-list{
+	padding:20px 0;
+
+	ul{
+		.clearfix;
+	}
+	li{
+		.fl;margin-right:45px;margin-bottom:20px;
+		.w(145px);
+	}
+	.book{
+		//.pa;.lt(0,0);
+		margin-bottom:5px;
+	}
+	.u-info{
+		//margin-left:145px + 10px;
+		.db;.x;
+		a,span{.db;.nobreak;}
+		em{color:#555;}
+	}
+	.u-name{
+		//.bold;
+		.color(@blue-link);
+		&:hover{text-decoration:underline;}
+	}
+	.u-author{
+		.color(#555);
+	}
+	.u-time{
+		i{
+			.dbi;.y;.size(12px);
+			background:url('@{url}icon/icon_task.gif') no-repeat center center;
+			margin-right:5px;
+			margin-left:2px;
+			margin-top:-3px;
+		}
+		color:#666;
+	}
+
+
+}
+
+.w-listfilter-list .u-sort{.none;}
+
+.ua-responsive .screen-s {
+	.m-book-list li{
+		.w(50%);
+		margin-right:0;
+		min-width:145px;
+		//.auto(x);
+		.book{
+			.auto(x);
+		}
+	}
+}
