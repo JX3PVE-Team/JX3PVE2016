@@ -38,9 +38,6 @@
 	}
 }
 
-
-
-
 .ua-responsive .screen-s{
 	.listpage-container,.viewpage-container,.postpage-container{
 		background-color:#fff;
@@ -57,13 +54,8 @@
 	}
 }
 
-//超级宏等部分栏目无侧边栏
-.f-85{
+//超级宏、群组等部分栏目无侧边栏
+.f-85,#nv_group{
 	.default-sidebar{.none;}
-	.default-content{margin-left:0;}
+	.default-content{float:none;.w(auto);}
 }
-//群组无侧边栏
-#nv_group{
-	&:extend(.f-85);
-}
-
