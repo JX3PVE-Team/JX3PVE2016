@@ -1,0 +1,22 @@
+<div class="m-biz-list">
+    <ul>
+        <li class="thead"><a>
+            <span class="u-admin"></span>
+            <span class="biz-type">类型</span>
+            <span class="biz-title">标题</span>
+            <span class="biz-dateline">发布时间</span>
+            <span class="biz-fwq">服务器</span>
+        </a></li>
+        [loop]
+        <li class="tbody">
+            <a class="e-sort-item" href="{subject_url}" data-target="_blank">
+            <span class="u-admin">{modcheck}</span>
+            <span class="biz-type">{biz_type_value}</span>
+            <span class="biz-title">{subject}</span>
+            <span class="biz-dateline">{dateline}</span>
+            <span class="biz-fwq">{fuwuqi_value}</span>
+            </a>
+        </li>
+        [/loop]
+    </ul>
+</div>

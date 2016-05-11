@@ -1,0 +1,75 @@
+//导航
+.m-jh-nav{
+	margin-bottom:10px;
+}
+
+//发布按钮
+.w-pages-top{
+	.none;
+}
+.tbbox{
+	.pr;
+}
+.u-jh-pubbtn{
+	.pa;.rt(0,0);
+	padding:0 20px;
+}
+.ua-responsive .screen-s .u-jh-pubbtn{.none;}
+.m-jh-postbox{
+	.fixed(o,400px,200px);
+	.z(40);
+	background-color:#fff;
+	border:1px solid #ddd;
+	.r(3px);
+
+	h3{
+		//.bold;
+		color:#555;
+		padding:5px 10px;
+		span{.italic;}
+		border-bottom:1px dashed #ddd;
+	}
+
+	ul{
+		padding:0 0 0 40px;
+	}
+	li{
+		padding:10px 0;
+		.fl;
+		.w(50%);
+	}
+	a{
+		.fzlh(13px,24px);
+		&:hover{
+			color:@blue-link;
+			.bold;
+		}
+	}
+	i{.size(24px);.dbi;.y(top);margin-right:6px;}
+	.u-team{background:url('@{url}fam/team.png') no-repeat 0 0;}
+	.u-member{background:url('@{url}fam/member.png') no-repeat 0 0;}
+	.u-sale{background-color:@green;color:#fff;.x;}
+	.u-buy{background-color:@yel;color:#fff;.x;}
+	.u-stqy{.w(auto);}
+	.u-love{
+		background:url('@{url}icon/oshr.png') no-repeat center center;
+	}
+	.u-close{
+		.pointer;
+		.pa;.rt(8px,8px);
+		.size(20px);
+		background:url('@{url}icon/cls.gif') no-repeat 0 0;
+		.indent;
+		&:hover{
+			background-position:0 -20px;
+		}
+	}
+
+	.none;
+}
+
+.ua-responsive .screen-s .m-jh-postbox{
+	.size(100%);
+	margin:0;
+	left:0;top:0;
+}

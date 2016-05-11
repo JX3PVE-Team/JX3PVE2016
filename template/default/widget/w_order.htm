@@ -6,19 +6,19 @@
 	<div class="w-listfilter-list">
 
 		<!-- 最后更新 -->						
-		<a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}&orderby=lastedit{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="{if $_GET['orderby'] == 'lastedit'}on{/if} u-item" title="最后更新">最后更新</a>
+		<a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}&orderby=lastedit{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="{if $_GET['orderby'] == 'lastedit'}on{/if} u-item u-lastedit" title="最后更新">最后更新</a>
 
 		<!-- 最新发布 -->						
-		<a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}&orderby=dateline{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="{if $_GET['orderby'] == 'dateline'}on{/if} u-item" title="最新发布">最新发布</a>
+		<a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}&orderby=dateline{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="{if $_GET['orderby'] == 'dateline'}on{/if} u-item u-lastpost" title="最新发布">最新发布</a>
 
 		<!-- 点赞最多 -->
-		<a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}&orderby=recommends{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="{if $_GET['orderby'] == 'recommends'}on{/if} u-item" title="推荐最多">点赞</a>
+		<a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}&orderby=recommends{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="{if $_GET['orderby'] == 'recommends'}on{/if} u-item u-zan" title="推荐最多">点赞</a>
 		
 		<!-- 收藏 -->
-		<a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}&orderby=favtimes{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="{if $_GET['orderby'] == 'favtimes'}on{/if} u-item" title="被收藏最多">收藏</a>
+		<a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}&orderby=favtimes{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="{if $_GET['orderby'] == 'favtimes'}on{/if} u-item u-fav" title="被收藏最多">收藏</a>
 
 		<!-- 精华 -->
-		<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=digest&digest=1&$forumdisplayadd[digest]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="{if $_GET['digest'] == 1}on{/if} u-item" title="加入精华">精华</a>
+		<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=digest&digest=1&$forumdisplayadd[digest]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="{if $_GET['digest'] == 1}on{/if} u-item u-digest" title="加入精华">精华</a>
 
 		<span id="clearstickthread">
 			<span class="pipe">|</span>

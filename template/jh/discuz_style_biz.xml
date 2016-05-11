@@ -2,10 +2,10 @@
 <root>
 	<item id="Title"><![CDATA[Discuz! Style]]></item>
 	<item id="Data">
-		<item id="name"><![CDATA[BIZ]]></item>
-		<item id="templateid"><![CDATA[2001]]></item>
-		<item id="tplname"><![CDATA[BIZ]]></item>
-		<item id="directory"><![CDATA[./template/biz]]></item>
+		<item id="name"><![CDATA[JH]]></item>
+		<item id="templateid"><![CDATA[2008]]></item>
+		<item id="tplname"><![CDATA[JH]]></item>
+		<item id="directory"><![CDATA[./template/jh]]></item>
 		<item id="copyright"><![CDATA[JX3PVE.COM]]></item>
 		<item id="style">
 			<item id="smfont"><![CDATA[Arial]]></item>

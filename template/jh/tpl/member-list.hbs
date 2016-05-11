@@ -1,0 +1,20 @@
+<div class="m-member-list">
+	<ul>
+	[loop]
+		<li class="m-member-item">
+			<img class="u-avt" src="{avatar_small}" alt="">
+			<span class="u-info">
+				<span class="u-name">{author}</span>
+				<span class="u-role"><em>职业：</em><b class="e-role">{myrole_value}</b></span>
+				<span class="u-fwq"><em>服务器：</em>{fuwuqi_value}</span>
+				<a class="e-sort-item u-words" href="{subject_url}">{subject}</a>
+				<a class="u-msg" href="http://www.jx3pve.com/home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_{authorid}&touid={authorid}&pmid=0&daterange=1" onclick="showWindow('sendpm', this.href);"><i></i>发消息</a>
+				<a class="e-sort-item u-go" href="{subject_url}">查看详情 &raquo;</a>
+			</span>
+			<em class="e-failtime">{failtime_value}</em>
+			<span class="u-control">{modcheck}</span>
+			
+		</li>
+	[/loop]
+	</ul>
+</div>

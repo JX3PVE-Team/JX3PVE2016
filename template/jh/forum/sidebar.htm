@@ -1,0 +1,21 @@
+<div class="tbbox">
+	<ul class="tb m-jh-nav">
+		<li {if ($_GET['fid']==67)} class="on"{/if}><a href="./team">团队招募</a></li>
+		<li {if ($_GET['fid']==407)} class="on"{/if}><a href="./member">团员求职</a></li>
+		<li {if ($_GET['fid']==394)} class="on"{/if}><a href="./biz-sale">出售信息</a></li>
+		<li {if ($_GET['fid']==404)} class="on"{/if}><a href="./biz-buy">求购信息</a></li>
+		<li {if ($_GET['fid']==406)} class="on"{/if}><a href="./love">师徒情缘</a></li>
+	</ul>
+	<a class="u-jh-pubbtn u-btn-blue" href="javascript:;" id="u-jh-pubbtn">发布</a>
+</div>
+<div class="m-jh-postbox" id="m-jh-postbox">
+	<h3>我要<span>I will..</span></h3>
+	<ul>
+		<li><a href="forum.php?mod=post&action=newthread&fid=67"><i class="u-team"></i>招募团员</a></li>
+		<li><a href="forum.php?mod=post&action=newthread&fid=407"><i class="u-member"></i>个人求团</a></li>
+		<li><a href="forum.php?mod=post&action=newthread&fid=394"><i class="u-sale">卖</i>出售宝贝</a></li>
+		<li><a href="forum.php?mod=post&action=newthread&fid=404"><i class="u-buy">买</i>求购宝贝</a></li>
+		<li class="u-stqy"><a href="forum.php?mod=post&action=newthread&fid=406"><i class="u-love"></i>找个师傅、收个徒儿，亦或搭个伴儿~</a></li>
+	</ul>
+	<span class="u-close" id="u-jh-close">关闭</span>
+</div>
