@@ -1,0 +1,97 @@
+.m-team-list{
+	ul{
+		li{
+			.clip;.pr;
+			padding-top:10px;
+
+			transition:0.15s ease-in-out;
+			&:hover{
+				background:#EFF9FD;
+			}
+
+			.u-link{
+				.db;
+				.full;
+				.pa;.lt(0,0);
+				background:url('@{url}common/blank.png') no-repeat 0 0;
+			}
+
+			.u-control{
+				.pa;.rt(0,0);.z(2);
+			}
+		}
+	}
+}
+.m-team-item{
+	.pr;
+	min-height:122px;
+	.u-raidlogo{
+		.db;.pa;.lt(0,0);
+		.size(140px,60px);
+		padding:20px;
+		.x;margin:8px;
+		border:1px solid #ddd;
+		border-radius:3px;
+		.clip;
+
+		.logo{
+			max-width:100%;
+			max-height:100%;
+			border-radius:3px;
+			//.tm(0.15);
+			transition:0.15s ease-in-out;
+		}
+		.verif{
+			.pa;.db;
+			.lt(-1px,-1px);
+			.full;
+			span{.none;}
+			.none;
+		}
+		.sex{
+			.pa;.db;
+			.rb(0,0);
+			span{
+				.fz(12px,20px);
+				.db;padding:1px 5px;
+				color:#fff;
+				background: #39AFD2;
+			}
+		}
+		&.noraidbg{
+			background:url('@{url}raid/noraid.png') no-repeat center center;
+		}
+	}
+
+
+	.u-raidinfo{
+		.clip;
+		.db;
+		margin-left:200px;
+		padding:20px;
+
+		.tr{
+			.db;
+			.nobreak;
+			em{color:#555;}
+		}
+	}
+	
+	&:hover{
+		.name{
+			color:#c00 !important;
+		}
+	}
+}
+
+.ua-responsive .screen-s{
+	.m-team-item{
+		border-bottom:1px dashed #ddd;
+	}
+	.m-team-item .u-raidlogo{
+		.pr;
+	}
+	.m-team-item .u-raidinfo{
+		margin:0;
+	}
+}

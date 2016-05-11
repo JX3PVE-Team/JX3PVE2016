@@ -8,8 +8,6 @@ H.load([
 	{'clipboard':head_conf.CDNROOT+'plugin/clipboard.js'},
 	{'getRequest':head_conf.CDNROOT+'plugin/getRequest.min.js'},
 	{'dialog':head_conf.CDNROOT+'mod/dialog.min.js'},
-	{'custombg':head_conf.CDNROOT+'mod/custombg.min.js'},
-	{'sfilter':head_conf.CDNROOT+'mod/sfilter.min.js'},
 	{'underscore':head_conf.CDNROOT+'lib/underscore.min.js'},
 	{'swiper':head_conf.CDNROOT+'plugin/swiper2.min.js'}
 ]);

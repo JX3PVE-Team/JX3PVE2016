@@ -35,6 +35,11 @@ jQuery(function($){
 		$("#postform").submit();
 	})
 
+	//当发布提示为空时隐藏该整区
+	if($(".c-post-tips").find('#c-post-tips-content').html().length < 2){
+		$(".c-post-tips").hide()
+	}
+
 	//PC有特殊发布警告时
 	$("#c-post-tips-moretg").on('click',function(){
 		$("#c-post-tips-content").fadeToggle()
