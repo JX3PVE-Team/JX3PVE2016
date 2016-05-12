@@ -7,12 +7,7 @@ jQuery(function($){
 
     var padding = 28
 
-    function createImgDOM(){
-        $showbox.append('<img class="c-showbox-img" id="c-showbox-img" src="" />')
-    }
-
     $imgorigin.each(function(){
-        var img = $(this).find('img')
         var src = $(this).find('img').attr('src')
         var isEmpty = !src || src.indexOf('nophoto')!=-1
         if(isEmpty){
@@ -20,14 +15,14 @@ jQuery(function($){
         }else{
             $(this).on('click',function(){
                 showMask()
-                createImgDOM()
-                $("#c-showbox-img").attr('src',src)
-                
-                var 
-                    offset_x = - ($showbox.width() + padding*2 )/2,
-                    offset_y = - ($showbox.height() + padding*2 )/2
+                $(this).find('img').clone().attr('id','c-showbox-img').attr('class','c-showbox-img').appendTo($showbox)
+                $showbox.fadeIn()
 
-                $showbox.fadeIn().addClass('c-showbox-show').css({
+                var 
+                offset_x = - $showbox.outerWidth()/2,
+                offset_y = - $showbox.outerHeight()/2
+
+                $showbox.css({
                     'margin-left': offset_x,
                     'margin-top': offset_y
                 })
