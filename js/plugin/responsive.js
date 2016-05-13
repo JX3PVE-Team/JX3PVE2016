@@ -37,7 +37,6 @@ jQuery(function($){
 
         //判断是否满足条件
         window.isMobile = $("html").hasClass('ua-responsive') && $body.hasClass('screen-s')
-        window.isNotMobile = !$body.hasClass('screen-s')
         
     };
     resetLayout()
