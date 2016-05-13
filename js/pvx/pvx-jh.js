@@ -30,11 +30,18 @@ jQuery(function($){
 		})
 
 	//team 列表
+		$(".m-team-item").each(function(){
+			var isnoLogo = $(this).find('.logo').attr('src').length < 2 || $(this).find('.logo').attr('src').indexOf('nophoto')!=-1
+			if(isnoLogo){
+				$(this).find('.u-raidlogo').addClass('noraidbg');
+				$(this).find('.logo').hide();
+			}
+		})
 
 	//team 详情
 		$(".m-team-info").each(function(){
 			var isEmpty = $.trim($(this).text()).length < 5
-			console.log(isEmpty)
+			//console.log(isEmpty)
 			if(isEmpty){
 				$(this).hide()
 				$(this).prev('.u-moreinfo').hide()

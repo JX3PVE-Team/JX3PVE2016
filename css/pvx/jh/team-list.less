@@ -1,8 +1,10 @@
 .m-team-list{
+	//.clip;
 	ul{
 		li{
 			.clip;.pr;
 			padding-top:10px;
+			padding-bottom:10px;
 
 			transition:0.15s ease-in-out;
 			&:hover{
@@ -26,10 +28,10 @@
 	.pr;
 	min-height:122px;
 	.u-raidlogo{
-		.db;.pa;.lt(0,0);
+		.db;.pa;.lt(10px,20px);
 		.size(140px,60px);
 		padding:20px;
-		.x;margin:8px;
+		.x;
 		border:1px solid #ddd;
 		border-radius:3px;
 		.clip;
@@ -70,15 +72,21 @@
 		margin-left:200px;
 		padding:20px;
 
-		.tr{
+		.u-name,.u-fwq,.u-yy{
 			.db;
 			.nobreak;
 			em{color:#555;}
 		}
+		.u-name{
+			.bold;
+		}
+		.u-fwq{
+			max-width:80%;
+		}
 	}
 	
 	&:hover{
-		.name{
+		.u-name{
 			color:#c00 !important;
 		}
 	}

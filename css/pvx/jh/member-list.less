@@ -3,13 +3,18 @@
 }
 .m-member-item{
 	
-	margin-bottom:10px;
+	padding-top:10px;
 	padding-bottom:10px;
 	border-bottom:1px dashed #ddd;
+	.fz(13px,26px);
+
+	&:hover{
+		background:#EFF9FD;
+	}
 	
 	.pr;
 	.u-avt{
-		.pa;.lt(0,2px);
+		.pa;.lt(0,12px);
 		.size(24px);
 		.r(24px);
 	}
@@ -23,13 +28,18 @@
 
 	.u-name{
 	}
-	.e-role{
-		
+	.u-role{
+		em,.e-role,i{
+			.dbi;.y(top);
+		}
 	}
 	.u-fwq{
-		.w(220px);
+		//.w(220px);
+		.nobreak;
+		max-width:60%;
 	}
 	.u-words{
+		.nobreak;
 		.color(@blue-link);
 		&:hover{text-decoration:underline;}
 	}
