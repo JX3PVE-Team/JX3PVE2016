@@ -71,7 +71,7 @@ jQuery(function($){
 	var body_H = $body.innerHeight()
 	var isNotFullscreen = body_H < win_H;
 	var alertHeight = ( $("#c-alert-warning").html().length > 2 ) ? 30 : 0;
-	if(isNotFullscreen && isNotMobile){
+	if(isNotFullscreen && !isMobile){
 		var diff_win_body = win_H - body_H
 		var box_minHeight = body_H - c_header_height - 237 - alertHeight + diff_win_body
 		$box.css('min-height',box_minHeight)

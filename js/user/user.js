@@ -12,19 +12,4 @@ jQuery(function($){
 		}
 	})
 
-	//自适应界面布局
-		/*//当PC版，内容区少于侧边栏高度时，给内容包裹区设置最小高度等于侧边栏
-		var $sidebar = $(".user-sidebar")
-		var $content = $(".user-content")
-		var $main = $(".user-main")
-		var isDefaultSkin = $sidebar.length && $content.length;
-		if(isDefaultSkin && isNotMobile){
-			var sidebar_H = $sidebar.outerHeight()
-			var content_H = $content.outerHeight()
-			if(sidebar_H > content_H){
-				$main.css('min-height',sidebar_H)
-			}
-		}
-*/
-
 })

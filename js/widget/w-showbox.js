@@ -33,8 +33,8 @@ jQuery(function($){
                 //图片大小不受控问题
                 var w = $showbox.width()
                 var h = $showbox.height()
-                $img.width(w)
-                $img.height(h)
+                $imgbox.width(w)
+                $imgbox.height(h)
 
             })
         }
@@ -42,8 +42,8 @@ jQuery(function($){
 
     $close.add($showbox).on('click',function(){
         hideMask()
-        $('#c-showbox-img').remove()
         $showbox.fadeOut()
+        $('#c-showbox-img').remove()
     })
 
 })
