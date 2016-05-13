@@ -323,6 +323,15 @@
 	<!--{hook/forumdisplay_threadlist_bottom}-->
 </div>
 
+<!--{if $multipage }-->
+	<!--{if !($_GET[filter]=='sortid') && !($_G[forum][picstyle] && !$_G[cookie][forumdefstyle])}-->
+		<a class="w-pages-next" id="autopbn" href="javascript:;" rel="$multipage_more" curpage="$page" totalpage="$maxpage" picstyle="$_G[forum][picstyle]" forumdefstyle="$_G[cookie][forumdefstyle]">加载更多</a>
+		<script type="text/javascript" src="{$_G[setting][jspath]}autoloadpage.js?{VERHASH}"></script>
+	<!--{else}-->
+		<div id="pgbtn"><a class="w-pages-next" href="forum.php?mod=forumdisplay&fid={$_G[fid]}&filter={$filter}&orderby={$_GET[orderby]}{$forumdisplayadd[page]}&{$multipage_archive}&page=$nextpage" hidefocus="true">下一页</a></div>
+	<!--{/if}-->
+<!--{/if}-->
+
 <!-- dz:w-pages-bottom -->
 <!--{subtemplate widget/w_pages_bottom_list}-->
 
