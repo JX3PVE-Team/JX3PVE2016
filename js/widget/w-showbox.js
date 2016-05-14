@@ -1,48 +1,49 @@
 jQuery(function($){
     
-    //查看脸型原图 imgorigin
     var
-    $html = $("html"),
     $imgorigin = $(".u-imgorigin"),
-    $mask = $("#u-mask"),
     $showbox = $("#c-showbox"),
-    $boxclose = $("#c-showbox-close"),
-    $imgbox = $("#c-showbox-content")
-    $imgorigin.on('click',function(){
-        var img = $(this).find('img'),
-            src = img.attr('src')
-        if(src && src.indexOf('nophoto')==-1){
-            $mask.fadeIn()
-            $html.addClass('fixpage')
-            $imgbox.append('<img id="c-showbox-img" src="'+ src + '"/>')
-            var box_w = $showbox.outerWidth(),
-                box_h = $showbox.outerHeight(),
-                ct_w = $showbox.width(),
-                ct_h = $showbox.height(),
-                offset_x = -box_w/2,
-                offset_y = -box_h/2
-            $imgbox.height(ct_h).width(ct_w)
-            $showbox.fadeIn().addClass('c-showbox-show').css({
-                'margin-left': offset_x,
-                'margin-top': offset_y
+    $imgbox = $("#c-showbox-content"),
+    $close = $("#c-showbox-close")
+
+    $imgorigin.each(function(){
+        var src = $(this).find('img').attr('src')
+        var isEmpty = !src || src.indexOf('nophoto')!=-1
+        if(isEmpty){
+            $(this).addClass('isEmpty')
+        }else{
+            $(this).on('click',function(){
+                showMask()
+                var src= $(this).find('img').attr('src')
+                $imgbox.append('<img class="c-showbox-img" id="c-showbox-img"/>')
+                var $img = $("#c-showbox-img")
+                $img.attr('src',src)
+                $showbox.fadeIn()
+
+                //在display:block后正常获得图片大小后再进行位移
+                var 
+                offset_x = - $showbox.outerWidth()/2,
+                offset_y = - $showbox.outerHeight()/2
+                $showbox.css({
+                    'margin-left': offset_x,
+                    'margin-top': offset_y
+                })
+                $showbox.addClass('isShow')
+
+                //图片大小不受控问题
+                var w = $showbox.width()
+                var h = $showbox.height()
+                $imgbox.width(w)
+                $imgbox.height(h)
+
             })
         }
     })
-    //脸型原图
-    $boxclose.on('click',function(){
-        $mask.fadeOut()
-        $html.removeClass('fixpage')
+
+    $close.add($showbox).on('click',function(){
+        hideMask()
         $showbox.fadeOut()
         $('#c-showbox-img').remove()
     })
-
-    if(isMobile){
-        $showbox.on('click',function(){
-            $mask.fadeOut()
-            $html.removeClass('fixpage')
-            $(this).fadeOut()
-            $('#c-showbox-img').remove()
-        })
-    }
 
 })

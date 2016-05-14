@@ -1,51 +1,36 @@
 //查看预览图
 .u-imgorigin{
 	.pointer;
-}
-.u-imgorigin-fix{
-	.pf;.lt(50%,50%);
-	.z(800);
-	padding:28px;
-	background-color:#fff;
-	border:1px solid #ccc;
-	box-shadow: 0 0 5px rgba(0,0,0,.5);
-	.r(6px);
-	max-width:80%;
-	max-height:80%;
-
-	&:after{
-		content:'';
-		.size(64px);.db;.pointer;
-		background:url('@{url}custom/close.png') no-repeat 0 0;
-		&:hover{
-			animation:rotateHalf 0.5s ease-in-out;
-		}
+	&.isEmpty{
+		cursor:default;
 	}
 }
-.fixpage{
-	.full;.clip;
-}
-
 .c-showbox{
+	max-width:80%;
+	max-height:80%;
 	background-color:#fff;
 	border:1px solid #ccc;
 	box-shadow: 0 0 5px rgba(0,0,0,.5);
 	.r(6px);
-	max-width:80%;max-height:80%;
 	padding:28px;
-	
+	.pf;.lt(0,0);.z(800);
 	.none;
-
-	&.c-showbox-show{
-		.pf;.lt(50%,50%);.z(800);
+	&.isShow{
+		.lt(50%,50%);
 	}
 }
 .c-showbox-content{
-	.full;
+	.db;.full;
 	overflow:hidden;
-	img{.db;max-width:100%;max-height:100%;.auto(x);}
+	img{
+		.db;.auto(x);
+		max-width:100%;
+		max-height:100%;
+	}
 }
-
+.c-showbox-img{
+	
+}
 .c-showbox-close{
 	.pa;.lt(100%,0);margin-left:10px;
 	.size(64px);.db;.pointer;

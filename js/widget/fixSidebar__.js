@@ -36,7 +36,6 @@ jQuery(function($){
 
 		//获取相关尺寸与滚动发生距离
 		$(window).scroll(function() {
-			
 			//定义获取水平坐标函数
 			function getLeft(selector) {
 				var offset = selector.offsetLeft;
@@ -52,13 +51,17 @@ jQuery(function($){
 				bar_X = getLeft($(selector)[0]), //侧边栏的水平位置
 				bar_Y = 0; //初始化侧边栏距顶
 
+			//bar_X = ( $(window).width() - $('.default-main').width() ) / 2
+
+			var mainHeight = $('.default-main').height() + $('.default-main').offset().top;
+
 			//设置恢复定位
 			function ActionPS() {
 				$(selector).css('position', 'static').removeClass('fixSidebar')
 			}
 
 			//当侧边栏高度小于可视区高度时，则以侧边栏顶部顶住上方
-			if (bar_H < ct_H) {
+			if ( mainHeight - scroll > screen_H) {
 				//设置侧边栏距顶为fix头的高度
 				bar_Y = top
 				//当滚动值
@@ -66,7 +69,8 @@ jQuery(function($){
 					$(selector).css({
 						'position': 'fixed',
 						'left': bar_X,
-						'top': bar_Y
+						'top': bar_Y,
+						'bottom': ''
 					}).addClass('fixSidebar')
 				} else {
 					ActionPS()
@@ -79,7 +83,8 @@ jQuery(function($){
 					$(selector).css({
 						'position': 'fixed',
 						'left': bar_X,
-						'bottom': bar_Y
+						'bottom': bar_Y,
+						'top': ''
 					}).addClass('fixSidebar')
 				} else {
 					ActionPS()
@@ -88,7 +93,7 @@ jQuery(function($){
 		});
 	}
 
-	window.fixSidebar = fixSidebar;
+	window.fixSidebar = new fixSidebar('.default-sidebar', 46, 260 , 173);
 
 	//触发事件
 	window.onload = function() {

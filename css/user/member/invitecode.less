@@ -1,0 +1,170 @@
+@import url('../../public/base.less');		//函数
+@import url('../../global/var.less');			//常量
+@import url('../../global/color.less');		//配色
+@import url('../../module/ui/button.less');		//配色
+@import url('../../module/ui/tips.less');		//配色
+
+.invitecode-container{
+	padding:20px 0;
+}
+.invitecode-header{
+	border-bottom:1px solid #ddd;
+	font-size:14px;
+	margin-bottom:10px;
+	.clearfix;
+	h3{
+		.fl;
+		&:after{
+			content:'';
+			.db;
+			border-bottom:2px solid @basecolor;
+		}
+	}
+}
+
+.invitecode-content{
+	.rfm{
+		.w(auto);
+	}
+	//微信提示
+	.m-msg-wx{
+		line-height: 2;
+		border-radius: 4px;
+		border-style: solid;
+		padding: 8px 10px;
+		margin-bottom:3px;
+		text-align: center;
+		letter-spacing:1px;
+		background-color:#F2FAFD;
+		border:1px solid #c7ebff;
+		color:#049abf;
+		b{
+			.bold;color:#f00;
+		}
+	}
+	.u-text{
+		padding:0 10px;
+		.w(180px) !important;
+		.lh(28px);
+		&:focus{
+			border-color:@blue-dark;
+		}
+	}
+	.u-msg{
+		margin-left:5px;
+		color:#555;
+	}
+	.u-exday{
+		color:@yel;
+	}
+	.m-payway-tencent{
+		.none;
+	}
+	.m-payway-alipay{
+		.clearfix;
+		label{
+			border:none !important;
+			.dbi;.y;
+			.size(80px,30px);
+			padding:0 10px;
+			background:url('@{urls}common/alipay_logo.gif') no-repeat center center;
+		}
+
+	}
+	.u-alipay-tips{
+		b{text-decoration:underline;}
+		.tips(yel);
+		padding:5px;
+	}
+	.u-btn-ok{
+		padding:5px 40px;
+	}
+}
+.ua-responsive .screen-s{
+	/*.invitecode-header{
+		.none;
+	}*/
+	.invitecode-content .m-msg-wx{
+		font-size:13px;
+		margin-bottom:10px;
+	}
+	.rfm{
+		.table(block);
+		margin-bottom:5px;
+		padding-bottom:5px;
+	}
+	table{
+		.full(x);
+	}
+	tr,td,th{
+		.full(x);
+		padding:0;
+	}
+	th{
+		.x(left);
+		.bold;
+		line-height:2.2;
+	}
+	.u-text{
+		.db;
+		.w(100%) !important;box-sizing:border-box;
+		.fzlh(1rem,40px);
+	}
+	.u-msg{
+		.db;
+		padding-top:5px;
+		.fz(13px);
+	}
+	.u-btn-ok{
+		.full(x);
+		box-sizing:border-box;
+	}
+}
+
+//购买成功
+.invitecode-success{
+	.auto(x);
+	//代码文本域
+	.invitecode-codebox{
+		background: #f2f2f2;
+		border: 1px solid #ddd;
+		font-size: 24px;
+		font-family: Consolas;
+		line-height: 40px;
+		height: 40px;
+		color: #4D9342;
+		padding: 10px;
+		border-radius: 4px;
+		margin: 10px 0;
+		.w(600px);
+	}
+	//复制代码
+	.copy-code{
+		a{.color(#777,@basecolor);}
+		.none;
+	}
+	//邮箱
+	.u-msg-success{
+		.fz(14px);
+		.xi1{
+			font-family: Arial;
+			.bold;
+		}
+	}
+}
+.ua-responsive .screen-s{
+	.invitecode-success .invitecode-codebox{
+		.w(100%);
+		box-sizing:border-box;
+		height:80px;
+	}
+}
+
+
+
+#fwin_content_showqcode{
+	.c{
+		table{.full(x);}
+		.x;
+	}
+}

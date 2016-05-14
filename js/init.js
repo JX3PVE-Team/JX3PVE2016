@@ -7,9 +7,7 @@ H.load([
 	{'copycode':head_conf.CDNROOT+'widget/copycode.min.js'},
 	{'clipboard':head_conf.CDNROOT+'plugin/clipboard.js'},
 	{'getRequest':head_conf.CDNROOT+'plugin/getRequest.min.js'},
-	{'dialog':head_conf.CDNROOT+'mod/dialog.min.js'},
-	{'underscore':head_conf.CDNROOT+'lib/underscore.min.js'},
-	{'swiper':head_conf.CDNROOT+'plugin/swiper2.min.js'}
+	{'dialog':head_conf.CDNROOT+'mod/dialog.min.js'}
 ]);
 
 //移动端全局变量&&函数，事件触发仅限于移动端且新版适配时
@@ -71,7 +69,7 @@ jQuery(function($){
 	var body_H = $body.innerHeight()
 	var isNotFullscreen = body_H < win_H;
 	var alertHeight = ( $("#c-alert-warning").html().length > 2 ) ? 30 : 0;
-	if(isNotFullscreen && isNotMobile){
+	if(isNotFullscreen && !isMobile){
 		var diff_win_body = win_H - body_H
 		var box_minHeight = body_H - c_header_height - 237 - alertHeight + diff_win_body
 		$box.css('min-height',box_minHeight)
