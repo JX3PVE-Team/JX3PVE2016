@@ -10,12 +10,16 @@
 	}
 	a{
 		.db;
-		.lh(32px);
+		.lh(24px);
+		padding:4px 5px;
 		//padding:10px;
 	}
 	i{
-		.dbi;.size(16px);.y;
-		margin:-5px 6px 0 10px;
+		.dbi;.y(top);.size(24px);
+		margin-right:5px;
+		background-repeat:no-repeat;
+		background-position:center center;
+		background-size:100% auto;
 	}
 	.on,a:hover{
 		background-color:#f7f7f7;
@@ -31,19 +35,15 @@
 }
 
 .app-list-out{
-	i{.none;}
-	a{padding:0 10px;}
+	i{background-color:@basecolor;color:#fff;line-height:16px;.x;}
+	//a{padding:0 10px;}
 }
 
 .app-sidebar-code{
 	.x;
-	border-top:1px dotted #ddd;
+	b{.bold;color:#c00;}
+	padding:10px;
+	background-color:#f8f8f8;
+	margin-top:10px;
 }	
 
-
-.u-icon-exam{
-	background:url('@{url}app/sidebar/exam.png') no-repeat center center;
-}
-.u-icon-servers{
-	background:url('@{url}app/sidebar/servers.png') no-repeat center center;
-}

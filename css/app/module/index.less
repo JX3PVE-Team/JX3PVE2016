@@ -1,34 +1,51 @@
-.app-104-container{
+.app-index{
+	ul{
+		.clearfix;
+	}
+	li{
+		.size(80px);
+		.fl;
+		background-color:#f8f8f8;
+		margin-right:10px;
+		margin-bottom:10px;
+		.r(2px);
+		border:1px solid #ddd;
+		&:hover{
+			background-color:#f2f2f2;
+		}
+	}
+	a{
+		.db;
+		padding:14px 10px;
+	}
+	i{
+		.db;.auto(x);
+		.size(24px);
+		background-repeat:no-repeat;
+		background-position:center center;
+		background-size:100% auto;
+	}
+	span{
+		.db;.x;
+		.fz(13px,28px);
+	}
+	p{
+		color:#555;
+		background-color:#f7f7f7;
+		border:1px solid #ddd;
+		.r(2px);
+		padding:0 10px;
+		b{color:#EA0162;padding:0 2px;}
+	}
+}
+.ua-responsive .screen-s{
 	.wp{
 		padding:0 !important;
 	}
 	.default-main{
 		padding:0;
 	}
-}
-.app-index{
-	ul{}
-	li{
-		line-height:40px;
-		padding:5px 10px;
-		border-bottom:1px solid #ddd;
-	}
-	a{
-		.db;
-		font-size:1.2rem;
-	}
-	i{
-		.dbi;.y;
-		.size(24px);
-		margin-right:10px;
-		background-repeat:no-repeat;
-		background-position:center center;
-		background-size:100% auto;
-	}
-	.u-servers{
-		background-image:url('@{url}app/sidebar/servers.svg');
-	}
-	.u-exam{
-		background-image:url('@{url}app/sidebar/exam.svg');
+	.app-index{
+		padding:10px;
 	}
 }

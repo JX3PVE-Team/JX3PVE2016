@@ -119,8 +119,7 @@
 												<td><input type="text" id="invitecode" name="invitecode" autocomplete="off" size="25" onblur="checkinvite()" tabindex="1" class="px" required />
 												<!--{if $this->setting['inviteconfig']['buyinvitecode'] && $this->setting['inviteconfig']['invitecodeprice'] && ($this->setting[ec_tenpay_bargainor] || $this->setting[ec_tenpay_opentrans_chnid] || $this->setting[ec_account])}-->
 												<p class="u-msg-codetips">
-													<a class="default-way" href="misc.php?mod=buyinvitecode" target="_blank" class="xi2">{lang register_buyinvitecode}</a>
-													<span class="other-way">（你也可以找论坛已经注册的小伙伴送你喔！）</span>
+													<!--{block/1801}-->
 												</p>
 												<!--{/if}-->
 												</td>

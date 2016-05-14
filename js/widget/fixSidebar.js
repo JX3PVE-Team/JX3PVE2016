@@ -30,7 +30,6 @@ jQuery(function($){
 		if (bottom == undefined) bottom = 0
 		if (triggerScroll == undefined) triggerScroll = 20
 
-
 		//定义获取水平坐标函数
 		function getLeft(selector) {
 			var offset = selector.offsetLeft;
@@ -55,7 +54,11 @@ jQuery(function($){
 				bar_X = getLeft($(selector)[0]), 	//侧边栏的水平位置
 				bar_Y = 0; 							//初始化侧边栏距顶
 
-
+			//如果内容区过短，即侧边栏与body长度约相等时，则暂时不执行fix
+			if(ct_H - bar_H < 100){
+				return
+			}
+			
 			//当内容区还可以被拖动时
 			if ( ct_H - scroll > screen_H) {
 				//设置侧边栏距顶为fix头的高度

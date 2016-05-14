@@ -4,8 +4,6 @@
 @import url('../../module/ui/text.less');		//配色
 @import url('../../module/ui/tips.less');		//配色
 
-.wp{.w(@wpm);}
-
 .member-container{
 	padding:20px 0;
 }
@@ -144,6 +142,9 @@
 .member-forget{
 	.flb{.none;}
 }
+.m-login-register{
+	.none;
+}
 .ua-responsive .screen-s{
 	.member-header{.none;}
 	//.member-container{padding:0;}
@@ -187,6 +188,11 @@
 	.m-login-extend{
 		padding-left:0;
 		.x;
+	}
+	.m-login-register{
+		.db;
+		.color(@yel);
+		.bold;
 	}
 }
 
