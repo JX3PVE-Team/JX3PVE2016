@@ -1,21 +1,23 @@
 <!--{template app/header}-->
 <script>
-    if( !/Android|webOS| iPhone | iPod |BlackBerry|opera mini|opera mobile|appleWebkit.*mobile|mobile/i.test(navigator.userAgent) ) {
+    /*if( !/Android|webOS| iPhone | iPod |BlackBerry|opera mini|opera mobile|appleWebkit.*mobile|mobile/i.test(navigator.userAgent) ) {
         window.location = 'http://www.jx3pve.com/app/servers';
-    }
+    }*/
     jQuery('.i-header-back').attr('href','./');
 </script>
 <link rel="stylesheet" href="http://css.jx3pve.com/css/app/app.css" type="text/css" />
 <div class="app-container">
 	<div class="app-index">
 		<ul>
-			<li><a href="./app/exam"><i class="u-exam"></i>科举题库</a></li>
-			<li><a href="./app/servers_m"><i class="u-servers"></i>开服监控与记录</a></li>
-			<li><a href="https://j3pz.com/m/tools.html" data-target="_blank"><i></i>加速宝典</a></li>
-			<li><a href="https://www.j3pz.com/m/" data-target="_blank"><i></i>剑三配装</a></li>
-			<li><a href="http://www.j3ui.com/wiki" data-target="_blank"><i></i>成就百科</a></li>
+			<li><a href="./app/servers"><i class="u-icon-servers"></i><span>开服记录</span></a></li>
+			<li><a href="./app/exam"><i class="u-icon-exam"></i><span>科举题库</span></a></li>
+			<li><a href="https://www.j3pz.com/" target="_blank"><i class="u-icon-peizhuang"></i><span>剑三配装</span></a></li>
+			<li><a href="https://j3pz.com/tools.html" target="_blank"><i class="u-icon-jiasu"></i><span>加速宝典</span></a></li>
+			<li><a href="http://www.j3ui.com/wiki" target="_blank"><i class="u-icon-chengjiu"></i><span>成就百科</span></a></li>
 		</ul>
+		<p>欢迎参与项目开发<b>admin@jx3pve.com</b></p>
 	</div>
 </div>
+<script src="http://js.jx3pve.com/js/app/app.min.js"></script>
 <!--{template app/footer}-->
 

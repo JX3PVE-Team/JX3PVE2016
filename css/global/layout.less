@@ -39,29 +39,23 @@ body{
 	}
 	//默认
 	.wp{
-	    width:@wp;
+	    width:@wpm;
 	}
+	//重构版
 	.ua-responsive .wp{
 
 	}
 	//逐步上线新页面
 	.ua-responsive .screen-m .wp{
-		.w(@wpm);
+
 	}
 	//平板竖屏&手机版
 	.ua-responsive .screen-s .wp{
-		.w(auto);padding:0 10px;
+		.w(auto);
+		padding:0 10px;
 	}
 	//固定为1180px的老页面
 	.ua-oldpc .wp{
 		.w(@wp);
 		min-width:1180px;
 	}
-
-//old 
-.col2-ct {
-    width: 960px;
-}
-.col2-sd {
-    width: 200px;
-}

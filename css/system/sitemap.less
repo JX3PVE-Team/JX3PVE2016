@@ -35,7 +35,7 @@
 		text-decoration:underline;
 	}
 
-	li a span{
+	li a em{
 		.dbi;
 		color:#999;
 		padding:0 2px;
@@ -49,7 +49,7 @@
 	.wp{padding:0;}
 	.m-sitemap-block{
 		padding:0;margin-bottom:0;
-		h2,ul li{
+		h2,li{
 			.fz(1.2rem,40px);
 			border-bottom:1px solid #ddd;
 		}
@@ -58,12 +58,14 @@
 			padding:0 20px;
 			background-color:#f7f7f7;
 		}
-		ul li{
+		li{
 			.db;float:none;
 			margin:0;
+		}
+			
 			a{.db;padding:5px 20px;}
 			a:hover{text-decoration:none;}
-			span{.fr;}
+			em{.fr;}
 			i{
 				.db;.fr;/*text-transform:uppercase;color:#999;font-weight:normal;font-size:1rem;*/
 				.size(24px);
@@ -119,7 +121,10 @@
 				background-image:url('@{url}system/sitemap/wiki.svg');
 				background-size:auto 100%;
 			}
-		}
+			.u-skin{
+				background-image:url('@{url}tool/snow.png');
+				background-size:auto 100%;
+			}
 	}
 
 	.m-sitemap-about,
@@ -131,6 +136,12 @@
 	.m-sitemap-zt{
 		ul{.none;}
 	}
-
-
+}
+.ua-responsive .screen-s{
+	.m-sitemap-channel{
+		ul{.clearfix;}
+		li{.size(80px);.fl;}
+		i{.db;.auto(x);float:none;}
+		span{.fz(13px);.db;.x;white-space:nowrap;overflow:hidden;}
+	}
 }

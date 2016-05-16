@@ -161,6 +161,8 @@
 						<!--{if $this->setting['sitemessage'][login] && empty($_GET['infloat'])}--><a href="javascript:;" id="custominfo_login_$loginhash">&nbsp;<img src="{IMGDIR}/info_small.gif" alt="{lang faq}" class="vm" /></a><!--{/if}-->
 
 						<!--{if !$this->setting['bbclosed'] && empty($_GET['infloat'])}--><a href="javascript:;" onclick="ajaxget('member.php?mod=clearcookies&formhash={FORMHASH}', 'returnmessage_$loginhash', 'returnmessage_$loginhash');return false;" title="{lang login_clearcookies}" class="m-resetcookie"><i></i>{lang login_clearcookies}</a><!--{/if}-->
+
+						<a class="m-login-register" href="member.php?mod=register">没有帐号？立即注册</a>
 					</div>
 
 					<!--{if !empty($_G['setting']['pluginhooks']['logging_method'])}-->
