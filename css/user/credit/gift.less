@@ -1,0 +1,116 @@
+@import url('../../public/base.less');		//函数
+@import url('../../global/var.less');			//常量
+@import url('../../global/color.less');		//配色
+
+@import url('common.less');	
+
+.m-gift-list{
+	.clearfix;
+	padding:0 10px;
+}
+.m-gift-item{
+	.fl;
+	margin:20px;
+	a,span{.db;}
+
+	.u-screenshot{
+		.size(200px);
+		background-color:#f9f9f9;
+		border:1px solid #ddd;
+		img{
+			.db;.auto(x);
+			max-width:100%;
+			max-height:100%;
+		}
+	}
+	.u-meta{
+		.x;
+	}
+	.u-name{
+		.lh(32px);.bold;
+	}
+	.u-price{
+		em{margin-right:5px;}
+		b{.bold;}
+		.istrue{color:@green;}
+		.isfalse{color:@yel;}
+	}
+	.u-num{
+		.isnull{color:#999;}
+	}
+	.u-go{
+		&.isnull{
+			background:#aaa !important;
+			border:1px solid #888;
+			cursor:default;
+		}
+		.size(120px,30px);.auto(x);
+		.x;
+		line-height:30px;
+	}
+}
+.m-gift-record{
+	.none;
+	padding:10px 30px;
+
+	table{
+		.full(x);
+	}
+	thead{
+
+	}
+	tbody{
+
+	}
+	th,td{
+		border:1px solid #ddd;
+		padding:5px 7px;
+	}
+	th{
+		background-color:#f9f9f9;
+	}
+	td{
+		background-color:#fff;
+	}
+	.istrue{
+		color:@green;
+	}
+	.isfalse{
+		color:#999;
+	}
+	.ispending{
+		color:@yel;
+	}
+}
+.m-gift-rule{
+	.none;
+	padding:20px;
+	h2{
+		.x;.bold;
+		.fz(15px);
+	}
+	.rule-style-red{
+		.color(#c00);
+		.bold;
+	}
+	.rule-style-right{
+		.x(right);
+	}
+	strong{
+		.bold;
+	}
+	a{
+		color:@blue-link;
+		text-decoration:underline;
+		&:hover{color:#c00;}
+	}
+	b{
+		color:#c00;
+		.bold;
+	}
+}
+.ua-responsive .screen-s{
+	.user-content{
+		padding:10px 0;
+	}
+}

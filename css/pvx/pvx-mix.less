@@ -2,10 +2,55 @@
 @import url('../global/var.less');			//常量
 @import url('../global/color.less');		//配色
 
-.c-flist .u-lastedit{
-	//background-color:#EEFDFF !important;
-	//color:#28B3C5 !important;
+.m-bbs-nav{
+	padding:5px 0;
+	li{
+		margin-bottom:5px;
+		background-color:#fff;
+		border:1px solid #ddd;
+		border-radius:3px;
+		a{
+			.db;line-height:24px;
+			padding:5px 10px;
+
+			i{.size(24px);.dbi;.y(top);margin-right:6px;}
+
+			em{
+				.fr;
+				.fz(12px);color:#999;
+				text-transform:uppercase;
+				letter-spacing:0.5px;
+				//transform:scale(0.8);
+				font-family: "Trebuchet MS",'Helvetica Neue',Helvetica,Arial,sans-serif;
+				.none;
+			}
+			&.new{
+				background:url('@{url}forum/new.gif') no-repeat 100px 10px;
+			}
+		}
+		&:hover,&.on{
+			background-color:#f7f7f7;
+			box-shadow: 0 0 2px #eee inset;
+			transition:0.15s ease-in-out;
+			em{.db;animation:fadeIn 0.2s ease-in-out;}
+		}
+		.u-ask i{
+			background:url('@{url}bbs/ask.png') no-repeat 0 0;
+		}
+		.u-discuz i{
+			background:url('@{url}bbs/discuz.png') no-repeat 0 0;
+		}
+		.u-share i{
+			background:url('@{url}bbs/share.png') no-repeat 0 0;
+		}
+		.u-ac i{
+			background:url('@{url}bbs/ac.png') no-repeat 0 0;
+		}
+	}
 }
+
+
+
 
 
 .m-mix-post-tips{
