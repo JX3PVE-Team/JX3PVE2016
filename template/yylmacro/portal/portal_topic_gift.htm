@@ -1,66 +1,80 @@
-<!--{template common/header}-->
+<!--{template common/header_m}-->
+<link rel="stylesheet" href="http://css.jx3pve.com/css/user/user.css" type="text/css" />
+<link rel="stylesheet" href="http://css.jx3pve.com/css/user/credit/gift.css" type="text/css" />
+<header class="i-header">
+    <a class="i-header-back" href="./home.php"><i></i></a>
+    <div class="i-header-title">积分兑换</div>
+</header>
 <div class="user-container">
+    <div class="wp">
+        <div id="pt" class="bm cl">
+            <div class="z">
+                <a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
+                <a href="home.php">{lang useros}</a><em>&rsaquo;</em>
+                <a href="./gift">积分兑换</a>
+            </div>
+        </div>
 
-	<div id="pt" class="bm cl">
-		<div class="z">
-			<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
-			<a href="home.php">{lang useros}</a> <em>&rsaquo;</em>
-			<a href="./gift">积分兑换</a>
-		</div>
-	</div>
+        <div class="user-main">
+            <!--{subtemplate home/sidebar}-->
+            <div class="user-content">
+                <input type="hidden" id="u-credit-rq" value="{echo getuserprofile('extcredits5');}">
+                <input type="hidden" id="u-credit-sj" value="{echo getuserprofile('extcredits8');}">
 
-	<div id="ct" class="ct2_a wp cl">
-
-		<!--{template home/sidebar_l}-->
-
-		<div class="mn vip-pc-container gift-container">
-
-			<!--{template home/vip_pc_nav}-->
-
-
-			<!--顶部广告-->
-			<div class="block">
-				<!--{block/1785}-->
-			</div>
-
-			<!--积分状态-->
-			<div class="block">
-				<!--{template home/gift_pc_header}-->
-			</div>
-			
-			<!--兑换协议-->
-			<div class="gift-primary" id="gift-primary-1">
-				<div class="gift-rule block">
-					<!--{block/1782}-->
-				</div>
-				<div class="gift-rule-agree">
-					<input type="checkbox" name="" id="" checked="checked" disabled="disabled" /> 我已同意并已了解以上协议
-				</div>
-				<a href="javascript:void(0);" class="gift-rule-go" id="gift-rule-go">下一步</a>
-			</div>
-
-			<!--兑换流程-->
-			<div class="gift-primary" id="gift-primary-2" style="display:none;">
-				<div class="gift-progress block">
-					<!--{block/1783}-->
-				</div>
-				<a href="javascript:void(0);" class="gift-rule-go gift-rule-back" id="gift-rule-back">返回上一步</a>
-			</div>
-
-			<!--兑换细则-->
-			<div class="gift-details block">
-				<!--{block/1784}-->
-			</div>
-
-			<!--赞助商 & 我要赞助-->
-			<div class="gift-support block">
-				<h2 class="vip-pc-title">赞助商<span>Support Business »</span></h2>
-				<!--{block/1786}-->
-			</div>
-			
-		</div>
-
-	</div>
-
+                <!--{subtemplate home/gift_header}-->
+                <div class="m-block">
+                    <h2 class="m-title">积分兑换<span>Exchange gift&raquo;</span></h2>
+                    <ul class="m-gift-block m-gift-list" id="m-gift-list">
+                        <li class="m-gift-item">
+                            <a class="u-screenshot" href="#"><img src="" alt=""></a>
+                            <span class="u-meta u-name">礼品名称</span>
+                            <span class="u-meta u-price">
+                                <em>水晶:<b class="u-credit-rq">120</b></em>
+                                <em>人气:<b class="u-credit-sj">20</b></em>
+                            </span>
+                            <span class="u-meta u-num">库存:<b class="u-gift-num">0</b></span>
+                            <a class="u-go u-btn-blue" href="javascript:;">兑换</a>
+                        </li>
+                    </ul>
+                    <div class="m-gift-block m-gift-record" id="m-gift-record">
+                        <table>
+                            <thead>
+                                <th>礼品名称</th>
+                                <th>兑换时间</th>
+                                <th>兑换状态</th>
+                                <th>消耗积分</th>
+                            </thead>
+                            <tbody>
+                                <td>键盘</td>
+                                <td>2016/5/16</td>
+                                <td class="istrue">成功</td>
+                                <td>20水晶,20人气</td>
+                            </tbody>
+                            <tbody>
+                                <td>键盘</td>
+                                <td>2016/5/16</td>
+                                <td class="ispending">待审核</td>
+                                <td>20水晶,20人气</td>
+                            </tbody>
+                            <tbody>
+                                <td>键盘</td>
+                                <td>2016/5/16</td>
+                                <td class="isfalse">驳回</td>
+                                <td>20水晶,20人气</td>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="m-gift-block m-gift-rule" id="m-gift-rule">
+                         <!--{block/1782}-->
+                    </div>
+                </div>
+                <div class="gift-footer">
+                   
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<script src="http://js.jx3pve.com/js/user/gift.min.js"></script>
+<script src="http://js.jx3pve.com/js/user/user.min.js"></script>
 <!--{template common/footer}-->
