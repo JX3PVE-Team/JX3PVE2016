@@ -1,4 +1,40 @@
 jQuery(function($){
+	var TemplateEngine = function(html, options) {
+		var re = /<%([^%>]+)?%>/g, reExp = /(^( )?(if|for|else|switch|case|break|{|}))(.*)?/g, code = 'var r=[];\n', cursor = 0;
+		var add = function(line, js) {
+			js? (code += line.match(reExp) ? line + '\n' : 'r.push(' + line + ');\n') :
+				(code += line != '' ? 'r.push("' + line.replace(/"/g, '\\"') + '");\n' : '');
+			return add;
+		}
+		while(match = re.exec(html)) {
+			add(html.slice(cursor, match.index))(match[1], true);
+			cursor = match.index + match[0].length;
+		}
+		add(html.substr(cursor, html.length - cursor));
+		code += 'return r.join("");';
+		return new Function(code.replace(/[\r\t\n]/g, '')).apply(options);
+	}
+
+	//渲染gift列表
+	var renderGiftList = function(){
+		$.get("/api/gift/?do=list", function(data){
+			data = JSON.parse(data);
+			if(data.code != 0){
+				return alert(data.msg)
+			}
+			// $("#giftListTempl").html()
+			var temp = $("#giftListTempl").html();
+			var giftList = data.data
+			var gitfListHtml = []
+			for(var i = 0, len = giftList.length; i < len; i++){
+				gitfListHtml.push(TemplateEngine(temp, giftList[i]))
+			}
+			$("#m-gift-list").html(gitfListHtml.join(""))
+		})
+	}
+	renderGiftList()
+
+
 	//tab切换
 	$(".baseinfo a").on('click',function(){
 		$(".baseinfo a").removeClass('on')
@@ -43,7 +79,7 @@ jQuery(function($){
 			})
 		}
 	})
-	
+
 
 
 

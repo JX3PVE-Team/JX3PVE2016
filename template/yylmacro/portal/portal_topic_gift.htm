@@ -5,6 +5,20 @@
     <a class="i-header-back" href="./home.php"><i></i></a>
     <div class="i-header-title">积分兑换</div>
 </header>
+<script type="text/x-handlebars-template" id="giftListTempl">
+    <li class="m-gift-item">
+        <a class="u-screenshot" href="<%this.url%>" target="_blank">
+            <img src="<%this.image%>" alt="">
+        </a>
+        <span class="u-meta u-name"><% this.name %></span>
+                            <span class="u-meta u-price">
+                                <em>水晶:<b class="u-credit-rq"><% this.cost['水晶']%></b></em>
+                                <em>人气:<b class="u-credit-sj"><% this.cost['人气']%></b></em>
+                            </span>
+        <span class="u-meta u-num">库存:<b class="u-gift-num"><%this.num%></b></span>
+        <a class="u-go u-btn-blue" href="javascript:;">兑换</a>
+    </li>
+</script>
 <div class="user-container">
     <div class="wp">
         <div id="pt" class="bm cl">
@@ -25,16 +39,6 @@
                 <div class="m-block">
                     <h2 class="m-title">积分兑换<span>Exchange gift&raquo;</span></h2>
                     <ul class="m-gift-block m-gift-list" id="m-gift-list">
-                        <li class="m-gift-item">
-                            <a class="u-screenshot" href="#"><img src="" alt=""></a>
-                            <span class="u-meta u-name">礼品名称</span>
-                            <span class="u-meta u-price">
-                                <em>水晶:<b class="u-credit-rq">120</b></em>
-                                <em>人气:<b class="u-credit-sj">20</b></em>
-                            </span>
-                            <span class="u-meta u-num">库存:<b class="u-gift-num">0</b></span>
-                            <a class="u-go u-btn-blue" href="javascript:;">兑换</a>
-                        </li>
                     </ul>
                     <div class="m-gift-block m-gift-record" id="m-gift-record">
                         <table>
