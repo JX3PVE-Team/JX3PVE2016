@@ -15,15 +15,15 @@ jQuery(function($){
 		return new Function(code.replace(/[\r\t\n]/g, '')).apply(options);
 	}
 
+
 	//渲染gift列表
 	var renderGiftList = function(){
 		$.get("/api/gift/?do=list", function(data){
-			data = JSON.parse(data);
+			data = JSON.parse(data)
 			if(data.code != 0){
 				return alert(data.msg)
 			}
-			// $("#giftListTempl").html()
-			var temp = $("#giftListTempl").html();
+			var temp = $("#giftListTempl").html()
 			var giftList = data.data
 			var gitfListHtml = []
 			for(var i = 0, len = giftList.length; i < len; i++){
@@ -33,7 +33,44 @@ jQuery(function($){
 		})
 	}
 	renderGiftList()
+	//格式化渲染列表的数据
+	var formatRecordData = function(data){
+		var map = {
+			'-1': 'isfalse',
+			'0': 'ispending',
+			'1': 'istrue'
+		}
+		var obj = {}
+		var desc = [];
+		for(var key in data.cost){
+			desc.push(data.cost[key]+key)
+		}
 
+		obj.name = data.name
+		obj.date = data.date
+		obj.clazz = map[''+data.status]
+		obj.desc = desc.join(",")
+		return obj;
+	}
+
+	//渲染兑奖记录
+	var renderGiftRender = function(){
+		$.get("/api/gift/?do=history", function(data){
+			data = JSON.parse(data)
+			console.log(data)
+			if(data.code != 0){
+				return alert(data.msg)
+			}
+			var recordsLit = data.data
+			var gitfRecordHtml = []
+			var temp = $("#giftRecordsTempl").html();
+			for(var i = 0, len = giftList.length; i < len; i++){
+				gitfRecordHtml.push(TemplateEngine(temp, formatRecordData(giftList[i])))
+			}
+			$("#m-gift-record-tbody").html(gitfRecordHtml.join(""))
+		})
+	}
+	renderGiftRender()
 
 	//tab切换
 	$(".baseinfo a").on('click',function(){
@@ -79,8 +116,4 @@ jQuery(function($){
 			})
 		}
 	})
-
-
-
-
 });

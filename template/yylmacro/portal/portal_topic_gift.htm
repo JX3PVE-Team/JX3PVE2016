@@ -19,6 +19,14 @@
         <a class="u-go u-btn-blue" href="javascript:;">兑换</a>
     </li>
 </script>
+<script type="text/x-handlebars-template" id="giftRecordsTempl">
+  <tr>
+    <td><%this.name%></td>
+    <td><%this.date%></td>
+    <td class="<%this.clazz%>"><%this.status%></td>
+    <td><%this.desc%></td>
+  </tr>
+</script>
 <div class="user-container">
     <div class="wp">
         <div id="pt" class="bm cl">
@@ -48,24 +56,10 @@
                                 <th>兑换状态</th>
                                 <th>消耗积分</th>
                             </thead>
-                            <tbody>
-                                <td>键盘</td>
-                                <td>2016/5/16</td>
-                                <td class="istrue">成功</td>
-                                <td>20水晶,20人气</td>
+                            <tbody id="m-gift-record-tbody">
+
                             </tbody>
-                            <tbody>
-                                <td>键盘</td>
-                                <td>2016/5/16</td>
-                                <td class="ispending">待审核</td>
-                                <td>20水晶,20人气</td>
-                            </tbody>
-                            <tbody>
-                                <td>键盘</td>
-                                <td>2016/5/16</td>
-                                <td class="isfalse">驳回</td>
-                                <td>20水晶,20人气</td>
-                            </tbody>
+
                         </table>
                     </div>
                     <div class="m-gift-block m-gift-rule" id="m-gift-rule">
