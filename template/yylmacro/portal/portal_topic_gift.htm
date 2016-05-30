@@ -11,10 +11,11 @@
             <img src="<%this.image%>" alt="">
         </a>
         <span class="u-meta u-name"><% this.name %></span>
-                            <span class="u-meta u-price">
-                                <em>水晶:<b class="u-credit-rq"><% this.cost['水晶']%></b></em>
-                                <em>人气:<b class="u-credit-sj"><% this.cost['人气']%></b></em>
-                            </span>
+        <span class="u-meta u-price">
+            <em>水晶:<b class="u-credit-rq"><% this.cost['水晶']%></b></em>
+            <em>人气:<b class="u-credit-sj"><% this.cost['人气']%></b></em>
+        </span>
+        <a class="u-meta u-boss" href="<%this.url%>"><em>赞助商:</em><b><% this.name %></b></a>
         <span class="u-meta u-num">库存:<b class="u-gift-num"><%this.num%></b></span>
         <a class="u-go u-btn-blue" href="javascript:;">兑换</a>
     </li>
