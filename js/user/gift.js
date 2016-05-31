@@ -24,14 +24,14 @@ jQuery(function($){
 				.success(function(data){
 					data = JSON.parse(data);
 					if(data.code == 0){
-						alert("兑换成功! 请查看兑换记录.");
+						alert("申请兑换成功! 请查看兑换记录.");
 						renderGiftExchangeLog();
 						renderGiftList()
 					}else{
 						alert(data.msg)
 					}
 				})
-				.fail(function(){alert("兑换失败! \n Error Code: lt-ajax-buy")})
+				.fail(function(){alert("申请兑换失败! \n Error Code: lt-ajax-buy")})
 
 		})
 	};
