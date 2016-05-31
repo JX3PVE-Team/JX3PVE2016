@@ -24,14 +24,16 @@ jQuery(function($){
 				.success(function(data){
 					data = JSON.parse(data);
 					if(data.code == 0){
-						alert("申请兑换成功! 请查看兑换记录.");
+						alert("【申请】兑换成功! 请查看兑换记录.");
 						renderGiftExchangeLog();
-						renderGiftList()
+						renderGiftList();
+						//不清楚页面个人数据是否更新了，这时应该重载积分数据
+						loadUserPoint();
 					}else{
 						alert(data.msg)
 					}
 				})
-				.fail(function(){alert("申请兑换失败! \n Error Code: lt-ajax-buy")})
+				.fail(function(){alert("兑换失败! \n Error Code: lt-ajax-buy")})
 
 		})
 	};
@@ -51,6 +53,8 @@ jQuery(function($){
 			}
 			$("#m-gift-list").html(gitfListHtml.join(""));
 			addExchangeListener();
+			//添加样式
+			addClassForGiftList();
 		})
 	};
 	renderGiftList();
@@ -107,39 +111,47 @@ jQuery(function($){
 	});
 
 	//判断积分是否足够
-	var rq = parseInt($("#u-credit-rq").val()),
+	var rq = parseInt($("#u-credit-rq").val());
+	var sj = parseInt($("#u-credit-sj").val());
+        //设置积分数据
+        var loadUserPoint = function(){
+        	rq = parseInt($("#u-credit-rq").val());
 		sj = parseInt($("#u-credit-sj").val());
+        } 
 
-	$(".u-credit-rq").each(function(){
-		var need = parseInt($(this).text());
-		if(rq < need){
-			$(this).addClass('isfalse')
-		}else{
-			$(this).addClass('istrue')
-		}
-	});
-	$(".u-credit-sj").each(function(){
-		var need = parseInt($(this).text());
-		if(sj < need){
-			$(this).addClass('isfalse')
-		}else{
-			$(this).addClass('istrue')
-		}
-	});
-
-	//判断库存
-	$(".u-gift-num").each(function(){
-		var count = parseInt($(this).text());
-		if(!count){
-			$(this).parent('.u-num').addClass('isnull').next('.u-go').addClass('isnull')
-		}
-	});
-	$(".u-go").each(function(){
-		if($(this).hasClass('isnull')){
-			$(this).on('click',function(e){
-				e.preventDefault();
-				return;
-			})
-		}
-	})
+       //加载样式判断积分是否足够
+       	var addClassForGiftList = function(){
+	       	$(".u-credit-rq").each(function(){
+			var need = parseInt($(this).text());
+			if(rq < need){
+				$(this).addClass('isfalse')
+			}else{
+				$(this).addClass('istrue')
+			}
+		});
+		$(".u-credit-sj").each(function(){
+			var need = parseInt($(this).text());
+			if(sj < need){
+				$(this).addClass('isfalse')
+			}else{
+				$(this).addClass('istrue')
+			}
+		});
+	
+		//判断库存
+		$(".u-gift-num").each(function(){
+			var count = parseInt($(this).text());
+			if(!count){
+				$(this).parent('.u-num').addClass('isnull').next('.u-go').addClass('isnull')
+			}
+		});
+		$(".u-go").each(function(){
+			if($(this).hasClass('isnull')){
+				$(this).on('click',function(e){
+					e.preventDefault();
+					return;
+				})
+			}
+		})
+       }
 });
