@@ -15,9 +15,9 @@
             <em>水晶:<b class="u-credit-rq"><% this.cost['水晶']%></b></em>
             <em>人气:<b class="u-credit-sj"><% this.cost['人气']%></b></em>
         </span>
-        <a class="u-meta u-boss" href="<%this.url%>"><em>赞助商:</em><b><% this.name %></b></a>
+        <a class="u-meta u-boss" href="<%this.sponsors_url%>"><em>赞助商:</em><b><% this.sponsors %></b></a>
         <span class="u-meta u-num">库存:<b class="u-gift-num"><%this.num%></b></span>
-        <a class="u-go u-btn-blue" href="javascript:;">兑换</a>
+        <a class="u-go u-btn-blue exchange" href="javascript:;" data-id="<%this.gift_id%>">兑换</a>
     </li>
 </script>
 <script type="text/x-handlebars-template" id="giftRecordsTempl">
