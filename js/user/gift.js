@@ -17,8 +17,14 @@ jQuery(function($){
 
 	var addExchangeListener = function(){
 		$(".exchange").click(function(){
-			var leftGiftNum = ~~$(this).parent().find('.u-gift-num').text();
+			var $giftItem = $(this).parent();
+			var leftGiftNum = ~~$giftItem.find('.u-gift-num').text();
 			if(leftGiftNum < 1){return alert("礼品兑换数量不足,请选择其他礼品!")}
+
+			if(!isEnoughMoney($(this).parent())){
+				return alert("人气 or 水晶不足! 请好好努力哟!")
+			}
+
 			var id = $(this).data('id');
 			$.get("/api/gift/?do=buy&gift_id=" + id)
 				.success(function(data){
@@ -27,16 +33,40 @@ jQuery(function($){
 						alert("【申请】兑换成功! 请查看兑换记录.");
 						renderGiftExchangeLog();
 						renderGiftList();
-						//不清楚页面个人数据是否更新了，这时应该重载积分数据
-						loadUserPoint();
+						//减积分
+						subRQAndSJ($giftItem);
 					}else{
 						alert(data.msg)
 					}
 				})
 				.fail(function(){alert("兑换失败! \n Error Code: lt-ajax-buy")})
-
 		})
 	};
+
+	//判断数据是否足够
+	var isEnoughMoney = function($giftItem){
+		var needRQ = ~~$giftItem.find('.u-credit-rq').text()
+		var needSJ = ~~$giftItem.find('.u-credit-sj').text()
+		if(rq >= needRQ && sj >= needSJ){
+			return true
+		}
+		return false
+	}
+
+	//兑换成功后,减少水晶和人气
+	function  subRQAndSJ($giftItem){
+		var needRQ = ~~$giftItem.find('.u-credit-rq').text()
+		var needSJ = ~~$giftItem.find('.u-credit-sj').text()
+
+		$("#u-credit-rq").val(rq - needRQ);
+		$("#u-credit-sj").val(sj - needSJ);
+
+		//不清楚页面个人数据是否更新了，这时应该重载积分数据
+		loadUserPoint();
+		//更新页面人气显示值
+		$('ul.rights').find('li').eq(4).html("<em>人气: </em>"+rq)
+		$('ul.rights').find('li').eq(5).html("<em>水晶: </em>"+sj)
+	}
 
 	//渲染gift列表
 	var renderGiftList = function(){
@@ -111,17 +141,18 @@ jQuery(function($){
 	});
 
 	//判断积分是否足够
-	var rq = parseInt($("#u-credit-rq").val());
-	var sj = parseInt($("#u-credit-sj").val());
-        //设置积分数据
-        var loadUserPoint = function(){
-        	rq = parseInt($("#u-credit-rq").val());
-		sj = parseInt($("#u-credit-sj").val());
-        } 
+	var rq = 0;
+	var sj = 0;
+	//设置积分数据
+	var loadUserPoint = function(){
+		rq = ~~$("#u-credit-rq").val();
+		sj = ~~$("#u-credit-sj").val();
+	}
+	loadUserPoint()
 
-       //加载样式判断积分是否足够
-       	var addClassForGiftList = function(){
-	       	$(".u-credit-rq").each(function(){
+	//加载样式判断积分是否足够
+	var addClassForGiftList = function(){
+		$(".u-credit-rq").each(function(){
 			var need = parseInt($(this).text());
 			if(rq < need){
 				$(this).addClass('isfalse')
@@ -137,7 +168,7 @@ jQuery(function($){
 				$(this).addClass('istrue')
 			}
 		});
-	
+
 		//判断库存
 		$(".u-gift-num").each(function(){
 			var count = parseInt($(this).text());
@@ -153,5 +184,5 @@ jQuery(function($){
 				})
 			}
 		})
-       }
+	}
 });
