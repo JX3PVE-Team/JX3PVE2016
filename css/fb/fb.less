@@ -1,5 +1,5 @@
 @import url('../public/base.less');		//函数
-@import url('../public/path.less');		//路径
+@import url('../global/var.less');		//路径
 @import url('../global/color.less');	//配色
 @import url('../public/animation.less');	//动画
 
@@ -459,11 +459,15 @@
 		
 	}
 
-	/*壁纸*/
-	.m-fb-wall{
-		ul{
-			.clearfix;
-		}
+}
+
+.fb-comment{
+	.c-cmt-header{.none;}
+}
+
+/*壁纸*/
+	.c-wall{
+		.clearfix;
 		li{
 			.fl;margin-right:12px;
 			margin-bottom:12px;
@@ -497,9 +501,3 @@
 			}
 		}
 	}
-
-}
-
-.fb-comment{
-	.c-cmt-header{.none;}
-}
