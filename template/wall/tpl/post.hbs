@@ -1,5 +1,5 @@
 <div class="c-post-custom">
-	<ul class="c-post-custom-list">
+	<ul class="c-post-custom-list m-wall-custom-default">
 		<!-- 作者 -->
 		<li class="c-post-custom-listitem">
 			<span class="u-title"><span class="rq">{book_author_required}</span>{book_author}</span>
@@ -11,12 +11,69 @@
 			<span class="u-title"><span class="rq">{wall_uploadmode_required}</span>{wall_uploadmode}</span>
 			<span class="u-check">{wall_uploadmode_tips}</span>
 			<span class="u-content">
-				<ul class="u-radio-list">{wall_uploadmode_value}</ul>
+				<ul class="u-radio-list" id="m-wall-mode">{wall_uploadmode_value}</ul>
 				<div class="u-tip">{wall_uploadmode_description}</div>
 			</span>
 		</li>
+		<!-- 客户端 -->
+		<li class="c-post-custom-listitem">
+			<span class="u-title"><span class="rq">{wall_ua_required}</span>{wall_ua}</span>
+			<span class="u-check">{wall_ua_tips}</span>
+			<span class="u-content">
+				<ul class="u-checkbox-list" id="m-wall-ua">{wall_ua_value}</ul>
+				<div class="u-tip">{wall_ua_description}</div>
+			</span>
+		</li>
+	</ul>
+	<ul class="c-post-custom-list m-wall-uploadsize">
+		<!-- PC/笔记本 -->
+		<li class="c-post-custom-listitem">
+			<span class="u-title"><span class="rq">{wall_size_pc_required}</span>{wall_size_pc}</span>
+			<span class="u-check">{wall_size_pc_tips}</span>
+			<span class="u-content">
+				<ul class="u-checkbox-list">{wall_size_pc_value}</ul>
+				<div class="u-tip">{wall_size_pc_description}</div>
+			</span>
+		</li>
+		<!-- 手机 -->
+		<li class="c-post-custom-listitem">
+			<span class="u-title"><span class="rq">{wall_size_iphone_required}</span>{wall_size_iphone}</span>
+			<span class="u-check">{wall_size_iphone_tips}</span>
+			<span class="u-content">
+				<ul class="u-checkbox-list">{wall_size_iphone_value}</ul>
+				<div class="u-tip">{wall_size_iphone_description}</div>
+			</span>
+		</li>
+		<!-- 平板 -->
+		<li class="c-post-custom-listitem">
+			<span class="u-title"><span class="rq">{wall_size_ipad_required}</span>{wall_size_ipad}</span>
+			<span class="u-check">{wall_size_ipad_tips}</span>
+			<span class="u-content">
+				<ul class="u-checkbox-list">{wall_size_ipad_value}</ul>
+				<div class="u-tip">{wall_size_ipad_description}</div>
+			</span>
+		</li>
+	</ul>
+	<div class="c-post-custom-list m-wall-uploadmode-local">
+		<ul class="m-wall-upload-pc">
+			
+		</ul>
+		<ul class="m-wall-upload-m">
+			
+		</ul>
+		<ul class="m-wall-upload-ipad">
+			
+		</ul>
+	</div>
+	<ul class="c-post-custom-list m-wall-uploadmode-sina">
 		
-
-
+	</ul>
+	<ul class="c-post-custom-list m-wall-custom-default">
+		<!-- 作者微博 -->
+		<li class="c-post-custom-listitem">
+			<span class="u-title"><span class="rq">{author_wb_required}</span>{author_wb}</span>
+			<span class="u-check">{author_wb_tips}</span>
+			<span class="u-content">{author_wb_value}<div class="u-tip">{author_wb_description}</div></span>
+		</li>
 	</ul>
 </div>
