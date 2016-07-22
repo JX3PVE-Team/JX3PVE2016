@@ -1,10 +1,10 @@
 <?php
 //个人测试
 //ACCESS_ID
-define('OSS_ACCESS_ID', '');
+define('OSS_ACCESS_ID', 'OIMO3Ged3zIePUT5');
 
 //ACCESS_KEY
-define('OSS_ACCESS_KEY', '');
+define('OSS_ACCESS_KEY', '7UVx8EURlMXshZvlfZ9aVaACVHr6hD');
 
 
 //是否记录日志
