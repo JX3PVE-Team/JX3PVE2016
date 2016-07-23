@@ -1,0 +1,24 @@
+<div class="m-ow-list">
+    <ul>
+    <li class="m-ow-item m-ow-item-th">
+        <span class="u-sex u-subitem"></span>
+        <span class="u-user u-subitem">论坛ID</span>
+        <span class="u-id u-subitem">战网ID</span>
+        <span class="u-hero u-subitem">主玩英雄</span>
+        <span class="u-status u-subitem">游戏状态</span>
+        <span class="u-words u-subitem">标题留言</span>
+        <span class="u-details u-subitem">更多</span>
+    </li>
+    [loop]
+        <li class="m-ow-item">
+            <span class="u-sex u-subitem"><i></i><em>{game_sex_value}</em></span>
+            <span class="u-user u-subitem">{author}</span>
+            <span class="u-id u-subitem">{game_owid_value}</span>
+            <span class="u-hero u-subitem"><i class="u-hero-icon"></i><em>{game_owrole_value}</em></span>
+            <span class="u-status u-subitem">{game_status_value}</span>
+            <span class="u-words u-subitem">{subject}</span>
+            <a class="u-details u-subitem" href="{subject_url}" >view &raquo;</a>
+        </li>
+        [/loop]
+    </ul>
+</div>

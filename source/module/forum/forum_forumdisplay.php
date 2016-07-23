@@ -450,7 +450,7 @@ if($filter && $filter != 'hot') {
 	}
 	$simplestyle = true;
 }
-if(in_array($_G['fid'], array(321,294,384,369,390,79)) && !isset($_GET['orderby'])){
+if(in_array($_G['fid'], array(321,294,384,369,390,79,409)) && !isset($_GET['orderby'])){
 	$_GET['orderby'] = 'lastedit';
 }
 if(!empty($_GET['orderby']) && !$_G['setting']['closeforumorderby'] && in_array($_GET['orderby'], array('lastpost', 'lastedit', 'dateline', 'replies', 'views', 'recommends', 'heats', 'favtimes', 'price'))) {
