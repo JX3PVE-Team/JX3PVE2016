@@ -1,5 +1,6 @@
 .default-sidebar,.default-content{float:none;.w(auto)!important;}
-.w-listmode{.none;}
+.w-listmode{/*.none;*/}
+.w-category,.w-order{.none;}
 .w-pages-top .u-btn-publish{.none;}
 .w-pages-top,.w-pages-null{
 	margin-top:10px;
@@ -7,17 +8,78 @@
 
 .m-game-list{
 	.clearfix;
-	li{.fl;}
+	li{.fl;padding:0 10px;}
 	a{.db;.indent;}
 	.u-ow{
 		.size(260px,90px);
-		background:url('http://ww2.sinaimg.cn/large/bcc700eegw1f66c092h36j207802it8m.jpg') no-repeat 0 0;
+		background:url('http://ww2.sinaimg.cn/large/bcc700eegw1f66c092h36j207802it8m.jpg') no-repeat center center;
 	}
 	.u-lol{
 		.size(200px,90px);
-		background:url('http://ww4.sinaimg.cn/large/bcc700eegw1f66c07z6huj205k02iwej.jpg') no-repeat 0 0;
+		background:url('http://ww4.sinaimg.cn/large/bcc700eegw1f66c07z6huj205k02iwej.jpg') no-repeat center center;
 	}
 	.on{
 		border:2px solid #FDAD1C;
+	}
+}
+.s-filter-form{
+	.clearfix;
+	padding:20px;
+
+	.u-button-search{
+		.fl;
+		.lh(42px);
+		.w(120px);
+	}
+}
+.s-filter-list{
+	.fl;
+	*{.fl;}
+	margin-right:10px;
+	.label{
+		color:#555;
+		.fz(24px,42px);
+		margin-right:20px;
+	}
+	.value{
+		.w(710px);
+		.h(42px);
+		padding:0 10px;
+		border:1px solid #ddd;
+		.r(4px);
+		.px{
+			border:none;
+			background: none;
+			.db;.full;
+			padding:0;
+			line-height:42px;
+		}
+	}
+}
+.ua-responsive .screen-s{
+	.default-sidebar{
+		.db;
+		.ps;
+	}
+	.m-game-list{
+		margin-bottom:10px;
+		li{.w(40%);}
+		a{.w(100%);.h(60px);background-size:auto 80%;}
+	}
+	.s-filter-form{
+		background-color:#f7f7f7;
+		border-top:1px solid #ddd;
+		border-bottom:1px solid #ddd;
+	}
+	.s-filter-form *{
+		font-size:1rem !important;
+		line-height:28px;
+	}
+	.s-filter-list .value{
+		.size(100px,28px);
+		background-color:#fff;
+	}
+	.s-filter-form .u-button-search{
+		.size(60px,28px);
 	}
 }
