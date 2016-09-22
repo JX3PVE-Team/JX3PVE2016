@@ -16,7 +16,7 @@
 			.w(100%);
 		}
 		
-		a{.db;.full;}
+		a{.db;.full;.pr;}
 		a:hover{color:#333;font-weight:bold;span{font-weight:normal;}}
 		.new{
 			color:#c00;.bold;
@@ -24,6 +24,13 @@
 		}
 
 		span{color:#888;padding-left:5px;}
+		.new{
+			color:#f00;.bold;
+			em{
+				.db;.size(22px,9px);.pa;.rt(12px,0);
+				background: url('@{url}user/new.gif')no-repeat right 35%;
+			}
+		}
 		i{
 			height:28px; width:35px;.dbi;.y;
 			background-image:url('@{url}role/xinfa.png');
@@ -57,6 +64,11 @@
 
 			&.mw{background:url('@{url}role/cgm.png') no-repeat 0 0;}
 			&.xz{background:url('@{url}role/cgm.png') no-repeat 0 -28px;}
+
+			&.bd{
+				//background:url('@{url}role/bd.png') no-repeat 0 0;
+				background-position:0 -561px;
+			}
 		}
 		
 	}
