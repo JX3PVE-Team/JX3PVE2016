@@ -22,7 +22,14 @@
 	
 	<!-- stamp 自定义图标·资料片等 -->
 	<!--{if $thread[icon] >= 0}-->
-		<img class="u-addef-sp" src="{STATICURL}image/stamp/{$_G[cache][stamps][$thread[icon]][url]}" alt="{$_G[cache][stamps][$thread[icon]][text]}" align="absmiddle" />
+		<img class="u-addef-sp" src="{STATICURL}image/stamp/{$_G[cache][stamps][$thread[icon]][url]}" align="absmiddle" />
+	<!--{/if}-->
+
+	<!-- attachment 附件 -->
+	<!--{if $thread['attachment'] == 2}-->
+		<img class="u-addef-att" src="{STATICURL}image/filetype/image_s.gif" alt="attach_img" align="absmiddle" />
+	<!--{elseif $thread['attachment'] == 1}-->
+		<img class="u-addef-att" src="{STATICURL}image/filetype/common.gif" alt="attachment" align="absmiddle" />
 	<!--{/if}-->
 
 	<!-- 精华 -->
