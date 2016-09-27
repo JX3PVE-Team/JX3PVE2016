@@ -7,13 +7,16 @@ jQuery(function($){
 		if(url.length < 2){
 			$(this).hide()
 		}else if(url.indexOf('回复可见') != -1){
-			url = 'hide'
 			$(this).on('click',function(e){
 				e.preventDefault()
 				loadDialog('download')
 			})
 		}else{
-			$(this).attr('href',url)
+			if(url.indexOf('jx3pve.com') == -1){
+				$(this).attr('href',url).attr('target','_blank')
+			}else{
+				$(this).attr('href',url)
+			}
 		}
 	})
 
