@@ -5,8 +5,8 @@ require_once '../../source/class/class_core.php';
 $discuz = C::app();
 $discuz->init();
 
-$username = addslashes($_GET["username"]);
-$password = addslashes($_GET['password']);
+$username = addslashes($_POST["username"]);
+$password = addslashes($_POST['password']);
 
 if (!$username || !$password) {
     echo "[用户名密码不能为空, 0]";
