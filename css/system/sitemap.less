@@ -61,7 +61,7 @@
 		border-bottom:1px solid #ddd;
 	}
 	a{
-		.db;.full;
+		.db;.full;.pr;
 		overflow:hidden;
 		&:hover{
 			background-color:#f7f7f7;
@@ -80,26 +80,45 @@
 	}
 
 	//角标
-	.u-mark-new{}//新
-	.u-mark-hot{}//热
-	.u-mark-com{}//推荐
+	.u-mark-new,.u-mark-hot,.u-mark-com{
+		.pa;.rt(0,0);.full;.db;
+	}
+	.u-mark-new{
+		background:url('@{url}system/sitemap/new.png') no-repeat right top;
+	}//新
+	.u-mark-hot{
+		background:url('@{url}system/sitemap/hot.png') no-repeat right top;
+	}//热
+	.u-mark-com{
+		background:url('@{url}system/sitemap/com.png') no-repeat right top;
+	}//推荐
 
 	//图标
-	.u-index{
-		background-image:url('@{url}system/sitemap/home.svg');
+	.u-bbs{
+		background-image:url('@{url}system/sitemap/bbs.svg');
 		background-size:auto 100%;
+	}
+	.u-peizhuang{
+		background-image:url('@{url}system/sitemap/peizhuang.png');
+		background-size:auto 110%;
+	}
+	.u-servers{
+		background-image:url('@{url}system/sitemap/servers.svg');
+		background-size:auto 100%;
+	}
+	.u-speed{
+		background-image:url('@{url}system/sitemap/speed.svg');
+		background-size:auto 100%;
+	}
+	.u-chengjiu{
+		background-image:url('@{url}system/sitemap/chengjiu.svg');
+		background-size:100% auto;
+		.w(65px);
 	}
 	.u-macro{
 		background-image:url('@{url}system/sitemap/macro.svg');
 		background-size:auto 100%;
-	}
-	.u-tool{
-		background-image:url('@{url}system/sitemap/tool.svg');
-		background-size:90% auto;
-	}
-	.u-app{
-		background-image:url('@{url}system/sitemap/app.svg');
-		background-size:95% auto;
+		.w(78px);
 	}
 	.u-role{
 		background-image:url('@{url}system/sitemap/role.svg');
@@ -109,38 +128,65 @@
 		background-image:url('@{url}system/sitemap/fam.svg');
 		background-size:95% auto;
 	}
-	.u-raid{
+	.u-fb{
+		background-image:url('@{url}system/sitemap/fb.svg');
+		background-size:auto 90%;
+	}
+	.u-tool{
+		background-image:url('@{url}system/sitemap/tool.svg');
+		background-size:100% auto;
+	}
+	.u-pet{
+		background-image:url('@{url}system/sitemap/pet.svg');
+		background-size:100% auto;
+	}
+	.u-team{
 		background-image:url('@{url}system/sitemap/team.svg');
 		background-size:100% auto;
 	}
+	.u-member{
+		background-image:url('@{url}system/sitemap/member.svg');
+		background-size:auto 100%;
+	}
+	.u-biz-sale{
+		background-image:url('@{url}system/sitemap/sale.svg');
+		background-size:110% auto;
+	}
+	.u-biz-buy{
+		background-image:url('@{url}system/sitemap/buy.svg');
+		background-size:90% auto;
+	}
+	.u-skin{
+		background-image:url('@{url}system/sitemap/snow.jpg');
+		background-size:auto 100%;
+	}
 	.u-face{
 		background-image:url('@{url}system/sitemap/face.svg');
+		background-size:100% auto;
+	}
+	.u-story{
+		background-image:url('@{url}system/sitemap/story.svg');
+		background-size:auto 100%;
+	}
+	.u-ow{
+		background-image:url('@{url}system/sitemap/ow.jpg');
+		background-size:auto 100%;
+	}
+
+	/*.u-raid{
+		background-image:url('@{url}system/sitemap/team.svg');
 		background-size:100% auto;
 	}
 	.u-biz{
 		background-image:url('@{url}system/sitemap/biz.svg');
 		background-size:auto 100%;
 	}
-	.u-story{
-		background-image:url('@{url}system/sitemap/book.svg');
-		background-size:auto 100%;
-	}
-	.u-bbs{
-		background-image:url('@{url}system/sitemap/bbs.svg');
-		background-size:auto 100%;
-	}
+	
 	.u-wiki{
 		background-image:url('@{url}system/sitemap/wiki.svg');
 		background-size:auto 100%;
-	}
-	.u-skin{
-		background-image:url('@{url}tool/snow.png');
-		background-size:auto 100%;
-	}
-	.u-ow{
-		background-image:url('@{url}game/ow/ow.png');
-		background-size:auto 100%;
-	}
+	}*/
+	
 }
 
 .ua-responsive .screen-s{
