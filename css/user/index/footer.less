@@ -1,19 +1,35 @@
-.user-os-help,.user-os-logout{
-	.none;
-}
-.ua-responsive .screen-s{
-	.user-os-help,.user-os-logout{.db}
+.user-os-footer{
+	padding-top:10px;
 }
 
-.user-os-help,.user-os-logout{
+.user-os-help,.user-os-logout,.user-os-login{
+	.none;
+}
+.screen-s{
+	.user-os-help,.user-os-logout,.user-os-login{
+		.db;
+	}
+}
+
+.user-os-help{
+	.pr;
+	.fzlh(13px,28px);
+	.x;
+	i{.db;.h(1px);background-color:#ddd;.w(280px);.ct(o,280px,1px);}
+	a{padding:0 10px;.color(#888,#444);background-color:#f7f7f7;.pr;}
+}
+
+.user-os-login,.user-os-logout{
 	.x;
 	.lh(50px);
-	background-color:#fff;
+	color:#fff;
 	border-top:1px solid #ddd;
 	border-bottom:1px solid #ddd;
+	margin-top:20px;
 }
 .user-os-logout{
-	margin-top:20px;
 	background-color:#444;
-	color:#fff;
+}
+.user-os-login{
+	background-color:#0e78e7;
 }

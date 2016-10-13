@@ -1,1 +1,62 @@
-body{margin:20px;line-height:2;font-size:14px;font-family:"微软雅黑",'Helvetica Neue',Helvetica,Arial,sans-serif}.footer{text-align:right;margin-top:10px;border-top:1px solid #ccc;font-size:12px;line-height:2.5;color:#999;font-family:"Trebuchet MS",'Helvetica Neue',Helvetica,Arial,sans-serif}.header{text-align:center;font-size:24px;line-height:inherit}.meta{background-color:#f9f9f9;padding:0 10px;font-size:12px;line-height:inherit}.title{font-weight:bold;font-size:16px;line-height:inherit;margin:0}.primary{padding:10px;margin-bottom:20px}td,th{border:1px solid #ddd;padding:2px 5px}table{border-collapse:collapse}.quote,.blockcode{border:1px dashed #ddd}.blockcode em{display:none}ul{margin:0}
+/*
+ * Name: base.less v3.1
+ * Description: function,ie hack
+ * Creator: iRuxu,Dora
+ * Modify: iRuxu
+ * Update: 2015-8-13
+ * API: http://help.lab.hunantv.com/page/function/base.html
+ */
+body {
+  margin: 20px;
+  line-height: 2;
+  font-size: 14px;
+  font-family: "微软雅黑", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.footer {
+  text-align: right;
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+  font-size: 12px;
+  line-height: 2.5;
+  color: #999;
+  font-family: "Trebuchet MS", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.header {
+  text-align: center;
+  font-size: 24px;
+  line-height: inherit;
+}
+.meta {
+  background-color: #f9f9f9;
+  padding: 0 10px;
+  font-size: 12px;
+  line-height: inherit;
+}
+.title {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: inherit;
+  margin: 0;
+}
+.primary {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+td,
+th {
+  border: 1px solid #ddd;
+  padding: 2px 5px;
+}
+table {
+  border-collapse: collapse;
+}
+.quote,
+.blockcode {
+  border: 1px dashed #ddd;
+}
+.blockcode em {
+  display: none;
+}
+ul {
+  margin: 0;
+}

@@ -1,6 +1,15 @@
 <div class="user-os-footer">
-	<a class="user-os-help" href="./faq" >常见问题与反馈</a>
+	<p class="user-os-help">
+		<i></i>
+		<a href="./push">推送</a>
+		<a href="./faq">帮助</a>
+		<a href="./feedback">反馈</a>
+		<a href="./about">关于</a>
+	</p>
+	
 	<!--{if $_G['uid']}-->
 	<a class="user-os-logout" href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+	<!--{else}-->
+	<a class="user-os-login" href="./login">登录</a>
 	<!--{/if}-->
 </div>

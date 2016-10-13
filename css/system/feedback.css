@@ -1,1 +1,43 @@
-.f-365 .default-sidebar{display:none}.f-365 .default-content{margin-left:0;padding:0;width:100% !important}.f-365-container{background-color:#fff}.c-fli-commend{display:none}.pg_forumdisplay .i-header-menu .u-all{display:none}.c-post-category{width:180px}.c-post-subject .u-subject{margin-left:190px}#typeid_ctrl_menu.sltm{width:180px !important}#typeid_ctrl_menu.sltm li{padding:0 5px}#typeid_ctrl_menu.sltm li:hover{background-color:#f7f7f7}.ua-responsive .screen-s #typeid_ctrl_menu.sltm{width:80% !important}
+/*
+ * Name: base.less v3.1
+ * Description: function,ie hack
+ * Creator: iRuxu,Dora
+ * Modify: iRuxu
+ * Update: 2015-8-13
+ * API: http://help.lab.hunantv.com/page/function/base.html
+ */
+.f-365 .default-sidebar {
+  display: none;
+}
+.f-365 .default-content {
+  margin-left: 0;
+  padding: 0;
+  width: 100% !important;
+}
+.f-365-container {
+  background-color: #fff;
+}
+.c-fli-commend {
+  display: none;
+}
+.pg_forumdisplay .i-header-menu .u-all {
+  display: none;
+}
+.c-post-category {
+  width: 180px;
+}
+.c-post-subject .u-subject {
+  margin-left: 190px;
+}
+#typeid_ctrl_menu.sltm {
+  width: 180px !important;
+}
+#typeid_ctrl_menu.sltm li {
+  padding: 0 5px;
+}
+#typeid_ctrl_menu.sltm li:hover {
+  background-color: #f7f7f7;
+}
+.ua-responsive .screen-s #typeid_ctrl_menu.sltm {
+  width: 80% !important;
+}

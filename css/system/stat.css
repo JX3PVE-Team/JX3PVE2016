@@ -1,1 +1,13 @@
-#pt{border-bottom:none}.dt th,.dt td{background-color:#fafafa}html .pg_stat .wp{width:1180px}
+#pt {
+  border-bottom: none;
+}
+/*.m-stat-sidebar{
+	background-color:#f9f9f9;
+}*/
+.dt th,
+.dt td {
+  background-color: #fafafa;
+}
+html .pg_stat .wp {
+  width: 1180px;
+}
