@@ -1,0 +1,123 @@
+//幻灯模块
+.m-index-slider{
+	//.r(10px);
+	.size(100%,204px);.clip;
+	.swiper-container{.full;/*.r(10px);*/}
+	a,img{.full;/*.r(10px);*/}
+	img{.db;}
+	a{
+		.db;
+		//transition:0.28s ease-in-out;
+	}
+	a:hover{
+		//-webkit-filter:brightness(110%);
+	}
+	margin-bottom:10px;
+}
+
+.swiper-pagination{
+	.pa;.lb(0,0);
+	.x;.full(x);.h(20px);
+	font-size: 0;
+	.swiper-pagination-switch{
+		.dbi;.size(10px);.r(10px);
+		background-color:#fff;
+		margin-right:5px;
+		.pointer;
+	}
+	.swiper-active-switch{
+		background-color:@basecolor;
+	}
+}
+
+.screen-l .swiper-pagination{
+	.x(right);
+	padding:0 0 5px 0;
+
+	.swiper-pagination-switch{
+		.size(16px);.r(0);
+		.tb(255,255,255,.5);
+		margin-right:10px;
+	}
+	.swiper-active-switch{
+		background-color:@basecolor;
+	}
+}
+
+.m-index-zt{
+	margin-bottom:15px;
+	ul{
+		.clearfix;
+		background: #fafafa;
+		border: 1px solid #f0f0f0;
+		border-right:none;
+		.r(4px);
+	}
+	li{
+		.fl;
+		.w(25%);
+	    
+    	border-right: 1px solid #f0f0f0;
+    	padding:15px 0;
+    	margin-left:-1px;
+	}
+	a,span{.db;.x;}
+	a{.fz(15px,1.2);.color(#444,#c00);}
+	span{.color(#666);}
+}
+
+.m-index-news{
+	h2{
+		.pr;
+		margin-bottom:10px;
+
+		.u-add{
+			.pa;.rb(0,8px);
+			.color(#999,#259);
+			.normal;font-size:12px;
+			i{
+				background:url('@{url}icon/app_add.gif') no-repeat 0 0;
+				.dbi;.size(12px);.y(-2px);margin-right:3px;
+			}
+		}
+	}
+	ul{
+		padding-left:5px;
+		a{
+			.db;.pr;
+			//margin-bottom:2px;
+			.nobreak;
+			.fzlh(13px,32px);
+		}
+		i{
+			.dbi;.y;.fl;
+			background-color:#f7f7f7;
+			padding:0 5px;
+			.lh(22px);
+			margin-top:3px;
+			.r(2px);
+			margin-right:10px;
+			color:#777;
+		}
+		em{
+			.pa;.rt(0,0);
+			color:#999;
+		}
+		a:hover{
+			color:@blue-link;
+			//text-decoration:underline;
+			background-color:#f9f9f9;
+			em{color:@yel;}
+			i{background-color:@basecolor;color:#fff;}
+		}
+	}
+	
+}
+
+
+
+.c-compass{
+	margin-top:20px;
+	border-top:1px dotted #ddd;
+	padding-top:20px;
+}
