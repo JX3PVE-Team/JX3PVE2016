@@ -1,32 +1,124 @@
-//日志
-.ct_vw_mn{
-	float:none;
-	.w(auto);
-	.tedt{
-		.w(auto);
-	}
-}
-#blog_article{
-	line-height:2.2;
-}
-
+//博客内容
 .m-blog{
-	.ph{
-		padding:0;
-		font-size:16px;
-		.default-fontfamily();
+
+}
+.m-blog-header{
+	border-bottom:1px dotted #ddd;
+}
+.m-blog-title{
+	padding:0;
+	font-size:16px;
+	.default-fontfamily();
+}
+.m-blog-meta{
+	.u-date{margin-right:5px;}
+	.u-views{}
+}
+.m-blog-panel{
+	background-color:#fffffa;
+	padding:10px;
+	border:1px solid #eee;
+	margin-bottom:10px;
+
+	.clearfix;
+	.u-title{
+		//.fl;
+		background-color:#FFE214;
+		padding:0 10px;
+		.r(3px);
+		color:#555;
+		.w(80px);
+	}
+
+}
+.m-blog-share{
+	.fl;
+	padding-left:10px;
+	.u-box{
+		margin-left:2px;
 	}
 }
-.bm{margin-bottom:0;border:none;}
-.bm_h{.none;}
-
-.ua-responsive .screen-s{
+.m-blog-fav{
+	.fr;
+	padding-right:10px;
+	.u-box{
+		margin-top:5px;
+		margin-left:-5px;
+	}
+	#a_share{.none;}
+	.oshr{
+		.fl;.w(65px);
+		padding-left:28px;
+		&:hover{text-decoration:none;background-color:#fafafa;}
+	}
 }
 
-//表态
-.atd{
-	td{.x;}
+.m-blog-admin{
+	background-color:@blue-bg;
+	.r(3px);
+	padding:2px 10px;
+	.color(#999,@blue-link,#c00);
 }
-.atdc{
-	.x;
+
+.m-blog-relative,.m-blog-comment{
+	.u-title{
+		padding:5px 0;
+		margin-bottom:5px;
+		border-bottom:1px dotted #ddd;
+		i{
+		    display: inline-block;
+		    vertical-align: middle;
+		    width: 16px;
+		    height: 16px;
+		    margin-right:3px;
+			background: url('@{url}forum/my.png') no-repeat 0 0;
+	    	margin: -2px 5px 0 0;
+    	}
+    	.u-all{
+    		.fr;.lh(20px);
+    		.color(@blue-link,#fff);
+    		background-color:@blue-bg;
+    		&:hover{background-color:@blue-link;}
+			.r(3px);
+			padding:2px 10px;
+			
+    	}
+	}
+}
+
+.m-blog-relative{
+	
+	.u-list{
+		a{
+			padding-left:20px;
+			.db;.nobreak;
+			line-height:30px;
+			.color(#666,@blue-link);
+			background: url('@{url}index/arrow.png') no-repeat 5px center;
+		}
+	}
+}
+
+.m-blog-comment{
+}
+
+.m-blog-bt{
+	margin-bottom:10px;
+
+	.atd td{
+		.y(top);
+		.x;
+		span{color:#666;}
+	}
+
+	h3{}
+
+	#trace_ul{
+		margin-left:0;
+		li{margin-bottom:10px;}
+	}
+}
+
+.m-blog-listpre{
+	color:#666;
 }

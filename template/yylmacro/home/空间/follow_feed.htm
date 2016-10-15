@@ -10,7 +10,8 @@
 			<div id="pt" class="bm cl">
 				<div class="z">
 					<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
-					<a href="home.php?mod=follow">{lang follow}</a>
+					<a href="home.php">{lang useros}</a><em>&rsaquo;</em>
+					<a href="home.php?mod=follow">关注</a>
 				</div>
 			</div>
 
@@ -51,14 +52,16 @@
 			<a class="i-header-back" href="./home.php"><i></i></a>
 			<div class="i-header-title">广播</div>
 		</header>
-				<div id="pt" class="bm cl">
-					<div class="z">
-						<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
-						<a href="home.php?mod=space&uid=$space[uid]">{$space[username]}</a> <em>&rsaquo;</em>
-						<a href="home.php?mod=follow&uid=$space[uid]&do=view&from=space">{lang follow}</a>
-					</div>
+		<div class="wp">
+			<div id="pt" class="bm cl">
+				<div class="z">
+					<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> 
+					<em>&rsaquo;</em> <a href="home.php">{lang useros}</a>
+					<em>&rsaquo;</em> <a href="home.php?mod=space&uid=$space[uid]">{$space[username]}</a> 
+					<em>&rsaquo;</em> <a href="home.php?mod=follow&uid=$space[uid]&do=view&from=space">{lang follow}</a>
 				</div>
-
+			</div>
+		</div>
 		<!--{template home/space_menu}-->
 		<div id="ct" class="ct1 wp cl">
 			<div class="mn">

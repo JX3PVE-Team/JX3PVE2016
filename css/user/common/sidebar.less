@@ -1,7 +1,7 @@
 .user-sidebar h3{
 	user-select:none;
 	.pointer;
-	.fz(14px,32px);
+	.fz(13px,28px);
 	border-bottom:1px dotted #ddd;
 	padding:10px;
 	&:hover{
@@ -11,17 +11,22 @@
 		.bold;
 		.color(#0F75BF,#0F75BF,#0F75BF);
 	}
-}
-.user-sidebar h3 i{
-	.dbi;.y;.size(24px);margin-right:8px;
-}
-/*h3{
-	padding:5px 5px 5px 30px;
-	background:url('@{url}icon/add.gif') no-repeat 5px center;
-	&.on{
-		background:url('@{url}icon/desc.gif') no-repeat 5px center;
+	i{
+		.dbi;.y;.size(18px);margin-right:8px;margin-top:-2px;
+
+		background-size:100% auto;
+		background-repeat:no-repeat;
+		background-position:center center;
 	}
-}*/
+}
+.u-user-os-index{background-image:url('@{url}user/sidebar/index.png');}
+.u-user-os-msg{background-image:url('@{url}user/sidebar/msg.png');}
+.u-user-os-thread{background-image:url('@{url}user/sidebar/book.png');}
+.u-user-os-setting{background-image:url('@{url}user/sidebar/setting.png');}
+.u-user-os-credit{background-image:url('@{url}user/sidebar/coin.png');}
+.u-user-os-space{background-image:url('@{url}user/sidebar/home.png');}
+.u-user-os-extend{background-image:url('@{url}user/sidebar/extend.png');}
+.u-user-os-other{background-image:url('@{url}user/sidebar/lock.png');}
 
 .user-sidebar-list{
 	padding-top:5px;
@@ -51,11 +56,3 @@
 	.none;
 }
 
-.u-user-os-index{background:url('@{url}user/sidebar/index.png') no-repeat center center;background-size:96% auto;}
-.u-user-os-msg{background:url('@{url}user/sidebar/msg.png') no-repeat center center;background-size:95% auto;}
-.u-user-os-thread{background:url('@{url}user/sidebar/book.png') no-repeat 0 0;}
-.u-user-os-setting{background:url('@{url}user/sidebar/setting.png') no-repeat 0 0;}
-.u-user-os-credit{background:url('@{url}user/sidebar/coin.png') no-repeat 0 0;}
-.u-user-os-space{background:url('@{url}user/sidebar/home.png') no-repeat 0 0;}
-.u-user-os-extend{background:url('@{url}user/sidebar/extend.png') no-repeat 0 0;}
-.u-user-os-other{background:url('@{url}user/sidebar/lock.png') no-repeat center center;background-size:95% auto;}
