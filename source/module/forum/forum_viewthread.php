@@ -122,7 +122,7 @@ if($_GET['from'] == 'portal') {
 	$_G['grouptypeid'] = $_G['forum']['fup'];
 
 } else {
-	$navigation = '';
+	$navigation = '<em>&rsaquo;</em> <a href="./">首页</a>';
 	$upnavlink = 'forum.php?mod=forumdisplay&amp;fid='.$_G['fid'].($_GET['extra'] && !IS_ROBOT ? '&amp;'.$_GET['extra'] : '');
 
 	if($_G['forum']['type'] == 'sub') {

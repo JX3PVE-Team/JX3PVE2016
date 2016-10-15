@@ -48,12 +48,7 @@
 					JX3PVE
 				</a>
 
-				<ul class="c-header-menu">
-					<!--{loop $_G['setting']['topnavs'][0] $nav}-->
-						<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}--><li>$nav[code]</li><!--{/if}-->
-					<!--{/loop}-->
-					<li class="u-more"><a id="c-header-menu-moretg" href="javascript:;">更多</a></li>
-				</ul>
+				<!--{template common/menu}-->
 
 				<div class="c-header-user">
 					<!--{template common/header_userstatus}-->
@@ -88,5 +83,3 @@
 
 <!-- jx3pve:content -->
 <div class="jx3pve-container box">
-
-	<!--{template common/nav}-->

@@ -118,7 +118,7 @@ if($_G['forum']['status'] == 3) {
 } else {
 	loadcache('forums');
 	$returnurl = 'forum.php?mod=forumdisplay&fid='.$_G['fid'].(!empty($_GET['extra']) ? '&'.preg_replace("/^(&)*/", '', $_GET['extra']) : '');
-	$navigation = '';
+	$navigation = '<em>&rsaquo;</em> <a href="./">首页</a>';
 
 	if($_G['forum']['type'] == 'sub') {
 		$fup = $_G['cache']['forums'][$_G['forum']['fup']]['fup'];

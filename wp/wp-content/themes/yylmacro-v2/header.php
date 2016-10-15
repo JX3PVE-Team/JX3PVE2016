@@ -24,5 +24,5 @@
 <?php //wp_head(); ?>
 
 <div class="header">
-	<iframe src="http://www.jx3pve.com/portal.php?mod=topic&topicid=109" height="134px" width="100%"></iframe>
+	<iframe src="http://www.jx3pve.com/portal.php?mod=topic&topicid=109" height="58px" width="100%"></iframe>
 </div>
