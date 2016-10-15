@@ -10,4 +10,15 @@ jQuery(function($){
     	autoplayDisableOnInteraction : false
 	}); 
 
+	var $tb = $(".m-index-title .u-title"),
+		$box = $(".m-index-list")
+		$tb.on('click',function(){
+			var index = $(this).index()
+			$tb.removeClass('on')
+			$(this).addClass('on')
+			$box.hide().eq(index).show()
+		})
+
+
+
 })

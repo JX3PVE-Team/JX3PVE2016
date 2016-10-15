@@ -15,47 +15,19 @@
 	.u-title{.fz(16px);.color(@blue-link,#c00);}
 	.u-desc{.color(#666,#c00);}
 
-	.pr;overflow:hidden;
-	.u-ribbon{
-		.pa;.rt(0,0);.size(68px);
-		i{
-			.db;transform:rotate(45deg);
-			.pa;
-		}
-		.u-ribbon-bg{
-			.rt(-30px,0);
-			.w(106px);.h(27px);
-			box-shadow: 0 1px 1px rgba(0,0,0,0.12);
-
-			.gradient-ribbon(@color){
-				background: @color;
-				@a:lighten(@color, 10%);
-				@b:darken(@color, 10%);
-			    background: -webkit-linear-gradient(top, @a, @b);
-			    background: linear-gradient(to bottom, @a, @b);
-			}
-
-			//绿色（测试版beta）
-			.gradient-ribbon(#0BB108);
-
-			//橙色（前瞻版alpha）
-			//.gradient-ribbon(#F78917);
-
-			//蓝色（正式版standard）
-			/*background: #0767c8;
-		    background: -webkit-linear-gradient(top, #086ed5, #055db5);
-		    background: linear-gradient(to bottom, #086ed5, #055db5);*/
-		    
-		    //红色（稳定版）
-		    //.gradient-ribbon(#c00);
-		    
-		}
-		.u-ribbon-txt{
-			color:#fff;
-			.rt(0,8px);
-		    text-shadow: 0 1px 1px rgba(0,0,0,0.12);
-		}
-
+	.u-ribbon-txt('BETA');
+	&:before{
+		.rt(-30px,0);
+		.w(106px);.h(27px);
+	}
+	&:after{
+		.rt(0,8px);
+	}
+}
+.ie8{
+	.u-ribbon-red,.u-ribbon-green,.u-ribbon-orange,.u-ribbon-yellow,.u-ribbon-blue,.u-ribbon-purple{
+		&:before{.rt(0,0);.w(40px);.x;.lh(20px);}
+		&:after{.rt(0,0);}
 	}
 }
 
@@ -110,7 +82,6 @@
 			padding-left:10px;
 			border-bottom:1px solid #eee;
 		}
-
 		i{
 		    display: inline-block;
 		    vertical-align: middle;
@@ -120,15 +91,15 @@
 			background: url('@{url}forum/my.png') no-repeat 0 0;
 	    	margin: -2px 5px 0 0;
 		}
+		a:hover i{
+			background-position:0 -16px;
+		}
 	}
 
 	ul{
 		
-		//list-style:square;
 	}
 	li{
-		/*list-style:square;
-		list-style-position:inside;*/
 		a{
 			padding-left:20px;
 			.db;.nobreak;

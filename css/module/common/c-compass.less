@@ -32,20 +32,6 @@
 		white-space:nowrap;overflow:hidden;
 	}
 
-	//角标
-	.u-mark-new,.u-mark-hot,.u-mark-com{
-		.pa;.rt(0,0);.full;.db;
-	}
-	.u-mark-new{
-		background:url('@{url}system/sitemap/new.png') no-repeat right top;
-	}//新
-	.u-mark-hot{
-		background:url('@{url}system/sitemap/hot.png') no-repeat right top;
-	}//热
-	.u-mark-com{
-		background:url('@{url}system/sitemap/com.png') no-repeat right top;
-	}//推荐
-
 	//图标
 	.u-bbs{
 		background-image:url('@{url}system/sitemap/bbs.svg');
@@ -126,3 +112,28 @@
 		background-size:auto 100%;
 	}
 }
+
+.ua-responsive .screen-s{
+	.c-compass{
+		li{.w(33%);}
+	}
+}
+
+
+
+.c-compass .u-ribbon{
+	&:before{
+		.rt(-28px,0);
+		.w(100px);.h(26px);
+	}
+	&:after{
+		.rt(2px,7px);
+	}
+	&.u-ribbon-red{.u-ribbon-txt('HOT');}
+	&.u-ribbon-orange{.u-ribbon-txt('推荐');}
+	&.u-ribbon-green{.u-ribbon-txt('NEW');}
+}
+.ie8 .c-compass .u-ribbon{
+	&:before,&:after{.none;}
+}
+

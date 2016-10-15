@@ -1,0 +1,74 @@
+.u-ribbon(){
+	.pr;overflow:hidden;
+	&:before,&:after{
+		content:'';
+		.db;.pa;transform:rotate(45deg);
+	}
+	&:before{
+		box-shadow: 0 1px 1px rgba(0,0,0,0.12);
+	}
+	&:after{
+		color:#fff;
+	}
+}
+.u-ribbon-txt(@txt){
+	&:after{
+		content:'@{txt}';
+	}
+}
+.gradient-ribbon(@color){
+	background: @color;
+	@a:lighten(@color, 10%);
+	@b:darken(@color, 10%);
+    background: -webkit-linear-gradient(top, @a, @b);
+    background: linear-gradient(to bottom, @a, @b);
+}
+
+.u-ribbon-red{
+	//&:extend(.u-ribbon);
+	.u-ribbon();
+	//红色（稳定版）
+	&:before{
+    	.gradient-ribbon(#c00);
+    }
+}
+
+.u-ribbon-green{
+	.u-ribbon();
+	//绿色（测试版beta）
+	&:before{
+		.gradient-ribbon(#0BB108);
+	}
+}
+.u-ribbon-orange{
+	.u-ribbon();
+	//橙色（前瞻版alpha）
+	&:before{
+		.gradient-ribbon(#F78917);
+	}
+}
+.u-ribbon-yellow{
+	.u-ribbon();
+	//黄色 推荐
+	&:before{
+		.gradient-ribbon(#F8D01D);
+	}
+}
+.u-ribbon-blue{
+	.u-ribbon();
+	//蓝色（正式版standard）
+	&:before{
+		background: #0767c8;
+	    background: -webkit-linear-gradient(top, #086ed5, #055db5);
+	    background: linear-gradient(to bottom, #086ed5, #055db5);
+	}
+}
+.u-ribbon-purple{
+	.u-ribbon();
+	//紫色 (VIP extend版)
+	&:before{
+		.gradient-ribbon(#6703fd);
+	}
+}
+
+		

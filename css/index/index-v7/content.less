@@ -1,7 +1,7 @@
 //幻灯模块
 .m-index-slider{
 	//.r(10px);
-	.size(100%,204px);.clip;
+	.size(100%,210px);.clip;
 	.swiper-container{.full;/*.r(10px);*/}
 	a,img{.full;/*.r(10px);*/}
 	img{.db;}
@@ -32,15 +32,15 @@
 
 .screen-l .swiper-pagination{
 	.x(right);
-	padding:0 0 5px 0;
+	padding:0 0 3px 0;
 
 	.swiper-pagination-switch{
-		.size(16px);.r(0);
-		.tb(255,255,255,.5);
+		.size(12px);.r(0);
+		.tb(0,0,0,.4);
 		margin-right:10px;
 	}
 	.swiper-active-switch{
-		background-color:@basecolor;
+		.tb(0,0,0,.8);
 	}
 }
 
@@ -54,22 +54,53 @@
 		.r(4px);
 	}
 	li{
-		.fl;
+		.fl;.pr;
 		.w(25%);
-	    
-    	border-right: 1px solid #f0f0f0;
-    	padding:15px 0;
-    	margin-left:-1px;
 	}
-	a,span{.db;.x;}
-	a{.fz(15px,1.2);.color(#444,#c00);}
-	span{.color(#666);}
+	a{
+		.db;.h(38px);padding:15px 0;
+		border-right: 1px solid #f0f0f0;
+		&:hover{
+			span{color:#c00;}
+			background-color:lighten(#ffffaf, 10%);
+		}
+	}
+	span,em{.db;.x;.nobreak;}
+	span{.fz(14px,20px);.color(#444);margin-bottom:5px;}
+	em{.fz(12px,18px);.color(#777);}
+	i{
+		.pa;.rt(0,0);
+	}
 }
 
 .m-index-news{
 	h2{
 		.pr;
+		border-bottom:1px solid #eee;
 		margin-bottom:10px;
+
+		.u-title{
+			.color(#444,@blue-link);
+			line-height:36px;
+			&.on{
+				color:@blue-link;
+			}
+		}
+
+		.u-divding{
+			color:#999;
+			padding:0 5px;
+		}
+
+		.u-ico{
+		    display: inline-block;
+		    vertical-align: middle;
+		    width: 16px;
+		    height: 16px;
+		    margin-right:3px;
+			background: url('@{url}forum/my.png') no-repeat 0 0;
+	    	margin: -2px 5px 0 0;
+		}
 
 		.u-add{
 			.pa;.rb(0,8px);
@@ -82,12 +113,12 @@
 		}
 	}
 	ul{
-		padding-left:5px;
+		//padding-left:5px;
 		a{
 			.db;.pr;
 			//margin-bottom:2px;
 			.nobreak;
-			.fzlh(13px,32px);
+			.lh(32px);
 		}
 		i{
 			.dbi;.y;.fl;
@@ -111,13 +142,26 @@
 			i{background-color:@basecolor;color:#fff;}
 		}
 	}
-	
+}
+.m-index-list{
+	.none;
+	&.on{.db;}
 }
 
-
-
 .c-compass{
-	margin-top:20px;
-	border-top:1px dotted #ddd;
-	padding-top:20px;
+	padding-left:5px;
+	margin-bottom:12px;
+	ul{
+
+	}
+	li{
+		.size(80px);
+	}
+	i{
+		margin-top:10px;
+		.size(40px);
+	}
+	span{
+		padding:0;
+	}
 }
