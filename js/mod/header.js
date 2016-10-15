@@ -1,6 +1,11 @@
 jQuery(function($){
 
-    //扩展菜单展开
+
+    //导航菜单中更多栏目的展开
+    var $menu_moretg = $("#c-header-menu-moretg")
+
+
+    //用户扩展菜单展开
 	var $login_default = $("#c-header-user-login-default"),
 		$login_extend = $("#c-header-user-login-extend"),
         $tg = $("#c-header-user-tg")
