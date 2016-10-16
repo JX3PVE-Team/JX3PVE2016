@@ -23,14 +23,34 @@
 	i{
 		.db;.size(48px);
 		margin:20px auto 0 auto;
-		background-position:center center;
-		background-repeat:no-repeat;
+		/*background-position:center center;
+		background-repeat:no-repeat;*/
 	}
 	span{
 		padding:10px 0;
 		.fzlh(1rem,30px);.db;.x;
 		white-space:nowrap;overflow:hidden;
 	}
+	img{
+		//.none;
+		.full(x);.h(auto);.auto(x);
+		.pr;
+	}
+}
+
+/*//ie8 - 
+.lt-ie9 .c-compass{
+	img{.db;}
+	i{background: none;}
+}*/
+//mobile
+.ua-responsive .screen-s .c-compass{
+	li{
+		.w(33%);
+	}
+}
+
+/*.c-compass{
 
 	//图标
 	.u-bbs{
@@ -87,16 +107,16 @@
 		background-image:url('@{url}system/sitemap/member.svg');
 		background-size:auto 100%;
 	}
-	.u-biz-sale{
+	.u-sale{
 		background-image:url('@{url}system/sitemap/sale.svg');
 		background-size:110% auto;
 	}
-	.u-biz-buy{
+	.u-buy{
 		background-image:url('@{url}system/sitemap/buy.svg');
 		background-size:90% auto;
 	}
-	.u-skin{
-		background-image:url('@{url}system/sitemap/snow.jpg');
+	.u-snow{
+		background-image:url('@{url}system/sitemap/snow.png');
 		background-size:auto 100%;
 	}
 	.u-face{
@@ -108,32 +128,14 @@
 		background-size:auto 100%;
 	}
 	.u-ow{
-		background-image:url('@{url}system/sitemap/ow.jpg');
+		background-image:url('@{url}system/sitemap/ow.png');
 		background-size:auto 100%;
 	}
-}
-
-.ua-responsive .screen-s{
-	.c-compass{
-		li{.w(33%);}
-	}
-}
+}*/
 
 
-
-.c-compass .u-ribbon{
-	&:before{
-		.rt(-28px,0);
-		.w(100px);.h(26px);
-	}
-	&:after{
-		.rt(2px,7px);
-	}
-	&.u-ribbon-red{.u-ribbon-txt('HOT');}
-	&.u-ribbon-orange{.u-ribbon-txt('推荐');}
-	&.u-ribbon-green{.u-ribbon-txt('NEW');}
-}
-.ie8 .c-compass .u-ribbon{
-	&:before,&:after{.none;}
-}
-
+//调试图标位置
+/*.c-compass{
+	img{.db !important;}
+	i{background: none !important;}
+}*/
