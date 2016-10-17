@@ -11,13 +11,5 @@ jQuery(function($){
 		$(this).html(text);
 	})
 
-	//移动端
-	$("#i-header-sidebar-tg").on('click',function(){
-		$(".default-sidebar").slideToggle()
-		toggleMask();
-	})
-	$("#u-mask").on('click',function(){
-		$(".default-sidebar").slideUp()
-	})
 
 })
