@@ -32,8 +32,12 @@
 		color:#aaa;
 		//transform: scale(0.8);
 	}
+	.on span{
+		color:@blue-dark;
+	}
 	.u-index{
 		i{background-image:url('@{url}footer/home.svg');}
+		&.on i{background-image:url('@{url}footer/home2.svg');}
 	}
 	.u-nav{
 		i{background-image:url('@{url}footer/nav.svg');}
@@ -68,13 +72,9 @@
 		&.on i{background-image:url('@{url}footer/os2.svg');}
 	}
 }
-.pg_viewthread .i-footer{box-shadow:none;}
-#index-page .i-footer .u-index,
-.i-footer .on span{
-	color:@blue-dark;
-}
-#index-page .i-footer .u-index{
-	i{background-image:url('@{url}footer/home2.svg');}
+
+.pg_viewthread .i-footer{
+	box-shadow:none;
 }
 
 .i-footer{.none;}
