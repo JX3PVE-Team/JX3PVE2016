@@ -59,5 +59,142 @@
 <!-- jx3pve:语法手册 -->
 <h2 class="default-sidebar-title m-macro-systax">语法手册<a class="u-more" href="./misc.php?mod=faq&action=faq&id=53&messageid=75" data-target="blank" title="查看更多">完整手册</a></h2>
 <div class="default-sidebar-content m-macro-systax">
-	<!--{block/987}-->
+	<p class="macro-grammar">
+		<span class="macro-mg-action">/ 动作指令</span>
+		<span class="macro-mg-if">[条件]</span>
+		<span class="macro-mg-do">参数</span>
+	</p>
+
+	<table class="macro-mg-table">
+		<tbody>
+		<tr>
+		<th>动作指令</th>
+		<th>说明</th>
+		</tr>
+		<tr>
+		<td>/cast [条件] 技能名</td>
+		<td>释放技能</td>
+		</tr>
+		<tr>
+		<td>/fcast [条件] 技能名</td>
+		<td>受保护引导的技能</td>
+		</tr>
+		<tr>
+		<td>/selectN  [条件] npc名字</td>
+		<td>选择对应名字的npc为目标</td>
+		</tr>
+		<tr>
+		<td>/selectP [条件] 目标名称</td>
+		<td>选择对应名字的玩家/NPC为目标</td>
+		</tr>
+		<tr>
+		<td>/use [条件] 道具名</td>
+		<td>使用道具</td>
+		</tr>
+		<tr>
+		<td>/msg [条件] 消息</td>
+		<td>输出黄字消息</td>
+		</tr>
+		</tbody>
+	</table>
+
+	<table class="macro-mg-table">
+		<tbody>
+		<tr>
+		<th>自身条件</th>
+		<th>参数</th>
+		</tr>
+		<tr>
+		<td>buff</td>
+		<td>buff层数/存在</td>
+		</tr>
+		<tr>
+		<td>nobuff</td>
+		<td>buff存在</td>
+		</tr>
+		<tr>
+		<td>bufftime</td>
+		<td>buff时间</td>
+		</tr>
+		<tr>
+		<td>life</td>
+		<td>血量百分比</td>
+		</tr>
+		<tr>
+		<td>mana</td>
+		<td>内力百分比</td>
+		</tr>
+		<tr>
+		<td>rage</td>
+		<td>藏剑剑气(0~10)、霸刀长刀</td>
+		</tr>
+		<tr>
+		<td>qidian</td>
+		<td>纯阳少林气点(0~10)</td>
+		</tr>
+		<tr>
+		<td>energy</td>
+		<td>唐门能量值、霸刀双刀</td>
+		</tr>
+		<tr>
+		<td>sun</td>
+		<td>明教日灵值、霸刀鞘刀</td>
+		</tr>
+		<tr>
+		<td>moon</td>
+		<td>明教月魂值</td>
+		</tr>
+		<tr>
+		<td>sun_power</td>
+		<td>明教日灵值充盈状态</td>
+		</tr>
+		<tr>
+		<td>moon_power</td>
+		<td>明教月魂值充盈状态</td>
+		</tr>
+		<tr>
+		<td>skill_energy</td>
+		<td>苍云技能能量</td>
+		</tr>
+		<tr>
+		<td>fight</td>
+		<td>在战斗状态</td>
+		</tr>
+		</tbody>
+	</table>
+
+	<table class="macro-mg-table">
+		<tbody>
+		<tr>
+		<th>目标条件</th>
+		<th>参数</th>
+		</tr>
+		<tr>
+		<td>tbuff</td>
+		<td>目标存在buff</td>
+		</tr>
+		<tr>
+		<td>tnobuff</td>
+		<td>目标不存在buff</td>
+		</tr>
+		<tr>
+		<td>tbufftime</td>
+		<td>目标buff剩余时间</td>
+		</tr>
+		<tr>
+		<td>target</td>
+		<td>npc /all（npc或者npc|玩家）</td>
+		</tr>
+		<tr>
+		<td>notarget</td>
+		<td>没有目标</td>
+		</tr>
+		<tr>
+		<td>distance</td>
+		<td>距离目标</td>
+		</tr>
+		</tbody>
+	</table>
+
+	<a class="macro-mg-more" href="./misc.php?mod=faq&action=faq&id=53&messageid=75">查看更多 &raquo;</a>
 </div>
