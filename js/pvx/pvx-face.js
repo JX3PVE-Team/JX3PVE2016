@@ -10,4 +10,12 @@ jQuery(function($){
 		if(isHOT) $mark.addClass('mark-2')
 		if(isCMD) $mark.addClass('mark-3')
 	})
+
+	var $price = $("#u-face-isprice");
+	var isprice = $("#u-face-isprice").text();
+	if (isprice == '含'){
+		$price.addClass('u-true')
+	}else{
+		$price.addClass('u-false')
+	}
 })
