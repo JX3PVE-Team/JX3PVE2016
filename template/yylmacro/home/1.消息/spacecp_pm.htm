@@ -1,10 +1,7 @@
 <!--{template common/header}-->
 
 <!--{if !$_G[inajax]}-->
-	<header class="i-header">
-		<a class="i-header-back" href="./home.php"><i></i></a>
-		<div class="i-header-title">消息</div>
-	</header>
+	<!--{subtemplate home/iheader_msg}-->
 	<div class="user-container">
 		<div class="wp">
 			<div id="pt" class="bm cl">
@@ -18,7 +15,7 @@
 			<div class="user-main">
 				<!--{subtemplate home/sidebar}-->
 				<div class="user-content">
-					<div id="ct" class="ct2_a wp cl">
+					<div id="ct" class="ct2_a cl">
 						<div class="mn">
 							<div class="bm bw0">
 <!--{/if}-->
@@ -582,10 +579,7 @@
 			</div>
 		</div>
 	</div>
-	<link rel="stylesheet" href="http://css.jx3pve.com/css/user/user.css" type="text/css" />
-	<link rel="stylesheet" href="http://css.jx3pve.com/css/user/msg/msg.css" type="text/css" />
-	<script src="http://js.jx3pve.com/js/user/user.min.js"></script>
-	<script src="http://js.jx3pve.com/js/user/msg.min.js"></script>
+	<!--{subtemplate home/ifooter_msg}-->
 <!--{/if}-->
 
 <!--{template common/footer}-->

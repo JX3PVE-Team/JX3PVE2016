@@ -1,14 +1,6 @@
 <!--{eval $_G['home_tpl_titles'] = array('{lang remind}');}-->
 <!--{template common/header_m}-->
-<link rel="stylesheet" href="http://css.jx3pve.com/css/user/user.css" type="text/css" />
-<link rel="stylesheet" href="http://css.jx3pve.com/css/user/msg/msg.css" type="text/css" />
-<header class="i-header">
-	<a class="i-header-back" href="./home.php"><i></i></a>
-	<div class="i-header-title">消息</div>
-	<div class="i-header-menu">
-		<a class="u-pub" href="home.php?mod=spacecp&ac=pm"><i></i><span>发消息</span></a>
-	</div>
-</header>
+<!--{subtemplate home/iheader_msg}-->
 
 <div class="user-container">
 	<div class="wp">
@@ -185,7 +177,6 @@
 		</div>
 	</div>
 </div>
-<script src="http://js.jx3pve.com/js/user/user.min.js"></script>
-<script src="http://js.jx3pve.com/js/user/msg.min.js"></script>
 
+<!--{subtemplate home/ifooter_msg}-->
 <!--{template common/footer}-->
