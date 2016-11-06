@@ -8,4 +8,17 @@ jQuery(function($){
 		$('#user-email-status a').css('color','#FF7D00');
 		$('#user-email-status').wrap('<a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=profile&op=password"></a>');
 	}
+
+
+	$("#user-os-setting-more").on('click',function(){
+		$("#user-os-content").show()
+		$("#user-os-qclink").hide()
+	})
+
+	$("#user-os-content-back").on('click',function(){
+		$("#user-os-content").hide()
+		$("#user-os-qclink").show()
+	})
+
+
 });  
