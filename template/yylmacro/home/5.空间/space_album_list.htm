@@ -15,10 +15,7 @@
 				<div class="bm_c">
 	<!--{else}-->
 		<!--{template common/header_m}-->
-		<header class="i-header">
-			<a class="i-header-back" href="./home.php"><i></i></a>
-			<div class="i-header-title">相册</div>
-		</header>
+		<!--{subtemplate home/iheader_space}-->
 		
 		<div class="wp">
 			<div id="pt" class="bm cl">
@@ -43,10 +40,7 @@
 	<!--{/if}-->
 <!--{else}-->
 	<!--{template common/header_m}-->
-	<header class="i-header">
-		<a class="i-header-back" href="./home.php"><i></i></a>
-		<div class="i-header-title">相册</div>
-	</header>
+	<!--{subtemplate home/iheader_space}-->
 	<div class="user-container">
 		<div class="wp">
 
@@ -235,9 +229,7 @@ function fuidgoto(fuid) {
 		</div>
 	</div>
 </div>
-<link rel="stylesheet" href="http://css.jx3pve.com/css/user/user.css" type="text/css" />
-<link rel="stylesheet" href="http://css.jx3pve.com/css/user/space.css" type="text/css" />
-<script src="http://js.jx3pve.com/js/user/user.min.js"></script>
-<script src="http://js.jx3pve.com/js/user/space.min.js"></script>
+
+<!--{subtemplate home/ifooter_space}-->
 
 <!--{template common/footer}-->
