@@ -11,13 +11,13 @@ jQuery(function($){
 
 
 	$("#user-os-setting-more").on('click',function(){
-		$("#user-os-content").show()
-		$("#user-os-qclink").hide()
+		$("#user-os-qclink").slideUp()
+		$("#user-os-content").slideDown()
 	})
 
 	$("#user-os-content-back").on('click',function(){
-		$("#user-os-content").hide()
-		$("#user-os-qclink").show()
+		$("#user-os-content").slideUp()
+		$("#user-os-qclink").slideDown()
 	})
 
 
