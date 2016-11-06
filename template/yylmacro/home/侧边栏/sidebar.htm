@@ -24,10 +24,9 @@
 
 	<h3 class="user-sidebar-title"><i class="u-user-os-credit"></i>积分中心</h3>
 	<ul class="user-sidebar-list">
-		<li {if ($_GET['ac']=="credit" && $_GET['op']!="base" && $_GET['op']!="buy")} class="on"{/if}><a href="home.php?mod=spacecp&ac=credit&op=log">我的积分</a></li>
 		<li {if ($_GET['ac']=="credit" && $_GET['op']=="base") || ($_GET['ac']=="credit" && $_GET['op']=="buy")} class="on"{/if}><a class="buy" href="home.php?mod=spacecp&ac=credit&op=buy">充 值</a></li>
 		<li {if ($_GET['ac']=="usergroup")} class="on"{/if}><a class="vip" href="home.php?mod=spacecp&ac=usergroup&do=list">VIP会员</a></li>
-		<li {if $_GET['topicid'] == '118'} class="on"{/if}><a class="gift" href="./gift">积分兑换</a></li>
+		<li {if $_GET['topicid'] == '118'} class="on"{/if}><a class="gift" href="./gift">礼品兑换</a></li>
 		<li {if ($_GET['ac']=="invite")} class="on"{/if}><a href="home.php?mod=spacecp&ac=invite">邀请码</a></li>
 	</ul>
 

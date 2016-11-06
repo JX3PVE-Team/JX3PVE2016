@@ -12,4 +12,16 @@ jQuery(function($){
 		}
 	})
 
+
+	//移动端
+	$("#i-header-panel-tg").on('click',function(){
+		$(".i-header").toggleClass('showSidebar')
+		$("#user-extend-menu").slideToggle()
+		toggleMask();
+	})
+	$("#u-mask").on('click',function(){
+		$("#user-extend-menu").slideUp()
+		hideMask();
+	})
+
 })

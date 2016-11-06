@@ -7,18 +7,14 @@
 		</div>
 		<div class="profile">
 			<p class="baseinfo">
-				<!--{if $_GET['op'] == 'base' || $_GET['op'] == 'buy'}-->
-					<a class="tab-btn {if $_GET['op'] == 'buy'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=buy">米币充值</a>
-					<a class="tab-btn {if $_GET['op'] == 'base'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=base">充值记录</a>
-				<!--{else}-->
-					<a class="tab-btn {if $_GET['op'] == 'log'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=log">积分记录</a>
-					<a class="tab-btn {if $_GET['op'] == 'exchange'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=exchange">积分转换</a>
-					<a class="tab-btn {if $_GET['op'] == 'transfer'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=transfer">积分转账</a>
-					<a class="tab-btn {if $_GET['op'] == 'rule'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=rule">积分规则</a>
-				<!--{/if}-->
+				<a class="tab-btn {if $_GET['op'] == 'buy'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=buy">积分充值</a>
+				<a class="tab-btn {if $_GET['op'] == 'log'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=log">积分记录</a>
+				<a class="tab-btn {if $_GET['op'] == 'exchange'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=exchange">积分转换</a>
+				<a class="tab-btn {if $_GET['op'] == 'transfer'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=transfer">积分转账</a>
+				<a class="tab-btn {if $_GET['op'] == 'rule'}on{/if}" href="home.php?mod=spacecp&ac=credit&op=rule">积分规则</a>
 			</p>
 			<ul class="rights">
-				<li><em>积分：</em>$_G['member']['credits']</li>
+				<li><em>积分:</em>$_G['member']['credits']</li>
 			<!--{eval $creditid=0;}-->
 				<!--{if $_GET['op'] == 'base' && $_G['setting']['creditstrans']}-->
 					<!--{eval $creditid=$_G['setting']['creditstrans'];}-->
