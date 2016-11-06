@@ -11,7 +11,7 @@ jQuery(function($){
       $priceEle.html("0");
       return 0;
     }
-    if(value < 3000){
+    if(value < 1000){
       $priceEle.html(value/100);
       return false;
     }
@@ -89,7 +89,7 @@ jQuery(function($){
     if(checkResult === 0){
       $tips.find("b").html("请正确填写需要购买的米币数量");
     }else{
-       $tips.find("b").html("每次购买米币数量不得低于3000个");
+       $tips.find("b").html("每次购买米币数量不得低于1000个");
     }
   });
 });  

@@ -26,8 +26,8 @@
 				<!-- 当满足时，给i添加true，不满足时，添加false样式名 -->
 				<!-- 以下数字表示满足的groupid，其余组不满足 -->
 
-				<!-- 22 / 24,25,26 / 1,2,3 / 37,38,39,40 -->
-				<li>用户名高亮：<i <!--{if ( $_G['member']['groupid'] == 22 || $_G['member']['groupid'] == 24 || $_G['member']['groupid'] == 25 || $_G['member']['groupid'] == 26 || $_G['member']['groupid'] == 1 || $_G['member']['groupid'] == 2 || $_G['member']['groupid'] == 3 || $_G['member']['groupid'] == 37 || $_G['member']['groupid'] == 38 || $_G['member']['groupid'] == 39 || $_G['member']['groupid'] == 40) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>
+				<!-- 22 -->
+				<li>应用特权：<i <!--{if ($_G['member']['groupid'] == 22) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>
 				
 				<!-- 22 / 26 / 1,2,3 / 37,38,39,40 -->
 				<li>免回复隐藏：<i <!--{if ($_G['member']['groupid'] == 22 || $_G['member']['groupid'] == 26 || $_G['member']['groupid'] == 1 || $_G['member']['groupid'] == 2 || $_G['member']['groupid'] == 3 || $_G['member']['groupid'] == 37 ||$_G['member']['groupid'] == 38 ||$_G['member']['groupid'] == 39 ||$_G['member']['groupid'] == 40) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>
@@ -37,12 +37,6 @@
 
 				<!-- 22 / 1,2 -->
 				<li>免付费下载：<i <!--{if ($_G['member']['groupid'] == 22 || $_G['member']['groupid'] == 1 || $_G['member']['groupid'] == 2) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>
-
-				<!-- 22 -->
-				<li>泛广告屏蔽：<i <!--{if ($_G['member']['groupid'] == 22) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>
-
-				<!-- 22 -->
-				<li>应用特权：<i <!--{if ($_G['member']['groupid'] == 22) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>
 				
 				<!-- 22 -->
 				<li>道具折扣：<i <!--{if ($_G['member']['groupid'] == 22) }--> class="true" <!--{else}--> class="false" <!--{/if}-->></i></li>

@@ -111,11 +111,26 @@
 
 	.u-credit-extend{
 		.fr;
-		a{margin-left:10px;}
-		.color(#555,@blue-link,@blue-link);
-		a:hover{text-decoration:underline;}
+		a{
+			margin-left:10px;.color(#fff);
+			padding: 5px 8px;
+			.r(3px);
+		}
+		//a:hover{text-decoration:underline;}
 
-		.u-gift{.none;}
+		.u-viplink{
+			background-color:#f00;
+			&:hover{
+				background-color:lighten(#f00,12%);
+			}
+		}
+		.u-code{
+			background-color:@basecolor;
+			&:hover{
+				background-color:lighten(@basecolor,5%);
+			}
+		}
+
 	}
 
 }
