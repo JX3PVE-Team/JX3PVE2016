@@ -1,5 +1,5 @@
 <!--{if count($list)-1 == $key && empty($lastanchor)}--><a name="last"></a><!--{eval $lastanchor=1;}--><!--{/if}-->
-<dl id="pmlist_$value[pmid]" class="bbda cl">
+<dl id="pmlist_$value[pmid]" class="bbda cl m-msg-list-item">
 	<!--{if $value['pmtype'] == 1 || $value['authorid'] && $value['authorid'] != $_G['uid'] && $_G['setting']['pmreportuser']}-->
 	<dd class="y mtm pm_o">
 		<a href="javascript:;" id="pm_o_$value[pmid]" class="o" onmouseover="showMenu({'ctrlid':this.id, 'pos':'34'})">{lang menu}</a>
