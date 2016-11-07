@@ -1,6 +1,6 @@
 jQuery(function($){
 
-	var mySwiper = new Swiper('.swiper-container',{
+	/*var mySwiper = new Swiper('.swiper-container',{
 		direction: 'horizontal',
     	loop: true,
     	effect: 'fade',
@@ -8,7 +8,7 @@ jQuery(function($){
     	paginationClickable: true,
     	autoplay: 5000,
     	autoplayDisableOnInteraction : false
-	}); 
+	}); */
 
 	var $tb = $(".m-index-title .u-title"),
 		$box = $(".m-index-list")
