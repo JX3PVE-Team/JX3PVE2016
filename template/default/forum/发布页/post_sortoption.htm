@@ -85,7 +85,8 @@
 								<!--{/if}-->
 								<div id="sortattach_image_{$option[identifier]}" class="ptn">
 									<!--{if $option['value']['url']}-->
-										<a href="$option[value][url]" target="_blank"><img class="spimg" src="$option[value][url]" alt="" /></a>
+										<span class="e-sortoption-uploadtips"><!--{block/1821}--></span>
+										<a href="$option[value][url]" target="_blank"><img class="spimg e-sortoption-imagepreview" src="forum.php?mod=image&aid=sortaid_{$option[identifier]}" alt="" /></a>
 									<!--{/if}-->
 								</div>
 								<script type="text/javascript" reload="1">
@@ -103,7 +104,7 @@
 								<!--{if $option[value]}--><input type="hidden" name="oldsortaid[{$option[identifier]}]" value="$option[value][aid]" tabindex="1" /><!--{/if}-->
 								<input type="hidden" name="typeoption[{$option[identifier]}][url]" id="sortattachurl_{$option[identifier]}" {if $option[value][url]}value="$option[value][url]"{/if} tabindex="1" />
 								<!--{/if}-->
-								<div id="sortattach_face_{$option[identifier]}" class="ptn" width="32">
+								<div id="sortattach_face_{$option[identifier]}" class="ptn">
 							
 								</div>						
 								<script type="text/javascript" reload="1">
@@ -187,6 +188,7 @@
 						<!--{/if}-->
 					</span>
 				</li>
+				<span id="check{$option[identifier]}"></span>
 			<!--{/loop}-->
 		</ul>
 	</div>
