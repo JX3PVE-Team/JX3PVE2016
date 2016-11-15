@@ -13,7 +13,7 @@
 	<h3 class="user-sidebar-title"><i class="u-user-os-setting"></i>资料修改</h3>
 	<ul class="user-sidebar-list">
 		<li {if ($_GET['ac']=="profile") && ($_GET['op']=="password")} class="on"{/if}><a href="home.php?mod=spacecp&ac=profile&op=password">修改密码</a></li>
-		<li{if ($_GET['mod']=="spacecp" && $_GET['ac']=="plugin" && $_GET['id']=="k_gaiming:k_gaiming")} class="on"{/if}><a href="home.php?mod=spacecp&ac=plugin&op=profile&id=k_gaiming:k_gaiming">修改用户名</a></li>
+		<!-- <li{if ($_GET['mod']=="spacecp" && $_GET['ac']=="plugin" && $_GET['id']=="k_gaiming:k_gaiming")} class="on"{/if}><a href="home.php?mod=spacecp&ac=plugin&op=profile&id=k_gaiming:k_gaiming">修改用户名</a></li> -->
 		<li {if ($_GET['ac']=="avatar")} class="on"{/if}><a href="home.php?mod=spacecp&ac=avatar">设置头像</a></li>
 		<li {if ($_GET['ac']=="profile") && !($_GET['op']=="password") && !($_GET['op']=="verify")} class="on"{/if}><a href="home.php?mod=spacecp&ac=profile">详细资料</a></li>
 		<li{if ($_GET['op']=="verify")} class="on"{/if}><a href="{if $_G['setting']['verify']['enabled']}home.php?mod=spacecp&ac=profile&op=verify{else}home.php?mod=spacecp&ac=videophoto{/if}">申请认证</a></li>
