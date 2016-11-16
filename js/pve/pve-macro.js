@@ -78,7 +78,7 @@ jQuery(function($){
     //定义
     var $jx3pveqx = $(".e-jx3pveqx")
     var qxjson = "http://js.jx3pve.com/js/data/qixue.json"
-    var qximgpath = "http://img.jx3pve.com/img/role/qixue/"
+    var qximgpath = "http://oss.jx3pve.com/icon/"
 
     //获取目标区域全部内容，移除discuz空白
     var text = $.trim($jx3pveqx.html())
