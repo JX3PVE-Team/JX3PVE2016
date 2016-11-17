@@ -103,7 +103,7 @@
 								<!--{if $option[value]}--><input type="hidden" name="oldsortaid[{$option[identifier]}]" value="$option[value][aid]" tabindex="1" /><!--{/if}-->
 								<input type="hidden" name="typeoption[{$option[identifier]}][url]" id="sortattachurl_{$option[identifier]}" {if $option[value][url]}value="$option[value][url]"{/if} tabindex="1" />
 								<!--{/if}-->
-								<div id="sortattach_face_{$option[identifier]}" class="ptn" width="32">
+								<div id="sortattach_face_{$option[identifier]}" class="ptn">
 							
 								</div>						
 								<script type="text/javascript" reload="1">
@@ -187,6 +187,7 @@
 						<!--{/if}-->
 					</span>
 				</li>
+				<span id="check{$option[identifier]}"></span>
 			<!--{/loop}-->
 		</ul>
 	</div>

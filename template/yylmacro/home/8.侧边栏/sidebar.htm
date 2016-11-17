@@ -3,14 +3,14 @@
 
 	<h3 {if ($_GET['do']=="pm") || ($_GET['do']=="notice") || ($_GET['ac']=="pm")} class="on"{/if}><a href="home.php?mod=space&do=pm"><i class="u-user-os-msg"></i>我的消息</a></h3>
 
-	<h3 class="user-sidebar-title"><i class="u-user-os-thread"></i>我的帖子</h3>
+	<h3 class="user-sidebar-title"><a href="javascript:;"><i class="u-user-os-thread"></i>我的帖子<em></em></a></h3>
 	<ul class="user-sidebar-list">
 		<li {if ($_GET['mod']=="guide")} class="on"{/if}><a href="forum.php?mod=guide&view=my&type=thread">我的帖子</a></li>
 		<li {if ($_GET['do']=="favorite")} class="on"{/if}><a href="home.php?mod=space&do=favorite&view=me">我的收藏</a></li>
 		<li {if ($_GET['mod']=="follow")} class="on"{/if}><a href="home.php?mod=follow">我的关注</a></li>
 	</ul>
 
-	<h3 class="user-sidebar-title"><i class="u-user-os-setting"></i>资料修改</h3>
+	<h3 class="user-sidebar-title"><a href="javascript:;"><i class="u-user-os-setting"></i>资料修改<em></em></a></h3>
 	<ul class="user-sidebar-list">
 		<li {if ($_GET['ac']=="profile") && ($_GET['op']=="password")} class="on"{/if}><a href="home.php?mod=spacecp&ac=profile&op=password">修改密码</a></li>
 		<!-- <li{if ($_GET['mod']=="spacecp" && $_GET['ac']=="plugin" && $_GET['id']=="k_gaiming:k_gaiming")} class="on"{/if}><a href="home.php?mod=spacecp&ac=plugin&op=profile&id=k_gaiming:k_gaiming">修改用户名</a></li> -->
@@ -22,7 +22,7 @@
 		<!-- <li {if ($_GET['id']=="wechat:bind")} class="on"{/if}><a href="plugin.php?id=wechat:bind">绑定微信</a></li> -->
 	</ul>
 
-	<h3 class="user-sidebar-title"><i class="u-user-os-credit"></i>积分中心</h3>
+	<h3 class="user-sidebar-title"><a href="javascript:;"><i class="u-user-os-credit"></i>积分中心<em></em></a></h3>
 	<ul class="user-sidebar-list">
 		<li {if ($_GET['ac']=="credit" && $_GET['op']=="base") || ($_GET['ac']=="credit" && $_GET['op']=="buy")} class="on"{/if}><a class="buy" href="home.php?mod=spacecp&ac=credit&op=buy">充 值</a></li>
 		<li {if ($_GET['ac']=="usergroup")} class="on"{/if}><a class="vip" href="home.php?mod=spacecp&ac=usergroup&do=list">VIP会员</a></li>
@@ -30,7 +30,7 @@
 		<li {if ($_GET['ac']=="invite")} class="on"{/if}><a href="home.php?mod=spacecp&ac=invite">邀请码</a></li>
 	</ul>
 
-	<h3 class="user-sidebar-title"><i class="u-user-os-space"></i>个人空间</h3>
+	<h3 class="user-sidebar-title"><a href="javascript:;"><i class="u-user-os-space"></i>个人空间<em></em></a></h3>
 	<ul class="user-sidebar-list">
 		<li {if ($_GET['do']=="profile")} class="on"{/if}><a href="home.php?mod=space&do=profile" target="_blank">我的空间</a></li>
 		<li {if ($_GET['do']=="blog")} class="on"{/if}><a href="home.php?mod=space&do=blog">我的日志</a></li>
@@ -40,7 +40,7 @@
 		<li {if ($_GET['do']=="friend")} class="on"{/if}><a href="home.php?mod=space&do=friend">我的好友</a></li>
 	</ul>
 
-	<h3 class="user-sidebar-title"><i class="u-user-os-extend"></i>扩展应用</h3>
+	<h3 class="user-sidebar-title"><a href="javascript:;"><i class="u-user-os-extend"></i>扩展应用<em></em></a></h3>
 	<ul class="user-sidebar-list">
 		<li{if ($_GET['mod']=="task")} class="on"{/if}><a href="home.php?mod=task">任务中心</a></li>
 		<li{if ($_GET['mod']=="medal")} class="on"{/if}><a href="home.php?mod=medal">勋章中心</a></li>
@@ -48,7 +48,7 @@
 		<li {if ($_GET['id']=="luckypost")} class="on"{/if}><a href="plugin.php?id=luckypost">发帖际遇</a></li>
 	</ul>
 
-	<h3 class="user-sidebar-title"><i class="u-user-os-other"></i>隐私设置</h3>
+	<h3 class="user-sidebar-title"><a href="javascript:;"><i class="u-user-os-other"></i>隐私设置<em></em></a></h3>
 	<ul class="user-sidebar-list">
 		<!--{if $_G['setting']['sendmailday']}-->
 		<li {if ($_GET['ac']=="sendmail")} class="on"{/if}><a href="home.php?mod=spacecp&ac=sendmail">邮件通知</a></li>
