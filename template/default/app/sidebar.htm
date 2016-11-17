@@ -1,20 +1,71 @@
-<div class="app-sidebar">
-	
-	<h3 class="default-sidebar-title">站内应用</h3>
-	<ul class="app-list app-list-in">
-		<li><a class="{if $topicid==101}on{/if}" href="./app/servers"><i class="u-icon-servers"></i>开服监控与记录</a></li>
-		<li><a class="{if $topicid==107}on{/if}" href="./app/exam"><i class="u-icon-exam"></i>科举题库</a></li>
-	</ul>
+<!-- jx3pve:分类导航 -->
+<h2 class="default-sidebar-title">分类导航<a class="u-more" href="./tool" title="全部">全部</a></h2>
+<ul class="default-sidebar-content m-tool-nav">
+	<li {if ($_GET['typeid']==315)} class="on"{/if}><a class="u-keyboard" href="./forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=315&orderby=lastedit"><i></i>按键辅助<em>Keyboard</em></a></li>
+	<li {if ($_GET['typeid']==317)} class="on"{/if}><a class="u-role" href="./forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=317&orderby=lastedit"><i></i>职业工具<em>DPS</em></a></li>
+	<li {if ($_GET['typeid']==316)} class="on"{/if}><a class="u-design" href="./forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=316&orderby=lastedit"><i></i>实用工具<em>Tool</em></a></li>
+	<li {if ($_GET['typeid']==398)} class="on"{/if}><a class="u-snow new" href="./forum.php?mod=forumdisplay&fid=321&filter=sortid&sortid=8&typeid=398&orderby=lastedit"><i></i>读条皮肤<em>Skin</em></a></li>
+	<li {if ($_GET['typeid']==320)} class="on"{/if}><a class="u-plugin" href="./forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=320&orderby=lastedit"><i></i>插件扩展<em>Plugin</em></a></li>
+	<li {if ($_GET['typeid']==399)} class="on"{/if}><a class="u-image" href="./forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=399&orderby=lastedit"><i></i>其它资源<em>Source</em></a></li>
+	<li {if ($_GET['typeid']==319)} class="on"{/if}><a class="u-book" href="./forum.php?mod=forumdisplay&fid=321&filter=typeid&typeid=319&orderby=lastedit"><i></i>相关教程<em>Course</em></a></li>
+</ul>
 
-	<h3 class="default-sidebar-title">站外应用</h3>
-	<ul class="app-list app-list-out">
-		<li><a href="https://www.j3pz.com" target="_blank"><i class="u-icon-peizhuang"></i>在线配装</a></li>
-		<li><a href="https://j3pz.com/tools.html" target="_blank"><i class="u-icon-jiasu"></i>加速宝典</a></li>
-		<li><a href="http://www.j3ui.com/wiki" target="_blank"><i class="u-icon-chengjiu"></i>成就百科</a></li>
-	</ul>
+<h2 class="default-sidebar-title">在线应用</h2>
+<ul class="default-sidebar-content app-list">
+	<li><a class="{if $topicid==101}on{/if}" href="./app/faceclean"><i><img src="http://img.jx3pve.com/img/system/sitemap/faceclean.png" alt="脸型数据清洗"></i>脸型数据清洗</a></li>
+	<li><a class="{if $topicid==101}on{/if}" href="./app/servers"><i><img src="http://img.jx3pve.com/img/system/sitemap/servers.png" alt="开服监控"></i>开服监控与记录</a></li>
+	<!-- <li><a class="{if $topicid==107}on{/if}" href="./app/exam"><i><img src="http://img.jx3pve.com/img/app/sidebar/keju.png" alt="科举题库"></i>科举题库</a></li> -->
+	<li><a href="https://www.j3pz.com" target="_blank"><i><img src="http://img.jx3pve.com/img/system/sitemap/peizhuang.png" alt="配装模拟"></i>在线配装</a></li>
+	<li><a href="https://j3pz.com/tools.html" target="_blank"><i><img src="http://img.jx3pve.com/img/system/sitemap/speed.png" alt="加速计算"></i>加速宝典</a></li>
+	<li><a href="http://www.j3ui.com/wiki" target="_blank"><i><img src="http://img.jx3pve.com/img/system/sitemap/chengjiu.png" style="left:-5px;width:120%;top:-2px;" alt="成就百科"></i>成就百科</a></li>
+	<li><a href="http://jx3.hightman.cn/weixin/data.php?q=" target="_blank"><i><img src="http://img.jx3pve.com/img/system/sitemap/haiman.png" alt="海鳗游戏数据"></i>游戏数据</a></li>
+</ul>
 
-	<div class="app-sidebar-code">
-		 <!--{block/1775}-->
+<!--{if $_GET['typeid']==398}-->
+	<!-- jx3pve:搜索 -->
+	<h2 class="default-sidebar-title">皮肤搜索<i class="u-search"></i></h2>
+	<div class="default-sidebar-content default-sidebar-search m-snow-search">
+	    <form method="post" autocomplete="off" name="searhsort" id="searhsort" action="forum.php?mod=forumdisplay&amp;fid=79&amp;filter=sortid&amp;sortid=8">
+	        <input type="text" name="searchoption[63][value]" size="15" class="u-text" value="" placeholder="输入皮肤名称">
+	        <button type="submit" class="u-button-search u-button" name="searchsortsubmit"><em>搜索</em></button>
+	    </form>
+	    <a class="getanew" href="./feedback" target="_blank"><i></i>没找到想要的？试试来提需求。</a>
 	</div>
 
-</div>
+	<!-- jx3pve:教程 -->
+	<h2 class="default-sidebar-title">帮助文档<a class="u-more" href="./forum.php?mod=forumdisplay&fid=79&filter=typeid&typeid=167&orderby=lastedit" data-target="blank" title="查看更多"></a></h2>
+	<div class="default-sidebar-content m-snow-help default-sidebar-wordlist">
+		<!--{block/1806}-->
+	</div>
+
+	<!-- jx3pve:素材 -->
+	<h2 class="default-sidebar-title">素材物料<a class="u-more" href="./forum.php?mod=forumdisplay&fid=79&filter=typeid&typeid=197&orderby=lastedit" data-target="blank" title="查看更多"></a></h2>
+	<div class="default-sidebar-content m-snow-image default-sidebar-downlist">
+		<!--{block/1807}-->
+	</div>
+
+<!--{else}-->
+
+	<!-- jx3pve:工具名称搜索 -->
+	<h2 class="default-sidebar-title">工具搜索<i class="u-search"></i></h2>
+	<div class="default-sidebar-content m-tool-search default-sidebar-search">
+		<form method="post" autocomplete="off" name="searhsort" id="searhsort" action="forum.php?mod=forumdisplay&amp;fid=321&amp;filter=sortid&amp;sortid=5">
+		    <input type="text" name="searchoption[41][value]" size="15" class="u-text" value="">
+		    <button type="submit" class="u-button-search u-button" name="searchsortsubmit"><em>搜索</em></button>
+		</form>
+	    <a class="getanew" href="./feedback" target="_blank"><i></i>没找到想要的？试试来提需求。</a>
+	</div>
+
+	<!-- jx3pve:帮助文档 -->
+	<h2 class="default-sidebar-title">帮助文档<a class="u-btn-pub2" href="./forum.php?mod=post&action=newthread&fid=2"  data-target="blank" title="分享经验"><i></i>分享</a></h2>
+	<div class="default-sidebar-content m-tool-help default-sidebar-wordlist">
+		<!--{block/1242}-->
+	</div>
+
+	<!-- jx3pve:任务 -->
+	<h2 class="default-sidebar-title">任务奖励<a class="u-more" href="./home.php?mod=task" data-target="blank" title="查看更多">更多任务</a></h2>
+	<div class="default-sidebar-content m-tool-task default-sidebar-tasklist">
+		<!--{block/1286}-->
+	</div>
+
+<!--{/if}-->
