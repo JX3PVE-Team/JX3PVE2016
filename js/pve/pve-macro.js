@@ -74,4 +74,41 @@ jQuery(function($){
         })
     }
 
+
+    //定义
+    var $jx3pveqx = $(".e-jx3pveqx")
+    var qxjson = "http://js.jx3pve.com/js/data/qixue.json"
+    var qximgpath = "http://oss.jx3pve.com/icon/"
+
+    //获取目标区域全部内容，移除discuz空白
+    var text = $.trim($jx3pveqx.html())
+    //如果没有新版奇穴标识，退出
+    if (text.search('{qixue}') == -1) return
+    //获取html内容，替换标识
+    var text = text.replace(/{qixue}/g,'<ul class="e-qixue">')
+    var text = text.replace(/{\/qixue}/g,'</ul>')
+    $jx3pveqx.html(text)
+    //获取奇穴图标对应json
+    $.getJSON(qxjson,function(data){
+        //console.log(data)
+        //格式化标识区块
+        var $qixue = $(".e-qixue")
+        $qixue.each(function(){
+            //获取单个奇穴方案的内容
+            var qx =  $(this).html()
+            //转换内容为数组
+            var qx_list = qx.split(',')
+            //console.log(qx_list)
+            //数组内容修改为前端展示样式
+            $.each(qx_list,function(i){
+                qx_name = qx_list[i]
+                qx_list[i] = '<li>' + '<img src="' + qximgpath + data[qx_name] + '.png" />' + '<span>' + qx_name + '</span>' + '</li>'
+            })
+            //重新拼合为字符串
+            var qx_new = qx_list.join('')
+            //插入替换原先的内容
+            $(this).html(qx_new)
+        })
+    })
+
 })
