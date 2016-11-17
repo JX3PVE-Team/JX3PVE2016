@@ -85,8 +85,7 @@
 								<!--{/if}-->
 								<div id="sortattach_image_{$option[identifier]}" class="ptn">
 									<!--{if $option['value']['url']}-->
-										<span class="e-sortoption-uploadtips"><!--{block/1821}--></span>
-										<a href="$option[value][url]" target="_blank"><img class="spimg e-sortoption-imagepreview" src="forum.php?mod=image&aid=sortaid_{$option[identifier]}" alt="" /></a>
+										<a href="$option[value][url]" target="_blank"><img class="spimg" src="$option[value][url]" alt="" /></a>
 									<!--{/if}-->
 								</div>
 								<script type="text/javascript" reload="1">
