@@ -23,12 +23,6 @@
 			filter:saturate(110%);
 		}
 	}
-	.u-locked{
-		.tm(0.5);
-		span{color:#888;}
-		cursor:default;
-		*{cursor:default;}
-	}
 	i{
 		.db;.size(32px);
 		margin:30px auto 0 auto;
@@ -45,9 +39,28 @@
 		.full(x);.h(auto);.auto(x);
 		.pr;
 	}
-	.u-more i{
-		.size(32px);
-		margin-top:25px;
+	.u-more{
+		i{
+			.size(32px);
+			margin-top:25px;
+		}
+	}
+	.u-locked{
+		.tm(0.5);
+		span{color:#888;}
+		cursor:default;
+		*{cursor:default;}
+	}
+	.u-old{
+		.none;
+	}
+	.u-link a{
+		&:after{
+			content:'';
+			.db;.pa;.lb(5px);
+			.size(16px);
+			background:url('@{url}system/sitemap/link.png') no-repeat 0 0;
+		}
 	}
 }
 .ua-responsive .screen-s .c-compass{
