@@ -33,7 +33,5 @@ jQuery(function($){
 
 	//重写发布的地址
 	$("#newspecial,#newspecialtmp").attr('href','forum.php?mod=post&action=newthread&sortid=5&fid=321')
-	$(".c-post-tab").children('li:first').children('a:first').text('发布教程')
-
 
 })
