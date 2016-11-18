@@ -128,7 +128,7 @@
 			<!--{if $_GET[action] == 'newthread'}-->
 				<ul class="c-post-tab tb cl mbw">
 					<!--{if $savecount}-->
-						<li class="y"><a id="draftlist" href="javascript:;" class="xi2" onmouseover="showMenu({'ctrlid':'draftlist','ctrlclass':'a','duration':2,'pos':'34'})">{lang draftbox}(<strong>$savecount</strong>)</a></li>
+						<li class="y"><a id="draftlist" href="javascript:;" class="xi2">{lang draftbox}(<strong>$savecount</strong>)</a></li>
 					<!--{/if}-->
 					<!--{if !$_G['forum']['threadsorts']['required'] && !$_G['forum']['allowspecialonly']}--><li$postspecialcheck[0]><a href="javascript:;" onclick="switchpost('forum.php?mod=post&action=newthread')">{lang post_newthread}</a></li><!--{/if}-->
 					<!--{loop $_G['forum']['threadsorts'][types] $tsortid $name}-->

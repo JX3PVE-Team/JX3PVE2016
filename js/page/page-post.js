@@ -30,17 +30,22 @@ jQuery(function($){
 		$editorEX.toggleClass('folder')
 	}
 
-	//手机版模拟顶部按钮提交表单
+	//展开草稿
+	$("#draftlist").on('click',function(){
+		$("#draftlist_menu").slideToggle()
+	})
+
+	//手机版模拟顶部按钮提交表单 - 已关闭
 	$("#i-header-postbtn").on('click',function(){
 		$("#postform").submit();
 	})
 
 	//当发布提示为空时隐藏该整区
-	if($(".c-post-tips").find('#c-post-tips-content').html().length < 2){
+	if($("#c-post-tips-content").html().length < 2){
 		$(".c-post-tips").hide()
 	}
 
-	//PC有特殊发布警告时
+	//特殊版警告时（内容较多，带黄色tg）
 	$("#c-post-tips-moretg").on('click',function(){
 		$("#c-post-tips-content").fadeToggle()
 		$(this).toggleClass('open');
