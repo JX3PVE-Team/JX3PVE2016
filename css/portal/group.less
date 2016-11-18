@@ -1,10 +1,13 @@
 @import url('../public/base.less');		//函数
-@import url('../public/path.less');		//路径
+@import url('../global/var.less');		//路径
 @bluex-old: #049abf;    //海青蓝
 @wp-old:1180px;
 
 /* 群组栏目
 -------------------------------------------------------------- */
+body{
+	min-width:@wp-old !important;
+}
 .zGroup{
 	background:url("http://ww2.sinaimg.cn/large/bcc700eegw1eig057upj1j21hc0fgn83.jpg") #f7f7f7 no-repeat top center;padding-bottom:20px;
 

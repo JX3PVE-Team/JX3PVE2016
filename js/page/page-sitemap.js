@@ -4,4 +4,8 @@ jQuery(function($){
 		$(this).next('ul').slideToggle()
 	})
 
+	$(".m-sitemap-compass .u-more").on('click',function(){
+		$(this).hide().siblings('.u-old').fadeIn()
+	})
+
 })

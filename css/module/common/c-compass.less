@@ -9,15 +9,18 @@
 		.w(120px);.h(120px);.fl;
 		/*border-right:1px solid #ddd;
 		border-bottom:1px solid #ddd;*/
-		border:1px solid #ddd;
+		border:1px solid #eee;
 		margin-top:-1px;
 		margin-left:-1px;
 	}
 	a{
 		.db;.full;.pr;
 		overflow:hidden;
+		filter:saturate(100%);
+		transition:0.05s ease-in-out;
 		&:hover{
 			background-color:#f7f7f7;
+			filter:saturate(110%);
 		}
 	}
 	i{
@@ -36,109 +39,71 @@
 		.full(x);.h(auto);.auto(x);
 		.pr;
 	}
-	.u-more i{
-		margin-top:25px;
+	.u-more{
+		i{
+			.size(32px);
+			margin-top:25px;
+		}
+	}
+	.u-locked{
+		.tm(0.5);
+		span{color:#888;}
+		cursor:default;
+		*{cursor:default;}
+	}
+	.u-old{
+		.none;
+	}
+	.u-link a{
+		&:after{
+			content:'';
+			.db;.pa;.lb(5px);
+			.size(16px);
+			background:url('@{url}system/sitemap/link.png') no-repeat 0 0;
+		}
 	}
 }
-
-/*//ie8 - 
-.lt-ie9 .c-compass{
-	img{.db;}
-	i{background: none;}
-}*/
-//mobile
 .ua-responsive .screen-s .c-compass{
 	li{
 		.w(33%);
 	}
+	.u-more i{
+		margin-top:45px;
+	}
+}
+.m-sitemap-compass .c-compass{
+	.u-more{
+		.none;
+	}
+	.u-old{
+		.db;
+	}
+	
+}
+.ua-responsive .screen-s .m-sitemap-compass .c-compass{
+	.u-more{
+		.db;
+	}
+	.u-locked{
+		.none;
+	}
+	.u-old{
+		.none;
+	}
 }
 
-/*.c-compass{
+.c-compass-mini{
+	ul{
 
-	//图标
-	.u-bbs{
-		background-image:url('@{url}system/sitemap/bbs.svg');
-		background-size:auto 100%;
 	}
-	.u-peizhuang{
-		background-image:url('@{url}system/sitemap/peizhuang.png');
-		background-size:auto 110%;
+	li{
+		.size(81px);
 	}
-	.u-servers{
-		background-image:url('@{url}system/sitemap/servers.svg');
-		background-size:auto 100%;
+	i{
+		margin-top:15px;
 	}
-	.u-speed{
-		background-image:url('@{url}system/sitemap/speed.svg');
-		background-size:auto 100%;
+	span{
+		padding:0;
 	}
-	.u-chengjiu{
-		background-image:url('@{url}system/sitemap/chengjiu.svg');
-		background-size:100% auto;
-		.w(65px);
-	}
-	.u-macro{
-		background-image:url('@{url}system/sitemap/macro.svg');
-		background-size:auto 100%;
-		.w(78px);
-	}
-	.u-role{
-		background-image:url('@{url}system/sitemap/role.svg');
-		background-size:auto 100%;
-	}
-	.u-fam{
-		background-image:url('@{url}system/sitemap/fam.svg');
-		background-size:95% auto;
-	}
-	.u-fb{
-		background-image:url('@{url}system/sitemap/fb.svg');
-		background-size:auto 90%;
-	}
-	.u-tool{
-		background-image:url('@{url}system/sitemap/tool.svg');
-		background-size:100% auto;
-	}
-	.u-pet{
-		background-image:url('@{url}system/sitemap/pet.svg');
-		background-size:100% auto;
-	}
-	.u-team{
-		background-image:url('@{url}system/sitemap/team.svg');
-		background-size:100% auto;
-	}
-	.u-member{
-		background-image:url('@{url}system/sitemap/member.svg');
-		background-size:auto 100%;
-	}
-	.u-sale{
-		background-image:url('@{url}system/sitemap/sale.svg');
-		background-size:110% auto;
-	}
-	.u-buy{
-		background-image:url('@{url}system/sitemap/buy.svg');
-		background-size:90% auto;
-	}
-	.u-snow{
-		background-image:url('@{url}system/sitemap/snow.png');
-		background-size:auto 100%;
-	}
-	.u-face{
-		background-image:url('@{url}system/sitemap/face.svg');
-		background-size:100% auto;
-	}
-	.u-story{
-		background-image:url('@{url}system/sitemap/story.svg');
-		background-size:auto 100%;
-	}
-	.u-ow{
-		background-image:url('@{url}system/sitemap/ow.png');
-		background-size:auto 100%;
-	}
-}*/
+}
 
-
-//调试图标位置
-/*.c-compass{
-	img{.db !important;}
-	i{background: none !important;}
-}*/
