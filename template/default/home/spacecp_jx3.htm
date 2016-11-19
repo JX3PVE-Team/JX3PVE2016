@@ -1,0 +1,262 @@
+<!--{template common/header}-->
+ 
+
+<!--{subtemplate home/spacecp_header}-->
+ 
+	<div class="wp">
+				<div class="y diytop">
+					<!--<a id="switchblind" href="javascript:;" onclick="toggleBlind(this)" title="{lang switch_blind}" class="switchblind">{lang switch_blind}</a>-->
+					<!--{hook/global_cpnav_extra2}-->
+					<!--{loop $_G['setting']['topnavs'][1] $nav}-->
+						<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}-->$nav[code]<!--{/if}-->
+					<!--{/loop}-->
+					<!--{if empty($_G['disabledwidthauto']) && $_G['setting']['switchwidthauto']}-->
+						<a href="javascript:;" id="switchwidth" onclick="widthauto(this)" title="{if widthauto()}{lang switch_narrow}{else}{lang switch_wide}{/if}" class="switchwidth"><!--{if widthauto()}-->{lang switch_narrow}<!--{else}-->{lang switch_wide}<!--{/if}--></a>
+					<!--{/if}-->
+					<!--{if $_G['uid'] && !empty($_G['style']['extstyle'])}--><a id="sslct" href="javascript:;" onmouseover="delayShow(this, function() {showMenu({'ctrlid':'sslct','pos':'34!'})});">{lang changestyle}</a><!--{/if}-->
+					<!--{if check_diy_perm($topic)}-->
+						$diynav
+					<!--{/if}-->
+				</div>
+			</div>
+
+
+
+
+	<!--{if $validate}-->
+		<p class="tbmu mbm">{lang validator_comment}</p>
+		<form action="member.php?mod=regverify" method="post" autocomplete="off">
+		<input type="hidden" value="{FORMHASH}" name="formhash" />
+		<table summary="{lang memcp_profile}" cellspacing="0" cellpadding="0" class="tfm">
+		<tr>
+			<th>{lang validator_remark}</th>
+			<td>$validate[remark]</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th>{lang validator_message}</th>
+			<td><input type="text" class="px" name="regmessagenew" value="" /></td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td colspan="2">
+				<button type="submit" name="verifysubmit" value="true" class="pn pnc" /><strong>{lang validator_submit}</strong></button>
+			</td>
+		</tr>
+		</table>
+		</div></div>
+		<div class="appl">
+		<!--{subtemplate home/spacecp_footer}-->
+	</div>
+	<!--{else}-->
+		<!--{if $operation == 'password'}-->
+			<script type="text/javascript" src="{$_G[setting][jspath]}register.js?{VERHASH}"></script>
+			<p class="bbda pbm mbm">
+				<!--{if !$_G['member']['freeze']}-->
+					<!--{if !$_G['setting']['connect']['allow'] || !$conisregister}-->{lang old_password_comment}<!--{else}-->{lang connect_config_newpassword_comment}<!--{/if}-->
+				<!--{elseif $_G['member']['freeze'] == 1}-->
+					<strong class="xi1">{lang freeze_pw_tips}</strong>
+				<!--{elseif $_G['member']['freeze'] == 2}-->
+					<strong class="xi1">{lang freeze_email_tips}</strong>
+				<!--{/if}-->
+			</p>
+			<form action="home.php?mod=spacecp&ac=profile" method="post" autocomplete="off">
+				<input type="hidden" value="{FORMHASH}" name="formhash" />
+				<table summary="{lang memcp_profile}" cellspacing="0" cellpadding="0" class="tfm">
+					<!--{if !$_G['setting']['connect']['allow'] || !$conisregister}-->
+						<tr>
+							<th><span class="rq" title="{lang required}">*</span>{lang old_password}</th>
+							<td><input type="password" name="oldpassword" id="oldpassword" class="px" /></td>
+						</tr>
+					<!--{/if}-->
+					<tr>
+						<th>{lang new_password}</th>
+						<td>
+							<input type="password" name="newpassword" id="newpassword" class="px" />
+							<p class="d" id="chk_newpassword">{lang memcp_profile_passwd_comment}</p>
+						</td>
+					</tr>
+					<tr>
+						<th>{lang new_password_confirm}</th>
+						<td>
+							<input type="password" name="newpassword2" id="newpassword2"class="px" />
+							<p class="d" id="chk_newpassword2">{lang memcp_profile_passwd_comment}</p>
+						</td>
+					</tr>
+					<tr id="contact"{if $_GET[from] == 'contact'} style="background-color: {$_G['style']['specialbg']};"{/if}>
+						<th>{lang email}</th>
+						<td>
+							<input type="text" name="emailnew" id="emailnew" value="$space[email]" class="px" />
+							<p class="d">
+								<!--{if empty($space['newemail'])}-->
+									{lang email_been_active}
+								<!--{else}-->
+									$acitvemessage
+								<!--{/if}-->
+							</p>
+							<!--{if $_G['setting']['regverify'] == 1 && (($_G['group']['grouptype'] == 'member' && $_G['adminid'] == 0) || $_G['groupid'] == 8) || $_G['member']['freeze']}--><p class="d">{lang memcp_profile_email_comment}</p><!--{/if}-->
+						</td>
+					</tr>
+					
+					<!--{if $_G['member']['freeze'] == 2}-->
+					<tr>
+						<th>{lang freeze_reason}</th>
+						<td>
+							<textarea rows="3" cols="80" name="freezereson" class="pt">$space[freezereson]</textarea>
+							<p class="d" id="chk_newpassword2">{lang freeze_reason_comment}</p>
+						</td>
+					</tr>
+					<!--{/if}-->
+
+					<tr>
+						<th>{lang security_question}</th>
+						<td>
+							<select name="questionidnew" id="questionidnew">
+								<option value="" selected>{lang memcp_profile_security_keep}</option>
+								<option value="0">{lang security_question_0}</option>
+								<option value="1">{lang security_question_1}</option>
+								<option value="2">{lang security_question_2}</option>
+								<option value="3">{lang security_question_3}</option>
+								<option value="4">{lang security_question_4}</option>
+								<option value="5">{lang security_question_5}</option>
+								<option value="6">{lang security_question_6}</option>
+								<option value="7">{lang security_question_7}</option>
+							</select>
+							<p class="d">{lang memcp_profile_security_comment}</p>
+						</td>
+					</tr>
+
+					<tr>
+						<th>{lang security_answer}</th>
+						<td>
+							<input type="text" name="answernew" id="answernew" class="px" />
+							<p class="d">{lang memcp_profile_security_answer_comment}</p>
+						</td>
+					</tr>					
+					<!--{if $secqaacheck || $seccodecheck}-->
+					</table>
+						<!--{eval $sectpl = '<table cellspacing="0" cellpadding="0" class="tfm"><tr><th><sec></th><td><sec><p class="d"><sec></p></td></tr></table>';}-->
+						<!--{subtemplate common/seccheck}-->
+					<table summary="{lang memcp_profile}" cellspacing="0" cellpadding="0" class="tfm">
+					<!--{/if}-->					
+					<tr>
+						<th>&nbsp;</th>
+						<td><button type="submit" name="pwdsubmit" value="true" class="pn pnc" /><strong>{lang save}</strong></button></td>
+					</tr>
+				</table>
+				<input type="hidden" name="passwordsubmit" value="true" />
+			</form>
+			<script type="text/javascript">
+				var strongpw = new Array();
+				<!--{if $_G['setting']['strongpw']}-->
+					<!--{loop $_G['setting']['strongpw'] $key $val}-->
+					strongpw[$key] = $val;
+					<!--{/loop}-->
+				<!--{/if}-->
+				var pwlength = <!--{if $_G['setting']['pwlength']}-->$_G['setting']['pwlength']<!--{else}-->0<!--{/if}-->;
+				checkPwdComplexity($('newpassword'), $('newpassword2'), true);
+			</script>
+		<!--{else}-->
+			<!--{hook/spacecp_profile_top}-->
+		 
+			 
+			<iframe id="frame_profile" name="frame_profile" style="display: none"></iframe>
+			 <div class="user-os">
+				 <div class="user-os-1">
+					 <ul>
+						<li><span class="user-os-label"> {lang username}</span> <span class="user-os-name">$_G[member][username]</span> <a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=plugin&id=qqy_ltnc:plugin" class="user-os-editnic"> </a></li>
+						<li><span class="user-os-label"> 用户组</span>  <span class="user-os-name"><a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=usergroup">$_G[group][grouptitle]</a></span> <img class="user-os-groupicon" src=$groupicon /> <a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=usergroup&do=list" class="user-os-vipbt" title="加入VIP会员,享有多项特权"> </a></li>
+						<li><span class="user-os-label"> 米&nbsp;&nbsp;&nbsp;币</span> <span class="user-os-cre"><!--{echo getuserprofile('extcredits4');}--> </span> <a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=credit&op=buy" class="user-os-crebt"> </a></li>
+						<li><span class="user-os-label"> 认&nbsp;&nbsp;&nbsp;证</span> <span class="user-os-verf">$verify</span>
+							<span class="user-os-verfnavlist"><a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=profile&op=verify&vid=4" title="让发布的信息更加受浏览者可信">认证玩家</a> | </span>
+							<span class="user-os-verfnavlist"><a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=profile&op=verify" title="品牌团队的卓越选择">认证团队</a> | </span>
+							<span class="user-os-verfnavlist"><a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=profile&op=verify&vid=2" title="个人团长认证,让信息更加吸引团员">认证团长</a> | </span>
+							<span class="user-os-verfnavlist"><a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=profile&op=verify&vid=3" title="女生指挥特权,吸引更多成员">美女指挥</a> | </span>
+							<span class="user-os-verfnavlist"><a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=profile&op=verify&vid=5" title="成为签约作者">签约作者</a></span>
+						</li>
+					 </ul>
+					 
+					 <div class="user-os-mynavmini"><ul>
+					 	<li><a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=profile&op=password">修改密码</a> | </li>
+					 	<li><a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=profile">详细资料</a> | </li>
+					 	<li><a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=avatar">设置头像</a> | </li>
+					 	<li><a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=plugin&id=qqconnect:spacecp">QQ绑定</a> | </li>
+					 	<li><a href="http://www.jx3pve.com/home.php?mod=spacecp&ac=plugin&id=mpage_weibo:bind">微博绑定</a> | </li>
+					 	<li><a href="http://www.jx3pve.com/home.php?mod=space&do=pm">我的消息</a> | </li>
+					 	<li><a href="http://www.jx3pve.com/home.php?mod=space&do=friend">我的好友</a></li>
+					 </ul></div>
+					 
+					 <div class="user-os-2">
+					 <!--NAV BEGIN--->
+					 <!--{block/440}-->
+					<!--<ul>
+						<li><a class="useros-nav1" href="http://www.jx3pve.com/wp-admin/" title="发布及管理我的云端宏" target="_blank"> </a></li>
+						<li><a  class="useros-nav2" href="http://www.jx3pve.com/forum.php?mod=guide&view=my" title="我发布的作品" target="_blank"> </a></li>
+						<li><a  class="useros-nav3" href="http://www.jx3pve.com/home.php?mod=space&do=favorite&view=me" title="我收藏的版块与作品"  target="_blank"> </a></li>
+						<li><a  class="useros-nav4" href="http://www.jx3pve.com/vip.php" title="VIP会员中心"  target="_blank"> </a></li>
+						<li><a class="useros-nav5" href="http://www.jx3pve.com/home.php?mod=magic" title="对信息进行置顶、高亮等特殊操作"  target="_blank"> </a></li>
+						<li><a  class="useros-nav6" href="http://www.jx3pve.com/home.php?mod=magic" title="领取荣誉勋章" target="_blank"> </a></li>
+						<li><a class="useros-nav7" href="http://www.jx3pve.com/home.php?mod=task" title="完成任务赚积分" target="_blank"> </a></li>
+						<li><a class="useros-nav8" href="#" title="兑换礼品（暂未开放）"> </a></li>
+						<div class="clear"></div>
+					</ul>-->
+					 
+					 <!--NAV END--->
+					 </div>
+				 </div>
+				 
+				 <div class="user-os-sidebar">
+				 <!---SIDEBAR BEGIN--->
+				 <!--{block/441}-->
+				 <!---SIDEBAR  END--->
+				 </div>
+			 
+				<div class="user-os-bottom">
+				<!--{block/442}-->
+				</div>
+			 </div>
+			 
+
+						 
+			 
+			<script type="text/javascript">
+				function show_error(fieldid, extrainfo) {
+					var elem = $('th_'+fieldid);
+					if(elem) {
+						elem.className = "rq";
+						fieldname = elem.innerHTML;
+						extrainfo = (typeof extrainfo == "string") ? extrainfo : "";
+						$('showerror_'+fieldid).innerHTML = "{lang check_date_item} " + extrainfo;
+						$(fieldid).focus();
+					}
+				}
+				function show_success(message) {
+					message = message == '' ? '{lang update_date_success}' : message;
+					showDialog(message, 'right', '{lang reminder}', function(){
+						top.window.location.href = top.window.location.href;
+					}, 0, null, '', '', '', '', 3);
+				}
+				function clearErrorInfo() {
+					var spanObj = $('profilelist').getElementsByTagName("div");
+					for(var i in spanObj) {
+						if(typeof spanObj[i].id != "undefined" && spanObj[i].id.indexOf("_")) {
+							var ids = explode('_', spanObj[i].id);
+							if(ids[0] == "showerror") {
+								spanObj[i].innerHTML = '';
+								$('th_'+ids[1]).className = '';
+							}
+						}
+					}
+				}
+			</script>
+		<!--{/if}-->
+		</div>
+	</div>
+	<div class="appl">
+		<!--{subtemplate home/spacecp_footer}-->
+	</div>
+	<!--{/if}-->
+</div>
+
+<!--{template common/footer}-->

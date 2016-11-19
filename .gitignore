@@ -1,19 +1,17 @@
 # custom
 # =========================
-# test git hooks 3
-#temp/*
 .git
+botao
+
+data
+uc_server/data
 
 cdn
 cssjsimg
 
-root
-
-
-botao
+# config
+# =========================
 config
-data
-
 
 
 # Windows image file caches
