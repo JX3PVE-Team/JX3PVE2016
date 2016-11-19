@@ -1,0 +1,100 @@
+.i-header-menu{
+	.pa;.rt(0,0);
+
+	//更多
+	.u-all{
+		.db;.fl;
+		span{.none;}
+		.size(32px,24px);
+		background:~"url('@{url}forum/i-menu-more.svg') no-repeat 0 0 / auto 100%";
+		margin-top:11px;
+		margin-right:10px;
+	}
+
+	//只看楼主（列表页）
+	.u-only{
+		.fl;
+		border:1px solid #eee;
+		.r(2px);
+		.fz(13px,18px);
+		padding:2px 8px;
+		margin-top:12px;
+		margin-right:20px;
+
+		&.on{
+			background-color:@basecolor;
+		}
+	}
+
+	//发表（发布页）
+	.u-pub{
+		padding:0 10px;
+		line-height:24px;
+		font-size:15px;
+		.fr;margin-top:10px;
+		i{
+			.dbi;.y;.size(26px,18px);margin-top:-2px;
+			background:~"url('@{url}forum/post.svg') no-repeat 0 0 / auto 100%";
+		}
+		//span{.none;}
+		background: none;
+		border:none;
+		box-shadow:none;
+		appearance:none;
+	}
+
+	//发布（列表页）
+	.u-post{
+		.fl;
+		margin-top:10px;
+		margin-right:10px;
+		i{
+			.db;.size(32px,25px);
+			background:~"url('@{url}forum/write.svg') no-repeat 0 0 / auto 100%";
+		}
+		span{.none;}
+	}
+
+	//发消息
+	.u-msg{
+		.fl;
+		margin-top:4px;
+		margin-right:15px;
+		i{
+			.db;.size(40px);
+			background:~"url('@{url}user/send.svg') no-repeat 0 0 / auto 100%";
+		}
+		span{.none;}
+	}
+
+	//设置
+	.u-setting{
+		.fl;
+		padding:13px;
+		i{
+			.db;.size(20px);
+			background:~"url('@{url}user/setting.svg') no-repeat 0 0 / auto 100%";
+		}
+		span{.none;}
+	}
+
+}
+.i-header-back{
+	.pa;.lt(0,0);
+	padding:0 20px;
+
+	i{
+		.dbi;
+		border: 2px solid @iheadericonbg;
+		border-width: 2px 0 0 2px;
+		width: 10px;
+		height: 10px;
+		margin: 0 0 -2px 0;
+		transform: scale(1) rotate(-50deg) skew(-10deg) translateZ(0);
+	}
+	span{
+		.fz(1rem);.bold;
+		padding-left:10px;
+		//.none;
+	}
+}

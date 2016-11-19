@@ -3,6 +3,9 @@
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/index/index.css" type="text/css" />
 <header class="i-header">
 	<div class="i-header-title">我</div>
+	<div class="i-header-menu">
+        <a class="u-setting" id="i-header-setting" href="./setting"><i></i><span>设置</span></a>
+    </div>
 </header>
 <div class="user-container">
 	<div class="wp">
@@ -120,7 +123,7 @@
 												</h4>
 											<!--{/if}-->
 
-											<ul class="el">
+											<ul class="el bbda">
 											<!--{loop $values $value}-->
 												<!--{template home/space_feed_li}-->
 											<!--{/loop}-->
@@ -178,7 +181,7 @@
 										<h4 class="et">{lang following_feed_shielding}</h4>
 										<ul class="el">
 										<!--{loop $filter_list $value}-->
-										<!--{template home/space_feed_li}-->
+											<!--{template home/space_feed_li}-->
 										<!--{/loop}-->
 										<li><a href="javascript:;" onclick="filter_more($start);">&laquo; {lang pack_up}</a></li>
 										</ul>
