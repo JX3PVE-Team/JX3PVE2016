@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:wb="http://open.weibo.com/wb" class="{if ($_G[groupid]==1)||($_G[groupid]==2)||($_G[groupid]==3)||($_G[groupid]==37)||($_G[groupid]==38)||($_G[groupid]==39)||($_G[groupid]==40)}adminHTML{/if} {if ($_G[groupid]==22)}vipHTML{/if} ua-responsive">
+<html xmlns:wb="http://open.weibo.com/wb" class="{if ($_G[groupid]==1)||($_G[groupid]==2)||($_G[groupid]==3)||($_G[groupid]==37)||($_G[groupid]==38)||($_G[groupid]==39)||($_G[groupid]==40)}adminHTML{/if} {if ($_G[groupid]==22)}vipHTML{/if} ua-responsive {if ($_G['mobile'])}ua-mobile{/if}">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
 	<base href="{$_G['siteurl']}" />
@@ -9,6 +9,15 @@
 	<meta name="renderer" content="webkit">
 	<meta http-equiv="Cache-Control" content="no-siteapp"/>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimal-ui"/>
+
+	<!-- MOBILE -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="JX3PVE">
+	<meta name="format-detection" content="telphone=no,email=no">
+	<link rel="apple-touch-icon-precomposed" href="http://img.jx3pve.com/img/common/ios.png"> 
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="msapplication-TileColor" content="#0084ff">
+	<meta name="msapplication-TileImage" content="http://os.jx3pve.com/logo.png">
 
 	<!-- SEO -->
 	<title><!--{if !empty($navtitle)}-->$navtitle <!--{/if}--><!--{if empty($nobbname)}--> $_G['setting']['bbname']<!--{/if}--></title>
