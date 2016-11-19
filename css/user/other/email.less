@@ -2,11 +2,21 @@
 @import url('../../global/var.less');			//常量
 @import url('../../global/color.less');		//配色
 
-.ua-responsive .screen-s{
+.ua-mobile,.screen-s{
 	form{
 		padding:10px;
 	}
 	.tfm caption{
 		.db;
+	}
+	.tfm th{
+		.w(auto);
+		.bold;
+	}
+	.tfm .pn{
+		margin-bottom:20px;
+		.auto(x);
+		.db;
+		.w(60%);
 	}
 }

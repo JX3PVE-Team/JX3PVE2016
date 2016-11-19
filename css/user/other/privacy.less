@@ -2,24 +2,31 @@
 @import url('../../global/var.less');			//常量
 @import url('../../global/color.less');		//配色
 
-.ua-responsive .screen-s .mn{
+.ua-mobile,.screen-s{
 
-	.tfm .pt, .tfm .px{
-		width:100%;
-		box-sizing:border-box;
-		padding:5px 10px;
-		height:30px;
-		margin-bottom:5px;
+	form{
+		padding:10px;
+	}
+
+	.tfm th{
+		.bold;
+		padding:0;
 	}
 
 	.tfm caption{
 		.db;
 	}
-	.tbmu,.tfm caption{
-		.fz(13px,1.8);
+
+	.tfm .d{
+		.fz(13px);
+		color:#888;
 	}
 
-	form{
-		padding:10px;
+	.tfm .pn{
+		margin-bottom:20px;
+		.auto(x);
+		.db;
+		.w(60%);
 	}
+
 }
