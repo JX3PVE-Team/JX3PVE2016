@@ -2,54 +2,12 @@
 @import url('../../global/var.less');			//常量
 @import url('../../global/color.less');		//配色
 
-//修改用户名提示
-.m-nicname-tips{
-	.db;
-	color:@yel;
-	margin-top:5px;
-}
 
-//认证
-.user-profile-verif-ac,.user-profile-verif-tips{
-	padding:0 10px;
-}
-.user-profile-verif-ac{
-	margin-top:5px;
-	color:@yel;
-}
-.user-profile-verif-tips{
-	border-bottom:1px dashed #ddd;
-	padding-bottom:5px;
-	i{margin-top:-3px;margin-right:3px;}
-}
-.c-verif-warning{
-	.tbms{.none;}
-}
-.ua-responsive .screen-s{
-	/*.user-content{
-		padding:10px;
-	}*/
-	.bbda.pbm.mbm{
-		padding:5px  10px 0 10px;
-	}
-	.tfm tr{
-		border-bottom:1px solid #eee;
-		padding:0 10px;
-	}
-	.mn{
-		//padding:5px 10px;
-	}
-	.tfm .p{
-		.x(left);
-	}
-	.bm2 .bm2_b{
-		.w(100%);
-		float:none;
-		//margin-bottom:20px;
-	}
-	.bm2_b_y{
-		.none;
-	}
-}
+@import url('info.less');
+@import url('verif.less');
+@import url('avt.less');
+@import url('plugin.less');
 
-//微信绑定
+.user-content{
+	padding:10px;
+}

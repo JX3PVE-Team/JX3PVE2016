@@ -1,9 +1,14 @@
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/user.css" type="text/css" />
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/profile/profile.css" type="text/css" />
 <header class="i-header">
-	<a class="i-header-back" href="./home.php"><i></i></a>
-	<div class="i-header-title">设置</div>
-	<div class="i-header-menu">
-		<a class="u-all" id="i-header-panel-tg" href="javascript:;"><span>更多</span></a>
+	<a class="i-header-back" href="javascript:;" onclick="history.go(-1)"><i></i></a>
+	<div class="i-header-title">
+	<!--{if ($_GET['op']=="password")}-->
+		修改密码
+	<!--{elseif ($_GET['id']=="qqconnect:spacecp")}-->
+		绑定QQ
+	<!--{elseif ($_GET['id']=="mpage_weibo:bind")}-->
+		绑定微博
+	<!--{/if}-->
 	</div>
 </header>
