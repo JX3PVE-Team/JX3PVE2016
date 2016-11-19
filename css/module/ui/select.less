@@ -14,8 +14,10 @@
 .alertHTML .sltm{
 	margin-top:-30px;
 }
-.ua-responsive .screen-s .sltm{
-	.w(80%) !important;
+.ua-mobiel,.screen-s{
+	.sltm{
+		.w(80%) !important;
+	}
 }
 
 /*.dpbtn{
@@ -45,20 +47,25 @@
     background:#fff;
     transition:0.2s ease-in-out;
 }
-
 .u-select:focus{
     box-shadow: 0 0 3px #8DACE6;
     border-color:#0D6EB8;
 }
+select{
+    max-width:100%;
+}
 
+
+//文件选择
+.pf{
+}
+
+
+//颜色选择
 .colorwd{
 	.size(23px) !important;
 	padding:0 !important;
 	border: 1px solid #999;
 	background-image: url(http://img.jx3pve.com/static/image/common//pn_color.png);
 	background-color:#666;
-}
-
-select{
-    max-width: 100%;
 }

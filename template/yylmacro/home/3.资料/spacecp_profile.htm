@@ -30,7 +30,7 @@
 								</tr>
 								<tr>
 									<th>{lang validator_message}</th>
-									<td><input type="text" class="px" name="regmessagenew" value="" /></td>
+									<td><input type="text" class="u-text" name="regmessagenew" value="" /></td>
 									<td>&nbsp;</td>
 								</tr>
 								<tr>
@@ -58,27 +58,27 @@
 											<!--{if !$_G['setting']['connect']['allow'] || !$conisregister}-->
 												<tr>
 													<th><span class="rq" title="{lang required}">*</span>{lang old_password}</th>
-													<td><input type="password" name="oldpassword" id="oldpassword" class="px" /></td>
+													<td><input type="password" name="oldpassword" id="oldpassword" class="u-text" /></td>
 												</tr>
 											<!--{/if}-->
 											<tr>
 												<th>{lang new_password}</th>
 												<td>
-													<input type="password" name="newpassword" id="newpassword" class="px" />
+													<input type="password" name="newpassword" id="newpassword" class="u-text" />
 													<p class="d" id="chk_newpassword">{lang memcp_profile_passwd_comment}</p>
 												</td>
 											</tr>
 											<tr>
 												<th>{lang new_password_confirm}</th>
 												<td>
-													<input type="password" name="newpassword2" id="newpassword2"class="px" />
+													<input type="password" name="newpassword2" id="newpassword2"class="u-text" />
 													<p class="d" id="chk_newpassword2">{lang memcp_profile_passwd_comment}</p>
 												</td>
 											</tr>
 											<tr id="contact"{if $_GET[from] == 'contact'} style="background-color: {$_G['style']['specialbg']};"{/if}>
 												<th>{lang email}</th>
 												<td>
-													<input type="text" name="emailnew" id="emailnew" value="$space[email]" class="px" />
+													<input type="text" name="emailnew" id="emailnew" value="$space[email]" class="u-text" />
 													<p class="d">
 														<!--{if empty($space['newemail'])}-->
 															{lang email_been_active}
@@ -103,7 +103,7 @@
 											<tr>
 												<th>{lang security_question}</th>
 												<td>
-													<select name="questionidnew" id="questionidnew">
+													<select name="questionidnew" id="questionidnew" class="u-select">
 														<option value="" selected>{lang memcp_profile_security_keep}</option>
 														<option value="0">{lang security_question_0}</option>
 														<option value="1">{lang security_question_1}</option>
@@ -121,7 +121,7 @@
 											<tr>
 												<th>{lang security_answer}</th>
 												<td>
-													<input type="text" name="answernew" id="answernew" class="px" />
+													<input type="text" name="answernew" id="answernew" class="u-text" />
 													<p class="d">{lang memcp_profile_security_answer_comment}</p>
 												</td>
 											</tr>					
@@ -174,7 +174,7 @@
 										</div>
 										<!--{/if}-->
 									<iframe id="frame_profile" name="frame_profile" style="display: none"></iframe>
-									<form action="{if $operation != 'plugin'}home.php?mod=spacecp&ac=profile&op=$operation{else}home.php?mod=spacecp&ac=plugin&op=profile&id=$_GET[id]{/if}" method="post" enctype="multipart/form-data" autocomplete="off"{if $operation != 'plugin'} target="frame_profile"{/if} onsubmit="clearErrorInfo();">
+									<form action="{if $operation != 'plugin'}home.php?mod=spacecp&ac=profile&op=$operation{else}home.php?mod=spacecp&ac=plugin&op=profile&id=$_GET[id]{/if}" method="post" enctype="multipart/form-data" autocomplete="off"{if $operation != 'plugin'} target="frame_profile"{/if} onsubmit="clearErrorInfo();" class="user-profile-infomodif">
 										<input type="hidden" value="{FORMHASH}" name="formhash" />
 										<!--{if $_GET[vid]}-->
 										<input type="hidden" value="$_GET[vid]" name="vid" />
@@ -196,7 +196,7 @@
 													<!--{if $vid}-->
 													<input type="hidden" name="privacy[$key]" value="3" />
 													<!--{else}-->
-													<select name="privacy[$key]">
+													<select name="privacy[$key]" class="u-select">
 														<option value="0"{if $privacy[$key] == "0"} selected="selected"{/if}>{lang open_privacy}</option>
 														<option value="1"{if $privacy[$key] == "1"} selected="selected"{/if}>{lang friend_privacy}</option>
 														<option value="3"{if $privacy[$key] == "3"} selected="selected"{/if}>{lang secrecy}</option>
@@ -210,7 +210,7 @@
 										<tr>
 											<th id="th_customstatus">{lang permission_basic_status}</th>
 											<td id="td_customstatus">
-												<input type="text" value="$space[customstatus]" name="customstatus" id="customstatus" class="px" />
+												<input type="text" value="$space[customstatus]" name="customstatus" id="customstatus" class="u-text" />
 												<div class="rq mtn" id="showerror_customstatus"></div>
 											</td>
 											<td>&nbsp;</td>
@@ -249,7 +249,7 @@
 											<th id="th_timeoffset">{lang time_zone}</th>
 											<td id="td_timeoffset">
 												<!--{eval $timeoffset = array({lang timezone});}-->
-												<select name="timeoffset">
+												<select name="timeoffset" class="u-select">
 													<!--{loop $timeoffset $key $desc}-->
 													<option value="$key"{if $key==$space[timeoffset]} selected="selected"{/if}>$desc</option>
 													<!--{/loop}-->
