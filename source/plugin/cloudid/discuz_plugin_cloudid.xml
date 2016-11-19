@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[]]></item>
+	<item id="Time"><![CDATA[2014-04-15 14:20]]></item>
+	<item id="From"><![CDATA[ ()]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[0]]></item>
+			<item id="adminid"><![CDATA[0]]></item>
+			<item id="name"><![CDATA[云端ID]]></item>
+			<item id="identifier"><![CDATA[cloudid]]></item>
+			<item id="description"><![CDATA[]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[cloudid/]]></item>
+			<item id="copyright"><![CDATA[Ricky]]></item>
+			<item id="version"><![CDATA[1.0]]></item>
+			<item id="__modules">
+				<item id="nav_cloudid">
+					<item id="name"><![CDATA[cloudid]]></item>
+					<item id="menu"><![CDATA[云端宏ID]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[7]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+					<item id="description"><![CDATA[云端宏ID]]></item>
+				</item>
+				<item id="nav_admin">
+					<item id="name"><![CDATA[admin]]></item>
+					<item id="menu"><![CDATA[审核]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+					<item id="description"><![CDATA[审核]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X3.0,X3.1]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[积分]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[credit]]></item>
+				<item id="type"><![CDATA[extcredit]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[积分下限]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[minimum]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[每月次数限制]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[times]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[10]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="morethanmaxtime"><![CDATA[本月申请次数已超上限]]></item>
+				<item id="crediterror"><![CDATA[蘑菇积分不足，不能进行此操作]]></item>
+				<item id="submit_succeed"><![CDATA[申请已提交，请等待审核]]></item>
+				<item id="newsubmission"><![CDATA[{username}申请修改云端宏ID，请登录后台处理]]></item>
+				<item id="notnull"><![CDATA[必填字段不能为空]]></item>
+				<item id="currentid"><![CDATA[目前云端宏ID]]></item>
+				<item id="newid"><![CDATA[申请新ID]]></item>
+				<item id="refused"><![CDATA[已驳回]]></item>
+				<item id="passed"><![CDATA[通过审核]]></item>
+				<item id="applyuser"><![CDATA[申请人]]></item>
+				<item id="status"><![CDATA[状态]]></item>
+				<item id="refuse"><![CDATA[驳回]]></item>
+				<item id="pass"><![CDATA[通过]]></item>
+				<item id="applyrefused"><![CDATA[您的云端宏ID修改申请已被驳回]]></item>
+				<item id="applypass"><![CDATA[您的云端宏ID修改申请已审核通过]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="currentid"><![CDATA[目前云端宏ID]]></item>
+				<item id="newid"><![CDATA[申请新ID]]></item>
+				<item id="submit"><![CDATA[提交]]></item>
+				<item id="applyid"><![CDATA[修改云端宏ID]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+	</item>
+</root>

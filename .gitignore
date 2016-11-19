@@ -2,10 +2,19 @@
 # =========================
 # test git hooks 3
 #temp/*
-cssjsimg
+.git
+
 cdn
+cssjsimg
+
 root
+
+
+botao
+config
 data
+
+
 
 # Windows image file caches
 # =========================
