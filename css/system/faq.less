@@ -10,8 +10,10 @@
 .faq-container{
 	min-height:400px;
 }
-.ua-responsive .screen-s .faq-container{
-	min-height:auto;
+.ua-mobile,.screen-s{
+	.faq-container{
+		min-height:auto;
+	}
 }
 
 .faq-container .wp{
@@ -29,8 +31,10 @@
 	float:none  !important;
 	.db !important;
 }
-.ua-responsive .screen-s .m-faq-content{
-	margin-left:0 !important;
+.ua-mobile,.screen-s{
+	.m-faq-content{
+		margin-left:0 !important;
+	}
 }
 
 .m-faq-search{
@@ -60,26 +64,29 @@
 		.fz(13px,28px);
 	}
 }
-.ua-responsive .screen-s .m-faq-search{
-	.pa;.lt(0,-30px);.w(100%);
-	padding:0 20px;box-sizing:border-box;
+.ua-mobile,.screen-s{
+	.m-faq-search{
+		.pa;.lt(0,-30px);.w(100%);
+		padding:0 20px;box-sizing:border-box;
 
-	form{.w(100%);}
+		form{.w(100%);}
 
-	.u-button{.pa;.rt(20px,0);}
-	.u-text-wp{
-		float:none;
-		margin-right:80px + 5px ;
-		.w(auto);
+		.u-button{.pa;.rt(20px,0);}
+		.u-text-wp{
+			float:none;
+			margin-right:80px + 5px ;
+			.w(auto);
+		}
 	}
-
 }
 
 .m-faq-main{
 	border:none;background:none;
 }
-.ua-responsive .screen-s .m-faq-main{
-	margin-top:40px;
+.ua-mobile,.screen-s{
+	.m-faq-main{
+		margin-top:40px;
+	}
 }
 
 .m-faq-sidebar{
@@ -112,21 +119,27 @@
 		.bold;
 	}
 }
-.ua-responsive .screen-s .m-faq-sidebar{
-	.none;
-	.pf;.lt(0,@c-header-height);
-	.z(40);
-	.w(100%);
-	background-color:#fff;
-	padding:10px 20px 20px;
-	border-bottom:1px solid #ddd;
-	box-sizing:border-box;
+.ua-mobile,.screen-s{
+	.m-faq-sidebar{
+		.none;
+		.pf;.lt(0,@c-header-height);
+		.z(40);
+		.w(100%);
+		background-color:#fff;
+		padding:10px 20px 20px;
+		border-bottom:1px solid #ddd;
+		box-sizing:border-box;
+	}
 }
 .pg_faq .i-header{
 	.z(40);
 }
-.alertHTML.ua-responsive .screen-s .m-faq-sidebar{
-	top:@c-header-height + @c-alert-height;
+.alertHTML{
+	.ua-mobile,.screen-s{
+		.m-faq-sidebar{
+			top:@c-header-height + @c-alert-height;
+		}
+	}
 }
 
 .m-faq-content{
@@ -203,13 +216,26 @@
 		}
 
 		table{
+			min-width:80%;
 			max-width:100%;
 			margin:5px auto;
 		}
 
-		table td{
+		table td,table th{
 			padding:2px 5px;
 			border:1px solid #ddd;
+		}
+
+		table th{
+			background-color:#fafafa;
+			.bold;
+		}
+
+		table tr:nth-child(2n){
+			background-color:@blue-bg;
+		}
+		table tr:nth-child(2n+1){
+			background-color:#fff;
 		}
 
 		code{
@@ -225,6 +251,12 @@
 
 	}
 }
+.ua-mobile,.screen-s{
+	.m-faq-content .um{
+		overflow-x:auto;
+	}
+}
+
 .m-faq-details{
 	line-height:2.4;
 }
