@@ -31,6 +31,7 @@ class plugin_xf_storage {
 		if(CURMODULE == 'post' && CURSCRIPT == 'forum' && $_G['uid']){
 			$_G['config']['output']['iecompatible'] = '7';
 		}
+
 		return true;
 	}
 
