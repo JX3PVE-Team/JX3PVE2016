@@ -3,6 +3,9 @@
 .git
 botao
 
+wiki
+jx3pveos
+
 data
 uc_server/data
 
@@ -12,6 +15,9 @@ cssjsimg
 # config
 # =========================
 config
+uc_service/data
+GetPage
+wp-config.php
 
 
 # Windows image file caches
