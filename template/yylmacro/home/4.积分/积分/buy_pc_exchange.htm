@@ -12,8 +12,8 @@
 				<tr>
 					<th>{lang memcp_credits_exchange}</th>
 					<td class="pns">
-						<input type="text" id="exchangeamount" name="exchangeamount" class="px" size="5" style="width: auto;" value="0" onkeyup="exchangecalcredit()" />
-						<select name="tocredits" id="tocredits" class="ps" onChange="exchangecalcredit()">
+						<input type="text" id="exchangeamount" name="exchangeamount" class="u-text" size="5" style="width: auto;" value="0" onkeyup="exchangecalcredit()" />
+						<select name="tocredits" id="tocredits" class="u-select" onChange="exchangecalcredit()">
 						<!--{loop $_G[setting][extcredits] $id $ecredits}-->
 							<!--{if $ecredits[allowexchangein] && $ecredits[ratio]}-->
 								<option value="$id" unit="$ecredits[unit]" title="$ecredits[title]" ratio="$ecredits[ratio]">$ecredits[title]</option>
@@ -28,8 +28,8 @@
 						<!--{/loop}-->
 						</select>
 						<span class="u-need">{lang credits_need}</span>
-						<input type="text" id="exchangedesamount" class="px" size="5" style="width: auto;" value="0" disabled="disabled" />
-						<select name="fromcredits" id="fromcredits_0" class="ps" style="display: none" onChange="exchangecalcredit();">
+						<input type="text" id="exchangedesamount" class="u-text" size="5" style="width: auto;" value="0" disabled="disabled" />
+						<select name="fromcredits" id="fromcredits_0" class="u-select" style="display: none" onChange="exchangecalcredit();">
 						<!--{loop $_G[setting][extcredits] $id $credit}-->
 							<!--{if $credit[allowexchangeout] && $credit[ratio]}-->
 								<option value="$id" unit="$credit[unit]" title="$credit[title]" ratio="$credit[ratio]">$credit[title]</option>
@@ -38,7 +38,7 @@
 						</select>
 						<!--{eval $i=0;}-->
 						<!--{loop $_CACHE['creditsettings'] $id $data}--><!--{eval $i++;}-->
-							<select name="fromcredits_$i" id="fromcredits_$i" class="ps" style="display: none" onChange="exchangecalcredit()">
+							<select name="fromcredits_$i" id="fromcredits_$i" class="u-select" style="display: none" onChange="exchangecalcredit()">
 							<!--{loop $data[creditsrc] $id $ratio}-->
 								<option value="$id" unit="$_G['setting']['extcredits'][$id][unit]" title="$_G['setting']['extcredits'][$id][title]" ratiosrc="$data[ratiosrc][$id]" ratiodesc="$data[ratiodesc][$id]">$_G['setting']['extcredits'][$id][title]</option>
 							<!--{/loop}-->
@@ -65,7 +65,7 @@
 				</tr>
 				<tr>
 					<th><span class="rq">*</span>{lang transfer_login_password}</th>
-					<td colspan="2"><input type="password" name="password" class="px" value="" size="20" /></td>
+					<td colspan="2"><input type="password" name="password" class="u-text" value="" size="20" /></td>
 				</tr>
 				<tr>
 					<th>&nbsp;</th>

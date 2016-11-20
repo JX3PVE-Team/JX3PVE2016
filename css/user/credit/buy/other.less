@@ -1,3 +1,25 @@
+.buy-pc-exchange,.buy-pc-transfer{
+	.u-text{
+		.fzlh(13px,28px);
+		padding:0 10px;
+	}
+	.u-select{
+		.fzlh(13px,30px);
+		padding:0 10px;	
+	}
+}
+.ua-mobile,.screen-s{
+	.buy-pc-exchange,.buy-pc-transfer{
+		.tfm tr:last-child th{
+			.none;
+		}
+		.tfm .rq{
+			.fl;.bold;
+		}
+	}
+}
+
+
 //积分转换
 .buy-pc-exchange{
 	.buy-pc-exchange-tips{
@@ -6,6 +28,9 @@
 	}
 	.u-need{
 		padding:0 5px;
+	}
+	.tfm .d{
+		.w(auto) !important;
 	}
 }
 .ua-mobile,.screen-s{
@@ -25,8 +50,16 @@
 			th,.u-need{
 				.bold;
 			}
-			.rq{
-				.fl;.bold;
+			tr{
+				.clearfix;
+			}
+			td[colspan='2']{
+				.w(100%);
+			}
+			#exchangesubmit_btn{
+				.w(120px);
+				margin-bottom:40px;
+				margin-top:20px;
 			}
 		}
 	}
@@ -37,6 +70,21 @@
 	.buy-pc-transfer-tips{
 		.tips(yel);
 		padding:0 5px;
+	}
+}
+.ua-mobile,.screen-s{
+	.buy-pc-transfer{
+		.tfm tr:first-child input:nth-child(2){
+			margin-top:10px;
+		}
+		.tfm input[name="transfermessage"]{
+			.w(100%);
+			box-sizing:border-box;
+		}
+		#transfersubmit_btn{
+			.w(120px);
+			margin-bottom:40px;
+		}
 	}
 }
 //积分规则
