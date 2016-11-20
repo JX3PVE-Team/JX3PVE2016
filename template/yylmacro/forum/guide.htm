@@ -4,6 +4,9 @@
 <header class="i-header">
 	<a class="i-header-back" href="./home.php"><i></i></a>
 	<div class="i-header-title">我的帖子</div>
+	<div class="i-header-menu">
+		<a class="u-all" id="user-guide-authortipstg" href="javascript:;"><span>更多</span></a>
+	</div>
 </header>
 <div class="user-container guide-container">
 	<div class="wp">
@@ -21,8 +24,10 @@
 			<!--{subtemplate home/sidebar}-->
 
 			<div class="user-content guide-content boardnav">
+
 				<div id="ct" class="cl{if $_G['forum']['allowside']} ct2{/if}"{if $leftside} style="margin-left:{$_G['leftsidewidth_mwidth']}px"{/if}>
 					<div class="mn">
+						
 						<div class="bm bml pbn">
 							<div class="bm_h cl">
 								<!--{if $view != 'index' && $view != 'my'}-->
@@ -49,13 +54,16 @@
 						<div class="tbbox">
 							<ul class="tb">
 								<!--{if $view == 'my'}-->
-									<li {if ($_GET['type']=="thread")} class="on"{/if} ><a href="forum.php?mod=guide&view=my&type=thread" $orderactives[thread]>{lang forum_threads}</a></li>
+									<li {if ($_GET['type']=="thread" && !$_GET['filter'])} class="on"{/if} ><a href="forum.php?mod=guide&view=my&type=thread" $orderactives[thread]>{lang forum_threads}</a></li>
 									<li {if ($_GET['type']=="reply")} class="on"{/if} ><a href="forum.php?mod=guide&view=my&type=reply" $orderactives[reply]>{lang reply}</a></li>
 									<li {if ($_GET['type']=="postcomment")} class="on"{/if} ><a href="forum.php?mod=guide&view=my&type=postcomment" $orderactives[postcomment]>{lang comments}</a></li>
+									<li {if ($_GET['filter']=="save")} class="on"{/if} ><a href="forum.php?mod=guide&view=my&type=thread&filter=save&fid=0">草稿</a></li>
 								<!--{/if}-->
 							</ul>
-							<div class="m-guide-authortips"><!--{block/1799}--></div>
 						</div>
+						
+						<div class="m-guide-authortips" id="user-guide-authortips"><!--{block/1799}--></div>
+
 						<ul id="thread_types" class="ttp bm cl">
 							<li $currentview['hot']><a href="forum.php?mod=guide&view=hot">{lang guide_hot}</a></li>
 							<li $currentview['digest']><a href="forum.php?mod=guide&view=digest">{lang guide_digest}</a></li>
@@ -102,7 +110,7 @@
 							<div id="threadlist" class="tl bm bmw"{if $_G['uid']} style="position: relative;"{/if}>
 								<div class="th">
 									<table cellspacing="0" cellpadding="0">
-										<tr>
+										<tr class="m-guide-listth">
 											<td>
 												<span class="u-guideitem">
 													<span class="u-title">板块/标题</span>
@@ -175,4 +183,5 @@
 	</div>
 </div>
 <script src="http://js.jx3pve.com/js/user/user.min.js"></script>
+<script src="http://js.jx3pve.com/js/user/guide.min.js"></script>
 <!--{template common/footer}-->

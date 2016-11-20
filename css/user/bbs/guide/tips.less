@@ -1,0 +1,34 @@
+.m-guide-authortips{
+	.pa;.rt(0,0);
+	.fz(13px);
+	a{padding:0 5px;}
+	.color(#888,@yel,@yel);
+	a:hover{text-decoration:underline;}
+}
+
+.ua-mobile,.screen-s{
+ 	.m-guide-authortips{
+ 		.none;
+
+		.pf;.lt(0,@c-header-height);.z(40);
+		.w(100%);
+		box-sizing:border-box;
+		padding:20px;
+		background-color:#fff;
+		span{.none;}
+		a{
+			.db;
+			.fzlh(13px,28px);
+			padding-left:22px;
+			.pr;
+			margin-bottom:10px;
+			color:@blue-link;
+		}
+		a:before {
+			content: '';
+			.db;.pa;.lt(0,7px);
+			.size(15px);
+			background:url('@{url}header/icons2.png') no-repeat -215px -24px;
+		}
+	}
+}
