@@ -1,17 +1,22 @@
-.ua-mobile .default-sidebar{
-	//.db;
-	.pf;.lt(0,@c-header-height);
-	.z(40);
-	.w(100%);
-	padding:10px 0;
-	border-bottom:1px solid #ddd;
-	background-color:#fff;
-	.r(0);
-}
+.ua-mobile,.screen-s{
+	.default-sidebar{
+		//.db;
+		.pf;.lt(0,@c-header-height);
+		.z(40);
+		.w(100%);
+		padding:10px 0;
+		border-bottom:1px solid #ddd;
+		background-color:#fff;
+		.r(0);
+	}
+} 
 
 .pg_forumdisplay .i-header{
 	.z(40);
 }
-.alertHTML.ua-mobile .default-sidebar{
-	top:@c-header-height + @c-alert-height;
+.alertHTML.ua-mobile, .alertHTML .screen-s{
+	.default-sidebar{
+		top:@c-header-height + @c-alert-height;
+	}
 }
+

@@ -1,0 +1,125 @@
+.m-faq-content{
+
+	.mt{
+		.none;
+	}
+
+	h1{
+		background-color:#f2f2f2;border-radius:24px;
+		padding:0 10px;
+	}
+
+	.m-faq-cattitle{
+		.bold;
+		border-bottom:1px dotted #ddd;
+		a{color:@blue-link;}
+	}
+
+	.m-faq-list{
+		border-bottom:none;margin-bottom:10px;
+		li{line-height:20px;list-style:square;}
+	}
+
+	//折叠的详情
+	.umh{
+		h3{font-size:13px;color:@blue-link;.bold;}
+		&.umn{
+			h3{color:#555;font-weight:normal;}
+		}
+	}
+	//虚线
+	.umn{
+		background-position:0 center;
+	}
+	//展开
+	.umh h3{
+		background-position:right 8px;
+	}
+	//折叠
+	.umh.umn h3{
+		background-position:right -32px;
+	}
+	.umh_act{
+		.fz(12px,26px);
+	}
+	//展开的详情
+	.um{
+		//transition:0.3s ease-in;
+		border:1px dotted #ddd;padding:10px;
+		background:#f7f7f7;
+
+		a{
+			.color(@blue-link,@blue-link);
+			&:hover{
+				text-decoration:underline;
+			}
+		}
+
+		b{
+			.bold;
+		}
+
+		strong{
+			color:#cc0000;
+			.bold;
+		}
+
+		img{
+			max-width:100%;
+			.db;
+			padding:5px;
+			border:1px solid #ddd;
+			background-color:#fff;
+		}
+
+		table{
+			min-width:80%;
+			max-width:100%;
+			margin:5px auto;
+		}
+
+		table td,table th{
+			padding:2px 5px;
+			border:1px solid #ddd;
+		}
+
+		table th{
+			background-color:#fafafa;
+			.bold;
+		}
+
+		table tr:nth-child(2n){
+			background-color:@blue-bg;
+		}
+		table tr:nth-child(2n+1){
+			background-color:#fff;
+		}
+
+		code{
+			font-family:Consolas,'微软雅黑';
+			.fz(12px,2);
+			.db;
+			background-color:#fff;
+			border:1px solid #ddd;
+			border-radius:3px;
+			margin:5px 0;
+			padding:5px;
+		}
+
+	}
+}
+.ua-mobile,.screen-s{
+	.m-faq-content .um{
+		overflow-x:auto;
+	}
+}
+
+.m-faq-details{
+	line-height:2.4;
+}
+.m-faq-help{
+	border-top:1px dashed #999;
+	.x(right);
+	margin-top:5px;padding-top:5px;
+	.fz(12px,24px);
+}

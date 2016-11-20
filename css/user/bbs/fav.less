@@ -2,32 +2,50 @@
 @import url('../../global/color.less');	//配色
 @import url('../../global/var.less');		//尺寸
 
-.user-bbs-fav-title{
-	img{margin-top:-3px;}
-	margin-bottom:10px;
-}
-
-#favorite_ul li .y{
-	.color(#555,@blue-link);
-}
-
-.quote{
-	color:#999;
-}
-
-.mt{
-	border-bottom:none !important;
-	margin-bottom:0;
-}
-
-.ua-responsive .screen-s{
-	#favorite_ul li{
-		padding:0 10px;
+.user-fav{
+	.quote{
+		color:#999;
 	}
-	#favorite_ul li .y{
-		margin-left:40px;
+
+	.mt{
+		border-bottom:none !important;
+		margin-bottom:0;
 	}
-	.mtm.pns{
+	.pns label{
+		margin-right:10px;
+	}
+}
+.user-fav-list li{
+	.y{
+		.color(#888,#c00);
+	}
+	.t{
+		.pr;top:2px;
+	}
+}
+
+.ua-mobile,.screen-s{
+
+	.user-fav-nav{
+		li:nth-child(3),li:nth-child(4),li:nth-child(6){
+			.none;
+		}
+	}
+
+	.user-fav-list li{
+		.pr;
+		.xg1,.y{
+			font-size:13px;
+		}
+		.xg1{
+			.db;
+		}
+		.y{
+			.pa;.rb(0,10px);
+		}
+	}
+
+	form{
 		padding:0 10px;
 	}
 }

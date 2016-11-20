@@ -1,0 +1,30 @@
+.faq-container{
+	min-height:400px;
+	padding-top:20px;
+}
+.ua-mobile,.screen-s{
+	.faq-container{
+		min-height:auto;
+	}
+}
+
+.m-faq-main{
+	.clearfix;
+}
+
+.m-faq-sidebar{
+	.w(120px);.fl;
+	padding:5px 10px;
+}
+.m-faq-content{
+	.fr;
+	.w(@wpm - 120px - 10px*2);
+}
+
+.ua-mobile,.screen-s{
+	.m-faq-content{
+		.w(auto);
+		float:none;
+		margin-top:20px;
+	}
+}

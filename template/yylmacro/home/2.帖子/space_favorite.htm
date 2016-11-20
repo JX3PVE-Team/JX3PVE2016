@@ -17,13 +17,13 @@
 
 		<div class="user-main">
 			<!--{subtemplate home/sidebar}-->
-			<div class="user-content">
+			<div class="user-content user-fav">
 
 				<div id="ct" class="ct2_a cl">
 					<div class="mn">
 						<!--[diy=diycontenttop]--><div id="diycontenttop" class="area"></div><!--[/diy]-->
 						<div class="bm bw0">
-							<h1 class="mt bbs user-bbs-fav-title">
+							<h1 class="mt bbs">
 								<img alt="favorite" src="{STATICURL}image/feed/favorite.gif" class="vm" />
 								<!--{if $_GET[type] == "thread"}-->{lang favorite_thread}
 								<!--{elseif $_GET[type] == "forum"}-->{lang favorite_forum}
@@ -51,7 +51,7 @@
 								<form method="post" autocomplete="off" name="delform" id="delform" action="home.php?mod=spacecp&ac=favorite&op=delete&type=$_GET[type]&checkall=1" onsubmit="showDialog('{lang del_select_favorite_confirm}', 'confirm', '', '$(\'delform\').submit();'); return false;">
 								<input type="hidden" name="formhash" value="{FORMHASH}" />
 								<input type="hidden" name="delfavorite" value="true" />
-								<ul id="favorite_ul" class="">
+								<ul id="favorite_ul" class="user-fav-list">
 									<!--{loop $list $k $value}-->
 									<li id="fav_$k" class="bbda ptm pbm">
 										<a class="y" id="a_delete_$k" href="home.php?mod=spacecp&ac=favorite&op=delete&favid=$k" onclick="showWindow(this.id, this.href, 'get', 0);">{lang delete}</a>
@@ -70,7 +70,7 @@
 									<label for="chkall" onclick="checkall(this.form, 'favorite')"><input type="checkbox" name="chkall" id="chkall" class="pc vm" />{lang select_all}</label>
 									<button type="submit" name="delsubmit" value="true" class="pn vm"><em>{lang del_favorite}</em></button>
 									<!--{if $_GET[type] == "thread"}-->
-										<button type="button" name="collectionsubmit" value="true" class="pnc vm" onclick="collection_favorite()"><em>{lang collection_favorite}</em></button>
+										<button type="button" name="collectionsubmit" value="true" class="pnc vm none" onclick="collection_favorite()"><em>{lang collection_favorite}</em></button>
 									<!--{/if}-->
 								</p>
 								</form>
