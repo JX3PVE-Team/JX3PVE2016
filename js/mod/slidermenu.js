@@ -4,11 +4,12 @@ jQuery(function($){
 		$(".i-header-slidermenu").slideToggle();
 		toggleMask();
 
-		$(this).parent('.i-header').css('z-index','40');
+		$(".i-header").toggleClass('.i-header-fix');
 	})
 
 	$("#u-mask").on('click',function(){
 		$(".i-header-slidermenu").slideToggle();
+		toggleMask();
 	})
 
 });  

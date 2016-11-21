@@ -27,9 +27,11 @@ body{
 	    min-width:1000px;
 	}
 	//手机
-	.ua-responsive body.screen-s{
-		padding-bottom:@c-footer-height;
-		min-width:320px;
+	.ua-mobile{
+		body{
+			padding-bottom:@c-footer-height;
+			min-width:320px;
+		}
 	}
 
 
@@ -50,9 +52,11 @@ body{
 
 	}
 	//平板竖屏&手机版
-	.ua-responsive .screen-s .wp{
-		.w(auto);
-		padding:0 10px;
+	.ua-mobile,.screen-s{
+		.wp{
+			.w(auto);
+			//padding:0 10px;
+		}
 	}
 	//固定为1180px的老页面
 	.ua-oldpc body{
