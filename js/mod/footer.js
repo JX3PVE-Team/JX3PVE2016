@@ -21,15 +21,4 @@ jQuery(function($){
         $('html').addClass('alertHTML');
     }
 
-    //个人中心on 移动底部&个人中心侧边栏
-    var url = window.location.href
-    var home = 'http://www.jx3pve.com/home.php'
-    if(url.indexOf('home.php') !=-1){
-        $('.i-footer .u-os').addClass('on')
-    }
-    if(url == home){
-        $('#user-os-sidebar-index').addClass('on')
-    }
-    
-
 })
