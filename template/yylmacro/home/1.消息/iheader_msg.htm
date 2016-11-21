@@ -1,10 +1,14 @@
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/user.css" type="text/css" />
 <link rel="stylesheet" href="http://css.jx3pve.com/css/user/msg/msg.css" type="text/css" />
 <header class="i-header">
-	<a class="i-header-back" href="./home.php"><i></i></a>
-	<div class="i-header-title">消息</div>
+	<ul class="i-header-tab" id="user-msg-tab">
+		<li {if ($_GET['do']=="pm" && $_GET['subop']!="setting")} class="on" {/if}><a href="home.php?mod=space&do=pm">消息</a></li>
+		<li {if ($_GET['do']=="notice")} class="on" {/if}><a href="home.php?mod=space&do=notice">通知</a></li>
+	</ul>
+	<div class="i-header-nav">
+		<a class="u-msg {if ($_GET['ac']=='pm')} on {/if}" href="home.php?mod=spacecp&ac=pm"><i></i><span>消息</span></a>
+	</div>
 	<div class="i-header-menu">
-		<a class="u-msg" href="home.php?mod=spacecp&ac=pm"><i></i><span>发消息</span></a>
-		<a class="u-all" id="i-header-panel-tg" href="javascript:;"><span>更多</span></a>
+		<a class="u-setting {if ($_GET['subop']=='setting')} on {/if}" href="home.php?mod=space&do=pm&subop=setting"><i></i><span>设置</span></a>
 	</div>
 </header>

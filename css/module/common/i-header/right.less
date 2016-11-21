@@ -45,18 +45,6 @@
 		}
 	}
 
-	
-	//发消息
-	.u-msg{
-		.fl;
-		padding:4px;
-		i{
-			.db;.size(40px);
-			background:~"url('@{url}header/mobile/msg.svg') no-repeat 0 0 / auto 100%";
-		}
-		span{.none;}
-	}
-
 	//发布（列表页）
 	.u-post{
 		.fl;
@@ -77,6 +65,9 @@
 			background:~"url('@{url}header/mobile/setting.svg') no-repeat 0 0 / auto 100%";
 		}
 		span{.none;}
+		&.on i{
+			background-image:url('@{url}header/mobile/setting-blue.svg');
+		}
 	}
 
 	//新版更多
@@ -90,23 +81,4 @@
 		span{.none;}
 	}
 
-}
-.i-header-back{
-	.pa;.lt(0,0);
-	padding:0 20px;
-
-	i{
-		.dbi;
-		border: 2px solid @iheadericonbg;
-		border-width: 2px 0 0 2px;
-		width: 10px;
-		height: 10px;
-		margin: 0 0 -2px 0;
-		transform: scale(1) rotate(-50deg) skew(-10deg) translateZ(0);
-	}
-	span{
-		.fz(1rem);.bold;
-		padding-left:10px;
-		//.none;
-	}
 }
