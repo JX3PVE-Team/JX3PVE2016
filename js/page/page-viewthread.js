@@ -16,18 +16,6 @@ jQuery(function($){
 			$mask.fadeIn()
 		})
 
-		//主楼panel弹层菜单特殊处理
-		var $panel = $("#i-header-panel"),
-			$panel_tg = $("#i-header-panel-tg"),
-			$panel_close = $("#i-header-panel-cancel")
-		$panel_tg.on('click',function(e){
-			$mask.fadeIn()
-			$panel.removeClass('folder').addClass('active')
-		})
-		$panel_close.on('click',function(e){
-			$mask.fadeOut()
-			$panel.addClass('folder').removeClass('active')
-		})
 
 		//副楼panel扩展菜单
 		$(".c-fli-header .u-more").on('click',function(){

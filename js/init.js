@@ -46,24 +46,22 @@ jQuery(function($){
     }
 
 	//开关遮罩层
-	window.MASK_STATUS = false;
-	window.showMask =function(){
+	window.toggleMask = function(){
+		$mask.fadeToggle();
+		$html.toggleClass('.isfixed')
+	}
+	window.showMask = function(){
 		$mask.fadeIn()
 		$html.addClass('isfixed')
-		MASK_STATUS = true;
 	}
 	window.hideMask = function(){
 		$mask.fadeOut()
 		$html.removeClass('isfixed')
-		MASK_STATUS = false;
 	}
-	window.toggleMask = function(){
-		if(!MASK_STATUS){
-			showMask()
-		}else{
-			hideMask()
-		}
-	}
+	$mask.on('click',function(){
+		toggleMask();
+	})
+
 
 	//自适应界面布局 当内容区小于窗口高度时，设置内容包裹区高度最小高度让全部内容满屏
 	var win_H = $win.height()
