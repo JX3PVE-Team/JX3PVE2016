@@ -1,7 +1,7 @@
 <!--{if $space[uid]}-->
 <div class="wp">
 	<div id="uhd">
-		<!--{if CURMODULE == 'follow'}-->
+		<!--{if CURMODULE == 'follow' && !$_G['mobile']}-->
 			<!--{subtemplate home/follow_user_header}-->
 		<!--{elseif !$space[self]}-->
 		<div class="mn">

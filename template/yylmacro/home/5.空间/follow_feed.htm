@@ -1,9 +1,10 @@
 <!--{if $do == 'feed'}-->
 	<!--{template common/header_m}-->
-	<!--{subtemplate home/iheader_space}-->
-	<div class="user-container">
+	<div class="user-container user-space-feed">
+		
+		<!--{subtemplate home/iheader_space}-->
 		<div class="wp">
-
+			<!-- 我的收听 -->
 			<div id="pt" class="bm cl">
 				<div class="z">
 					<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
@@ -46,6 +47,7 @@
 	<!--{else}-->
 		<!--{template common/header_m}-->
 		<!--{subtemplate home/iheader_space}-->
+		<!-- 个人空间广播 -->
 		<div class="wp">
 			<div id="pt" class="bm cl">
 				<div class="z">
