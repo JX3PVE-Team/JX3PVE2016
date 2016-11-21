@@ -7,7 +7,8 @@ H.load([
 	{'copycode':head_conf.CDNROOT+'widget/copycode.min.js'},
 	{'clipboard':head_conf.CDNROOT+'plugin/clipboard.js'},
 	{'getRequest':head_conf.CDNROOT+'plugin/getRequest.min.js'},
-	{'dialog':head_conf.CDNROOT+'mod/dialog.min.js'}
+	{'dialog':head_conf.CDNROOT+'mod/dialog.min.js'},
+	{'slidermenu':head_conf.CDNROOT+'mod/slidermenu.min.js'}
 ]);
 
 //移动端全局变量&&函数，事件触发仅限于移动端且新版适配时

@@ -1,0 +1,36 @@
+.i-header-back{
+	.pa;.lt(0,0);
+	padding:0 20px;
+
+	i{
+		.dbi;
+		border: 2px solid @iheadericonbg;
+		border-width: 2px 0 0 2px;
+		width: 10px;
+		height: 10px;
+		margin: 0 0 -2px 0;
+		transform: scale(1) rotate(-50deg) skew(-10deg) translateZ(0);
+	}
+	span{
+		.fz(1rem);.bold;
+		padding-left:10px;
+		//.none;
+	}
+}
+.i-header-nav{
+	.pa;.lt(0,0);
+
+	//发消息
+	.u-msg{
+		.fl;
+		padding:3px 10px;
+		i{
+			.db;.size(40px);
+			background:~"url('@{url}header/mobile/msg.svg') no-repeat 0 0 / auto 100%";
+		}
+		span{.none;}
+		&.on i{
+			background-image:url('@{url}header/mobile/msg-blue.svg');
+		}
+	}
+}

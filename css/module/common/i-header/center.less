@@ -1,0 +1,30 @@
+.i-header-title{
+	.x;//.bold;
+}
+.i-header-tab{
+	.x;
+	margin-top:(@c-header-height - 26px)/2;
+
+	font-size:0;
+	
+	li{
+		.dbi;.y(top);
+		border:1px solid @iheadericonbg;
+
+		&:first-child{
+			.r(3px 0 0 3px);
+		}
+		&:last-child{
+			.r(0 3px 3px 0);
+			border-left:none;
+		}
+		.fzlh(1rem,26px);
+		&.on{
+			background-color:@basecolor;
+		}
+	}
+	a{
+		.db;
+		padding:0 10px;
+	}
+}

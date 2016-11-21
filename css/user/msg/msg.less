@@ -3,154 +3,43 @@
 @import url('../../global/color.less');		//配色
 @import url('../../module/ui/button.less');
 
-.m-msg-nav{
-	.pr;
-}
-.user-msg-sendbutton{
-	&:extend(.u-btn-blue);
-	padding:0 10px;
-	.pa;.rt(0,-2px);
-	.lh(28px);
-}
-.ua-responsive .screen-s{
-	.m-msg-nav{.none;}
-	.user-msg-sendbutton{.none;}
-}
+@import url('nav.less');
+@import url('list.less');
+@import url('setting.less');
+@import url('post.less');
 
-.m-msg-list{}
-
-.ua-responsive .screen-s .m-msg-list{
-	padding:0 10px;
-}
-
-.pm_o{
-	.fz(13px,2);color:#888;
-	.o{
-		.db;.fl;padding-left:22px;padding-right:5px;
-		background:url('@{url}user/settings.svg') no-repeat 4px 4px;
-		background-size:auto 60%;
-	}
-}
-
-.m-msg-list-item{
-
-	.m-msg-list-item-check{
-		.fr;
-		*{.pointer;}
-	}
-
-	.pm_c{
-	}
-
-	.pm_o{
-		.db;
-		.xg1.z{
-			margin-right:5px;
-		}
-	}
-}
-
-.ua-responsive .screen-s{
-	.m-msg-list-item .pm_o{
-		float:none;
-	}
-
-	#pm_ul .pm_o{
-		float:right;
-	}
-}
-
-//发送消息页面
-.pmform #showSelectBox{
-	.none;
-}
-
-
-
-/*.pm_op_r{padding-right:0;}
-.pm_op_r .xw1{font-weight:normal;}
-.pml .hover{background-color:#f9f9f9;}
-#showSelectBox{.none;}*/
-
-.ua-responsive .screen-s {
-
-	//pm
-	.nts{
-		padding:0 10px;
-	}
-
-	//短消息总数导出
-	.pm_op_r{
+.ua-mobile,.screen-s{
+	.i-header-tab{
 		padding-left:5px;
-		.xw1 a{.none;}
 	}
-
-	//短消息设置
-	.tfm th{
-		.w(auto);
-	}
-	#pmsettingform{
-		padding:0 10px;
-	}
-
-	//发送短消息
-	.tedt .pt{
-		.w(100%);
-	}
-	.m-sendpm{
-		padding:0 10px;
-	}
-	.pmform .tedt{
-		.w(auto);
-	}
-	.pmform .un_selector input{
-		.w(auto);
-	}
-
 	//翻页
 	.w-pages{
 		padding:0 5px;
 	}
 	.pgs{
 		padding:0 5px;
-		a{margin-bottom:5px;}
+		a,label,strong{margin-bottom:5px;}
+	}
+	.w-pages-list,.pgs{
+		float:none;
+		.pg{
+			float:none;
+			.clearfix;
+		}
 	}
 
+	.i-footer .u-os{
+		i{background-image:url('@{url}footer/os.svg');}
+		span{color:#aaa;}
+	}
 
-	
-
-	/*
-
-	.pm_c{
-		padding-left:0;
-		.pr;
-	}
-	.pml{
-		padding:5px 10px;
-	}
-	
-	.ntc_body .lit{
-		.color(@blue-link);
-	}
-	#pmsettingform{
-		padding:0 10px;
-		#ignorelist{.w(auto);}
-	}
-	.pmform .px,.pmform .tedt{
-		.w(100%);
-		box-sizing:border-box;
-	}
-	.m-sendpm{
-		.table(block);
-		padding:0 10px;
+	.i-footer .u-msg{
+		i{background-image:url('@{url}footer/msg2.svg');}
+		span{color:@blue-dark;}
 	}
 	
-
-	.tb .y{
-		.none;
-	}
-
-	*/
 }
+
+
 
 

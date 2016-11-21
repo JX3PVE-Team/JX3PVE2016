@@ -1,0 +1,40 @@
+.m-msg-nav{
+	.pr;
+}
+.user-msg-sendbutton{
+	&:extend(.u-btn-blue);
+	padding:0 10px;
+	.pa;.rt(0,0);
+	.lh(26px);
+}
+.ua-mobile,.screen-s{
+	.user-msg-pm{
+		.m-msg-nav{
+			.w(100%);overflow:hidden;
+			li{
+				.none;
+			}
+			li:first-child,li:nth-child(2){
+				.db;
+			}
+		}
+		.subtb{
+			.none;
+		}
+		.user-msg-sendbutton{
+			.rt(6px,9px);
+
+			.none;
+		}
+	}
+	.user-msg-notice{
+		.m-msg-nav{
+			li:first-child,li:nth-child(2){
+				.none;
+			}
+		}
+		.user-msg-sendbutton{
+			.none;
+		}
+	}
+}
