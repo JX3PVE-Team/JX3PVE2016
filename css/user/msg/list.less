@@ -1,26 +1,33 @@
 .m-msg-list{
 	
 }
-
 .pm_op_r{
 	padding-right:0;
 }
 
 .pm_o{
 	.fz(13px,2);
+	.w(auto);
 	.color(#999,#999,#c00) !important;
 	.o{
-		.db;.fl;padding-left:22px;padding-right:5px;
-		background:url('@{url}user/settings.svg') no-repeat 4px 5px;
-		background-size:auto 60%;
+	    overflow: hidden;
+	    float: right;
+	    margin-left: 10px;
+	    width: 16px;
+	    height: 16px;
+	    text-indent: 20px;
+	    background: url(http://img.jx3pve.com/static/image/common//op.png) no-repeat 0 -120px;
 	}
 	.db;
 	.xg1.z{
 		margin-right:5px;
 	}
 }
-
 .m-msg-list-item{
+
+	&.hover{
+		background-color:#fafafa;
+	}
 
 	.m-msg-list-item-check{
 		.fr;
@@ -28,6 +35,7 @@
 	}
 
 	.pm_c{
+		padding-left:0;
 	}
 
 }
@@ -35,18 +43,25 @@
 .ua-mobile,.screen-s{
 	.m-msg-list{
 	}
-	.m-msg-list-item .pm_c{
+	.m-msg-list-item{
 	}
-	.m-msg-list-item .pm_o{
-		float:none;
-	}
-	.m-msg-list-item .ptm{
-		.xg1{font-size:13px;}
-	}
-	#pm_ul .pm_o{
+	.m-msg-list-item-check{
 		float:right;
+		margin:0;
 	}
-
+	.pm_c{
+		padding-left:0;
+		color:#666;
+	}
+	.pm_o{
+		//float:none;
+	}
+	
+	.xg1{
+		font-size:13px;
+	}
+	
+	
 	//pm
 	.nts{
 		padding:0 10px;
@@ -69,10 +84,10 @@
 }
 
 .ua-mobile,.screen-s{
-	body{
-		background-color:#fafafa;
-	}
 	.m-msg-list{
+		background-color:#fafafa;
+		margin:0 !important;
+		padding:10px 0;
 	}
 	.m-msg-list-item{
 		background-color:#fff;
