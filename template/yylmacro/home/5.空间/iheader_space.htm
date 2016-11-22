@@ -2,6 +2,6 @@
 	<a class="i-header-back" href="javascript:;" onclick="history.go(-1)"><i></i></a>
 	<div class="i-header-title">空间</div>
 	<div class="i-header-menu">
-		<!--{if !$space[self]}--><a class="u-more" id="i-header-panel-tg" href="javascript:;"><i></i><span>更多</span></a><!--{/if}-->
+		<!--{if (!$space[self] && $_GET['mod']!="follow")}--><a class="u-more" id="i-header-panel-tg" href="javascript:;"><i></i><span>更多</span></a><!--{/if}-->
 	</div>
 </header>
