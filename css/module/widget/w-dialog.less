@@ -42,73 +42,78 @@
 		max-height:600px;
 	}
 }*/
-.ua-responsive .screen-s .fwinmask{
+.ua-mobile,.screen-s{
+	.fwinmask{
 
-	max-width:100%;
-	max-height:100%;
+		max-width:100%;
+		max-height:100%;
 
-	.w(100%) !important;
-	box-sizing:border-box;
-
-	.fwin{
-		.w(100%);
-		box-sizing:border-box;
-	}
-
-	//表格内容区
-	.m_c{
-		.y(top);
-	}
-	form{
-
-	}
-	//操作内容区
-	.f_c{
-
-	}
-	//操作条
-	/*.o{
-		background:none;
-		border:none;
-		position: absolute;
-		bottom: 16px;
-		right: 8px;
-		width: 100%;
-		//width: ~"calc(100% - 38px)";
-	}*/
-
-	.f_c .list{
 		.w(100%) !important;
-	}
+		box-sizing:border-box;
 
+		.fwin{
+			.w(100%);
+			box-sizing:border-box;
+		}
+
+		//表格内容区
+		.m_c{
+			.y(top);
+		}
+		form{
+
+		}
+		//操作内容区
+		.f_c{
+
+		}
+		//操作条
+		/*.o{
+			background:none;
+			border:none;
+			position: absolute;
+			bottom: 16px;
+			right: 8px;
+			width: 100%;
+			//width: ~"calc(100% - 38px)";
+		}*/
+
+		.f_c .list{
+			.w(100%) !important;
+		}
+	}
 }
 
 //文字类弹层提示
-.ua-responsive .screen-s .fwinmask{
-	.altw{
-		.w(100%);
-		box-sizing:border-box;
-	}
-	.tedt{
-		.w(auto);
-	}
-}
-
-.ua-responsive .screen-s #fwin_sendpm{
-	.pm{
-		.w(auto);
-	}
-	.pmb{
-		.w(auto);
-		.h(180px);
-	}
-	.pm_tac{
-		a{.none;}
-		.y{.db;}
+.ua-mobile,.screen-s{
+	.fwinmask{
+		.altw{
+			.w(100%);
+			box-sizing:border-box;
+		}
+		.tedt{
+			.w(auto);
+		}
 	}
 }
 
-.ua-responsive .screen-s{
+.ua-mobile,.screen-s{
+	#fwin_sendpm{
+		.pm{
+			.w(auto);
+		}
+		.pmb{
+			.w(auto);
+			.h(180px);
+		}
+		.pm_tac{
+			a{.none;}
+			.y{.db;}
+		}
+	}
+} 
+
+.ua-mobile,.screen-s{
 	#fwin_reply,#fwin_login{
 		top:0 !important;
 		max-width:100%;
@@ -117,5 +122,13 @@
 		.m-login-way{
 			padding:10px;
 		}
+	}
+}
+
+//打卡
+.ua-mobile,.screen-s{
+	.c-daka-window{
+		.w(100%);margin:0;
+		box-sizing:border-box;
 	}
 }

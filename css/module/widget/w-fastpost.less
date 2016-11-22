@@ -46,32 +46,30 @@
 	.w-fastpost-content{margin-left:0;}
 }
 
-.ua-responsive{
-	//ipad
-	.screen-m,.screen-s{
-		.w-fastpost-sidebar{.none;}
-		.w-fastpost-content{margin-left:0;}
+//ipad
+.screen-m,.screen-s{
+	.w-fastpost-sidebar{.none;}
+	.w-fastpost-content{margin-left:0;}
+}
+//mobile
+.ua-mobile,.screen-s{
+	.w-fastpost{
+		.none;
 	}
-	//mobile
-	.screen-s{
-		.w-fastpost{
+	.w-fastpost-button{
+		//按钮附近的移除
+		.y,label{.none;}
+		.pn{
+			.w(100%);
+		}
+	}
+	.w-fastpost-content .bar{
+		//隐藏部分编辑器功能
+		.fpd a.fqt,.fpd a.fcd,.fpd a.fat{
 			.none;
 		}
-		.w-fastpost-button{
-			//按钮附近的移除
-			.y,label{.none;}
-			.pn{
-				.w(100%);
-			}
-		}
-		.w-fastpost-content .bar{
-			//隐藏部分编辑器功能
-			.fpd a.fqt,.fpd a.fcd,.fpd a.fat{
-				.none;
-			}
-		}
-		.w-fastpost-tip .attips{
-			.none;
-		}
+	}
+	.w-fastpost-tip .attips{
+		.none;
 	}
 }
