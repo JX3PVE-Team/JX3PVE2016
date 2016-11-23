@@ -15,6 +15,9 @@
 		border-bottom:1px dashed #ddd;
 		padding-bottom:5px;
 		margin-bottom:5px;
+		.c{
+			color:#666;
+		}
 
 		h2{
 			.default-fontfamily;
@@ -67,6 +70,10 @@
 
 			border-bottom:none;
 			overflow:hidden;
+
+			.c{
+				font-size:13px;
+			}
 		}
 
 		.flw_more{
@@ -188,10 +195,24 @@
 	}
 	.flw_btn_unfo,.flw_btn_fo{
 		.fr;
+		&:extend(.u-btn-blue);
+		padding:0 10px;
+	}
+	.flw_status_2{
+		.fr;margin-left:10px;color:@yel;
 	}
 
 	p{
 		.clear;
+	}
+
+	p.xg1{
+		padding:0 !important;
+	}
+}
+.bm_c{
+	.pg{
+		margin-top:10px;
 	}
 }
 
@@ -201,6 +222,16 @@
 			background-color:#fff;
 			border-bottom:none;
 			margin-bottom:20px;
+			p{
+				font-size:13px;
+			}
+		}
+	}
+	.bm_c{
+		.pg{
+			strong,a,label{
+				margin-bottom:5px;
+			}
 		}
 	}
 }
