@@ -5,9 +5,9 @@
 	<!--{if !$post['authorid']}-->
 		<a class="u-avatar" href="javascript:;" style="cursor:default;"><img src="http://img.jx3pve.com/img/common/anonymous.png" alt="未知剑三玩家"/></a>
 	<!--{elseif $post['authorid'] && $post['username'] && $post['anonymous']}-->
-		<!--{if $_G['forum']['ismoderator']}--><a class="u-avatar" href="home.php?mod=space&uid=$post[authorid]" target="_blank"><!--{avatar($post[authorid],small)}--></a><!--{else}--><a class="u-avatar" href="javascript:;" style="cursor:default;"><img src="http://img.jx3pve.com/img/common/anonymous.png" alt="未知剑三玩家"/></a><!--{/if}-->
+		<!--{if $_G['forum']['ismoderator']}--><a class="u-avatar" href="home.php?mod=space&uid=$post[authorid]&do=profile" target="_blank"><!--{avatar($post[authorid],small)}--></a><!--{else}--><a class="u-avatar" href="javascript:;" style="cursor:default;"><img src="http://img.jx3pve.com/img/common/anonymous.png" alt="未知剑三玩家"/></a><!--{/if}-->
 	<!--{else}-->
-		<a class="u-avatar" href="home.php?mod=space&uid=$post[authorid]" target="_blank" c="1"><!--{avatar($post[authorid],small)}--></a>
+		<a class="u-avatar" href="home.php?mod=space&uid=$post[authorid]&do=profile" target="_blank" c="1"><!--{avatar($post[authorid],small)}--></a>
 	<!--{/if}-->
 	
 

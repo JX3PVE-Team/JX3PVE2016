@@ -1,5 +1,5 @@
-<div class="bm_c u_profile">
-	<div class="pbm mbm bbda cl">
+<div class="m-profile">
+	<div class="pbm mbm bbda cl user-space-profile-block">
 		<h2 class="mbn m-name">
 			{$space[username]}
 			<!--{if $_G['ols'][$space[uid]]}-->
@@ -36,7 +36,7 @@
 			<!--{if $space[customstatus]}--><li class="xg1"><em>{lang permission_basic_status}&nbsp;&nbsp;</em>$space[customstatus]</li><!--{/if}-->
 			<!--{if $space[group][maxsigsize] && $space[sightml]}--><li><em class="xg1">{lang personal_signature}&nbsp;&nbsp;</em><table><tr><td>$space[sightml]</td></tr></table></li><!--{/if}-->
 		</ul>
-		<ul class="cl bbda pbm mbm m-count">
+		<ul class="cl pbm mbm m-count">
 			<li>
 				<em class="xg2">{lang stat_info}</em>
 				<a href="home.php?mod=space&uid=$space[uid]&do=friend&view=me&from=space" target="_blank">{lang friends_num} $space[friends]</a>
@@ -65,24 +65,28 @@
 				<!--{/if}-->
 			</li>
 		</ul>
+	</div>
+	<div class="user-space-profile-block">
 		<!--{if CURMODULE == 'space'}-->
 			<!--{hook/space_profile_baseinfo_middle}-->
 		<!--{elseif CURMODULE == 'follow'}-->
 			<!--{hook/follow_profile_baseinfo_middle}-->
 		<!--{/if}-->
+
 		<ul class="pf_l cl m-custom">
 			<!--{loop $profiles $value}-->
 			<li><em>$value[title]</em>$value[value]</li>
 			<!--{/loop}-->
 		</ul>
+
+		<!--{if CURMODULE == 'space'}-->
+			<!--{hook/space_profile_baseinfo_bottom}-->
+		<!--{elseif CURMODULE == 'follow'}-->
+			<!--{hook/follow_profile_baseinfo_bottom}-->
+		<!--{/if}-->
 	</div>
-	<!--{if CURMODULE == 'space'}-->
-		<!--{hook/space_profile_baseinfo_bottom}-->
-	<!--{elseif CURMODULE == 'follow'}-->
-		<!--{hook/follow_profile_baseinfo_bottom}-->
-	<!--{/if}-->
 	<!--{if $space['medals']}-->
-		<div class="pbm mbm bbda cl m-medal">
+		<div class="pbm mbm bbda cl m-medal user-space-profile-block">
 			<h2 class="mbn">{lang medals}</h2>
 			<p class="md_ctrl">
 				<a href="home.php?mod=medal">
@@ -107,7 +111,7 @@
 		<!--{loop $_G['setting']['verify'] $vid $verify}-->
 			<!--{if $verify['available']}-->
 				<!--{if $showverify}-->
-				<div class="pbm mbm bbda cl m-verif">
+				<div class="pbm mbm bbda cl m-verif user-space-profile-block">
 				<h2 class="mbn">{lang profile_verify}</h2>
 				<!--{eval $showverify = false;}-->
 				<!--{/if}-->
@@ -123,7 +127,7 @@
 		<!--{if !$showverify}--></div><!--{/if}-->
 	<!--{/if}-->
 	<!--{if $count}-->
-		<div class="pbm mbm bbda cl m-admin">
+		<div class="pbm mbm bbda cl m-admin user-space-profile-block">
 			<h2 class="mbn">{lang manage_forums}</h2>
 			<!--{loop $manage_forum $key $value}-->
 			<a href="forum.php?mod=forumdisplay&fid=$key" target="_blank">$value</a> &nbsp;
@@ -131,14 +135,14 @@
 		</div>
 	<!--{/if}-->
 	<!--{if $groupcount}-->
-		<div class="pbm mbm bbda cl m-group">
+		<div class="pbm mbm bbda cl m-group user-space-profile-block">
 			<h2 class="mbn">{lang joined_group}</h2>
 			<!--{loop $usergrouplist $key $value}-->
 			<a href="forum.php?mod=group&fid={$value['fid']}" target="_blank">$value['name']</a> &nbsp;
 			<!--{/loop}-->
 		</div>
 	<!--{/if}-->
-	<div class="pbm mbm bbda cl m-status">
+	<div class="pbm mbm bbda cl m-status user-space-profile-block">
 		<h2 class="mbn">{lang active_profile}</h2>
 		<ul>
 			<!--{if $space[adminid]}--><li><em class="xg1">{lang management_team}&nbsp;&nbsp;</em><span style="color:{$space[admingroup][color]}"><a href="home.php?mod=spacecp&ac=usergroup&gid=$space[adminid]" target="_blank">{$space[admingroup][grouptitle]}</a></span> {$space[admingroup][icon]}</li><!--{/if}-->
@@ -162,7 +166,7 @@
 			</li>
 		</ul>
 	</div>
-	<div id="psts" class="{if $clist}pbm mbm bbda {/if}cl">
+	<div id="psts" class="{if $clist}pbm mbm bbda {/if}cl user-space-profile-block">
 		<h2 class="mbn">{lang stat_info}</h2>
 		<ul class="pf_l">
 			<li><em>{lang used_space}</em>$space[attachsize]</li>
@@ -181,7 +185,7 @@
 		</ul>
 	</div>
 	<!--{if $clist}-->
-	<div class="cl m-warning">
+	<div class="cl m-warning user-space-profile-block">
 		<h2 class="mbm">{lang crime_record}</h2>
 		<table id="pcr" class="dt">
 			<tr>

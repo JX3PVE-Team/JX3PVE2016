@@ -1,0 +1,99 @@
+//公共头部
+#uhd{
+	background-color:#fafafa;
+	border:1px solid #eee;
+	border-bottom:none;
+}
+
+#uhd .tb {
+	margin-top:10px;
+	border-bottom:none;
+
+	li{
+		margin-right:10px;
+	}
+
+	a{
+		border-top:none;
+		border-bottom:none;
+		background-color:#f5f5f5;
+	}
+
+	.a a{
+		background-color:@blue-bg;
+		border:1px solid #eee;
+		color:@blue-link;
+	}
+}
+
+.ua-mobile,.screen-s {
+	#uhd{
+		border:none;
+		border-bottom:1px solid #eee;
+		background-color: #fff;
+		
+		.w(auto);
+		.pr;
+
+		.h{
+			padding:0;
+		}
+
+		//头像
+		.avt{
+			margin:0;.db;
+			float:none;
+			a{
+				.db;
+				img{
+					.db;.auto(x);
+					.r(48px);
+				}
+			}
+		}
+
+		//名字
+		.mt{
+			padding:0;
+			.x;
+			font-size:1.1rem;
+		}
+		//地址
+		p{.none;}
+		
+		//关注更多
+		.mn a{
+			padding:0;
+		}
+
+		//主菜单
+		.tb{
+			.w(100%) !important;
+			overflow:hidden;
+		}
+		
+		.tb{
+			padding-left:0 !important;
+			.x;
+		}
+		.tb .a a{
+			border:none;
+		}
+		/*.tb a{
+			.pr;
+			&:after{
+				.pa;.lb(0,0);
+			}
+		}*/
+		.tb li{
+			.none;
+			&:nth-child(3),&:nth-child(4){
+				.dbi;
+				float:none;
+			}
+			&:nth-child(4){
+				margin-right:0;
+			}
+		}
+	}
+}

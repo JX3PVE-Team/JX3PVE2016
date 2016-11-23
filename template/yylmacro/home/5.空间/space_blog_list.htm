@@ -88,9 +88,9 @@
 			<!--[diy=diycontenttop]--><div id="diycontenttop" class="area"></div><!--[/diy]-->
 		<!--{/if}-->
 <!--{/if}-->
-			<div class="tbmu cl">
+			<div class="tbmu cl m-space-bloglist-panel">
 				<!--{if helper_access::check_module('blog') && $space[self] && (($diymode && !$_G[setting][homepagestyle]) || (!$diymode && !$_G[setting][homestyle]))}-->
-					<a href="home.php?mod=spacecp&ac=blog" class="y pn pnc"><strong>{lang post_new_blog}</strong></a>
+					<a href="home.php?mod=spacecp&ac=blog" class="y pn pnc m-space-bloglist-post"><strong>{lang post_new_blog}</strong></a>
 				<!--{/if}-->
 
 				<!--{if $_GET[view] == 'all'}-->
@@ -132,7 +132,7 @@
 			<!--{/if}-->
 
 		<!--{if $count}-->
-			<div class="xld {if empty($diymode)}xlda{/if}">
+			<div class="xld {if empty($diymode)}xlda{/if} m-space-bloglist">
 			<!--{loop $list $k $value}-->
 				<dl class="bbda">
 					<!--{if empty($diymode)}-->

@@ -11,7 +11,7 @@
 .adminHTML .w-adminbar{
 	.db;
 }
-.ua-responsive .screen-s{
+.ua-mobile,.screen-s{
 	.w-adminbar{
 		.none;
 	}
@@ -20,18 +20,22 @@
 .u-adminbar{
 	.none;
 }
-.ua-responsive.adminHTML .screen-s .u-adminbar{
-	.db;
+.ua-mobile.adminHTML,.adminHTML .screen-s{
+	.u-adminbar{
+		.db;
+	}
 }
 
 .w-adminbar-close{
 	.none;
 }
-.ua-responsive .screen-s .w-adminbar-close{
-	.db;
+.ua-mobile,.screen-s{
+	.w-adminbar-close{
+		.db;
+	}
 }
 
-.ua-responsive .screen-s{
+.ua-mobile,.screen-s{
 	.w-adminbar{
 		.pf;.lt(0,@c-header-height);.z(100);
 	    margin: 40px 20px 20px 20px;

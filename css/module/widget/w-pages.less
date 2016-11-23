@@ -53,7 +53,9 @@
 	border-bottom:none !important;
 }
 .viewpage-container .w-pages-top{.none;}
-.ua-responsive .screen-s .w-pages-top{.none;}
+.ua-mobile,.screen-s{
+	.w-pages-top{.none;}
+}
 
 
 //底部翻页
@@ -61,7 +63,7 @@
 	margin-bottom:10px;
 }
 
-.ua-responsive .screen-s{
+.ua-mobile,.screen-s{
 	.w-pages-bottom .u-btn-publish{
 		.w(100%);
 		margin-bottom:10px;

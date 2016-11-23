@@ -6,7 +6,7 @@
 <!--{if $diymode}-->
 	<!--{if $_G[setting][homepagestyle]}-->
 		<!--{subtemplate home/space_header}-->
-		<div id="ct" class="ct2 wp cl">
+		<div id="ct" class="ct2 wp cl user-space-thread">
 			<div class="mn">
 				<div class="bm">
 					<div class="bm_h">
@@ -36,7 +36,7 @@
 			</div>
 		</div>
 		<!--{template home/space_menu}-->
-		<div id="ct" class="ct1 wp cl">
+		<div id="ct" class="ct1 wp cl user-space-thread">
 			<div class="mn">
 				<!--[diy=diycontenttop]--><div id="diycontenttop" class="area"></div><!--[/diy]-->
 				<div class="bm bw0">
@@ -57,7 +57,7 @@
 	<div class="wp">
 		<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
 	</div>
-	<div id="ct" class="ct2_a wp cl">
+	<div id="ct" class="ct2_a wp cl user-space-thread">
 	<!--{if $_G[setting][homestyle]}-->
 		<div class="appl">
 			<!--{subtemplate common/userabout}-->
@@ -142,15 +142,10 @@
 								<td class="o">&nbsp;</td>
 							<!--{/if}-->
 							<th><!--{if $viewtype == 'reply' || $viewtype == 'postcomment'}-->{lang post}<!--{else}-->{lang topic}<!--{/if}--></th>
-							<td class="frm">{lang forum}<!--{if $actives[me] && $space['uid'] == $_G['uid']}-->/{lang group}<!--{/if}--></td>
+								<td class="frm"></td>
 							<!--{if $viewtype != 'postcomment'}-->
-								<!--{if !$actives[me]}-->
-								<td class="by">{lang author}</td>
-								<!--{/if}-->
 								<td class="num">{lang replies}</td>
-								<!--{if $actives[me]}-->
-								<td class="by"><cite>{lang last_post}</cite></td>
-								<!--{/if}-->
+								<td class="by">发布时间</td>
 							<!--{/if}-->
 						</tr>
 
@@ -192,6 +187,7 @@
 								</td>
 							<!--{/if}-->
 							<th>
+								<a href="forum.php?mod=forumdisplay&fid=$thread[fid]" class="u-category xg1" target="_blank">$forums[$thread[fid]]</a>
 								<!--{if $viewtype == 'reply' || $viewtype == 'postcomment'}-->
 									<a href="forum.php?mod=redirect&goto=findpost&ptid=$thread[tid]&pid=$thread[pid]" target="_blank">$thread[subject]</a>
 								<!--{else}-->
@@ -215,34 +211,29 @@
 									<!--{/if}-->
 								<!--{/if}-->
 							</th>
-							<td>
-								<a href="forum.php?mod=forumdisplay&fid=$thread[fid]" class="xg1" target="_blank">$forums[$thread[fid]]</a>
-							</td>
-							<!--{if $viewtype != 'postcomment'}-->
-								<!--{if !$actives[me]}-->
+
 								<td>
-									<cite><a href="home.php?mod=space&uid=$thread[authorid]" target="_blank">$thread[author]</a></cite>
-									<em>$thread[dateline]</em>
+									
 								</td>
-								<!--{/if}-->
+
+							<!--{if $viewtype != 'postcomment'}-->
 
 								<td class="num">
 									<a href="forum.php?mod=viewthread&tid=$thread[tid]" class="xi2" target="_blank">$thread[replies]</a> / 
 									<em>$thread[views]</em>
 								</td>
 
-								<!--{if $actives[me]}-->
 								<td class="by">
-									<cite><a href="home.php?mod=space&username=$thread[lastposterenc]" target="_blank">$thread[lastposter]</a></cite>
-									<em><a href="forum.php?mod=redirect&tid=$thread[tid]&goto=lastpost#lastpost" target="_blank">$thread[lastpost]</a></em>
+									<!-- <cite><a href="home.php?mod=space&uid=$thread[authorid]" target="_blank">$thread[author]</a></cite> -->
+									<em>$thread[dateline]</em>
 								</td>
-								<!--{/if}-->
+
 							<!--{/if}-->
 						</tr>
 						<!--{if $actives[me] && $viewtype=='reply'}-->
 							<!--{loop $tids[$stid] $pid}-->
 							<!--{eval $post = $posts[$pid];}-->
-							<tr>
+							<tr class="u-replycontent">
 								<td colspan="5" class="xg1">&nbsp;<img src="{IMGDIR}/icon_quote_m_s.gif" style="vertical-align:middle;" /> <a href="forum.php?mod=redirect&goto=findpost&ptid=$thread[tid]&pid=$pid" target="_blank"><!--{if $post[message]}-->{$post[message]}<!--{else}-->......<!--{/if}--></a> <img src="{IMGDIR}/icon_quote_m_e.gif" style="vertical-align:middle;" /></td>
 							</tr>
 							<!--{/loop}-->

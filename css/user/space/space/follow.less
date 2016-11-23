@@ -1,0 +1,206 @@
+.flw_feed{
+	.flw_avt{
+		margin-right:5px;
+		margin-top:5px;
+	}
+	.flw_author{
+		a{
+			.bold;
+		}
+	}
+	.flw_delete{
+		.fr;.color(#555,@blue-link);
+	}
+	.flw_article{
+		border-bottom:1px dashed #ddd;
+		padding-bottom:5px;
+		margin-bottom:5px;
+
+		h2{
+			.default-fontfamily;
+			.bold;
+			.color(@blue-link,@blue-link,#c00);
+		}
+
+		img{
+			max-width:100%;
+		}
+
+		th,td{
+			border:1px solid #ddd;
+			padding:2px 5px;
+		}
+
+		.flw_readfull{
+			.color(@blue-link,@blue-link);
+			&:hover{text-decoration:underline;}
+		}
+	}
+	.flw_more{
+		.db;.x;
+		border-top:1px solid @blue-bo;
+		border-bottom:1px solid @blue-bo;
+		background-color:@blue-bg;
+		margin-top:10px;
+	}
+}
+
+.ua-mobile,.screen-s{
+	.flw_feed{
+
+		.flw_avt{
+			.none;
+		}
+		.flw_author{
+			a{
+				color:@yel;
+			}
+		}
+		.flw_author,.flw_article .xg1,.flw_article .flw_delete{
+			font-size:13px;
+		}
+
+		.flw_article{
+			background-color:#fff;
+			padding:10px !important;
+			margin:0 0 20px 0;
+
+			border-bottom:none;
+			overflow:hidden;
+		}
+
+		.flw_more{
+		}
+	}
+}
+
+
+//我的关注-发布广播表单
+.user-space-follow{
+	#flw_header{
+		.pr;
+
+		#fastpostform{
+			float:none !important;
+		}
+
+		.tedt .bar{
+			border-bottom:none;
+		}
+
+		.tedt{
+			.w(100%);
+			box-sizing:border-box;
+			.bar{background-color:#fafafa;}
+		}
+
+		.pnpost{
+			padding:10px 0;
+		}
+		.pnpost .pn{
+			.lh(28px);
+			margin-right:0;
+			padding:0 10px;
+		}
+		.syncbbs{
+			.none;
+		}
+	}
+	.my_flw_stats{
+		.pa;.rt(0,0);
+		ul{}
+		li{line-height:36px;border-bottom:1px solid #ddd;}
+		a{margin-left:5px;}
+		.w(120px);
+	}
+}
+.ct2_a #flw_header #fastpostform{
+	margin-right:188px;
+}
+.ct1 #flw_header #fastpostform{
+	margin-right:0;
+}
+.ua-mobile,.screen-s{
+	#flw_header{
+		background-color:#fff;
+		border-bottom:none !important;
+		padding:10px;
+		.r(4px);
+	}
+	.my_flw_stats{
+		.ps;float:none;.w(auto);
+		.clearfix;
+		li{.w(33%);.fl;border-bottom:none;.x;}
+	}
+	.ct2_a #flw_header #fastpostform{
+		margin-right:0;
+	}
+}
+			
+
+//个人空间资料页-广播-右上角状态区
+.flw_hd{
+	#followflag{
+		.color(@yel,@blue-link,@blue-link);
+		a{margin-left:10px;}
+	}
+	#unfollowflag{
+		.flw_status_1{color:@yel;}
+		a{margin-left:10px;}
+	}
+}
+
+.ua-mobile,.screen-s{
+	.flw_hd{
+		.none;
+	}
+}
+
+
+
+//听众与我关注的人列表页
+.flw_ulist{
+	li{
+		padding:10px;
+		border-bottom:1px solid #ddd;
+	}
+
+	.flw_avt,h6.xs2{
+		.fl;
+	}
+	.flw_avt{
+		margin-top:0;
+		margin-right:10px;
+		.db;
+		background-color:#fafafa;
+		border:1px solid #eee;
+		.r(48px);
+		padding:2px;
+		img{
+			.db;
+			.size(48px);.r(48px);
+		}
+	}
+	h6.xs2{
+		.lh(52px);
+		.xi2{.bold;}
+		padding-bottom:0 !important;
+	}
+	.flw_btn_unfo,.flw_btn_fo{
+		.fr;
+	}
+
+	p{
+		.clear;
+	}
+}
+
+.ua-mobile,.screen-s{
+	.flw_ulist{
+		li{
+			background-color:#fff;
+			border-bottom:none;
+			margin-bottom:20px;
+		}
+	}
+}
