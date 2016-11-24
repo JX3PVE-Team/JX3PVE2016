@@ -1,0 +1,134 @@
+.member-form{
+	padding:10px 300px 10px 10px;
+	.pr;
+
+	.rfm{
+
+		.w(auto);
+		border-bottom:none;
+		margin-bottom:10px;
+
+		th{
+			.x(left);
+			.w(100px);
+			font-size:14px;
+		}
+
+		.px{
+			width:200px !important;
+			&:extend(.u-text);
+			.lh(32px);
+			padding:0 10px;
+			&:focus{
+				border-color:@blue-dark;
+			}
+		}
+		select{
+			/*.w(210px) !important;
+			max-width:auto;*/
+		}
+		.rq{
+			.bold;
+		}
+		.p_chk{
+			color:@yel;
+			.default-fontfamily;
+			.normal;
+		}
+		
+	}
+	.u-msg-codetips{
+		.db;padding:5px 0;
+		.color(#555,@blue-link,@blue-link);
+		a:hover{text-decoration:underline;}
+	}
+	.u-btn-ok{
+		padding:5px 40px;
+	}
+}
+.m-login-way{
+	.pa;.rt(0,0);
+	a{
+		margin-right:10px;
+		.dbi;.y;
+		background-color:#f9f9f9;
+		padding:20px;
+		.r(4px);
+		border:1px solid #ddd;
+
+		i{.db;.size(40px,34px);background:url('@{url}user/union-login.png') no-repeat center 0;}
+		img{.none;}
+
+		&:hover{background-color:#fff;border-color:@yel;}
+		
+	}
+	.u-title{
+		//.fl;margin-right:20px;
+		margin-bottom:20px;
+		color:#555;
+		border-bottom:1px dotted #ddd;
+		padding-bottom:5px;
+	}
+	.u-list{
+		.x;
+	}
+	.u-weixin{
+		margin-right:0;
+	}
+	.u-qq i{
+	}
+	.u-weibo i{
+		background-position:0 -34px;
+	}	
+	.u-weixin i{
+		background-position:0 -67px;
+	}
+}
+.ua-mobile,.screen-s{
+	.member-form{padding:0;}
+
+	.mtw{margin-top:0 !important;}
+	.rfm{
+		margin-bottom:10px;
+
+		table{
+			.table(block);
+			.full(x);
+		}
+		tr,td,th{
+			.full(x);
+			padding:0;
+		}
+		th{
+			.x(left);
+			.bold;
+			line-height:2.2;
+		}
+		.px,select{
+			.db;
+			.w(100%) !important;box-sizing:border-box;
+			.fzlh(1rem,40px);
+		}
+		.tipcol{
+			padding-top:5px;
+			line-height:24px;
+			//min-height:24px;
+		}
+		.p_chk,.p_tip{
+			.db;.ps;
+			.fz(13px);
+		}
+	}
+
+	.m-login-way{
+		.ps;
+		.u-title{
+			.x;
+			font-size:13px;
+		}
+	}
+	.u-btn-ok{
+		.w(100%);
+		box-sizing:border-box;
+	}
+}
