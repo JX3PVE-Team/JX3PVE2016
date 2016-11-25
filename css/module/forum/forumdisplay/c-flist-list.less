@@ -23,8 +23,8 @@
 	}
 }
 
-.ua-responsive .screen-s{
-	.c-flist-info ul li.author{.none;}
+.ua-mobile,.screen-s{
+	.c-flist-info{.none;}
 }
 
 .c-flist-list{
@@ -51,9 +51,17 @@
 			.y;
 		}
 
-		tr,td{
+		tr,th,td{
 			.db;.fl;.w(100%);
 			.h(@h);
+		}
+	}
+}
+
+.ua-mobile,.screen-s{
+	.c-flist-list{
+		tbody,tr,td,th{
+			.h(auto);
 		}
 	}
 }

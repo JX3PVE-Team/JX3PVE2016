@@ -79,5 +79,27 @@ jQuery(function($){
         })
     }
 
-
 })
+
+//点赞
+function recommendupdate(n,tid) {
+    //ajaxid_0.7870330682809448_menu_content
+    var zanid = '#c-flist-item-zan-' + tid;
+    var num = 1;
+    jQuery(function($){
+        var cur = parseInt($(zanid).text())
+        var ajaxid = $(zanid).parent('.c-flist-item-zan').attr('id')
+        //var iscmd = 
+        //console.log(cur)
+        //console.log(ajaxid)
+    });
+    /*var objv = n > 0 ? $('recommendv_add') : $('recommendv_subtract');
+    objv.style.display = '';
+    objv.innerHTML = parseInt(objv.innerHTML) + 1;*/
+   /* setTimeout(function () {
+        $('recommentc').innerHTML = parseInt($('recommentc').innerHTML) + n;
+        $('recommentv').style.display = 'none';
+    }, 1000);*/
+}
+
+

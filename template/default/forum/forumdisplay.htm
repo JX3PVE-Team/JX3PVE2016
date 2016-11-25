@@ -262,18 +262,31 @@
 				<!-- jx3pve:w-pages-top -->
 				<!--{subtemplate widget/w_pages_top_list}-->
 
-				<div class="w-listmode">
+				<!-- jx3pve:w-mode -->
+				<!--{if $_G['mobile']}-->
+					<div class="w-mode">
+						<!-- jx3pve:w-category -->
+						<!--{subtemplate widget/w_mode_category}-->
 
-					<!-- jx3pve:w-category -->
-					<!--{subtemplate widget/w_category}-->
+						<!-- jx3pve:w-order -->
+						<!--{subtemplate widget/w_mode_order}-->
 
-					<!-- jx3pve:w-order -->
-					<!--{subtemplate widget/w_order}-->
+						<!-- jx3pve:w-filter -->
+						<!--{subtemplate widget/w_mode_filter}-->
+					</div>
+				<!--{else}-->
+					<div class="w-listmode">
+						<!-- jx3pve:w-category -->
+						<!--{subtemplate widget/w_category}-->
 
-					<!-- jx3pve:w-filter -->
-					<!--{subtemplate widget/w_filter}-->
+						<!-- jx3pve:w-order -->
+						<!--{subtemplate widget/w_order}-->
 
-				</div>
+						<!-- jx3pve:w-filter -->
+						<!--{subtemplate widget/w_filter}-->
+					</div>
+				<!--{/if}-->
+				
 
 				<!-- jx3pve:list loop -->
 				<!--{if empty($_G['forum']['sortmode'])}-->
