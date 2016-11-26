@@ -20,6 +20,21 @@
 .i-header-nav{
 	.pa;.lt(0,0);
 
+	.u-back{
+		.fl;
+		padding:17px 10px 18px 15px;
+		i{
+			.db;.size(10px);
+			border: 2px solid @iheadericonbg;
+			border-width: 2px 0 0 2px;
+			margin: 0 0 -2px 0;
+			transform: scale(1) rotate(-50deg) skew(-10deg) translateZ(0);
+		}
+		span{
+			.none;
+		}
+	}
+
 	//发消息
 	.u-msg{
 		.fl;
@@ -31,6 +46,23 @@
 		span{.none;}
 		&.on i{
 			background-image:url('@{url}header/mobile/msg-blue.svg');
+		}
+	}
+
+	//分类
+	.u-category{
+		.fl;
+		padding:13px 10px 12px 10px;
+		i{
+			.db;.size(20px);
+			background:url('@{url}header/mobile/category.svg') no-repeat 0 0;
+			background-size:100% auto;
+		}
+		span{
+			.none;
+		}
+		&.on i{
+			background-image:url('@{url}header/mobile/category-blue.svg');
 		}
 	}
 }

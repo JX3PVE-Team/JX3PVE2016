@@ -45,7 +45,10 @@
 		.fl;
 		max-width:500px;
 	}
-	.u-sort{.color(#999,@blue-link,#c00);}
+	.u-sort{
+		.color(#999,@blue-link,#c00);
+		//em{.none;}
+	}
 	.u-subject{}
 
 	//来自群组
@@ -150,7 +153,12 @@
 		}
 
 		.u-sort{
-
+			em{
+				.dbi;
+				img{
+					.size(18px);
+				}
+			}
 		}
 		.u-title{
 			.db;
@@ -158,6 +166,7 @@
 			float:none;
 			max-width:none;
 			word-break:break-all;
+			font-size:14px;
 		}
 		.u-addef{
 			.pa;.rt(12px);.h(16px);

@@ -48,7 +48,7 @@ jQuery(function($){
 	//开关遮罩层
 	window.toggleMask = function(){
 		$mask.fadeToggle();
-		$html.toggleClass('.isfixed')
+		$html.toggleClass('isfixed')
 	}
 	window.showMask = function(){
 		$mask.fadeIn()
@@ -86,6 +86,11 @@ jQuery(function($){
 			$tb.css('width',w)
 		})
 	}
+
+	//面包屑
+	$("#w-custom-zoom").on('click',function(){
+        alert('按住【ctrl】，滚动鼠标【滚轮】即可缩放界面');
+    })
 
 
 })

@@ -1,11 +1,11 @@
 <!--{if ($_G['forum']['threadtypes'] && $_G['forum']['threadtypes']['listable']) || count($_G['forum']['threadsorts']['types']) > 0}-->
-	<div class="w-category w-listfilter">
+	<div class="w-mode-category">
 
 		<!-- 标题 -->
-		<div class="w-listfilter-title">分类<span>TYPE</span></div>
+		<div class="w-mode-category-tg" id="w-mode-category-tg"><i></i><em>分类：</em><span>全部</span></div>
 
 		<!-- 列表 -->
-		<div class="w-listfilter-list" id="thread_types">
+		<div class="w-mode-category-list" id="thread_types">
 			<!--{hook/forumdisplay_threadtype_inner}-->
 
 			<!-- 全部 -->
@@ -15,28 +15,15 @@
 				<!--{if $_G['forum']['threadtypes']}-->
 					<!--{loop $_G['forum']['threadtypes']['types'] $id $name}-->
 						<!--{if $_GET['typeid'] == $id}-->
-							<a class="u-type on u-item" href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&sortid=$_GET['sortid']{/if}{if $_GET['orderby']}&orderby=$_GET['orderby']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}"><!--{if $_G[forum][threadtypes][icons][$id] && $_G['forum']['threadtypes']['prefix'] == 2}--><img class="vm" src="$_G[forum][threadtypes][icons][$id]" alt="" /> <!--{/if}-->$name<!--{if $showthreadclasscount[typeid][$id]}--><span class="xg1 num">$showthreadclasscount[typeid][$id]</span><!--{/if}--></a>
+							<a class="u-type on u-item" href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&sortid=$_GET['sortid']{/if}{if $_GET['orderby']}&orderby=$_GET['orderby']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}"><!--{if $_G[forum][threadtypes][icons][$id]}--><img class="vm" src="$_G[forum][threadtypes][icons][$id]" alt="" /><!--{/if}--><span>$name</span></a>
 						<!--{else}-->
-							<a class="u-type u-item" href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid=$id$forumdisplayadd[typeid]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}"><!--{if $_G[forum][threadtypes][icons][$id] && $_G['forum']['threadtypes']['prefix'] == 2}--><img class="vm" src="$_G[forum][threadtypes][icons][$id]" alt="" /> <!--{/if}-->$name<!--{if $showthreadclasscount[typeid][$id]}--><span class="xg1 num">$showthreadclasscount[typeid][$id]</span><!--{/if}--></a>
+							<a class="u-type u-item" href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid=$id$forumdisplayadd[typeid]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}"><!--{if $_G[forum][threadtypes][icons][$id]}--><img class="vm" src="$_G[forum][threadtypes][icons][$id]" alt="" /><!--{/if}--><span>$name</span></a>
 						<!--{/if}-->
 					<!--{/loop}-->
 				<!--{/if}-->
 
-			<!-- 类型分类 -->
-				<!--{if $_G['forum']['threadsorts']}-->
-					
-					<!--{if $_G['forum']['threadtypes']}-->
-					<span class="divding pipe">|</span>
-					<!--{/if}-->
-
-					<!--{loop $_G['forum']['threadsorts']['types'] $id $name}-->
-						<!--{if $_GET['sortid'] == $id}-->
-							<a class="u-sort on u-item" href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}{if $_GET['orderby']}&orderby=$_GET['orderby']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">$name<!--{if $showthreadclasscount[sortid][$id]}--><span class="xg1 num">$showthreadclasscount[sortid][$id]</span><!--{/if}--></a>
-						<!--{else}-->
-							<a class="u-sort u-item" href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=sortid&sortid=$id$forumdisplayadd[sortid]{if $_GET['orderby']}&orderby=$_GET['orderby']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">$name<!--{if $showthreadclasscount[sortid][$id]}--><span class="xg1 num">$showthreadclasscount[sortid][$id]</span><!--{/if}--></a>
-						<!--{/if}-->
-					<!--{/loop}-->
-				<!--{/if}-->
+			<!-- 关闭 -->
+			<a class="u-close w-mode-category-close" href="javascript:;"><i></i><span>关闭</span></a>
 
 			<!--{hook/forumdisplay_filter_extra}-->
 		</div>

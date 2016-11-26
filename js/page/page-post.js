@@ -2,10 +2,6 @@ jQuery(function($){
 
 	var $body = $("body")
 
-	$("#w-custom-zoom").on('click',function(){
-		alert('按住【ctrl】，滚动鼠标【滚轮】即可缩放界面');
-	})
-	
 	//全屏编辑状态
 	$("#e_fullswitcher").on('click',function(){
 		$body.toggleClass('e-fullscreen-edit');
