@@ -11,8 +11,6 @@ body{
 .main {
 }
 
-
-
 //尺寸规划
 	//wp:960 ->适应平板横屏+PC
 	//740 内容区 20间距 200px侧边栏
@@ -27,11 +25,9 @@ body{
 	    min-width:1000px;
 	}
 	//手机
-	.ua-mobile{
-		body{
-			padding-bottom:@c-footer-height;
-			min-width:320px;
-		}
+	.ua-mobile body,.screen-s{
+		padding-bottom:@c-footer-height;
+		min-width:320px;
 	}
 
 
@@ -42,14 +38,6 @@ body{
 	//默认
 	.wp{
 	    width:@wpm;
-	}
-	//重构版
-	.ua-responsive .wp{
-
-	}
-	//逐步上线新页面
-	.ua-responsive .screen-m .wp{
-
 	}
 	//平板竖屏&手机版
 	.ua-mobile,.screen-s{
