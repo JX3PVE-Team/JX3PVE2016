@@ -7,13 +7,20 @@
 .w-pages-list{
 	.fr;
 	.clearfix;
+	
 	//当前页
 	strong{background-color:#f2f2f2;cursor:default;}
 	a,strong,label{border-color:#ddd;margin-bottom:5px;}
 	a:hover{border-color:#666;color:#333;}
 
-	.pg{margin:0 !important;}
+	.pg{margin:0 !important;.clearfix;}
 }
+.ua-mobile,.screen-s{
+	.w-pages-list .pg{
+		.fl;
+	}
+}
+
 
 //翻页旁发布按钮
 .u-btn-publish{
@@ -62,7 +69,6 @@
 .w-pages-bottom{
 	margin-bottom:10px;
 }
-
 .ua-mobile,.screen-s{
 	.w-pages-bottom .u-btn-publish{
 		.w(100%);

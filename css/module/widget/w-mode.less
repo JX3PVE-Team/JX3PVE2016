@@ -1,0 +1,139 @@
+//仅在手机端存在
+.w-mode{
+	.clearfix;
+	background-color:#fff;
+	padding:10px;
+	.pr;
+	border-bottom:1px solid #eee;
+	margin-bottom:10px;
+}
+
+.w-mode-filter{
+	.none;
+}
+
+
+
+//排序方式
+.w-mode-order{
+	.fr;
+}
+.w-mode-order-tg{
+	font-size:13px;
+	color:#555;
+	i{
+		.dbi;.y(-4px);
+		background:url('@{url}forum/filterarrow.svg') no-repeat 0 0;
+		background-size:100% auto;
+		.size(16px);
+		margin-left:3px;
+	}
+}
+
+.w-mode-order-list{
+	.pf;.lb(0,0);.z(40);
+	.w(100%);
+	.none;
+
+	&.active{
+		animation:slideUpMenu 0.3s ease-in-out forwards;
+		.db;
+	}
+
+	&.folder{
+		animation:slideDownMenu 0.3s ease-in-out forwards;
+		.db;
+	}
+
+	.on{
+		.bold;
+	}
+}
+.w-mode-order-list li{
+	.h(51px);
+	.color(@blue-link,@blue-link,@blue-link);
+	background-color:#fff;
+}
+.w-mode-order-list li a{
+	.lh(50px);
+	.db;.x;margin:0 15px;
+	border-bottom:1px solid #eee;
+}
+.w-mode-order-list .u-cancel{
+	margin-top:2px;
+}
+
+
+//分类引导
+.w-mode-category{
+	.fl;
+}
+.w-mode-category-tg{
+	font-size:13px;
+	i{
+		.dbi;.y(-4px);
+		background:url('@{url}forum/curcategory.svg') no-repeat 0 0;
+		background-size:100% auto;
+		.size(16px);
+		margin-right:3px;
+	}
+	em{
+		color:#555;
+	}
+	span{
+		.bold;
+		color:#333;
+	}
+}
+
+.w-mode-category-list{.none;
+	.pf;.lt(0,@c-header-height);bottom:@c-footer-height;.z(20);
+	.w(100%);background-color:#fff;
+	padding-top:20px;
+	padding-bottom:40px;
+	padding-right:0;
+	padding-left:0;
+
+	.u-item{
+		.db;.w(50%);
+		.fl;
+		box-sizing:border-box;
+		padding:2px 10px 2px 20px;
+		height:28px;
+		margin-bottom:4px;
+		.vm{
+			.fl;
+			margin-right:5px;
+		}
+		span{
+			.fl;
+			line-height:24px;
+		}
+	}
+	.on{
+		.bold;
+	}
+	.u-all{
+		.x;
+		color:#666;
+		padding:5px;
+		font-size:13px;
+		float:none;
+		.w(60%);.auto(x);
+		box-sizing:content-box;
+		border-bottom:1px solid #eee;
+		margin-bottom:10px;
+		.none;
+	}
+	.u-close{
+		.db;
+		.pa;.lb(0,0);.size(100%,40px);
+		border-top:1px solid #eee;
+		.x;font-size:13px;
+		color:#666;
+		line-height:40px;
+	}
+	.u-sort,.divding,.fold,.num{
+		.none;
+	}
+}

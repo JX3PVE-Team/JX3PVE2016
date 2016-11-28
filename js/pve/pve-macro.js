@@ -71,6 +71,7 @@ jQuery(function($){
         })
         $(".m-macro-systax").on('click',function(){
             $(this).fadeOut();
+            $("html").removeClass('isfixed')
         })
     }
 

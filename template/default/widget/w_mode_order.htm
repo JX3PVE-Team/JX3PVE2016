@@ -1,0 +1,28 @@
+<!--{if CURMODULE != 'guide'}-->
+<div class="w-mode-order">
+
+	<div class="w-mode-order-tg" id="w-mode-order-tg"><span>最后更新排序</span><i></i></div>
+	
+	<div class="w-mode-order-list" id="w-mode-order-list">
+
+		<!-- 最后更新 -->						
+		<li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}&orderby=lastedit{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="{if $_GET['orderby'] == 'lastedit'}on{/if} u-item u-lastedit" title="最后更新">最后更新排序</a></li>
+
+		<!-- 最新发布 -->						
+		<li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}&orderby=dateline{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="{if $_GET['orderby'] == 'dateline'}on{/if} u-item u-lastpost" title="最新发布">最新发布排序</a></li>
+
+		<!-- 点赞最多 -->
+		<li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}&orderby=recommends{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="{if $_GET['orderby'] == 'recommends'}on{/if} u-item u-zan" title="推荐最多">点赞最多排序</a></li>
+		
+		<!-- 收藏 -->
+		<li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}&orderby=favtimes{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="{if $_GET['orderby'] == 'favtimes'}on{/if} u-item u-fav" title="被收藏最多">收藏最多排序</a></li>
+
+		<!-- 精华 -->
+		<li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=digest&digest=1&$forumdisplayadd[digest]{if $_GET['sortid']}&filter=sortid&sortid=$_GET['sortid']{/if}{if $_GET['typeid']}&filter=typeid&typeid=$_GET['typeid']{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="{if $_GET['digest'] == 1}on{/if} u-item u-digest" title="加入精华">精华贴</a></li>
+
+		<li><a class="u-cancel" href="javascript:;" id="w-mode-order-cancel">取消</a></li>
+
+		<!--{hook/forumdisplay_filter_extra}-->
+	</div>
+</div>
+<!--{/if}-->

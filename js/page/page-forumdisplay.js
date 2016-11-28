@@ -1,9 +1,8 @@
 jQuery(function($){
 
-    //分类信息字段筛选扩展
+    //PC版筛选  分类信息字段筛选扩展
     var  $filter_label = $("#w-filter .w-filter-font .item .label")
     var  $filter_value = $("#w-filter .w-filter-font .item .value")
-
     $filter_label.each(function(){
         $(this).on('click',function(){
             var $label = $(this)
@@ -17,67 +16,66 @@ jQuery(function($){
             $value.slideToggle()
         })
     })
+    
 
-    $("#w-custom-zoom").on('click',function(){
-        alert('按住【ctrl】，滚动鼠标【滚轮】即可缩放界面');
+    var $mask = $("#u-mask")
+    var $html = $("html")
+
+    //mobile版排序·新
+    var $order_tg = $("#w-mode-order-tg")
+    var $order_list = $("#w-mode-order-list")
+    var $order_cancel = $("#w-mode-order-cancel")
+    $order_tg.on('click',function(){
+        toggleMask();
+        $order_list.removeClass('folder').addClass('active')
+    })
+    $order_cancel.on('click',function(){
+        toggleMask();
+        $order_list.addClass('folder').removeClass('active')
+    })
+    $mask.on('click',function(e){
+        $order_list.addClass('folder').removeClass('active')
+    })
+    var curorder = $order_list.find('.on').text()
+    $order_tg.find('span').text(curorder)
+
+    //mobile版分类·新
+    var $category_tg = $(".w-mode-category-tg")
+    var $catetg = $("#i-header-category")
+    var $cateclose = $(".w-mode-category-close")
+    var $category_list = $(".w-mode-category-list")
+
+    var curcategory = $category_list.find('.on').text()
+    curcategory ? curcategory = curcategory : curcategory = '全部'
+    $category_tg.find('span').text(curcategory)
+    
+    $catetg.add($category_tg).add($cateclose).on('click',function(){
+        $catetg.toggleClass('on')
+        $html.toggleClass('isfixed')
+        $category_list.fadeToggle()
     })
 
-    //筛选模块
-    if(isMobile){
-
-        var $mask = $("#u-mask")
-        var $filter_box = $(".w-listmode")
-        var $filter_title = $(".w-listfilter-title")
-        var $filter_list = $(".w-listfilter-list")
-
-        $filter_box.on('click',function(){
-            showMask()
-            $(this).addClass('isfocus')
-        })
-
-        $filter_title.each(function(){
-            $(this).on('click',function(){
-                //避免同时展开
-                $(".w-listfilter-title").not($(this)).removeClass('on')
-                $(".w-listfilter-list").not($(this).next(".w-listfilter-list")).hide()
-
-                $(this).toggleClass('on');
-                $(this).next(".w-listfilter-list").slideToggle();
-            })
-        })
-
-        $mask.on('click',function(){
-            hideMask()
-            $filter_title.removeClass('on')
-            $filter_list.hide()
-            $filter_box.removeClass('isfocus')
-        })
-    }
-
-    //侧边栏展开与关闭
-    if(isMobile){
-       
-        $("#i-header-sidebar-tg").on('click',function(){
-            $(".i-header").toggleClass('showSidebar')
-            $(".default-sidebar").slideToggle()
-            toggleMask();
-        })
-        $("#u-mask").on('click',function(){
-            $(".default-sidebar").slideUp()
-            $(".i-header").removeClass('showSidebar')
-        })
-        $(".default-sidebar-title").on('click',function(){
-            $(this).next('.default-sidebar-content').fadeIn()
-        })
-        $(".default-sidebar-content").on('click',function(){
-            $(this).fadeOut()
-        })
-
-        //搜索禁止冒泡
-        $(".default-sidebar-search form").on('click',function(e){
-            e.stopPropagation()
-        })
-    }
-
-
 })
+
+//点赞
+function recommendupdate(n,tid) {
+    /*ajaxid_0.7870330682809448_menu_content
+    var zanid = '#c-flist-item-zan-' + tid;
+    var num = 1;
+    jQuery(function($){
+        var cur = parseInt($(zanid).text())
+        var ajaxid = $(zanid).parent('.c-flist-item-zan').attr('id')
+        var iscmd = 
+        console.log(cur)
+        console.log(ajaxid)
+    });*/
+    /*var objv = n > 0 ? $('recommendv_add') : $('recommendv_subtract');
+    objv.style.display = '';
+    objv.innerHTML = parseInt(objv.innerHTML) + 1;
+    setTimeout(function () {
+        $('recommentc').innerHTML = parseInt($('recommentc').innerHTML) + n;
+        $('recommentv').style.display = 'none';
+    }, 1000);*/
+}
+
+

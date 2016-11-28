@@ -1,11 +1,14 @@
 <header class="i-header i-header-list">
-	<a class="i-header-back" href="./sitemap"><i></i><span></span></a>
+	<div class="i-header-nav">
+		<!-- 退后 -->
+		<a class="u-back" href="javascript:;" onclick="history.go(-1)"><i></i><span>返回</span></a>
+		<!-- 分类 -->
+		<a class="u-category" href="javascript:;" id="i-header-category"><i></i><span>分类</span></a>
+	</div>
 	<div class="i-header-title">$_G['forum'][name]</div>
 	<div class="i-header-menu">
 		<!-- 发布帖子 -->
 		<a class="u-post" href="forum.php?mod=post&action=newthread&fid=$_G['fid']"><i></i><span>发贴</span></a>
-		<!-- 展开侧边栏 -->
-		<a class="u-all" id="i-header-sidebar-tg" href="javascript:;"><span>更多</span></a>
 	</div>
 </header>
 

@@ -2,10 +2,6 @@ jQuery(function($){
 
 	var $body = $("body")
 
-	$("#w-custom-zoom").on('click',function(){
-		alert('按住【ctrl】，滚动鼠标【滚轮】即可缩放界面');
-	})
-	
 	//全屏编辑状态
 	$("#e_fullswitcher").on('click',function(){
 		$body.toggleClass('e-fullscreen-edit');
@@ -25,19 +21,19 @@ jQuery(function($){
 	})
 
 	//手机端默认折叠扩展
-	if($body.hasClass('screen-s')){
+	if($body.hasClass('ua-mobile')){
 		$editorEXtg.text('展开')
 		$editorEX.toggleClass('folder')
 	}
 
-	//展开草稿
-	$("#draftlist").on('click',function(){
-		$("#draftlist_menu").slideToggle()
-	})
-
 	//手机版模拟顶部按钮提交表单 - 已关闭
 	$("#i-header-postbtn").on('click',function(){
 		$("#postform").submit();
+	})
+
+	//展开草稿
+	$("#draftlist").on('click',function(){
+		$("#draftlist_menu").slideToggle()
 	})
 
 	//当发布提示为空时隐藏该整区
@@ -52,16 +48,14 @@ jQuery(function($){
 	})
 
 	//手机版发布提示
-	if(isMobile){
-		$("#c-post-tips-tg").on('click',function(){
-			$("#c-post-tips-content").fadeIn()
-			$("html").addClass('isfixed')
-		})
-		$("#c-post-tips-content").on('click',function(){
-			$(this).fadeOut()
-			$("html").removeClass('isfixed')
-		})
-	}
+	$("#c-post-tips-tg").on('click',function(){
+		$("#c-post-tips-content").fadeIn()
+		$("html").addClass('isfixed')
+	})
+	$("#c-post-tips-content").on('click',function(){
+		$("html").removeClass('isfixed')
+		$(this).fadeOut()
+	})
 
 
 })
