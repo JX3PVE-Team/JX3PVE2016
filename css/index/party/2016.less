@@ -1,0 +1,41 @@
+@import url('../../public/base.less');		//函数
+@import url('../../global/var.less');			//常量
+@import url('../../global/color.less');		//配色
+
+.m-header{
+	.h(160px);
+	padding:40px 0;
+	background:url('http://ww1.sinaimg.cn/large/bcc700eegw1eicfycbdj6j21hc0u07qf.jpg') no-repeat center top;
+
+	h1{
+		.size(529px,129px);.auto(x);.indent;
+		background:url('@{url}party/2016/logo.png') no-repeat 0 0;
+	}
+
+	border-bottom:1px solid #eee;
+}
+
+.m-supportlist{
+	background-color:#fafafa;
+	padding:10px 0;
+	.clearfix;
+	h3,ul,li{
+		.fl;
+	}
+	li{
+		margin-right:10px;
+	}
+	a{
+		.db;
+	}
+	a img{
+		.db;
+		max-height:60px;
+		.r(3px);
+	}
+	h3{
+		line-height:60px;
+		font-size:14px;
+		color:#666;
+	}
+}
