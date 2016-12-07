@@ -17,7 +17,9 @@
 
 .m-supportlist{
 	background-color:#fafafa;
+	border-bottom:1px solid #eee;
 	padding:10px 0;
+	margin-bottom:10px;
 	.clearfix;
 	h3,ul,li{
 		.fl;
@@ -38,4 +40,175 @@
 		font-size:14px;
 		color:#666;
 	}
+}
+
+.m-block{
+	padding:20px 0;
+	.m-title{
+		.fz(18px,22px);font-family:'微软雅黑';
+		em{.bold;.italic;font-family:Arial;font-size:40px;}
+		margin-bottom:15px;
+	}
+	.m-primary{
+		.clearfix;
+		padding:0 20px;
+	}
+}
+
+@keyframes showhelp{
+    from{
+    	transform:translateX(-50%);
+    	opacity:0;
+    }
+    to{
+    	transform:translateX(0);
+    	opacity:1;
+    }
+}
+.m-money{
+	.u-code{
+		.fl;
+		background-color:#fafafa;
+		padding:20px;
+		.r(4px);
+		border:1px solid #eee;
+	}
+	.u-tips{
+		.fl;
+		padding:20px;
+		.pr;
+	}
+	.u-gif{
+		.x;
+	}
+	.u-wxhelp{
+		color:#999;
+		.x;
+		.pointer;
+		img{
+			.none;
+			.pa;.lt(100%,0);
+			//transition:0.3s ease-in-out;
+		}
+		&:hover{
+			img{
+				.db;
+				animation:showhelp 0.3s ease-in-out;
+			}
+		}
+	}
+	.u-list{
+		.fr;
+		.w(280px);
+		border-top:1px solid #eee;
+		border-bottom:1px solid #eee;
+		padding:10px;
+		li{
+			.lh(28px);
+			span{margin-right:5px;color:#666;}
+			img{.size(16px);.dbi;.y;margin-right:5px;margin-top:-1px;.r(16px);}
+		}
+	}
+}
+
+.m-vote{
+	.u-list{
+		.x;
+		.u-item{
+			.dbi;.y(top);.w(30%);
+			margin-right:20px;
+			margin-bottom:20px;
+			background-color:#fafafa;
+			padding:20px;
+			box-sizing:border-box;
+
+			span,em{.db;}
+
+			.u-name{
+				font-size:20px;
+			}
+
+			.u-gift{
+				color:@bluex;
+				em{
+					color:#999;
+				}
+			}
+
+			.u-winner{
+
+			}
+		}
+	}
+	.u-btn-go{
+		.db;.w(260px);
+		.x;.auto(x);
+		img{
+			.db;.auto(x);
+		}
+		span{
+			.db;
+			.fz(20px,32px);
+		}
+	}
+}
+.m-box{
+	.u-preview{
+		.fl;
+	}
+	.u-btn-go{
+		.fl;
+		.db;.w(260px);
+		.x;.auto(x);
+		img{
+			.db;.auto(x);
+		}
+		span{
+			.db;
+			.fz(20px,32px);
+		}
+	}
+}
+.m-feedback{
+	.u-about{
+		.fl;
+	}
+	.u-btn-go{
+		.fl;
+		.db;.w(260px);
+		.x;.auto(x);
+		span{
+			.db;
+			.fz(20px,32px);
+		}
+	}
+}
+
+.m-admin{
+	.u-list{
+		.w(90px * 3);
+
+		li{
+			.w(80px);
+			overflow:hidden;
+			.fl;
+			margin-right:10px;
+			margin-bottom:10px;
+		}
+		.u-avt{
+			.db;
+			img{.db;.auto(x);}
+		}
+		.u-name{
+			.nobreak;
+			.db;.x;
+		}
+	}
+}
+.m-credit{
+
+}
+.m-footer{
+	.x;
+	color:#999;
 }
