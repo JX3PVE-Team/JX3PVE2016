@@ -1,13 +1,39 @@
+<!-- jx3pve:BOSS导航 -->
+<h2 class="default-sidebar-title">热门导航</h2>
+<div class="default-sidebar-content default-sidebar-search m-fam-boss">
+    <ul>
+        <li><a href="./forum.php?mod=forumdisplay&fid=369&filter=sortid&sortid=20&searchsort=1&fbboss=1" ><i><img src="http://ww2.sinaimg.cn/large/bcc700eegw1f8uniitmg4j2028028dg3.jpg" alt=""></i><span>沈眠风</span></a></li>
+        <li><a href="./forum.php?mod=forumdisplay&fid=369&filter=sortid&sortid=20&searchsort=1&fbboss=2" ><i><img src="http://ww2.sinaimg.cn/large/bcc700eegw1f8unij3sjdj2028028aab.jpg" alt=""></i><span>柳绯君</span></a></li>
+        <li><a href="./forum.php?mod=forumdisplay&fid=369&filter=sortid&sortid=20&searchsort=1&fbboss=3" ><i><img src="http://ww1.sinaimg.cn/large/bcc700eegw1f8unijtvn5j2028028aac.jpg" alt=""></i><span>月华</span></a></li>
+        <li><a href="./forum.php?mod=forumdisplay&fid=369&filter=sortid&sortid=20&searchsort=1&fbboss=4" ><i><img src="http://ww1.sinaimg.cn/large/bcc700eegw1f8unijhk9ij20280283yt.jpg" alt=""></i><span>曹炎烈</span></a></li>
+        <li><a href="./forum.php?mod=forumdisplay&fid=369&filter=sortid&sortid=20&searchsort=1&fbboss=5" ><i><img src="http://ww4.sinaimg.cn/large/bcc700eegw1f8unijwsk2j2028028dg2.jpg" alt=""></i><span>独孤先生</span></a></li>
+        <li><a href="./forum.php?mod=forumdisplay&fid=369&filter=sortid&sortid=20&searchsort=1&fbboss=6" ><i><img src="http://ww2.sinaimg.cn/large/bcc700eegw1f8unik8tcfj2028028aa9.jpg" alt=""></i><span>黑齿元祐</span></a></li>
+        <li><a href="./forum.php?mod=forumdisplay&fid=369&filter=sortid&sortid=20&searchsort=1&fbboss=7" ><i><img src="http://ww3.sinaimg.cn/large/bcc700eegw1f8unikia65j2028028wer.jpg" alt=""></i><span>哥舒翰</span></a></li>
+        <li><a href="./forum.php?mod=forumdisplay&fid=369&filter=sortid&sortid=20&searchsort=1&fbboss=8" ><i><img src="http://ww1.sinaimg.cn/large/bcc700eegw1f8unikmsexj2028028q36.jpg" alt=""></i><span>安庆绪</span></a></li>
+    </ul>
+</div>
+
 <!-- jx3pve:攻略搜索 -->
 <h2 class="default-sidebar-title">攻略搜索</h2>
 <div class="default-sidebar-content default-sidebar-search m-fam-search">
-	<form method="post" autocomplete="off" name="searhsort" id="searhsort" action="forum.php?mod=forumdisplay&amp;fid=369&amp;filter=sortid&amp;sortid=20">
-         <div class="item fam-name">
+	<form method="post" autocomplete="off" name="searhsort" id="searhsort" action="forum.php?mod=forumdisplay&fid=369&filter=sortid&sortid=20">
+        <div class="item fam-sort">
+            <span class="label">攻略类型:</span>
+            <span class="select" id="select_fbsort">
+                <select name="searchoption[302][value]" id="fbsort" class="u-select">
+                    <option value="0">请选择</option>
+                    <option value="1">文字</option>
+                    <option value="2">图文 </option>
+                    <option value="3">视频</option>
+                </select>
+            </span>
+        </div>
+        <div class="item fam-name">
             <span class="label">副本名称:</span>
             <span class="select" id="select_fbname">
                 <select name="searchoption[211][value]" id="fbname" class="u-select">
                     <option value="0">请选择</option>
-                    <option value="1">五人副本 </option>
+                    <option value="1">其它 </option>
                     <option value="22">双曜亭 </option>
                     <option value="23">观风殿 </option>
                     <option value="20">仙侣庭园 </option>
@@ -33,25 +59,25 @@
                 </select>
             </span>
         </div>
-        <div class="item boss-name">
-	        <span class="label">BOSS名称:</span>
-	        <input type="text" name="searchoption[212][value]" size="15" class="u-text" value="">
-	    </div>
+        <div class="item fam-type">
+            <span class="label">副本难度:</span>
+            <span class="select" id="select_fbtype">
+                <select name="searchoption[301][value]" id="fbtype" class="u-select">
+                    <option value="0">请选择</option>
+                    <option value="1">25人</option>
+                    <option value="2">10人 </option>
+                    <option value="3">5人</option>
+                    <option value="4">试炼</option>
+                </select>
+            </span>
+        </div>
         <p class="m-fam-sbutton">
             <button type="submit" class="u-button-search u-button" name="searchsortsubmit">搜索</button>
         </p>
     </form>
 </div>
-
-<!-- jx3pve:专题导航 -->
-<h2 class="default-sidebar-title">快速链接</h2>
-<div class="default-sidebar-content m-fam-nav">
-    <ul>
-        <li><a href="./team" data-target="_blank"><i class="u-team"></i>团队招募<em>Team</em></a></li>
-        <li><a href="./member" data-target="_blank"><i class="u-member"></i>团员求职<em>Member</em></a></li>
-        <li><a href="./fb" data-target="_blank"><i class="u-zt"></i>副本专题<em>Topic</em></a></li>
-        <li><a href="./forum.php?mod=forumdisplay&fid=369&filter=sortid&sortid=12&orderby=dateline" data-target="_blank"><i class="u-top"></i>五甲捷报<em>Top</em></a></li>
-    </ul>
+<div class="m-fam-newsearchtips">
+    <!--{block/1824}-->
 </div>
 
 <!-- jx3pve:帮助文档 -->

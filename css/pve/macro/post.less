@@ -25,10 +25,17 @@
 		font-size:12px;
 	}
 }
-.ua-responsive .screen-s .macro-mg-table{
-	.w(100%);
+.macro-mg-more{
+	.color(#259,#c00);
+	&:hover{
+		text-decoration:underline;
+	}
 }
-
+.ua-mobile,.screen-s{
+	.macro-mg-table{
+		.w(100%);
+	}
+}
 
 .m-macro-systax{
 	.none;
@@ -38,10 +45,12 @@
 	.m-macro-systax{.db;}
 }
 //列表页
-.ua-responsive .screen-s .listpage-container .m-macro-systax{
-	.none;
+.ua-mobile .screen-s{
+	.listpage-container .m-macro-systax{
+		.none;
+	}
 }
-.ua-responsive .screen-s{
+.ua-mobile,.screen-s{
 	//手机端加大内容输入框
 	#typeoption_macro_ct1,#typeoption_macro_ct2{.h(500px);}
 }

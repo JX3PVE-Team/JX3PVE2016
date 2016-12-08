@@ -1,11 +1,5 @@
 //真实内容区(包含追加)
 .c-fli-primary{
-	.t_table{
-		td,th{
-			border:1px solid #ddd;
-			padding:3px 8px;
-		}
-	}
 	a{color:@blue-link;}
 	a:hover{text-decoration:underline;}
 }
@@ -29,11 +23,13 @@
 	u{text-decoration:underline;}
 
 	//图片
-	embed{
+	embed,video,object{
 		width:800px;height:600px;
 		max-width:100%;min-height:200px;
 	}
-	img{max-width:100%;height: auto;}
+	img{
+		max-width:100%;height:auto;
+	}
 
 	//水平线
 	hr{
@@ -48,6 +44,24 @@
 		margin-top:10px;
 		margin-bottom:10px;
 		max-width:100%;
+	}
+	.t_table{
+		td,th{
+			padding:2px 5px;
+			border:1px solid #ddd;
+		}
+
+		th{
+			background-color:#fafafa;
+			.bold;
+		}
+
+		tr:nth-child(2n){
+			background-color:@blue-bg;
+		}
+		tr:nth-child(2n+1){
+			background-color:#fff;
+		}
 	}
 
 	//列表
@@ -164,7 +178,7 @@
 		span{white-space:normal !important;}
 	}
 }
-.ua-responsive.mobile .screen-s{
+.ua-mobile,.screen-s{
 	.locked{
 		padding:10px;
 		background-image:none;

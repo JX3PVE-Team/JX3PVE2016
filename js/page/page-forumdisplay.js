@@ -55,6 +55,17 @@ jQuery(function($){
         $category_list.fadeToggle()
     })
 
+    //点赞
+    $(".c-flist-item-zan").each(function(){
+        $(this).one('click',function(){
+            var $count = $(this).children('span')
+            var count = $count.text()
+            console.log(count);
+            var _count = parseInt(count) + 1
+            $count.text(_count);
+        })
+    })
+
 })
 
 //点赞

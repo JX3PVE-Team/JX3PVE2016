@@ -6,8 +6,10 @@
 .c-fli-common:hover{
 	.c-fli-panel{.tm(1);}
 }
-.ua-responsive .screen-s .c-fli-panel{
-	.tm(1);
+.ua-mobile,.screen-s{
+	.c-fli-panel{
+		.tm(1);
+	}
 }
 
 //浮动处理
@@ -26,9 +28,11 @@
 		margin-left:10px;
 	}
 }
-.ua-responsive .screen-s .c-fli-panel{
-	.u-submod{
-		margin:0;
+.ua-mobile,.screen-s{
+	.c-fli-panel{
+		.u-submod{
+			margin:0;
+		}
 	}
 }
 
@@ -188,9 +192,11 @@
 	}
 }
 //M.移动端可见取消
-.ua-responsive .screen-s .c-fli-panel{
-	.u-cancel{
-		.db;
+.ua-mobile,.screen-s{
+	.c-fli-panel{
+		.u-cancel{
+			.db;
+		}
 	}
 }
 
@@ -208,45 +214,47 @@
 }
 
 //移动端隐藏回帖
-.ua-responsive .screen-s .c-fli-panel{
-	.u-cmt{
-		.none !important;
+.ua-mobile,.screen-s{
+	.c-fli-panel{
+		.u-cmt{
+			.none !important;
+		}
 	}
 }
 
 //移动端扩展操作条样式变更
-.ua-responsive .screen-s .c-fli-panel{
+.ua-mobile,.screen-s{
+	.c-fli-panel{
+		.none;	//默认隐藏
 
-	.none;	//默认隐藏
+		.c-fli-panel-left,.c-fli-panel-right{float:none;}
 
-	.c-fli-panel-left,.c-fli-panel-right{float:none;}
+		.pf;.lb(0,0);.z(40);
+		.full(x);
+		
+		.u-submod{
+			.db;.x;
+			float:none;
+			.lh(51px);
+			.color(@blue-link,@blue-link,@blue-link);
+			border-bottom:1px solid #eee;
+			background-color:#fff;
+			i{.none;}
+			margin-right:0;
+		}
 
-	.pf;.lb(0,0);.z(40);
-	.full(x);
-	
-	.u-submod{
-		.db;.x;
-		float:none;
-		.lh(51px);
-		.color(@blue-link,@blue-link,@blue-link);
-		border-bottom:1px solid #eee;
-		background-color:#fff;
-		i{.none;}
-		margin-right:0;
+		.u-cancel{
+			margin-top:2px;
+		}
+
+		&.active{
+			animation:slideUpMenu 0.3s ease-in-out forwards;
+			.db;
+		}
+
+		&.folder{
+			animation:slideDownMenu 0.3s ease-in-out forwards;
+			.db;
+		}
 	}
-
-	.u-cancel{
-		margin-top:2px;
-	}
-
-	&.active{
-		animation:slideUpMenu 0.3s ease-in-out forwards;
-		.db;
-	}
-
-	&.folder{
-		animation:slideDownMenu 0.3s ease-in-out forwards;
-		.db;
-	}
-
 }

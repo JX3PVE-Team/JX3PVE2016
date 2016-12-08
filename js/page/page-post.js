@@ -48,15 +48,16 @@ jQuery(function($){
 	})
 
 	//手机版发布提示
-	$("#c-post-tips-tg").on('click',function(){
-		$("#c-post-tips-content").fadeIn()
-		$("html").addClass('isfixed')
-	})
-	$("#c-post-tips-content").on('click',function(){
-		$("html").removeClass('isfixed')
-		$(this).fadeOut()
-	})
-
+	if(isMobile){
+		$("#c-post-tips-tg").on('click',function(){
+			$("#c-post-tips-content").fadeIn()
+			$("html").addClass('isfixed')
+		})
+		$("#c-post-tips-content").on('click',function(){
+			$("html").removeClass('isfixed')
+			$(this).fadeOut()
+		})
+	}
 
 })
 
