@@ -113,8 +113,10 @@
 .c-fli-first .c-fli-header{
 	.none;
 }
-.ua-responsive .screen-s .c-fli-first .c-fli-header{
-	.db;
+.ua-mobile, .screen-s{
+	.c-fli-first .c-fli-header{
+		.db;
+	}
 }
 //PC版不显示手机操作栏
 .c-fli-header{
@@ -123,13 +125,15 @@
 	}
 }
 //手机版显示手机操作栏并隐藏回帖奖励
-.ua-responsive .screen-s .c-fli-header{
-	font-size:12px;
+.ua-mobile,.screen-s{
+	.c-fli-header{
+		font-size:12px;
 
-	.u-replycredit{
-		.none;
-	}
-	.u-panel{
-		.db;
+		.u-replycredit{
+			.none;
+		}
+		.u-panel{
+			.db;
+		}
 	}
 }

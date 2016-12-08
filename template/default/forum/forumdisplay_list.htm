@@ -119,13 +119,13 @@
 
 									<!-- 点赞 -->
 										<span class="u-qc">
-											<span class="u-views">
+											<a class="u-views" href="forum.php?mod=viewthread&tid=$thread[tid]">
 												<!--{if $thread['isgroup'] != 1}-->
 													<i></i>$thread[views]
 												<!--{else}-->
 													<i></i>{$groupnames[$thread[tid]][views]}
 												<!--{/if}-->
-											</span>
+											</a>
 
 											<em class="u-divding"></em>
 

@@ -7,7 +7,7 @@ jQuery(function($){
 		$slidermenu_tg = $(".i-header-slidermenutg")
 	$slidermenu_tg.on('click',function(){
 		$slidermenu.slideToggle();
-		$(".i-header").toggleClass('.i-header-fix');
+		$(".i-header").addClass('i-header-fix');
 		toggleMask();
 	})
 	$mask.on('click',function(){
