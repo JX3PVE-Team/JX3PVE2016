@@ -6,12 +6,13 @@
 		//图片
 		.img{
 			.db;
-			margin:0 1px 1px 1px;
+			//margin:0 1px 1px 1px;
 		}
 		//立体遮罩
 		.layout{
 			.pa;.lt(0,0);
 			.full;
+			.tm(0.4);
 		}
 		//右下
 		.til,.author{
@@ -72,18 +73,19 @@
 			background-position:0 -85px;
 		}
 		&:hover{
-			-webkit-filter: brightness(120%) saturate(120%);
+			-webkit-filter: brightness(105%) saturate(110%);
 		}
 	}
 }
 
 .e-book{
 	@e-book-w:145px;
-	@e-book-h:191px;
+	@e-book-h:190px;
 	.book{
 		.size(@e-book-w,@e-book-h);
+		box-shadow: 1px 1px 1px rgba(0,0,0,.2);
 		.img{
-			.size(@e-book-w - 2px,@e-book-h - 1px);
+			.size(100%);
 		}
 		.layout{
 			background:url('@{url}book/book-layout.png') no-repeat 0 0;
