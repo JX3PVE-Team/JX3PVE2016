@@ -8,10 +8,10 @@
 		li{
 			.fl;
 			margin-bottom:20px;
-			.size(240px,164px);
+			.size(253px,164px);
 			overflow:hidden;
 			.pr;
-			margin-right:9px;
+			//margin-right:9px;
 		}
 	}
 	.short{
@@ -20,7 +20,8 @@
 		background-color:#f7f7f7;
 		border-radius:3px;
 		.shark();
-		.pa;.lt(0,0);
+		//.pa;.lt(0,0);
+		.fl;
 		.img{
 			.db;
 			.size(@face-w,@face-h);
@@ -102,17 +103,18 @@
 	}
 }
 
-.ua-responsive .screen-s .m-face-list-item{
-	float:none;
-	.db;
-	.auto(x);
-	border-bottom:1px dashed #ddd;
-	padding-bottom:20px;
+.ua-mobile,.screen-s{
+	.m-face-list-item{
+		float:none;
+		.db;
+		.w(auto);
+		background-color:#fff;
+		margin-bottom:10px;
+		padding:10px;
 
-	.w(auto);
-
-	.info .down{
-		.w(90px);
+		.info .down{
+			.w(90px);
+		}
 	}
 }
 

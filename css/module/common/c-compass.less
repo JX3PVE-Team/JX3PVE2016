@@ -21,6 +21,7 @@
 		&:hover{
 			background-color:#f7f7f7;
 			filter:saturate(110%);
+			span{color:#444;}
 		}
 	}
 	i{
@@ -31,7 +32,8 @@
 	}
 	span{
 		padding:10px 0;
-		.fzlh(1rem,30px);.db;.x;
+		.fzlh(13px,30px);.db;.x;
+		color:#555;
 		white-space:nowrap;overflow:hidden;
 	}
 	img{
@@ -64,6 +66,7 @@
 			.db;.pa;.lb(5px);
 			.size(16px);
 			background:url('@{url}system/sitemap/link.png') no-repeat 0 0;
+			.tm(0.5);
 		}
 	}
 }
@@ -71,6 +74,9 @@
 	.c-compass{
 		li{
 			.w(33%);
+		}
+		span{
+			color:#444;
 		}
 		em{
 			.size(32px);
@@ -94,9 +100,6 @@
 	.m-sitemap-compass .c-compass{
 		.u-more{
 			.db;
-		}
-		.u-locked{
-			.none;
 		}
 		.u-old{
 			.none;
