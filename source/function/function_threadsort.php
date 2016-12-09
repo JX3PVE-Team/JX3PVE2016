@@ -290,7 +290,11 @@ function showsorttemplate($sortid, $fid, $sortoptionarray, $templatearray, $thre
 			}
 			$sortdata[$thread['tid']]['subject'] = !$sortmode ? '<a href="forum.php?mod=viewthread&tid='.$thread['tid'].'">'.$thread['subject'].'</a>' : $thread['subject'];
 			$sortdata[$thread['tid']]['author'] = '<a href="home.php?mod=space&uid='.$thread['authorid'].'" target="_blank">'.$thread['author'].'</a>';
+			//$sortdata[$thread['tid']]['lastedit'] = dgmdate($thread['lastedit'],'d');
+			//$sortdata[$thread['tid']]['lastedit'] = date("Y-m-d",$thread['lastedit']);
 		}
+
+
 
 		foreach($sortoptionarray as $sortid => $optionarray) {
 			foreach($optionarray as $option) {
@@ -330,6 +334,7 @@ function showsorttemplate($sortid, $fid, $sortoptionarray, $templatearray, $thre
 
 	$sortlistarray['template'] = $stemplate;
 	$sortlistarray['expiration'] = $sortexpiration;
+
 
 	return $sortlistarray;
 }

@@ -1,5 +1,4 @@
 <div class="c-fli-info">
-
 	<!--{if $_G['forum_thread']['replycredit'] > 0 || $rushreply}-->
 	<div class="c-fli-replycredit" id="pl_top">
 		<!-- 回帖奖励 -->
@@ -47,5 +46,10 @@
 		<!--{/if}-->
 	</div>
 	<!--{/if}-->
-
 </div>
+<!-- 印戳 -->
+<!--{if $_G['forum_threadstamp']}-->
+	<div class="w-stamp w-stamp-$_G[forum_thread][stamp]" id="threadstamp">
+		<img src="{STATICURL}image/stamp/$_G[forum_threadstamp][url]" title="$_G[forum_threadstamp][text]" />
+	</div>
+<!--{/if}-->

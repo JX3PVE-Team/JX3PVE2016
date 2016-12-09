@@ -4,12 +4,16 @@
 			<li class="e-book">
 				<a class="book type-{typeid}" href="{subject_url}" data-target="_blank">
 					<img class="img" src="{book_img_value}" alt="{subject}">
+					<span class="u-name">{book_name_value}</span>
 					<i class="layout"></i>
 				</a>
 				<span class="u-info">
-					<a class="u-name" href="{subject_url}" data-target="_blank">{book_name_value}</a>
-					<span class="u-author">{book_author_value}</span>
-					<span class="u-time"><i></i>{lastedit}</span>
+					<span class="u-info-item u-name">《{book_name_value}》</span>
+					<span class="u-info-item u-author"><em>作者：</em><span>{book_author_value}</span></span>
+					<span class="u-info-item u-time"><em>发布：</em><i></i><span>{dateline}</span></span>
+					<span class="u-info-item u-time"><em>更新：</em><i></i><span>{lastedit}</span></span>
+					<span class="u-info-item u-intro"><em>查看：</em><span class="u-views">{views}</span></span>
+					<a class="u-info-item u-go" href="{subject_url}" data-target="_blank">阅读全文</a>
 				</span>
 			</li>
 		[/loop]
