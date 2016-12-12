@@ -52,7 +52,7 @@
 		a{.color(@blue-link,@yel);}
 	}
 	.u-id{
-		.w(260px);
+		.w(220px);
 		/*.bold;
 		color:#c00;*/
 		i{.none;color:#888;}
@@ -140,6 +140,9 @@
 		.u-hero-symmetra{
 			background-image:url("http://ww1.sinaimg.cn/large/bcc700eegw1f634acfrh5j200o00o0sh.jpg");
 		}
+		.u-hero-presentation{
+			background-image:url("http://ww2.sinaimg.cn/large/bcc700eegw1fakrde2kx9j200o00o3y9.jpg");
+		}
 	}
 	.u-status{
 		.w(110px);
@@ -154,13 +157,17 @@
 	.u-details{
 		.nobreak;
 		.pa;.rt(0,0);
-		.w(34px);
-		.color(#555,@yel);
+		.w(50px);
+		.color(#888,@yel);
+		i{
+			.dbi;.y(-2px);.size(12px);margin-right:2px;
+			background:url('@{url}icon/app_add.gif') no-repeat 0 0;
+		}
 	}
 }
 
 
-.ua-responsive .screen-s{
+.ua-mobile,.screen-s{
 	.m-ow-item-th{.none !important;}
 	.m-ow-item,.m-ow-item .u-subitem{height:auto;}
 	.m-ow-item{
@@ -186,6 +193,6 @@
 	}
 }
 .w-adminbar{
-	padding:0 !important;
+	padding:0 5px!important;
 	margin:10px 0;
 }

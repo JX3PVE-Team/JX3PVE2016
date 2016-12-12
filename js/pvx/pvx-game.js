@@ -43,7 +43,8 @@ jQuery(function($){
 		"天使":"u-hero-mercy",
 		"安娜":"u-hero-ana",
 		"禅雅塔":"u-hero-zenyatta",
-		"秩序之光":"u-hero-symmetra"
+		"秩序之光":"u-hero-symmetra",
+		"黑影":"u-hero-presentation"
 	}
 	
 	$(".m-ow-item").not('.m-ow-item-th').children('.u-hero').each(function(){
@@ -71,5 +72,7 @@ jQuery(function($){
 			$(this).addClass('u-status-off')
 		}
 	})
+
+	$(".w-mode-category-list").prepend($(".m-game-box"))
 
 })
