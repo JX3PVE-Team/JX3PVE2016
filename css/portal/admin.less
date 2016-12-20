@@ -5,6 +5,10 @@
 @import url('../global/layout.less');		//默认布局
 @import url('../module/ui/button.less');		//默认布局
 
+.wp{
+	.w(@wp) !important;
+}
+
 //管理面板
 .pg_portalcp{
 	.jx3pve-container{
@@ -12,7 +16,8 @@
 	}
 }
 .pg_portalcp #pt{
-	.w(@wp);margin-bottom:10px;
+	.w(@wp - 20px);
+	margin-bottom:10px;
 }
 
 .tb .o{
@@ -36,7 +41,7 @@
 				a{
 					background: #0084ff;
 					color: #fff;
-					padding: 3px 10px;
+					padding: 3px 5px;
 					border-radius: 2px;
 					margin-right: 5px;
 					&:nth-child(2){
