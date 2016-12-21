@@ -22,7 +22,7 @@ jQuery(function($){
       if(leftGiftNum < 1){return alert("礼品兑换数量不足,请选择其他礼品!")}
 
       if(!isEnoughMoney($(this).parent())){
-        return alert("人气 or 水晶不足! 请好好努力哟!")
+        return alert("水晶不足! 请好好努力哟!")
       }
 
       var id = $(this).data('id');
@@ -30,7 +30,7 @@ jQuery(function($){
         .success(function(data){
           data = JSON.parse(data);
           if(data.code == 0){
-            alert("【申请】兑换成功! 请查看兑换记录.");
+            alert("申请兑换成功! 请等待审核.");
             renderGiftExchangeLog();
             renderGiftList();
             //减积分

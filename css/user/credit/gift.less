@@ -9,7 +9,7 @@
 	padding:0 10px;
 }
 .m-gift-item{
-	.fl;
+	.fl;.clearfix;
 	margin:20px;
 	a,span{.db;}
 
@@ -22,12 +22,14 @@
 			max-width:100%;
 			max-height:100%;
 		}
+		margin-bottom:5px;
 	}
 	.u-meta{
 		.x;
+		.lh(24px);
 	}
 	.u-name{
-		.lh(32px);.bold;
+		.bold;
 		&:hover{color:#259;}
 	}
 	.u-price{
@@ -38,14 +40,17 @@
 	}
 	.u-num{
 		.isnull{color:#999;}
+		.none;
 	}
 	.u-boss{
 		b{.color(#259);}
 		&:hover b{
 			text-decoration:underline;
 		}
+		.none;
 	}
 	.u-go{
+		margin-top:5px;
 		&.isnull{
 			background:#aaa !important;
 			border:1px solid #888;
@@ -124,15 +129,16 @@
 		padding:10px 0;
 	}
 	.m-gift-item{
+		min-height:100px;
 		float:none;
-		padding-bottom:10px;
+		padding:10px 0 10px 120px;
 		border-bottom:1px dotted #ddd;
-		margin:0 0 10px 0;
-		.pr;padding-left:120px;
+		margin:0;
+		.pr;
 
-		.u-screenshot{.pa;.lt(0,0);.size(100px);}
+		.u-screenshot{.pa;.lt(0,10px);.size(100px);margin-bottom:0;}
 		.u-meta{.x(left);}
-		.u-go{margin:0;}
+		.u-go{margin:10px 0 0 0;}
 
 		.u-price,.u-boss,.u-num{
 			font-size:13px;
