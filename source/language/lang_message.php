@@ -77,7 +77,7 @@ $lang = array (
   'invite_code_error' => '抱歉，您访问的邀请链接不正确',
   'magics_nopermission' => '抱歉，您所在的用户组不允许使用道具',
   'magics_nonexistence' => '抱歉，您选择的道具不存在，请到<a href="home.php?mod=magic" target="_blank">道具商店</a>购买',
-  'magics_credits_no_enough_and_charge' => '抱歉，您没有足够的 {credit} 购买此道具，请<a href="home.php?mod=spacecp&ac=credit&op=base" target="_blank">【充值】</a>',
+  'magics_credits_no_enough_and_charge' => '抱歉，您没有足够的 {credit} 购买此道具，请<a href="./buy" target="_blank">【充值】</a>',
   'magics_credits_no_enough' => '抱歉，您没有足够的 {credit} 购买此道具',
   'magics_num_no_enough' => '抱歉，本道具已售完，请下次再来',
   'magics_num_invalid' => '抱歉，操作数量不合法',
