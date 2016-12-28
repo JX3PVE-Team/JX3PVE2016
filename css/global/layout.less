@@ -53,3 +53,19 @@ body{
 	.ua-oldpc .wp{
 		.w(@wp);
 	}
+
+//专题特殊手机版处理
+.ua-zt.ua-mobile{
+	body,.c-header{
+		.w(1200px);
+	}
+	.wp{
+		.w(@wpm);
+	}
+	.c-header,.c-footer{
+		.db;
+	}
+	.i-footer{
+		.none;
+	}
+}
