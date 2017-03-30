@@ -3,10 +3,10 @@ jQuery(function($){
 	//副本年代归类
 	var $fbnamelist = $("#select_fbname ul li")
 	$fbnamelist.eq(0).addClass('u-fbtime-all')
-	$fbnamelist.slice(1,5).addClass('u-fbtime-70')
-	$fbnamelist.slice(5,12).addClass('u-fbtime-80')
-	$fbnamelist.slice(12,19).addClass('u-fbtime-90')
-	$fbnamelist.slice(19).addClass('u-fbtime-95')
+	$fbnamelist.slice(1,7).addClass('u-fbtime-95')
+	$fbnamelist.slice(7,14).addClass('u-fbtime-90')
+	$fbnamelist.slice(14,21).addClass('u-fbtime-80')
+	$fbnamelist.slice(21).addClass('u-fbtime-70')
 
 	//BOSS归属归类
 	var $fbbosslist = $("#select_fbboss ul li")
@@ -14,6 +14,8 @@ jQuery(function($){
 	$fbbosslist.slice(5,8).addClass('u-fbname-syt')
 	$fbbosslist.slice(8,13).addClass('u-fbname-xlty')
 	$fbbosslist.slice(13,16).addClass('u-fbname-hyby')
+	$fbbosslist.slice(16,21).addClass('u-fbname-ddt')
+	$fbbosslist.slice(21).addClass('u-fbname-qld')
 
 	//选择年代 筛选 副本
 	$("#select_fbtime input").on('click',function(){
@@ -49,6 +51,12 @@ jQuery(function($){
 				break;
 			case '20' :  //仙侣庭园
 				$fbbosslist.fadeOut().filter('.u-fbname-xlty').fadeIn();
+				break;
+			case '24' :  //锻刀厅
+				$fbbosslist.fadeOut().filter('.u-fbname-ddt').fadeIn();
+				break;
+			case '25' :  //千雷殿
+				$fbbosslist.fadeOut().filter('.u-fbname-qld').fadeIn();
 				break;
 		}
 	})
