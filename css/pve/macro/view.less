@@ -8,9 +8,15 @@
 	margin-bottom:0;
 }
 .m-macro-baseinfo{
-	line-height: 2.5;
+	line-height:2.5;
 	li{
 		border-bottom:1px dashed #ddd;
+		.nobreak(clip);
+
+		#u-macro-zlp{
+			.y(top);
+			.nobreak;
+		}
 		em{
 			margin-right:15px;
 			.dbi;.w(88px);
@@ -20,7 +26,8 @@
 			.dbi;
 		}
 		b{
-			.dbi;margin-right:5px;
+			.dbi;
+			margin-right:5px;
 			span{.none;}
 		}
 		i{
