@@ -17,7 +17,7 @@
 	.u-desc{.color(#666,#c00);}
 	.u-mark{.size(58px);}
 
-	//.none;
+	.none;
 }
 
 .m-index-minibanner{
@@ -105,12 +105,21 @@
 }
 
 .m-index-wxcode{
-	//.x;
-	//background:#fcfcfc;
-	//padding:20px 0;
-	//.u-img{.db;.auto(x);}
-	//b{/*.color(@blue-link);*/.bold;}
+	h2{
+		margin-bottom:10px;
+	}
+	
 	.u-img{.db;}
-	img{.db;padding:10px;}
-	p{text-indent:18px;}
+	
+	img{
+		.db;padding:10px;
+		border:1px solid #eee;
+		background-color:#f7f7f7;
+		.auto(x);
+		margin-bottom:5px;
+	}
+	em{
+		.db;.x;.bold;margin-bottom:10px;
+		color:#555;
+	}
 }
